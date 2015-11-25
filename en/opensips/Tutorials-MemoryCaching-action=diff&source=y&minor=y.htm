@@ -1,0 +1,239 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Tutorials-MemoryCaching | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Tutorials-MemoryCaching' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Tutorials-MemoryCaching History</h2>
+  <p><a href="Tutorials-MemoryCaching-action=diff&source=y&minor=n.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-MemoryCaching?action=diff&source=y&minor=n">Hide minor edits</a> - <a href="Tutorials-MemoryCaching-action=diff&source=n&minor=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-MemoryCaching?action=diff&source=n&minor=y">Show changes to output</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>May 16, 2013, at 06:05 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>!![[Documentation.Index | Documentation]] -&gt; [[Documentation.Tutorials | Tutorials ]] -&gt; [[Documentation.Tutorials-MemoryCaching |  Memory Caching]]</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>!!!!!Documentation -&gt; [[Documentation.Tutorials | Tutorials ]] -&gt; Memory Caching</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-MemoryCaching-action=edit&restore=diff-1368720357-1368108017-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-MemoryCaching?action=edit&restore=diff:1368720357:1368108017:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 04:00 PM 
+        by <span class='diffauthor' title='79.118.227.150'>79.118.227.150</span> - </div>
+        <div class='difftype'>Changed lines 11-13 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>The idea is to be able to store (cache) custom values for later usage. The main purpose of this MemCache support is to reduce the number of DB queries by caching data that does not need constant update from DB. DB queries are known to be one of bottle necks in the current design (see [[http://www.opensips.org/index.php?n=Development.NewDesign| design considerations]]) and MemCache support will help in avoiding unnecessary DB hits.<br /><br /></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>The idea is to be able to store (cache) custom values for later usage. The main purpose of this MemCache support is to reduce the number of DB queries by caching data that does not need constant update from DB. DB queries are known to be one of bottle necks in the current design (see [[Development.NewDesign| design considerations]]) and MemCache support will help in avoiding unnecessary DB hits.<br /><br /></div></div>
+        <div class='difftype'>Changed lines 20-22 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>* store - [[http://www.opensips.org/index.php?n=Resources.DocsCoreFcn#toc91 | cache_store()]]<br />* fetch - [[http://www.opensips.org/index.php?n=Resources.DocsCoreFcn#toc93 | cache_fetch()]]<br />* remove - [[http://www.opensips.org/index.php?n=Resources.DocsCoreFcn#toc92 | cache_remove()]]</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>* store - [[Documentation.Script-CoreFunctions#toc91 | cache_store()]]<br />* fetch - [[Documentation.Script-CoreFunctions#toc93 | cache_fetch()]]<br />* remove - [[Documentation.Script-CoreFunctions#toc92 | cache_remove()]]</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-MemoryCaching-action=edit&restore=diff-1368108017-1368107887-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-MemoryCaching?action=edit&restore=diff:1368108017:1368107887:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 03:58 PM 
+        by <span class='diffauthor' title='79.118.227.150'>79.118.227.150</span> - </div>
+        <div class='difftype'>Changed lines 1-2 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>!!Resources -&gt; [[Resources.Documentation | Documentation]] -&gt; [[Resources.DocsTutorials | Tutorials]] -&gt; Memory Caching</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>!![[Documentation.Index | Documentation]] -&gt; [[Documentation.Tutorials | Tutorials ]] -&gt; [[Documentation.Tutorials-MemoryCaching |  Memory Caching]]<br />----</div></div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-MemoryCaching?action=edit&restore=diff:1368107887:1366822902:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-MemoryCaching?action=edit&restore=diff:1368107887:1366822902:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-MemoryCaching?action=edit&restore=diff:1368107887:1366822902:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 24, 2013, at 07:01 PM 
+        by <span class='diffauthor' title='213.233.101.41'>213.233.101.41</span> - </div>
+        <div class='difftype'>Added lines 1-178:</div>
+        <div class='diffadd'><div class='diffmarkup'>!!Resources -&gt; [[Resources.Documentation | Documentation]] -&gt; [[Resources.DocsTutorials | Tutorials]] -&gt; Memory Caching<br />This page has been visited {$PageCount} times.<br />(:toc-float Table of Content:)<br />----<br /><br />!!! OpenSIPS MemCache<br /><br />The '''Memory Caching''' support from '''OpenSIPS''' wants to provide a way of caching at runtime different kind of data. These data will globally available (anywhere in the routing script) and shared between all '''OpenSIPS''' processes.<br /><br />The idea is to be able to store (cache) custom values for later usage. The main purpose of this MemCache support is to reduce the number of DB queries by caching data that does not need constant update from DB. DB queries are known to be one of bottle necks in the current design (see [[http://www.opensips.org/index.php?n=Development.NewDesign| design considerations]]) and MemCache support will help in avoiding unnecessary DB hits.<br /><br /><br />----<br />!!! OpenSIPS MemCache Design<br /><br />The '''Memory Caching''' support in '''OpenSIPS''' has a flexible and expendable design. The idea is to have a simple and transparent way of operating (in the same time) with multiple implementations / forms of memory caching. A memory caching system can be via the local shared memory (see [[http://www.opensips.org/html/docs/modules/1.5.x/localcache.html | Local Cache module]]) or via the System V shared memory (mem cache shared across independent applications) or via the [[http://www.danga.com/memcached/|MemCache server]].<br /><br />The '''OpenSIPS''' core offers an API for operating with any memory caching system from the script. This API is composed out of three functions that allow the basic operations with a memory cache:<br />* store - [[http://www.opensips.org/index.php?n=Resources.DocsCoreFcn#toc91 | cache_store()]]<br />* fetch - [[http://www.opensips.org/index.php?n=Resources.DocsCoreFcn#toc93 | cache_fetch()]]<br />* remove - [[http://www.opensips.org/index.php?n=Resources.DocsCoreFcn#toc92 | cache_remove()]]<br /><br />The MemCache design from  '''OpenSIPS''' allow to set a lifetime (timeout) to an attribute when inserting it in the cache. This provides support for auto-removal of attributes (for re-fetching or clean-up purposes) from the cache.<br /><br />The implementations for the memory caching support are provided by the '''OpenSIPS''' modules. Right now there is a single implementation (see [[http://www.opensips.org/html/docs/modules/1.5.x/localcache.html | Local Cache module]]) that caches the data into the shared memory of '''OpenSIPS'''. In the future release, more implementations are planned to be added.<br /><br />----<br />!!! MemCache usage - Password caching for DB authentication<br /><br />The best way of describing the MemCache way of usage is to provide a real example - how to use memcache support for reducing the DB queries due user authentication.<br /><br />!!!! The idea - how to<br /><br />The idea is, after performing a DB authentication (authentication by fetching the password from DB) to store the password in memcache; the password is stored with a certain lifetime to ensure that from time to time the password is read from DB again.<br /><br />When a new authentication is needed, first we check if the password is available in memcache (previously stored and not yet expired); if so, we use the value from there to perform authentication without a DB hit. <br /><br />As we have to store in the same time the passwords of more than one users, we need to use different names for the attributes -&gt; the attribute name will contain the user name, something like &quot;passwd_''username''&quot;.<br /><br />!!!! The logic - diagram <br /><br /># REGISTER request received<br /># is password stored in &quot;passwd_$tu&quot; attribute?<br />## NO -&gt; perform DB authentication <br />## store the used password into &quot;passwd_$tu&quot; with s lifetime (1200 seconds - 10 minutes)<br />## DONE<br />#YES -&gt; use the value from the memcache do to authentication from script variables.<br /># DONE<br /><br />!!!! Script<br /><br />Current format of authentication script for REGISTER is:<br />[@<br />	if (!www_authorize(&quot;&quot;, &quot;subscriber&quot;)) {<br />		www_challenge(&quot;&quot;, &quot;0&quot;);<br />		exit;<br />	};<br />@]<br /><br />By adding memcache support, the script looks like:<br />[@<br />....<br />loadmodule &quot;modules/db_mysql/db_mysql.so&quot;<br />loadmodule &quot;modules/auth/auth.so&quot;<br />loadmodule &quot;modules/auth_db/auth_db.so&quot;<br />loadmodule &quot;modules/localcache/localcache.so&quot;<br />....<br />modparam(&quot;auth&quot;,&quot;username_spec&quot;,&quot;$avp(i:54)&quot;)<br />modparam(&quot;auth&quot;,&quot;password_spec&quot;,&quot;$avp(i:55)&quot;)<br />modparam(&quot;auth&quot;,&quot;calculate_ha1&quot;,1)<br /><br />modparam(&quot;auth_db&quot;, &quot;calculate_ha1&quot;, yes)<br />modparam(&quot;auth_db&quot;, &quot;password_column&quot;, &quot;password&quot;)<br />modparam(&quot;auth_db&quot;, &quot;db_url&quot;,&quot;mysql://opensips:opensipsrw@localhost/opensips_1_2&quot;)<br />modparam(&quot;auth_db&quot;, &quot;load_credentials&quot;, &quot;$avp(i:55)=password&quot;)<br />....<br /><br />....<br />route[x]{<br />	.....<br />	# do we have the password cached ?<br />	if(cache_fetch(&quot;local&quot;,&quot;passwd_$tu&quot;,$avp(i:55))) {<br />		$avp(i:54) = $tU;<br />		xlog(&quot;SCRIPT: stored password is $avp(i:55)\n&quot;);<br />		# perform auth from variables<br />		# $avp(i:54) contains the username<br />		# $avp(i:55) contains the password<br />		if (!pv_www_authorize(&quot;&quot;)) {<br />			# authentication failed -&gt; do challenge			<br />			www_challenge(&quot;&quot;, &quot;0&quot;);<br />			exit;<br />		};<br />	} else {<br />		# perform DB authentication -&gt;<br />		# password will be loaded from DB automatically<br />		if (!www_authorize(&quot;&quot;, &quot;subscriber&quot;)) {<br />			# authentication failed -&gt; do challenge		<br />			www_challenge(&quot;&quot;, &quot;0&quot;);<br />			exit;<br />		};<br />		# after DB authentication, the password is available<br />		# in $avp(i:55) because of the &quot;load_credentials&quot;<br />		# module parameter.<br />		xlog(&quot;SCRIPT: storing password &lt;$avp(i:55)&gt;\n&quot;);<br />		# use a 20 minutes lifetime for the password;<br />		# after that, it will erased from cache and we do<br />		# db authentication again (refresh the passwd from DB)<br />		cache_store(&quot;local&quot;,&quot;passwd_$tu&quot;,&quot;$avp(i:55)&quot;,1200);<br />	}<br /><br />	....<br />}<br />@]<br /><br />References:<br /># auth module - see [[http://www.opensips.org/html/docs/modules/1.5.x/auth.html| functions and parameters]]<br /># auth_db module - see [[http://www.opensips.org/html/docs/modules/1.5.x/auth_db.html| functions and parameters]]<br /><br />----<br />!!!! Improvements<br /><br />You can easily add 2 improvements to the previous script.<br /><br />!!!!! Force password re-fetching<br /><br />When PV authentication (based on cached password) fails because of invalid password (see the [[http://www.opensips.org/html/docs/modules/devel/auth.html#id271238 | error codes of the pv_www_authorize() function]]). So, if the function returns &quot;-2&quot; (invalid password) it may mean that the password may changed (in DB), so you need to re-fresh. <br /><br />In such a case, you can simple remove the cached password and try to do DB authentication (that will use the DB password). Of course, after such a re-load, store into the cache the new value.<br /><br />!!!!! WWW and PROXY authentication<br /><br />You can use the same cached password for both WWW (REGISTER) and PROXY (INVITE, MESSAGE, etc) authentication. The logic is the same in both blocks (WWW and PROXY) and you can share the same cached password for both blocks. This will dramatically reduce the number of DB queries.<br /><br />NOTE: for WWW authentication the authentication name is extracted from TO hedear, but for PROXY authentication the auth name is extracted from FROM header, so when operating with the cache, build the attribute name as &quot;passwd_$tU&quot; for WWW auth and as &quot;passwd_$fU&quot; for PROXY auth.<br /><br />!!!! Performance estimation<br /><br />Assuming a 30 minute registration period and placing a call each 20 minutes, without any caching, there will be 5 authentication queries to DB per hour per user.<br /><br />This means, for 1000 users, per day : 1000 * 3 * 24 = '''72000 queries per day for auth'''.<br /><br />If you set a 2 hours lifetime for cached data, you have one query per user at each 2 hours.<br /><br />So, for the same 1000 users, per day, you have : 1000 * 0.5 * 24 = '''12000 queries per day for auth'''<br /><br />So, this gives you a reduction to with 83% (to 17%) of the numbers of queries!<br /><br />----<br />[[#comment1]](:nl:)&gt;&gt;messagehead&lt;&lt;<br />!!!!![[~aidanna]]  &amp;mdash;  [-13 August 2010, 04:37-]  <br />&gt;&gt;messageitem&lt;&lt;<br />Thanks guys for the tutorial on the caching API.  Using a layered localcache -&amp;gt; memcache -&amp;gt; db scheme (where our application controls the last two), we've been able to see almost a 95% performance gain after tuning compared to a straight Opensips 1.4.5 db only scheme.<br />&gt;&gt;&lt;&lt;<br /><br />[[#comment2]](:nl:)&gt;&gt;messagehead&lt;&lt;<br />!!!!![[~Manas]]  &amp;mdash;  [-08 February 2011, 14:59-]  <br />&gt;&gt;messageitem&lt;&lt;<br />How do the timeout value specified in the cache_store  method interact with the cache_clean_period specified at the module level?<br /> 		cache_store(&quot;local&quot;,&quot;passwd_$tu&quot;,&quot;$avp(i:55)&quot;,1200);<br /><br />modparam(&quot;localcache&quot;, &quot;cache_clean_period&quot;, 600)<br /><br />----<br /><br />For example: at 10:00 - I insert a record with timeout &quot;1200&quot; - so the record is set to expire at 10:20.<br /><br />For the sake of the example - if the module setting was 1800 - the above record wont be purged till 10:30. <br /><br />Am I correct?<br /><br /><br />[[#comment3]](:nl:)&gt;&gt;messagehead&lt;&lt;<br />!!!!![[~Cleide]]  &amp;mdash;  [-18 March 2012, 05:03-]  <br />&gt;&gt;messageitem&lt;&lt;<br />Did you test this patch, i personnaly tisnalled because i need to use distributed cache for apache ssl cache but it could not retreive the session from cache, session is setted successly but when retriving it it tells  memcache scache  get_session' CORRUPT'when i look in memcache it seems that the session is bad because it contains lines of logthank you for reply<br />&gt;&gt;&lt;&lt;<br /><br />(:commentboxchrono:)</div></div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-MemoryCaching?action=edit&restore=diff:1366822902:1366822902:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-MemoryCaching?action=edit&restore=diff:1366822902:1366822902:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-MemoryCaching?action=edit&restore=diff:1366822902:1366822902:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Tutorials-MemoryCaching-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-MemoryCaching?action=edit">Edit</a> |
+      <a rel="nofollow" href="Tutorials-MemoryCaching-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-MemoryCaching?action=diff">History</a> |
+      <a rel="nofollow" href="Tutorials-MemoryCaching-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-MemoryCaching?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on May 16, 2013, at 06:05 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

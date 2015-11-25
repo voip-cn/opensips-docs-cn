@@ -1,0 +1,305 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+  <title>openSIPS | Documentation / Tutorials-RLSConfig</title>
+  <link rel='stylesheet' href="print.css" tppabs="http://www.opensips.org/pub/skins/print/print.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+</head>
+<body>
+  <div id='printhead'>
+    <h3>From openSIPS</h3>
+    <h1 class='pagename'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation%27" tppabs="http://www.opensips.org/Documentation">Documentation: Tutorials-RLSConfig</a></h1>
+  </div>
+<!--PageText-->
+<div id='wikitext'>
+<h5>Documentation -&gt; <a class='wikilink' href="Tutorials-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials?action=print">Tutorials</a> -&gt; <a class='wikilink' href="Tutorials-Presence-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence?action=print">Presence</a> -&gt; <a class='wikilink' href="Tutorials-RLS-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-RLS?action=print">Presence RLS</a> -&gt; RLS config file</h5>
+<hr />
+<p class='vspace'><br />
+</p><pre class='escaped'>
+#
+# OpenSIPS 1.11.x configuration file
+#
+# Resource List Server
+# RLS + SIP Presence Server
+#
+
+# ----------- global configuration parameters ------------------------
+
+debug=3
+fork=yes
+log_stderror=no
+
+check_via=no
+dns=no
+rev_dns=no
+
+listen=udp:10.10.10.10:5060
+children=2
+
+# ------------------ module loading ----------------------------------
+mpath="/usr/local/opensips/lib/modules/"
+
+loadmodule "db_mysql.so"
+loadmodule "sl.so"
+loadmodule "signaling.so"
+loadmodule "tm.so"
+loadmodule "maxfwd.so"
+loadmodule "textops.so"
+loadmodule "sipmsgops.so"
+loadmodule "rr.so"
+loadmodule "mi_fifo.so"
+loadmodule "usrloc.so"
+loadmodule "registrar.so"
+loadmodule "presence.so"
+loadmodule "presence_xml.so"
+loadmodule "pua.so"
+loadmodule "rls.so"
+
+# Uncomment this if you want digest authentication
+#loadmodule "auth.so"
+#loadmodule "auth_db.so"
+
+# ----------------- setting module-specific parameters ---------------
+modparam("mi_fifo","fifo_name","/tmp/opensips_fifo")
+
+# -- usrloc params --
+modparam("usrloc","db_mode",2)
+modparam("usrloc","db_url","mysql://opensips:opensipsrw@localhost/opensips")
+
+# -- auth params --
+# Uncomment if you are using auth module
+#modparam("auth_db", "calculate_ha1", yes)
+#modparam("auth_db", "password_column", "password")
+
+# -- presence params --
+modparam("presence|presence_xml","db_url","mysql://opensips:opensipsrw@localhost/opensips")
+modparam("presence","server_address","sip:sa@10.10.10.10:5060")
+modparam("presence_xml","force_active",1)
+
+# -- pua and rls parameters --
+modparam("pua|rls","db_url","mysql://opensips:opensipsrw@localhost/opensips")
+modparam("rls", "server_address", "sip:10.10.10.10:5060")
+modparam("rls", "integrated_xcap_server", 1)
+modparam("rls", "presence_server", "sip:10.10.10.10:5060")
+modparam("rls", "to_presence_code", 10)
+
+
+# -------------------------  request routing logic -------------------
+
+# main routing logic
+route{
+
+	# initial sanity checks
+	if(!mf_process_maxfwd_header("10")) {
+		send_reply("483","Too Many Hops");
+		exit;
+	}
+
+	if (has_totag()) {
+		# sequential requests within a dialog should
+		# take the path determined by record-routing
+		if (loose_route()) {
+			# route it out to whatever destination was set by loose_route()
+			# in $du (destination URI).
+			route(relay);
+		} else {
+			if (is_method("SUBSCRIBE") &amp;&amp; uri==myself) {
+				# in-dialog subscribe requests
+				route(handle_presence);
+				exit;
+			} else if ( is_method("ACK") ) {
+				if ( t_check_trans() ) {
+					# non loose-route, but stateful ACK; must be an ACK after 
+					# a 487 or e.g. 404 from upstream server
+					t_relay();
+					exit;
+				} else {
+					# ACK without matching transaction -&gt;
+					# ignore and discard
+					exit;
+				}
+			}
+			send_reply("404","Not here");
+		}
+		exit;
+	}
+
+	# CANCEL processing
+	if (is_method("CANCEL")) {
+		if (t_check_trans())
+			t_relay();
+		exit;
+	}
+
+	t_check_trans();
+
+	# authenticate if from local subscriber (uncomment to enable auth)
+	# authenticate all initial non-REGISTER request that pretend to be
+	# generated by local subscriber (domain from FROM URI is local)
+	##if (!(method=="REGISTER") &amp;&amp; from_uri==myself) {
+	##  if (!proxy_authorize("", "subscriber")) {
+	##      proxy_challenge("", "0");
+	##      exit;
+	##  }
+	##  if (!db_check_from()) {
+	##      send_reply("403","Forbidden auth ID");
+	##      exit;
+	##  }
+	##
+	##  consume_credentials();
+	##}
+
+	# record routing
+	if (!is_method("REGISTER|MESSAGE"))
+		record_route();
+
+	if (uri!=myself) {
+		# routing to other SIP domains
+		route(relay);
+	}
+
+	# SIP 2 SIP presence traffic
+	if (is_method("PUBLISH|SUBSCRIBE")) {
+		route(handle_presence);
+		exit;
+	}
+	if (is_method("NOTIFY")) {
+		t_newtran();
+		rls_handle_notify();
+		exit;
+	}
+
+	if (is_method("REGISTER")) {
+
+		# Uncomment this if you want to use digest authentication
+		#if (!www_authorize("", "subscriber")) {
+		#  www_challenge("", "0");
+		#  exit;
+		#}
+
+		save("location");
+		exit;
+	}
+
+	# native SIP destinations are handled using our USRLOC DB
+	if(!lookup("location")) {
+		send_reply("404","Not Found");
+		exit;
+	}
+
+	route(relay);
+}
+
+
+route[relay]{
+	# send it out
+	if(!t_relay())
+		sl_reply_error();
+
+	exit;
+}
+
+
+route[handle_presence]
+{
+	if(!t_newtran()){
+		sl_reply_error();
+		exit;
+	}
+
+	if (is_method("PUBLISH")) {
+		handle_publish();
+	} else
+
+	if (is_method("SUBSCRIBE")) {
+		rls_handle_subscribe();
+		if ( $rc==10 )
+			# SUBSCRIBE not hanled by RLS
+			handle_subscribe();
+	}
+
+	exit;
+}
+</pre>
+</div>
+
+  <div id='printfoot'>
+    <div class='from'>Retrieved from http://www.opensips.org/Documentation/Tutorials-RLSConfig</div>
+    <div class='lastmod'>Page last modified on July 02, 2014, at 02:20 PM</div></div>
+<!--HTMLFooter-->
+</body>
+</html>

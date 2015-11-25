@@ -1,0 +1,227 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+  <title>openSIPS | Documentation / Script Flags - ver devel </title>
+  <link rel='stylesheet' href="print.css" tppabs="http://www.opensips.org/pub/skins/print/print.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+</head>
+<body>
+  <div id='printhead'>
+    <h3>From openSIPS</h3>
+    <h1 class='pagename'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation%27" tppabs="http://www.opensips.org/Documentation">Documentation: Script Flags - ver devel </a></h1>
+  </div>
+<!--PageText-->
+<div id='wikitext'>
+<h5>Documentation -&gt; <a class='wikilink' href="Manuals-action=print.htm" tppabs="http://www.opensips.org/Documentation/Manuals?action=print">Manuals</a> -&gt; <a class='wikilink' href="Manual-1-10-action=print.htm" tppabs="http://www.opensips.org/Documentation/Manual-1-10?action=print">Manual 1.10</a> -&gt; Script Flags</h5>
+<hr />
+<p><span style='font-size:83%'> Pages for other versions: <a class='wikilink' href="Script-Flags-2-2-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags-2-2?action=print">devel</a> <a class='wikilink' href="Script-Flags-2-1-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags-2-1?action=print">2.1</a> <a class='wikilink' href="Script-Flags-1-11-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-11?action=print">1.11</a>  Older versions: 1.10 <a class='wikilink' href="Script-Flags-1-9-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-9?action=print">1.9</a> <a class='wikilink' href="Script-Flags-1-8-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-8?action=print">1.8</a> <a class='wikilink' href="Script-Flags-1-7-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-7?action=print">1.7</a> <a class='wikilink' href="Script-Flags-1-6-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-6?action=print">1.6</a> <a class='wikilink' href="Script-Flags-1-5-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-5?action=print">1.5</a> <a class='wikilink' href="Script-Flags-1-4-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-4?action=print">1.4</a> </span>
+</p>
+<p class='vspace'><br />
+</p><table width='100%'><tr ><td  align='center'><span  style='color: #185662;'><span style='font-size:120%'><strong>Script Flags v1.10</strong></span></span></td></tr>
+</table>
+<div class='vspace'></div><table width='100%'><tr ><td  align='left'><a class='wikilink' href="Script-CoreVar-1-10-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreVar-1-10?action=print">Prev</a></td><td  align='right'><a class='wikilink' href="Script-Tran-1-10-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-10?action=print">Next</a></td></tr>
+</table><hr />
+<div class='vspace'></div><div class='tocfloat'><p><a name='toc' id='toc'></a><b>Table of Content</b> (<a id="tocidtog" href="javascript:toggle('tocid');">hide</a>)</p><ol class='toc' id='tocid'><li>1.&nbsp;<a href='#toc1'>Types of flags</a></li><li>2.&nbsp;<a href='#toc2'>Corresponding Functions</a><ol class='toc'><li>2.1&nbsp;<a href='#toc3'>Message/transaction flags</a></li><li>2.2&nbsp;<a href='#toc4'>Branch flags</a></li><li>2.3&nbsp;<a href='#toc5'>Script flags</a></li></ol></li><li>3.&nbsp;<a href='#toc6'>Flags and Pseudo Variables</a><ol class='toc'><li>3.1&nbsp;<a href='#toc7'>Message/transaction flags</a></li><li>3.2&nbsp;<a href='#toc8'>Branch flags</a></li><li>3.3&nbsp;<a href='#toc9'>Script flags</a></li></ol></li><li>4.&nbsp;<a href='#toc10'>Flags and routes</a><ol class='toc'><li>4.1&nbsp;<a href='#toc11'>Message/transaction flags</a></li><li>4.2&nbsp;<a href='#toc12'>Branch flags</a></li><li>4.3&nbsp;<a href='#toc13'>Script flags</a></li></ol></li><li>5.&nbsp;<a href='#toc14'>Example</a><ol class='toc'><li>5.1&nbsp;<a href='#toc15'>Nat flag handling</a></li></ol></li></ol></div>
+<div class='vspace'></div><h3><a name='toc1' id='toc1'></a>1.&nbsp; Types of flags</h3>
+<ul><li><strong>message flags</strong> (or transaction flags) these flags are transaction persistent. They are visible in all routes and cases where the transaction context is visible
+</li><li><strong>branch flags</strong>  are saved also in transaction, but per branch; also they will be saved in usrloc (per contact). A new set of functions were added for manipulating these flags from script. So, there flags will be registration persistent and branch persistent.
+</li><li><strong>script flags</strong>  are no-message-related flags - they are only script persistent and you can strictly use them for scripting. Once you exit a top level route, they will be lost. These flags are useful and they offer an option to de-congest the message flags - many flags have no need to be saved as they just reflect some scripting status.
+</li></ul><div class='vspace'></div><hr />
+<h3><a name='toc2' id='toc2'></a>2.&nbsp; Corresponding Functions</h3>
+<p>Starting from OpenSIPS 1.9, flags may receive alphanumerical values.
+</p>
+<div class='vspace'></div><h4><a name='toc3' id='toc3'></a>2.1&nbsp; Message/transaction flags</h4>
+<ul><li>setflag(flag_idx)
+</li><li>resetflag(flag_idx)
+</li><li>isflagset(flag_idx)
+</li></ul><p class='vspace'><em>Examples: setflag(accounting), resetflag(DO_NAT) or setflag(19)</em>
+</p>
+<div class='vspace'></div><h4><a name='toc4' id='toc4'></a>2.2&nbsp; Branch flags</h4>
+<ul><li>setbflag/setbranchflag(branch_idx,flag_idx)
+</li><li>resetbflag/resetbranchflag(branch_idx,flag_idx)
+</li><li>isbflagset/isbranchflagset(branch_idx,flag_idx)
+</li></ul><p class='vspace'><br />
+or, the shorter format, working on the default (branch 0) flags:
+</p>
+<div class='vspace'></div><ul><li>setbflag(flag_idx)
+</li><li>resetbflag(flag_idx)
+</li><li>isbflagset(flag_idx)
+</li></ul><div class='vspace'></div><h4><a name='toc5' id='toc5'></a>2.3&nbsp; Script flags</h4>
+<ul><li>setsflag/setscriptflag(flag_idx)
+</li><li>resetsflag/resetscriptflag(flag_idx)
+</li><li>issflagset/isscriptflagset(flag_idx)
+</li></ul><div class='vspace'></div><hr />
+<h3><a name='toc6' id='toc6'></a>3.&nbsp; Flags and Pseudo Variables</h3>
+<div class='vspace'></div><h4><a name='toc7' id='toc7'></a>3.1&nbsp; Message/transaction flags</h4>
+<p>$mf - ReadOnly; outputs a list of flags
+</p>
+<div class='vspace'></div><h4><a name='toc8' id='toc8'></a>3.2&nbsp; Branch flags</h4>
+<p>$bf - ReadOnly; returns a list of flags
+</p>
+<div class='vspace'></div><h4><a name='toc9' id='toc9'></a>3.3&nbsp; Script flags</h4>
+<p>$sf - ReadOnly; outputs a list of flags
+</p>
+<div class='vspace'></div><hr />
+<h3><a name='toc10' id='toc10'></a>4.&nbsp; Flags and routes</h3>
+<div class='vspace'></div><h4><a name='toc11' id='toc11'></a>4.1&nbsp; Message/transaction flags</h4>
+<p class='vspace'>These flags will show up in all routes where messages related to the initial request are processed. So, they will be visible and changeable in onbranch, failure and onreply routes; the flags will be visible in all branch routes; if you change a flag in a branch route, the next branch routes will inherit the change.
+</p>
+<div class='vspace'></div><h4><a name='toc12' id='toc12'></a>4.2&nbsp; Branch flags</h4>
+<p class='vspace'>There flags will show up in all routes where messages related to initial branch request are processed. So, in branch route you will see different sets of flags (as they are different branches); in onreply route yo will see the branch flags corresponding to the branch the reply belongs to; in failure route, the branch flags corresponding to the branch the winning reply belongs to will be visible.
+In request route, you can have multiple branches (as a result of a lookup(), enum query, append_branch(), etc) - the default branch is 0 (corresponding to the RURI); In reply routes there will be only one branch , the 0 one. In branch route the default branch is the current process branch (having index 0); In failure route, initially there is only one branch (index 0), corresponding the failed branch.
+</p>
+<div class='vspace'></div><h4><a name='toc13' id='toc13'></a>4.3&nbsp; Script flags</h4>
+<p class='vspace'>There flags are available only in script and are reset after each top level route execution (routes internally triggered by OpenSIPS). They will be persistent per main route, onreply_route, branch_route, failure_route. Note they will be inherit in routes called from other routes.
+</p>
+<div class='vspace'></div><hr />
+<h3><a name='toc14' id='toc14'></a>5.&nbsp; Example</h3>
+<div class='vspace'></div><h4><a name='toc15' id='toc15'></a>5.1&nbsp; Nat flag handling</h4>
+<pre class='escaped'>
+ ..........
+ # 3 - the nat flag
+ modparam("usrloc", "nat_bflag", "NAT_BFLAG")
+ ..........
+
+ route {
+   ..........
+   if (nat detected)
+      setbflag(NAT_BFLAG); # set branch flag 3 for the branch 0
+
+   ..........
+   if (is_method("REGISTER")) {
+      # the branch flags (including 3) will be saved into location
+      save("location");
+      exit;
+   } else {
+      # lookup will load the branch flag from location
+      if (!lookup("location")) {
+         sl_send_reply("404","Not Found");
+         exit;
+      }
+      t_on_branch("1")
+      t_relay();
+   }
+ }
+
+ branch_route[1] {
+   xlog("-------branch=$T_branch_idx, branch flags=$bF\n");
+   if (isbflagset(NAT_BFLAG)) {
+      #current branch is marked as natted
+      .........
+   }
+ }
+</pre>
+<p class='vspace'>if no parallel forking is done, you can get rid of the branch route and add instead of t_on_branch():
+</p><pre class='escaped'>
+   ........
+   if (isbflagset(NAT_BFLAG)) {
+      #current branch is marked as natted
+      .........
+   }
+   ......... 
+</pre>
+<div class='vspace'></div><hr />
+<div class='vspace'></div>
+    <div id='message'><form name='cbox' class='inputform' action="http://www.opensips.org/Documentation/Script-Flags-1-10" method='post' onsubmit='return checkform(this);'>
+    <input type='hidden' name='n' value='Documentation.Script-Flags-1-10' />
+    <input type='hidden' name='action' value='comment' />
+    <input type='hidden' name='order' value='chrono' /><input type='hidden' name='accesscode' value='588' />
+    <input type='hidden' name='csum' value='Comment added' />
+    <table width='90%'><tr>
+    <th class='prompt' align='right' valign='top'>Add Comment&nbsp;</th>
+    <td><textarea class='inputtext commenttext' name='text' id='text' rows=6 cols=40></textarea>
+    </td></tr><tr><th class='prompt' align='right' valign='top'>Sign as Author&nbsp;</th>
+    <td><input class='inputbox commentauthorbox' type='text' name='author' value='' size='32' /></td></tr>
+    <tr><th class='prompt' align='right' valign='top'>Enter code <em class='access'>588</em></th>
+    <td><input type='text' size='4' maxlength='3' name='access' value='' class='inputbox' /> <input class='inputbutton commentbutton' type='submit' name='post' value=' Post ' />
+    <input class='inputbutton commentbutton' type='reset' value='Reset' /></td></tr></table><br /></form></div>
+ <script type='text/javascript' language='JavaScript1.2'>
+  function checkform ( form ) {
+   if (form.text && form.text.value == "") { window.alert( 'Please enter a comment to post' ); form.text.focus(); return false; }
+   if (form.author && form.author.value == "") { window.alert( 'Please enter your name as author' ); form.author.focus(); return false; }
+   if (form.access && form.access.value == "") { window.alert( 'Please enter the code number' ); form.access.focus(); return false; }return true ;
+  }
+  </script>
+   
+</div>
+
+  <div id='printfoot'>
+    <div class='from'>Retrieved from http://www.opensips.org/Documentation/Script-Flags-1-10</div>
+    <div class='lastmod'>Page last modified on August 05, 2013, at 04:32 PM</div></div>
+<!--HTMLFooter-->
+</body>
+</html>

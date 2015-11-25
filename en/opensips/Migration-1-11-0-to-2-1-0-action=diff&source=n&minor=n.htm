@@ -1,0 +1,1868 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Migration-1-11-0-to-2-1-0 | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Migration-1-11-0-to-2-1-0' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Migration-1-11-0-to-2-1-0 History</h2>
+  <p><a href="Migration-1-11-0-to-2-1-0-action=diff&source=n&minor=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=diff&source=n&minor=y">Show minor edits</a> - <a href="Migration-1-11-0-to-2-1-0-action=diff&source=y&minor=n.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=diff&source=y&minor=n">Show changes to markup</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>August 25, 2015, at 06:43 PM 
+        by <span class='diffauthor' title='50.198.204.238'>etamme</span> - clarify migration docs to indicate loading proto_udp is required</div>
+        <div class='difftype'>Changed line 35 from:</div>
+        <div class='diffdel'><ul><li>In 2.1, for each type of listener, you must load its corresponding module (e.g. <strong>loadmodule "proto_tcp.so"</strong> if you are using TCP listeners). Additional info here...
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>In 2.1, for each type of listener, you must load its corresponding module (e.g. <strong>loadmodule "proto_tcp.so"</strong> if you are using TCP listeners or <strong>loadmodule "proto_udp.so"</strong> if you are using UDP listeners). Additional info here...
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1440520999-1429620117-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1440520999:1429620117:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 21, 2015, at 02:41 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 37 from:</div>
+        <div class='diffdel'><ul><li><strong><span  style='color: red;'>all tcp_ and tls_ global timeout parameters are now given in milliseconds, instead of seconds</span></strong>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><strong><span  style='color: red;'>all tcp_ and tls_ global timeout parameters are now given in milliseconds, instead of seconds/useconds</span></strong>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1429620117-1426754720-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1429620117:1426754720:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 19, 2015, at 09:45 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 35 from:</div>
+        <div class='diffdel'><ul><li>In 2.1, for each type of listener, you must load its corresponding module (e.g. <strong>loadmodule "proto_tcp.so"</strong> if you are using TCP listeners).
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>In 2.1, for each type of listener, you must load its corresponding module (e.g. <strong>loadmodule "proto_tcp.so"</strong> if you are using TCP listeners). Additional info here...
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426754720-1426754647-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426754720:1426754647:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 19, 2015, at 09:44 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added line 35:</div>
+        <div class='diffadd'><ul><li>In 2.1, for each type of listener, you must load its corresponding module (e.g. <strong>loadmodule "proto_tcp.so"</strong> if you are using TCP listeners).
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426754647-1426706485-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426754647:1426706485:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 18, 2015, at 08:21 PM 
+        by <span class='diffauthor' title='109.96.146.76'>liviu</span> - </div>
+        <div class='difftype'>Deleted lines 14-18:</div>
+        <div class='diffdel'><pre>   or
+   # osipsconsole 
+   OpenSIPS$:db migrate opensips_1_11 opensips_2_1
+   OpenSIPS$:quit
+   # 
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426706485:1426674663:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426706485:1426674663:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426706485:1426674663:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 18, 2015, at 11:31 AM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Added line 41:</div>
+        <div class='diffadd'><ul><li><strong><span  style='color: red;'>all tcp_ and tls_ global timeout parameters are now given in milliseconds, instead of seconds</span></strong>
+</li></ul>
+</div>
+        <div class='difftype'>Deleted line 52:</div>
+        <div class='diffdel'><ul><li><strong><span  style='color: red;'>all tcp_ and tls_ global timeout parameters are now given in milliseconds, instead of seconds</span></strong>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426674663-1426502155-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426674663:1426502155:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 11:35 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 43 from:</div>
+        <div class='diffdel'><ul><li>Advertised address with mutiple branches: if the advertised address of the <em>first</em> branch is changed, <em>all</em> new branches will start off with the changed value (ad92fa6)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>Advertised address with mutiple branches: if the advertised address of the <em>first</em> branch is changed, <em>all</em> new branches will start off with the last changed value (ad92fa6)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426502155:1426502122:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426502155:1426502122:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426502155:1426502122:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 11:35 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 42 from:</div>
+        <div class='diffdel'><ul><li>Fix: <strong>acc_evi_request()</strong> now works properly (24bd3a8)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>Fix: <strong>acc_evi_request()</strong> now properly reports E_ACC_CDR, E_ACC_EVENT and E_ACC_MISSED_EVENT (24bd3a8)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426502122-1426501903-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426502122:1426501903:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 11:31 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 8 from:</div>
+        <div class='diffdel'><p>You can find the all the new additions compiled in the <strong>2.1.0</strong> <a class='wikilink' title='Version-2-1-0' href="javascript:if(confirm(%27http://www.opensips.org/About/Version-2-1-0  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/Version-2-1-0%27" tppabs="http://www.opensips.org/About/Version-2-1-0">release page</a>. Going through the changelog may improve your understanding of the migration / update process.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>You can find the all the new additions compiled in the <a class='wikilink' title='Version-2-1-0' href="javascript:if(confirm(%27http://www.opensips.org/About/Version-2-1-0  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/Version-2-1-0%27" tppabs="http://www.opensips.org/About/Version-2-1-0"><strong>2.1.0</strong> release page</a>. Going through the changelog may improve your understanding of the migration / update process.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426501903-1426261968-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426501903:1426261968:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 13, 2015, at 04:52 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added line 40:</div>
+        <div class='diffadd'><ul><li>All <strong>tcp_xxx</strong> and <strong>tls_xxx</strong> core parameters have been moved to their respective modules (proto_tcp, respectively proto_tls)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426261968-1426240832-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426261968:1426240832:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 13, 2015, at 11:00 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added line 56:</div>
+        <div class='diffadd'><p>The following is the full list of backwards-incompatible changes in the output of the OpenSIPS Management Interface commands:
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426240832-1426178875-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426240832:1426178875:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 05:47 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 6 from:</div>
+        <div class='diffdel'><p>This section is meant to provide useful help in migrating your OpenSIPS installations from the <strong>1.11</strong> version to the latest <strong>2.1</strong> release.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>This section is meant to provide useful help in migrating OpenSIPS installations from the <strong>1.11</strong> version to the latest <strong>2.1</strong> release.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426178875-1426178860-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426178875:1426178860:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 05:47 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Deleted lines 4-5:</div>
+        <div class='diffdel'><p><span  style='color: red;'>......................................................................................... <strong>TODO</strong> ..............................................................</span>
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426178860-1426178806-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426178860:1426178806:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 05:46 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 59 from:</div>
+        <div class='diffdel'><ul><li><strong><span  style='color: red;'>MI output structure changed: (34576f5 and 459dffb)</span></strong> - make sure your scripts are still working correctly
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><strong><span  style='color: red;'>MI output structure changed: (34576f5 and 459dffb)</span></strong> - make sure your MI parsing scripts are still working correctly!
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426178806-1426178764-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426178806:1426178764:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 05:46 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 42-52 from:</div>
+        <div class='diffdel'><ul><li>Fix: <strong>"opensips fifo t_uac_dlg"</strong> and <strong>t_new_request()</strong> now properly handle any <strong>force_send_socket()</strong> operation done inside the local_route (d37ae66)
+</li><li>Fix: <strong>acc_evi_request()</strong> now works properly (24bd3a8)
+</li><li>Advertised address with mutiple branches: if the advertised address of the <em>first</em> branch is changed, <em>all</em> new branches will start off with the changed value (ad92fa6)
+</li><li>Memcached NoSQL driver bugfix: get() operations no longer create counters in case they do not exist (47cd18c)
+</li><li>Couchbase NoSQL driver bugfix: get() operations no longer create counters in case they do not exist (67023e9)
+</li><li>make: default prefix changed to <strong>"/usr/local"</strong> from <strong>"/usr"</strong> (84cfab2)
+</li><li>script: variables can now be assigned NULL variables (5ebc1ef)
+</li><li>removed SSLv2 and SSLv3 support (4c56d98 and 06f9025)
+</li><li>mi_xmlrpc_ng: default root path changed from "xmlrpc" to "RPC2" (e93a98b)
+</li><li>obsolete modules: mi_xmlrpc, auth_diameter, closeddial (d6c14c2)
+</li><li>dialog: OpenSIPS no longer starts if dialog fails to establish an SQL DB connection (e2c77e4)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>Fix: <strong>"opensips fifo t_uac_dlg"</strong> and <strong>t_new_request()</strong> now properly handle any <strong>force_send_socket()</strong> operation done inside the local_route (d37ae66)
+</li><li>Fix: <strong>acc_evi_request()</strong> now works properly (24bd3a8)
+</li><li>Advertised address with mutiple branches: if the advertised address of the <em>first</em> branch is changed, <em>all</em> new branches will start off with the changed value (ad92fa6)
+</li><li>Memcached NoSQL driver bugfix: get() operations no longer create counters in case they do not exist (47cd18c)
+</li><li>Couchbase NoSQL driver bugfix: get() operations no longer create counters in case they do not exist (67023e9)
+</li><li>make: default prefix changed to <strong>"/usr/local"</strong> from <strong>"/usr"</strong> (84cfab2)
+</li><li>script: variables can now be assigned NULL variables (5ebc1ef)
+</li><li>removed SSLv2 and SSLv3 support (4c56d98 and 06f9025)
+</li><li>mi_xmlrpc_ng: default root path changed from "xmlrpc" to "RPC2" (e93a98b)
+</li><li>obsolete modules: mi_xmlrpc, auth_diameter, closeddial (d6c14c2)
+</li><li>dialog: OpenSIPS no longer starts if dialog fails to establish an SQL DB connection (e2c77e4)
+</li></ul>
+</div>
+        <div class='difftype'>Changed lines 54-56 from:</div>
+        <div class='diffdel'><ul><li><em>Contact</em> header parsing: OpenSIPS 2.1 no longer supports this syntax: <strong>"Contact: &lt;&gt;\r\n"</strong>, as imposed by RFC3261 (608de67)
+</li><li>json: $json variables will be set to NULL if assignment fails due to parsing errors (8dfe15e3ce)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><em>Contact</em> header parsing: OpenSIPS 2.1 no longer supports this syntax: <strong>"Contact: &lt;&gt;\r\n"</strong>, as imposed by RFC3261 (608de67)
+</li><li>json: $json variables will be set to NULL if assignment fails due to parsing errors (8dfe15e3ce)
+</li></ul>
+</div>
+        <div class='difftype'>Changed lines 59-67 from:</div>
+        <div class='diffdel'><ul><li><strong><span  style='color: red;'>MI output structure changed: (34576f5 and 459dffb)</span></strong> - make sure your scripts are still working correctly
+</li><li>MI output: <strong>"opensipsctl fifo list_tcp_conns"</strong> - "Timeout" field is now a human-readable date instead of UNIX timestamp (6ac1dc8251)
+</li><li>MI output: <strong>"opensipsctl fifo subs_phtable_list"</strong> - "expires" field is now a human-readable date instead of UNIX timestamp (ddaf004)
+</li><li>MI output: <strong>"opensipsctl fifo dp_translate"</strong> may now return "404 - No translation" (f517529)
+</li><li>MI output: <strong>"opensipsctl fifo rtpproxy_show"</strong> structure change (213e777)
+</li><li>MI output: <strong>"opensipsctl fifo ds_list"</strong> state instead of flags (45afa00)
+</li><li>MI output: <strong>"opensipsctl fifo dr_gw_status"</strong> changed from "Enabled : yes/no" to "State : Disabled MI / Probing / Inactive / Active (3866e35)
+</li><li>MI json : on invalid command, <strong>"{"error":"Internal server error"}"</strong> has been replaced with <strong>"{"error":"Command not found"}"</strong> (aaaf85c)
+</li><li>MI output: <strong>"opensipsctl ul show"</strong> output aligned to default JSON format (e8101df + eaa5f1a)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><strong><span  style='color: red;'>MI output structure changed: (34576f5 and 459dffb)</span></strong> - make sure your scripts are still working correctly
+</li><li>MI output: <strong>"opensipsctl fifo list_tcp_conns"</strong> - "Timeout" field is now a human-readable date instead of UNIX timestamp (6ac1dc8251)
+</li><li>MI output: <strong>"opensipsctl fifo subs_phtable_list"</strong> - "expires" field is now a human-readable date instead of UNIX timestamp (ddaf004)
+</li><li>MI output: <strong>"opensipsctl fifo dp_translate"</strong> may now return "404 - No translation" (f517529)
+</li><li>MI output: <strong>"opensipsctl fifo rtpproxy_show"</strong> structure change (213e777)
+</li><li>MI output: <strong>"opensipsctl fifo ds_list"</strong> state instead of flags (45afa00)
+</li><li>MI output: <strong>"opensipsctl fifo dr_gw_status"</strong> changed from "Enabled : yes/no" to "State : Disabled MI / Probing / Inactive / Active (3866e35)
+</li><li>MI json : on invalid command, <strong>"{"error":"Internal server error"}"</strong> has been replaced with <strong>"{"error":"Command not found"}"</strong> (aaaf85c)
+</li><li>MI output: <strong>"opensipsctl ul show"</strong> output aligned to default JSON format (e8101df + eaa5f1a)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426178764-1426178534-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426178764:1426178534:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 05:42 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 54 from:</div>
+        <div class='diffdel'><ul><li><em>Contact</em> header: OpenSIPS 2.1 no longer supports this syntax: <strong>"Contact: &lt;&gt;\r\n"</strong>, as imposed by RFC3261 (608de67)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><em>Contact</em> header parsing: OpenSIPS 2.1 no longer supports this syntax: <strong>"Contact: &lt;&gt;\r\n"</strong>, as imposed by RFC3261 (608de67)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426178534-1426178459-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426178534:1426178459:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 05:40 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 53 from:</div>
+        <div class='diffdel'><ul><li><span  style='color: red;'>all tcp_ and tls_ global timeout parameters are now given in milliseconds, instead of seconds</span>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><strong><span  style='color: red;'>all tcp_ and tls_ global timeout parameters are now given in milliseconds, instead of seconds</span></strong>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426178459-1426178408-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426178459:1426178408:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 05:40 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Deleted lines 58-59:</div>
+        <div class='diffdel'><ul><li>MI format: <strong>"opensipsctl fifo list_tcp_conns"</strong> - "Timeout" field is now a human-readable date instead of UNIX timestamp (6ac1dc8251)
+</li><li>MI format: <strong>"opensipsctl fifo subs_phtable_list"</strong> - "expires" field is now a human-readable date instead of UNIX timestamp (ddaf004)
+</li></ul>
+</div>
+        <div class='difftype'>Changed lines 60-65 from:</div>
+        <div class='diffdel'><ul><li>MI output change: <strong>"opensipsctl fifo dp_translate"</strong> may now return "404 - No translation" (f517529)
+</li><li>MI output change: <strong>"opensipsctl fifo rtpproxy_show"</strong> structure change (213e777)
+</li><li>MI output change: <strong>"opensipsctl fifo ds_list"</strong> state instead of flags (45afa00)
+</li><li>MI output change: <strong>"opensipsctl fifo dr_gw_status"</strong> changed from "Enabled : yes/no" to "State : Disabled MI / Probing / Inactive / Active (3866e35)
+</li><li>MI json : on invalid command, "{"error":"Internal server error"}" has been replaced with "{"error":"Command not found"}" (aaaf85c)
+</li><li>MI output change: "opensipsctl ul show" output aligned to default JSON format (e8101df + eaa5f1a)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>MI output: <strong>"opensipsctl fifo list_tcp_conns"</strong> - "Timeout" field is now a human-readable date instead of UNIX timestamp (6ac1dc8251)
+</li><li>MI output: <strong>"opensipsctl fifo subs_phtable_list"</strong> - "expires" field is now a human-readable date instead of UNIX timestamp (ddaf004)
+</li><li>MI output: <strong>"opensipsctl fifo dp_translate"</strong> may now return "404 - No translation" (f517529)
+</li><li>MI output: <strong>"opensipsctl fifo rtpproxy_show"</strong> structure change (213e777)
+</li><li>MI output: <strong>"opensipsctl fifo ds_list"</strong> state instead of flags (45afa00)
+</li><li>MI output: <strong>"opensipsctl fifo dr_gw_status"</strong> changed from "Enabled : yes/no" to "State : Disabled MI / Probing / Inactive / Active (3866e35)
+</li><li>MI json : on invalid command, <strong>"{"error":"Internal server error"}"</strong> has been replaced with <strong>"{"error":"Command not found"}"</strong> (aaaf85c)
+</li><li>MI output: <strong>"opensipsctl ul show"</strong> output aligned to default JSON format (e8101df + eaa5f1a)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426178408-1426178327-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426178408:1426178327:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 05:38 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 40-44 from:</div>
+        <div class='diffdel'><p>The following is the full list of backwards-incompatible changes (some of them are fixes) in the OpenSIPS configuration script:
+</p>
+<div class='vspace'></div><ul><li><strong>"opensips fifo t_uac_dlg"</strong> and <strong>t_new_request()</strong> now properly handle any <strong>force_send_socket()</strong> operation done inside the local_route (d37ae66)
+</li><li>Fix acc_evi_request() : now works properly (24bd3a8)
+</li><li>Advertised address with mutiple branches: if the advertised address of the first branch is changed, all new branches will start off with the changed value (ad92fa6)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>The following is the full list of backwards-incompatible syntax or functional changes in the OpenSIPS configuration script (some of them are fixes):
+</p>
+<div class='vspace'></div><ul><li>Fix: <strong>"opensips fifo t_uac_dlg"</strong> and <strong>t_new_request()</strong> now properly handle any <strong>force_send_socket()</strong> operation done inside the local_route (d37ae66)
+</li><li>Fix: <strong>acc_evi_request()</strong> now works properly (24bd3a8)
+</li><li>Advertised address with mutiple branches: if the advertised address of the <em>first</em> branch is changed, <em>all</em> new branches will start off with the changed value (ad92fa6)
+</li></ul>
+</div>
+        <div class='difftype'>Changed lines 47-48 from:</div>
+        <div class='diffdel'><ul><li>make: default prefix changed to "/usr/local" from "/usr" (84cfab2)
+</li><li>script : variables can now be assigned NULL variables (5ebc1ef)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>make: default prefix changed to <strong>"/usr/local"</strong> from <strong>"/usr"</strong> (84cfab2)
+</li><li>script: variables can now be assigned NULL variables (5ebc1ef)
+</li></ul>
+</div>
+        <div class='difftype'>Changed line 52 from:</div>
+        <div class='diffdel'><ul><li>dialog : OpenSIPS no longer starts if dialog fails to establish an SQL DB connection (e2c77e4)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>dialog: OpenSIPS no longer starts if dialog fails to establish an SQL DB connection (e2c77e4)
+</li></ul>
+</div>
+        <div class='difftype'>Changed lines 54-56 from:</div>
+        <div class='diffdel'><ul><li>Contact Header : OpenSIPS 2.1 no longer supports this syntax: "Contact: &lt;&gt;\r\n", as imposed by RFC3261 (608de67)
+</li><li>json : $json will be set to NULL if parsing fails (8dfe15e3ce)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><em>Contact</em> header: OpenSIPS 2.1 no longer supports this syntax: <strong>"Contact: &lt;&gt;\r\n"</strong>, as imposed by RFC3261 (608de67)
+</li><li>json: $json variables will be set to NULL if assignment fails due to parsing errors (8dfe15e3ce)
+</li></ul>
+</div>
+        <div class='difftype'>Changed lines 59-65 from:</div>
+        <div class='diffdel'><ul><li>MI format : "Timeout" field is now a human-readable date instead of UNIX timestamp in "opensipsctl fifo list_tcp_conns" (6ac1dc8251)
+</li><li>MI format : "expires" field is now a human-readable date instead of UNIX timestamp in "opensipsctl fifo subs_phtable_list" (ddaf004)
+</li><li><span  style='color: red;'>MI output structure changed: (34576f5 and 459dffb)</span>
+</li><li>MI output change: "opensipsctl fifo dp_translate" now returns "404 - No translation" (f517529)
+</li><li>MI output change: "opensipsctl fifo rtpproxy_show" structure change (213e777)
+</li><li>MI output change: "opensipsctl fifo ds_list" state instead of flags (45afa00)
+</li><li>MI output change: "opensipsctl fifo dr_gw_status" changed from "Enabled : yes/no" to "State : Disabled MI / Probing / Inactive / Active (3866e35)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>MI format: <strong>"opensipsctl fifo list_tcp_conns"</strong> - "Timeout" field is now a human-readable date instead of UNIX timestamp (6ac1dc8251)
+</li><li>MI format: <strong>"opensipsctl fifo subs_phtable_list"</strong> - "expires" field is now a human-readable date instead of UNIX timestamp (ddaf004)
+</li><li><strong><span  style='color: red;'>MI output structure changed: (34576f5 and 459dffb)</span></strong> - make sure your scripts are still working correctly
+</li><li>MI output change: <strong>"opensipsctl fifo dp_translate"</strong> may now return "404 - No translation" (f517529)
+</li><li>MI output change: <strong>"opensipsctl fifo rtpproxy_show"</strong> structure change (213e777)
+</li><li>MI output change: <strong>"opensipsctl fifo ds_list"</strong> state instead of flags (45afa00)
+</li><li>MI output change: <strong>"opensipsctl fifo dr_gw_status"</strong> changed from "Enabled : yes/no" to "State : Disabled MI / Probing / Inactive / Active (3866e35)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426178327-1426177725-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426178327:1426177725:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 05:28 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 40-42 from:</div>
+        <div class='diffdel'><p>The following is the full list of backwards-incompatible changes in the OpenSIPS configuration script:
+</p>
+<div class='vspace'></div><ul><li>Fix SIP request generation: "opensips fifo t_uac_dlg" and the script t_new_request() function now properly handle any force_send_socket() operation done inside the local_route (d37ae66)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>The following is the full list of backwards-incompatible changes (some of them are fixes) in the OpenSIPS configuration script:
+</p>
+<div class='vspace'></div><ul><li><strong>"opensips fifo t_uac_dlg"</strong> and <strong>t_new_request()</strong> now properly handle any <strong>force_send_socket()</strong> operation done inside the local_route (d37ae66)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426177725-1426177497-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426177725:1426177497:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 05:24 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Deleted lines 41-42:</div>
+        <div class='diffdel'><ul><li>MI format : "Timeout" field is now a human-readable date instead of UNIX timestamp in "opensipsctl fifo list_tcp_conns" (6ac1dc8251)
+</li><li>MI format : "expires" field is now a human-readable date instead of UNIX timestamp in "opensipsctl fifo subs_phtable_list" (ddaf004)
+</li></ul>
+</div>
+        <div class='difftype'>Deleted lines 46-50:</div>
+        <div class='diffdel'><ul><li><span  style='color: red;'>MI output structure changed: (34576f5 and 459dffb)</span>
+</li><li>MI output change: "opensipsctl fifo dp_translate" now returns "404 - No translation" (f517529)
+</li><li>MI output change: "opensipsctl fifo rtpproxy_show" structure change (213e777)
+</li><li>MI output change: "opensipsctl fifo ds_list" state instead of flags (45afa00)
+</li><li>MI output change: "opensipsctl fifo dr_gw_status" changed from "Enabled : yes/no" to "State : Disabled MI / Probing / Inactive / Active (3866e35)
+</li></ul>
+</div>
+        <div class='difftype'>Deleted line 48:</div>
+        <div class='diffdel'><ul><li>MI json : on invalid command, "{"error":"Internal server error"}" has been replaced with "{"error":"Command not found"}" (aaaf85c)
+</li></ul>
+</div>
+        <div class='difftype'>Deleted line 52:</div>
+        <div class='diffdel'><ul><li>MI output change: "opensipsctl ul show" output aligned to default JSON format (e8101df + eaa5f1a)
+</li></ul>
+</div>
+        <div class='difftype'>Changed lines 56-59 from:</div>
+        <div class='diffdel'><ul><li>
+</li><li>
+</li><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'></div>
+        <div class='difftype'>Added lines 58-67:</div>
+        <div class='diffadd'><ul><li>MI format : "Timeout" field is now a human-readable date instead of UNIX timestamp in "opensipsctl fifo list_tcp_conns" (6ac1dc8251)
+</li><li>MI format : "expires" field is now a human-readable date instead of UNIX timestamp in "opensipsctl fifo subs_phtable_list" (ddaf004)
+</li><li><span  style='color: red;'>MI output structure changed: (34576f5 and 459dffb)</span>
+</li><li>MI output change: "opensipsctl fifo dp_translate" now returns "404 - No translation" (f517529)
+</li><li>MI output change: "opensipsctl fifo rtpproxy_show" structure change (213e777)
+</li><li>MI output change: "opensipsctl fifo ds_list" state instead of flags (45afa00)
+</li><li>MI output change: "opensipsctl fifo dr_gw_status" changed from "Enabled : yes/no" to "State : Disabled MI / Probing / Inactive / Active (3866e35)
+</li><li>MI json : on invalid command, "{"error":"Internal server error"}" has been replaced with "{"error":"Command not found"}" (aaaf85c)
+</li><li>MI output change: "opensipsctl ul show" output aligned to default JSON format (e8101df + eaa5f1a)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426177497-1426177339-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426177497:1426177339:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 05:22 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 19-20 from:</div>
+        <div class='diffdel'><pre>   &gt; db migrate opensips_1_11 opensips_2_1
+   &gt; quit
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>   OpenSIPS$:db migrate opensips_1_11 opensips_2_1
+   OpenSIPS$:quit
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426177339-1426177223-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426177339:1426177223:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 05:20 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 19 from:</div>
+        <div class='diffdel'><pre>   &gt; migrate opensips_1_11 opensips_2_1
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>   &gt; db migrate opensips_1_11 opensips_2_1
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426177223-1426176783-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426177223:1426176783:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 05:13 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added line 40:</div>
+        <div class='diffadd'><p>The following is the full list of backwards-incompatible changes in the OpenSIPS configuration script:
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426176783-1426176759-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426176783:1426176759:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 05:12 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 39 from:</div>
+        <div class='diffdel'><h3>List of backwards-incompatible config script changes</h3>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h3>Config Script Migration</h3>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426176759-1426176723-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426176759:1426176723:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 05:12 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 14 from:</div>
+        <div class='diffdel'><p>For MySQL users, you can easily migrate your 1.11.x OpenSIPS databases to the 2.1.0 format with the <strong>opensipsdbctl</strong> tool (TODO: code this!):
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>For MySQL users, you can easily migrate your 1.11.x OpenSIPS databases to the 2.1.0 format with the <strong>opensipsdbctl</strong> tool:
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426176723-1426170802-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426176723:1426170802:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 03:33 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 71 from:</div>
+        <div class='diffdel'><ul><li><em>cachedb_sql</em>, <strong>cachedb</strong> table - "PRIMARY KEY" attr added (<span  style='color: green;'>f1fec17</span>)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><em>cachedb_sql</em>, <strong>cachedb</strong> table - "PRIMARY KEY" attr added (f1fec17)
+</li></ul>
+</div>
+        <div class='difftype'>Changed line 75 from:</div>
+        <div class='diffdel'><ul><li><em>msilo</em>, <strong>silo</strong> table - DEFAULT "text/plain" removed (<span  style='color: green;'>2e4b2d5</span>)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><em>msilo</em>, <strong>silo</strong> table - DEFAULT "text/plain" removed (2e4b2d5)
+</li></ul>
+</div>
+        <div class='difftype'>Changed lines 83-85 from:</div>
+        <div class='diffdel'><ul><li><em>acc</em>, <strong>missed_calls</strong> table - NEW columns: "created" and "setuptime" (<span  style='color: green;'>94cf5dd</span>)
+</li><li><em>msilo</em>, <strong>silo</strong> table - "NULL" attribute added (<span  style='color: green;'>e02a004</span>)
+</li><li><em>closeddial</em>, <strong>closeddial</strong> table - DROPPED (<span  style='color: green;'>7b30b2c</span>)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><em>acc</em>, <strong>missed_calls</strong> table - NEW columns: "created" and "setuptime" (94cf5dd)
+</li><li><em>msilo</em>, <strong>silo</strong> table - "NULL" attribute added (e02a004)
+</li><li><em>closeddial</em>, <strong>closeddial</strong> table - DROPPED (7b30b2c)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426170802-1426170775-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426170802:1426170775:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 03:32 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 83 from:</div>
+        <div class='diffdel'><ul><li><em>acc</em>, <strong>missed_calls</strong> table - NEW columns: "created" and "setuptime" (94cf5dd)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><em>acc</em>, <strong>missed_calls</strong> table - NEW columns: "created" and "setuptime" (<span  style='color: green;'>94cf5dd</span>)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426170775-1426170709-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426170775:1426170709:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 03:31 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 75 from:</div>
+        <div class='diffdel'><ul><li><em>msilo</em>, <strong>msilo</strong> table - DEFAULT "text/plain" removed (<span  style='color: green;'>2e4b2d5</span>)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><em>msilo</em>, <strong>silo</strong> table - DEFAULT "text/plain" removed (<span  style='color: green;'>2e4b2d5</span>)
+</li></ul>
+</div>
+        <div class='difftype'>Changed line 84 from:</div>
+        <div class='diffdel'><ul><li><em>msilo</em>, <strong>msilo</strong> table - "NULL" attribute added (<span  style='color: green;'>e02a004</span>)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><em>msilo</em>, <strong>silo</strong> table - "NULL" attribute added (<span  style='color: green;'>e02a004</span>)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426170709-1426170670-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426170709:1426170670:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 03:31 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 71 from:</div>
+        <div class='diffdel'><ul><li><em>cachedb_sql</em>, <strong>cachedb</strong> table - "PRIMARY KEY" attr added (f1fec17)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><em>cachedb_sql</em>, <strong>cachedb</strong> table - "PRIMARY KEY" attr added (<span  style='color: green;'>f1fec17</span>)
+</li></ul>
+</div>
+        <div class='difftype'>Changed line 75 from:</div>
+        <div class='diffdel'><ul><li><em>msilo</em>, <strong>msilo</strong> table - DEFAULT "text/plain" removed (2e4b2d5)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><em>msilo</em>, <strong>msilo</strong> table - DEFAULT "text/plain" removed (<span  style='color: green;'>2e4b2d5</span>)
+</li></ul>
+</div>
+        <div class='difftype'>Changed lines 84-85 from:</div>
+        <div class='diffdel'><ul><li><em>msilo</em>, <strong>msilo</strong> table - "NULL" attribute added (e02a004)
+</li><li><em>closeddial</em>, <strong>closeddial</strong> table - DROPPED (7b30b2c)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><em>msilo</em>, <strong>msilo</strong> table - "NULL" attribute added (<span  style='color: green;'>e02a004</span>)
+</li><li><em>closeddial</em>, <strong>closeddial</strong> table - DROPPED (<span  style='color: green;'>7b30b2c</span>)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426170670-1426170534-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426170670:1426170534:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 03:28 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426170534-1426168481-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426170534:1426168481:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 02:54 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added line 85:</div>
+        <div class='diffadd'><ul><li><em>closeddial</em>, <strong>closeddial</strong> table - DROPPED (7b30b2c)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426168481-1426168346-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426168481:1426168346:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 02:52 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 83 from:</div>
+        <div class='diffdel'><ul><li><em>acc</em>, <strong>acc</strong> table - NEW columns: "created" and "setuptime" (94cf5dd)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><em>acc</em>, <strong>missed_calls</strong> table - NEW columns: "created" and "setuptime" (94cf5dd)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426168346-1426161370-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426168346:1426161370:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 12:56 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 10 from:</div>
+        <div class='diffdel'><p>You can find the all the new additions compiled in the <strong>2.1.0</strong> <a class='wikilink' title='Version-2-1-0' href="javascript:if(confirm(%27http://www.opensips.org/About/Version-2-1-0  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/Version-2-1-0%27" tppabs="http://www.opensips.org/About/Version-2-1-0">release page</a>. The changelog may improve your understanding of the migration / update process.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>You can find the all the new additions compiled in the <strong>2.1.0</strong> <a class='wikilink' title='Version-2-1-0' href="javascript:if(confirm(%27http://www.opensips.org/About/Version-2-1-0  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/Version-2-1-0%27" tppabs="http://www.opensips.org/About/Version-2-1-0">release page</a>. Going through the changelog may improve your understanding of the migration / update process.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426161370-1426161311-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426161370:1426161311:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 12:55 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 39-42 from:</div>
+        <div class='diffdel'><h3>OpenSIPS config script migration</h3>
+<div class='vspace'></div><h3>List of backwards-incompatible changes</h3>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h3>List of backwards-incompatible config script changes</h3>
+</div>
+        <div class='difftype'>Changed lines 68-69 from:</div>
+        <div class='diffdel'><h3>Migration of custom scripts (Management Interface related)</h3>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h3>List of MI input/output changes</h3>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426161311-1426161241-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426161311:1426161241:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 12:54 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 39-41 from:</div>
+        <div class='diffdel'><h3>Script migration</h3>
+<p>(TODO)
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h3>OpenSIPS config script migration</h3>
+</div>
+        <div class='difftype'>Changed lines 68-71 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>
+</li></ul><div class='vspace'></div><h3>Migration of custom scripts (Management Interface related)</h3>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426161241-1426161001-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426161241:1426161001:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 12:50 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Deleted line 38:</div>
+        <div class='diffdel'><hr />
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426161001-1426160983-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426161001:1426160983:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 12:49 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added line 89:</div>
+        <div class='diffadd'><hr />
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426160983-1426160966-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426160983:1426160966:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 12:49 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added lines 86-87:</div>
+        <div class='diffadd'><p>\\
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426160966-1426160917-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426160966:1426160917:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 12:48 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 72-85 from:</div>
+        <div class='diffdel'><ul><li><em>cachedb_sql</em>, <strong>cachedb</strong> table - "PRIMARY KEY" attr added (f1fec17)
+</li><li><em>call_center</em>, <strong>cc_agents</strong> table - new "last_call_end" column (4b366c5)
+</li><li><em>call_center</em>, <strong>cc_calls</strong> table - NEW (2f6eb09)
+</li><li><em>dispatcher</em>, <strong>dispatcher</strong> table - new "priority" column (6dc7261)
+</li><li><em>msilo</em>, <strong>msilo</strong> table - DEFAULT "text/plain" removed (2e4b2d5)
+</li><li><em>siptrace</em>, <strong>siptrace</strong> table - from_ip|to_ip split into 6 columns (b746032)
+</li><li><em>pua</em>, <strong>pua</strong> table - new indexes added (59061f1)
+</li><li><em>domain</em>, <strong>domain</strong> table - attributes support (57ec0f3)
+</li><li><em>drouting</em>, <strong>dr_partitions</strong> table - NEW (c664d40)
+</li><li><em>dialplan</em>, <strong>dialplan</strong> table - NEW timerec column (e71485f)
+</li><li><em>fraud_detection</em>, <strong>fraud_detection</strong> table - NEW (f8a72e8)
+</li><li><em>registrar</em>, <strong>aliases</strong> table - various column property changes (1572ed0)
+</li><li><em>acc</em>, <strong>acc</strong> table - NEW columns: "created" and "setuptime" (94cf5dd)
+</li><li><em>msilo</em>, <strong>msilo</strong> table - "NULL" attribute added (e02a004)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><em>cachedb_sql</em>, <strong>cachedb</strong> table - "PRIMARY KEY" attr added (f1fec17)
+</li><li><em>call_center</em>, <strong>cc_agents</strong> table - new "last_call_end" column (4b366c5)
+</li><li><em>call_center</em>, <strong>cc_calls</strong> table - NEW (2f6eb09)
+</li><li><em>dispatcher</em>, <strong>dispatcher</strong> table - new "priority" column (6dc7261)
+</li><li><em>msilo</em>, <strong>msilo</strong> table - DEFAULT "text/plain" removed (2e4b2d5)
+</li><li><em>siptrace</em>, <strong>siptrace</strong> table - from_ip|to_ip split into 6 columns (b746032)
+</li><li><em>pua</em>, <strong>pua</strong> table - new indexes added (59061f1)
+</li><li><em>domain</em>, <strong>domain</strong> table - attributes support (57ec0f3)
+</li><li><em>drouting</em>, <strong>dr_partitions</strong> table - NEW (c664d40)
+</li><li><em>dialplan</em>, <strong>dialplan</strong> table - NEW timerec column (e71485f)
+</li><li><em>fraud_detection</em>, <strong>fraud_detection</strong> table - NEW (f8a72e8)
+</li><li><em>registrar</em>, <strong>aliases</strong> table - various column property changes (1572ed0)
+</li><li><em>acc</em>, <strong>acc</strong> table - NEW columns: "created" and "setuptime" (94cf5dd)
+</li><li><em>msilo</em>, <strong>msilo</strong> table - "NULL" attribute added (e02a004)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426160917-1426160818-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426160917:1426160818:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 12:46 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 75 from:</div>
+        <div class='diffdel'><ul><li><em>dispatcher</em>, <em>dispatcher</em> table - new "priority" column (6dc7261)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><em>dispatcher</em>, <strong>dispatcher</strong> table - new "priority" column (6dc7261)
+</li></ul>
+</div>
+        <div class='difftype'>Changed lines 78-85 from:</div>
+        <div class='diffdel'><ul><li>'''pua table new indexes added: (59061f1)
+</li><li>'''domain: attributes support (57ec0f3)
+</li><li>'''drouting: dr_partitions table added (c664d40)
+</li><li>'''dialplan : new timerec column (e71485f)
+</li><li>'''fraud_detection: new table (f8a72e8)
+</li><li>'''aliases table: various column property changes (1572ed0)
+</li><li>'''acc: new columns - "created" and "setuptime" (94cf5dd)
+</li><li>'''msilo "NULL" attribute added (e02a004)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><em>pua</em>, <strong>pua</strong> table - new indexes added (59061f1)
+</li><li><em>domain</em>, <strong>domain</strong> table - attributes support (57ec0f3)
+</li><li><em>drouting</em>, <strong>dr_partitions</strong> table - NEW (c664d40)
+</li><li><em>dialplan</em>, <strong>dialplan</strong> table - NEW timerec column (e71485f)
+</li><li><em>fraud_detection</em>, <strong>fraud_detection</strong> table - NEW (f8a72e8)
+</li><li><em>registrar</em>, <strong>aliases</strong> table - various column property changes (1572ed0)
+</li><li><em>acc</em>, <strong>acc</strong> table - NEW columns: "created" and "setuptime" (94cf5dd)
+</li><li><em>msilo</em>, <strong>msilo</strong> table - "NULL" attribute added (e02a004)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426160818-1426160404-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426160818:1426160404:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 12:40 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 71-90 from:</div>
+        <div class='diffdel'><h3>List of dbschema changes</h3>
+<ul><li>cachedb_sql "PRIMARY KEY" attr added (f1fec17)
+</li><li>call_center - new "last_call_end" column (4b366c5)
+</li><li>call_center - add "cc_calls" table (2f6eb09)
+</li><li>dispatcher - new "priority" column (6dc7261)
+</li><li>msilo DEFAULT "text/plain" removed (2e4b2d5)
+</li><li>siptrace: from_ip|to_ip -&gt; split into 6 columns (b746032)
+</li><li>pua table new indexes added: (59061f1)
+</li><li>domain: attributes support (57ec0f3)
+</li><li>drouting: dr_partitions table added (c664d40)
+</li><li>dialplan : new timerec column (e71485f)
+</li><li>fraud_detection: new table (f8a72e8)
+</li><li>aliases table: various column property changes (1572ed0)
+</li><li>acc: new columns - "created" and "setuptime" (94cf5dd)
+</li><li>msilo "NULL" attribute added (e02a004)
+</li><li>
+</li><li>
+</li><li>
+</li><li>
+</li><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h3>List of DB changes</h3>
+<ul><li><em>cachedb_sql</em>, <strong>cachedb</strong> table - "PRIMARY KEY" attr added (f1fec17)
+</li><li><em>call_center</em>, <strong>cc_agents</strong> table - new "last_call_end" column (4b366c5)
+</li><li><em>call_center</em>, <strong>cc_calls</strong> table - NEW (2f6eb09)
+</li><li><em>dispatcher</em>, <em>dispatcher</em> table - new "priority" column (6dc7261)
+</li><li><em>msilo</em>, <strong>msilo</strong> table - DEFAULT "text/plain" removed (2e4b2d5)
+</li><li><em>siptrace</em>, <strong>siptrace</strong> table - from_ip|to_ip split into 6 columns (b746032)
+</li><li>'''pua table new indexes added: (59061f1)
+</li><li>'''domain: attributes support (57ec0f3)
+</li><li>'''drouting: dr_partitions table added (c664d40)
+</li><li>'''dialplan : new timerec column (e71485f)
+</li><li>'''fraud_detection: new table (f8a72e8)
+</li><li>'''aliases table: various column property changes (1572ed0)
+</li><li>'''acc: new columns - "created" and "setuptime" (94cf5dd)
+</li><li>'''msilo "NULL" attribute added (e02a004)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426160404-1426159657-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426160404:1426159657:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 12:27 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Deleted lines 37-38:</div>
+        <div class='diffdel'><p>\\
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426159657-1426159642-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426159657:1426159642:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 12:27 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Deleted lines 40-41:</div>
+        <div class='diffdel'><p>(:toc-back Back to Table of Contents:)
+</p>
+</div>
+        <div class='difftype'>Changed lines 92-94 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>
+</li></ul><p class='vspace'>(:toc-back Back to Table of Contents:)
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426159642-1426159605-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426159642:1426159605:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 12:26 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 33-34 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><br />
+</p>
+</div>
+        <div class='difftype'>Added lines 38-39:</div>
+        <div class='diffadd'><p>\\
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426159605-1426159584-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426159605:1426159584:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 12:26 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added line 36:</div>
+        <div class='diffadd'><p>In order to migrate other SQL backends, the complete list of structural changes may be found below. However, if possible, we recommend re-creating the databases from scratch using the <a class='wikilink' title='Database Deployment - devel' href="Install-DBDeployment-2-1.htm" tppabs="http://www.opensips.org/Documentation/Install-DBDeployment-2-1">DB deployment tutorial</a>.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426159584-1426158523-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426159584:1426158523:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 12:08 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 34 from:</div>
+        <div class='diffdel'><p><span  style='color: red;'> NOTE that the migration tool is available only for MYSQL databases! </span>
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><span  style='color: red;'> NOTE that the migration tool is only available for MYSQL databases! </span>
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426158523-1426158237-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426158523:1426158237:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 12:03 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 14 from:</div>
+        <div class='diffdel'><p>For MySQL users, you can easily migrate your 1.11.x OpenSIPS databases to the 2.1.0 format with the <strong>opensipsdbctl</strong> tool:
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>For MySQL users, you can easily migrate your 1.11.x OpenSIPS databases to the 2.1.0 format with the <strong>opensipsdbctl</strong> tool (TODO: code this!):
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426158237-1426158067-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426158237:1426158067:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 12:01 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 6-7 from:</div>
+        <div class='diffdel'><p>......................................................................................... <strong>TODO</strong> ..............................................................
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><span  style='color: red;'>......................................................................................... <strong>TODO</strong> ..............................................................</span>
+</p>
+</div>
+        <div class='difftype'>Changed line 16 from:</div>
+        <div class='diffdel'><pre>   # opensipsdbctl migrate opensips_1_10 opensips_1_11
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>   # opensipsdbctl migrate opensips_1_11 opensips_2_1
+</pre>
+</div>
+        <div class='difftype'>Changed line 19 from:</div>
+        <div class='diffdel'><pre>   &gt; migrate opensips_1_10 opensips_1_11
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>   &gt; migrate opensips_1_11 opensips_2_1
+</pre>
+</div>
+        <div class='difftype'>Changed lines 23-25 from:</div>
+        <div class='diffdel'><p>where :
+</p><ul><li>opensips_1_10 is the existing DB name corresponding to version 1.10.x format
+</li><li>opensips_1_11 is the DB name to be created for 1.11 format
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>where:
+</p><ul><li><em>opensips_1_11</em> is the existing DB name corresponding to version 1.11.x format
+</li><li><em>opensips_2_1</em> is the DB name to be created for 2.1 format
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426158067:1426157959:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426158067:1426157959:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426158067:1426157959:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 11:59 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added lines 5-6:</div>
+        <div class='diffadd'><p>......................................................................................... <strong>TODO</strong> ..............................................................
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426157959-1426157879-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426157959:1426157879:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 11:57 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 6-8 from:</div>
+        <div class='diffdel'><p>This section is meant to provide useful help in migrating your OpenSIPS installations from the <strong>1.10</strong> version to <strong>1.11</strong>.
+</p>
+<p class='vspace'>You can find the all the new additions in the <strong>1.11.0</strong> release compiled <a class='wikilink' title='Version-1-11-0' href="javascript:if(confirm(%27http://www.opensips.org/About/Version-1-11-0  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/Version-1-11-0%27" tppabs="http://www.opensips.org/About/Version-1-11-0">under this page</a>. The changelog may help your understanding of the migration / update process.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>This section is meant to provide useful help in migrating your OpenSIPS installations from the <strong>1.11</strong> version to the latest <strong>2.1</strong> release.
+</p>
+<p class='vspace'>You can find the all the new additions compiled in the <strong>2.1.0</strong> <a class='wikilink' title='Version-2-1-0' href="javascript:if(confirm(%27http://www.opensips.org/About/Version-2-1-0  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/Version-2-1-0%27" tppabs="http://www.opensips.org/About/Version-2-1-0">release page</a>. The changelog may improve your understanding of the migration / update process.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426157879:1426157767:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426157879:1426157767:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426157879:1426157767:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 11:56 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added lines 5-38:</div>
+        <div class='diffadd'><p>This section is meant to provide useful help in migrating your OpenSIPS installations from the <strong>1.10</strong> version to <strong>1.11</strong>.
+</p>
+<p class='vspace'>You can find the all the new additions in the <strong>1.11.0</strong> release compiled <a class='wikilink' title='Version-1-11-0' href="javascript:if(confirm(%27http://www.opensips.org/About/Version-1-11-0  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/Version-1-11-0%27" tppabs="http://www.opensips.org/About/Version-1-11-0">under this page</a>. The changelog may help your understanding of the migration / update process.
+</p>
+<div class='vspace'></div><hr />
+<h3>DB migration</h3>
+<p>For MySQL users, you can easily migrate your 1.11.x OpenSIPS databases to the 2.1.0 format with the <strong>opensipsdbctl</strong> tool:
+</p><pre class='escaped'>
+   # opensipsdbctl migrate opensips_1_10 opensips_1_11
+   or
+   # osipsconsole 
+   &gt; migrate opensips_1_10 opensips_1_11
+   &gt; quit
+   # 
+</pre>
+<p>where :
+</p><ul><li>opensips_1_10 is the existing DB name corresponding to version 1.10.x format
+</li><li>opensips_1_11 is the DB name to be created for 1.11 format
+</li></ul><p class='vspace'>NOTE:
+</p><ul><li>the old database will not be deleted, altered or changed - it will not be touched at all
+</li><li>new database will be created and data from old DB will be imported into it
+</li></ul><p class='vspace'><span  style='color: red;'> NOTE that the migration tool is available only for MYSQL databases! </span>
+</p>
+<p class='vspace'>(:toc-back Back to Table of Contents:)
+</p>
+<div class='vspace'></div><hr />
+<h3>Script migration</h3>
+<p>(TODO)
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426157767-1426094445-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426157767:1426094445:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 06:20 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Deleted line 26:</div>
+        <div class='diffdel'><ul><li>acc: new columns - "created" and "setuptime" (94cf5dd)
+</li></ul>
+</div>
+        <div class='difftype'>Added line 47:</div>
+        <div class='diffadd'><ul><li>acc: new columns - "created" and "setuptime" (94cf5dd)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426094445-1426093678-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426094445:1426093678:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 06:07 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 14 from:</div>
+        <div class='diffdel'><ul><li><span class='redMI output structure changed and'>%</span>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><span  style='color: red;'>MI output structure changed: (34576f5 and 459dffb)</span>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426093678:1426093661:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426093678:1426093661:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426093678:1426093661:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 06:07 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 14-15 from:</div>
+        <div class='diffdel'><ul><li>%redMI output structure changed: (34576f5 and 459dffb)
+</li><li>MI output change: "opensipsctl fifo dp_translate" now returns "404 - No translation" (f517529)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><span class='redMI output structure changed and'>%</span>
+</li><li>MI output change: "opensipsctl fifo dp_translate" now returns "404 - No translation" (f517529)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426093661-1426093649-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426093661:1426093649:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 06:07 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 14-15 from:</div>
+        <div class='diffdel'><ul><li>MI output structure changed: (34576f5 and 459dffb)
+</li><li>MI output change: "opensipsctl fifo dp_translate" now returns "404 - No translation" (f517529)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>%redMI output structure changed: (34576f5 and 459dffb)
+</li><li>MI output change: "opensipsctl fifo dp_translate" now returns "404 - No translation" (f517529)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426093649-1426093317-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426093649:1426093317:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 06:01 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426093317:1426093007:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426093317:1426093007:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426093317:1426093007:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 05:56 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added line 30:</div>
+        <div class='diffadd'><ul><li>json : $json will be set to NULL if parsing fails (8dfe15e3ce)
+</li></ul>
+</div>
+        <div class='difftype'>Changed line 33 from:</div>
+        <div class='diffdel'><ul><li>json : $json will be set to NULL if parsing fails (8dfe15e3ce)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426093007-1426092541-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426093007:1426092541:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 05:49 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 29 from:</div>
+        <div class='diffdel'><ul><li>Contact Header : OpenSIPS no longer supports a "Contact: &lt;&gt;\r\n" header - imposed by RFC (608de67)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>Contact Header : OpenSIPS 2.1 no longer supports this syntax: "Contact: &lt;&gt;\r\n", as imposed by RFC3261 (608de67)
+</li></ul>
+</div>
+        <div class='difftype'>Changed line 52 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426092541-1426092490-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426092541:1426092490:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 05:48 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added line 29:</div>
+        <div class='diffadd'><ul><li>Contact Header : OpenSIPS no longer supports a "Contact: &lt;&gt;\r\n" header - imposed by RFC (608de67)
+</li></ul>
+</div>
+        <div class='difftype'>Deleted line 31:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>Changed line 52 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426092490-1426092335-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426092490:1426092335:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 05:45 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 28 from:</div>
+        <div class='diffdel'><ul><li><span  style='color: red;'>all tcp_ and tls_ timeouts are now given in milliseconds, instead of seconds</span>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><span  style='color: red;'>all tcp_ and tls_ global timeout parameters are now given in milliseconds, instead of seconds</span>
+</li></ul>
+</div>
+        <div class='difftype'>Changed line 52 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426092335-1426092312-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426092335:1426092312:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 05:45 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 28 from:</div>
+        <div class='diffdel'><ul><li><span  style='color: red;'>asdasdasdasd</span>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><span  style='color: red;'>all tcp_ and tls_ timeouts are now given in milliseconds, instead of seconds</span>
+</li></ul>
+</div>
+        <div class='difftype'>Changed line 52 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426092312-1426092274-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426092312:1426092274:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 05:44 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added line 28:</div>
+        <div class='diffadd'><ul><li><span  style='color: red;'>asdasdasdasd</span>
+</li></ul>
+</div>
+        <div class='difftype'>Deleted line 31:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>Changed line 52 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426092274:1426091707:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426092274:1426091707:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426092274:1426091707:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 05:35 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added line 27:</div>
+        <div class='diffadd'><ul><li>acc: new columns - "created" and "setuptime" (94cf5dd)
+</li></ul>
+</div>
+        <div class='difftype'>Deleted line 31:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>Changed line 52 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426091707-1426091266-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426091707:1426091266:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 05:27 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added lines 26-31:</div>
+        <div class='diffadd'><ul><li>MI output change: "opensipsctl ul show" output aligned to default JSON format (e8101df + eaa5f1a)
+</li><li>
+</li><li>
+</li><li>
+</li><li>
+</li><li>
+</li></ul>
+</div>
+        <div class='difftype'>Changed line 52 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426091266-1426091077-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426091266:1426091077:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 05:24 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 25 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>dialog : OpenSIPS no longer starts if dialog fails to establish an SQL DB connection (e2c77e4)
+</li></ul>
+</div>
+        <div class='difftype'>Deleted line 46:</div>
+        <div class='diffdel'></div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426091077-1426090475-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426091077:1426090475:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 05:14 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 24 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>obsolete modules: mi_xmlrpc, auth_diameter, closeddial (d6c14c2)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426090475-1426089689-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426090475:1426089689:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 05:01 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 23 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>mi_xmlrpc_ng: default root path changed from "xmlrpc" to "RPC2" (e93a98b)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426089689-1426086687-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426089689:1426086687:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 04:11 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Deleted line 28:</div>
+        <div class='diffdel'><ul><li>msilo "NOT NULL" attribute removed (5c790aa)
+</li></ul>
+</div>
+        <div class='difftype'>Changed line 41 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>msilo "NULL" attribute added (e02a004)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426086687-1426086547-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426086687:1426086547:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 04:09 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added line 22:</div>
+        <div class='diffadd'><ul><li>removed SSLv2 and SSLv3 support (4c56d98 and 06f9025)
+</li></ul>
+</div>
+        <div class='difftype'>Deleted line 25:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>Deleted line 47:</div>
+        <div class='diffdel'></div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426086547-1426085806-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426086547:1426085806:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 03:56 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added lines 43-48:</div>
+        <div class='diffadd'><ul><li>
+</li><li>
+</li><li>
+</li><li>
+</li><li>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426085806-1426085797-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426085806:1426085797:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 03:56 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 40 from:</div>
+        <div class='diffdel'><ul><li>fraud_detection table (f8a72e8)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>fraud_detection: new table (f8a72e8)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426085797-1426085786-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426085797:1426085786:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 03:56 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 41 from:</div>
+        <div class='diffdel'><ul><li>aliases: various column property changes (1572ed0)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>aliases table: various column property changes (1572ed0)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426085786-1426085778-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426085786:1426085778:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 03:56 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 41 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>aliases: various column property changes (1572ed0)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426085778:1426084242:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426085778:1426084242:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426085778:1426084242:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 03:30 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 40 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>fraud_detection table (f8a72e8)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426084242:1426083055:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426084242:1426083055:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426084242:1426083055:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 03:10 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 39 from:</div>
+        <div class='diffdel'><ul><li>dialplan : new timerec column; just migrate version table value (e71485f)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>dialplan : new timerec column (e71485f)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426083055-1426083046-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426083055:1426083046:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 03:10 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 39 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>dialplan : new timerec column; just migrate version table value (e71485f)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426083046-1426073764-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426083046:1426073764:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 12:36 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426073764-1426073744-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426073764:1426073744:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 12:35 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 38 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>drouting: dr_partitions table added (c664d40)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426073744-1426073355-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426073744:1426073355:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 12:29 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 37 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>domain: attributes support (57ec0f3)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426073355:1426073065:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426073355:1426073065:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426073355:1426073065:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 12:24 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 21 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>MI json : on invalid command, "{"error":"Internal server error"}" has been replaced with "{"error":"Command not found"}" (aaaf85c)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426073065-1426069878-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426073065:1426069878:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 11:31 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 36 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>pua table new indexes added: (59061f1)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426069878:1426002492:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426069878:1426002492:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426069878:1426002492:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 10, 2015, at 04:48 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added line 20:</div>
+        <div class='diffadd'><ul><li>script : variables can now be assigned NULL variables (5ebc1ef)
+</li></ul>
+</div>
+        <div class='difftype'>Deleted line 25:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>Deleted line 42:</div>
+        <div class='diffdel'></div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426002492:1426002381:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426002492:1426002381:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426002492:1426002381:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 10, 2015, at 04:46 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 19 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>make: default prefix changed to "/usr/local" from "/usr" (84cfab2)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426002381:1426001183:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426002381:1426001183:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426002381:1426001183:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 10, 2015, at 04:26 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 35 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>siptrace: from_ip|to_ip -&gt; split into 6 columns (b746032)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426001183-1426000871-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426001183:1426000871:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 10, 2015, at 04:21 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 18 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>MI output change: "opensipsctl fifo dr_gw_status" changed from "Enabled : yes/no" to "State : Disabled MI / Probing / Inactive / Active (3866e35)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426000871-1426000033-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426000871:1426000033:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 10, 2015, at 04:07 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added line 17:</div>
+        <div class='diffadd'><ul><li>MI output change: "opensipsctl fifo ds_list" state instead of flags (45afa00)
+</li></ul>
+</div>
+        <div class='difftype'>Added lines 20-25:</div>
+        <div class='diffadd'><ul><li>
+</li><li>
+</li><li>
+</li><li>
+</li><li>
+</li><li>
+</li></ul>
+</div>
+        <div class='difftype'>Deleted line 42:</div>
+        <div class='diffdel'></div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1426000033-1425999306-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1426000033:1425999306:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 10, 2015, at 03:55 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 16 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>MI output change: "opensipsctl fifo rtpproxy_show" structure change (213e777)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1425999306-1425998901-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1425999306:1425998901:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 10, 2015, at 03:48 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 27-38 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>msilo DEFAULT "text/plain" removed (2e4b2d5)
+</li><li>
+</li><li>
+</li><li>
+</li><li>
+</li><li>
+</li><li>
+</li><li>
+</li><li>
+</li></ul><div class='vspace'></div>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1425998901-1425998525-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1425998901:1425998525:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 10, 2015, at 03:42 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added line 15:</div>
+        <div class='diffadd'><ul><li>MI output change: "opensipsctl fifo dp_translate" now returns "404 - No translation" (f517529)
+</li></ul>
+</div>
+        <div class='difftype'>Deleted line 18:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>Changed line 27 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1425998525-1425998380-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1425998525:1425998380:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 10, 2015, at 03:39 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 27 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1425998380-1425998375-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1425998380:1425998375:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 10, 2015, at 03:39 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 26-27 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>dispatcher - new "priority" column (6dc7261)
+</li><li>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1425998375:1425995747:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1425998375:1425995747:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1425998375:1425995747:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 10, 2015, at 02:55 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 14 from:</div>
+        <div class='diffdel'><ul><li>MI output structure changed: (34576f5)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>MI output structure changed: (34576f5 and 459dffb)
+</li></ul>
+</div>
+        <div class='difftype'>Changed line 26 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1425995747-1425995637-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1425995747:1425995637:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 10, 2015, at 02:53 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 14 from:</div>
+        <div class='diffdel'><ul><li>MI structure changed: (34576f5)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>MI output structure changed: (34576f5)
+</li></ul>
+</div>
+        <div class='difftype'>Changed line 26 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1425995637:1425995632:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1425995637:1425995632:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1425995637:1425995632:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 10, 2015, at 02:53 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 26 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1425995632-1425995628-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1425995632:1425995628:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 10, 2015, at 02:53 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added line 14:</div>
+        <div class='diffadd'><ul><li>MI structure changed: (34576f5)
+</li></ul>
+</div>
+        <div class='difftype'>Added lines 16-18:</div>
+        <div class='diffadd'><ul><li>
+</li><li>
+</li><li>
+</li></ul>
+</div>
+        <div class='difftype'>Changed lines 25-26 from:</div>
+        <div class='diffdel'><ul><li>call_center - add "cc_calls" table (2f6eb09)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>call_center - add "cc_calls" table (2f6eb09)
+</li><li>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1425995628-1425993178-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1425995628:1425993178:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 10, 2015, at 02:12 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 18-21 from:</div>
+        <div class='diffdel'><ul><li>msilo "NOT NULL" attribute removed: 5c790aa
+</li><li>cachedb_sql "PRIMARY KEY" attr added: f1fec17
+</li><li>call_center - new "last_call_end" column: 4b366c5
+</li><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>msilo "NOT NULL" attribute removed (5c790aa)
+</li><li>cachedb_sql "PRIMARY KEY" attr added (f1fec17)
+</li><li>call_center - new "last_call_end" column (4b366c5)
+</li><li>call_center - add "cc_calls" table (2f6eb09)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1425993178-1425992994-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1425993178:1425992994:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 10, 2015, at 02:09 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 20-21 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>call_center - new "last_call_end" column: 4b366c5
+</li><li>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1425992994-1425992225-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1425992994:1425992225:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 10, 2015, at 01:57 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 12-13 from:</div>
+        <div class='diffdel'><ul><li>memcached driver bugfix: get() operations no longer create counters in case they do not exist (47cd18c)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>Memcached NoSQL driver bugfix: get() operations no longer create counters in case they do not exist (47cd18c)
+</li><li>Couchbase NoSQL driver bugfix: get() operations no longer create counters in case they do not exist (67023e9)
+</li></ul>
+</div>
+        <div class='difftype'>Changed line 20 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1425992225-1425991920-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1425992225:1425991920:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 10, 2015, at 01:52 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added line 12:</div>
+        <div class='diffadd'><ul><li>memcached driver bugfix: get() operations no longer create counters in case they do not exist (47cd18c)
+</li></ul>
+</div>
+        <div class='difftype'>Deleted line 13:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>Changed line 19 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1425991920-1425991774-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1425991920:1425991774:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 10, 2015, at 01:49 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 18-19 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>cachedb_sql "PRIMARY KEY" attr added: f1fec17
+</li><li>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1425991774-1425991034-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1425991774:1425991034:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 10, 2015, at 01:37 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 11 from:</div>
+        <div class='diffdel'><ul><li>F
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>Advertised address with mutiple branches: if the advertised address of the first branch is changed, all new branches will start off with the changed value (ad92fa6)
+</li></ul>
+</div>
+        <div class='difftype'>Changed line 18 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1425991034-1425989544-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1425991034:1425989544:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 10, 2015, at 01:12 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 17-18 from:</div>
+        <div class='diffdel'><ul><li>"NOT NULL" attribute removed: 5c790aa
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>msilo "NOT NULL" attribute removed: 5c790aa
+</li><li>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1425989544-1425989524-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1425989544:1425989524:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 10, 2015, at 01:12 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Deleted line 6:</div>
+        <div class='diffdel'><ul><li>json : $json will be set to NULL if parsing fails (8dfe15e3ce)
+</li></ul>
+</div>
+        <div class='difftype'>Added lines 10-11:</div>
+        <div class='diffadd'><ul><li>Fix acc_evi_request() : now works properly (24bd3a8)
+</li><li>F
+</li></ul>
+</div>
+        <div class='difftype'>Added lines 13-17:</div>
+        <div class='diffadd'><ul><li>
+</li><li>json : $json will be set to NULL if parsing fails (8dfe15e3ce)
+</li></ul><div class='vspace'></div><h3>List of dbschema changes</h3>
+<ul><li>"NOT NULL" attribute removed: 5c790aa
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1425989524-1425987279-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1425989524:1425987279:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 10, 2015, at 12:34 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1425987279-1425987254-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1425987279:1425987254:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 10, 2015, at 12:34 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 10 from:</div>
+        <div class='diffdel'><ul><li>MI t_uac fix: force_send_socket() operations done in local_route are now working (d37ae66)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>Fix SIP request generation: "opensips fifo t_uac_dlg" and the script t_new_request() function now properly handle any force_send_socket() operation done inside the local_route (d37ae66)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1425987254-1425987007-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1425987254:1425987007:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 10, 2015, at 12:30 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 10-11 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>MI t_uac fix: force_send_socket() operations done in local_route are now working (d37ae66)
+</li><li>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1425987007-1425985843-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1425987007:1425985843:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 10, 2015, at 12:10 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 8-9 from:</div>
+        <div class='diffdel'><ul><li>MI format : Timeout is human-readable instead of UNIX timestamp in "opensipsctl fifo list_tcp_conns" (6ac1dc8251)
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>MI format : "Timeout" field is now a human-readable date instead of UNIX timestamp in "opensipsctl fifo list_tcp_conns" (6ac1dc8251)
+</li><li>MI format : "expires" field is now a human-readable date instead of UNIX timestamp in "opensipsctl fifo subs_phtable_list" (ddaf004)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1425985843-1425985704-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1425985843:1425985704:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 10, 2015, at 12:08 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added line 8:</div>
+        <div class='diffadd'><ul><li>MI format : Timeout is human-readable instead of UNIX timestamp in "opensipsctl fifo list_tcp_conns" (6ac1dc8251)
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1425985704-1425574918-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1425985704:1425574918:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 05, 2015, at 06:01 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added lines 1-9:</div>
+        <div class='diffadd'><h5>Documentation -&gt; <a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Migration</a> -&gt; Migration from 1.11.x to 2.1.0</h5>
+<p>This page has been visited 1506 times.
+(:toc-float Table of Content:)
+</p><hr />
+<div class='vspace'></div><h3>List of backwards-incompatible changes</h3>
+<ul><li>json : $json will be set to NULL if parsing fails (8dfe15e3ce)
+</li></ul><div class='vspace'></div>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-11-0-to-2-1-0-action=edit&restore=diff-1425574918-1425574918-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit&restore=diff:1425574918:1425574918:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Migration-1-11-0-to-2-1-0-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit">Edit</a> |
+      <a rel="nofollow" href="Migration-1-11-0-to-2-1-0-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=diff">History</a> |
+      <a rel="nofollow" href="Migration-1-11-0-to-2-1-0-action=print.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on August 25, 2015, at 06:43 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

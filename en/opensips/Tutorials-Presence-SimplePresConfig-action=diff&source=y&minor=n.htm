@@ -1,0 +1,479 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Tutorials-Presence-SimplePresConfig | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Tutorials-Presence-SimplePresConfig' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Tutorials-Presence-SimplePresConfig History</h2>
+  <p><a href="Tutorials-Presence-SimplePresConfig-action=diff&source=y&minor=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-SimplePresConfig?action=diff&source=y&minor=y">Show minor edits</a> - <a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-Presence-SimplePresConfig?action=diff&source=n&minor=n  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-Presence-SimplePresConfig?action=diff&source=n&minor=n%27" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-SimplePresConfig?action=diff&source=n&minor=n">Show changes to output</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>December 10, 2014, at 01:18 PM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Added line 63:</div>
+        <div class='diffadd'><div class='diffmarkup'>modparam(&quot;presence_xml&quot;, &quot;force_active&quot;, 1)</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-Presence-SimplePresConfig-action=edit&restore=diff-1418213939-1412856446-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-SimplePresConfig?action=edit&restore=diff:1418213939:1412856446:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>October 09, 2014, at 02:07 PM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Changed lines 41-43 from:</div>
+        <div class='diffdel'><div class='diffmarkup'></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>loadmodule &quot;presence_xml.so&quot;<br />loadmodule &quot;xcap.so&quot;<br /></div></div>
+        <div class='difftype'>Changed line 61 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>modparam(&quot;presence&quot;,&quot;db_url&quot;,&quot;mysql://opensips:opensipsrw@localhost/opensips&quot;)</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>modparam(&quot;presence|xcap&quot;,&quot;db_url&quot;,&quot;mysql://opensips:opensipsrw@localhost/opensips&quot;)</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-Presence-SimplePresConfig-action=edit&restore=diff-1412856446-1412855524-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-SimplePresConfig?action=edit&restore=diff:1412856446:1412855524:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>October 09, 2014, at 01:52 PM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Changed lines 41-42 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>loadmodule &quot;presence_xml.so&quot;<br /></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'></div></div>
+        <div class='difftype'>Changed line 59 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>modparam(&quot;presence|presence_xml&quot;,&quot;db_url&quot;,&quot;mysql://opensips:opensipsrw@localhost/opensips&quot;)</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>modparam(&quot;presence&quot;,&quot;db_url&quot;,&quot;mysql://opensips:opensipsrw@localhost/opensips&quot;)</div></div>
+        <div class='difftype'>Deleted line 60:</div>
+        <div class='diffdel'><div class='diffmarkup'>modparam(&quot;presence_xml&quot;,&quot;force_active&quot;,1)</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-Presence-SimplePresConfig-action=edit&restore=diff-1412855524-1404303871-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-SimplePresConfig?action=edit&restore=diff:1412855524:1404303871:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>July 02, 2014, at 02:24 PM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Changed lines 1-2 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>[[ Documentation/Tutorials-Presence-PresenceServer#configuration#configuration | &lt;- Back]]<br />[++[@</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>!!!!! Documentation -&gt; [[Documentation.Tutorials | Tutorials ]] -&gt; [[Documentation/Tutorials-Presence | Presence]] -&gt; [[Documentation/Tutorials-Presence-PresenceServer#configuration#configuration|Presence Server]] -&gt; Presence Server config file<br />----<br /><br />\\<br /><br />[@</div></div>
+        <div class='difftype'>Added line 8:</div>
+        <div class='diffadd'><div class='diffmarkup'># OpenSIPS 1.11.x configuration file</div></div>
+        <div class='difftype'>Changed line 10 from:</div>
+        <div class='diffdel'><div class='diffmarkup'># OpenSIPS Presence Server without permission rules quick-start config script</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'># SIP Presence Server</div></div>
+        <div class='difftype'>Changed line 12 from:</div>
+        <div class='diffdel'><div class='diffmarkup'> </div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'></div></div>
+        <div class='difftype'>Changed lines 14-22 from:</div>
+        <div class='diffdel'><div class='diffmarkup'> <br />/* Uncomment these lines to enter debugging mode */ <br />debug=7            # debug level (cmd line: -dddddddddd)<br />fork=no<br />log_stderror=yes<br /> <br />check_via=no	# (cmd. line: -v)<br />dns=no          # (cmd. line: -r)<br />rev_dns=no      # (cmd. line: -R)</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'><br />debug=3<br />fork=yes<br />log_stderror=no<br /><br />check_via=no<br />dns=no<br />rev_dns=no<br /></div></div>
+        <div class='difftype'>Changed lines 24-25 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>children=4<br /> </div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>children=2<br /></div></div>
+        <div class='difftype'>Changed lines 27-29 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>mpath=&quot;/usr/local/lib/opensips/modules/&quot;<br /> <br /></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>mpath=&quot;/usr/local/opensips/lib/modules/&quot;<br /></div></div>
+        <div class='difftype'>Added lines 31-32:</div>
+        <div class='diffadd'><div class='diffmarkup'>loadmodule &quot;signaling.so&quot;<br />loadmodule &quot;tm.so&quot;</div></div>
+        <div class='difftype'>Deleted line 35:</div>
+        <div class='diffdel'><div class='diffmarkup'>loadmodule &quot;tm.so&quot;</div></div>
+        <div class='difftype'>Added lines 37-39:</div>
+        <div class='diffadd'><div class='diffmarkup'>loadmodule &quot;mi_fifo.so&quot;<br />loadmodule &quot;usrloc.so&quot;<br />loadmodule &quot;registrar.so&quot;</div></div>
+        <div class='difftype'>Changed lines 42-46 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>loadmodule &quot;usrloc.so&quot;<br />loadmodule &quot;registrar.so&quot;<br />loadmodule &quot;mi_fifo.so&quot;<br />loadmodule &quot;signaling.so&quot; <br /> </div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'></div></div>
+        <div class='difftype'>Deleted line 43:</div>
+        <div class='diffdel'><div class='diffmarkup'># db_mysql.so must be loaded !</div></div>
+        <div class='difftype'>Changed line 46 from:</div>
+        <div class='diffdel'><div class='diffmarkup'> </div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'></div></div>
+        <div class='difftype'>Changed lines 48-49 from:</div>
+        <div class='diffdel'><div class='diffmarkup'> </div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>modparam(&quot;mi_fifo&quot;,&quot;fifo_name&quot;,&quot;/tmp/opensips_fifo&quot;)<br /></div></div>
+        <div class='difftype'>Changed lines 51-55 from:</div>
+        <div class='diffdel'><div class='diffmarkup'># Uncomment this if you want to use SQL database <br /># for persistent storage and comment the previous line<br />modparam(&quot;usrloc&quot;, &quot;db_mode&quot;, 2)<br />modparam(&quot;usrloc&quot;, &quot;db_url&quot;, &quot;mysql://opensips:opensipsrw@127.0.0.1/opensips&quot;)<br /> </div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>modparam(&quot;usrloc&quot;,&quot;db_mode&quot;,2)<br />modparam(&quot;usrloc&quot;,&quot;db_url&quot;,&quot;mysql://opensips:opensipsrw@localhost/opensips&quot;)<br /></div></div>
+        <div class='difftype'>Deleted lines 56-57:</div>
+        <div class='diffdel'><div class='diffmarkup'># If you set &quot;calculate_ha1&quot; parameter to yes (which true in this config), <br /># uncomment also the following parameter)</div></div>
+        <div class='difftype'>Changed lines 58-61 from:</div>
+        <div class='diffdel'><div class='diffmarkup'> <br /># -- mi_fifo params --<br />modparam(&quot;mi_fifo&quot;,&quot;fifo_name&quot;, &quot;/tmp/opensips_fifo&quot;)<br /></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'></div></div>
+        <div class='difftype'>Changed lines 60-64 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>modparam(&quot;presence|presence_xml&quot;, &quot;db_url&quot;, &quot;mysql://opensips:opensipsrw@127.0.0.1/opensips&quot;)<br />modparam(&quot;presence&quot;, &quot;server_address&quot;, &quot;sip:sa@10.10.10.10:5060&quot; )<br />modparam(&quot;presence_xml&quot;, &quot;force_active&quot;, 1)<br /> <br /> </div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>modparam(&quot;presence|presence_xml&quot;,&quot;db_url&quot;,&quot;mysql://opensips:opensipsrw@localhost/opensips&quot;)<br />modparam(&quot;presence&quot;,&quot;server_address&quot;,&quot;sip:sa@10.10.10.10:5060&quot;)<br />modparam(&quot;presence_xml&quot;,&quot;force_active&quot;,1)<br /><br /></div></div>
+        <div class='difftype'>Changed line 66 from:</div>
+        <div class='diffdel'><div class='diffmarkup'> </div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'></div></div>
+        <div class='difftype'>Deleted line 67:</div>
+        <div class='diffdel'><div class='diffmarkup'> </div></div>
+        <div class='difftype'>Changed lines 69-70 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>	# initial sanity checks <br />	if (!mf_process_maxfwd_header(&quot;10&quot;)) {</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'><br />	# initial sanity checks<br />	if(!mf_process_maxfwd_header(&quot;10&quot;)) {</div></div>
+        <div class='difftype'>Changed lines 75-78 from:</div>
+        <div class='diffdel'><div class='diffmarkup'> <br /> 	if (has_totag()) {<br />		## sequential requests within a dialog should<br />		## take the path determined by record-routing</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'><br />	if (has_totag()) {<br />		# sequential requests within a dialog should<br />		# take the path determined by record-routing</div></div>
+        <div class='difftype'>Changed lines 80-82 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>			## route it out to whatever destination was set by loose_route()<br />			## in $du (destination URI).<br />			route(RELAY);</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>			# route it out to whatever destination was set by loose_route()<br />			# in $du (destination URI).<br />			route(relay);</div></div>
+        <div class='difftype'>Changed lines 84-88 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>			if ( is_method(&quot;ACK&quot;) ) {</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>			if (is_method(&quot;SUBSCRIBE&quot;) &amp;&amp; uri==myself) {<br />				# in-dialog subscribe requests<br />				route(handle_presence);<br />				exit;<br />			} else if ( is_method(&quot;ACK&quot;) ) {</div></div>
+        <div class='difftype'>Changed lines 90-91 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>					## non loose-route, but stateful ACK; must be an ACK after <br />					## a 487 or e.g. 404 from upstream server</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>					# non loose-route, but stateful ACK; must be an ACK after <br />					# a 487 or e.g. 404 from upstream server</div></div>
+        <div class='difftype'>Changed lines 95-96 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>					## ACK without matching transaction -&gt;<br />					## ignore and discard</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>					# ACK without matching transaction -&gt;<br />					# ignore and discard</div></div>
+        <div class='difftype'>Changed lines 114-130 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>	## record routing</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>	# authenticate if from local subscriber (uncomment to enable auth)<br />	# authenticate all initial non-REGISTER request that pretend to be<br />	# generated by local subscriber (domain from FROM URI is local)<br />	##if (!(method==&quot;REGISTER&quot;) &amp;&amp; from_uri==myself) {<br />	##  if (!proxy_authorize(&quot;&quot;, &quot;subscriber&quot;)) {<br />	##      proxy_challenge(&quot;&quot;, &quot;0&quot;);<br />	##      exit;<br />	##  }<br />	##  if (!db_check_from()) {<br />	##      send_reply(&quot;403&quot;,&quot;Forbidden auth ID&quot;);<br />	##      exit;<br />	##  }<br />	##<br />	##  consume_credentials();<br />	##}<br /><br />	# record routing</div></div>
+        <div class='difftype'>Changed lines 133-137 from:</div>
+        <div class='diffdel'><div class='diffmarkup'> <br />	if (!uri==myself) {<br />		# mark routing logic in request<br />		append_hf(&quot;P-hint: outbound\r\n&quot;); <br />		route(RELAY);</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'><br />	if (uri!=myself) {<br />		# routing to other SIP domains<br />		route(relay);</div></div>
+        <div class='difftype'>Changed lines 138-185 from:</div>
+        <div class='diffdel'><div class='diffmarkup'> <br />	## if the request is for other domain use UsrLoc<br />	## (in case, it does not work, use the following command<br />	## with proper names and addresses in it)<br />	if (uri==myself) {<br /> <br />		## presence handling<br />		if( is_method(&quot;PUBLISH|SUBSCRIBE&quot;))<br />			route(PRESENCE);<br /> <br />		if ( is_method(&quot;REGISTER&quot;) ) {<br /> <br />			## Uncomment this if you want to use digest authentication<br />			#if (!www_authorize(&quot;opensips.org&quot;, &quot;subscriber&quot;)) {<br />			#	www_challenge(&quot;opensips.org&quot;, &quot;0&quot;);<br />			#	exit;<br />			#};<br /> <br />			save(&quot;location&quot;);<br />			exit;<br />		}<br /> <br />		## native SIP destinations are handled using our USRLOC DB<br />		if (!lookup(&quot;location&quot;)) {<br />			send_reply(&quot;404&quot;, &quot;Not Found&quot;);<br />			exit;<br />		}<br />		append_hf(&quot;P-hint: usrloc applied\r\n&quot;);<br />	};<br /><br />	route(RELAY);<br />}<br /> <br /> <br />route[RELAY] {<br />	# send it out now<br />	if (!t_relay()) <br />		sl_reply_error();<br />	exit;<br />}<br /> <br /># presence handling route<br />route[PRESENCE]<br />{<br />	## absorb retransmissions<br />	if (!t_newtran()) {<br />	        sl_reply_error();<br />	        exit;</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'><br />	# SIP 2 SIP presence traffic<br />	if (is_method(&quot;PUBLISH|SUBSCRIBE&quot;)) {<br />		route(handle_presence);<br />		exit;</div></div>
+        <div class='difftype'>Changed lines 145-147 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>	## handle presence requests<br />	if(is_method(&quot;PUBLISH&quot;)) {<br />		handle_publish();</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>	if (is_method(&quot;REGISTER&quot;)) {<br /><br />		# Uncomment this if you want to use digest authentication<br />		#if (!www_authorize(&quot;&quot;, &quot;subscriber&quot;)) {<br />		#  www_challenge(&quot;&quot;, &quot;0&quot;);<br />		#  exit;<br />		#}<br /><br />		save(&quot;location&quot;);<br />		exit;</div></div>
+        <div class='difftype'>Changed lines 156-160 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>	else if( is_method(&quot;SUBSCRIBE&quot;)) {<br />		handle_subscribe();<br />        };<br /> <br />	exit;</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'><br />	# native SIP destinations are handled using our USRLOC DB<br />	if(!lookup(&quot;location&quot;)) {<br />		send_reply(&quot;404&quot;,&quot;Not Found&quot;);<br />		exit;<br />	}<br /><br />	route(relay);</div></div>
+        <div class='difftype'>Changed lines 165-193 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>@]++]</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'><br /><br />route[relay]{<br />	# send it out<br />	if(!t_relay())<br />		sl_reply_error();<br /><br />	exit;<br />}<br /><br /><br />route[handle_presence]<br />{<br />	if(!t_newtran()){<br />		sl_reply_error();<br />		exit;<br />	}<br /><br />	if (is_method(&quot;PUBLISH&quot;)) {<br />		handle_publish();<br />	} else<br /><br />	if (is_method(&quot;SUBSCRIBE&quot;)) {<br />		handle_subscribe();<br />	}<br /><br />	exit;<br />}<br />@]</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-Presence-SimplePresConfig-action=edit&restore=diff-1404303871-1403028931-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-SimplePresConfig?action=edit&restore=diff:1404303871:1403028931:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 17, 2014, at 08:15 PM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Added lines 21-22:</div>
+        <div class='diffadd'><div class='diffmarkup'># ------------------ module loading ----------------------------------<br />mpath=&quot;/usr/local/lib/opensips/modules/&quot;</div></div>
+        <div class='difftype'>Changed lines 24-39 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>#<br /># uncomment the following lines for TLS support<br />#disable_tls = 0<br />#listen = tls:your_IP:5061<br />#tls_verify_server = 1<br />#tls_verify_client = 1<br />#tls_require_client_certificate = 0<br />#tls_method = TLSv1<br />#tls_certificate = &quot;/usr/local/etc/opensips/tls/user/user-cert.pem&quot;<br />#tls_private_key = &quot;/usr/local/etc/opensips/tls/user/user-privkey.pem&quot;<br />#tls_ca_list = &quot;/usr/local/etc/opensips/tls/user/user-calist.pem&quot;<br /> <br /># ------------------ module loading ----------------------------------<br />mpath=&quot;/usr/local/lib/opensips/modules/&quot;<br /> <br /></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'></div></div>
+        <div class='difftype'>Added line 29:</div>
+        <div class='diffadd'><div class='diffmarkup'>loadmodule &quot;sipmsgops.so&quot;</div></div>
+        <div class='difftype'>Changed lines 37-38 from:</div>
+        <div class='diffdel'><div class='diffmarkup'># for 1.5 you must load also signaling module; uncomment the next line<br />#loadmodule &quot;signaling.so&quot; </div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>loadmodule &quot;signaling.so&quot; </div></div>
+        <div class='difftype'>Changed lines 41-42 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>#loadmodule &quot;/usr/local/lib/opensips/modules/auth.so&quot;<br />#loadmodule &quot;/usr/local/lib/opensips/modules/auth_db.so&quot;</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>#loadmodule &quot;auth.so&quot;<br />#loadmodule &quot;auth_db.so&quot;</div></div>
+        <div class='difftype'>Deleted line 53:</div>
+        <div class='diffdel'><div class='diffmarkup'>#</div></div>
+        <div class='difftype'>Deleted line 54:</div>
+        <div class='diffdel'><div class='diffmarkup'>#</div></div>
+        <div class='difftype'>Deleted line 56:</div>
+        <div class='diffdel'><div class='diffmarkup'>#</div></div>
+        <div class='difftype'>Deleted lines 58-61:</div>
+        <div class='diffdel'><div class='diffmarkup'># -- rr params --<br /># add value to ;lr param to make some broken UAs happy<br />modparam(&quot;rr&quot;, &quot;enable_full_lr&quot;, 1)<br /> </div></div>
+        <div class='difftype'>Changed lines 73-74 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>	# initial sanity checks -- messages with<br />	# max_forwards==0, or excessively long requests</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>	# initial sanity checks </div></div>
+        <div class='difftype'>Changed line 75 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>		sl_send_reply(&quot;483&quot;,&quot;Too Many Hops&quot;);</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>		send_reply(&quot;483&quot;,&quot;Too Many Hops&quot;);</div></div>
+        <div class='difftype'>Changed line 77 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>	};</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>	}</div></div>
+        <div class='difftype'>Changed lines 79-80 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>	if (msg:len &gt;=  2048 ) {<br />		sl_send_reply(&quot;513&quot;, &quot;Message too big&quot;);</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'> 	if (has_totag()) {<br />		## sequential requests within a dialog should<br />		## take the path determined by record-routing<br />		if (loose_route()) {<br />			## route it out to whatever destination was set by loose_route()<br />			## in $du (destination URI).<br />			route(RELAY);<br />		} else {<br />			if ( is_method(&quot;ACK&quot;) ) {<br />				if ( t_check_trans() ) {<br />					## non loose-route, but stateful ACK; must be an ACK after <br />					## a 487 or e.g. 404 from upstream server<br />					t_relay();<br />					exit;<br />				} else {<br />					## ACK without matching transaction -&gt;<br />					## ignore and discard<br />					exit;<br />				}<br />			}<br />			send_reply(&quot;404&quot;,&quot;Not here&quot;);<br />		}</div></div>
+        <div class='difftype'>Changed lines 102-115 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>	};</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>	}<br /><br />	# CANCEL processing<br />	if (is_method(&quot;CANCEL&quot;)) {<br />		if (t_check_trans())<br />			t_relay();<br />		exit;<br />	}<br /><br />	t_check_trans();<br /><br />	## record routing<br />	if (!is_method(&quot;REGISTER|MESSAGE&quot;))<br />		record_route();</div></div>
+        <div class='difftype'>Changed lines 117-126 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>	# we record-route all messages -- to make sure that<br />	# subsequent messages will go through our proxy; that's<br />	# particularly good if upstream and downstream entities<br />	# use different transport protocol<br />	if (!method==&quot;REGISTER&quot;)<br />		record_route();<br /> <br />	# subsequent messages withing a dialog should take the<br />	# path determined by record-routing<br />	if (loose_route()) {</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>	if (!uri==myself) {</div></div>
+        <div class='difftype'>Deleted lines 118-123:</div>
+        <div class='diffdel'><div class='diffmarkup'>		append_hf(&quot;P-hint: rr-enforced\r\n&quot;); <br />		route(1);<br />	};<br /> <br />	if (!uri==myself) {<br />		# mark routing logic in request</div></div>
+        <div class='difftype'>Changed lines 120-129 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>		# if you have some interdomain connections via TLS<br />		#if(uri=~&quot;@tls_domain1.net&quot;) {<br />		#	t_relay(&quot;tls:domain1.net&quot;);<br />		#	exit;<br />		#} else if(uri=~&quot;@tls_domain2.net&quot;) {<br />		#	t_relay(&quot;tls:domain2.net&quot;);<br />		#	exit;<br />		#}<br />		route(1);<br />	};</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>		route(RELAY);<br />	}</div></div>
+        <div class='difftype'>Changed lines 123-125 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>	# if the request is for other domain use UsrLoc<br />	# (in case, it does not work, use the following command<br />	# with proper names and addresses in it)</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>	## if the request is for other domain use UsrLoc<br />	## (in case, it does not work, use the following command<br />	## with proper names and addresses in it)</div></div>
+        <div class='difftype'>Changed line 128 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>		# presence handling</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>		## presence handling</div></div>
+        <div class='difftype'>Changed line 130 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>			route(2);</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>			route(PRESENCE);</div></div>
+        <div class='difftype'>Changed line 132 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>		if (method==&quot;REGISTER&quot;) {</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>		if ( is_method(&quot;REGISTER&quot;) ) {</div></div>
+        <div class='difftype'>Changed line 134 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>			# Uncomment this if you want to use digest authentication</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>			## Uncomment this if you want to use digest authentication</div></div>
+        <div class='difftype'>Changed line 142 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>		};</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>		}</div></div>
+        <div class='difftype'>Changed line 144 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>		# native SIP destinations are handled using our USRLOC DB</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>		## native SIP destinations are handled using our USRLOC DB</div></div>
+        <div class='difftype'>Changed line 146 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>			sl_send_reply(&quot;404&quot;, &quot;Not Found&quot;);</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>			send_reply(&quot;404&quot;, &quot;Not Found&quot;);</div></div>
+        <div class='difftype'>Changed lines 148-149 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>		};<br />		append_hf(&quot;P-hint: usrloc applied\r\n&quot;); </div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>		}<br />		append_hf(&quot;P-hint: usrloc applied\r\n&quot;);</div></div>
+        <div class='difftype'>Added lines 151-153:</div>
+        <div class='diffadd'><div class='diffmarkup'><br />	route(RELAY);<br />}</div></div>
+        <div class='difftype'>Deleted lines 154-155:</div>
+        <div class='diffdel'><div class='diffmarkup'>	route(1);<br />}</div></div>
+        <div class='difftype'>Added lines 156-161:</div>
+        <div class='diffadd'><div class='diffmarkup'>route[RELAY] {<br />	# send it out now<br />	if (!t_relay()) <br />		sl_reply_error();<br />	exit;<br />}</div></div>
+        <div class='difftype'>Deleted lines 162-170:</div>
+        <div class='diffdel'><div class='diffmarkup'>route[1] {<br />	# send it out now; use stateful forwarding as it works reliably<br />	# even for UDP2TCP<br />	if (!t_relay()) {<br />		sl_reply_error();<br />	};<br />	exit;<br />}<br /> </div></div>
+        <div class='difftype'>Changed line 164 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>route[2]</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>route[PRESENCE]</div></div>
+        <div class='difftype'>Changed lines 166-168 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>	# absorb retransmissions<br />	if (! t_newtran())<br />	{</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>	## absorb retransmissions<br />	if (!t_newtran()) {</div></div>
+        <div class='difftype'>Changed lines 170-175 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>	};<br /><br />	#handle presence requests<br /><br />	if(is_method(&quot;PUBLISH&quot;))<br />	{</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>	}<br /><br />	## handle presence requests<br />	if(is_method(&quot;PUBLISH&quot;)) {</div></div>
+        <div class='difftype'>Changed lines 175-177 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>		t_release();<br />                /* the call to t_release is no longer needed in 1.5 */<br />	} </div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>	}</div></div>
+        <div class='difftype'>Deleted lines 177-178:</div>
+        <div class='diffdel'><div class='diffmarkup'>		t_release();<br />	        /* the call to t_release is no longer needed in 1.5 */</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-Presence-SimplePresConfig-action=edit&restore=diff-1403028931-1366968466-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-SimplePresConfig?action=edit&restore=diff:1403028931:1366968466:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 26, 2013, at 11:27 AM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Added lines 1-202:</div>
+        <div class='diffadd'><div class='diffmarkup'>[[ Documentation/Tutorials-Presence-PresenceServer#configuration#configuration | &lt;- Back]]<br />[++[@<br />#<br />#<br /># OpenSIPS Presence Server without permission rules quick-start config script<br />#<br /> <br /># ----------- global configuration parameters ------------------------<br /> <br />/* Uncomment these lines to enter debugging mode */ <br />debug=7            # debug level (cmd line: -dddddddddd)<br />fork=no<br />log_stderror=yes<br /> <br />check_via=no	# (cmd. line: -v)<br />dns=no          # (cmd. line: -r)<br />rev_dns=no      # (cmd. line: -R)<br />listen=udp:10.10.10.10:5060<br />children=4<br /> <br /> <br />#<br /># uncomment the following lines for TLS support<br />#disable_tls = 0<br />#listen = tls:your_IP:5061<br />#tls_verify_server = 1<br />#tls_verify_client = 1<br />#tls_require_client_certificate = 0<br />#tls_method = TLSv1<br />#tls_certificate = &quot;/usr/local/etc/opensips/tls/user/user-cert.pem&quot;<br />#tls_private_key = &quot;/usr/local/etc/opensips/tls/user/user-privkey.pem&quot;<br />#tls_ca_list = &quot;/usr/local/etc/opensips/tls/user/user-calist.pem&quot;<br /> <br /># ------------------ module loading ----------------------------------<br />mpath=&quot;/usr/local/lib/opensips/modules/&quot;<br /> <br /><br />loadmodule &quot;db_mysql.so&quot;<br />loadmodule &quot;sl.so&quot;<br />loadmodule &quot;maxfwd.so&quot;<br />loadmodule &quot;textops.so&quot;<br />loadmodule &quot;tm.so&quot;<br />loadmodule &quot;rr.so&quot;<br />loadmodule &quot;presence.so&quot;<br />loadmodule &quot;presence_xml.so&quot;<br />loadmodule &quot;usrloc.so&quot;<br />loadmodule &quot;registrar.so&quot;<br />loadmodule &quot;mi_fifo.so&quot;<br /># for 1.5 you must load also signaling module; uncomment the next line<br />#loadmodule &quot;signaling.so&quot; <br /> <br /># Uncomment this if you want digest authentication<br /># db_mysql.so must be loaded !<br />#loadmodule &quot;/usr/local/lib/opensips/modules/auth.so&quot;<br />#loadmodule &quot;/usr/local/lib/opensips/modules/auth_db.so&quot;<br /> <br /># ----------------- setting module-specific parameters ---------------<br /> <br /># -- usrloc params --<br /># Uncomment this if you want to use SQL database <br /># for persistent storage and comment the previous line<br />modparam(&quot;usrloc&quot;, &quot;db_mode&quot;, 2)<br />modparam(&quot;usrloc&quot;, &quot;db_url&quot;, &quot;mysql://opensips:opensipsrw@127.0.0.1/opensips&quot;)<br /> <br /># -- auth params --<br /># Uncomment if you are using auth module<br />#<br />#modparam(&quot;auth_db&quot;, &quot;calculate_ha1&quot;, yes)<br />#<br /># If you set &quot;calculate_ha1&quot; parameter to yes (which true in this config), <br /># uncomment also the following parameter)<br />#<br />#modparam(&quot;auth_db&quot;, &quot;password_column&quot;, &quot;password&quot;)<br /> <br /># -- rr params --<br /># add value to ;lr param to make some broken UAs happy<br />modparam(&quot;rr&quot;, &quot;enable_full_lr&quot;, 1)<br /> <br /># -- mi_fifo params --<br />modparam(&quot;mi_fifo&quot;,&quot;fifo_name&quot;, &quot;/tmp/opensips_fifo&quot;)<br /><br /># -- presence params --<br />modparam(&quot;presence|presence_xml&quot;, &quot;db_url&quot;, &quot;mysql://opensips:opensipsrw@127.0.0.1/opensips&quot;)<br />modparam(&quot;presence&quot;, &quot;server_address&quot;, &quot;sip:sa@10.10.10.10:5060&quot; )<br />modparam(&quot;presence_xml&quot;, &quot;force_active&quot;, 1)<br /> <br /> <br /># -------------------------  request routing logic -------------------<br /> <br /># main routing logic<br /> <br />route{<br />	# initial sanity checks -- messages with<br />	# max_forwards==0, or excessively long requests<br />	if (!mf_process_maxfwd_header(&quot;10&quot;)) {<br />		sl_send_reply(&quot;483&quot;,&quot;Too Many Hops&quot;);<br />		exit;<br />	};<br /> <br />	if (msg:len &gt;=  2048 ) {<br />		sl_send_reply(&quot;513&quot;, &quot;Message too big&quot;);<br />		exit;<br />	};<br /> <br />	# we record-route all messages -- to make sure that<br />	# subsequent messages will go through our proxy; that's<br />	# particularly good if upstream and downstream entities<br />	# use different transport protocol<br />	if (!method==&quot;REGISTER&quot;)<br />		record_route();<br /> <br />	# subsequent messages withing a dialog should take the<br />	# path determined by record-routing<br />	if (loose_route()) {<br />		# mark routing logic in request<br />		append_hf(&quot;P-hint: rr-enforced\r\n&quot;); <br />		route(1);<br />	};<br /> <br />	if (!uri==myself) {<br />		# mark routing logic in request<br />		append_hf(&quot;P-hint: outbound\r\n&quot;); <br />		# if you have some interdomain connections via TLS<br />		#if(uri=~&quot;@tls_domain1.net&quot;) {<br />		#	t_relay(&quot;tls:domain1.net&quot;);<br />		#	exit;<br />		#} else if(uri=~&quot;@tls_domain2.net&quot;) {<br />		#	t_relay(&quot;tls:domain2.net&quot;);<br />		#	exit;<br />		#}<br />		route(1);<br />	};<br /> <br />	# if the request is for other domain use UsrLoc<br />	# (in case, it does not work, use the following command<br />	# with proper names and addresses in it)<br />	if (uri==myself) {<br /> <br />		# presence handling<br />		if( is_method(&quot;PUBLISH|SUBSCRIBE&quot;))<br />			route(2);<br /> <br />		if (method==&quot;REGISTER&quot;) {<br /> <br />			# Uncomment this if you want to use digest authentication<br />			#if (!www_authorize(&quot;opensips.org&quot;, &quot;subscriber&quot;)) {<br />			#	www_challenge(&quot;opensips.org&quot;, &quot;0&quot;);<br />			#	exit;<br />			#};<br /> <br />			save(&quot;location&quot;);<br />			exit;<br />		};<br /> <br />		# native SIP destinations are handled using our USRLOC DB<br />		if (!lookup(&quot;location&quot;)) {<br />			sl_send_reply(&quot;404&quot;, &quot;Not Found&quot;);<br />			exit;<br />		};<br />		append_hf(&quot;P-hint: usrloc applied\r\n&quot;); <br />	};<br /> <br />	route(1);<br />}<br /> <br /> <br />route[1] {<br />	# send it out now; use stateful forwarding as it works reliably<br />	# even for UDP2TCP<br />	if (!t_relay()) {<br />		sl_reply_error();<br />	};<br />	exit;<br />}<br /> <br /># presence handling route<br />route[2]<br />{<br />	# absorb retransmissions<br />	if (! t_newtran())<br />	{<br />	        sl_reply_error();<br />	        exit;<br />	};<br /><br />	#handle presence requests<br /><br />	if(is_method(&quot;PUBLISH&quot;))<br />	{<br />		handle_publish();<br />		t_release();<br />                /* the call to t_release is no longer needed in 1.5 */<br />	} <br />	else if( is_method(&quot;SUBSCRIBE&quot;)) {<br />		handle_subscribe();<br />		t_release();<br />	        /* the call to t_release is no longer needed in 1.5 */<br />        };<br /> <br />	exit;<br />}<br />@]++]</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-Presence-SimplePresConfig-action=edit&restore=diff-1366968466-1366968466-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-SimplePresConfig?action=edit&restore=diff:1366968466:1366968466:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-Presence-SimplePresConfig?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-Presence-SimplePresConfig?action=edit%27" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-SimplePresConfig?action=edit">Edit</a> |
+      <a rel="nofollow" href="Tutorials-Presence-SimplePresConfig-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-SimplePresConfig?action=diff">History</a> |
+      <a rel="nofollow" href="Tutorials-Presence-SimplePresConfig-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-SimplePresConfig?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on December 10, 2014, at 01:18 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

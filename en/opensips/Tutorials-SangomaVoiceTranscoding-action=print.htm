@@ -1,0 +1,331 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+  <title>openSIPS | Documentation / Tutorials-SangomaVoiceTranscoding</title>
+  <link rel='stylesheet' href="print.css" tppabs="http://www.opensips.org/pub/skins/print/print.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+</head>
+<body>
+  <div id='printhead'>
+    <h3>From openSIPS</h3>
+    <h1 class='pagename'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation%27" tppabs="http://www.opensips.org/Documentation">Documentation: Tutorials-SangomaVoiceTranscoding</a></h1>
+  </div>
+<!--PageText-->
+<div id='wikitext'>
+<h5>Documentation -&gt; <a class='wikilink' href="Tutorials-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials?action=print">Tutorials</a> -&gt; Voice Transcoding in OpenSIPS using Sangoma D-series Cards</h5>
+<p>This page has been visited 3413 times.
+</p><div class='tocfloat'><p><a name='toc' id='toc'></a><b>Table of Content</b> (<a id="tocidtog" href="javascript:toggle('tocid');">hide</a>)</p><ol class='toc' id='tocid'><li>1.&nbsp;<a href='#toc1'>Tutorial Overview</a></li><li>2.&nbsp;<a href='#toc2'>Installing the transcoding card</a></li><li>3.&nbsp;<a href='#toc3'>Setting up the <em>sngtc_server</em></a></li><li>4.&nbsp;<a href='#toc4'>Call flow with the <em>sngtc</em> OpenSIPS module</a></li><li>5.&nbsp;<a href='#toc5'>Using the <em>sngtc</em> module</a></li></ol></div>
+<hr />
+<div class='vspace'></div><div><img src="tc-setup.png" tppabs="http://www.opensips.org/images/tc-setup.png" alt='' title='' /></div>
+<div class='vspace'></div><h4><a name='toc1' id='toc1'></a>1.&nbsp; Tutorial Overview</h4>
+<p>This tutorial illustrates the required steps in order to perform audio transcoding with the D-series cards manufactured by Sangoma, using the <em>sngtc_server</em> daemon and the OpenSIPS <em>sngtc</em> module as its client. The latest version of the transcoding library, as of 1 August 2013 is: <strong>sng-tc-linux-1.3.4.1</strong>
+</p>
+<p class='vspace'><br />
+<span  style='color: red;'>As mentioned in the <ins><a style='color: red' class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/modules/2.2.x/sngtc.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/modules/2.2.x/sngtc.html%27" tppabs="http://www.opensips.org/html/docs/modules/2.2.x/sngtc.html" rel='nofollow'>module documentation</a></ins>, transcoding may only be done if the UAC performs early SDP negotiation and the UAS supports late SDP negotiation.</span>
+</p>
+<div class='vspace'></div><hr />
+<h4><a name='toc2' id='toc2'></a>2.&nbsp; Installing the transcoding card</h4>
+<p>The necessary firmware for the D-series transcoding cards can be set up using the <em>sngtc_tool</em>. The cards which require PCI connectivity (D100 and D500) also need additional kernel drivers. Please refer to the <a class='urllink' href="javascript:if(confirm(%27http://wiki.sangoma.com/Sangoma-Media-Transcoding-Product-Selection  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://wiki.sangoma.com/Sangoma-Media-Transcoding-Product-Selection%27" tppabs="http://wiki.sangoma.com/Sangoma-Media-Transcoding-Product-Selection" rel='nofollow'>Sangoma wiki</a> for installation tutorials.
+</p>
+<div class='vspace'></div><hr />
+<h4><a name='toc3' id='toc3'></a>3.&nbsp; Setting up the <em>sngtc_server</em></h4>
+<p>Installing the <em>sngtc_server</em> is straightforward and also documented in the <a class='urllink' href="javascript:if(confirm(%27http://wiki.sangoma.com/FreeSWITCH-D100-Single-Server-Installation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://wiki.sangoma.com/FreeSWITCH-D100-Single-Server-Installation%27" tppabs="http://wiki.sangoma.com/FreeSWITCH-D100-Single-Server-Installation" rel='nofollow'>Sangoma wiki</a>. After doing the configuration, it can be started using the init script:
+</p><pre class='escaped'>
+   $ /etc/init.d/sngtc_server_ctrl start
+</pre>
+<p>By default it logs to /var/log/sngtc_server.log
+</p>
+<div class='vspace'></div><hr />
+<h4><a name='toc4' id='toc4'></a>4.&nbsp; Call flow with the <em>sngtc</em> OpenSIPS module</h4>
+<p>Due to the limitations of the transcoding library, transcoding sessions can only be created if both codec A and codec B are known. Since this cannot be accomplished with a standard SIP call flow, the module <em>restricts</em> the receiving UA to perform <em>late SDP negotiation</em>. The diagram below explains this better:
+</p>
+<div class='vspace'></div><div><img src="dialog-establish-tc.png" tppabs="http://www.opensips.org/images/dialog-establish-tc.png" alt='' title='' /></div>
+<div class='vspace'></div><hr />
+<h4><a name='toc5' id='toc5'></a>5.&nbsp; Using the <em>sngtc</em> module</h4>
+<p>The <strong>sngtc module</strong> exports 3 functions. They are called upon receiving INVITE, 200 OK and ACK messages. A short overview on their purpose would be:
+</p><ol><li>sngtc_offer - called at any INVITE request (re-INVITES too), deletes the INVITE SDP body
+</li><li>sngtc_callee_answer - called at 200 OK responses, intersects codec offers, creates transcoding sessions if necessary
+</li><li>sngtc_caller_answer - called at ACK requests, adds an SDP body to the ACK request
+</li></ol><p class='vspace'>All functions properly handle retransmissions. More details can be found in the <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/modules/devel/uri.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/modules/devel/uri.html%27" tppabs="http://www.opensips.org/html/docs/modules/devel/uri.html" rel='nofollow'>module documentation</a>. A basic configuration file is shown below:
+</p>
+<p class='vspace'><br />
+</p><pre class='escaped'>
+####### Global Parameters #########
+
+debug=6
+log_stderror=yes
+log_facility=LOG_LOCAL0
+
+fork=yes
+children=6
+
+memdump=1
+
+auto_aliases=no
+
+listen=udp:eth1:5060
+
+disable_tcp=yes
+
+disable_tls=no
+
+exec_msg_threshold=200000
+
+####### Modules ########
+
+mpath = "modules/"
+
+loadmodule "exec.so"
+loadmodule "signaling.so"
+loadmodule "sl.so"
+loadmodule "tm.so"
+loadmodule "rr.so"
+loadmodule "maxfwd.so"
+loadmodule "sipmsgops.so"
+loadmodule "mi_fifo.so"
+loadmodule "db_mysql.so"
+loadmodule "uri.so"
+loadmodule "dialog.so"
+loadmodule "usrloc.so"
+loadmodule "registrar.so"
+loadmodule "sngtc.so"
+
+modparam("tm", "fr_timer", 5)
+modparam("tm", "fr_inv_timer", 30)
+modparam("tm", "restart_fr_on_each_reply", 0)
+modparam("tm", "disable_6xx_block", 1)
+modparam("tm", "onreply_avp_mode", 1)
+
+modparam("rr", "append_fromtag", 0)
+
+modparam("mi_fifo", "fifo_name", "/tmp/opensips_fifo")
+
+modparam("uri", "use_uri_table", 0)
+
+modparam("dialog", "db_mode", 0)
+modparam("dialog", "default_timeout", 3600)
+
+modparam("usrloc", "db_mode",   1)
+modparam("usrloc", "db_url",    "mysql://root:sangoma@localhost/opensips")
+
+####### Routing Logic ########
+
+route {
+
+    if (!mf_process_maxfwd_header("10")) {
+        sl_send_reply("483","Too Many Hops");
+        exit;
+    }
+
+    force_rport();
+
+    if (has_totag()) {
+        # sequential request withing a dialog should
+        # take the path determined by record-routing
+
+        if (loose_route()) {
+
+            if (is_method("BYE")) {
+                setsflag(FAIL_TRANS_FLAG);
+            } else if (is_method("INVITE")) {
+                sngtc_offer();
+            } else if (is_method("ACK")) {
+                sngtc_caller_answer();
+            }
+
+            # route it out to whatever destination was set by loose_route()
+            # in $du (destination URI).
+            route(1);
+        } else {
+
+            if (is_method("ACK")) {
+                if (t_check_trans()) {
+                    # non loose-route, but stateful ACK; must be an ACK after 
+                    # a 487 or e.g. 404 from upstream server
+                    t_relay();
+                    exit;
+                } else {
+                    # ACK without matching transaction -&gt;
+                    # ignore and discard
+                    exit;
+                }
+            }
+            sl_send_reply("404","Not here");
+        }
+        exit;
+    }
+
+    # CANCEL processing
+    if (is_method("CANCEL"))
+    {
+        if (t_check_trans())
+            t_relay();
+        exit;
+    }
+
+    t_check_trans();
+
+    # preloaded route checking
+    if (loose_route()) {
+        xlog("L_ERR",
+        "Attempt to route with preloaded Route's [$fu/$tu/$ru/$ci]");
+        if (!is_method("ACK"))
+            sl_send_reply("403","Preload Route denied");
+        exit;
+    }
+
+    # record routing
+    if (!is_method("REGISTER|MESSAGE"))
+        record_route();
+
+    # requests for my domain
+    if (is_method("PUBLISH|SUBSCRIBE"))
+    {
+        sl_send_reply("503", "Service Unavailable");
+        exit;
+    }
+
+    if (is_method("REGISTER"))
+    {
+        if (!save("location"))
+            sl_reply_error();
+
+        exit;
+    }
+
+    if ($rU == NULL) {
+        sl_send_reply("484","Address Incomplete");
+        exit;
+    }
+
+    # do lookup with method filtering
+    if (!lookup("location","m")) {
+
+        t_newtran();
+        t_reply("404", "Not Found");
+        exit;
+    }
+
+    if (is_method("INVITE"))
+        sngtc_offer();
+
+    route(1);
+}
+
+route[1] {
+    # for INVITEs enable some additional helper routes
+    if (is_method("INVITE")) {
+        t_on_reply("2");
+        t_on_failure("1");
+    }
+
+    if (!t_relay()) {
+        send_reply("500", "Internal Error");
+    }
+
+    exit;
+}
+
+onreply_route[2] {
+
+    if ($rs == 200)
+        sngtc_callee_answer("11.12.13.14", "11.12.13.14");
+}
+
+failure_route[1] {
+
+    if (t_was_cancelled()) {
+        exit;
+    }
+
+    if (next_branches()) {
+        t_on_reply("2");
+        t_on_failure("1");
+        t_relay();
+    }
+}
+</pre>
+<p class='vspace'>The transcoding sessions on the Sangoma cards are closed in a transparent manner, based on dialog callbacks.
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='from'>Retrieved from http://www.opensips.org/Documentation/Tutorials-SangomaVoiceTranscoding</div>
+    <div class='lastmod'>Page last modified on May 13, 2015, at 02:42 PM</div></div>
+<!--HTMLFooter-->
+</body>
+</html>

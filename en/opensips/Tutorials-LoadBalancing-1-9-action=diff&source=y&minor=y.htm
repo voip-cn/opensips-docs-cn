@@ -1,0 +1,243 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Tutorials-LoadBalancing-1-9 | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Tutorials-LoadBalancing-1-9' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Tutorials-LoadBalancing-1-9 History</h2>
+  <p><a href="Tutorials-LoadBalancing-1-9-action=diff&source=y&minor=n.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-LoadBalancing-1-9?action=diff&source=y&minor=n">Hide minor edits</a> - <a href="Tutorials-LoadBalancing-1-9-action=diff&source=n&minor=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-LoadBalancing-1-9?action=diff&source=n&minor=y">Show changes to output</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>June 04, 2014, at 01:46 PM 
+        by <span class='diffauthor' title='202.125.139.198'>Husnain</span> - Comment added</div>
+        <div class='difftype'>Added lines 379-384:</div>
+        <div class='diffadd'><div class='diffmarkup'>&gt;&gt;&lt;&lt;<br /><br />[[#comment4]](:nl:)&gt;&gt;messagehead&lt;&lt;<br />!!!!![[~Husnain]]  &amp;mdash;  [-04 June 2014, 13:46-]  <br />&gt;&gt;messageitem&lt;&lt;<br />How can I change the group_id from &quot;1&quot; to &quot;2&quot; in failover condition. I have already done it but its not working please guide.</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-LoadBalancing-1-9-action=edit&restore=diff-1401882380-1384874594-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-LoadBalancing-1-9?action=edit&restore=diff:1401882380:1384874594:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 19, 2013, at 04:23 PM 
+        by <span class='diffauthor' title='69.157.152.147'>Confused By Chiharu&#039;s Question</span> - Comment added</div>
+        <div class='difftype'>Added lines 373-378:</div>
+        <div class='diffadd'><div class='diffmarkup'>&gt;&gt;&lt;&lt;<br /><br />[[#comment3]](:nl:)&gt;&gt;messagehead&lt;&lt;<br />!!!!![[~Confused By Chiharu's Question]]  &amp;mdash;  [-19 November 2013, 16:23-]  <br />&gt;&gt;messageitem&lt;&lt;<br />Chiharu - huh?</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-LoadBalancing-1-9-action=edit&restore=diff-1384874594-1380962857-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-LoadBalancing-1-9?action=edit&restore=diff:1384874594:1380962857:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>October 05, 2013, at 10:47 AM 
+        by <span class='diffauthor' title='106.204.214.119'>Keani</span> - Comment added</div>
+        <div class='difftype'>Added lines 365-372:</div>
+        <div class='diffadd'><div class='diffmarkup'>&gt;&gt;&lt;&lt;<br /><br />[[#comment2]](:nl:)&gt;&gt;messagehead&lt;&lt;<br />!!!!![[~Keani ]]  &amp;mdash;  [-05 October 2013, 10:47-]  <br />&gt;&gt;messageitem&lt;&lt;<br />Hi Guys, <br /><br />I am exactly following step as per this doc for Loadbalancing, but I am unable to send call on my Asterisk server, What could be problem, Will I need to configure any additional config at my asterisk End.</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-LoadBalancing-1-9-action=edit&restore=diff-1380962857-1368720207-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-LoadBalancing-1-9?action=edit&restore=diff:1380962857:1368720207:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 16, 2013, at 06:03 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>!![[Documentation.Index | Documentation]] -&gt; [[Documentation.Tutorials | Tutorials ]] -&gt; [[Documentation.Tutorials-LoadBalancing-1-9 |  Load Balancing 1.9.0]]</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>!!!!!Documentation -&gt; [[Documentation.Tutorials | Tutorials ]] -&gt; Load Balancing 1.9</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-LoadBalancing-1-9-action=edit&restore=diff-1368720207-1368107664-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-LoadBalancing-1-9?action=edit&restore=diff:1368720207:1368107664:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 03:54 PM 
+        by <span class='diffauthor' title='79.118.227.150'>79.118.227.150</span> - </div>
+        <div class='difftype'>Changed lines 1-2 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>!!Resources -&gt; [[Resources.Documentation | Documentation]] -&gt; [[Resources.DocsTutorials | Tutorials]] -&gt; Load Balancing 1.9.0</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>!![[Documentation.Index | Documentation]] -&gt; [[Documentation.Tutorials | Tutorials ]] -&gt; [[Documentation.Tutorials-LoadBalancing-1-9 |  Load Balancing 1.9.0]]<br />----</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-LoadBalancing-1-9-action=edit&restore=diff-1368107664-1366822793-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-LoadBalancing-1-9?action=edit&restore=diff:1368107664:1366822793:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 24, 2013, at 06:59 PM 
+        by <span class='diffauthor' title='213.233.101.41'>213.233.101.41</span> - </div>
+        <div class='difftype'>Added lines 1-366:</div>
+        <div class='diffadd'><div class='diffmarkup'>!!Resources -&gt; [[Resources.Documentation | Documentation]] -&gt; [[Resources.DocsTutorials | Tutorials]] -&gt; Load Balancing 1.9.0<br />This page has been visited {$PageCount} times.<br />(:toc-float Table of Content:)<br />----<br /><br />This tutorial applied for OpenSIP versions 1.9<br /><br />!!! Load Balancing in '''OpenSIPS'''<br /><br />The &quot;load-balancing&quot; module comes to provide traffic routing based on load. Shortly, when '''OpenSIPS''' routes calls to a set of destinations, it is able to keep the load status (as number of ongoing calls) of each destination and to choose to route to the less loaded destination (at that moment).<br />'''OpenSIPS''' is aware of the capacity of each destination - it is pre-configured with the maximum load accepted by the destinations. To be more precise, when routing, '''OpenSIPS''' will consider the less loaded destination not the destination with the smallest number of ongoing calls, but the destination with the largest available slot.<br /><br />Also, the &quot;load-balancing&quot; (LB) module is able to receive feedback from the destinations (if they are capable of). This mechanism is used for notifying '''OpenSIPS''' when the maximum capacity of a destination changed (like a GW with more or less E1 cards).<br /><br />The &quot;load-balancing&quot; functionality comes to enhance the &quot;dispatcher&quot; one. The difference comes in having or not load information about the destinations where you are routing to:<br /><br />* '''Dispatcher has no load information''' - it just blindly forwards calls to the destinations based on a probabilistic dispersion logic. It gets no feedback about the load of the destination (like how many calls that were sent actually were established or how many are still going).<br /><br />* '''Load-balancer is load driven''' - LB routing logic is based primary on the load information. The LB module is using the DIALOG module in order to keep trace of the load (ongoing calls).<br /><br /><br />----<br />!!! Load Balancing - how it works<br /><br />When looking at the LB implementation in '''OpenSIPS''', we have 3 aspects:<br /><br />!!!! Destination set<br /><br />A destination is defined by its address (a SIP URI) and its description as capacity.<br /><br />Form the LB module perspective, the '''destinations are not homogeneous''' - they are not alike; and not only from capacity point of view, but also from what kind of '''services/resources''' they offer. For example, you may have a set of Yate/Asterisk boxes for media-related services -some of them are doing transcoding, other voicemail or conference,  other simple announcement , other PSTN termination. But you may have mixed boxes - one box may do PSTN and voicemail in the same time. So each destination from the set may offer a different set of services/resources.<br /><br />So, for each destination, the LB module defines the offered resources, and for each resource, it defines the '''capacity / maximum load''' as number of concurrent calls the destination can handle for that resource.<br /><br />Example:<br />[@<br />4 destinations/boxes in the LB set<br />    1) offers 30 channels for transcoding and 32 for PSTN<br />    2) offers 100 voicemail channels and 10 for transcoding<br />    3) offers 50 voicemail channels and 300 for conference<br />    4) offers 10 voicemail, 10 conference, 10 transcoding and 32 PSTN<br /><br />This translated into the following setup:<br /><br />+----+----------+-------------------------+---------------------------------+<br />| id | group_id | dst_uri                 | resources                       |<br />+----+----------+-------------------------+---------------------------------+<br />|  1 |        1 | sip:yate1.mycluster.net | transc=30; pstn=32              |<br />|  2 |        1 | sip:yate2.mycluster.net | vm=100; transc=10               |<br />|  3 |        1 | sip:yate3.mycluster.net | vm=50; conf=300                 |<br />|  4 |        1 | sip:yate4.mycluster.net | vm=10;conf=10;transc=10;pstn=32 |<br />+----+----------+-------------------------+---------------------------------+<br /><br />@]<br /><br />For runtime, the LB module provides MI commands for:<br />* reloading the definition of destination sets<br />* changing the capacity for a resource for a destination<br /><br />!!!! Invoking Load-balancing<br /><br />Using the LB functionality is very simple - you just have to pass to the LB module what kind of resources the call requires.<br /><br />The resource detection is done in the '''OpenSIPS''' routing script, based on whatever information is appropriated. For example, looking at the RURI (dialed number) you can see if the call must go to PSTN or if it a voicemail or conference number; also, by looking at the codecs advertised in the SDP, you can figure out if transcoding is or not also required.<br /><br />[@<br /><br />  if (!load_balance(&quot;1&quot;,&quot;transc;pstn&quot;)) {<br />      sl_send_reply(&quot;500&quot;,&quot;Service full&quot;);<br />      exit;<br />  }<br /><br />@]<br /><br />The first parameter of the function identifies the LB set to be used (see the group_id column in the above DB snapshot). Second parameter is list of the required resource for the call. A third optional parameter my be passed to instruct the LB engine on how to estimate the load - in absolute value (how many channels are used) or in relative value (how many percentages are used).<br /><br />The '''load_balance()''' will automatically create the dialog state for the call (in order to monitor it) and will also allocate the requested resources for it (from the selected box).\\<br />The function will set as destination URI ($du) the address of the selected destination/box.<br /><br />The resources will be automatically released when the call terminates. <br /><br />The LB module provides an MI function that allows the admin to inspect the current load over the destinations.<br /><br /><br />!!!! The LB logic<br /><br />The logic used by the LB module to select the destination is:<br /># gets the '''destination set based on the group_id''' (first parameter of the ''load_balance()'' function)<br /><br /># selects from the set only the '''destinations that are able to provide the requested resources''' (second parameter of the ''load_balance()'' function)<br /><br /># for the selected destinations, it '''evaluated the current load''' for each requested resource<br /><br /># the winning destination is the one with '''the biggest value for the minimum available load''' per resources.<br /><br />[@<br />Example:<br /><br />4 destinations/boxes in the LB set<br />    1) offers 30 channels for transcoding and 32 for PSTN<br />    2) offers 100 voicemail channels and 10 for transcoding<br />    3) offers 50 voicemail channels and 300 for conference<br />    4) offers 10 voicemail, 10 conference, 10 transcoding and 32 PSTN<br /><br />when calling load_balance(&quot;1&quot;,&quot;transc;pstn&quot;) -&gt;<br /><br />1) only boxes (1) and (4) will be selected at as they offer both transcoding and pstn<br /><br />2) evaluating the load  :<br />    (1) transcoding - 10 channels used; PSTN - 18 used <br />    (4) transcoding - 9 channels used; PSTN - 16 used <br /><br />   evaluating available load (capacity-load) :<br />    (1) transcoding - 20 channels used; PSTN - 14 used <br />    (4) transcoding - 1 channels used; PSTN - 16 used <br /><br />3) for each box, the minimum available load (through all resources)<br />    (1) 14 (PSTN)<br />    (2) 1 (transcoding) <br /><br />4) final selected box in (1) as it has the the biggest (=14) available load for the most loaded resource.<br /><br />@]<br /><br />The selection algorithm tries to avoid the intensive usage of a resource per box.<br /><br />!!!! Disabling and Pinging<br /><br />The Load Balancer modules provides couple of functionalities to help in dealing with failures of the destinations. The actual detection of a failed destination (based on the SIP traffic) is done in the OpenSIPS routing script by looking at the codes of the replies you receive back from the destinations (see the example at the end of tutorial).<br /><br />Once a destination is detected at failed, in script, you can mark it as disabled via the '''lb_disable()''' function - once marked as disabled, the destination will not be used anymore in the LB process (it will not be considered a possible destination when routing calls).<br /><br />For a destination to be set back as enabled, there are two options:<br />* use the MI command [[http://www.opensips.org/html/docs/modules/1.9.x/load_balancer.html#id248919|lb_status]] to do it manually, from outside OpenSIPS<br />* based on probing - the destination must have the SIP probing/pinging enabled - once the destination starts replying with 200 OK replies to the SIP pings (see the [[http://www.opensips.org/html/docs/modules/1.9.x/load_balancer.html#id250116|probing_reply_codes]] option.<br /><br />To enable pinging, you need first to set [[http://www.opensips.org/html/docs/modules/1.9.x/load_balancer.html#id249996|probing_interval]] to a non zero value - how often the pinging should be done. The pinging will be done by periodically sending a '''OPTIONS''' SIP request to the destination - see [[http://www.opensips.org/html/docs/modules/1.9.x/load_balancer.html#id250037|probing_method]] option.<br /><br />To control which and when a destination is pinged, there is the '''probe_mode''' column in the '''load_balancer''' table - see [[http://www.opensips.org/html/docs/db/db-schema-1.9.x.html#AEN3971| table definition]]. Possible options are:<br />* '''0''' no pinging at any time<br />* '''1''' ping only if in disabled state (used for auto re-enabling of destinations)<br />* '''2''' ping all the time - it will disable destination if fails to answer to pings and enable it back when starts answering again.<br /><br /><br />!!!! RealTime Control over the Load Balancer<br /><br />The Load Balancer module provides several MI functions to allow you to do runtime changes and to get realtime information from it.<br /><br />Pushing changes at runtime:<br />* '''lb_reload''' - force reloading the entire configuration data from DB - see [[http://www.opensips.org/html/docs/modules/1.9.x/load_balancer.html#id292737|more..]]<br />* '''lb_resize''' - change the capacity of a resource for a destination - see [[http://www.opensips.org/html/docs/modules/1.9.x/load_balancer.html#id292759|more..]]<br />* '''lb_status''' - change the status of a destination (enable/disable) - see [[http://www.opensips.org/html/docs/modules/1.9.x/load_balancer.html#id248919|more..]]<br /><br />For fetching realtime information :<br />* '''lb_list''' - list the load on all destinations (per resource) - see [[http://www.opensips.org/html/docs/modules/1.9.x/load_balancer.html#id292782|more..]]<br />* '''lb_status''' - see the status of a destination (enable/disable) - see [[http://www.opensips.org/html/docs/modules/1.9.x/load_balancer.html#id248919|more..]]<br /><br />----<br />!!! Study Case: routing the media gateways<br /><br /><br />Here is the full configuration and script for performing LB between media peers.<br /><br />!!!! Configuration<br /><br />Let's consider the following case: a cluster of media servers providing voicemail service and PSTN (in and out) service. So the boxes will be able to receive calls for Voicemail or for PSTN termination, but they will be able to send back calls only for PSTN inbound.<br /><br />We also want the destinations to be disabled from script (when a failure is detected); The re-enabling of the destinations will be done based on pinging - we do pinging only when the destination is in &quot;failed&quot; status.<br /><br />[@<br />4 destinations/boxes in the LB set<br />    1) offers 50 channels for voicemail and 32 for PSTN<br />    2) offers 100 voicemail channels<br />    3) offers 50 voicemail channels<br />    4) offers 10 voicemail and 64 PSTN<br /><br />This translated into the following setup:<br /><br />+----+----------+-------------------------+-------------------+-----------+<br />| id | group_id | dst_uri                 | resources         | prob_mode |<br />+----+----------+-------------------------+-------------------+-----------+<br />|  1 |        1 | sip:yate1.mycluster.net | vm=50; pstn=32    |         1 |<br />|  2 |        1 | sip:yate2.mycluster.net | vm=100            |         1 |<br />|  3 |        1 | sip:yate3.mycluster.net | vm=50             |         1 |<br />|  4 |        1 | sip:yate4.mycluster.net | vm=10;pstn=64     |         1 |<br />+----+----------+-------------------------+-------------------+-----------+<br /><br />@]<br /><br /><br />!!!! OpenSIPS Scripting <br /><br /><br />[@<br />debug=1<br />memlog=1<br /><br />fork=yes<br />children=2<br />log_stderror=no<br />log_facility=LOG_LOCAL0<br /><br />disable_tcp=yes<br />disable_dns_blacklist = yes<br /><br />auto_aliases=no<br /><br />check_via=no<br />dns=off<br />rev_dns=off<br /><br />listen=udp:xxx.xxx.xxx.xxx:5060 # REPLACE here with right values <br /><br /><br /><br />loadmodule &quot;modules/maxfwd/maxfwd.so&quot;<br />loadmodule &quot;modules/sl/sl.so&quot;<br />loadmodule &quot;modules/db_mysql/db_mysql.so&quot;<br />loadmodule &quot;modules/tm/tm.so&quot;<br />loadmodule &quot;modules/uri/uri.so&quot;<br />loadmodule &quot;modules/rr/rr.so&quot;<br />loadmodule &quot;modules/dialog/dialog.so&quot;<br />loadmodule &quot;modules/mi_fifo/mi_fifo.so&quot;<br />loadmodule &quot;modules/mi_xmlrpc/mi_xmlrpc.so&quot;<br />loadmodule &quot;modules/signaling/signaling.so&quot;<br />loadmodule &quot;modules/textops/textops.so&quot;<br />loadmodule &quot;modules/sipmsgops/sipmsgops.so&quot;<br />loadmodule &quot;modules/load_balancer/load_balancer.so&quot;<br /><br /><br /><br />modparam(&quot;mi_fifo&quot;, &quot;fifo_name&quot;, &quot;/tmp/opensips_fifo&quot;)<br /><br />modparam(&quot;dialog&quot;, &quot;db_mode&quot;, 1)<br />modparam(&quot;dialog&quot;, &quot;db_url&quot;, &quot;mysql://opensips:opensipsrw@localhost/opensips&quot;)<br /><br />modparam(&quot;rr&quot;,&quot;enable_double_rr&quot;,1)<br />modparam(&quot;rr&quot;,&quot;append_fromtag&quot;,1)<br /><br />modparam(&quot;load_balancer&quot;, &quot;db_url&quot;,&quot;mysql://opensips:opensipsrw@localhost/opensips&quot;)<br /># ping every 30 secs the failed destinations<br />modparam(&quot;load_balancer&quot;, &quot;probing_interval&quot;, 30)<br />modparam(&quot;load_balancer&quot;, &quot;probing_from&quot;, &quot;sip:pinger@LB_IP:LB_PORT&quot;)<br /># consider positive ping reply the 404 <br />modparam(&quot;load_balancer&quot;, &quot;probing_reply_codes&quot;, &quot;404&quot;)<br /><br /><br />route{<br />	if (!mf_process_maxfwd_header(&quot;3&quot;)) {<br />		send_reply(&quot;483&quot;,&quot;looping&quot;);<br />		exit;<br />	}<br /><br /><br />	if ( has_totag() ) {<br />		# sequential request -&gt; obey Route indication<br />		loose_route();<br />                t_relay();<br />                exit;<br />        }<br /><br />        # handle cancel and re-transmissions<br />	if ( is_method(&quot;CANCEL&quot;) ) {<br />		if ( t_check_trans() )<br />			t_relay();<br />		exit;<br />	}<br /><br /><br />        # from now on we have only the initial requests<br />        if (!is_method(&quot;INVITE&quot;)) {<br />                send_reply(&quot;405&quot;,&quot;Method Not Allowed&quot;);<br />                exit;<br />        }<br /><br />        # initial request<br />	record_route();<br /><br />        # not really necessary to create the dialog from script (as the<br />        # LB functions will do this for us automatically), but we do it<br />        # if we want to pass some flags to dialog (pinging, bye, etc)<br />        create_dialog(&quot;B&quot;);<br /><br />        # check the direction of call<br />        if ( lb_is_destination(&quot;$si&quot;,&quot;$sp&quot;,&quot;1&quot;) ) {<br />                # call comes from our cluster, so it is an PSNT inbound call<br />                # mark it as load on the corresponding destination<br />                lb_count_call(&quot;$si&quot;,&quot;$sp&quot;,&quot;1&quot;, &quot;pstn&quot;);<br />                # and route is to our main sip server to send call to end user<br />                $du = &quot;sip:PROXY_IP:PORXY_PORT&quot;; # REPLACE here with right values <br />                t_relay();<br />                exit;<br />        }<br /><br />        # detect resources and store in an AVP<br />        if ( $rU=~&quot;^VM_&quot; ) {<br />                # looks like a VoiceMail call<br />                $avp(lb_res) = &quot;vm&quot;;<br />        } else if ( $rU=~&quot;^[0-9]+$&quot; ) {<br />                # PSTN call<br />                $avp(lb_res) = &quot;pstn&quot;;<br />        } else {<br />                send_reply(&quot;404&quot;,&quot;Destination not found&quot;);<br />                exit;<br />        }<br /><br />        # LB function returns negative if no suitable destination (for requested resources) is found,<br />        # or if all destinations are full<br />        if ( !load_balance(&quot;1&quot;,&quot;$avp(lb_res)&quot;) ) {<br />             send_reply(&quot;500&quot;,&quot;Service full&quot;);<br />             exit;<br />        }<br /><br />	xlog(&quot;Selected destination is: $du\n&quot;);<br /><br />        # arm a failure route for be able to catch a failure event and to do <br />        # failover to the next available destination<br />        t_on_failure(&quot;LB_failed&quot;);<br /><br />        # send it out<br />	if (!t_relay()) {<br />		sl_reply_error();<br />	}<br />}<br /><br />failure_route[LB_failed]<br />{<br />        # skip if call was canceled <br />	if (t_was_cancelled()) {<br />		exit;<br />	}<br /><br />        # was a destination failure ? (we do not want to do failover<br />        # if it was a call setup failure, so we look for 500 and 600<br />        # class replied and for local timeouts)<br />        if ( t_check_status(&quot;[56][0-9][0-9]&quot;) ||<br />        (t_check_status(&quot;408&quot;) &amp;&amp; t_local_replied(&quot;all&quot;) ) ) {<br />                # this is a case for failover<br />                xlog(&quot;REPORT: LB destination $du failed with code $T_reply_code\n&quot;);<br />                # mark failed destination as disabled <br />                lb_disable();<br />                # try to re-route to next available destination<br />                if ( !load_balance(&quot;1&quot;,&quot;$avp(lb_res)&quot;) ) {<br />                      send_reply(&quot;500&quot;,&quot;Service full&quot;);<br />                      exit;<br />                }<br />                xlog(&quot;REPORT: re-routing call to $du \n&quot;);<br />                t_relay();<br />        }<br />}<br /><br /><br />@]<br /><br /><br />----<br />!!! Comments<br /><br /><br />[[#comment1]](:nl:)&gt;&gt;messagehead&lt;&lt;<br />!!!!![[~Chiharu]]  &amp;mdash;  [-10 April 2013, 12:35-]  <br />&gt;&gt;messageitem&lt;&lt;<br />Is there anyway to inctaporroe a multiplexer into your pbx so incoming and outgoing calls can seem seemless? Also, the connection between the PBX and the VM system, is it a special propriatary connection or is it simply a twisted pair cable? If its﻿ just a twisted pair cable, then if mutiple calls come in, how would the mutiple calls be able to hear the auto attend?Thank you!<br />&gt;&gt;&lt;&lt;<br /><br />(:commentboxchrono:)</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-LoadBalancing-1-9-action=edit&restore=diff-1366822793-1366822793-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-LoadBalancing-1-9?action=edit&restore=diff:1366822793:1366822793:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Tutorials-LoadBalancing-1-9-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-LoadBalancing-1-9?action=edit">Edit</a> |
+      <a rel="nofollow" href="Tutorials-LoadBalancing-1-9-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-LoadBalancing-1-9?action=diff">History</a> |
+      <a rel="nofollow" href="Tutorials-LoadBalancing-1-9-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-LoadBalancing-1-9?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on June 04, 2014, at 01:46 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

@@ -1,0 +1,777 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Tutorials-Presence-PresenceServer | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Tutorials-Presence-PresenceServer' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Tutorials-Presence-PresenceServer History</h2>
+  <p><a href="Tutorials-Presence-PresenceServer-action=diff&source=n&minor=n.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=diff&source=n&minor=n">Hide minor edits</a> - <a href="Tutorials-Presence-PresenceServer-action=diff&source=y&minor=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=diff&source=y&minor=y">Show changes to markup</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>July 02, 2014, at 02:28 PM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Changed line 37 from:</div>
+        <div class='diffdel'><p>You can see a [[Documentation/Tutorials-Presence-SimplePresConfig|configuration file example for this case here].
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>You can see a <a class='wikilink' title='Tutorials-Presence-SimplePresConfig' href="Tutorials-Presence-SimplePresConfig.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-SimplePresConfig">configuration file example for this case here</a>.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-Presence-PresenceServer-action=edit&restore=diff-1404304108-1404304088-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=edit&restore=diff:1404304108:1404304088:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>July 02, 2014, at 02:28 PM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Changed lines 35-42 from:</div>
+        <div class='diffdel'><ol><li>The most simple configuration is a presence server without privacy rules, when anybody is allowed to see the presence status of anybody and there is no need for an xcap server. In this case the xcap part disappears from the scheme. You can see a configuration file example for this case <a class='wikilink' title='Tutorials-Presence-SimplePresConfig' href="Tutorials-Presence-SimplePresConfig.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-SimplePresConfig">here</a>. This mode of operation is configured by setting the flag <strong>force_active</strong> which is a module parameter for <strong>presence_xml</strong> module. 
+<div class='vspace'></div></li><li>If you want presence privacy rules enabled and you use a XCAP server, but one that communicates with the OpenSIPS Presence Server through a database table ( like OpenXCAP) than you can configure the presence server to work in an integrated xcap sever mode. For this you have to set the <strong>integrated_xcap_server</strong> parameter from <strong>presence_xml</strong> module. In this case the scheme simplifies by removing the xcap_client module and having the presence_xml module communicates only with the database. See <a class='wikilink' title='Tutorials-Presence-OpenxcapPresConfig' href="Tutorials-Presence-OpenxcapPresConfig.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-OpenxcapPresConfig">configuration file example</a> here.<br />You will notice in the configuration file that the mi_xmlrpc module is also loaded. The MI interface needs to be activated, so that OpenXCAP can signal to OpenSIPS when a change occurs in the presence rules documents. In this way the changes be effective immediately.The MI command that is sent in this case is 'refreshWatchers'.
+<div class='vspace'></div></li><li>If you decide to have a presence server with privacy authorization and not use an integrated xcap server, an improvement can be made in this case also. For a non integrated XCAp server, xcap_client module has to be used and the address of the server( or servers) must be set using the <strong>presence_xml</strong> modules parameter - <strong>xcap_server</strong>. The xcap_client module has the task to retrieve XCAP documents from XCAP servers and store them in database. Also the module can be asked to synchronize documents saved in database with those on the server. For this a mean of detecting an update is required. The general mean, that apply to every XCAP server is periodical query. There is however the possibility for the server to signal an update to the module. For this the module has to be able to send <strong>refreshXcapDoc</strong> MI command when an update occurs. If you are using a XCAP server able to send this command then you can configure the server to work in no periodical query mode. For this you have to unset the <strong>xcap_client</strong> module parameter <strong>periodical_query</strong> ( set it to 0). 
+<div class='vspace'></div></li><li>Another configuration option refers to the way the presence module stores information. The default method is caching with periodical update in database for fast processing. However, if you have more presence servers serving the same domain and sharing the same database, this mode will not work. In this case you need to ensure that the servers will be able to communicate through the database. This can be achieved by setting the <strong>presence</strong> module parameter <strong>fallback2db</strong>. 
+</li></ol>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h4>Basic Presence Server</h4>
+<p>The most simple configuration is a presence server without privacy rules, when anybody is allowed to see the presence status of anybody and there is no need for an xcap server. In this case the xcap part disappears from the scheme.. This mode of operation is configured by setting the flag <strong>force_active</strong> which is a module parameter for <strong>presence_xml</strong> module.<br />You can see a [[Documentation/Tutorials-Presence-SimplePresConfig|configuration file example for this case here].
+</p>
+<div class='vspace'></div><h4>Presence Server with integrated XCAP</h4>
+<p>If you want presence privacy rules enabled and you use a XCAP server, but one that communicates with the OpenSIPS Presence Server through a database table ( like OpenXCAP) than you can configure the presence server to work in an integrated xcap sever mode. For this you have to set the <strong>integrated_xcap_server</strong> parameter from <strong>presence_xml</strong> module. In this case the scheme simplifies by removing the xcap_client module and having the presence_xml module communicates only with the database.<br />You will notice in the configuration file that the mi_xmlrpc module is also loaded. The MI interface needs to be activated, so that OpenXCAP can signal to OpenSIPS when a change occurs in the presence rules documents. In this way the changes be effective immediately.The MI command that is sent in this case is 'refreshWatchers'.<br />See <a class='wikilink' title='Tutorials-Presence-OpenxcapPresConfig' href="Tutorials-Presence-OpenxcapPresConfig.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-OpenxcapPresConfig">configuration file example</a> here.
+</p>
+<div class='vspace'></div><h4>Presence Server with external XCAP</h4>
+<p>If you decide to have a presence server with privacy authorization and not use an integrated xcap server, an improvement can be made in this case also. For a non integrated XCAp server, xcap_client module has to be used and the address of the server( or servers) must be set using the <strong>presence_xml</strong> modules parameter - <strong>xcap_server</strong>. The xcap_client module has the task to retrieve XCAP documents from XCAP servers and store them in database. Also the module can be asked to synchronize documents saved in database with those on the server. For this a mean of detecting an update is required. The general mean, that apply to every XCAP server is periodical query. There is however the possibility for the server to signal an update to the module. For this the module has to be able to send <strong>refreshXcapDoc</strong> MI command when an update occurs. If you are using a XCAP server able to send this command then you can configure the server to work in no periodical query mode. For this you have to unset the <strong>xcap_client</strong> module parameter <strong>periodical_query</strong> ( set it to 0). 
+</p>
+<div class='vspace'></div><h4>Presence server with shared DB</h4>
+<p>Another configuration option refers to the way the presence module stores information. The default method is caching with periodical update in database for fast processing. However, if you have more presence servers serving the same domain and sharing the same database, this mode will not work. In this case you need to ensure that the servers will be able to communicate through the database. This can be achieved by setting the <strong>presence</strong> module parameter <strong>fallback2db</strong>. 
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=edit&restore=diff:1404304088:1399456115:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=edit&restore=diff:1404304088:1399456115:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=edit&restore=diff:1404304088:1399456115:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 07, 2014, at 11:48 AM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Changed line 37 from:</div>
+        <div class='diffdel'><ol><li>If you want presence privacy rules enabled and you use a XCAP server, but one that communicates with the OpenSIPS Presence Server through a database table ( like OpenXCAP) than you can configure the presence server to work in an integrated xcap sever mode. For this you have to set the <strong>integrated_xcap_server</strong> parameter from <strong>presence_xml</strong> module. In this case the scheme simplifies by removing the xcap_client module and having the presence_xml module communicates only with the database. See <a class='createlinktext' rel='nofollow' 
+    href="OpenxcapPresConfig-action=edit.htm" tppabs="http://www.opensips.org/Documentation/OpenxcapPresConfig?action=edit">configuration file example</a><a rel='nofollow' 
+    class='createlink' href="OpenxcapPresConfig-action=edit.htm" tppabs="http://www.opensips.org/Documentation/OpenxcapPresConfig?action=edit">?</a> here.\\
+</li></ol>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ol><li>If you want presence privacy rules enabled and you use a XCAP server, but one that communicates with the OpenSIPS Presence Server through a database table ( like OpenXCAP) than you can configure the presence server to work in an integrated xcap sever mode. For this you have to set the <strong>integrated_xcap_server</strong> parameter from <strong>presence_xml</strong> module. In this case the scheme simplifies by removing the xcap_client module and having the presence_xml module communicates only with the database. See <a class='wikilink' title='Tutorials-Presence-OpenxcapPresConfig' href="Tutorials-Presence-OpenxcapPresConfig.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-OpenxcapPresConfig">configuration file example</a> here.\\
+</li></ol>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-Presence-PresenceServer-action=edit&restore=diff-1399456115-1399456039-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=edit&restore=diff:1399456115:1399456039:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 07, 2014, at 11:47 AM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Changed line 35 from:</div>
+        <div class='diffdel'><ol><li>The most simple configuration is a presence server without privacy rules, when anybody is allowed to see the presence status of anybody and there is no need for an xcap server. In this case the xcap part disappears from the scheme. You can see a configuration file example for this case <a class='createlinktext' rel='nofollow' 
+    href="SimplePresConfig-action=edit.htm" tppabs="http://www.opensips.org/Documentation/SimplePresConfig?action=edit">here</a><a rel='nofollow' 
+    class='createlink' href="SimplePresConfig-action=edit.htm" tppabs="http://www.opensips.org/Documentation/SimplePresConfig?action=edit">?</a>. This mode of operation is configured by setting the flag <strong>force_active</strong> which is a module parameter for <strong>presence_xml</strong> module. 
+</li></ol>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ol><li>The most simple configuration is a presence server without privacy rules, when anybody is allowed to see the presence status of anybody and there is no need for an xcap server. In this case the xcap part disappears from the scheme. You can see a configuration file example for this case <a class='wikilink' title='Tutorials-Presence-SimplePresConfig' href="Tutorials-Presence-SimplePresConfig.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-SimplePresConfig">here</a>. This mode of operation is configured by setting the flag <strong>force_active</strong> which is a module parameter for <strong>presence_xml</strong> module. 
+</li></ol>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-Presence-PresenceServer-action=edit&restore=diff-1399456039-1399455225-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=edit&restore=diff:1399456039:1399455225:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 07, 2014, at 11:33 AM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Changed line 27 from:</div>
+        <div class='diffdel'><ul><li><a class='createlinktext' rel='nofollow' 
+    href="XcapClientModule-action=edit.htm" tppabs="http://www.opensips.org/Documentation/XcapClientModule?action=edit">XCAP_CLIENT module</a><a rel='nofollow' 
+    class='createlink' href="XcapClientModule-action=edit.htm" tppabs="http://www.opensips.org/Documentation/XcapClientModule?action=edit">?</a> -  an XCAP client interface with data retrieving functionality only, for OpenSIPS modules.
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><a class='wikilink' title='Tutorials-Presence-XcapClient' href="Tutorials-Presence-XcapClient.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-XcapClient">XCAP_CLIENT module</a> -  an XCAP client interface with data retrieving functionality only, for OpenSIPS modules.
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-Presence-PresenceServer-action=edit&restore=diff-1399455225-1399455140-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=edit&restore=diff:1399455225:1399455140:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 07, 2014, at 11:32 AM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Changed line 24 from:</div>
+        <div class='diffdel'><ul><li><a class='wikilink' title='Tutorials-Presence-PresenceAuxModules' href="Tutorials-Presence-PresenceAuxModules.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceAuxModules">PRESENCE_XML and **PRESENCE_MWI modules</a> - clients for PRESENCE module; register specific events to be handled by PRESENCE module:
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><a class='wikilink' title='Tutorials-Presence-PresenceAuxModules' href="Tutorials-Presence-PresenceAuxModules.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceAuxModules">PRESENCE_XML and PRESENCE_MWI modules</a> - clients for PRESENCE module; register specific events to be handled by PRESENCE module:
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-Presence-PresenceServer-action=edit&restore=diff-1399455140-1399454779-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=edit&restore=diff:1399455140:1399454779:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 07, 2014, at 11:26 AM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Changed lines 23-24 from:</div>
+        <div class='diffdel'><ul><li><a class='createlinktext' rel='nofollow' 
+    href="PresenceModule-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceModule?action=edit">PRESENCE module</a><a rel='nofollow' 
+    class='createlink' href="PresenceModule-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceModule?action=edit">?</a> - a general, event package independent Subscribe, Publish handler – Notify generator according to RFCs 3265 and 3903
+</li><li><a class='createlinktext' rel='nofollow' 
+    href="PresenceAuxModules-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceAuxModules?action=edit">PRESENCE_XML and **PRESENCE_MWI modules</a><a rel='nofollow' 
+    class='createlink' href="PresenceAuxModules-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceAuxModules?action=edit">?</a> - clients for PRESENCE module; register specific events to be handled by PRESENCE module:
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><a class='wikilink' title='Tutorials-Presence-PresenceModule' href="Tutorials-Presence-PresenceModule.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceModule">PRESENCE module</a> - a general, event package independent Subscribe, Publish handler – Notify generator according to RFCs 3265 and 3903
+</li><li><a class='wikilink' title='Tutorials-Presence-PresenceAuxModules' href="Tutorials-Presence-PresenceAuxModules.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceAuxModules">PRESENCE_XML and **PRESENCE_MWI modules</a> - clients for PRESENCE module; register specific events to be handled by PRESENCE module:
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-Presence-PresenceServer-action=edit&restore=diff-1399454779-1399454590-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=edit&restore=diff:1399454779:1399454590:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 07, 2014, at 11:23 AM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Changed lines 3-12 from:</div>
+        <div class='diffdel'><ol><li><a href='#ps_features'>Features</a>
+</li><li><a href='#ps_architecture'>Architecture</a>
+</li><li><a href='#module_description'>Module Description</a>
+</li><li><a href='#configuration'>Configuration</a>
+</li><li><a href='#database'>Database</a>
+</li></ol><p class='vspace'><a name='ps_features' id='ps_features'></a>
+</p><h2>Features</h2>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>(:toc-float Table of Content:)
+</p>
+<div class='vspace'></div><h3>Features</h3>
+</div>
+        <div class='difftype'>Changed lines 12-16 from:</div>
+        <div class='diffdel'><p class='vspace'><a name='ps_architecture' id='ps_architecture'></a>
+</p><h2>Architecture</h2>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><hr />
+<div class='vspace'></div><h3>Architecture</h3>
+</div>
+        <div class='difftype'>Changed lines 18-21 from:</div>
+        <div class='diffdel'><p><a name='module_description' id='module_description'></a>
+</p><h2>Module Description</h2>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><hr />
+<div class='vspace'></div><h3>Module Description</h3>
+</div>
+        <div class='difftype'>Changed lines 28-31 from:</div>
+        <div class='diffdel'><p class='vspace'><a name='configuration' id='configuration'></a>
+</p><h2>Configuration</h2>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><hr />
+<div class='vspace'></div><h3>Configuration</h3>
+</div>
+        <div class='difftype'>Changed lines 43-46 from:</div>
+        <div class='diffdel'><p class='vspace'><a name='database' id='database'></a>
+</p><h2>Database</h2>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><hr />
+<div class='vspace'></div><h3>Database</h3>
+</div>
+        <div class='difftype'>Changed lines 54-57 from:</div>
+        <div class='diffdel'><p class='vspace'>(:commentboxchrono:)
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><hr />
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-Presence-PresenceServer-action=edit&restore=diff-1399454590-1399454333-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=edit&restore=diff:1399454590:1399454333:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 07, 2014, at 11:18 AM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Changed lines 24-25 from:</div>
+        <div class='diffdel'><p><a class='createlinktext' rel='nofollow' 
+    href="PresenceDiagram-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceDiagram?action=edit">http://www.opensips.org/images/presence-schema-small.jpg</a><a rel='nofollow' 
+    class='createlink' href="PresenceDiagram-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceDiagram?action=edit">?</a>
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><a class='wikilink' title='Tutorials-Presence-PresenceDiagram' href="Tutorials-Presence-PresenceDiagram.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceDiagram">http://www.opensips.org/images/presence-schema-small.jpg</a>
+</p>
+</div>
+        <div class='difftype'>Changed line 38 from:</div>
+        <div class='diffdel'><p>The architecture in the <a class='createlinktext' rel='nofollow' 
+    href="PresenceDiagram-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceDiagram?action=edit">diagram</a><a rel='nofollow' 
+    class='createlink' href="PresenceDiagram-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceDiagram?action=edit">?</a> corresponds to a full configuration, when no restrictions are imposed, with privacy permission rules handling enabled and the use of a general XCAP server. 
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>The architecture in the <a class='wikilink' title='Tutorials-Presence-PresenceDiagram' href="Tutorials-Presence-PresenceDiagram.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceDiagram">diagram</a> corresponds to a full configuration, when no restrictions are imposed, with privacy permission rules handling enabled and the use of a general XCAP server. 
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-Presence-PresenceServer-action=edit&restore=diff-1399454333-1399454148-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=edit&restore=diff:1399454333:1399454148:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 07, 2014, at 11:15 AM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><p><a class='wikilink' title='Index' href="Index.htm" tppabs="http://www.opensips.org/Documentation/Index">Documentation</a> -&gt; Tutorials -&gt; <a class='wikilink' title='Tutorials-Presence' href="Tutorials-Presence.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence">Presence</a>
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h5>Documentation -&gt; <a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Tutorials</a> -&gt; <a class='wikilink' title='Tutorials-Presence' href="Tutorials-Presence.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence">Presence</a> -&gt; Presence Server</h5>
+</div>
+        <div class='difftype'>Changed lines 4-27 from:</div>
+        <div class='diffdel'><h3>OpenSIPS Presence</h3>
+<p>Note: Most of these instructions relate to 1.4 version. For an up to date tutorial see OpenSIP and OpenXCAP tutorial.
+</p>
+<p class='vspace'>I. <a class='selflink' href="Tutorials-Presence-PresenceServer.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer">Presence Server</a>
+</p><ol><li><a class='wikilink' title='Tutorials-Presence-PresenceServer' href="Tutorials-Presence-PresenceServer.htm#ps_architecture" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer#ps_architecture">Architecture</a>
+</li><li><a class='wikilink' title='Tutorials-Presence-PresenceServer' href="Tutorials-Presence-PresenceServer.htm#module_description" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer#module_description">Module Description</a>
+</li><li><a class='wikilink' title='Tutorials-Presence-PresenceServer' href="Tutorials-Presence-PresenceServer.htm#configuration" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer#configuration">Configuration</a>
+</li><li><a class='wikilink' title='Tutorials-Presence-PresenceServer' href="Tutorials-Presence-PresenceServer.htm#database" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer#database">Database</a>
+</li></ol><p class='vspace'>II. <a class='wikilink' title='Tutorials-PUAExtensions' href="Tutorials-PUAExtensions.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtensions">Presence User Agent Extensions</a>
+</p><ol><li><a class='wikilink' title='Tutorials-PUAExtensions' href="Tutorials-PUAExtensions.htm#pua_usrloc" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtensions#pua_usrloc">pua_usrloc</a>
+</li><li><a class='wikilink' title='Tutorials-PUAExtensions' href="Tutorials-PUAExtensions.htm#pua_mi" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtensions#pua_mi">pua_mi</a>
+</li><li><a class='wikilink' title='Tutorials-PUAExtensions' href="Tutorials-PUAExtensions.htm#pua_xmpp" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtensions#pua_xmpp">pua_xmpp</a>
+</li><li><a class='wikilink' title='Tutorials-PUAExtensions' href="Tutorials-PUAExtensions.htm#pua_bla" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtensions#pua_bla">pua_bla</a>
+</li><li><a class='wikilink' title='Tutorials-PUAExtensions' href="Tutorials-PUAExtensions.htm#pua_dialoginfo" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtensions#pua_dialoginfo">pua_dialoginfo</a>
+</li></ol><p class='vspace'>III.<a class='wikilink' title='Tutorials-RLS' href="Tutorials-RLS.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-RLS">Resource List Server</a>
+</p><ol><li><a class='wikilink' title='Tutorials-RLS' href="Tutorials-RLS.htm#rls_features" tppabs="http://www.opensips.org/Documentation/Tutorials-RLS#rls_features">Features</a>
+</li><li><a class='wikilink' title='Tutorials-RLS' href="Tutorials-RLS.htm#description" tppabs="http://www.opensips.org/Documentation/Tutorials-RLS#description">Description</a>
+</li><li><a class='wikilink' title='Tutorials-RLS' href="Tutorials-RLS.htm#rls_configuration" tppabs="http://www.opensips.org/Documentation/Tutorials-RLS#rls_configuration">Configuration</a>
+</li><li><a class='wikilink' title='Tutorials-RLS' href="Tutorials-RLS.htm#rls_database" tppabs="http://www.opensips.org/Documentation/Tutorials-RLS#rls_database">Database</a>
+</li></ol><p class='vspace'>IV. Slides from the presentation held at VON San Jose, 2008 describing with schemes and examples all presence features in OpenSIPS.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ol><li><a href='#ps_features'>Features</a>
+</li><li><a href='#ps_architecture'>Architecture</a>
+</li><li><a href='#module_description'>Module Description</a>
+</li><li><a href='#configuration'>Configuration</a>
+</li><li><a href='#database'>Database</a>
+</li></ol><p class='vspace'>
+</p><h2>Features</h2>
+<ul><li>privacy rules with XCAP storage 
+<ul><li>a faster integrated xcap mode that uses a database as an interface with the XCAP server ( works with OpenXCAP )
+</li></ul></li><li>fast caching with periodic update in database
+<ul><li>a fallback to database mode can be configured useful when more than one server is used for a domain
+</li></ul></li><li>extensible - new events to be handled by the server can be added easily due to the layered architecture
+</li></ul><p class='vspace'>
+</p><h2>Architecture</h2>
+<p><strong>Presence Diagram</strong> (click to enlarge) 
+<a class='createlinktext' rel='nofollow' 
+    href="PresenceDiagram-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceDiagram?action=edit">http://www.opensips.org/images/presence-schema-small.jpg</a><a rel='nofollow' 
+    class='createlink' href="PresenceDiagram-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceDiagram?action=edit">?</a>
+</p>
+<p class='vspace'>
+</p><h2>Module Description</h2>
+<ul><li><a class='createlinktext' rel='nofollow' 
+    href="PresenceModule-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceModule?action=edit">PRESENCE module</a><a rel='nofollow' 
+    class='createlink' href="PresenceModule-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceModule?action=edit">?</a> - a general, event package independent Subscribe, Publish handler – Notify generator according to RFCs 3265 and 3903
+</li><li><a class='createlinktext' rel='nofollow' 
+    href="PresenceAuxModules-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceAuxModules?action=edit">PRESENCE_XML and **PRESENCE_MWI modules</a><a rel='nofollow' 
+    class='createlink' href="PresenceAuxModules-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceAuxModules?action=edit">?</a> - clients for PRESENCE module; register specific events to be handled by PRESENCE module:
+<ul><li>presence_xml: 'presence'( RFC 3856) , 'presence.winfo' (RFC 3857), 'dialog;sla' (draft-anil-sipping- bla-03.txt)
+</li><li>presence_mwi: 'message-summary' (RFC 3842)
+</li></ul></li><li><a class='createlinktext' rel='nofollow' 
+    href="XcapClientModule-action=edit.htm" tppabs="http://www.opensips.org/Documentation/XcapClientModule?action=edit">XCAP_CLIENT module</a><a rel='nofollow' 
+    class='createlink' href="XcapClientModule-action=edit.htm" tppabs="http://www.opensips.org/Documentation/XcapClientModule?action=edit">?</a> -  an XCAP client interface with data retrieving functionality only, for OpenSIPS modules.
+</li></ul><p class='vspace'>
+</p><h2>Configuration</h2>
+<p>The architecture in the <a class='createlinktext' rel='nofollow' 
+    href="PresenceDiagram-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceDiagram?action=edit">diagram</a><a rel='nofollow' 
+    class='createlink' href="PresenceDiagram-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceDiagram?action=edit">?</a> corresponds to a full configuration, when no restrictions are imposed, with privacy permission rules handling enabled and the use of a general XCAP server. 
+There is the possibility to simplify the scheme according to the needs and resources. This can be done by configuring the modules so that some connections are removed or  others appear.
+</p>
+<div class='vspace'></div><ol><li>The most simple configuration is a presence server without privacy rules, when anybody is allowed to see the presence status of anybody and there is no need for an xcap server. In this case the xcap part disappears from the scheme. You can see a configuration file example for this case <a class='createlinktext' rel='nofollow' 
+    href="SimplePresConfig-action=edit.htm" tppabs="http://www.opensips.org/Documentation/SimplePresConfig?action=edit">here</a><a rel='nofollow' 
+    class='createlink' href="SimplePresConfig-action=edit.htm" tppabs="http://www.opensips.org/Documentation/SimplePresConfig?action=edit">?</a>. This mode of operation is configured by setting the flag <strong>force_active</strong> which is a module parameter for <strong>presence_xml</strong> module. 
+<div class='vspace'></div></li><li>If you want presence privacy rules enabled and you use a XCAP server, but one that communicates with the OpenSIPS Presence Server through a database table ( like OpenXCAP) than you can configure the presence server to work in an integrated xcap sever mode. For this you have to set the <strong>integrated_xcap_server</strong> parameter from <strong>presence_xml</strong> module. In this case the scheme simplifies by removing the xcap_client module and having the presence_xml module communicates only with the database. See <a class='createlinktext' rel='nofollow' 
+    href="OpenxcapPresConfig-action=edit.htm" tppabs="http://www.opensips.org/Documentation/OpenxcapPresConfig?action=edit">configuration file example</a><a rel='nofollow' 
+    class='createlink' href="OpenxcapPresConfig-action=edit.htm" tppabs="http://www.opensips.org/Documentation/OpenxcapPresConfig?action=edit">?</a> here.<br />You will notice in the configuration file that the mi_xmlrpc module is also loaded. The MI interface needs to be activated, so that OpenXCAP can signal to OpenSIPS when a change occurs in the presence rules documents. In this way the changes be effective immediately.The MI command that is sent in this case is 'refreshWatchers'.
+<div class='vspace'></div></li><li>If you decide to have a presence server with privacy authorization and not use an integrated xcap server, an improvement can be made in this case also. For a non integrated XCAp server, xcap_client module has to be used and the address of the server( or servers) must be set using the <strong>presence_xml</strong> modules parameter - <strong>xcap_server</strong>. The xcap_client module has the task to retrieve XCAP documents from XCAP servers and store them in database. Also the module can be asked to synchronize documents saved in database with those on the server. For this a mean of detecting an update is required. The general mean, that apply to every XCAP server is periodical query. There is however the possibility for the server to signal an update to the module. For this the module has to be able to send <strong>refreshXcapDoc</strong> MI command when an update occurs. If you are using a XCAP server able to send this command then you can configure the server to work in no periodical query mode. For this you have to unset the <strong>xcap_client</strong> module parameter <strong>periodical_query</strong> ( set it to 0). 
+<div class='vspace'></div></li><li>Another configuration option refers to the way the presence module stores information. The default method is caching with periodical update in database for fast processing. However, if you have more presence servers serving the same domain and sharing the same database, this mode will not work. In this case you need to ensure that the servers will be able to communicate through the database. This can be achieved by setting the <strong>presence</strong> module parameter <strong>fallback2db</strong>. 
+</li></ol><p class='vspace'>
+</p><h2>Database</h2>
+<p>Presence Server requires 4 tables in database:
+</p><ol><li>active_watchers : stores the active Subscribe dialogs
+</li><li>presentity: stores the published information
+</li><li>watchers: stores the subscription status of the watchers
+</li><li>xcap: stores the XCAP documents
+</li></ol><p class='vspace'>The first three tables are only used internally by the server. The <strong>xcap</strong> table is either used as a communication interface between the XCAP server (if the server is working in 'integrated_xcap' mode) or as a communication means between the <strong>xcap_client</strong> module which populates the table and <strong>presence_xml</strong> module which uses that information. 
+</p>
+<p class='vspace'>(:commentboxchrono:)
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-Presence-PresenceServer-action=edit&restore=diff-1399454148-1368099590-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=edit&restore=diff:1399454148:1368099590:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 01:39 PM 
+        by <span class='diffauthor' title='79.118.227.150'>79.118.227.150</span> - </div>
+        <div class='difftype'>Changed line 8 from:</div>
+        <div class='diffdel'><p>I. <a class='selflink' href="Tutorials-Presence-PresenceServer.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer">Presence Server</a>
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>I. <a class='selflink' href="Tutorials-Presence-PresenceServer.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer">Presence Server</a>
+</p>
+</div>
+        <div class='difftype'>Changed lines 14-25 from:</div>
+        <div class='diffdel'><p>II. <a class='createlinktext' rel='nofollow' 
+    href="Tutorials-PUAExtension-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtension?action=edit">Presence User Agent Extensions</a><a rel='nofollow' 
+    class='createlink' href="Tutorials-PUAExtension-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtension?action=edit">?</a>
+</p><ol><li><a class='wikilink' title='Tutorials-PUAExtensions' href="Tutorials-PUAExtensions.htm#pua_usrloc" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtensions#pua_usrloc">pua_usrloc</a>
+</li><li><a class='wikilink' title='Tutorials-PUAExtensions' href="Tutorials-PUAExtensions.htm#pua_mi" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtensions#pua_mi">pua_mi</a>
+</li><li><a class='wikilink' title='Tutorials-PUAExtensions' href="Tutorials-PUAExtensions.htm#pua_xmpp" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtensions#pua_xmpp">pua_xmpp</a>
+</li><li><a class='wikilink' title='Tutorials-PUAExtensions' href="Tutorials-PUAExtensions.htm#pua_bla" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtensions#pua_bla">pua_bla</a>
+</li><li><a class='wikilink' title='Tutorials-PUAExtensions' href="Tutorials-PUAExtensions.htm#pua_dialoginfo" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtensions#pua_dialoginfo">pua_dialoginfo</a>
+</li></ol><p class='vspace'>III.<a class='createlinktext' rel='nofollow' 
+    href="Tutorials-RL-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-RL?action=edit">Resource List Server</a><a rel='nofollow' 
+    class='createlink' href="Tutorials-RL-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-RL?action=edit">?</a>
+</p><ol><li><a class='wikilink' title='Tutorials-RLS' href="Tutorials-RLS.htm#rls_features" tppabs="http://www.opensips.org/Documentation/Tutorials-RLS#rls_features">Features</a>
+</li><li><a class='wikilink' title='Tutorials-RLS' href="Tutorials-RLS.htm#description" tppabs="http://www.opensips.org/Documentation/Tutorials-RLS#description">Description</a>
+</li><li><a class='wikilink' title='Tutorials-RLS' href="Tutorials-RLS.htm#rls_configuration" tppabs="http://www.opensips.org/Documentation/Tutorials-RLS#rls_configuration">Configuration</a>
+</li><li><a class='wikilink' title='Tutorials-RLS' href="Tutorials-RLS.htm#rls_database" tppabs="http://www.opensips.org/Documentation/Tutorials-RLS#rls_database">Database</a>
+</li></ol>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>II. <a class='wikilink' title='Tutorials-PUAExtensions' href="Tutorials-PUAExtensions.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtensions">Presence User Agent Extensions</a>
+</p><ol><li><a class='wikilink' title='Tutorials-PUAExtensions' href="Tutorials-PUAExtensions.htm#pua_usrloc" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtensions#pua_usrloc">pua_usrloc</a>
+</li><li><a class='wikilink' title='Tutorials-PUAExtensions' href="Tutorials-PUAExtensions.htm#pua_mi" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtensions#pua_mi">pua_mi</a>
+</li><li><a class='wikilink' title='Tutorials-PUAExtensions' href="Tutorials-PUAExtensions.htm#pua_xmpp" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtensions#pua_xmpp">pua_xmpp</a>
+</li><li><a class='wikilink' title='Tutorials-PUAExtensions' href="Tutorials-PUAExtensions.htm#pua_bla" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtensions#pua_bla">pua_bla</a>
+</li><li><a class='wikilink' title='Tutorials-PUAExtensions' href="Tutorials-PUAExtensions.htm#pua_dialoginfo" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtensions#pua_dialoginfo">pua_dialoginfo</a>
+</li></ol><p class='vspace'>III.<a class='wikilink' title='Tutorials-RLS' href="Tutorials-RLS.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-RLS">Resource List Server</a>
+</p><ol><li><a class='wikilink' title='Tutorials-RLS' href="Tutorials-RLS.htm#rls_features" tppabs="http://www.opensips.org/Documentation/Tutorials-RLS#rls_features">Features</a>
+</li><li><a class='wikilink' title='Tutorials-RLS' href="Tutorials-RLS.htm#description" tppabs="http://www.opensips.org/Documentation/Tutorials-RLS#description">Description</a>
+</li><li><a class='wikilink' title='Tutorials-RLS' href="Tutorials-RLS.htm#rls_configuration" tppabs="http://www.opensips.org/Documentation/Tutorials-RLS#rls_configuration">Configuration</a>
+</li><li><a class='wikilink' title='Tutorials-RLS' href="Tutorials-RLS.htm#rls_database" tppabs="http://www.opensips.org/Documentation/Tutorials-RLS#rls_database">Database</a>
+</li></ol>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-Presence-PresenceServer-action=edit&restore=diff-1368099590-1368099517-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=edit&restore=diff:1368099590:1368099517:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 01:38 PM 
+        by <span class='diffauthor' title='79.118.227.150'>79.118.227.150</span> - </div>
+        <div class='difftype'>Changed lines 1-63 from:</div>
+        <div class='diffdel'><h2><a class='createlinktext' rel='nofollow' 
+    href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">Documentation</a><a rel='nofollow' 
+    class='createlink' href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">?</a> -&gt; <a class='wikilink' title='Tutorials-Presence' href="Tutorials-Presence.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence">Presence Tutorial</a> -&gt; Presence Server</h2>
+<h2>Presence Server</h2>
+<p  style='text-align: right;'> <strong>written by Anca Vamanu</strong>
+</p><ol><li><a href='#ps_features'>Features</a>
+</li><li><a href='#ps_architecture'>Architecture</a>
+</li><li><a href='#module_description'>Module Description</a>
+</li><li><a href='#configuration'>Configuration</a>
+</li><li><a href='#database'>Database</a>
+</li></ol><p class='vspace'>
+</p><h2>Features</h2>
+<ul><li>privacy rules with XCAP storage 
+<ul><li>a faster integrated xcap mode that uses a database as an interface with the XCAP server ( works with OpenXCAP )
+</li></ul></li><li>fast caching with periodic update in database
+<ul><li>a fallback to database mode can be configured useful when more than one server is used for a domain
+</li></ul></li><li>extensible - new events to be handled by the server can be added easily due to the layered architecture
+</li></ul><p class='vspace'>
+</p><h2>Architecture</h2>
+<p><strong>Presence Diagram</strong> (click to enlarge) 
+<a class='wikilink' title='Tutorials-Presence-PresenceDiagram' href="Tutorials-Presence-PresenceDiagram.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceDiagram">http://www.opensips.org/images/presence-schema-small.jpg</a>
+</p>
+<p class='vspace'>
+</p><h2>Module Description</h2>
+<ul><li><a class='wikilink' title='Tutorials-Presence-PresenceModule' href="Tutorials-Presence-PresenceModule.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceModule">PRESENCE module</a> - a general, event package independent Subscribe, Publish handler – Notify generator according to RFCs 3265 and 3903
+</li><li><a class='wikilink' title='Tutorials-Presence-PresenceAuxModules' href="Tutorials-Presence-PresenceAuxModules.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceAuxModules">PRESENCE_XML and **PRESENCE_MWI modules</a> - clients for PRESENCE module; register specific events to be handled by PRESENCE module:
+<ul><li>presence_xml: 'presence'( RFC 3856) , 'presence.winfo' (RFC 3857), 'dialog;sla' (draft-anil-sipping- bla-03.txt)
+</li><li>presence_mwi: 'message-summary' (RFC 3842)
+</li></ul></li><li><a class='wikilink' title='Tutorials-Presence-XcapClient' href="Tutorials-Presence-XcapClient.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-XcapClient">XCAP_CLIENT module</a> -  an XCAP client interface with data retrieving functionality only, for OpenSIPS modules.
+</li></ul><p class='vspace'>
+</p><h2>Configuration</h2>
+<p>The architecture in the <a class='wikilink' title='Tutorials-Presence-PresenceDiagram' href="Tutorials-Presence-PresenceDiagram.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceDiagram">diagram</a> corresponds to a full configuration, when no restrictions are imposed, with privacy permission rules handling enabled and the use of a general XCAP server. 
+There is the possibility to simplify the scheme according to the needs and resources. This can be done by configuring the modules so that some connections are removed or  others appear.
+</p>
+<div class='vspace'></div><ol><li>The most simple configuration is a presence server without privacy rules, when anybody is allowed to see the presence status of anybody and there is no need for an xcap server. In this case the xcap part disappears from the scheme. You can see a configuration file example for this case <a class='wikilink' title='Tutorials-Presence-SimplePresConfig' href="Tutorials-Presence-SimplePresConfig.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-SimplePresConfig">here</a>. This mode of operation is configured by setting the flag <strong>force_active</strong> which is a module parameter for <strong>presence_xml</strong> module. 
+<div class='vspace'></div></li><li>If you want presence privacy rules enabled and you use a XCAP server, but one that communicates with the OpenSIPS Presence Server through a database table ( like OpenXCAP) than you can configure the presence server to work in an integrated xcap sever mode. For this you have to set the <strong>integrated_xcap_server</strong> parameter from <strong>presence_xml</strong> module. In this case the scheme simplifies by removing the xcap_client module and having the presence_xml module communicates only with the database. See <a class='wikilink' title='Tutorials-Presence-OpenxcapPresConfig' href="Tutorials-Presence-OpenxcapPresConfig.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-OpenxcapPresConfig">configuration file example</a> here.<br />You will notice in the configuration file that the mi_xmlrpc module is also loaded. The MI interface needs to be activated, so that OpenXCAP can signal to OpenSIPS when a change occurs in the presence rules documents. In this way the changes be effective immediately.The MI command that is sent in this case is 'refreshWatchers'.
+<div class='vspace'></div></li><li>If you decide to have a presence server with privacy authorization and not use an integrated xcap server, an improvement can be made in this case also. For a non integrated XCAp server, xcap_client module has to be used and the address of the server( or servers) must be set using the <strong>presence_xml</strong> modules parameter - <strong>xcap_server</strong>. The xcap_client module has the task to retrieve XCAP documents from XCAP servers and store them in database. Also the module can be asked to synchronize documents saved in database with those on the server. For this a mean of detecting an update is required. The general mean, that apply to every XCAP server is periodical query. There is however the possibility for the server to signal an update to the module. For this the module has to be able to send <strong>refreshXcapDoc</strong> MI command when an update occurs. If you are using a XCAP server able to send this command then you can configure the server to work in no periodical query mode. For this you have to unset the <strong>xcap_client</strong> module parameter <strong>periodical_query</strong> ( set it to 0). 
+<div class='vspace'></div></li><li>Another configuration option refers to the way the presence module stores information. The default method is caching with periodical update in database for fast processing. However, if you have more presence servers serving the same domain and sharing the same database, this mode will not work. In this case you need to ensure that the servers will be able to communicate through the database. This can be achieved by setting the <strong>presence</strong> module parameter <strong>fallback2db</strong>. 
+</li></ol><p class='vspace'>
+</p><h2>Database</h2>
+<p>Presence Server requires 4 tables in database:
+</p><ol><li>active_watchers : stores the active Subscribe dialogs
+</li><li>presentity: stores the published information
+</li><li>watchers: stores the subscription status of the watchers
+</li><li>xcap: stores the XCAP documents
+</li></ol><p class='vspace'>The first three tables are only used internally by the server. The <strong>xcap</strong> table is either used as a communication interface between the XCAP server (if the server is working in 'integrated_xcap' mode) or as a communication means between the <strong>xcap_client</strong> module which populates the table and <strong>presence_xml</strong> module which uses that information. 
+</p>
+<p class='vspace'>(:commentboxchrono:)
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><a class='wikilink' title='Index' href="Index.htm" tppabs="http://www.opensips.org/Documentation/Index">Documentation</a> -&gt; Tutorials -&gt; <a class='wikilink' title='Tutorials-Presence' href="Tutorials-Presence.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence">Presence</a>
+</p><hr />
+<div class='vspace'></div><h3>OpenSIPS Presence</h3>
+<p>Note: Most of these instructions relate to 1.4 version. For an up to date tutorial see OpenSIP and OpenXCAP tutorial.
+</p>
+<p class='vspace'>I. <a class='selflink' href="Tutorials-Presence-PresenceServer.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer">Presence Server</a>
+</p><ol><li><a class='wikilink' title='Tutorials-Presence-PresenceServer' href="Tutorials-Presence-PresenceServer.htm#ps_architecture" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer#ps_architecture">Architecture</a>
+</li><li><a class='wikilink' title='Tutorials-Presence-PresenceServer' href="Tutorials-Presence-PresenceServer.htm#module_description" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer#module_description">Module Description</a>
+</li><li><a class='wikilink' title='Tutorials-Presence-PresenceServer' href="Tutorials-Presence-PresenceServer.htm#configuration" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer#configuration">Configuration</a>
+</li><li><a class='wikilink' title='Tutorials-Presence-PresenceServer' href="Tutorials-Presence-PresenceServer.htm#database" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer#database">Database</a>
+</li></ol><p class='vspace'>II. <a class='createlinktext' rel='nofollow' 
+    href="Tutorials-PUAExtension-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtension?action=edit">Presence User Agent Extensions</a><a rel='nofollow' 
+    class='createlink' href="Tutorials-PUAExtension-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtension?action=edit">?</a>
+</p><ol><li><a class='wikilink' title='Tutorials-PUAExtensions' href="Tutorials-PUAExtensions.htm#pua_usrloc" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtensions#pua_usrloc">pua_usrloc</a>
+</li><li><a class='wikilink' title='Tutorials-PUAExtensions' href="Tutorials-PUAExtensions.htm#pua_mi" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtensions#pua_mi">pua_mi</a>
+</li><li><a class='wikilink' title='Tutorials-PUAExtensions' href="Tutorials-PUAExtensions.htm#pua_xmpp" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtensions#pua_xmpp">pua_xmpp</a>
+</li><li><a class='wikilink' title='Tutorials-PUAExtensions' href="Tutorials-PUAExtensions.htm#pua_bla" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtensions#pua_bla">pua_bla</a>
+</li><li><a class='wikilink' title='Tutorials-PUAExtensions' href="Tutorials-PUAExtensions.htm#pua_dialoginfo" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtensions#pua_dialoginfo">pua_dialoginfo</a>
+</li></ol><p class='vspace'>III.<a class='createlinktext' rel='nofollow' 
+    href="Tutorials-RL-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-RL?action=edit">Resource List Server</a><a rel='nofollow' 
+    class='createlink' href="Tutorials-RL-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-RL?action=edit">?</a>
+</p><ol><li><a class='wikilink' title='Tutorials-RLS' href="Tutorials-RLS.htm#rls_features" tppabs="http://www.opensips.org/Documentation/Tutorials-RLS#rls_features">Features</a>
+</li><li><a class='wikilink' title='Tutorials-RLS' href="Tutorials-RLS.htm#description" tppabs="http://www.opensips.org/Documentation/Tutorials-RLS#description">Description</a>
+</li><li><a class='wikilink' title='Tutorials-RLS' href="Tutorials-RLS.htm#rls_configuration" tppabs="http://www.opensips.org/Documentation/Tutorials-RLS#rls_configuration">Configuration</a>
+</li><li><a class='wikilink' title='Tutorials-RLS' href="Tutorials-RLS.htm#rls_database" tppabs="http://www.opensips.org/Documentation/Tutorials-RLS#rls_database">Database</a>
+</li></ol><p class='vspace'>IV. Slides from the presentation held at VON San Jose, 2008 describing with schemes and examples all presence features in OpenSIPS.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-Presence-PresenceServer-action=edit&restore=diff-1368099517-1368092363-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=edit&restore=diff:1368099517:1368092363:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 11:39 AM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 24 from:</div>
+        <div class='diffdel'><p><a class='createlinktext' rel='nofollow' 
+    href="PresenceDiagram-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceDiagram?action=edit">http://www.opensips.org/images/presence-schema-small.jpg</a><a rel='nofollow' 
+    class='createlink' href="PresenceDiagram-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceDiagram?action=edit">?</a>
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><a class='wikilink' title='Tutorials-Presence-PresenceDiagram' href="Tutorials-Presence-PresenceDiagram.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceDiagram">http://www.opensips.org/images/presence-schema-small.jpg</a>
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-Presence-PresenceServer-action=edit&restore=diff-1368092363-1368092296-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=edit&restore=diff:1368092363:1368092296:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 11:38 AM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><h2>Resources -&gt; <a class='wikilink' title='Documentation' href="javascript:if(confirm(%27http://www.opensips.org/Resources/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/Documentation%27" tppabs="http://www.opensips.org/Resources/Documentation">Documentation</a> -&gt; <a class='wikilink' title='DocsPapPa' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsPapPa  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsPapPa%27" tppabs="http://www.opensips.org/Resources/DocsPapPa">Presence</a> -&gt; Presence Server</h2>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h2><a class='createlinktext' rel='nofollow' 
+    href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">Documentation</a><a rel='nofollow' 
+    class='createlink' href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">?</a> -&gt; <a class='wikilink' title='Tutorials-Presence' href="Tutorials-Presence.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence">Presence Tutorial</a> -&gt; Presence Server</h2>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-Presence-PresenceServer-action=edit&restore=diff-1368092296-1366968545-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=edit&restore=diff:1368092296:1366968545:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 26, 2013, at 11:29 AM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 41 from:</div>
+        <div class='diffdel'><ol><li>The most simple configuration is a presence server without privacy rules, when anybody is allowed to see the presence status of anybody and there is no need for an xcap server. In this case the xcap part disappears from the scheme. You can see a configuration file example for this case <a class='createlinktext' rel='nofollow' 
+    href="SimplePresConfig-action=edit.htm" tppabs="http://www.opensips.org/Documentation/SimplePresConfig?action=edit">here</a><a rel='nofollow' 
+    class='createlink' href="SimplePresConfig-action=edit.htm" tppabs="http://www.opensips.org/Documentation/SimplePresConfig?action=edit">?</a>. This mode of operation is configured by setting the flag <strong>force_active</strong> which is a module parameter for <strong>presence_xml</strong> module. 
+</li></ol>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ol><li>The most simple configuration is a presence server without privacy rules, when anybody is allowed to see the presence status of anybody and there is no need for an xcap server. In this case the xcap part disappears from the scheme. You can see a configuration file example for this case <a class='wikilink' title='Tutorials-Presence-SimplePresConfig' href="Tutorials-Presence-SimplePresConfig.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-SimplePresConfig">here</a>. This mode of operation is configured by setting the flag <strong>force_active</strong> which is a module parameter for <strong>presence_xml</strong> module. 
+</li></ol>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=edit&restore=diff:1366968545:1366968515:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=edit&restore=diff:1366968545:1366968515:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=edit&restore=diff:1366968545:1366968515:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 26, 2013, at 11:28 AM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 43 from:</div>
+        <div class='diffdel'><ol><li>If you want presence privacy rules enabled and you use a XCAP server, but one that communicates with the OpenSIPS Presence Server through a database table ( like OpenXCAP) than you can configure the presence server to work in an integrated xcap sever mode. For this you have to set the <strong>integrated_xcap_server</strong> parameter from <strong>presence_xml</strong> module. In this case the scheme simplifies by removing the xcap_client module and having the presence_xml module communicates only with the database. See <a class='createlinktext' rel='nofollow' 
+    href="OpenxcapPresConfig-action=edit.htm" tppabs="http://www.opensips.org/Documentation/OpenxcapPresConfig?action=edit">configuration file example</a><a rel='nofollow' 
+    class='createlink' href="OpenxcapPresConfig-action=edit.htm" tppabs="http://www.opensips.org/Documentation/OpenxcapPresConfig?action=edit">?</a> here.\\
+</li></ol>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ol><li>If you want presence privacy rules enabled and you use a XCAP server, but one that communicates with the OpenSIPS Presence Server through a database table ( like OpenXCAP) than you can configure the presence server to work in an integrated xcap sever mode. For this you have to set the <strong>integrated_xcap_server</strong> parameter from <strong>presence_xml</strong> module. In this case the scheme simplifies by removing the xcap_client module and having the presence_xml module communicates only with the database. See <a class='wikilink' title='Tutorials-Presence-OpenxcapPresConfig' href="Tutorials-Presence-OpenxcapPresConfig.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-OpenxcapPresConfig">configuration file example</a> here.\\
+</li></ol>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-Presence-PresenceServer-action=edit&restore=diff-1366968515-1366968278-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=edit&restore=diff:1366968515:1366968278:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 26, 2013, at 11:24 AM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 38 from:</div>
+        <div class='diffdel'><p>The architecture in the <a class='createlinktext' rel='nofollow' 
+    href="PresenceDiagram-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceDiagram?action=edit">diagram</a><a rel='nofollow' 
+    class='createlink' href="PresenceDiagram-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceDiagram?action=edit">?</a> corresponds to a full configuration, when no restrictions are imposed, with privacy permission rules handling enabled and the use of a general XCAP server. 
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>The architecture in the <a class='wikilink' title='Tutorials-Presence-PresenceDiagram' href="Tutorials-Presence-PresenceDiagram.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceDiagram">diagram</a> corresponds to a full configuration, when no restrictions are imposed, with privacy permission rules handling enabled and the use of a general XCAP server. 
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-Presence-PresenceServer-action=edit&restore=diff-1366968278-1366823843-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=edit&restore=diff:1366968278:1366823843:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 24, 2013, at 07:17 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 33 from:</div>
+        <div class='diffdel'><ul><li><a class='createlinktext' rel='nofollow' 
+    href="XcapClientModule-action=edit.htm" tppabs="http://www.opensips.org/Documentation/XcapClientModule?action=edit">XCAP_CLIENT module</a><a rel='nofollow' 
+    class='createlink' href="XcapClientModule-action=edit.htm" tppabs="http://www.opensips.org/Documentation/XcapClientModule?action=edit">?</a> -  an XCAP client interface with data retrieving functionality only, for OpenSIPS modules.
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><a class='wikilink' title='Tutorials-Presence-XcapClient' href="Tutorials-Presence-XcapClient.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-XcapClient">XCAP_CLIENT module</a> -  an XCAP client interface with data retrieving functionality only, for OpenSIPS modules.
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-Presence-PresenceServer-action=edit&restore=diff-1366823843-1366823731-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=edit&restore=diff:1366823843:1366823731:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 24, 2013, at 07:15 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 30 from:</div>
+        <div class='diffdel'><ul><li><a class='createlinktext' rel='nofollow' 
+    href="PresenceAuxModules-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceAuxModules?action=edit">PRESENCE_XML and **PRESENCE_MWI modules</a><a rel='nofollow' 
+    class='createlink' href="PresenceAuxModules-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceAuxModules?action=edit">?</a> - clients for PRESENCE module; register specific events to be handled by PRESENCE module:
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><a class='wikilink' title='Tutorials-Presence-PresenceAuxModules' href="Tutorials-Presence-PresenceAuxModules.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceAuxModules">PRESENCE_XML and **PRESENCE_MWI modules</a> - clients for PRESENCE module; register specific events to be handled by PRESENCE module:
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-Presence-PresenceServer-action=edit&restore=diff-1366823731-1366823600-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=edit&restore=diff:1366823731:1366823600:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 24, 2013, at 07:13 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 29 from:</div>
+        <div class='diffdel'><ul><li><a class='createlinktext' rel='nofollow' 
+    href="PresenceModule-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceModule?action=edit">PRESENCE module</a><a rel='nofollow' 
+    class='createlink' href="PresenceModule-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceModule?action=edit">?</a> - a general, event package independent Subscribe, Publish handler – Notify generator according to RFCs 3265 and 3903
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><a class='wikilink' title='Tutorials-Presence-PresenceModule' href="Tutorials-Presence-PresenceModule.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceModule">PRESENCE module</a> - a general, event package independent Subscribe, Publish handler – Notify generator according to RFCs 3265 and 3903
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-Presence-PresenceServer-action=edit&restore=diff-1366823600-1366821703-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=edit&restore=diff:1366823600:1366821703:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 24, 2013, at 06:41 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Added lines 1-63:</div>
+        <div class='diffadd'><h2>Resources -&gt; <a class='wikilink' title='Documentation' href="javascript:if(confirm(%27http://www.opensips.org/Resources/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/Documentation%27" tppabs="http://www.opensips.org/Resources/Documentation">Documentation</a> -&gt; <a class='wikilink' title='DocsPapPa' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsPapPa  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsPapPa%27" tppabs="http://www.opensips.org/Resources/DocsPapPa">Presence</a> -&gt; Presence Server</h2>
+<h2>Presence Server</h2>
+<p  style='text-align: right;'> <strong>written by Anca Vamanu</strong>
+</p><ol><li><a href='#ps_features'>Features</a>
+</li><li><a href='#ps_architecture'>Architecture</a>
+</li><li><a href='#module_description'>Module Description</a>
+</li><li><a href='#configuration'>Configuration</a>
+</li><li><a href='#database'>Database</a>
+</li></ol><p class='vspace'>
+</p><h2>Features</h2>
+<ul><li>privacy rules with XCAP storage 
+<ul><li>a faster integrated xcap mode that uses a database as an interface with the XCAP server ( works with OpenXCAP )
+</li></ul></li><li>fast caching with periodic update in database
+<ul><li>a fallback to database mode can be configured useful when more than one server is used for a domain
+</li></ul></li><li>extensible - new events to be handled by the server can be added easily due to the layered architecture
+</li></ul><p class='vspace'>
+</p><h2>Architecture</h2>
+<p><strong>Presence Diagram</strong> (click to enlarge) 
+<a class='createlinktext' rel='nofollow' 
+    href="PresenceDiagram-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceDiagram?action=edit">http://www.opensips.org/images/presence-schema-small.jpg</a><a rel='nofollow' 
+    class='createlink' href="PresenceDiagram-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceDiagram?action=edit">?</a>
+</p>
+<p class='vspace'>
+</p><h2>Module Description</h2>
+<ul><li><a class='createlinktext' rel='nofollow' 
+    href="PresenceModule-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceModule?action=edit">PRESENCE module</a><a rel='nofollow' 
+    class='createlink' href="PresenceModule-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceModule?action=edit">?</a> - a general, event package independent Subscribe, Publish handler – Notify generator according to RFCs 3265 and 3903
+</li><li><a class='createlinktext' rel='nofollow' 
+    href="PresenceAuxModules-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceAuxModules?action=edit">PRESENCE_XML and **PRESENCE_MWI modules</a><a rel='nofollow' 
+    class='createlink' href="PresenceAuxModules-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceAuxModules?action=edit">?</a> - clients for PRESENCE module; register specific events to be handled by PRESENCE module:
+<ul><li>presence_xml: 'presence'( RFC 3856) , 'presence.winfo' (RFC 3857), 'dialog;sla' (draft-anil-sipping- bla-03.txt)
+</li><li>presence_mwi: 'message-summary' (RFC 3842)
+</li></ul></li><li><a class='createlinktext' rel='nofollow' 
+    href="XcapClientModule-action=edit.htm" tppabs="http://www.opensips.org/Documentation/XcapClientModule?action=edit">XCAP_CLIENT module</a><a rel='nofollow' 
+    class='createlink' href="XcapClientModule-action=edit.htm" tppabs="http://www.opensips.org/Documentation/XcapClientModule?action=edit">?</a> -  an XCAP client interface with data retrieving functionality only, for OpenSIPS modules.
+</li></ul><p class='vspace'>
+</p><h2>Configuration</h2>
+<p>The architecture in the <a class='createlinktext' rel='nofollow' 
+    href="PresenceDiagram-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceDiagram?action=edit">diagram</a><a rel='nofollow' 
+    class='createlink' href="PresenceDiagram-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PresenceDiagram?action=edit">?</a> corresponds to a full configuration, when no restrictions are imposed, with privacy permission rules handling enabled and the use of a general XCAP server. 
+There is the possibility to simplify the scheme according to the needs and resources. This can be done by configuring the modules so that some connections are removed or  others appear.
+</p>
+<div class='vspace'></div><ol><li>The most simple configuration is a presence server without privacy rules, when anybody is allowed to see the presence status of anybody and there is no need for an xcap server. In this case the xcap part disappears from the scheme. You can see a configuration file example for this case <a class='createlinktext' rel='nofollow' 
+    href="SimplePresConfig-action=edit.htm" tppabs="http://www.opensips.org/Documentation/SimplePresConfig?action=edit">here</a><a rel='nofollow' 
+    class='createlink' href="SimplePresConfig-action=edit.htm" tppabs="http://www.opensips.org/Documentation/SimplePresConfig?action=edit">?</a>. This mode of operation is configured by setting the flag <strong>force_active</strong> which is a module parameter for <strong>presence_xml</strong> module. 
+<div class='vspace'></div></li><li>If you want presence privacy rules enabled and you use a XCAP server, but one that communicates with the OpenSIPS Presence Server through a database table ( like OpenXCAP) than you can configure the presence server to work in an integrated xcap sever mode. For this you have to set the <strong>integrated_xcap_server</strong> parameter from <strong>presence_xml</strong> module. In this case the scheme simplifies by removing the xcap_client module and having the presence_xml module communicates only with the database. See <a class='createlinktext' rel='nofollow' 
+    href="OpenxcapPresConfig-action=edit.htm" tppabs="http://www.opensips.org/Documentation/OpenxcapPresConfig?action=edit">configuration file example</a><a rel='nofollow' 
+    class='createlink' href="OpenxcapPresConfig-action=edit.htm" tppabs="http://www.opensips.org/Documentation/OpenxcapPresConfig?action=edit">?</a> here.<br />You will notice in the configuration file that the mi_xmlrpc module is also loaded. The MI interface needs to be activated, so that OpenXCAP can signal to OpenSIPS when a change occurs in the presence rules documents. In this way the changes be effective immediately.The MI command that is sent in this case is 'refreshWatchers'.
+<div class='vspace'></div></li><li>If you decide to have a presence server with privacy authorization and not use an integrated xcap server, an improvement can be made in this case also. For a non integrated XCAp server, xcap_client module has to be used and the address of the server( or servers) must be set using the <strong>presence_xml</strong> modules parameter - <strong>xcap_server</strong>. The xcap_client module has the task to retrieve XCAP documents from XCAP servers and store them in database. Also the module can be asked to synchronize documents saved in database with those on the server. For this a mean of detecting an update is required. The general mean, that apply to every XCAP server is periodical query. There is however the possibility for the server to signal an update to the module. For this the module has to be able to send <strong>refreshXcapDoc</strong> MI command when an update occurs. If you are using a XCAP server able to send this command then you can configure the server to work in no periodical query mode. For this you have to unset the <strong>xcap_client</strong> module parameter <strong>periodical_query</strong> ( set it to 0). 
+<div class='vspace'></div></li><li>Another configuration option refers to the way the presence module stores information. The default method is caching with periodical update in database for fast processing. However, if you have more presence servers serving the same domain and sharing the same database, this mode will not work. In this case you need to ensure that the servers will be able to communicate through the database. This can be achieved by setting the <strong>presence</strong> module parameter <strong>fallback2db</strong>. 
+</li></ol><p class='vspace'>
+</p><h2>Database</h2>
+<p>Presence Server requires 4 tables in database:
+</p><ol><li>active_watchers : stores the active Subscribe dialogs
+</li><li>presentity: stores the published information
+</li><li>watchers: stores the subscription status of the watchers
+</li><li>xcap: stores the XCAP documents
+</li></ol><p class='vspace'>The first three tables are only used internally by the server. The <strong>xcap</strong> table is either used as a communication interface between the XCAP server (if the server is working in 'integrated_xcap' mode) or as a communication means between the <strong>xcap_client</strong> module which populates the table and <strong>presence_xml</strong> module which uses that information. 
+</p>
+<p class='vspace'>(:commentboxchrono:)
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-Presence-PresenceServer-action=edit&restore=diff-1366821703-1366821703-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=edit&restore=diff:1366821703:1366821703:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=edit%27" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=edit">Edit</a> |
+      <a rel="nofollow" href="Tutorials-Presence-PresenceServer-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=diff">History</a> |
+      <a rel="nofollow" href="Tutorials-Presence-PresenceServer-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on July 02, 2014, at 02:28 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

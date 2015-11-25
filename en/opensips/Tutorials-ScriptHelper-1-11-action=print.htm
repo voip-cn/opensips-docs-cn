@@ -1,0 +1,552 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+  <title>openSIPS | Documentation / Tutorials-ScriptHelper-1-11</title>
+  <link rel='stylesheet' href="print.css" tppabs="http://www.opensips.org/pub/skins/print/print.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+</head>
+<body>
+  <div id='printhead'>
+    <h3>From openSIPS</h3>
+    <h1 class='pagename'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation%27" tppabs="http://www.opensips.org/Documentation">Documentation: Tutorials-ScriptHelper-1-11</a></h1>
+  </div>
+<!--PageText-->
+<div id='wikitext'>
+<h5>Documentation -&gt; <a class='wikilink' href="Tutorials-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials?action=print">Tutorials</a> -&gt; Using the <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/modules/1.12.x/script_helper.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/modules/1.12.x/script_helper.html%27" tppabs="http://www.opensips.org/html/docs/modules/1.12.x/script_helper.html" rel='nofollow'><ins>Script Helper</ins></a> module </h5>
+<p>This page has been visited 4304 times.
+</p><div class='tocfloat'><p><a name='toc' id='toc'></a><b>Table of Content</b> (<a id="tocidtog" href="javascript:toggle('tocid');">hide</a>)</p><ol class='toc' id='tocid'><li>1.&nbsp;<a href='#toc1'>Tutorial Overview</a></li><li>2.&nbsp;<a href='#toc2'>Current features</a></li><li>3.&nbsp;<a href='#toc3'>Example script</a></li></ol></div>
+<hr />
+<div class='vspace'></div><h4><a name='toc1' id='toc1'></a>1.&nbsp; Tutorial Overview</h4>
+<p>The purpose of this new module is to help you <span  style='color: blue;'>start in an easy way with the OpenSIPS script</span>. <span  style='color: blue;'>The learning curve gets milder</span> as the beginners can start with a simplified format of the script - the idea is to <span  style='color: blue;'>shift the main focus on routing the SIP initial requests</span> (which define the service logic), while transparently handling a lot of "standard" SIP scripting logic, in order to both save script coding time and mitigate potential SIP scripting errors. This tutorial offers both a brief overview on the features of the new module and an example script.
+</p>
+<div class='vspace'></div><h4><a name='toc2' id='toc2'></a>2.&nbsp; Current features</h4>
+<p>As stated in the <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/modules/1.12.x/script_helper.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/modules/1.12.x/script_helper.html%27" tppabs="http://www.opensips.org/html/docs/modules/1.12.x/script_helper.html" rel='nofollow'>documentation</a>, the module currently features:
+</p><ol><li><strong>transparent handling of SIP sequential requests</strong>
+<ul><li>sequential requests are properly and silently handled - they will not hit the script at all anymore
+</li><li>for initial SIP requests, the module performs record-routing (i.e. OpenSIPS adds itself in the signaling path using a <em>Record-Route</em> header), after which the main route is triggered, just as before
+</li><li>for sequential SIP requests, the module is automatically doing loose_route() for proper routing.
+</li><li>optionally a special route may be run just before all sequential requests are routed out
+</li></ul></li><li><strong>automatic dialog support</strong>
+<ul><li>automatically create dialog support for the INVITE-based sessions
+</li><li>for sequential requests within a dialog, a complete dialog matching (Call-ID, From-tag, To-tag) will be attempted if the quick 'did'-based Record-Route parameter matching fails
+</li></ul></li></ol><p class='vspace'><br />
+Future directions for the module include adding authentication and NAT support.
+</p>
+<div class='vspace'></div><h4><a name='toc3' id='toc3'></a>3.&nbsp; Example script</h4>
+<p>SIP logic provided:
+</p><ul><li>initial and sequential SIP request routing (using the script helper)
+</li><li>dialog support (using the script helper)
+</li><li>also acts as a SIP registrar
+</li></ul><p class='vspace'><br />
+<br clear='all' />
+<span  style='color: #ff7f00;'> Table: </span><span  style='color: green;'><strong>Scripting examples</strong></span>
+</p>
+<table border='1' ><tr ><td  align='center'><strong>With Script Helper</strong></td><td  align='center'><strong>Classic Script</strong></td></tr>
+<tr ><td > <pre  style='color: black;' class='escaped'>
+####### Global Parameters #########
+
+debug = 3
+
+# log to syslog by default
+log_stderror = no
+log_facility = LOG_LOCAL0
+
+fork = yes
+children = 5
+tcp_children = 1
+
+# comment the next line to enable the auto discovery of local aliases
+# based on reverse DNS on IPs
+auto_aliases = no
+
+listen = udp:192.168.2.133:5060 use_children 8
+
+disable_tcp = no
+disable_tls = no
+
+exec_msg_threshold = 200000
+
+####### Modules Section ########
+
+mpath = "/usr/local/lib/opensips/modules/"
+
+loadmodule "signaling.so"                                                                 
+
+#### Stateless module
+loadmodule "sl.so"
+
+#### Transaction Module
+loadmodule "tm.so"
+modparam("tm", "fr_timeout", 10)
+modparam("tm", "fr_inv_timeout", 40)
+
+loadmodule "rr.so"
+modparam("rr", "append_fromtag", 0)
+
+loadmodule "maxfwd.so"
+loadmodule "sipmsgops.so"
+
+#### FIFO Management Interface
+loadmodule "mi_fifo.so"
+modparam("mi_fifo", "fifo_name", "/tmp/opensips_fifo")
+
+loadmodule "db_mysql.so"
+modparam("db_mysql", "exec_query_threshold", 200000)
+
+loadmodule "uri.so"
+modparam("uri", "use_uri_table", 0)
+
+loadmodule "dialog.so"
+modparam("dialog", "db_url", "mysql://opensips:XXXXXXXXX@192.168.2.133/opensips")
+modparam("dialog", "db_mode", 1)
+modparam("dialog", "default_timeout", 3600)
+modparam("dialog", "ping_interval", 5)
+
+loadmodule "usrloc.so"
+modparam("usrloc", "db_mode",   1)
+modparam("usrloc", "db_url",    "mysql://opensips:XXXXXXXXX@192.168.2.133/opensips")
+
+loadmodule "registrar.so"
+</pre><pre  style='color: black;' class='escaped'>
+loadmodule "script_helper.so"
+
+# this route will be run right before sequential requests are routed out
+modparam("script_helper", "sequential_route", "my_seq_route")
+modparam("script_helper", "use_dialog", 1)
+modparam("script_helper", "create_dialog_flags", "PpB")
+
+route [my_seq_route]
+{
+    xlog("---- Sequential request handler ---- \n");
+    xlog("$rm | Call-ID: $ci | FT: $ft | TT: $tt\n");
+}
+</pre><pre  style='color: black;' class='escaped'>
+# main request routing logic
+route
+{
+    $T_fr_timeout = 8;
+    $T_fr_inv_timeout = 30;
+
+    if (!mf_process_maxfwd_header("10"))
+    {
+        sl_send_reply("483","Too Many Hops");
+        exit;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    if (!uri == myself)
+    {
+        append_hf("P-hint: outbound\r\n");
+        route(relay);
+    }
+
+
+
+
+    if (is_method("PUBLISH|SUBSCRIBE"))
+    {
+        sl_send_reply("503", "Service Unavailable");
+        exit;
+    }
+
+    if (is_method("REGISTER"))
+    {
+        if (!save("location"))
+            sl_reply_error();
+
+        exit;
+    }
+
+    if ($rU == NULL)
+    {
+        # request with no Username in RURI
+        sl_send_reply("484","Address Incomplete");
+        exit;
+    }
+
+    # do lookup with method filtering
+    if (!lookup("location",""))
+    {
+        t_newtran();
+        t_reply("404", "Not Found");
+        exit;
+    }
+
+    route(relay);
+}
+
+route [relay]
+{
+    # for INVITEs enable some additional helper routes
+    if (is_method("INVITE"))
+        t_on_failure("failed_call");
+
+    if (!t_relay())
+        send_reply("500", "Internal Error");
+
+    exit;
+}
+
+failure_route [failed_call]
+{
+    if (t_was_cancelled())
+        exit;
+
+    if (next_branches())
+    {
+        t_on_failure("failed_call");
+        t_relay();
+    }
+}
+</pre></td><td ><pre  style='color: black;' class='escaped'>
+####### Global Parameters #########
+
+debug = 3
+
+# log to syslog by default
+log_stderror = no
+log_facility = LOG_LOCAL0
+
+fork = yes
+children = 5
+tcp_children = 1
+
+# comment the next line to enable the auto discovery of local aliases
+# based on reverse DNS on IPs
+auto_aliases = no
+
+listen = udp:192.168.2.133:5060 use_children 8
+
+disable_tcp = no
+disable_tls = no
+
+exec_msg_threshold = 200000
+
+####### Modules Section ########
+
+mpath = "/usr/local/lib/opensips/modules/"
+
+loadmodule "signaling.so"                                                                 
+
+#### Stateless module
+loadmodule "sl.so"
+
+#### Transaction Module
+loadmodule "tm.so"
+modparam("tm", "fr_timeout", 10)
+modparam("tm", "fr_inv_timeout", 40)
+
+loadmodule "rr.so"
+modparam("rr", "append_fromtag", 0)
+
+loadmodule "maxfwd.so"
+loadmodule "sipmsgops.so"
+
+#### FIFO Management Interface
+loadmodule "mi_fifo.so"
+modparam("mi_fifo", "fifo_name", "/tmp/opensips_fifo")
+
+loadmodule "db_mysql.so"
+modparam("db_mysql", "exec_query_threshold", 200000)
+
+loadmodule "uri.so"
+modparam("uri", "use_uri_table", 0)
+
+loadmodule "dialog.so"
+modparam("dialog", "db_url", "mysql://opensips:XXXXXXXXX@192.168.2.133/opensips")
+modparam("dialog", "db_mode", 1)
+modparam("dialog", "default_timeout", 3600)
+modparam("dialog", "ping_interval", 5)
+
+loadmodule "usrloc.so"
+modparam("usrloc", "db_mode",   1)
+modparam("usrloc", "db_url",    "mysql://opensips:XXXXXXXXX@192.168.2.133/opensips")
+
+loadmodule "registrar.so"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# main request routing logic
+route
+{
+    $T_fr_timeout = 8;
+    $T_fr_inv_timeout = 30;
+
+    if (!mf_process_maxfwd_header("10"))
+    {
+        sl_send_reply("483","Too Many Hops");
+        exit;
+    }
+</pre><pre  style='color: black;' class='escaped'>
+    if (has_totag())
+    {
+        if (loose_route() || match_dialog())
+        {
+            if (is_method("INVITE"))
+            {
+                # even if in most of the cases is useless, do RR for
+                # re-INVITEs alos, as some buggy clients do change route set
+                # during the dialog.
+                record_route();
+            }
+
+            xlog("---- Sequential request handler ---- \n");
+            xlog("$rm | Call-ID: $ci | FT: $ft | TT: $tt\n");
+
+            # route it out to whatever destination was set by loose_route()
+            # in $du (destination URI).
+            route(relay);
+        }
+        else
+        {
+            if (is_method("ACK"))
+            {
+                if (t_check_trans())
+                {
+                    # non loose-route, but stateful ACK; must be an ACK after 
+                    # a 487 or e.g. 404 from upstream server
+                    t_relay();
+                    exit;
+                }
+                else
+                {
+                    # ACK without matching transaction -&gt;
+                    # ignore and discard
+                    exit;
+                }
+            }
+            sl_send_reply("404","Not here");
+        }
+        exit;
+    }
+
+    # CANCEL processing
+    if (is_method("CANCEL"))
+    {
+        if (t_check_trans())
+            t_relay();
+
+        exit;
+    }
+
+    t_check_trans();
+
+    # record routing
+    if (!is_method("REGISTER|MESSAGE"))
+        record_route();
+</pre><pre  style='color: black;' class='escaped'>
+    if (!uri == myself)
+    {
+        append_hf("P-hint: outbound\r\n");
+        route(relay);
+    }
+
+    if (is_method("INVITE") &amp;&amp; !has_totag())
+        create_dialog("PpB");
+
+    if (is_method("PUBLISH|SUBSCRIBE"))
+    {
+        sl_send_reply("503", "Service Unavailable");
+        exit;
+    }
+
+    if (is_method("REGISTER"))
+    {
+        if (!save("location"))
+            sl_reply_error();
+
+        exit;
+    }
+
+    if ($rU == NULL)
+    {
+        # request with no Username in RURI
+        sl_send_reply("484","Address Incomplete");
+        exit;
+    }
+
+    # do lookup with method filtering
+    if (!lookup("location",""))
+    {
+        t_newtran();
+        t_reply("404", "Not Found");
+        exit;
+    }
+
+    route(relay);
+}
+
+route [relay]
+{
+    # for INVITEs enable some additional helper routes
+    if (is_method("INVITE"))
+        t_on_failure("failed_call");
+
+    if (!t_relay())
+        send_reply("500", "Internal Error");
+
+    exit;
+}
+
+failure_route [failed_call]
+{
+    if (t_was_cancelled())
+        exit;
+
+    if (next_branches())
+    {
+        t_on_failure("failed_call");
+        t_relay();
+    }
+}
+</pre></td></tr>
+</table>
+</div>
+
+  <div id='printfoot'>
+    <div class='from'>Retrieved from http://www.opensips.org/Documentation/Tutorials-ScriptHelper-1-11</div>
+    <div class='lastmod'>Page last modified on April 07, 2014, at 11:00 AM</div></div>
+<!--HTMLFooter-->
+</body>
+</html>

@@ -1,0 +1,447 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Core MI Functions - ver 1.10 | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Interface-CoreMI-1-10' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Interface-CoreMI-1-10 History</h2>
+  <p><a href="Interface-CoreMI-1-10-action=diff&source=n&minor=y.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreMI-1-10?action=diff&source=n&minor=y">Show minor edits</a> - <a href="Interface-CoreMI-1-10-action=diff&source=y&minor=n.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreMI-1-10?action=diff&source=y&minor=n">Show changes to markup</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>August 05, 2013, at 03:21 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div></div>
+      <div class='diffrestore'><a href="Interface-CoreMI-1-10-action=edit&restore=diff-1375708903-1375708739-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreMI-1-10?action=edit&restore=diff:1375708903:1375708739:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>August 05, 2013, at 03:18 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><h5>Documentation -&gt; <a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a> -&gt; <a class='wikilink' title='Manual' href="Manual-2-2.htm" tppabs="http://www.opensips.org/Documentation/Manual">Manual 1.10</a> -&gt; Core MI Functions</h5>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h5>Documentation -&gt; <a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a> -&gt; <a class='wikilink' title='OpenSIPS Manual - 1.10 ver' href="Manual-1-10.htm" tppabs="http://www.opensips.org/Documentation/Manual-1-10">Manual 1.10</a> -&gt; Core MI Functions</h5>
+</div></div>
+      <div class='diffrestore'><a href="Interface-CoreMI-1-10-action=edit&restore=diff-1375708739-1375703973-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreMI-1-10?action=edit&restore=diff:1375708739:1375703973:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>August 05, 2013, at 01:59 PM 
+        by <span class='diffauthor' title='80.112.140.126'>razvancrainea</span> - </div>
+        <div class='difftype'>Changed line 2 from:</div>
+        <div class='diffdel'><p>(:title Core MI Functions - 1.10 :)
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>(:title Core MI Functions - ver 1.10 :)
+</p>
+</div>
+        <div class='difftype'>Changed line 7 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='center'><span  style='color: #185662;'><span style='font-size:120%'><strong>Core MI Functions 1.10</strong></span></span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='center'><span  style='color: #185662;'><span style='font-size:120%'><strong>Core MI Functions v1.10</strong></span></span></td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Interface-CoreMI-1-10-action=edit&restore=diff-1375703973-1375703099-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreMI-1-10?action=edit&restore=diff:1375703973:1375703099:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>August 05, 2013, at 01:44 PM 
+        by <span class='diffauthor' title='80.112.140.126'>razvancrainea</span> - </div>
+        <div class='difftype'>Added lines 1-283:</div>
+        <div class='diffadd'><h5>Documentation -&gt; <a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a> -&gt; <a class='wikilink' title='Manual' href="Manual-2-2.htm" tppabs="http://www.opensips.org/Documentation/Manual">Manual 1.10</a> -&gt; Core MI Functions</h5>
+<p>(:title Core MI Functions - 1.10 :)
+</p><hr />
+<p>(:allVersions Interface-CoreMI 1.10 :)
+<br />
+</p><table width='100%'><tr ><td  align='center'><span  style='color: #185662;'><span style='font-size:120%'><strong>Core MI Functions 1.10</strong></span></span></td></tr>
+</table>
+<div class='vspace'></div><table width='100%'><tr ><td  align='left'><a class='wikilink' title='Management Interface - ver 1.10' href="Interface-MI-1-10.htm" tppabs="http://www.opensips.org/Documentation/Interface-MI-1-10">Prev</a></td><td  align='right'><a class='wikilink' title='Events Interface - ver 1.10' href="Interface-Events-1-10.htm" tppabs="http://www.opensips.org/Documentation/Interface-Events-1-10">Next</a></td></tr>
+</table><hr />
+<p class='vspace'>(:toc-float Table of Content:)
+</p>
+<p class='vspace'>MI (management interface) functions which are exported by <strong>OpenSIPS</strong> core.
+</p>
+<div class='vspace'></div><h4>arg</h4>
+<p>Returns the full list of arguments used when <strong>OpenSIPS</strong> was started. As in UNIX, the first argument is the name of executable binary.<br /><strong>Arguments</strong>: none<br /><strong>Output</strong>: multiple MI nodes where each node contains an argument. The MI nodes have no name, but only value.
+</p>
+<p class='vspace'>Example of usage:
+</p><pre class='escaped'>
+    # opensipsctl fifo arg
+    ./opensips
+    -f
+    /etc/openser/test.cfg
+
+</pre>
+<div class='vspace'></div><h4>debug [level]</h4>
+<p>Gets or sets the value of the debug core variable. You may use it to dynamically (at runtime) change  or inspect the debug level of your <strong>OpenSIPS</strong>. If no argument is passed, the function will fetch the value of the debug level.<br /><strong>Arguments</strong>: debug level (-3...4)<br /><strong>Output</strong>: debug level (only when no argument is passed). The value will be returned as a single MI node with name "DEBUG"
+</p>
+<p class='vspace'>Examples of usage:
+</p><pre class='escaped'>
+    # opensipsctl fifo debug
+    DEBUG:: 4
+    # opensipsctl fifo debug 1
+</pre>
+<div class='vspace'></div><h4>kill</h4>
+<p>The command will terminate <strong>OpenSIPS</strong> (and internal shutdown).<br /><strong>Arguments</strong>: none<br /><strong>Output</strong>: none
+</p>
+<p class='vspace'>Examples of usage:
+</p><pre class='escaped'>
+    # opensipsctl fifo kill
+</pre>
+<div class='vspace'></div><h4>list_blacklists</h4>
+<p>The command lists all the defined (static or learned) blacklists from <strong>OpenSIPS</strong>.<br /><strong>Arguments</strong>: none<br /><strong>Output</strong>: an MI tree - first level (nodes named "List") will describe the list (name, owner, flags); Second level (nodes named "Rules) will describe the rules (blacklists) for each list (IP/mask, protocol, port, matching regexp, flags)
+</p>
+<p class='vspace'>Examples of usage:
+</p><pre class='escaped'>
+    # opensipsctl fifo list_blacklists
+</pre>
+<div class='vspace'></div><h4>list_tcp_conns</h4>
+<p>The command lists all ongoing TCP/TLS connection from <strong>OpenSIPS</strong>.<br /><strong>Arguments</strong>: none<br /><strong>Output</strong>: an MI tree - one record per connection with the following attributes : ID, state, proto, source, destination, timeout, lifetime
+</p>
+<p class='vspace'>Examples of usage:
+</p><pre class='escaped'>
+    # opensipsctl fifo list_tcp_conns
+</pre>
+<div class='vspace'></div><h4>ps</h4>
+<p>The command will list all all <strong>OpenSIPS</strong> processes, along with type and description.<br /><strong>Arguments</strong>: none<br /><strong>Output</strong>: multiple MI nodes (named "Process") - each node contains process ID (internal), PID (OS), Type and description 
+</p>
+<p class='vspace'>Examples of usage:
+</p><pre class='escaped'>
+    # opensipsctl fifo ps
+    Process::  ID=0 PID=16224 Type=attendant
+    Process::  ID=1 PID=16225 Type=SIP receiver udp:192.168.1.2:5060 
+    Process::  ID=2 PID=16226 Type=timer
+    Process::  ID=3 PID=16227 Type=MI FIFO
+    Process::  ID=4 PID=16228 Type=TCP receiver
+    Process::  ID=5 PID=16230 Type=TCP main
+</pre>
+<div class='vspace'></div><h4>pwd</h4>
+<p>Prints the working directory of <strong>OpenSIPS</strong> instance.<br /><strong>Arguments</strong>: none<br /><strong>Output</strong>: a single MI node with name "WD" containing the working directory full path.
+</p>
+<p class='vspace'>Examples of usage:
+</p><pre class='escaped'>
+    # opensipsctl fifo pwd
+    WD:: /
+</pre>
+<div class='vspace'></div><h4>uptime</h4>
+<p>Prints various time information about <strong>OpenSIPS</strong> - when it started to run, for how long it runs.<br /><strong>Arguments</strong>: none<br /><strong>Output</strong>: three MI nodes: "Now" - current time; "Up since" - start time ; "Up time" - number of seconds since started.
+</p>
+<p class='vspace'>Examples of usage:
+</p><pre class='escaped'>
+    # opensipsctl fifo uptime
+    Now:: Mon Jul 21 17:41:03 2008
+    Up since:: Mon Jul 21 17:36:33 2008
+    Up time:: 270 [sec]
+</pre>
+<div class='vspace'></div><h4>version</h4>
+<p>Prints the version string of a running<strong>OpenSIPS</strong>.<br /><strong>Arguments</strong>: none<br /><strong>Output</strong>: one MI node (named "Server") containing the version string.
+</p>
+<p class='vspace'>Examples of usage:
+</p><pre class='escaped'>
+    # opensipsctl fifo version
+    Server:: OpenSIPS (1.4.0dev14-notls (i386/linux))
+</pre>
+<div class='vspace'></div><h4>which</h4>
+<p>Prints all available MI commands from the queried <strong>OpenSIPS</strong>instance.<br /><strong>Arguments</strong>: none<br /><strong>Output</strong>: multiple MI nodes (no name), each node containing (as value) the name of an available MI command. NOTE that the list of available MI commands may differ depending of what modules your <strong>OpenSIPS</strong> is using.
+</p>
+<p class='vspace'>Examples of usage:
+</p><pre class='escaped'>
+    # opensipsctl fifo which
+    get_statistics
+    reset_statistics
+    uptime
+    version
+    pwd
+    arg
+    which
+    ps
+    kill
+    debug
+    list_blacklists
+    ul_rm
+    ul_rm_contact
+    ul_dump
+    ul_flush
+    ul_add
+    ul_show_contact
+    nh_enable_ping
+    nh_enable_rtpp
+</pre>
+<div class='vspace'></div><h4>get_statistics</h4>
+<p>Prints the statistics (all, group or one) realtime values.<br /><strong>Arguments</strong>: input may be "all" - print all available statistics; "group:" - print only statistics from a certain group; "name" - print only this statistic. The <strong>OpenSIPS</strong> core defines the following groups: <em>core</em>, <em>shmem</em>; Modules export groups typically named like the module itself.<br /><strong>Output</strong>: list of MI nodes (no name) - each MI mode contains the name and value of a single statistic variable.
+</p>
+<p class='vspace'>Examples of usage:
+</p><pre class='escaped'>
+    # opensipsctl fifo get_statistics rcv_requests
+    core:rcv_requests = 35243
+    # opensipsctl fifo get_statistics shmem:      
+    shmem:total_size = 33554432
+    shmem:used_size = 1686952
+    shmem:real_used_size = 1704592
+    shmem:max_used_size = 1704592
+    shmem:free_size = 31849840
+    shmem:fragments = 1
+    # opensipsctl fifo get_statistics all
+    ....
+</pre>
+<div class='vspace'></div><h4>reset_statistics</h4>
+<p>Reset (to zero) the value of a statistic variable. Note that not all variables allow reset (depending of the nature of the information they carry - example "shmem:used_size").<br /><strong>Arguments</strong>: name of the variable to be reset.<br /><strong>Output</strong>: none.
+</p>
+<p class='vspace'>Examples of usage:
+</p><pre class='escaped'>
+    # opensipsctl fifo get_statistics received_replies
+    core:received_replies = 14543
+    # opensipsctl fifo reset_statistics received_replies
+    # opensipsctl fifo get_statistics received_replies
+    core:received_replies = 0
+</pre>
+<div class='vspace'></div><h4>cache_store</h4>
+<p>This command stores in a cache system a string value.<br /><strong>Arguments</strong>: <br />   - cache system to use - for the cache system implemented by <strong>OpenSIPS</strong> module 'localcache' the value of this parameter should be 'local' <br />   - the label to be associated with this value <br />   - the string to be stored <br /><strong>Output</strong>: none. <br />
+Examples of usage:
+</p><pre class='escaped'>
+    # opensipsctl fifo cache_store local password_user1 password
+</pre>
+<div class='vspace'></div><h4>cache_fetch</h4>
+<p>This command queries for a stored value.<br /><strong>Arguments</strong>: <br />   - cache system to use - for the cache system implemented by <strong>OpenSIPS</strong> module 'localcache' the value of this parameter should be 'local' <br />   - the label associated with the value <br /><strong>Output</strong>: MI tree containing the value if a record is found or 'Value not found' string otherwise.<br />
+Examples of usage:
+</p><pre class='escaped'>
+    # opensipsctl fifo cache_fetch local password_user1
+</pre>
+<div class='vspace'></div><h4>cache_remove</h4>
+<p>This command removes a record from the cache system.<br /><strong>Arguments</strong>: <br />   - cache system to use<br />  - the label associated with the stored value <br /><strong>Output</strong>: None.<br />Examples of usage:
+</p><pre class='escaped'>
+    # opensipsctl fifo cache_remove local password_user1
+</pre>
+<p class='vspace'><a name='event_subscribe' id='event_subscribe'></a>
+</p><h4>event_subscribe</h4>
+<p>Subscribes an external application to a certain event.<br /><strong>Arguments</strong>: <br />   - event name<br />   - external application socket <br />   - expire time, in seconds - if absent, the subscription is valid only one hour (3600 s)<br /><strong>Output</strong>: None.<br />Examples of usage:
+</p><pre class='escaped'>
+    # opensipsctl fifo event_subscribe E_PIKE_BLOCKED udp:127.0.0.1:8888 1200
+</pre>
+<div class='vspace'></div><h4>events_list</h4>
+<p>Lists all the events published through the Event Interface.<br /><strong>Arguments</strong>: None. <br /><strong>Output</strong>: None.<br />Examples of usage:
+</p><pre class='escaped'>
+    # opensipsctl fifo events_list
+    Event:: E_CORE_THRESHOLD id=0
+    Event:: E_RTPPROXY_STATUS id=1
+    Event:: E_PIKE_BLOCKED id=2
+
+</pre>
+<div class='vspace'></div><h4>subscribers_list</h4>
+<p>Lists information about the subscribers<br /><strong>Arguments</strong>: <br />   - event name<br />   - external application socket <br /><strong>Output</strong>: If no parameter is specified, then the command returns information about all events and their subscribers. If the event is specified, only the external applications subscribed for that event are returned. If the socket is also specified, only one subscriber information is returned.<br />Examples of usage:
+</p><pre class='escaped'>
+    # opensipsctl fifo subscribers_list
+    Event:: E_CORE_THRESHOLD id=0
+    Event:: E_RTPPROXY_STATUS id=1
+	Subscriber::  socket=unix:/tmp/event.sock expire=never
+	Subscriber::  socket=udp:127.0.0.1:8888 expire=1100
+    Event:: E_PIKE_BLOCKED id=2
+	Subscriber::  socket=rabbitmq:guest@127.0.0.1/hello expire=never
+
+    # opensipsctl fifo subscribers_list E_RTPPROXY_STATUS
+    Event:: E_RTPPROXY_STATUS id=1
+	Subscriber::  socket=unix:/tmp/event.sock expire=never
+	Subscriber::  socket=udp:127.0.0.1:8888 expire=1100
+
+    # opensipsctl fifo subscribers_list E_RTPPROXY_STATUS unix:/tmp/event.sock
+    Event:: E_RTPPROXY_STATUS id=1
+	Subscriber::  socket=unix:/tmp/event.sock expire=never
+</pre>
+<div class='vspace'></div><hr />
+<p class='vspace'>(:commentboxchrono:)
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Interface-CoreMI-1-10-action=edit&restore=diff-1375703099-1375703099-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreMI-1-10?action=edit&restore=diff:1375703099:1375703099:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Interface-CoreMI-1-10-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreMI-1-10?action=edit">Edit</a> |
+      <a rel="nofollow" href="Interface-CoreMI-1-10-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreMI-1-10?action=diff">History</a> |
+      <a rel="nofollow" href="Interface-CoreMI-1-10-action=print.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreMI-1-10?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on August 05, 2013, at 03:21 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

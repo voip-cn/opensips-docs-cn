@@ -1,0 +1,255 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+  <title>openSIPS | Documentation / Migration-1-4-to-1-5</title>
+  <link rel='stylesheet' href="print.css" tppabs="http://www.opensips.org/pub/skins/print/print.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+</head>
+<body>
+  <div id='printhead'>
+    <h3>From openSIPS</h3>
+    <h1 class='pagename'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation%27" tppabs="http://www.opensips.org/Documentation">Documentation: Migration-1-4-to-1-5</a></h1>
+  </div>
+<!--PageText-->
+<div id='wikitext'>
+<h5>Documentation -&gt; <a class='wikilink' href="Migration-action=print.htm" tppabs="http://www.opensips.org/Documentation/Migration?action=print">Migration</a> -&gt; Migration from 1.4.x to 1.5.x</h5>
+<p>This page has been visited 1831 times.
+</p><div class='tocfloat'><p><a name='toc' id='toc'></a><b>Table of Content</b> (<a id="tocidtog" href="javascript:toggle('tocid');">hide</a>)</p><ol class='toc' id='tocid'><li>1.&nbsp;<a href='#toc1'>DB migration</a></li><li>2.&nbsp;<a href='#toc2'>Script migration</a><ol class='toc'><li>2.1&nbsp;<a href='#toc3'>OpenSIPS core</a></li><li>2.2&nbsp;<a href='#toc4'>Append_branch() usage</a></li><li>2.3&nbsp;<a href='#toc5'>SIP replies from script</a></li><li>2.4&nbsp;<a href='#toc6'>OpenSIPS modules</a></li></ol></li><li>3.&nbsp;<a href='#toc7'>RADIUS support</a></li><li>4.&nbsp;<a href='#toc8'>Tools migration</a></li></ol></div>
+<hr />
+<p class='vspace'>This section is to provide useful help in migrating your OpenSIPS installations from any release from 1.4 branch to any release from 1.5 branch.
+</p>
+<p class='vspace'>You can find the all the new additions in 1.5.x release compiled <a class='wikilink' href="javascript:if(confirm(%27http://www.opensips.org/About/Version-1-5-0?action=print  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/Version-1-5-0?action=print%27" tppabs="http://www.opensips.org/About/Version-1-5-0?action=print">under this page</a>. Overviewing it, may help you understanding the migration / update process.
+</p>
+<div class='vspace'></div><hr />
+<h3><a name='toc1' id='toc1'></a>1.&nbsp; DB migration</h3>
+<p>The database structure was not affected by major changes (like changing the format existing tables). But new tables were added (corresponding to the newly added modules).
+</p>
+<p class='vspace'>The biggest change concerning the DB structure was reworking some datatypes for MYSQL - replacing <em>varchar</em> with <em>char</em> in order to  speed up the DB access.
+</p>
+<p class='vspace'>You can migrate your 1.4.x DB to the 1.5.x format by using the <strong>opensipdbctl</strong>(deprecated)  or <strong>osipsconsole</strong> tools:
+</p><pre class='escaped'>
+   # opensipsdbctl migrate opensips_1_4 opensips_1_5
+   or
+   # osipsconsole 
+   &gt; migrate opensips_1_4 opensips_1_5
+   &gt; quit
+   # 
+</pre>
+<p>where :
+</p><ul><li>opensips_1_4 is the existing DB name corresponding to version 1.4.x format
+</li><li>opensips_1_5 is the DB name to be created for 1.5.x format
+</li></ul><p class='vspace'>NOTE:
+</p><ul><li>the old database will not be deleted, altered or changed - it will not be touched at all
+</li><li>new database will be created and data from old DB will be imported into it
+</li></ul><p class='vspace'>Take care and edit (if necessary) the <strong>opensipsctlrc</strong> /  '''osipsconsolerc" files if you want to customize the DB users used for accessing the new DB.
+</p>
+<p class='vspace'><span  style='color: red;'> NOTE that the migration tool is available only for MYSQL databases! </span>
+</p>
+<div class='vspace'></div><hr />
+<h3><a name='toc2' id='toc2'></a>2.&nbsp; Script migration</h3>
+<h4><a name='toc3' id='toc3'></a>2.1&nbsp; OpenSIPS core</h4>
+<ol><li>"<strong>reply_to_via</strong>" core parameter was removed.
+<div class='vspace'></div></li><li>if only stateful forwarding is used, the core will automatically drop the stateless replies (see: <a class='urllink' href="javascript:if(confirm(%27http://lists.opensips.org/pipermail/users/2009-February/002951.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://lists.opensips.org/pipermail/users/2009-February/002951.html%27" tppabs="http://lists.opensips.org/pipermail/users/2009-February/002951.html" rel='nofollow'>http://lists.opensips.org/pipermail/users/2009-February/002951.html</a>)
+<div class='vspace'></div></li><li>if you were defining "<strong>alias</strong>" core parameter to define domains that were also set via the <strong>domain</strong> module just to make record_routing/loose_routing work, you can remove them as the <strong>domain</strong> module will automatically export the loaded domains to the core as aliases (see <a class='urllink' href="javascript:if(confirm(%27http://lists.opensips.org/pipermail/users/2009-February/002869.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://lists.opensips.org/pipermail/users/2009-February/002869.html%27" tppabs="http://lists.opensips.org/pipermail/users/2009-February/002869.html" rel='nofollow'>http://lists.opensips.org/pipermail/users/2009-February/002869.html</a>)
+</li></ol><div class='vspace'></div><hr />
+<h4><a name='toc4' id='toc4'></a>2.2&nbsp; Append_branch() usage</h4>
+<p>There is no need to call "<strong>append_branch()</strong>" function in <strong>failure_route</strong> in order to use the RURI - you still need to use it only if you want to do parallel forking.
+</p><pre class='escaped'>
+Ex:
+ # in 1.4.x
+ failure_route[2]
+    if (t_check_status("408")) {
+       # set new RURI
+       rewritehostport("my_voicemail.com:5060");
+       append_branch();
+       t_relay();
+    }
+  }
+
+  -&gt; 
+  # in 1.5.x
+  failure_route[2]
+    if (t_check_status("408")) {
+       # set new RURI
+       rewritehostport("my_voicemail.com:5060");
+       t_relay();
+    }
+  }
+</pre>
+<p class='vspace'>Affected modules (from scripting perspective) are:
+</p><ul><li>uac_redirect, get_redirects() function
+</li><li>lcr, next_gw() function
+</li><li>dispatcher, ds_next_xxxx() functions
+</li></ul><p class='vspace'>After the listed functions, there is no need to call 'append_branch()' any more. 
+</p>
+<div class='vspace'></div><hr />
+<h4><a name='toc5' id='toc5'></a>2.3&nbsp; SIP replies from script</h4>
+<p>A set of existing module do requires (as module dependency) a newly added module called "<strong>signaling</strong>". 
+</p>
+<p class='vspace'>In other words, if you use one of the following module, you will need to load also the "<strong>signaling</strong>" module:
+</p><ul><li>auth
+</li><li>auth_db
+</li><li>auth_diameter
+</li><li>cpl-c
+</li><li>options
+</li><li>perl
+</li><li>presence
+</li><li>presence_xml
+</li><li>ratelimit
+</li><li>registrar
+</li><li>rls
+</li><li>sst
+</li></ul><div class='vspace'></div><hr />
+<h4><a name='toc6' id='toc6'></a>2.4&nbsp; OpenSIPS modules</h4>
+<h5>DB_MYSQL module</h5>
+<ol><li><strong>auto_reconnect</strong> module option was dropped (auto-reconnect is by default due prepared statements).
+</li></ol><div class='vspace'></div><h5>DIALOG module</h5>
+<ol><li>before using the profile functions, it is mandatory to call "<strong>create_dialog</strong>" function to create the dialog.
+</li></ol><div class='vspace'></div><h5>TM module</h5>
+<ol><li>"<strong>t_release</strong>" function is obsoleted - there is no need to use it as the TM will automatically release any pending transactions.
+</li></ol><div class='vspace'></div><h5>REGISTRAR module</h5>
+<ol><li>"<strong>aor_avp</strong>" module paramter is obsoleted - the lookup() / save() / registered() functions takes as third optional parameter a pseudo-variable containing a custom AOR value.
+</li></ol><div class='vspace'></div><h5>AUTH module</h5>
+<ol><li>the return code "<strong>STALE_NONCE</strong>" will be also reported if nonce reusage case is detected by "www/proxy_authorize()" functions
+</li></ol><div class='vspace'></div><hr />
+<h3><a name='toc7' id='toc7'></a>3.&nbsp; RADIUS support</h3>
+<p>All the RADIUS module do require a new RADIUS AVP to be available in the RADIUS dictionary : "<strong>Acct-Session-Id</strong>"
+</p>
+<p class='vspace'>This AVP should be provided by the radius client lib you are using as it is a standard SIP RADIUS AVP. IF not, add to your dictionary AVP:
+</p><pre class='escaped'>
+   ATTRIBUTE Acct-Session-Id               44  string     # RFC2865, acc
+</pre>
+<div class='vspace'></div><hr />
+<h3><a name='toc8' id='toc8'></a>4.&nbsp; Tools migration</h3>
+<p><strong>osipsconsole</strong>, an interactive console like application will replace <strong>opensipsctl</strong> and <strong>opensipsdbctl</strong> - the console offers the save functions as the scripts it replace.
+</p>
+<p class='vspace'>It is indicated to start migrating to <strong>osipsconsole</strong> asap.
+</p>
+<div class='vspace'></div><hr />
+<p class='vspace'><a name='comment1' id='comment1'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Matti?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Matti?action=edit%27" tppabs="http://www.opensips.org/Profiles/Matti?action=edit">matti</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Matti?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Matti?action=edit%27" tppabs="http://www.opensips.org/Profiles/Matti?action=edit">?</a>  &mdash;  <span style='font-size:83%'>07 April 2009, 12:02</span>  </h5>
+</div><div class='messageitem' > 
+<p>Just a small upgrade minimal note;
+</p>
+<p class='vspace'>modparam("avpops","avp_url","mysql://user:passwd@host/database")
+no longer works.
+</p>
+<p class='vspace'>change to
+modparam("avpops","db_url","mysql://user:passwd@host/database")
+</p>
+<div class='vspace'></div></div>
+<p class='vspace'><a name='comment2' id='comment2'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Davian?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Davian?action=edit%27" tppabs="http://www.opensips.org/Profiles/Davian?action=edit">Davian</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Davian?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Davian?action=edit%27" tppabs="http://www.opensips.org/Profiles/Davian?action=edit">?</a>  &mdash;  <span style='font-size:83%'>18 May 2013, 04:53</span>  </h5>
+</div><div class='messageitem' > 
+<p>I'm not quite sure how to say this; you made it etxermely easy for me!
+</p></div>
+<div class='vspace'></div>
+    <div id='message'><form name='cbox' class='inputform' action="http://www.opensips.org/Documentation/Migration-1-4-to-1-5" method='post' onsubmit='return checkform(this);'>
+    <input type='hidden' name='n' value='Documentation.Migration-1-4-to-1-5' />
+    <input type='hidden' name='action' value='comment' />
+    <input type='hidden' name='order' value='chrono' /><input type='hidden' name='accesscode' value='424' />
+    <input type='hidden' name='csum' value='Comment added' />
+    <table width='90%'><tr>
+    <th class='prompt' align='right' valign='top'>Add Comment&nbsp;</th>
+    <td><textarea class='inputtext commenttext' name='text' id='text' rows=6 cols=40></textarea>
+    </td></tr><tr><th class='prompt' align='right' valign='top'>Sign as Author&nbsp;</th>
+    <td><input class='inputbox commentauthorbox' type='text' name='author' value='' size='32' /></td></tr>
+    <tr><th class='prompt' align='right' valign='top'>Enter code <em class='access'>424</em></th>
+    <td><input type='text' size='4' maxlength='3' name='access' value='' class='inputbox' /> <input class='inputbutton commentbutton' type='submit' name='post' value=' Post ' />
+    <input class='inputbutton commentbutton' type='reset' value='Reset' /></td></tr></table><br /></form></div>
+ <script type='text/javascript' language='JavaScript1.2'>
+  function checkform ( form ) {
+   if (form.text && form.text.value == "") { window.alert( 'Please enter a comment to post' ); form.text.focus(); return false; }
+   if (form.author && form.author.value == "") { window.alert( 'Please enter your name as author' ); form.author.focus(); return false; }
+   if (form.access && form.access.value == "") { window.alert( 'Please enter the code number' ); form.access.focus(); return false; }return true ;
+  }
+  </script>
+   
+</div>
+
+  <div id='printfoot'>
+    <div class='from'>Retrieved from http://www.opensips.org/Documentation/Migration-1-4-to-1-5</div>
+    <div class='lastmod'>Page last modified on May 18, 2013, at 04:53 AM</div></div>
+<!--HTMLFooter-->
+</body>
+</html>

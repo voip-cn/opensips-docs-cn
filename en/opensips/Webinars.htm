@@ -1,0 +1,241 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Webinars </title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='index,follow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   <p><a class='wikilink' title='Signup' href="javascript:if(confirm(%27http://www.opensips.org/Login/Signup?action=login  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Login/Signup?action=login%27" tppabs="http://www.opensips.org/Login/Signup?action=login">Login</a> | <a class='wikilink' title='Signup' href="javascript:if(confirm(%27http://www.opensips.org/Login/Signup  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Login/Signup%27" tppabs="http://www.opensips.org/Login/Signup">Register</a> 
+</p>
+
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Webinars' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='selflink' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h5>Documentation -&gt; Webinars</h5>
+<hr />
+<div class='tocfloat'><p><a name='toc' id='toc'></a><b>Table of Content</b> (<a id="tocidtog" href="javascript:toggle('tocid');">hide</a>)</p><ol class='toc' id='tocid'><li>1.&nbsp;<a href='#toc1'>Webinar spirit</a></li><li>2.&nbsp;<a href='#toc2'>System Requirements</a></li><li>3.&nbsp;<a href='#toc3'>Registration</a></li><li>4.&nbsp;<a href='#toc4'>Future webinars</a><ol class='toc'><li>4.1&nbsp;<a href='#toc5'>Title:  Variables in OpenSIPS scripting</a></li><li>4.2&nbsp;<a href='#toc6'>Title:  B2BUA usage</a></li></ol></li><li>5.&nbsp;<a href='#toc7'>Passed webinars (recordings)</a><ol class='toc'><li>5.1&nbsp;<a href='#toc8'>Title:  OpenSIPS Kick Start</a></li><li>5.2&nbsp;<a href='#toc9'>Title:  OpenSIPS default script</a></li><li>5.3&nbsp;<a href='#toc10'>Title:   SIP introduction</a></li><li>5.4&nbsp;<a href='#toc11'>Title:  Types of Routs in OpenSIPS</a></li><li>5.5&nbsp;<a href='#toc12'>Title:   Routing in SIP</a></li><li>5.6&nbsp;<a href='#toc13'>Title:   Introduction to OpenSIPS</a></li></ol></li></ol></div>
+<div class='vspace'></div><h3><a name='toc1' id='toc1'></a>1.&nbsp; Webinar spirit</h3>
+<p>OpenSIPS is one of the most advanced SIP engines available in the market. It is capable to handle large volumes of traffic and registered users.  Come to this Webinar and learn about OpenSIPS from its main developer Bogdan Andrei Iancu. 
+</p>
+<div class='vspace'></div><h3><a name='toc2' id='toc2'></a>2.&nbsp; System Requirements</h3>
+<p>The webinars are hosted on gotomeeting.com platform. In order to be able to participate, you need :
+</p><ul><li>Windows®-based attendees - Required: Windows® 2000, XP Home, XP Pro, 2003 Server, Vista
+</li><li>Macintosh®-based attendees - Required: Mac OS® X 10.4 (Tiger®) or newer
+</li></ul><div class='vspace'></div><h3><a name='toc3' id='toc3'></a>3.&nbsp; Registration</h3>
+<p>Registration is free, but space is limited.<br />You need to register in order to reserve your Webinar seat - see the registration link from each webinar.
+</p>
+<p class='vspace'>After registering you will receive a confirmation email containing information about joining the Webinar.
+</p>
+<div class='vspace'></div><hr />
+<h3><a name='toc4' id='toc4'></a>4.&nbsp; Future webinars</h3>
+<h4><a name='toc5' id='toc5'></a>4.1&nbsp; Title:  Variables in OpenSIPS scripting</h4>
+<p><strong>Date:</strong>  n/a  <br /><strong>Time:</strong>  n/a <br /><strong>Duration:</strong> 1h + questions<br /><strong>Speaker:</strong> Bogdan Andrei Iancu<br /><strong>Registration:</strong>' n/a <br /><strong>Description:</strong>' explaining the types of variables in OpenSIPS routing script, how to use them and which are the particularities of each type of variable.
+</p>
+<div class='vspace'></div><h4><a name='toc6' id='toc6'></a>4.2&nbsp; Title:  B2BUA usage </h4>
+<p><strong>Date:</strong>  n/a <br /><strong>Time:</strong>  n/a <br /><strong>Duration:</strong> 1h + questions<br /><strong>Speaker:</strong> n/a
+</p>
+<div class='vspace'></div><hr />
+<h3><a name='toc7' id='toc7'></a>5.&nbsp; Passed webinars (recordings)</h3>
+<h4><a name='toc8' id='toc8'></a>5.1&nbsp; Title:  OpenSIPS Kick Start</h4>
+<p><strong>Date:</strong>  17 May 2012  <br /><strong>Time:</strong>  5 PM CET <br /><strong>Duration:</strong> 1h<br /><strong>Speaker:</strong> Paiu Vlad<br /><strong>Recording:</strong>' <a class='urllink' href="Tutorials-GettingStarted.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-GettingStarted" rel='nofollow'>http://www.opensips.org/Documentation/Tutorials-GettingStarted</a> <br /><strong>Description:</strong>' Learn how to do a quick installation of OpenSIPS and OpenSIPS Control Panel, and have a fully functional platform in a matter of minutes.
+</p>
+<div class='vspace'></div><h4><a name='toc9' id='toc9'></a>5.2&nbsp; Title:  OpenSIPS default script</h4>
+<p><strong>Date:</strong>  Thursday, February 25, 2010 <br /><strong>Time:</strong>  18:00 PM CET / 15:00 PM Brazil / 12:00 PM New York / 9:00 AM San Francisco  <br /><strong>Duration:</strong> 1h + questions<br /><strong>Speaker:</strong> Bogdan Andrei Iancu<br /><strong>Recording:</strong> <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/video/webinar005/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/video/webinar005/%27" tppabs="http://www.opensips.org/html/docs/video/webinar005/" rel='nofollow'>video recording of this webinar</a> <br /><strong>Description:</strong> A detailed going through and explanation of the OpenSIPS default script - configuration params, the flow of messages in the script, what each part is good for, etc<br />
+</p>
+<div class='vspace'></div><h4><a name='toc10' id='toc10'></a>5.3&nbsp; Title:   SIP introduction</h4>
+<p><strong>Date:</strong>  Thursday, January 28, 2010<br /><strong>Time:</strong>  18:00 PM CET / 15:00 PM Brazil / 12:00 PM New York / 9:00 AM San Francisco <br /><strong>Duration:</strong> 1h + questions<br /><strong>Speaker:</strong> Flavio G. Goncalves<br /><strong>Recording:</strong> <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/video/webinar004/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/video/webinar004/%27" tppabs="http://www.opensips.org/html/docs/video/webinar004/" rel='nofollow'>video recording of this webinar</a><br /><strong>Description:</strong> detailed explanation and examples of SIP fundamentals: Requests and Replies, Initial and sequential requests, SIP transactions, SIP dialogs, SIP and RTP; A good understanding of SIP protocol is essential for working with OpenSIPS.
+</p>
+<div class='vspace'></div><h4><a name='toc11' id='toc11'></a>5.4&nbsp; Title:  Types of Routs in OpenSIPS</h4>
+<p><strong>Date:  Wednesday, August 12, 2009 </strong><br /><strong>Time:  8:00 PM - 9:00 PM EEST (5:00 PM - 06:00 PM GMT)</strong><br /><strong>Recording:</strong> <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/video/webinar003/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/video/webinar003/%27" tppabs="http://www.opensips.org/html/docs/video/webinar003/" rel='nofollow'>video recording of this webinar</a> <br /><em>Description:</em>' This webinar will help you to understand how routing is done by OpenSIPS. How the SIP messages (requests/replies) are processed inside OpenSIPS and what types of scripting routes are available to help us with this.
+</p>
+<div class='vspace'></div><h4><a name='toc12' id='toc12'></a>5.5&nbsp; Title:   Routing in SIP</h4>
+<p><strong>Date:  Monday, July 8, 2009 </strong><br /><strong>Time:  8:00 PM - 9:00 PM EEST (5:00 PM - 06:00 PM GMT)</strong><br /><strong>Recording:</strong> <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/video/webinar002/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/video/webinar002/%27" tppabs="http://www.opensips.org/html/docs/video/webinar002/" rel='nofollow'>video recording of this webinar</a> <br /><em>Description:</em>' This webinar will help you to understand SIP routing concepts. SIP routing is very often a misunderstood concept. It is essential for anyone trying to script OpenSIPS to fully understand these concepts.
+</p>
+<div class='vspace'></div><h4><a name='toc13' id='toc13'></a>5.6&nbsp; Title:   Introduction to OpenSIPS</h4>
+<p><strong>Date:  Monday, June 8, 2009 </strong><br /><strong>Time:  8:00 PM - 9:00 PM EEST (5:00 PM - 06:00 PM GMT)</strong><br /><strong>Recording:</strong> <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/video/webinar001/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/video/webinar001/%27" tppabs="http://www.opensips.org/html/docs/video/webinar001/" rel='nofollow'>video recording of this webinar</a>
+</p>
+<div class='vspace'></div><hr />
+</div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Webinars-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Webinars?action=edit">Edit</a> |
+      <a rel="nofollow" href="Webinars-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Webinars?action=diff">History</a> |
+      <a rel="nofollow" href="Webinars-action=print.htm" tppabs="http://www.opensips.org/Documentation/Webinars?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on May 16, 2013, at 05:19 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Install </title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='index,follow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   <p><a class='wikilink' title='Signup' href="javascript:if(confirm(%27http://www.opensips.org/Login/Signup?action=login  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Login/Signup?action=login%27" tppabs="http://www.opensips.org/Login/Signup?action=login">Login</a> | <a class='wikilink' title='Signup' href="javascript:if(confirm(%27http://www.opensips.org/Login/Signup  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Login/Signup%27" tppabs="http://www.opensips.org/Login/Signup">Register</a> 
+</p>
+
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Install' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2>Documentation -&gt; Install</h2>
+<hr />
+<div class='tocfloat'><p><a name='toc' id='toc'></a><b>Table of Content</b> (<a id="tocidtog" href="javascript:toggle('tocid');">hide</a>)</p><ol class='toc' id='tocid'><li>1.&nbsp;<a href='#toc1'><strong>OpenSIPS</strong> installation</a></li><li>2.&nbsp;<a href='#toc2'>OpenSIPS Console (<strong>osipsconsole</strong>) installation</a><ol class='toc'><li>2.1&nbsp;<a href='#toc3'>Perl requirements</a></li><li>2.2&nbsp;<a href='#toc4'>Debian/Ubuntu Installation</a></li></ol></li><li>3.&nbsp;<a href='#toc5'>Graphical Interface (<strong>menuconfig</strong>) installation</a></li></ol></div>
+<p class='vspace'>Looking for the fastest way for setting up your <strong>OpenSIPS</strong> instance?
+</p>
+<div class='vspace'></div><hr />
+<h3><a name='toc1' id='toc1'></a>1.&nbsp; <strong>OpenSIPS</strong> installation</h3>
+<p>Go for the <strong>OpenSIPS</strong> <a class='urllink' href="javascript:if(confirm(%27http://opensips.svn.sourceforge.net/viewvc/opensips/trunk/INSTALL  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://opensips.svn.sourceforge.net/viewvc/opensips/trunk/INSTALL%27" tppabs="http://opensips.svn.sourceforge.net/viewvc/opensips/trunk/INSTALL" rel='nofollow'>install instructions</a> - this is a link directly to the INSTALL file from the SVN repository, which contains the up-to-date version.
+</p>
+<p class='vspace'>The INSTALL file provides information about:
+</p>
+<div class='vspace'></div><ol><li>. Supported Architectures and Requirements
+</li><li>. Howto Build openser From Source Distribution
+</li><li>. Quick-Start Installation Guide
+<ol><li>) Getting Help
+</li><li>) Disclaimers
+</li><li>) Quick Start
+</li><li>) OpenSER with Persistent Data Storage
+</li></ol></li><li>. Troubleshooting
+</li></ol><p class='vspace'>NOTE that the above file will help only for setting up <strong>OpenSIPS</strong>  and not for how to configure or use it. If you are looking for such documentation, please see the <a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Documentation section</a> of the site.
+</p>
+<div class='vspace'></div><hr />
+<h3><a name='toc2' id='toc2'></a>2.&nbsp; OpenSIPS Console (<strong>osipsconsole</strong>) installation</h3>
+<p><strong>osipsconsole</strong> is a console like utility for provisioning <strong>OpenSIPS</strong>. It is to replace <strong>opensipsctl</strong> and <strong>opensipsdbctl</strong>.
+</p>
+<p class='vspace'><strong>osipsconsole</strong> is available only starting with <strong>OpenSIPS</strong> version 1.5.0 .
+</p>
+<div class='vspace'></div><h4><a name='toc3' id='toc3'></a>2.1&nbsp;Perl requirements</h4>
+<p>For the osipsconsole tool the following perl modules are needed:  
+</p>
+<div class='vspace'></div><ul><li>DBI
+</li><li>DBD::mysql 
+</li><li>DBD::Pg 
+</li><li>DBD::Oracle 
+</li><li>BerkeleyDB
+</li><li>Frontier::RPC2
+</li></ul><div class='vspace'></div><h4><a name='toc4' id='toc4'></a>2.2&nbsp; Debian/Ubuntu Installation</h4>
+<p>In order for the script to work, there are listed bellow the modules needed and their debian package correspondent, a brief description of each package and whether it is mandatory to install it or not. ( To be mentioned the fact that these packages have been tested in Debian and Ubuntu distros. )
+</p>
+<div class='vspace'></div>
+<table border='1' width='100%' ><tr ><th  align='center'>Perl module</th><th  align='center'>Debian Package</th><th  align='center'>Description</th><th  align='center'>Use</th></tr>
+<tr ><td  align='center'>perl</td><td  align='center'>perl</td><td  align='center'>Practical Extraction and Report Language</td><td  align='center'>mandatory</td></tr>
+<tr ><td  align='center'>DBI</td><td  align='center'>libdbi-perl</td><td  align='center'>Perl database interface</td><td  align='center'>mandatory</td></tr>
+<tr ><td  align='center'>DBD::mysql</td><td  align='center'>libdbd-mysql-perl</td><td  align='center'>MySQL driver for the Perl5 Database Interface (DBI)</td><td  align='center'>*optional</td></tr>
+<tr ><td  align='center'>DBD::Pg</td><td  align='center'>libdbd-pg-perl</td><td  align='center'>PostgreSQL database driver for the DBI module</td><td  align='center'>*optional</td></tr>
+<tr ><td  align='center'>**DBD::Oracle</td><td >&nbsp;</td><td  align='center'>Oracle database driver for the DBI module</td><td  align='center'>*optional</td></tr>
+<tr ><td  align='center'>Frontier::RPC2</td><td  align='center'>libfrontier-rpc-perl</td><td  align='center'>encode/decode RPC2 format XML</td><td  align='center'>mandatory</td></tr>
+<tr ><td  align='center'>Term::ReadLine::Gnu</td><td  align='center'>libterm-readline-gnu-perl</td><td  align='center'>Perl extension for the GNU Readline/History Library</td><td  align='center'>mandatory</td></tr>
+<tr ><td  align='center'>BerkeleyDB</td><td  align='center'>libberkeleydb-perl</td><td  align='center'>Perl extension for Berkeley DB version 2, 3 or 4</td><td  align='center'>mandatory</td></tr>
+</table>
+<p class='vspace'>Install these packages using apt-get:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+apt-get install perl libdbi-perl libdbd-mysql-perl libdbd-pg-perl libfrontier-rpc-perl libterm-readline-gnu-perl libberkeleydb-perl
+</pre>
+<p class='vspace'><strong>NOTE</strong>: * at the user's choice. At least one of the packages is mandatory, depending on the DB type used by OpenSIPS. The other ones have no need of being installed.
+</p><div class='indent'>**For the DBD::Oracle module there is no debian package. This will be installed as follows:
+<ul><li>Download the .tar.gz archive from: <a class='urllink' href="javascript:if(confirm(%27http://search.cpan.org/~pythian/DBD-Oracle-1.22/Oracle.pm  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://search.cpan.org/~pythian/DBD-Oracle-1.22/Oracle.pm%27" tppabs="http://search.cpan.org/~pythian/DBD-Oracle-1.22/Oracle.pm" rel='nofollow'>http://search.cpan.org/~pythian/DBD-Oracle-1.22/Oracle.pm</a>	
+</li><li>Decompress and unpack it 
+</li><li>cd DBD-Oracle-1.22
+</li><li>perl Makefile.PL
+</li><li>make
+</li><li>make test
+</li><li>make install
+</li></ul></div><div class='vspace'></div><h5>Creating your own Debian packages for CPAN libriaries</h5>
+<p>As many Debian users probably don't really like to install modules the CPAN
+way, here how to achieve the desired effect following "the Debian way":
+</p>
+<div class='vspace'></div><pre> apt-get install dh-make-perl
+</pre><p class='vspace'>Usually running
+</p>
+<div class='vspace'></div><pre> dh-make-perl --build --cpan DBD-Whatever
+</pre><p class='vspace'>should be enough. For CPAN libraries where this doesn't work please try as follows:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+wget http://search.cpan.org/CPAN/.../DBD-Whatever-1.0.tar.gz
+tar xfz DBD-Whatever-1.0.tar.gz
+dh-make-perl DBD-Whatever-1.0/
+cd DBD-Whatever-1.0
+</pre>
+<p class='vspace'>Adjust files in the newly created debian folder to fit your needs (if required) and build the package using dpkg-buildpackage, debuild or whatever you prefer.
+</p>
+<div class='vspace'></div><pre> cd ..
+</pre><p class='vspace'>Here is your new libdbd-whatever-perl_1.0-1_all.deb  :-)  One last suggestion: I'm usually not building packages on my live systems but elsewhere. This helps keeping productional systems slim and "clean".
+</p>
+<div class='vspace'></div><hr />
+<h3><a name='toc5' id='toc5'></a>3.&nbsp; Graphical Interface (<strong>menuconfig</strong>) installation</h3>
+<p>Menuconfig is a graphical tool that allows in an easy way to configure, compile 
+and generate OpenSIPS configuration files - all by simply running
+</p><pre>    make menuconfig
+</pre><p class='vspace'>The Interface allows the user to do the following :
+</p>
+<p class='vspace'>1. Configure OpenSIPS compilation related options such as :
+</p><pre>    - Compilation Flags. For example, the user can now easily compile in TCP
+      support from within the GUI, or enable memory allocation debugging, etc.
+      Each compilation flag functionality is explained in short in the GUI.
+    - Module Compilation Selection. The user can now easily select to compile
+      modules that have external dependencies, and that are not compiled in
+      by default. For example, the user can choose to also enable the MySQL
+      support by enabling the db_mysql module. The interface will also notify
+      the user about the dependencies that must be installed based on the modules
+      that the user has selected.
+    - Installation Prefix. The user can use the GUI to configure the OpenSIPS
+      installation path to be used
+</pre><p class='vspace'>2. Install OpenSIPS and Cleanup OpenSIPS sources
+</p><pre>    - Upon configuring OpenSIPS related options from above,
+      the user can choose to install OpenSIPS directly from the GUI.
+</pre><p class='vspace'>3. Generate OpenSIPS config files
+</p><pre>    - The tool can also generate OpenSIPS configuration files based on the-
+      user's preferences. So far, we have defined three main classes of OpenSIPS
+      configuration files :
+        - Residential
+        - Trunking
+        - Load-balancer
+
+   For each type of configuration file, the user can choose to enable/disable-
+   certain options. For example, for the Residential script, the user can choose
+   to enable presence support, to handle NAT, and many more. After the user has
+   properly configured it's desired OpenSIPS script in the GUI, it will have the
+   option to generate and obtain the final OpenSIPS cfg.
+</pre><p class='vspace'>If you have installed OpenSIPS from packages ( debs, rpms, etc ) and not from sources,
+you will still be able to use the graphical interface for generating configuration files,
+by running
+</p><pre>	osipsconfig
+</pre><div class='vspace'></div>
+</div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Install-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Install?action=edit">Edit</a> |
+      <a rel="nofollow" href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Install?action=diff  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Install?action=diff%27" tppabs="http://www.opensips.org/Documentation/Install?action=diff">History</a> |
+      <a rel="nofollow" href="Install-action=print.htm" tppabs="http://www.opensips.org/Documentation/Install?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on May 20, 2013, at 05:15 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

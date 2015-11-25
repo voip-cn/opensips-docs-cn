@@ -1,0 +1,793 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Index | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Index' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Index History</h2>
+  <p><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Index?action=diff&source=n&minor=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Index?action=diff&source=n&minor=y%27" tppabs="http://www.opensips.org/Documentation/Index?action=diff&source=n&minor=y">Show minor edits</a> - <a href="Index-action=diff&source=y&minor=n.htm" tppabs="http://www.opensips.org/Documentation/Index?action=diff&source=y&minor=n">Show changes to markup</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>May 27, 2013, at 07:13 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed lines 86-87 from:</div>
+        <div class='diffdel'><h4>Script operators and statements</h4>
+<p>Description of the operators and statements available in script.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h4>Script operators</h4>
+<p>Description of the operators available in script.
+</p>
+</div>
+        <div class='difftype'>Changed lines 90-93 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='center'><a class='wikilink' title='DocsCoreOps' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreOps  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreOps%27" tppabs="http://www.opensips.org/Resources/DocsCoreOps"><span style='font-size:120%'>ver 1.9.x</span></a>&nbsp;&nbsp;</td><td  align='right'><a class='wikilink' title='DocsCoreOps' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreOps  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreOps%27" tppabs="http://www.opensips.org/Resources/DocsCoreOps">trunk/devel</a> &nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreOps' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreOps  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreOps%27" tppabs="http://www.opensips.org/Resources/DocsCoreOps">ver 1.8.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreOps' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreOps  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreOps%27" tppabs="http://www.opensips.org/Resources/DocsCoreOps">ver 1.7.x</a>&nbsp;&nbsp;</td></tr>
+<tr ><td  align='left'><a class='wikilink' title='DocsCoreOps' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreOps  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreOps%27" tppabs="http://www.opensips.org/Resources/DocsCoreOps">ver 1.6.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreOps' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreOps  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreOps%27" tppabs="http://www.opensips.org/Resources/DocsCoreOps">ver 1.5.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreOps' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreOps  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreOps%27" tppabs="http://www.opensips.org/Resources/DocsCoreOps">ver 1.4.x</a>&nbsp;&nbsp;</td></tr>
+</table>
+<div class='vspace'></div>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='center'><a class='wikilink' title='Script-Operators' href="Script-Operators-2-2.htm" tppabs="http://www.opensips.org/Documentation/Script-Operators"><span style='font-size:120%'>ver 1.9.x</span></a>&nbsp;&nbsp;</td><td  align='right'><a class='wikilink' title='Script-Operators' href="Script-Operators-2-2.htm" tppabs="http://www.opensips.org/Documentation/Script-Operators">trunk/devel</a> &nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='Script-Operators' href="Script-Operators-2-2.htm" tppabs="http://www.opensips.org/Documentation/Script-Operators">ver 1.8.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='Script-Operators' href="Script-Operators-2-2.htm" tppabs="http://www.opensips.org/Documentation/Script-Operators">ver 1.7.x</a>&nbsp;&nbsp;</td></tr>
+<tr ><td  align='left'><a class='wikilink' title='Script-Operators' href="Script-Operators-2-2.htm" tppabs="http://www.opensips.org/Documentation/Script-Operators">ver 1.6.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='Script-Operators' href="Script-Operators-2-2.htm" tppabs="http://www.opensips.org/Documentation/Script-Operators">ver 1.5.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='Script-Operators' href="Script-Operators-2-2.htm" tppabs="http://www.opensips.org/Documentation/Script-Operators">ver 1.4.x</a>&nbsp;&nbsp;</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>Script statements</h4>
+<p>Description of the statements available in script.
+</p>
+<div class='vspace'></div><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' title='Script-Statements' href="Script-Statements-2-2.htm" tppabs="http://www.opensips.org/Documentation/Script-Statements"><span style='font-size:120%'>ver 1.9.x</span></a>&nbsp;&nbsp;</td><td  align='right'><a class='wikilink' title='Script-Statements' href="Script-Statements-2-2.htm" tppabs="http://www.opensips.org/Documentation/Script-Statements">trunk/devel</a> &nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='Script-Statements' href="Script-Statements-2-2.htm" tppabs="http://www.opensips.org/Documentation/Script-Statements">ver 1.8.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='Script-Statements' href="Script-Statements-2-2.htm" tppabs="http://www.opensips.org/Documentation/Script-Statements">ver 1.7.x</a>&nbsp;&nbsp;</td></tr>
+<tr ><td  align='left'><a class='wikilink' title='Script-Statements' href="Script-Statements-2-2.htm" tppabs="http://www.opensips.org/Documentation/Script-Statements">ver 1.6.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='Script-Statements' href="Script-Statements-2-2.htm" tppabs="http://www.opensips.org/Documentation/Script-Statements">ver 1.5.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='Script-Statements' href="Script-Statements-2-2.htm" tppabs="http://www.opensips.org/Documentation/Script-Statements">ver 1.4.x</a>&nbsp;&nbsp;</td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Index-action=edit&restore=diff-1369674818-1368723619-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Index?action=edit&restore=diff:1369674818:1368723619:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 16, 2013, at 07:00 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed lines 21-22 from:</div>
+        <div class='diffdel'><h4>Core parameter and functions</h4>
+<p>Listing and description of the script parameters and script functions exported by <strong>OpenSIPS</strong> core.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h4>Core parameters</h4>
+<p>Listing and description of the script parameters exported by <strong>OpenSIPS</strong> core.
+</p>
+</div>
+        <div class='difftype'>Added lines 25-32:</div>
+        <div class='diffadd'><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' title='Core Parameters - ver 1.9' href="Script-CoreParameters-1-9.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-1-9"><span style='font-size:120%'>ver 1.9.x</span></a>&nbsp;&nbsp;</td><td  align='right'><a class='wikilink' title='Script-CoreParameters' href="Script-CoreParameters-2-2.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters">trunk/devel</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='Core Parameters - ver 1.8' href="Script-CoreParameters-1-8.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-1-8">ver 1.8.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='Core Parameters - ver 1.7' href="Script-CoreParameters-1-7.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-1-7">ver 1.7.x</a>&nbsp;&nbsp;</td></tr>
+<tr ><td  align='center'><a class='wikilink' title='Core Parameters - ver 1.6' href="Script-CoreParameters-1-6.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-1-6">ver 1.6.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='Core Parameters - ver 1.5' href="Script-CoreParameters-1-5.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-1-5">ver 1.5.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='Core Parameters - ver 1.4' href="Script-CoreParameters-1-4.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-1-4">ver 1.4.x</a>&nbsp;&nbsp;</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>Core functions</h4>
+<p>Listing and description of the script functions exported by <strong>OpenSIPS</strong> core.
+</p>
+</div>
+        <div class='difftype'>Deleted lines 34-35:</div>
+        <div class='diffdel'></div></div>
+      <div class='diffrestore'><a href="Index-action=edit&restore=diff-1368723619-1368721679-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Index?action=edit&restore=diff:1368723619:1368721679:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 16, 2013, at 06:27 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><h2>Resources -&gt; <a class='createlinktext' rel='nofollow' 
+    href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">Documentation</a><a rel='nofollow' 
+    class='createlink' href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">?</a> -&gt; Cookbooks</h2>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h5>Documentation -&gt; Cookbook</h5>
+</div></div>
+      <div class='diffrestore'><a href="Index-action=edit&restore=diff-1368721679-1368714311-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Index?action=edit&restore=diff:1368721679:1368714311:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 16, 2013, at 04:25 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><h2>Resources -&gt; <a class='wikilink' title='Documentation' href="javascript:if(confirm(%27http://www.opensips.org/Resources/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/Documentation%27" tppabs="http://www.opensips.org/Resources/Documentation">Documentation</a> -&gt; Cookbooks</h2>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h2>Resources -&gt; <a class='createlinktext' rel='nofollow' 
+    href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">Documentation</a><a rel='nofollow' 
+    class='createlink' href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">?</a> -&gt; Cookbooks</h2>
+</div></div>
+      <div class='diffrestore'><a href="Index-action=edit&restore=diff-1368714311-1368036352-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Index?action=edit&restore=diff:1368714311:1368036352:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 08, 2013, at 08:05 PM 
+        by <span class='diffauthor' title='80.112.129.223'>razvancrainea</span> - </div>
+        <div class='difftype'>Changed line 101 from:</div>
+        <div class='diffdel'><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' title='DocsCoreEvi19' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreEvi19  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreEvi19%27" tppabs="http://www.opensips.org/Resources/DocsCoreEvi19"><span style='font-size:120%'>ver 1.9.x</span></a> &nbsp;&nbsp;</td><td  align='right'><a class='wikilink' title='DocsCoreEvi' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreEvi  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreEvi%27" tppabs="http://www.opensips.org/Resources/DocsCoreEvi">trunk/devel</a> &nbsp;&nbsp;</td><td  align='right'>[[Resources.docs_core_evi_1</td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' title='Core Events - ver 1.9' href="Interface-CoreEvents-1-9.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreEvents-1-9"><span style='font-size:120%'>ver 1.9.x</span></a> &nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='Interface-CoreEvents' href="Interface-CoreEvents-2-2.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreEvents">trunk/devel</a> &nbsp;&nbsp;</td><td  align='right'><a class='wikilink' title='Core Events - ver 1.8' href="Interface-CoreEvents-1-8.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreEvents-1-8">ver 1.8.x</a></td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Index-action=edit&restore=diff-1368036352-1366819971-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Index?action=edit&restore=diff:1368036352:1366819971:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 24, 2013, at 06:12 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed lines 13-14 from:</div>
+        <div class='diffdel'><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsModules19?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsModules19?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsModules19?action=edit"><span style='font-size:120%'>ver 1.9.0</span></a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsModules19?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsModules19?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsModules19?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsModules?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsModules?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsModules?action=edit">trunk/devel</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsModules?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsModules?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsModules?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsModules18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsModules18?action=edit">ver 1.8.0</a><a rel='nofollow' 
+    class='createlink' href="DocsModules18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsModules18?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsModules17-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsModules17?action=edit">ver 1.7.0</a><a rel='nofollow' 
+    class='createlink' href="DocsModules17-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsModules17?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsModules16?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsModules16?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsModules16?action=edit">ver 1.6.3</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsModules16?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsModules16?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsModules16?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+<tr ><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsModules162-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsModules162?action=edit">ver 1.6.0/1/2</a><a rel='nofollow' 
+    class='createlink' href="DocsModules162-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsModules162?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsModules15?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsModules15?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsModules15?action=edit">ver 1.5.x</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsModules15?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsModules15?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsModules15?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsModules14-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsModules14?action=edit">ver 1.4.x</a><a rel='nofollow' 
+    class='createlink' href="DocsModules14-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsModules14?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsModules13-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsModules13?action=edit">ver 1.3.x</a><a rel='nofollow' 
+    class='createlink' href="DocsModules13-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsModules13?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsModules12-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsModules12?action=edit">ver 1.2.x</a><a rel='nofollow' 
+    class='createlink' href="DocsModules12-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsModules12?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' title='DocsModules19' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsModules19  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsModules19%27" tppabs="http://www.opensips.org/Resources/DocsModules19"><span style='font-size:120%'>ver 1.9.0</span></a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsModules' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsModules  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsModules%27" tppabs="http://www.opensips.org/Resources/DocsModules">trunk/devel</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsModules18' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsModules18  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsModules18%27" tppabs="http://www.opensips.org/Resources/DocsModules18">ver 1.8.0</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsModules17' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsModules17  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsModules17%27" tppabs="http://www.opensips.org/Resources/DocsModules17">ver 1.7.0</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsModules16' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsModules16  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsModules16%27" tppabs="http://www.opensips.org/Resources/DocsModules16">ver 1.6.3</a>&nbsp;&nbsp;</td></tr>
+<tr ><td  align='center'><a class='wikilink' title='DocsModules162' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsModules162  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsModules162%27" tppabs="http://www.opensips.org/Resources/DocsModules162">ver 1.6.0/1/2</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsModules15' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsModules15  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsModules15%27" tppabs="http://www.opensips.org/Resources/DocsModules15">ver 1.5.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsModules14' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsModules14  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsModules14%27" tppabs="http://www.opensips.org/Resources/DocsModules14">ver 1.4.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsModules13' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsModules13  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsModules13%27" tppabs="http://www.opensips.org/Resources/DocsModules13">ver 1.3.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsModules12' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsModules12  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsModules12%27" tppabs="http://www.opensips.org/Resources/DocsModules12">ver 1.2.x</a>&nbsp;&nbsp;</td></tr>
+</table>
+</div>
+        <div class='difftype'>Changed lines 16-19 from:</div>
+        <div class='diffdel'><table border='0' cellspacing='5' ><tr ><td ><strong>Functions index:</strong> &nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsIdxFct-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsIdxFct?action=edit">ver 1.4.x</a><a rel='nofollow' 
+    class='createlink' href="DocsIdxFct-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsIdxFct?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+<tr ><td ><strong>Parameters index:</strong> &nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsIdxPar-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsIdxPar?action=edit">ver 1.4.x</a><a rel='nofollow' 
+    class='createlink' href="DocsIdxPar-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsIdxPar?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+<tr ><td ><strong>MI commands index:</strong> &nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsIdxMic-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsIdxMic?action=edit">ver 1.4.x</a><a rel='nofollow' 
+    class='createlink' href="DocsIdxMic-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsIdxMic?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table border='0' cellspacing='5' ><tr ><td ><strong>Functions index:</strong> &nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsIdxFct' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsIdxFct  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsIdxFct%27" tppabs="http://www.opensips.org/Resources/DocsIdxFct">ver 1.4.x</a>&nbsp;&nbsp;</td></tr>
+<tr ><td ><strong>Parameters index:</strong> &nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsIdxPar' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsIdxPar  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsIdxPar%27" tppabs="http://www.opensips.org/Resources/DocsIdxPar">ver 1.4.x</a>&nbsp;&nbsp;</td></tr>
+<tr ><td ><strong>MI commands index:</strong> &nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsIdxMic' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsIdxMic  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsIdxMic%27" tppabs="http://www.opensips.org/Resources/DocsIdxMic">ver 1.4.x</a>&nbsp;&nbsp;</td></tr>
+</table>
+</div>
+        <div class='difftype'>Changed lines 25-28 from:</div>
+        <div class='diffdel'><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreFcn19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFcn19?action=edit"><span style='font-size:120%'>ver 1.9.x</span></a><a rel='nofollow' 
+    class='createlink' href="DocsCoreFcn19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFcn19?action=edit">?</a>&nbsp;&nbsp;</td><td  align='right'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreFcn-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFcn?action=edit">trunk/devel</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreFcn-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFcn?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsCoreFcn18?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsCoreFcn18?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsCoreFcn18?action=edit">ver 1.8.x</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsCoreFcn18?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsCoreFcn18?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsCoreFcn18?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreFcn17-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFcn17?action=edit">ver 1.7.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreFcn17-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFcn17?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+<tr ><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreFcn16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFcn16?action=edit">ver 1.6.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreFcn16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFcn16?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreFcn15-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFcn15?action=edit">ver 1.5.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreFcn15-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFcn15?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreFcn14-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFcn14?action=edit">ver 1.4.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreFcn14-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFcn14?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+</table>
+<div class='vspace'></div>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' title='DocsCoreFcn19' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreFcn19  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreFcn19%27" tppabs="http://www.opensips.org/Resources/DocsCoreFcn19"><span style='font-size:120%'>ver 1.9.x</span></a>&nbsp;&nbsp;</td><td  align='right'><a class='wikilink' title='DocsCoreFcn' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreFcn  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreFcn%27" tppabs="http://www.opensips.org/Resources/DocsCoreFcn">trunk/devel</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreFcn18' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreFcn18  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreFcn18%27" tppabs="http://www.opensips.org/Resources/DocsCoreFcn18">ver 1.8.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreFcn17' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreFcn17  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreFcn17%27" tppabs="http://www.opensips.org/Resources/DocsCoreFcn17">ver 1.7.x</a>&nbsp;&nbsp;</td></tr>
+<tr ><td  align='center'><a class='wikilink' title='DocsCoreFcn16' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreFcn16  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreFcn16%27" tppabs="http://www.opensips.org/Resources/DocsCoreFcn16">ver 1.6.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreFcn15' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreFcn15  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreFcn15%27" tppabs="http://www.opensips.org/Resources/DocsCoreFcn15">ver 1.5.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreFcn14' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreFcn14  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreFcn14%27" tppabs="http://www.opensips.org/Resources/DocsCoreFcn14">ver 1.4.x</a>&nbsp;&nbsp;</td></tr>
+</table>
+<div class='vspace'></div>
+</div>
+        <div class='difftype'>Changed lines 34-37 from:</div>
+        <div class='diffdel'><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreMi19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreMi19?action=edit"><span style='font-size:120%'>ver 1.9.x</span></a><a rel='nofollow' 
+    class='createlink' href="DocsCoreMi19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreMi19?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreMi-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreMi?action=edit">trunk/devel</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreMi-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreMi?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreMi18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreMi18?action=edit">ver 1.8.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreMi18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreMi18?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreMi17-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreMi17?action=edit">ver 1.7.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreMi17-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreMi17?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+<tr ><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreMi16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreMi16?action=edit">ver 1.6.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreMi16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreMi16?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreMi15-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreMi15?action=edit">ver 1.5.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreMi15-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreMi15?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreMi14-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreMi14?action=edit">ver 1.4.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreMi14-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreMi14?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+</table>
+<div class='vspace'></div>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' title='DocsCoreMi19' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreMi19  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreMi19%27" tppabs="http://www.opensips.org/Resources/DocsCoreMi19"><span style='font-size:120%'>ver 1.9.x</span></a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreMi' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreMi  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreMi%27" tppabs="http://www.opensips.org/Resources/DocsCoreMi">trunk/devel</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreMi18' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreMi18  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreMi18%27" tppabs="http://www.opensips.org/Resources/DocsCoreMi18">ver 1.8.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreMi17' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreMi17  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreMi17%27" tppabs="http://www.opensips.org/Resources/DocsCoreMi17">ver 1.7.x</a>&nbsp;&nbsp;</td></tr>
+<tr ><td  align='center'><a class='wikilink' title='DocsCoreMi16' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreMi16  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreMi16%27" tppabs="http://www.opensips.org/Resources/DocsCoreMi16">ver 1.6.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreMi15' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreMi15  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreMi15%27" tppabs="http://www.opensips.org/Resources/DocsCoreMi15">ver 1.5.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreMi14' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreMi14  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreMi14%27" tppabs="http://www.opensips.org/Resources/DocsCoreMi14">ver 1.4.x</a>&nbsp;&nbsp;</td></tr>
+</table>
+<div class='vspace'></div>
+</div>
+        <div class='difftype'>Changed lines 43-44 from:</div>
+        <div class='diffdel'><table border='0' cellspacing='5' ><tr ><td  align='right'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreStats19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreStats19?action=edit"><span style='font-size:120%'>ver 1.9.x</span></a><a rel='nofollow' 
+    class='createlink' href="DocsCoreStats19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreStats19?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsCoreStats?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsCoreStats?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsCoreStats?action=edit">trunk/devel</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsCoreStats?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsCoreStats?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsCoreStats?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreStats18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreStats18?action=edit">ver 1.8.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreStats18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreStats18?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsCoreStats17?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsCoreStats17?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsCoreStats17?action=edit">ver 1.7.x</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsCoreStats17?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsCoreStats17?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsCoreStats17?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreStats16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreStats16?action=edit">ver 1.6.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreStats16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreStats16?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table border='0' cellspacing='5' ><tr ><td  align='right'><a class='wikilink' title='DocsCoreStats19' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreStats19  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreStats19%27" tppabs="http://www.opensips.org/Resources/DocsCoreStats19"><span style='font-size:120%'>ver 1.9.x</span></a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreStats' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreStats  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreStats%27" tppabs="http://www.opensips.org/Resources/DocsCoreStats">trunk/devel</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreStats18' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreStats18  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreStats18%27" tppabs="http://www.opensips.org/Resources/DocsCoreStats18">ver 1.8.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreStats17' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreStats17  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreStats17%27" tppabs="http://www.opensips.org/Resources/DocsCoreStats17">ver 1.7.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreStats16' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreStats16  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreStats16%27" tppabs="http://www.opensips.org/Resources/DocsCoreStats16">ver 1.6.x</a>&nbsp;&nbsp;</td></tr>
+</table>
+</div>
+        <div class='difftype'>Changed lines 50-52 from:</div>
+        <div class='diffdel'><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreVar19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreVar19?action=edit"><span style='font-size:120%'>ver 1.9.x</span></a><a rel='nofollow' 
+    class='createlink' href="DocsCoreVar19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreVar19?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreVar-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreVar?action=edit">trunk/devel</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreVar-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreVar?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreVar18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreVar18?action=edit"><span style='font-size:120%'>ver 1.8.x</span></a><a rel='nofollow' 
+    class='createlink' href="DocsCoreVar18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreVar18?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreVar17-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreVar17?action=edit">ver 1.7.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreVar17-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreVar17?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+<tr ><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreVar16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreVar16?action=edit">ver 1.6.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreVar16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreVar16?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreVar15-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreVar15?action=edit">ver 1.5.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreVar15-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreVar15?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsCoreVar14?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsCoreVar14?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsCoreVar14?action=edit">ver 1.4.x</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsCoreVar14?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsCoreVar14?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsCoreVar14?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' title='DocsCoreVar19' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreVar19  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreVar19%27" tppabs="http://www.opensips.org/Resources/DocsCoreVar19"><span style='font-size:120%'>ver 1.9.x</span></a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreVar' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreVar  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreVar%27" tppabs="http://www.opensips.org/Resources/DocsCoreVar">trunk/devel</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreVar18' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreVar18  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreVar18%27" tppabs="http://www.opensips.org/Resources/DocsCoreVar18"><span style='font-size:120%'>ver 1.8.x</span></a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreVar17' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreVar17  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreVar17%27" tppabs="http://www.opensips.org/Resources/DocsCoreVar17">ver 1.7.x</a>&nbsp;&nbsp;</td></tr>
+<tr ><td  align='center'><a class='wikilink' title='DocsCoreVar16' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreVar16  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreVar16%27" tppabs="http://www.opensips.org/Resources/DocsCoreVar16">ver 1.6.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreVar15' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreVar15  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreVar15%27" tppabs="http://www.opensips.org/Resources/DocsCoreVar15">ver 1.5.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreVar14' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreVar14  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreVar14%27" tppabs="http://www.opensips.org/Resources/DocsCoreVar14">ver 1.4.x</a>&nbsp;&nbsp;</td></tr>
+</table>
+</div>
+        <div class='difftype'>Changed lines 58-60 from:</div>
+        <div class='diffdel'><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreTran19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreTran19?action=edit"><span style='font-size:120%'>ver 1.9.x</span></a><a rel='nofollow' 
+    class='createlink' href="DocsCoreTran19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreTran19?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreTran-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreTran?action=edit">trunk/devel</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreTran-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreTran?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreTran18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreTran18?action=edit">ver 1.8.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreTran18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreTran18?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreTran17-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreTran17?action=edit">ver 1.7.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreTran17-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreTran17?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+<tr ><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreTran16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreTran16?action=edit">ver 1.6.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreTran16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreTran16?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsCoreTran15?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsCoreTran15?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsCoreTran15?action=edit">ver 1.5.x</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsCoreTran15?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsCoreTran15?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsCoreTran15?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreTran14-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreTran14?action=edit">ver 1.4.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreTran14-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreTran14?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' title='DocsCoreTran19' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreTran19  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreTran19%27" tppabs="http://www.opensips.org/Resources/DocsCoreTran19"><span style='font-size:120%'>ver 1.9.x</span></a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreTran' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreTran  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreTran%27" tppabs="http://www.opensips.org/Resources/DocsCoreTran">trunk/devel</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreTran18' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreTran18  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreTran18%27" tppabs="http://www.opensips.org/Resources/DocsCoreTran18">ver 1.8.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreTran17' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreTran17  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreTran17%27" tppabs="http://www.opensips.org/Resources/DocsCoreTran17">ver 1.7.x</a>&nbsp;&nbsp;</td></tr>
+<tr ><td  align='center'><a class='wikilink' title='DocsCoreTran16' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreTran16  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreTran16%27" tppabs="http://www.opensips.org/Resources/DocsCoreTran16">ver 1.6.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreTran15' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreTran15  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreTran15%27" tppabs="http://www.opensips.org/Resources/DocsCoreTran15">ver 1.5.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreTran14' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreTran14  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreTran14%27" tppabs="http://www.opensips.org/Resources/DocsCoreTran14">ver 1.4.x</a>&nbsp;&nbsp;</td></tr>
+</table>
+</div>
+        <div class='difftype'>Changed lines 66-69 from:</div>
+        <div class='diffdel'><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreFlags19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFlags19?action=edit"><span style='font-size:120%'>ver 1.9.x</span></a><a rel='nofollow' 
+    class='createlink' href="DocsCoreFlags19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFlags19?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreFlags-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFlags?action=edit">trunk/devel</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreFlags-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFlags?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreFlags18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFlags18?action=edit">ver 1.8.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreFlags18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFlags18?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreFlags17-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFlags17?action=edit">ver 1.7.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreFlags17-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFlags17?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+<tr ><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreFlags16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFlags16?action=edit">ver 1.6.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreFlags16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFlags16?action=edit">?</a>&nbsp;&nbsp;</td><td  align='right'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreFlags15-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFlags15?action=edit">ver 1.5.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreFlags15-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFlags15?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreFlags14-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFlags14?action=edit">ver 1.4.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreFlags14-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFlags14?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+</table>
+<div class='vspace'></div>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' title='DocsCoreFlags19' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreFlags19  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreFlags19%27" tppabs="http://www.opensips.org/Resources/DocsCoreFlags19"><span style='font-size:120%'>ver 1.9.x</span></a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreFlags' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreFlags  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreFlags%27" tppabs="http://www.opensips.org/Resources/DocsCoreFlags">trunk/devel</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreFlags18' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreFlags18  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreFlags18%27" tppabs="http://www.opensips.org/Resources/DocsCoreFlags18">ver 1.8.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreFlags17' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreFlags17  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreFlags17%27" tppabs="http://www.opensips.org/Resources/DocsCoreFlags17">ver 1.7.x</a>&nbsp;&nbsp;</td></tr>
+<tr ><td  align='center'><a class='wikilink' title='DocsCoreFlags16' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreFlags16  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreFlags16%27" tppabs="http://www.opensips.org/Resources/DocsCoreFlags16">ver 1.6.x</a>&nbsp;&nbsp;</td><td  align='right'><a class='wikilink' title='DocsCoreFlags15' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreFlags15  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreFlags15%27" tppabs="http://www.opensips.org/Resources/DocsCoreFlags15">ver 1.5.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreFlags14' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreFlags14  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreFlags14%27" tppabs="http://www.opensips.org/Resources/DocsCoreFlags14">ver 1.4.x</a>&nbsp;&nbsp;</td></tr>
+</table>
+<div class='vspace'></div>
+</div>
+        <div class='difftype'>Changed lines 75-78 from:</div>
+        <div class='diffdel'><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreRoutes19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreRoutes19?action=edit"><span style='font-size:120%'>ver 1.9.x</span></a><a rel='nofollow' 
+    class='createlink' href="DocsCoreRoutes19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreRoutes19?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreRoutes-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreRoutes?action=edit">trunk/devel</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreRoutes-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreRoutes?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreRoutes18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreRoutes18?action=edit">ver 1.8.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreRoutes18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreRoutes18?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreRoutes17-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreRoutes17?action=edit">ver 1.7.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreRoutes17-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreRoutes17?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+<tr ><td  align='left'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreRoutes16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreRoutes16?action=edit">ver 1.6.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreRoutes16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreRoutes16?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreRoutes15-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreRoutes15?action=edit">ver 1.5.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreRoutes15-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreRoutes15?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreRoutes14-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreRoutes14?action=edit">ver 1.4.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreRoutes14-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreRoutes14?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+</table>
+<div class='vspace'></div>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' title='DocsCoreRoutes19' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreRoutes19  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreRoutes19%27" tppabs="http://www.opensips.org/Resources/DocsCoreRoutes19"><span style='font-size:120%'>ver 1.9.x</span></a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreRoutes' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreRoutes  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreRoutes%27" tppabs="http://www.opensips.org/Resources/DocsCoreRoutes">trunk/devel</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreRoutes18' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreRoutes18  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreRoutes18%27" tppabs="http://www.opensips.org/Resources/DocsCoreRoutes18">ver 1.8.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreRoutes17' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreRoutes17  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreRoutes17%27" tppabs="http://www.opensips.org/Resources/DocsCoreRoutes17">ver 1.7.x</a>&nbsp;&nbsp;</td></tr>
+<tr ><td  align='left'><a class='wikilink' title='DocsCoreRoutes16' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreRoutes16  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreRoutes16%27" tppabs="http://www.opensips.org/Resources/DocsCoreRoutes16">ver 1.6.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreRoutes15' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreRoutes15  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreRoutes15%27" tppabs="http://www.opensips.org/Resources/DocsCoreRoutes15">ver 1.5.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreRoutes14' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreRoutes14  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreRoutes14%27" tppabs="http://www.opensips.org/Resources/DocsCoreRoutes14">ver 1.4.x</a>&nbsp;&nbsp;</td></tr>
+</table>
+<div class='vspace'></div>
+</div>
+        <div class='difftype'>Changed lines 84-87 from:</div>
+        <div class='diffdel'><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreOps-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreOps?action=edit"><span style='font-size:120%'>ver 1.9.x</span></a><a rel='nofollow' 
+    class='createlink' href="DocsCoreOps-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreOps?action=edit">?</a>&nbsp;&nbsp;</td><td  align='right'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreOps-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreOps?action=edit">trunk/devel</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreOps-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreOps?action=edit">?</a> &nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreOps-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreOps?action=edit">ver 1.8.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreOps-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreOps?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreOps-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreOps?action=edit">ver 1.7.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreOps-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreOps?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+<tr ><td  align='left'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreOps-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreOps?action=edit">ver 1.6.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreOps-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreOps?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreOps-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreOps?action=edit">ver 1.5.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreOps-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreOps?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreOps-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreOps?action=edit">ver 1.4.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreOps-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreOps?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+</table>
+<div class='vspace'></div>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' title='DocsCoreOps' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreOps  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreOps%27" tppabs="http://www.opensips.org/Resources/DocsCoreOps"><span style='font-size:120%'>ver 1.9.x</span></a>&nbsp;&nbsp;</td><td  align='right'><a class='wikilink' title='DocsCoreOps' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreOps  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreOps%27" tppabs="http://www.opensips.org/Resources/DocsCoreOps">trunk/devel</a> &nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreOps' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreOps  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreOps%27" tppabs="http://www.opensips.org/Resources/DocsCoreOps">ver 1.8.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreOps' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreOps  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreOps%27" tppabs="http://www.opensips.org/Resources/DocsCoreOps">ver 1.7.x</a>&nbsp;&nbsp;</td></tr>
+<tr ><td  align='left'><a class='wikilink' title='DocsCoreOps' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreOps  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreOps%27" tppabs="http://www.opensips.org/Resources/DocsCoreOps">ver 1.6.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreOps' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreOps  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreOps%27" tppabs="http://www.opensips.org/Resources/DocsCoreOps">ver 1.5.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' title='DocsCoreOps' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreOps  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreOps%27" tppabs="http://www.opensips.org/Resources/DocsCoreOps">ver 1.4.x</a>&nbsp;&nbsp;</td></tr>
+</table>
+<div class='vspace'></div>
+</div>
+        <div class='difftype'>Changed line 101 from:</div>
+        <div class='diffdel'><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreEvi19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreEvi19?action=edit"><span style='font-size:120%'>ver 1.9.x</span></a><a rel='nofollow' 
+    class='createlink' href="DocsCoreEvi19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreEvi19?action=edit">?</a> &nbsp;&nbsp;</td><td  align='right'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreEvi-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreEvi?action=edit">trunk/devel</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreEvi-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreEvi?action=edit">?</a> &nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreEvi18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreEvi18?action=edit">ver 1.8.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreEvi18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreEvi18?action=edit">?</a> &nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreEvi18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreEvi18?action=edit">ver 1.7.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreEvi18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreEvi18?action=edit">?</a> &nbsp;&nbsp;</td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' title='DocsCoreEvi19' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreEvi19  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreEvi19%27" tppabs="http://www.opensips.org/Resources/DocsCoreEvi19"><span style='font-size:120%'>ver 1.9.x</span></a> &nbsp;&nbsp;</td><td  align='right'><a class='wikilink' title='DocsCoreEvi' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreEvi  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreEvi%27" tppabs="http://www.opensips.org/Resources/DocsCoreEvi">trunk/devel</a> &nbsp;&nbsp;</td><td  align='right'>[[Resources.docs_core_evi_1</td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Index-action=edit&restore=diff-1366819971-1366819840-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Index?action=edit&restore=diff:1366819971:1366819840:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 24, 2013, at 06:10 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Added lines 1-101:</div>
+        <div class='diffadd'><h2>Resources -&gt; <a class='wikilink' title='Documentation' href="javascript:if(confirm(%27http://www.opensips.org/Resources/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/Documentation%27" tppabs="http://www.opensips.org/Resources/Documentation">Documentation</a> -&gt; Cookbooks</h2>
+<hr />
+<p>(:toc-float Table of Content:)
+This section contains documentation and description of the script language (variables, transformations, flags, routes, operators and statements), of the modules (functions, parameters) and of the MI commands (core and modules).
+</p>
+<p class='vspace'>Documentation is structured according to the <strong>OpenSIPS</strong> versions.
+</p>
+<div class='vspace'></div><hr />
+<h4>Modules documentation</h4>
+<p>Listing, description and interface documentation for the <strong>OpenSIPS</strong> modules.
+</p>
+<table border='0' cellspacing='5' ><tr ><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsModules19?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsModules19?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsModules19?action=edit"><span style='font-size:120%'>ver 1.9.0</span></a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsModules19?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsModules19?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsModules19?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsModules?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsModules?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsModules?action=edit">trunk/devel</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsModules?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsModules?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsModules?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsModules18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsModules18?action=edit">ver 1.8.0</a><a rel='nofollow' 
+    class='createlink' href="DocsModules18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsModules18?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsModules17-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsModules17?action=edit">ver 1.7.0</a><a rel='nofollow' 
+    class='createlink' href="DocsModules17-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsModules17?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsModules16?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsModules16?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsModules16?action=edit">ver 1.6.3</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsModules16?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsModules16?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsModules16?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+<tr ><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsModules162-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsModules162?action=edit">ver 1.6.0/1/2</a><a rel='nofollow' 
+    class='createlink' href="DocsModules162-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsModules162?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsModules15?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsModules15?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsModules15?action=edit">ver 1.5.x</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsModules15?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsModules15?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsModules15?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsModules14-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsModules14?action=edit">ver 1.4.x</a><a rel='nofollow' 
+    class='createlink' href="DocsModules14-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsModules14?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsModules13-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsModules13?action=edit">ver 1.3.x</a><a rel='nofollow' 
+    class='createlink' href="DocsModules13-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsModules13?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsModules12-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsModules12?action=edit">ver 1.2.x</a><a rel='nofollow' 
+    class='createlink' href="DocsModules12-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsModules12?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+</table>
+<table border='0' ><tr ><td ><strong>Functions index:</strong> &nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsIdxFct-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsIdxFct?action=edit">ver 1.4.x</a><a rel='nofollow' 
+    class='createlink' href="DocsIdxFct-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsIdxFct?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+<tr ><td ><strong>Parameters index:</strong> &nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsIdxPar-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsIdxPar?action=edit">ver 1.4.x</a><a rel='nofollow' 
+    class='createlink' href="DocsIdxPar-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsIdxPar?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+<tr ><td ><strong>MI commands index:</strong> &nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsIdxMic-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsIdxMic?action=edit">ver 1.4.x</a><a rel='nofollow' 
+    class='createlink' href="DocsIdxMic-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsIdxMic?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>Core parameter and functions</h4>
+<p>Listing and description of the script parameters and script functions exported by <strong>OpenSIPS</strong> core.
+</p>
+<div class='vspace'></div><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreFcn19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFcn19?action=edit"><span style='font-size:120%'>ver 1.9.x</span></a><a rel='nofollow' 
+    class='createlink' href="DocsCoreFcn19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFcn19?action=edit">?</a>&nbsp;&nbsp;</td><td  align='right'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreFcn-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFcn?action=edit">trunk/devel</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreFcn-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFcn?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsCoreFcn18?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsCoreFcn18?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsCoreFcn18?action=edit">ver 1.8.x</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsCoreFcn18?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsCoreFcn18?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsCoreFcn18?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreFcn17-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFcn17?action=edit">ver 1.7.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreFcn17-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFcn17?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+<tr ><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreFcn16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFcn16?action=edit">ver 1.6.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreFcn16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFcn16?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreFcn15-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFcn15?action=edit">ver 1.5.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreFcn15-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFcn15?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreFcn14-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFcn14?action=edit">ver 1.4.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreFcn14-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFcn14?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>Core MI functions</h4>
+<p>Description of the MI (management interface) functions exported by core.
+</p>
+<div class='vspace'></div><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreMi19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreMi19?action=edit"><span style='font-size:120%'>ver 1.9.x</span></a><a rel='nofollow' 
+    class='createlink' href="DocsCoreMi19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreMi19?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreMi-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreMi?action=edit">trunk/devel</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreMi-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreMi?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreMi18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreMi18?action=edit">ver 1.8.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreMi18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreMi18?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreMi17-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreMi17?action=edit">ver 1.7.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreMi17-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreMi17?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+<tr ><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreMi16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreMi16?action=edit">ver 1.6.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreMi16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreMi16?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreMi15-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreMi15?action=edit">ver 1.5.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreMi15-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreMi15?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreMi14-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreMi14?action=edit">ver 1.4.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreMi14-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreMi14?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>Core Statistics</h4>
+<p>Description of the statistics exported by the core
+</p>
+<div class='vspace'></div><table border='0' cellspacing='5' ><tr ><td  align='right'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreStats19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreStats19?action=edit"><span style='font-size:120%'>ver 1.9.x</span></a><a rel='nofollow' 
+    class='createlink' href="DocsCoreStats19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreStats19?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsCoreStats?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsCoreStats?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsCoreStats?action=edit">trunk/devel</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsCoreStats?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsCoreStats?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsCoreStats?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreStats18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreStats18?action=edit">ver 1.8.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreStats18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreStats18?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsCoreStats17?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsCoreStats17?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsCoreStats17?action=edit">ver 1.7.x</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsCoreStats17?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsCoreStats17?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsCoreStats17?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreStats16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreStats16?action=edit">ver 1.6.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreStats16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreStats16?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>Scripting variables</h4>
+<p>Description of script variables, pseudo-variables and AVPs.
+</p>
+<div class='vspace'></div><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreVar19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreVar19?action=edit"><span style='font-size:120%'>ver 1.9.x</span></a><a rel='nofollow' 
+    class='createlink' href="DocsCoreVar19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreVar19?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreVar-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreVar?action=edit">trunk/devel</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreVar-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreVar?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreVar18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreVar18?action=edit"><span style='font-size:120%'>ver 1.8.x</span></a><a rel='nofollow' 
+    class='createlink' href="DocsCoreVar18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreVar18?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreVar17-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreVar17?action=edit">ver 1.7.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreVar17-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreVar17?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+<tr ><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreVar16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreVar16?action=edit">ver 1.6.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreVar16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreVar16?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreVar15-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreVar15?action=edit">ver 1.5.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreVar15-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreVar15?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsCoreVar14?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsCoreVar14?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsCoreVar14?action=edit">ver 1.4.x</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsCoreVar14?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsCoreVar14?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsCoreVar14?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>Script transformations</h4>
+<p>Description of the script transformations you can apply on script variables.
+</p>
+<table border='0' cellspacing='5' ><tr ><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreTran19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreTran19?action=edit"><span style='font-size:120%'>ver 1.9.x</span></a><a rel='nofollow' 
+    class='createlink' href="DocsCoreTran19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreTran19?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreTran-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreTran?action=edit">trunk/devel</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreTran-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreTran?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreTran18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreTran18?action=edit">ver 1.8.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreTran18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreTran18?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreTran17-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreTran17?action=edit">ver 1.7.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreTran17-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreTran17?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+<tr ><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreTran16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreTran16?action=edit">ver 1.6.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreTran16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreTran16?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsCoreTran15?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsCoreTran15?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsCoreTran15?action=edit">ver 1.5.x</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/DocsCoreTran15?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/DocsCoreTran15?action=edit%27" tppabs="http://www.opensips.org/Documentation/DocsCoreTran15?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreTran14-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreTran14?action=edit">ver 1.4.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreTran14-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreTran14?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>Scripting flags</h4>
+<p>Description of the available types of flags to be used in <strong>OpenSIPS</strong> routing script.
+</p>
+<div class='vspace'></div><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreFlags19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFlags19?action=edit"><span style='font-size:120%'>ver 1.9.x</span></a><a rel='nofollow' 
+    class='createlink' href="DocsCoreFlags19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFlags19?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreFlags-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFlags?action=edit">trunk/devel</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreFlags-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFlags?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreFlags18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFlags18?action=edit">ver 1.8.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreFlags18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFlags18?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreFlags17-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFlags17?action=edit">ver 1.7.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreFlags17-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFlags17?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+<tr ><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreFlags16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFlags16?action=edit">ver 1.6.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreFlags16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFlags16?action=edit">?</a>&nbsp;&nbsp;</td><td  align='right'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreFlags15-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFlags15?action=edit">ver 1.5.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreFlags15-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFlags15?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreFlags14-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFlags14?action=edit">ver 1.4.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreFlags14-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreFlags14?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>Script routes</h4>
+<p>Description of the types of routes available in the routing block.
+</p>
+<div class='vspace'></div><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreRoutes19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreRoutes19?action=edit"><span style='font-size:120%'>ver 1.9.x</span></a><a rel='nofollow' 
+    class='createlink' href="DocsCoreRoutes19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreRoutes19?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreRoutes-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreRoutes?action=edit">trunk/devel</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreRoutes-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreRoutes?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreRoutes18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreRoutes18?action=edit">ver 1.8.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreRoutes18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreRoutes18?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreRoutes17-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreRoutes17?action=edit">ver 1.7.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreRoutes17-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreRoutes17?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+<tr ><td  align='left'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreRoutes16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreRoutes16?action=edit">ver 1.6.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreRoutes16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreRoutes16?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreRoutes15-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreRoutes15?action=edit">ver 1.5.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreRoutes15-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreRoutes15?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreRoutes14-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreRoutes14?action=edit">ver 1.4.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreRoutes14-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreRoutes14?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>Script operators and statements</h4>
+<p>Description of the operators and statements available in script.
+</p>
+<div class='vspace'></div><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreOps-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreOps?action=edit"><span style='font-size:120%'>ver 1.9.x</span></a><a rel='nofollow' 
+    class='createlink' href="DocsCoreOps-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreOps?action=edit">?</a>&nbsp;&nbsp;</td><td  align='right'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreOps-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreOps?action=edit">trunk/devel</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreOps-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreOps?action=edit">?</a> &nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreOps-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreOps?action=edit">ver 1.8.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreOps-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreOps?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreOps-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreOps?action=edit">ver 1.7.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreOps-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreOps?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+<tr ><td  align='left'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreOps-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreOps?action=edit">ver 1.6.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreOps-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreOps?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreOps-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreOps?action=edit">ver 1.5.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreOps-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreOps?action=edit">?</a>&nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreOps-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreOps?action=edit">ver 1.4.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreOps-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreOps?action=edit">?</a>&nbsp;&nbsp;</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>OpenSIPS Database schema</h4>
+<p>Description of the database, tables and fields.
+</p>
+<div class='vspace'></div><table border='0' cellspacing='5' ><tr ><td  align='center'><span style='font-size:120%'>ver 1.9.x</span> &nbsp;&nbsp;</td><td  align='center'>trunk/devel &nbsp;&nbsp;</td><td  align='center'>ver 1.8.x &nbsp;&nbsp;</td><td  align='center'>ver 1.7.x &nbsp;&nbsp;</td></tr>
+<tr ><td  align='center'>ver 1.6.x &nbsp;&nbsp;</td><td  align='center'>ver 1.5.x &nbsp;&nbsp;</td><td  align='center'>ver 1.4.x &nbsp;&nbsp;</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>Core Events</h4>
+<p>Listing and description of the events raised by the <strong>OpenSIPS</strong> core through the Event Interface.
+</p>
+<div class='vspace'></div><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreEvi19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreEvi19?action=edit"><span style='font-size:120%'>ver 1.9.x</span></a><a rel='nofollow' 
+    class='createlink' href="DocsCoreEvi19-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreEvi19?action=edit">?</a> &nbsp;&nbsp;</td><td  align='right'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreEvi-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreEvi?action=edit">trunk/devel</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreEvi-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreEvi?action=edit">?</a> &nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreEvi18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreEvi18?action=edit">ver 1.8.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreEvi18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreEvi18?action=edit">?</a> &nbsp;&nbsp;</td><td  align='center'><a class='createlinktext' rel='nofollow' 
+    href="DocsCoreEvi18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreEvi18?action=edit">ver 1.7.x</a><a rel='nofollow' 
+    class='createlink' href="DocsCoreEvi18-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsCoreEvi18?action=edit">?</a> &nbsp;&nbsp;</td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Index-action=edit&restore=diff-1366819840-1366819840-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Index?action=edit&restore=diff:1366819840:1366819840:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Index-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Index?action=edit">Edit</a> |
+      <a rel="nofollow" href="Index-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Index?action=diff">History</a> |
+      <a rel="nofollow" href="Index-action=print.htm" tppabs="http://www.opensips.org/Documentation/Index?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on May 27, 2013, at 07:13 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

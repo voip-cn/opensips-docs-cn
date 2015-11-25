@@ -1,0 +1,254 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Tutorials-Presence-PresenceModule </title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='index,follow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   <p><a class='wikilink' title='Signup' href="javascript:if(confirm(%27http://www.opensips.org/Login/Signup?action=login  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Login/Signup?action=login%27" tppabs="http://www.opensips.org/Login/Signup?action=login">Login</a> | <a class='wikilink' title='Signup' href="javascript:if(confirm(%27http://www.opensips.org/Login/Signup  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Login/Signup%27" tppabs="http://www.opensips.org/Login/Signup">Register</a> 
+</p>
+
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Tutorials-Presence-PresenceModule' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h5>Documentation -&gt; <a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Tutorials</a> -&gt; <a class='wikilink' title='Tutorials-Presence' href="Tutorials-Presence.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence">Presence</a> -&gt; <a class='wikilink' title='Tutorials-Presence-PresenceServer' href="Tutorials-Presence-PresenceServer.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer">Presence Server</a> -&gt; Presence Module - Parameters and Functions</h5>
+<hr />
+<div class='tocfloat'><p><a name='toc' id='toc'></a><b>Table of Content</b> (<a id="tocidtog" href="javascript:toggle('tocid');">hide</a>)</p><ol class='toc' id='tocid'><li>1.&nbsp;<a href='#toc1'>Exported Functions</a><ol class='toc'><li>1.1&nbsp;<a href='#toc2'>handle_publish()</a></li><li>1.2&nbsp;<a href='#toc3'>handle_subscribe()</a></li></ol></li><li>2.&nbsp;<a href='#toc4'>Exported Parameters</a></li></ol></div>
+<div class='vspace'></div><h3><a name='toc1' id='toc1'></a>1.&nbsp;Exported Functions</h3>
+<ul><li>handle_publish()
+</li><li>handle_subscribe()
+</li></ul><div class='vspace'></div><h4><a name='toc2' id='toc2'></a>1.1&nbsp;handle_publish()</h4>
+<ul><li>function which handles PUBLISH requests. It stores and updates presence information in database and calls functions to send NOTIFY messages when changes in presence information occur;
+</li><li>it takes one optional parameter - the URI of the sender, used by the BLA feature( event dialog;sla ).
+</li></ul><p class='vspace'><strong>Actions:</strong>
+</p>
+<div class='vspace'></div><ul><li>verifies if the PUBLISH message is correct: 
+<ul><li>check its structure - calls an event specific function defined in a presence_ev module (presence_xml or presence_mwi);
+</li><li>if it has a SIP-if-Match header, checks is there is a previous record for the same presentity;
+</li><li>if not present checks if a body is present
+</li></ul></li><li>if the conditions are not complied with it sends an adequate error message
+</li><li>if a correct message:
+<ul><li>sends a 200Ok message with 2 extra header fields : Expires and SIP-if-Match 
+</li></ul></li><li>if a new PUBLISH without a Sip-if-Match header field 
+<ul><li>it generates one
+</li><li>inserts a new row in database
+</li><li>calls a function which sends Notify with presence to all the watchers which have subscribed to the presentity
+</li></ul></li><li>if the PUBLISH message is a sequential one
+<ul><li>updates the expires value
+</li><li>generates a new E-Tag and sends it in the Sip-Etag header of the 200OK reply 
+</li></ul></li><li>if body present
+<ul><li>updates body (replace with the new one) 
+</li><li>calls a function which sends Notify with presence to all watchers 
+</li></ul></li></ul><div class='vspace'></div><h4><a name='toc3' id='toc3'></a>1.2&nbsp;handle_subscribe()</h4>
+<ul><li>function which handles SUBSCRIBE requests. It stores or updates dialog information in and calls functions to send Notify messages to teh watcher and to the presentity (if a subscription for event presence.winfo exists for the presentity and the event) 
+</li><li>it does not take any parameter.
+</li></ul><p class='vspace'><strong>Actions</strong>
+</p><ul><li>checks if the SUBSCRIBE message is correct: 
+<ul><li>check its structure;
+</li><li>if inside a dialog tries to match the dialogs with the records stored
+</li></ul></li><li>if the conditions are not complied with it sends an adequate error message
+</li><li>if a correct message sends 2XX reply
+<ul><li>the reply contains an Expires header
+</li><li>for SUBSCRIBE messages for event "presence.winfo" the status of the reply is 202OK  and for all the other 200OK
+</li></ul></li><li>if a new SUBSCRIBE, saves the dialog information in cache
+</li><li>if a Subscribe inside a dialog
+<ul><li>if the Expires header field value is 0
+<ul><li>deletes the registration from cache and database
+</li><li>if event is a PUBLISH event - sends a Notify for winfo to the presentity with full state
+</li></ul></li><li>if update
+<ul><li>updates the expires value
+</li><li>sends Notifies
+</li></ul></li></ul></li><li>if a SUBSCRIBE for a PUBLISH event( 'presence', 'dialog.sla', 'message-summary'): 
+<ul><li>sends Notify with presence.winfo to the presentity(if a winfo subscription from the presentity exists) with a partial state informing only about the subscription status of the new watcher
+</li><li>sends Notify with the presence information
+</li></ul></li><li>if a SUBSCRIBE for a winfo(watcher info) event
+<ul><li>sends Notify with presence.winfo to the subscriber with full state informing about all the watchers
+</li></ul></li></ul><hr />
+<div class='vspace'></div><h3><a name='toc4' id='toc4'></a>2.&nbsp;Exported Parameters</h3>
+<p>Please refer to the <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/modules/1.11.x/presence.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/modules/1.11.x/presence.html%27" tppabs="http://www.opensips.org/html/docs/modules/1.11.x/presence.html" rel='nofollow'>module's documentation</a> for the full list of parameters and a comprehensive description.
+</p>
+<div class='vspace'></div><hr />
+</div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Tutorials-Presence-PresenceModule-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceModule?action=edit">Edit</a> |
+      <a rel="nofollow" href="Tutorials-Presence-PresenceModule-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceModule?action=diff">History</a> |
+      <a rel="nofollow" href="Tutorials-Presence-PresenceModule-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceModule?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on June 17, 2014, at 07:57 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

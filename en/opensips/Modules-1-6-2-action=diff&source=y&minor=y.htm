@@ -1,0 +1,214 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Modules-1-6-2 | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Modules-1-6-2' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Modules-1-6-2 History</h2>
+  <p><a href="Modules-1-6-2-action=diff&source=y&minor=n.htm" tppabs="http://www.opensips.org/Documentation/Modules-1-6-2?action=diff&source=y&minor=n">Hide minor edits</a> - <a href="Modules-1-6-2-action=diff&source=n&minor=y.htm" tppabs="http://www.opensips.org/Documentation/Modules-1-6-2?action=diff&source=n&minor=y">Show changes to output</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>April 24, 2013, at 05:40 PM 
+        by <span class='diffauthor' title='213.233.101.41'>213.233.101.41</span> - </div>
+        <div class='difftype'>Added lines 1-115:</div>
+        <div class='diffadd'><div class='diffmarkup'>!!Resources -&gt; [[Resources.Documentation | Documentation]] -&gt; [[Resources.DocsCookbooks | CookBooks]] -&gt; Modules documentation<br /><br />This documentation is for '''OpenSIPS version 1.6.0/1/2'''.<br /><br />|| border=0<br />|| '''[++Module name++]''' || '''[++Description++]''' || '''[++Status++]''' ||<br />|| || || ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/aaa_radius.html | '''AAA_RADIUS''']] ||RADIUS backend for the AAA API || %color=#ffC000%alpha%%  / %red%NEW%%  ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/acc.html | '''ACC''']] ||Accounting module || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/alias_db.html | '''ALIAS_DB''']] ||Database SIP aliases module || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/auth.html | '''AUTH''']] ||Authentication Framework module || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/auth_aaa.html | '''AUTH_AAA''']] ||AAA-backend authentication module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/auth_db.html | '''AUTH_DB''']] ||Database-backend authentication module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/auth_diameter.html | '''AUTH_DIAMETER''']] ||DIAMETER-backend authentication module  || %red%unmaintained%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/auth_aaa.html | %red%'''AUTH_RADIUS''' (obsoleted)%%]] ||RADIUS-backend authentication module|| %red%Renamed as AUTH_AAA%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/avpops.html | '''AVPOPS''']] ||AVP operation module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/aaa_radius.html | %red%'''AVP_RADIUS'''(obsoleted)%%]] ||RADIUS-backend for AVP loading module  || %red%Integrated within AAA_RADIUS%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/benchmark.html | '''BENCHMARK''']] ||Config file benchmarking  || %color=#80ff00%beta%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/b2b_entities.html | '''B2B_ENTITIES''']] ||Back-to-Back User Agent Entities || %color=#ffC000%alpha%%  / %red%NEW%%  ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/b2b_logic.html | '''B2B_LOGIC''']] ||Back-to-Back User Agent Logic  || %color=#ffC000%alpha%%  / %red%NEW%%  ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/call_control.html | '''CALL CONTROL''']] ||PrePaid application module  || %color=#80ff00%beta%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/carrierroute.html | '''CARRIERROUTE''']] ||routing extension suitable for carriers  || %color=#ffC000%alpha%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/cfgutils.html | '''CFGUTILS''']] ||Different config utilities  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/closeddial.html | '''CLOSEDDIAL''']] ||PBX-like dialling features || %color=#ffC000%alpha%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/cpl-c.html | '''CPL-C''']] ||CPL interpreter module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/db_berkeley.html | '''DB_BERKELEY''']] ||Berkeley DB driver for DB API  || %color=#80ff00%beta%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/db_flatstore.html | '''DB_FLATSTORE''']] ||Fast writing-only text-backend for database module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/db_http.html | '''DB_HTTP''']] ||HTTP-backend for DB API  || %color=#ffC000%alpha%%  / %red%NEW%%  ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/db_mysql.html | '''DB_MYSQL''']] ||MYSQL-backend for database API module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/db_oracle.html | '''DB_ORACLE''']] ||ORACLE-backend for database API module  || %color=#ffC000%alpha%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/db_postgres.html | '''DB_POSTGRES''']] ||POSTGRES-backend for database API module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/db_text.html | '''DB_TEXT''']] ||Text-backend for database API module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/db_unixodbc.html | '''DB_UNIXODBC''']] ||unixODBC driver module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/db_virtual.html | '''DB_VIRTUAL''']] ||Middle-layer DB mixer || %color=#ffC000%alpha%%  / %red%NEW%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/dialog.html | '''DIALOG''']] ||Dialog support module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/dialplan.html | '''DIALPLAN''']] ||Dialplan management  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/dispatcher.html | '''DISPATCHER''']] ||Dispatcher module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/diversion.html | '''DIVERSION''']] ||Diversion header insertion module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/domain.html | '''DOMAIN''']] ||Multi-domain support module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/domainpolicy.html | '''DOMAINPOLICY''']] ||Policies to connect federations  || %color=#80ff00%beta%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/drouting.html | '''DROUTING''']] ||Dynamic Routing / LCR  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/enum.html | '''ENUM''']] ||ENUM lookup module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/exec.html | '''EXEC''']] ||External exec module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/gflags.html | '''GFLAGS''']] ||Global shared flags module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/group.html | '''GROUP''']] ||User-groups module with DB-backend  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/group.html | %red%'''GROUP_RADIUS''' (obsoleted)%%]] ||User-groups module with RADIUS-backend  || %red%Merged within GROUP%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/h350.html | '''H350''']] ||H350 implementation  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/identity.html | '''IDENTITY''']] ||SIP Identity implementation || %color=#ffC000%alpha%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/imc.html | '''IMC''']] ||Instant Messaging Conferencing module  || %color=#80ff00%beta%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/jabber.html | '''JABBER''']] ||JABBER IM and PRESENCE interconnection module  || %color=#80ff00%beta%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/json.html | '''JSON''']] ||JSON packing function|| %color=#ffC000%alpha%%  / %red%NEW%%  ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/lcr.html | '''LCR''']] ||Least Cost Routing module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/ldap.html | '''LDAP''']] ||LDAP connector  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/load_balancer.html | '''LOAD_BALANCER''']] ||Load Balancer (for calls) module || %color=#ffC000%alpha%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/localcache.html | '''LOCALCACHE''']] ||Local memory caching module || %color=#80ff00%beta%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/mangler.html | '''MANGLER''']] ||SIP mangler module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/maxfwd.html | '''MAXFWD''']] ||Max-Forward processor module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/memcached.html | '''MEMCACHED''']] ||MEMCACHED connector module || %color=#ffC000%alpha%%  / %red%NEW%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/mi_datagram.html | '''MI_DATAGRAM''']] ||DATAGRAM (unix and network) support for Management Interface  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/mi_fifo.html | '''MI_FIFO''']] ||FIFO support for Management Interface  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/mi_xmlrpc.html | '''MI_XMLRPC''']] ||XMLRPC support for Management Interface  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/mediaproxy.html | '''MEDIAPROXY''']] ||NAT traversal module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/mmgeoip.html | '''MMGEOIP''']] ||MaxMind GeoIP module || %color=#ffC000%alpha%%  ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/msilo.html | '''MSILO''']] ||SIP message silo module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/nat_traversal.html | '''NAT_TRAVERSAL''']] ||NAT traversal module  || %color=#80ff00%beta%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/nathelper.html | '''NATHELPER''']] ||NAT traversal helper module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/options.html | '''OPTIONS''']] ||OPTIONS server replier module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/osp.html | '''OSP''']] ||OSP peering module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/path.html | '''PATH''']] ||Path support for SIP frontending  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/pdt.html | '''PDT''']] ||Prefix-to-Domain translator module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/peering.html | '''PEERING''']] ||Radius peering module  || %color=#ffC000%alpha%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/perl.html | '''PERL''']] ||embed execution of Perl function  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/perlvdb.html | '''PERLVDB''']] ||Perl Virtual Database engine  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/permissions.html | '''PERMISSIONS''']] ||Permissions control module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/pike.html | '''PIKE''']] ||Flood detector module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/presence.html | '''PRESENCE''']] ||Presence server module - common API  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/presence_dialoginfo.html | '''PRESENCE_DIALOGINFO''']] ||Extension to Presence server for Dialog Info || %color=#ffC000%alpha%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/presence_mwi.html | '''PRESENCE_MWI''']] ||Extension to Presence server for Message Waiting Indication  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/presence_xcapdiff.html | '''PRESENCE_XCAPDIFF''']] ||Extension to Presence server for XCAP-DIFF event || %color=#ffC000%alpha%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/presence_xml.html | '''PRESENCE_XML''']] ||Presence server module - presence &amp; watcher info and XCAP  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/pua.html | '''PUA''']] ||Common API for presence user agent client  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/pua_bla.html | '''PUA_BLA''']] ||BLA extension for PUA  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/pua_dialoginfo.html | '''PUA_DIALOGINFO''']] ||Dialog-Info extension for PUA  || %color=#ffC000%alpha%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/pua_mi.html | '''PUA_MI''']] ||MI extension for PUA  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/pua_usrloc.html | '''PUA_USRLOC''']] ||USRLOC extension for PUA  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/pua_xmpp.html | '''PUA_XMPP''']] ||XMPP extension for PUA (SIMPLE-XMPP presence gateway)  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/qos.html | '''QOS''']] ||QOS (RTP) module  || %color=#ffC000%alpha%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/ratelimit.html | '''RATELIMIT''']] ||SIP traffic shaping module  || %color=#ffC000%alpha%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/regex.html | '''REGEX''']] ||RegExp via PCRE library || %color=#ffC000%alpha%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/registrar.html | '''REGISTRAR''']] ||SIP Registrar implementation module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/rls.html | '''RLS''']] ||Resource List Server implementation  || %color=#80ff00%beta%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/rr.html | '''RR''']] ||Record-Route and Route module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/seas.html | '''SEAS''']] ||Sip Express Application Server (interface module)  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/signaling.html | '''SIGNALING''']] ||SIP signaling module  || %color=#80ff00%beta%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/siptrace.html | '''SIPTRACE''']] ||SipTrace module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/sl.html | '''SL''']] ||Stateless replier module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/sms.html | '''SMS''']] ||SIP-to-SMS IM gateway module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/snmpstats.html | '''SNMPStats''']] ||SNMP interface for statistics module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/speeddial.html | '''SPEEDDIAL''']] ||Per-user speed-dial controller module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/statistics.html | '''STATISTICS''']] ||Script statistics support  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/sst.html | '''SST''']] ||SIP Session Timer support  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/stun.html | '''STUN''']] ||Built-in STUN server|| %color=#ffC000%alpha%%  / %red%NEW%%  ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/textops.html | '''TEXTOPS''']] ||Text operations module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/tlsops.html | '''TLSOPS''']] ||TLS operations module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/tm.html | '''TM''']] ||Transaction (stateful) module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/uac.html | '''UAC''']] ||UAC functionalies (FROM mangling and UAC auth)  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/uac_redirect.html | '''UAC_REDIRECT''']] ||UAC redirection functionality  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/uri.html | '''URI''']] ||Generic URI operation module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/uri.html | %red%'''URI_DB''' (obsoleted)%%]] ||URI operation with database support module  || %red%Merged within URI%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/uri.html | %red%'''URI_RADIUS''' (obsoleted)%%]] ||URI operation with RADIUS support module  || %red%Merged within URI%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/userblacklist.html | '''USERBLACKLIST''']] ||User black/white listing  || %color=#ffC000%alpha%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/usrloc.html | '''USRLOC''']] ||User location implementation module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/xcap_client.html | '''XCAP_CLIENT''']] ||XCAP client implementation  || %color=#80ff00%beta%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/xlog.html | '''XLOG''']] ||Advanced logger module  || %green%stable%% ||<br />||[[http://www.opensips.org/html/docs/modules/1.6.2/xmpp.html | '''XMPP''']] ||SIP-to-XMPP Gateway (SIP to Jabber/Google Talk)  || %green%stable%% ||</div></div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Modules-1-6-2?action=edit&restore=diff:1366818017:1366818017:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Modules-1-6-2?action=edit&restore=diff:1366818017:1366818017:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Modules-1-6-2?action=edit&restore=diff:1366818017:1366818017:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Modules-1-6-2-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Modules-1-6-2?action=edit">Edit</a> |
+      <a rel="nofollow" href="Modules-1-6-2-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Modules-1-6-2?action=diff">History</a> |
+      <a rel="nofollow" href="Modules-1-6-2-action=print.htm" tppabs="http://www.opensips.org/Documentation/Modules-1-6-2?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on April 24, 2013, at 05:40 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

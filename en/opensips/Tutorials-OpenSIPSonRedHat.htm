@@ -1,0 +1,576 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Tutorials-OpenSIPSonRedHat </title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='index,follow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   <p><a class='wikilink' title='Signup' href="javascript:if(confirm(%27http://www.opensips.org/Login/Signup?action=login  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Login/Signup?action=login%27" tppabs="http://www.opensips.org/Login/Signup?action=login">Login</a> | <a class='wikilink' title='Signup' href="javascript:if(confirm(%27http://www.opensips.org/Login/Signup  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Login/Signup%27" tppabs="http://www.opensips.org/Login/Signup">Register</a> 
+</p>
+
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Tutorials-OpenSIPSonRedHat' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h5>Documentation -&gt; <a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Tutorials</a> -&gt; OpenSIPS on RedHat Rel5</h5>
+<hr />
+<p>This page has been visited 13081 times.
+</p><div class='tocfloat'><p><a name='toc' id='toc'></a><b>Table of Content</b> (<a id="tocidtog" href="javascript:toggle('tocid');">hide</a>)</p><ol class='toc' id='tocid'><li>1.&nbsp;<a href='#toc1'>Installation of Red Hat Enterprise Linux 5 (Phase 1)</a></li><li>2.&nbsp;<a href='#toc2'>Installation and configuration of Opensips, webmin and mysql (Phase 2)</a></li></ol></div>
+<hr />
+<p class='vspace'>The following document will guide you through the installation of the newly released OpenSIPS version 1.5 in Red Hat Enterprise Linux 5.3 along with mysql. I will divide this process in 2 phases:
+</p><ol><li>- Installation of Red Hat Enterprise Linux 5.3  
+</li><li>- Installation and configuration of OpenSIPS, webmin and mysql  
+</li></ol><p class='vspace'>The following components and parameters will be used for the purpose  
+of this installation guide, securing your OpenSIPS environment is  
+beyond this installation guide,  
+</p>
+<div class='vspace'></div><ul><li>Red Hat Enterprise Linux Server release 5.3 (Tikanga), 2.6.18-128.1.6.el5  
+</li><li>mysql-server-5.0.45-7.el5.i386  
+</li><li>An HP DL380 3.20 2gb of RAM  
+</li><li>Fully Qualified Domain Name of the server will be simulacro.sipcorner.com  
+</li><li>IP address of the server 10.10.10.101  
+</li></ul><div class='vspace'></div><h3><a name='toc1' id='toc1'></a>1.&nbsp;Installation of Red Hat Enterprise Linux 5 (Phase 1)  </h3>
+<p>Let's Proceed to install Red Hat Enterprise Linux 5  
+</p><ul><li>Proceed to Insert the RHEL 5 DVD in your server  
+</li></ul><p class='vspace'>At the RHEL boot screen "press enter"
+</p>
+<p class='vspace'>The system will ask you to either test the media or skip the media test,  
+I personally choose to skip the media since I know the integrity of the DVD  
+is good, but if you have doubts about the integrity of your media I will  
+suggest you to continue with the media test.
+</p><ul><li>At the RED HAT ENTERPRISE LINUX 5 initial Install screen select NEXT  
+</li><li>Proceed to select the language, I selected English(English)  
+</li><li>Proceed to select the appropriate keyboard for the System, I selected U.S. English  
+</li><li>Proceed to enter the Red Hat installation number and select OK  
+</li><li>Select to Install Red Hat Enterprise Linux Server, then select OK  
+</li><li>Because I have RHEL 5 currently installed in my Hard Drive, and I want to install a new copy of RHEL 5, the system will now asked me if I want to remove all linux partitions on the selected drives and create a default layout, since I want to do this, I will simply select the NEXT button  
+</li><li>As a precaution, the system will asked me if I really want to remove all the existing Linux partitions in the Hard Drive, Since i want to do this I select the Yes button.  
+</li><li>The system will now asked to configure the ethernet0 interface, since I want the system to have an static IP address, I select the eth0 interface and I select EDIT.  
+</li><li>The EDIT Interface screen will open, and I will now proceed to enter my network information manually, then select OK, next I proceed to enter the FQDN for this server, for example simulacro.sipcorner.com, next I will proceed to continue entering my network information, such as my gateway, primary DNS and Secondary DNS servers, then I will proceed to select the NEXT button  
+</li><li>Proceed to select your timezone accordingly 
+</li><li>Proceed to enter a Password for the Root Account  
+</li><li>Red Hat Enterprise Linux 5 default installation includes a set of software applicable for general internet usage, although you can choose to install additional components, such as servers and others, for the purposes of this document, I will proceed to check the Web Server option and also I will proceed to check the Customize now option, then I will select NEXT.  
+</li><li>Because I checked the customize option, I am now being presented with an screen where I can select different packages that I want the system to install for me during this installation, hence I will select the following packages:  
+<ul><li>Servers&gt;Mysql Database&gt;Optional Packages&gt;Default plus  
+<ul><li>mysql-devel-5.0.45-7.el5.i386  
+</li><li>php-mysql-5.1.6-23.el5.i386  
+</li><li>mod_auth_mysql-3.0.0-3.1.i386  
+</li></ul><div class='vspace'></div></li><li>Servers&gt;Web Server&gt;Optional Packages&gt;Default plus  
+<ul><li>mod_nss-1.0.3-6.el5.i386  
+</li></ul><div class='vspace'></div></li><li>Servers&gt;Mail Server&gt;Default  
+</li></ul><div class='vspace'></div></li><li>The RHEL 5 Installation is now ready to begin, proceed by selecting the NEXT button  
+</li><li>Once the system has finished the installation process the DVD will eject and  a new screen will appear congratulating you, at this point select the Reboot button.  
+</li><li>After the firs Reboot, you will be presented with a Welcome screen, proceed and  select the Forward button, proceed to agree with the license agreement, proceed  to configure your firewall. I will personally select Secure WWWW (HTTPS) and  WWW (HTTP) ports, although under the Other Ports option, I will also proceed to add  port 5060 TCP/UDP to allow SIP dialogs/sessions, although 5060 UDP is enough, but  this is a test box so I decided to open both TCP and UDP, then I will also select  port 10000 TCP for webmin, why webmin?, because if you are not an expert with mysql  webmin can be useful to access mysql and other components via web, instead of the CLI  although webmin is useful when it comes to administer the RHEL box, servers and other  components,in the opensips environment it is highly likely that you will be using  the CLI for almost everything. Next proceed to select the Forward button.  
+</li><li>Proceed to configure SELinux accordingly, I will personally select the Enforcing  option, then proceed to select the Forward button.  
+</li><li>Proceed to configure Kdump accordingly, I personally like Kdump, although it may require  you to do another reboot and do some memory allocation in order to properly work.  
+</li><li>Proceed to configure the Date and Time accordingly, when configuring opensips, the time  can be critical, so i will suggest you to enable NTP, and I personally will add another ntp  server on top of the RHEL ntp servers, ncnoc.ncren.net (because I am in North Carolina), then I will proceed to select the forward button.  
+</li><li>Proceed to Set up Software Updates at your discretion.  
+</li><li>Proceed to create a User accordingly, it is not really safe for you to use the root account  to login to the box, surf the internet, install software and others, although for the purposes of this guide, I will be using the root account during the installation process of opensips and  webmin.  
+</li><li>Proceed to configure the Sound Card, if any  
+</li><li>If you would like to install additional software using CD's, you may do so at this time, otherwise  select the Finish button, the system will proceed to restart  
+</li><li>Once the server has rebooted Proceed to access the Red Hat Enterprise Linux 5 console  using your favorite console client, I personally use Secure CRT.  
+</li></ul><div class='vspace'></div><hr />
+<h3><a name='toc2' id='toc2'></a>2.&nbsp; Installation and configuration of Opensips, webmin and mysql (Phase 2)  </h3>
+<p>Your system should have the following packages installed  
+</p><ul><li>zlib-1.2.3-3.i386  
+</li><li>openssl-0.9.8e-7.el5.i686  
+</li><li>mysql-server-5.0.45-7.el5.i386  
+</li></ul><p class='vspace'>If the above packages are not installed in your system you can install them by using yum, ie  
+</p><div class='indent'>yum install zlib openssl mysql-server  
+</div><pre class='escaped'>
+root@simulacro ~# yum install zlib openssl mysql-server  
+</pre> 
+<p class='vspace'>Proceed to install the following packages using yum  
+</p><div class='indent'>gcc, bison, flex, zlib-devel, openssl-devel  
+</div><pre class='escaped'>
+root@simulacro ~# yum gcc bison flex zlib-devel openssl-devel  
+</pre>
+<p class='vspace'>Proceed to download opensips 1.5 but first I will suggest you to go to the usr/src directory and download opensips 1.5 there.  
+</p><pre class='escaped'>
+root@simulacro src# wget http://opensips.org/pub/opensips/1.5.0/src/opensips-1.5.0-notls_src.tar.gz  
+</pre>
+<p class='vspace'>Proceed to untar opensips  
+</p><pre class='escaped'> 
+root@simulacro src# tar -xzf opensips-1.5.0-notls_src.tar.gz  
+</pre>
+<p class='vspace'>Proceed to download and install webmin  
+</p><pre class='escaped'> 
+root@simulacro src# wget http://prdownloads.sourceforge.net/webadmin/webmin-1.470-1.noarch.rpm  
+root@simulacro src# rpm -ivh webmin-1.470-1.noarch.rpm  
+</pre>
+<p class='vspace'>Proceed to rename opensips-1.5.0-notls to opensips  
+</p><pre class='escaped'> 
+root@simulacro src# mv opensips-1.5.0-notls opensips  
+</pre>
+<p>Now lets proceed to EDIT the /usr/src/opensips/Makefile using nano, so we use mysql  
+</p><pre class='escaped'>
+root@simulacro src# nano opensips/Makefile  
+</pre>
+<p class='vspace'>Once in the Makefile configuration parameters, proceed to modify the following comment by removing the "db_mysql" module  
+</p><pre class='escaped'>
+#if not set on the cmd. line or the env, exclude this modules:  
+exclude_modules?= jabber cpl-c xmpp rls mi_xmlrpc xcap_client \  
+db_mysql db_postgres db_unixodbc db_oracle db_berkeley \  
+avp_radius auth_radius group_radius uri_radius \  
+osp perl snmpstats perlvdb peering carrierroute mmgeoip \  
+presence presence_xml presence_mwi presence_dialoginfo \  
+pua pua_bla pua_mi pua_usrloc pua_xmpp pua_dialoginfo \  
+ldap h350 identity regex
+</pre>
+<p class='vspace'>Your comment should now look like this  
+</p>
+<div class='vspace'></div><pre class='escaped'> 
+#if not set on the cmd. line or the env, exclude this modules:  
+exclude_modules?= jabber cpl-c xmpp rls mi_xmlrpc xcap_client \  
+db_postgres db_unixodbc db_oracle db_berkeley \  
+avp_radius auth_radius group_radius uri_radius \  
+osp perl snmpstats perlvdb peering carrierroute mmgeoip \  
+presence presence_xml presence_mwi presence_dialoginfo \  
+pua pua_bla pua_mi pua_usrloc pua_xmpp pua_dialoginfo \  
+ldap h350 identity regex  
+</pre>
+<p class='vspace'>Proceed to save the configuration in nano by using ctrl + X then y  
+</p>
+<p class='vspace'>Proceed to run the following commands, but first go to /usr/src/opensips  
+</p><pre class='escaped'> 
+root@simulacro opensips#make clean  
+root@simulacro opensips#make all include_modules="mysql"  
+root@simulacro opensips#make prefix=/usr/local install include_module="mysql"  
+</pre> 
+<p class='vspace'>Using nano proceed to edit /usr/local/etc/opensips/opensipsctlrc  
+</p><pre class='escaped'> 
+root@simulacro opensips# nano /usr/local/etc/opensips/opensipsctlrc  
+</pre>
+<p class='vspace'>and proceed to modify the following comment by removing the # sign  
+</p>
+<div class='vspace'></div><pre class='escaped'> 
+#database type: MYSQL, PGSQL, ORACLE, DB_BERKELEY, or DBTEXT, by def$  
+#If you want to setup a database with opensipsdbctl, you must at leas$  
+#this parameter.  
+DBENGINE=MYSQL  
+</pre>
+<p class='vspace'>It should look like this  
+</p><pre class='escaped'>
+#database type: MYSQL, PGSQL, ORACLE, DB_BERKELEY, or DBTEXT, by def$  
+#If you want to setup a database with opensipsdbctl, you must at leas$  
+#this parameter.  
+DBENGINE=MYSQL  
+</pre>
+<p class='vspace'>Proceed to save your file in nano using ctrl + X and Y  
+</p>
+<p class='vspace'>Proceed to start mysql by typing the following command service mysqld start  
+</p><pre class='escaped'>
+root@simulacro opensips# service mysqld start  
+Initializing MySQL database: Installing MySQL system tables...  
+OK  
+Filling help tables...  
+OK  
+
+To start mysqld at boot time you have to copy  
+support-files/mysql.server to the right place for your system  
+
+PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER ! 
+
+To do so, start the server, then issue the following commands:  
+/usr/bin/mysqladmin -u root password 'new-password'  
+/usr/bin/mysqladmin -u root -h simulacro.sipcorner.com password 'new-password'  
+See the manual for more instructions.  
+You can start the MySQL daemon with:  
+cd /usr ; /usr/bin/mysqld_safe &amp;  
+
+You can test the MySQL daemon with mysql-test-run.pl  
+cd mysql-test ; perl mysql-test-run.pl  
+
+Please report any problems with the /usr/bin/mysqlbug script!  
+
+The latest information about MySQL is available on the web at  
+http://www.mysql.com  
+Support MySQL by buying support/licenses at http://shop.mysql.com  
+OK  
+Starting MySQL: OK  
+root@simulacro opensips#  
+</pre>
+<p class='vspace'>As stated above let's proceed to set up a password for the root user  
+</p><pre class='escaped'> 
+root@simulacro opensips# /usr/bin/mysqladmin -u root password yourpassword  
+root@simulacro opensips# /usr/bin/mysqladmin -u root -h simulacro.sipcorner.com password 'yourpassword'  
+</pre>
+<p class='vspace'>Now lets proceed to create the database for opensips using the following command  
+</p><div class='indent'>/usr/local/sbin/opensipsdbctl create  
+</div><pre class='escaped'>
+root@simulacro opensips# /usr/local/sbin/opensipsdbctl create  
+MySQL password for root:  
+INFO: test server charset  
+INFO: creating database opensips ...  
+INFO: Core OpenSIPS tables succesfully created.  
+Install presence related tables? (y/n): y  
+INFO: creating presence tables into opensips ...  
+INFO: Presence tables succesfully created.  
+Install tables for imc cpl siptrace domainpolicy carrierroute userblacklist? (y/n): y  
+INFO: creating extra tables into opensips ...  
+INFO: Extra tables succesfully created.  
+root@simulacro opensips#  
+</pre>
+<p class='vspace'>Now proceed to edit the opensips.cfg file
+</p><pre class='escaped'>
+root@simulacro opensips# nano /usr/local/etc/opensips/opensips.cfg  
+</pre>
+<p class='vspace'>Proceed to modify the following comment (remove the #)  
+</p><pre class='escaped'> 
+/* uncomment next line for MySQL DB support */  
+
+#loadmodule "db_mysql.so"  
+</pre> 
+<p class='vspace'>It should now look like this  
+</p><pre class='escaped'>
+/* uncomment next line for MySQL DB support */  
+loadmodule "db_mysql.so"  
+</pre>
+<p class='vspace'>Proceed to also modify the following comment (remove couple #'s)  
+</p><pre class='escaped'>
+loadmodule "acc.so"  
+/* uncomment next lines for MySQL based authentication support  
+NOTE: a DB (like db_mysql) module must be also loaded */  
+
+#loadmodule "auth.so"  
+#loadmodule "auth_db.so  
+</pre>
+<p class='vspace'>It should now look like this  
+</p><pre class='escaped'> 
+loadmodule "acc.so"  
+/* uncomment next lines for MySQL based authentication support  
+NOTE: a DB (like db_mysql) module must be also loaded */  
+loadmodule "auth.so"  
+loadmodule "auth_db.so"  
+</pre>
+<p class='vspace'>Proceed to also modify the following comment (remove the #)  
+</p><pre class='escaped'> 
+/* uncomment the following lines if you want to enable DB persistency  
+for location entries */  
+
+#modparam("usrloc", "db_mode", 2)  
+</pre>
+<p class='vspace'>It should now look like this  
+</p><pre class='escaped'> 
+/* uncomment the following lines if you want to enable DB persistency  
+for location entries */  
+modparam("usrloc", "db_mode", 2)  
+</pre> 
+<p class='vspace'>Proceed to also modify the following comment (remove couple #'s)  
+</p><pre class='escaped'> 
+/* uncomment the following lines if you want to enable the DB based  
+authentication */  
+
+#modparam("auth_db", "calculate_ha1", yes)  
+#modparam("auth_db", "password_column", "password")  
+</pre>
+<p class='vspace'>It should now look like this  
+</p><pre class='escaped'> 
+/* uncomment the following lines if you want to enable the DB based  
+authentication */  
+modparam("auth_db", "calculate_ha1", yes)  
+modparam("auth_db", "password_column", "password")  
+</pre>
+<p class='vspace'>Proceed to modify the following "empty spaces" with your domain, in my  case I will use the ip address of this box which is 10.10.10.101, the comment is the following  
+</p><pre class='escaped'>
+#authenticate the REGISTER requests (uncomment to enable auth)
+##if (!www_authorize("", "subscriber"))  
+##{  
+## www_challenge("", "0");  
+## exit;  
+</pre>
+<p class='vspace'>It should now look like this  
+</p><pre class='escaped'> 
+#authenticate the REGISTER requests (uncomment to enable auth)
+if (!www_authorize("10.10.10.101", "subscriber"))  
+{  
+    www_challenge("10.10.10.101", "0");  
+    exit;
+}
+</pre>
+<p class='vspace'>Proceed to save the file in nano by using ctrl + X and Y  
+</p>
+<p class='vspace'>Great!, now lets see if we can start opensips by typing opensipsctl start  
+</p><pre class='escaped'>
+root@simulacro opensips# opensipsctl start  
+
+INFO: Starting OpenSIPS :  
+INFO: started (pid: 5474)  
+root@simulacro opensips#  
+</pre>
+<p class='vspace'>And as we see above we can start successfully OpenSIPS!  
+</p>
+<p class='vspace'>Now lets proceed to copy /usr/src/opensips/packaging/fedora/opensips.init to /etc/init.d/opensips by doing the following  
+</p><pre class='escaped'>
+root@simulacro opensips# cp /usr/src/opensips/packaging/fedora/opensips.init /etc/init.d/opensips  
+root@simulacro opensips#  
+</pre>
+<p class='vspace'>Now lets give the proper rights to opensips, by doing the following chmod 755 /etc/init.d/opensips  
+</p><pre class='escaped'>
+root@simulacro opensips# chmod 755 /etc/init.d/opensips  
+</pre>
+<p class='vspace'>Now so that we can start opensips properly, we need to make some configuration changes to /etc/init.d/opensips, using nano do the following  
+</p><pre class='escaped'>
+root@simulacro opensips# nano /etc/init.d/opensips  
+</pre> 
+<p class='vspace'>Proceed to modify the following comment  
+</p><pre class='escaped'> 
+#Source function library.  
+. /etc/rc.d/init.d/functions  
+
+oser=/usr/sbin/opensips  
+prog=opensips  
+RETVAL=0  
+</pre>
+<p class='vspace'>It should now look like this  
+</p><pre class='escaped'> 
+#Source function library.  
+. /etc/rc.d/init.d/functions  
+
+oser=/usr/local/sbin/opensips  
+prog=opensips  
+RETVAL=0  
+</pre>
+<p class='vspace'>Proceed to save the file using name ctrl + X and Y  
+</p>
+<p class='vspace'>Now lets proceed to test service opensips start|status|stop  
+</p><pre class='escaped'> 
+root@simulacro opensips# service opensips stop  
+Stopping opensips: OK  
+root@simulacro opensips# service opensips status  
+opensips is stopped  
+root@simulacro opensips# service opensips start  
+Starting opensips: OK  
+root@simulacro opensips# service opensips status  
+opensips (pid 5624 5623 5620 5618 5615 5613 5612 5610 5608 5605 5603 5602 5600 5598 5595 5594 5590) is running...  
+root@simulacro opensips#  
+</pre>
+<p class='vspace'>Using nano proceed to edit the startup script /etc/init.d/opensips, proceed  to make changes to the following comment  
+</p><pre class='escaped'>
+#Startup script for OpenSIPS  
+
+chkconfig: - 85 15  
+</pre>
+<p class='vspace'>It should now look like  
+</p><pre class='escaped'> 
+#Startup script for OpenSIPS  
+
+chkconfig: 345 96 15  
+</pre>
+<p class='vspace'>Proceed to save the file using nano ctrl + X and Y  
+</p>
+<p class='vspace'>Proceed to also do the following from the CLI  
+</p><pre class='escaped'> 
+root@simulacro opensips# chkconfig --add opensips  
+root@simulacro opensips# chkconfig mysqld on  
+root@simulacro ~# export SIP_DOMAIN=10.10.10.101  
+</pre>
+<p class='vspace'>Proceed to reboot the server to make sure opensips and mysqld starts automatically  
+</p>
+<div class='vspace'></div><pre class='escaped'> 
+root@simulacro opensips# reboot  
+
+Broadcast message from root (pts/1) (Sun Apr 12 01:41:56 2009):  
+
+The system is going down for reboot NOW!  
+root@simulacro opensips#  
+</pre> 
+<p class='vspace'>Once the server have fully restarted we can proceed to add a new user,  when adding a new user, you will be asked for the opensips password,  the default opensips password is lowercase opensipsrw, I will suggest  you to look at the opensipsctlrc file, I will strongly suggest you to  change all the default values in this file, although becareful when  making changes, because it could cause opensips to stop working.  
+</p>
+<p class='vspace'>To add a new user simply issue the following command  
+</p><div class='indent'>opensipsctl add newusername newuserpassword  
+</div><pre class='escaped'>
+root@simulacro src# opensipsctl add 2000 yourpassword  
+MySQL password for user 'opensips@localhost': &lt;---enter opensipsrw  
+new user '2000' added  
+root@simulacro src#  
+</pre>
+<p class='vspace'>Using for example xlite you should now be able to register user 2000  with opensips  
+</p>
+<p class='vspace'>Also you can use the command opensipsctl to access your cli options.  
+</p>
+<p class='vspace'>This document was created by Cesar Fiestas.
+</p>
+</div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-OpenSIPSonRedHat?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-OpenSIPSonRedHat?action=edit%27" tppabs="http://www.opensips.org/Documentation/Tutorials-OpenSIPSonRedHat?action=edit">Edit</a> |
+      <a rel="nofollow" href="Tutorials-OpenSIPSonRedHat-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-OpenSIPSonRedHat?action=diff">History</a> |
+      <a rel="nofollow" href="Tutorials-OpenSIPSonRedHat-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-OpenSIPSonRedHat?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on May 16, 2013, at 06:16 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+  <title>openSIPS | Documentation / Generating Config Files - ver 1.8 </title>
+  <link rel='stylesheet' href="print.css" tppabs="http://www.opensips.org/pub/skins/print/print.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+</head>
+<body>
+  <div id='printhead'>
+    <h3>From openSIPS</h3>
+    <h1 class='pagename'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation%27" tppabs="http://www.opensips.org/Documentation">Documentation: Generating Config Files - ver 1.8 </a></h1>
+  </div>
+<!--PageText-->
+<div id='wikitext'>
+<h5>Documentation -&gt; <a class='wikilink' href="Manuals-action=print.htm" tppabs="http://www.opensips.org/Documentation/Manuals?action=print">Manuals</a> -&gt; <a class='wikilink' href="Manual-1-8-action=print.htm" tppabs="http://www.opensips.org/Documentation/Manual-1-8?action=print">Manual 1.8</a> -&gt; Generating Config Files</h5>
+<hr />
+<p><span style='font-size:83%'> Pages for other versions: <a class='wikilink' href="Generating-Configs-2-2-action=print.htm" tppabs="http://www.opensips.org/Documentation/Generating-Configs-2-2?action=print">devel</a> <a class='wikilink' href="Generating-Configs-2-1-action=print.htm" tppabs="http://www.opensips.org/Documentation/Generating-Configs-2-1?action=print">2.1</a> <a class='wikilink' href="Generating-Configs-1-11-action=print.htm" tppabs="http://www.opensips.org/Documentation/Generating-Configs-1-11?action=print">1.11</a>  Older versions: <a class='wikilink' href="Generating-Configs-1-10-action=print.htm" tppabs="http://www.opensips.org/Documentation/Generating-Configs-1-10?action=print">1.10</a> <a class='wikilink' href="Generating-Configs-1-9-action=print.htm" tppabs="http://www.opensips.org/Documentation/Generating-Configs-1-9?action=print">1.9</a> 1.8 </span>
+</p>
+<p class='vspace'><br />
+</p><table width='100%'><tr ><td  align='center'><span  style='color: #185662;'><span style='font-size:120%'><strong>Generating Config Files 1.8</strong></span></span></td></tr>
+</table>
+<div class='vspace'></div><table width='100%'><tr ><td  align='left'><a class='wikilink' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Configure-File-1-8?action=print  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Configure-File-1-8?action=print%27" tppabs="http://www.opensips.org/Documentation/Configure-File-1-8?action=print">Prev</a></td><td  align='right'><a class='wikilink' href="Script-Format-1-8-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Format-1-8?action=print">Next</a></td></tr>
+</table><hr />
+<div class='vspace'></div><div class='tocfloat'><p><a name='toc' id='toc'></a><b>Table of Content</b> (<a id="tocidtog" href="javascript:toggle('tocid');">hide</a>)</p><ol class='toc' id='tocid'><li>1.&nbsp;<a href='#toc1'>Using the Menuconfig Tool</a></li><li>2.&nbsp;<a href='#toc2'>Types of Configs</a></li><li>3.&nbsp;<a href='#toc3'>Post-Generation Script editing</a></li></ol></div>
+<p class='vspace'>Generating OpenSIPS config files is accomplished by using the menuconfig tool. Because the graphical interface is ncurses based, please make sure to first install the ncurses development library ( typically libncurses5-dev ). 
+</p>
+<div class='vspace'></div><h3><a name='toc1' id='toc1'></a>1.&nbsp; Using the Menuconfig Tool</h3>
+<p>The menuconfig can be ran either directly from the OpenSIPS sources, or post installation, from the installation path :
+</p>
+<div class='vspace'></div><ul><li>From sources, you can run
+</li></ul><div class='vspace'></div><pre>    make menuconfig
+</pre><div class='vspace'></div><ul><li>After installation, you can run menuconfig directly from the installation path, by running
+</li></ul><div class='vspace'></div><pre>    [install_path]/sbin/osipsconfig
+</pre><p class='vspace'>Once in the menuconfig tool, navigate to the 'Generate OpenSIPS Script' option, and then choose your desired script type.
+Once you have chosen you script type, you will be able to go to configure the various available options for that script ( described below ). Enabling certain options per script is done by using the spacebar key. Once you have configured your desired options, you can hit the 'q' key to go to the previous menu, and hit 'Save Changes'. Then, you can generate the OpenSIPS script with your configurations. At the end, the graphical tool will give you the path for your newly generated config file ( eg : Config generated : /usr/local/opensips_proxy_1.9/etc/opensips/opensips_residential_2013-5-21_11:39:48.cfg )
+</p>
+<div class='vspace'></div><div><span class='rfloat'> <img width='400px' src="menuconfig_snapshot.png" tppabs="http://opensips.org/images/menuconfig_snapshot.png" alt='' title='' /><br /><strong> </strong></span></div>
+<div class='vspace'></div><h3><a name='toc2' id='toc2'></a>2.&nbsp; Types of Configs</h3>
+<p>So far, the OpenSIPS 1.9 menuconfig automated script generator supports 3 types of scripts. Here are the types of scripts, along with the available options per script :
+</p>
+<div class='vspace'></div><ul><li>Residential Script
+<div class='vspace'></div><ul><li>ENABLE_TCP : OpenSIPS will listen on TCP for SIP requests
+</li><li>ENABLE_TLS : OpenSIPS will listen on TCP for SIP requests
+</li><li>USE_ALIASES : OpenSIPS will allow the use of Aliases for SIP users
+</li><li>USE_AUTH : OpenSIPS will authenticate Register &amp; Invite requests
+</li><li>USE_DBACC : OpenSIPS will save ACC entries in DB for all calls
+</li><li>USE_DBUSRLOC : OpenSIPS will persistently store User Location entries in the DB
+</li><li>USE_DIALOG : OpenSIPS will keep track of active dialogs
+</li><li>USE_MULTIDOMAIN : OpenSIPS will handle multiple domains for subscribers
+</li><li>USE_NAT : OpenSIPS will try to cope with NAT by fixing SIP msgs and engaging RTPProxy
+</li><li>USE_PRESENCE : OpenSIPS will act as a Presence server
+</li><li>USE_DIALPLAN : OpenSIPS will use dialplan for transformation of local numbers
+</li><li>VM_DIVERSION : OpenSIPS will redirect to VM calls not reaching the subscribers 
+</li><li>HAVE_INBOUND_PSTN : OpenSIPS will accept calls from PSTN gateways (with static IP authentication)
+</li><li>HAVE_OUTBOUND_PSTN : OpenSIPS will send numerical dials to PSTN gateways (with static IP definition)
+</li><li>USE_DR_PSTN : OpenSIPS will use Dynamic Routing Support ( LCR ) for PSTN interconnection
+</li></ul><div class='vspace'></div></li><li>Trunking Script
+<div class='vspace'></div><ul><li>ENABLE_TCP : OpenSIPS will listen on TCP for SIP requests
+</li><li>ENABLE_TLS : OpenSIPS will listen on TCP for SIP requests
+</li><li>USE_DBACC : OpenSIPS will save ACC entries in DB for all calls
+</li><li>USE_DIALPLAN : OpenSIPS will use dialplan for transformation of local numbers
+</li><li>USE_DIALOG : OpenSIPS will keep track of active dialogs
+</li><li>DO_CALL_LIMITATION : OpenSIPS will limit the number of parallel calls per trunk
+</li></ul><div class='vspace'></div></li><li>Load-Balancer Script
+<div class='vspace'></div><ul><li>ENABLE_TCP : OpenSIPS will listen on TCP for SIP requests
+</li><li>ENABLE_TLS : OpenSIPS will listen on TCP for SIP requests
+</li><li>USE_DBACC : OpenSIPS will save ACC entries in DB for all calls
+</li><li>USE_DISPATCHER : OpenSIPS will use DISPATCHER instead of Load-Balancer for distributing the traffic
+</li><li>DISABLE_PINGING : OpenSIPS will not ping at all the destinations (otherwise it will ping when detected as failed)
+</li></ul></li></ul><div class='vspace'></div><h3><a name='toc3' id='toc3'></a>3.&nbsp; Post-Generation Script editing</h3>
+<p>After generating your OpenSIPS script with the menuconfig tool, you need to open the script with your favorite editor, and go through all the '# CUSTOMIZE ME' comments in the script. Those comments mark the places where user attention is needed, and usually refer to customizing the OpenSIPS listening address or setting the proper database URL.
+</p>
+<p class='vspace'>Upon making the appropriate '# CUSTOMIZE ME' changes, you can save your script and take it for a test drive.
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='from'>Retrieved from http://www.opensips.org/Documentation/Generating-Configs-1-8</div>
+    <div class='lastmod'>Page last modified on August 05, 2013, at 02:56 PM</div></div>
+<!--HTMLFooter-->
+</body>
+</html>

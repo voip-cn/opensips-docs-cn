@@ -1,0 +1,153 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+  <title>openSIPS | Documentation / Tutorials-Presence-PresenceModule</title>
+  <link rel='stylesheet' href="print.css" tppabs="http://www.opensips.org/pub/skins/print/print.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+</head>
+<body>
+  <div id='printhead'>
+    <h3>From openSIPS</h3>
+    <h1 class='pagename'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation%27" tppabs="http://www.opensips.org/Documentation">Documentation: Tutorials-Presence-PresenceModule</a></h1>
+  </div>
+<!--PageText-->
+<div id='wikitext'>
+<h5>Documentation -&gt; <a class='wikilink' href="Tutorials-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials?action=print">Tutorials</a> -&gt; <a class='wikilink' href="Tutorials-Presence-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence?action=print">Presence</a> -&gt; <a class='wikilink' href="Tutorials-Presence-PresenceServer-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer?action=print">Presence Server</a> -&gt; Presence Module - Parameters and Functions</h5>
+<hr />
+<div class='tocfloat'><p><a name='toc' id='toc'></a><b>Table of Content</b> (<a id="tocidtog" href="javascript:toggle('tocid');">hide</a>)</p><ol class='toc' id='tocid'><li>1.&nbsp;<a href='#toc1'>Exported Functions</a><ol class='toc'><li>1.1&nbsp;<a href='#toc2'>handle_publish()</a></li><li>1.2&nbsp;<a href='#toc3'>handle_subscribe()</a></li></ol></li><li>2.&nbsp;<a href='#toc4'>Exported Parameters</a></li></ol></div>
+<div class='vspace'></div><h3><a name='toc1' id='toc1'></a>1.&nbsp;Exported Functions</h3>
+<ul><li>handle_publish()
+</li><li>handle_subscribe()
+</li></ul><div class='vspace'></div><h4><a name='toc2' id='toc2'></a>1.1&nbsp;handle_publish()</h4>
+<ul><li>function which handles PUBLISH requests. It stores and updates presence information in database and calls functions to send NOTIFY messages when changes in presence information occur;
+</li><li>it takes one optional parameter - the URI of the sender, used by the BLA feature( event dialog;sla ).
+</li></ul><p class='vspace'><strong>Actions:</strong>
+</p>
+<div class='vspace'></div><ul><li>verifies if the PUBLISH message is correct: 
+<ul><li>check its structure - calls an event specific function defined in a presence_ev module (presence_xml or presence_mwi);
+</li><li>if it has a SIP-if-Match header, checks is there is a previous record for the same presentity;
+</li><li>if not present checks if a body is present
+</li></ul></li><li>if the conditions are not complied with it sends an adequate error message
+</li><li>if a correct message:
+<ul><li>sends a 200Ok message with 2 extra header fields : Expires and SIP-if-Match 
+</li></ul></li><li>if a new PUBLISH without a Sip-if-Match header field 
+<ul><li>it generates one
+</li><li>inserts a new row in database
+</li><li>calls a function which sends Notify with presence to all the watchers which have subscribed to the presentity
+</li></ul></li><li>if the PUBLISH message is a sequential one
+<ul><li>updates the expires value
+</li><li>generates a new E-Tag and sends it in the Sip-Etag header of the 200OK reply 
+</li></ul></li><li>if body present
+<ul><li>updates body (replace with the new one) 
+</li><li>calls a function which sends Notify with presence to all watchers 
+</li></ul></li></ul><div class='vspace'></div><h4><a name='toc3' id='toc3'></a>1.2&nbsp;handle_subscribe()</h4>
+<ul><li>function which handles SUBSCRIBE requests. It stores or updates dialog information in and calls functions to send Notify messages to teh watcher and to the presentity (if a subscription for event presence.winfo exists for the presentity and the event) 
+</li><li>it does not take any parameter.
+</li></ul><p class='vspace'><strong>Actions</strong>
+</p><ul><li>checks if the SUBSCRIBE message is correct: 
+<ul><li>check its structure;
+</li><li>if inside a dialog tries to match the dialogs with the records stored
+</li></ul></li><li>if the conditions are not complied with it sends an adequate error message
+</li><li>if a correct message sends 2XX reply
+<ul><li>the reply contains an Expires header
+</li><li>for SUBSCRIBE messages for event "presence.winfo" the status of the reply is 202OK  and for all the other 200OK
+</li></ul></li><li>if a new SUBSCRIBE, saves the dialog information in cache
+</li><li>if a Subscribe inside a dialog
+<ul><li>if the Expires header field value is 0
+<ul><li>deletes the registration from cache and database
+</li><li>if event is a PUBLISH event - sends a Notify for winfo to the presentity with full state
+</li></ul></li><li>if update
+<ul><li>updates the expires value
+</li><li>sends Notifies
+</li></ul></li></ul></li><li>if a SUBSCRIBE for a PUBLISH event( 'presence', 'dialog.sla', 'message-summary'): 
+<ul><li>sends Notify with presence.winfo to the presentity(if a winfo subscription from the presentity exists) with a partial state informing only about the subscription status of the new watcher
+</li><li>sends Notify with the presence information
+</li></ul></li><li>if a SUBSCRIBE for a winfo(watcher info) event
+<ul><li>sends Notify with presence.winfo to the subscriber with full state informing about all the watchers
+</li></ul></li></ul><hr />
+<div class='vspace'></div><h3><a name='toc4' id='toc4'></a>2.&nbsp;Exported Parameters</h3>
+<p>Please refer to the <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/modules/1.11.x/presence.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/modules/1.11.x/presence.html%27" tppabs="http://www.opensips.org/html/docs/modules/1.11.x/presence.html" rel='nofollow'>module's documentation</a> for the full list of parameters and a comprehensive description.
+</p>
+<div class='vspace'></div><hr />
+</div>
+
+  <div id='printfoot'>
+    <div class='from'>Retrieved from http://www.opensips.org/Documentation/Tutorials-Presence-PresenceModule</div>
+    <div class='lastmod'>Page last modified on June 17, 2014, at 07:57 PM</div></div>
+<!--HTMLFooter-->
+</body>
+</html>

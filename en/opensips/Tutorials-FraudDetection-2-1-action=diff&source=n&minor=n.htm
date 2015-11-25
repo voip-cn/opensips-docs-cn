@@ -1,0 +1,1283 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Tutorials-FraudDetection-2-1 | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Tutorials-FraudDetection-2-1' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Tutorials-FraudDetection-2-1 History</h2>
+  <p><a href="Tutorials-FraudDetection-2-1-action=diff&source=n&minor=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=diff&source=n&minor=y">Show minor edits</a> - <a href="Tutorials-FraudDetection-2-1-action=diff&source=y&minor=n.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=diff&source=y&minor=n">Show changes to markup</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>May 10, 2015, at 10:17 PM 
+        by <span class='diffauthor' title='109.96.144.196'>liviu</span> - </div>
+        <div class='difftype'>Changed line 40 from:</div>
+        <div class='diffdel'><p>The following is an example of a fraud detecting profile for destination prefix <strong>"99"</strong>. Note that all rules belong to the same profile: <strong>1</strong>.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>The following is an example of a fraud detecting profile for destination prefix <strong>"99"</strong>. Note that all of the rules below are part of the same profile: <strong>1</strong>.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1431289060-1426708446-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1431289060:1426708446:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 18, 2015, at 08:54 PM 
+        by <span class='diffauthor' title='109.96.146.76'>liviu</span> - </div>
+        <div class='difftype'>Changed line 79 from:</div>
+        <div class='diffdel'><p>As stated in the Chapter 1 of the documentation, the module monitors 5 parameters which are updated every time the <strong><em>check_fraud</em></strong> function is called (i.e each time a call is made). For each set of <ins>number</ins>, <ins>prefix</ins> and {+username+
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>As stated in the Chapter 1 of the documentation, the module monitors 5 parameters which are updated every time the <strong><em>check_fraud</em></strong> function is called (i.e each time a call is made). For each set of <ins>number</ins>, <ins>prefix</ins> and <ins>username</ins>
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426708446-1426708429-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426708446:1426708429:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 18, 2015, at 08:53 PM 
+        by <span class='diffauthor' title='109.96.146.76'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 79-80 from:</div>
+        <div class='diffdel'><p>As stated in the Chapter 1 of the documentation, the module monitors 5 parameters which are updated every time the <strong><em>check_fraud</em></strong> function is called (i.e each time a call is made). For each set of number prefix and username, unique values of the 5 parameters will be kept and monitored. Each time a value is altered, it will be compared to a threshold value. There are two threshold values for each of the 5 parameters (warning and critical thresholds), thus making a total of 10 values. This threshold values along with a time interval in which they are applicable form a so-called <em>rule</em>. It's the admin's job to provide the <em>fraud rules</em> to OpenSIPs through the db interface.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>As stated in the Chapter 1 of the documentation, the module monitors 5 parameters which are updated every time the <strong><em>check_fraud</em></strong> function is called (i.e each time a call is made). For each set of <ins>number</ins>, <ins>prefix</ins> and {+username+
+, unique values of the 5 parameters will be kept and monitored. Each time a value is altered, it will be compared to a threshold value. There are two threshold values for each of the 5 parameters (warning and critical thresholds), thus making a total of 10 values. This threshold values along with a time interval in which they are applicable form a so-called <em>rule</em>. It's the admin's job to provide the <em>fraud rules</em> to OpenSIPs through the db interface.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426708429-1426708286-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426708429:1426708286:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 18, 2015, at 08:51 PM 
+        by <span class='diffauthor' title='109.96.146.76'>liviu</span> - </div>
+        <div class='difftype'>Deleted lines 23-26:</div>
+        <div class='diffdel'><p><br />
+Validation of a check_fraud() call may be done either with its return code or through the event route. (scripting examples below)
+</p>
+</div>
+        <div class='difftype'>Changed line 81 from:</div>
+        <div class='diffdel'><h4>Example script</h4>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h2>Example script</h2>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426708286:1426708137:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426708286:1426708137:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426708286:1426708137:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 18, 2015, at 08:48 PM 
+        by <span class='diffauthor' title='109.96.146.76'>liviu</span> - </div>
+        <div class='difftype'>Changed line 15 from:</div>
+        <div class='diffdel'><p>With the help of the dialog module, fraud_detection is able to closely monitor the following call-related statistics for each <em>[user,destination]</em> pair:
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>With the help of the dialog module, fraud_detection is able to monitor the following call-related statistics for each <em>[user,destination]</em> pair:
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426708137-1426696756-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426708137:1426696756:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 18, 2015, at 05:39 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 46-49 from:</div>
+        <div class='diffdel'><p>INSERT INTO fraud_detection(profileid, prefix, start_hour, end_hour, daysoftheweek, cpm_warning, cpm_critical, call_duration_warning, call_duration_critical, total_calls_warning, total_calls_critical, concurrent_calls_warning, concurrent_calls_critical, sequential_calls_warning, sequential_calls_critical) VALUES(1, '99', '09:00', '17:00', 'Mon-Fri', 3, 5, 120, 220, 16, 35, 3, 5, 6, 20), (1, '99', '17:01', '23:59', 'Mon-Fri', 3, 5, 160, 250, 21, 35, 3, 5, 8, 26), (1, '99', '00:00', '08:59', 'Mon-Fri', 3, 4, 80, 160, 10, 20, 3, 4, 5, 15), (1, '99', '00:00', '23:59', 'Sat,Sun', 3, 5, 190, 290, 24, 40, 3, 5, 12, 30);
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>INSERT INTO fraud_detection(profileid, prefix, start_hour, end_hour, daysoftheweek, cpm_warning, cpm_critical, call_duration_warning, call_duration_critical, total_calls_warning, total_calls_critical, concurrent_calls_warning, concurrent_calls_critical, sequential_calls_warning, sequential_calls_critical) VALUES(1, '99', '09:00', '17:00', 'Mon-Fri', 3, 5, 120, 220, 16, 35, 3, 5, 6, 20), (1, '99', '17:01', '23:59', 'Mon-Fri', 3, 5, 160, 250, 21, 35, 3, 5, 8, 26), (1, '99', '00:00', '08:59', 'Mon-Fri', 3, 4, 80, 160, 10, 20, 3, 4, 5, 15), (1, '99', '00:00', '23:59', 'Sat,Sun', 3, 5, 190, 290, 24, 40, 3, 5, 12, 30);
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426696756-1426696632-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426696756:1426696632:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 18, 2015, at 05:37 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 79-80 from:</div>
+        <div class='diffdel'><h4>Current features</h4>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h3>How does it work?</h3>
+</div>
+        <div class='difftype'>Deleted lines 81-92:</div>
+        <div class='diffdel'><p>Future directions for the module include adding more compression algorithms and support fore more types of routes.
+</p>
+<div class='vspace'></div><h4>Example scenario and DB provisioning</h4>
+<p>Suppose our OpenSIPs instance is responsible for routing calls to many countries as well as to the <em>FarFarAway</em> country which has the <strong>99</strong> phone prefix. We know that there are a lot of hustlers in this fictional country and if a SIP account was hijacked it could cost our company a huge amount of money by making phoney calls to <em>FarFarAway</em>. So, we are going to look for suspicious patterns in calls to this country. For this we are going to insert four different rules:
+</p>
+<p class='vspace'>The first rule sets the thresholds for all the calls made in the working hours (9-17) in the working days to all the numbers starting with <em>99</em>. Note that we expect anything between 5 and 10 calls during this period to be <em>possible</em> although not <em>probable</em>. However, more than two calls initiated in a single minute from a single user  will raise a warning. Furthermore, we expect that more than one concurrent call from the same user to be a problem. If a user calls a number starting with <em>99</em> twice in a row (that is without calling any other number between this calls) will also raise an alarm.
+The second and the third rules are for time periods outside the working hours, but in the working days. Note that we still expect some calls to be made during this periods (from people who arrive early at the office or from people who stay in late).
+The fourth rule is for weekends. Here, almost any call should raise an alarm.
+Note, that all the rules have the same <strong>profile id</strong>. Basically, this means that they are from the same logical sub-set of rules. Every call of the <em>check_fraud</em> function will need a profile id.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426696632:1426608497:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426696632:1426608497:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426696632:1426608497:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 17, 2015, at 05:08 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 44 from:</div>
+        <div class='diffdel'><p>The following is an example of a fraud detecting profile for destination prefix <strong>"+99"</strong>. Note that all rules belong to the same profile: <strong>1</strong>.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>The following is an example of a fraud detecting profile for destination prefix <strong>"99"</strong>. Note that all rules belong to the same profile: <strong>1</strong>.
+</p>
+</div>
+        <div class='difftype'>Changed lines 48-49 from:</div>
+        <div class='diffdel'><p>VALUES(1, '+99', '09:00', '17:00', 'Mon-Fri', 3, 5, 120, 220, 16, 35, 3, 5, 6, 20), (1, '+99', '17:01', '23:59', 'Mon-Fri', 3, 5, 160, 250, 21, 35, 3, 5, 8, 26), (1, '+99', '00:00', '08:59', 'Mon-Fri', 3, 4, 80, 160, 10, 20, 3, 4, 5, 15), (1, '+99', '00:00', '23:59', 'Sat,Sun', 3, 5, 190, 290, 24, 40, 3, 5, 12, 30);
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>VALUES(1, '99', '09:00', '17:00', 'Mon-Fri', 3, 5, 120, 220, 16, 35, 3, 5, 6, 20), (1, '99', '17:01', '23:59', 'Mon-Fri', 3, 5, 160, 250, 21, 35, 3, 5, 8, 26), (1, '99', '00:00', '08:59', 'Mon-Fri', 3, 4, 80, 160, 10, 20, 3, 4, 5, 15), (1, '99', '00:00', '23:59', 'Sat,Sun', 3, 5, 190, 290, 24, 40, 3, 5, 12, 30);
+</p>
+</div>
+        <div class='difftype'>Changed lines 54-57 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'> 1</td><td  align='center'>1</td><td  align='center'>+99</td><td  align='center'>09:00</td><td  align='center'>17:00</td><td  align='center'>Mon-Fri</td><td  align='center'>3</td><td  align='center'>5</td><td  align='center'>120</td><td  align='center'>220</td><td  align='center'>16</td><td  align='center'>35</td><td  align='center'>3</td><td  align='center'>5</td><td  align='center'>6</td><td  align='center'>20</td></tr>
+<tr ><td  align='left'> 2</td><td  align='center'>1</td><td  align='center'>+99</td><td  align='center'>17:01</td><td  align='center'>23:59</td><td  align='center'>Mon-Fri</td><td  align='center'>3</td><td  align='center'>5</td><td  align='center'>160</td><td  align='center'>250</td><td  align='center'>21</td><td  align='center'>35</td><td  align='center'>3</td><td  align='center'>5</td><td  align='center'>8</td><td  align='center'>26</td></tr>
+<tr ><td  align='left'> 3</td><td  align='center'>1</td><td  align='center'>+99</td><td  align='center'>00:00</td><td  align='center'>08:59</td><td  align='center'>Mon-Fri</td><td  align='center'>3</td><td  align='center'>4</td><td  align='center'>80</td><td  align='center'>160</td><td  align='center'>10</td><td  align='center'>20</td><td  align='center'>3</td><td  align='center'>4</td><td  align='center'>5</td><td  align='center'>15</td></tr>
+<tr ><td  align='left'> 4</td><td  align='center'>1</td><td  align='center'>+99</td><td  align='center'>00:00</td><td  align='center'>23:59</td><td  align='center'>Sat,Sun</td><td  align='center'>3</td><td  align='center'>5</td><td  align='center'>190</td><td  align='center'>290</td><td  align='center'>24</td><td  align='center'>40</td><td  align='center'>3</td><td  align='center'>5</td><td  align='center'>12</td><td  align='center'>30</td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'> 1</td><td  align='center'>1</td><td  align='center'>99</td><td  align='center'>09:00</td><td  align='center'>17:00</td><td  align='center'>Mon-Fri</td><td  align='center'>3</td><td  align='center'>5</td><td  align='center'>120</td><td  align='center'>220</td><td  align='center'>16</td><td  align='center'>35</td><td  align='center'>3</td><td  align='center'>5</td><td  align='center'>6</td><td  align='center'>20</td></tr>
+<tr ><td  align='left'> 2</td><td  align='center'>1</td><td  align='center'>99</td><td  align='center'>17:01</td><td  align='center'>23:59</td><td  align='center'>Mon-Fri</td><td  align='center'>3</td><td  align='center'>5</td><td  align='center'>160</td><td  align='center'>250</td><td  align='center'>21</td><td  align='center'>35</td><td  align='center'>3</td><td  align='center'>5</td><td  align='center'>8</td><td  align='center'>26</td></tr>
+<tr ><td  align='left'> 3</td><td  align='center'>1</td><td  align='center'>99</td><td  align='center'>00:00</td><td  align='center'>08:59</td><td  align='center'>Mon-Fri</td><td  align='center'>3</td><td  align='center'>4</td><td  align='center'>80</td><td  align='center'>160</td><td  align='center'>10</td><td  align='center'>20</td><td  align='center'>3</td><td  align='center'>4</td><td  align='center'>5</td><td  align='center'>15</td></tr>
+<tr ><td  align='left'> 4</td><td  align='center'>1</td><td  align='center'>99</td><td  align='center'>00:00</td><td  align='center'>23:59</td><td  align='center'>Sat,Sun</td><td  align='center'>3</td><td  align='center'>5</td><td  align='center'>190</td><td  align='center'>290</td><td  align='center'>24</td><td  align='center'>40</td><td  align='center'>3</td><td  align='center'>5</td><td  align='center'>12</td><td  align='center'>30</td></tr>
+</table>
+</div>
+        <div class='difftype'>Changed lines 87-90 from:</div>
+        <div class='diffdel'><p>Suppose our OpenSIPs instance is responsible for routing calls to many countries as well as to the <em>FarFarAway</em> country which has the <strong>+99</strong> phone prefix. We know that there are a lot of hustlers in this fictional country and if a SIP account was hijacked it could cost our company a huge amount of money by making phoney calls to <em>FarFarAway</em>. So, we are going to look for suspicious patterns in calls to this country. For this we are going to insert four different rules:
+</p>
+<p class='vspace'>The first rule sets the thresholds for all the calls made in the working hours (9-17) in the working days to all the numbers starting with <em>+99</em>. Note that we expect anything between 5 and 10 calls during this period to be <em>possible</em> although not <em>probable</em>. However, more than two calls initiated in a single minute from a single user  will raise a warning. Furthermore, we expect that more than one concurrent call from the same user to be a problem. If a user calls a number starting with <em>+99</em> twice in a row (that is without calling any other number between this calls) will also raise an alarm.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Suppose our OpenSIPs instance is responsible for routing calls to many countries as well as to the <em>FarFarAway</em> country which has the <strong>99</strong> phone prefix. We know that there are a lot of hustlers in this fictional country and if a SIP account was hijacked it could cost our company a huge amount of money by making phoney calls to <em>FarFarAway</em>. So, we are going to look for suspicious patterns in calls to this country. For this we are going to insert four different rules:
+</p>
+<p class='vspace'>The first rule sets the thresholds for all the calls made in the working hours (9-17) in the working days to all the numbers starting with <em>99</em>. Note that we expect anything between 5 and 10 calls during this period to be <em>possible</em> although not <em>probable</em>. However, more than two calls initiated in a single minute from a single user  will raise a warning. Furthermore, we expect that more than one concurrent call from the same user to be a problem. If a user calls a number starting with <em>99</em> twice in a row (that is without calling any other number between this calls) will also raise an alarm.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426608497-1426604166-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426608497:1426604166:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 17, 2015, at 03:56 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 46-48 from:</div>
+        <div class='diffdel'><p>INSERT INTO fraud_detection(profileid, prefix, start_hour, end_hour, daysoftheweek, cpm_warning, cpm_critical, call_duration_warning, call_duration_critical,
+total_calls_warning, total_calls_critical, concurrent_calls_warning, concurrent_calls_critical, sequential_calls_warning, sequential_calls_critical)
+VALUES(1, '+99', '09:00', '17:00', 'Mon-Fri', 3, 5, 120, 220, 16, 35, 3, 5, 6, 20), (1, '+99', '17:01', '23:59', 'Mon-Fri', 3, 5, 160, 250, 21, 35, 3, 5, 8, 26),
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>INSERT INTO fraud_detection(profileid, prefix, start_hour, end_hour, daysoftheweek, cpm_warning, cpm_critical, call_duration_warning, call_duration_critical, total_calls_warning, total_calls_critical, concurrent_calls_warning, concurrent_calls_critical, sequential_calls_warning, sequential_calls_critical) VALUES(1, '+99', '09:00', '17:00', 'Mon-Fri', 3, 5, 120, 220, 16, 35, 3, 5, 6, 20), (1, '+99', '17:01', '23:59', 'Mon-Fri', 3, 5, 160, 250, 21, 35, 3, 5, 8, 26), \
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426604166-1426604142-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426604166:1426604142:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 17, 2015, at 03:55 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426604142-1426604141-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426604142:1426604141:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 17, 2015, at 03:55 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 46-49 from:</div>
+        <div class='diffdel'><p>INSERT INTO fraud_detection(profileid, prefix, start_hour, end_hour, daysoftheweek, cpm_warning, cpm_critical, call_duration_warning, call_duration_critical, total_calls_warning, total_calls_critical, concurrent_calls_warning, concurrent_calls_critical, sequential_calls_warning, sequential_calls_critical) VALUES(1, '+99', '09:00', '17:00', 'Mon-Fri', 3, 5, 120, 220, 16, 35, 3, 5, 6, 20), (1, '+99', '17:01', '23:59', 'Mon-Fri', 3, 5, 160, 250, 21, 35, 3, 5, 8, 26), (1, '+99', '00:00', '08:59', 'Mon-Fri', 3, 4, 80, 160, 10, 20, 3, 4, 5, 15), (1, '+99', '00:00', '23:59', 'Sat,Sun', 3, 5, 190, 290, 24, 40, 3, 5, 12, 30);
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>INSERT INTO fraud_detection(profileid, prefix, start_hour, end_hour, daysoftheweek, cpm_warning, cpm_critical, call_duration_warning, call_duration_critical,
+total_calls_warning, total_calls_critical, concurrent_calls_warning, concurrent_calls_critical, sequential_calls_warning, sequential_calls_critical)
+VALUES(1, '+99', '09:00', '17:00', 'Mon-Fri', 3, 5, 120, 220, 16, 35, 3, 5, 6, 20), (1, '+99', '17:01', '23:59', 'Mon-Fri', 3, 5, 160, 250, 21, 35, 3, 5, 8, 26),
+(1, '+99', '00:00', '08:59', 'Mon-Fri', 3, 4, 80, 160, 10, 20, 3, 4, 5, 15), (1, '+99', '00:00', '23:59', 'Sat,Sun', 3, 5, 190, 290, 24, 40, 3, 5, 12, 30);
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426604141-1426603962-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426604141:1426603962:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 17, 2015, at 03:52 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added lines 45-47:</div>
+        <div class='diffadd'><pre class='escaped'>
+INSERT INTO fraud_detection(profileid, prefix, start_hour, end_hour, daysoftheweek, cpm_warning, cpm_critical, call_duration_warning, call_duration_critical, total_calls_warning, total_calls_critical, concurrent_calls_warning, concurrent_calls_critical, sequential_calls_warning, sequential_calls_critical) VALUES(1, '+99', '09:00', '17:00', 'Mon-Fri', 3, 5, 120, 220, 16, 35, 3, 5, 6, 20), (1, '+99', '17:01', '23:59', 'Mon-Fri', 3, 5, 160, 250, 21, 35, 3, 5, 8, 26), (1, '+99', '00:00', '08:59', 'Mon-Fri', 3, 4, 80, 160, 10, 20, 3, 4, 5, 15), (1, '+99', '00:00', '23:59', 'Sat,Sun', 3, 5, 190, 290, 24, 40, 3, 5, 12, 30);
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426603962-1426602533-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426603962:1426602533:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 17, 2015, at 03:28 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 121 from:</div>
+        <div class='diffdel'><pre>		check_fraud("$fU", "$dU", "1");
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>		check_fraud("$fU", "$rU", "1");
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426602533-1426584261-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426602533:1426584261:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 17, 2015, at 10:24 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 62 from:</div>
+        <div class='diffdel'><dl><dd><ul><li>makes one call lasting <strong>between 120 minutes</strong>
+</li></ul></dd></dl>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><dl><dd><ul><li>makes one call lasting <strong>between 120 and 219 minutes</strong>
+</li></ul></dd></dl>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426584261-1426584237-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426584261:1426584237:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 17, 2015, at 10:23 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 62 from:</div>
+        <div class='diffdel'><dl><dd><ul><li>makes one call lasting <strong>at least 120 minutes</strong>
+</li></ul></dd></dl>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><dl><dd><ul><li>makes one call lasting <strong>between 120 minutes</strong>
+</li></ul></dd></dl>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426584237:1426583764:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426584237:1426583764:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426584237:1426583764:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 17, 2015, at 10:16 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 60 from:</div>
+        <div class='diffdel'><ul><li><strong>Rule 1</strong> will obviously match from <strong>09:00 to 17:00</strong>, <strong>Monday to Friday</strong>. It will trigger a <span  style='color: #ff9900;'><strong>fraud warning</strong></span> event/error each time the same user either:
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><strong>Rule 1</strong> will obviously match from <strong>09:00 to 17:00</strong>, <strong>Monday to Friday</strong>. It will trigger a <span  style='color: #ff9900;'><strong>fraud warning</strong></span> event/error each time a user either:
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426583764-1426583712-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426583764:1426583712:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 17, 2015, at 10:15 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 66 from:</div>
+        <div class='diffdel'><ul><li>The same <strong>Rule 1</strong> will trigger a <span  style='color: red;'><strong>fraud critical</strong></span> event/error each time the same user either:
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>The same <strong>Rule 1</strong> will trigger a <span  style='color: red;'><strong>fraud critical</strong></span> event/error each time a user either:
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426583712-1426583682-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426583712:1426583682:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 17, 2015, at 10:14 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 58 from:</div>
+        <div class='diffdel'><p>Additional explanations:
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Data interpretation:
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426583682:1426583572:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426583682:1426583572:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426583682:1426583572:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 17, 2015, at 10:12 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 30 from:</div>
+        <div class='diffdel'><p>In order to create the <strong>fraud_detection</strong> table, first make sure your <em>opensipsctlrc</em> file contains the desired SQL engine, DB name and credentials:
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>In order to create the <strong>fraud_detection</strong> table, first make sure your <em>opensipsctlrc</em> file contains the desired SQL engine, DB name and access credentials:
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426583572-1426583473-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426583572:1426583473:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 17, 2015, at 10:11 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 22 from:</div>
+        <div class='diffdel'><p><em>Note: some of the above statistics require a user-provisioned time interval to be sampled upon (see 'Table provisioning' below)</em>
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><em>Note: the above statistics require a user-provisioned time interval to be sampled upon (see 'Table provisioning' below)</em>
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426583473-1426583432-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426583473:1426583432:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 17, 2015, at 10:10 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 15 from:</div>
+        <div class='diffdel'><p>With the help of the dialog module, fraud_detection is able to closely monitor the following call-related statistics for each user:
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>With the help of the dialog module, fraud_detection is able to closely monitor the following call-related statistics for each <em>[user,destination]</em> pair:
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426583432-1426583391-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426583432:1426583391:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 17, 2015, at 10:09 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 10 from:</div>
+        <div class='diffdel'><p>The module provides a way of <ins>detecting suspicious calls</ins> from the same users to the same destinations might would otherwise likely end up costing the affected VoIP account (or the VoIP provider!) considerable amounts of money. This is done by closely <ins>monitoring a set of call-related parameters</ins> for each [user,destination] pair, together with sets of provisioned alerting thresholds.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>The module provides a way of <ins>detecting suspicious calls</ins> from the same users to the same destinations might would otherwise likely end up costing the affected VoIP account (or the VoIP provider!) considerable amounts of money. This is done by closely <ins>monitoring a set of call-related parameters</ins> for each <strong>[user,destination]</strong> pair, together with sets of provisioned alerting thresholds.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426583391-1426529888-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426583391:1426529888:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 07:18 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 30 from:</div>
+        <div class='diffdel'><p>In order to create the <strong>fraud_detection</strong> table, first make sure <em>opensipsctlrc</em> file contains the desired SQL engine, DB name and credentials:
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>In order to create the <strong>fraud_detection</strong> table, first make sure your <em>opensipsctlrc</em> file contains the desired SQL engine, DB name and credentials:
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426529888-1426529842-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426529888:1426529842:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 07:17 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 53 from:</div>
+        <div class='diffdel'><p><span  style='color: green;'><strong>fraud_detection table</strong></span>
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><span  style='color: green;'><strong>fraud_detection table example</strong></span>
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426529842-1426529828-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426529842:1426529828:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 07:17 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added lines 55-56:</div>
+        <div class='diffadd'><p>\\
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426529828-1426529816-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426529828:1426529816:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 07:16 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 44 from:</div>
+        <div class='diffdel'><p>The following is an example of a fraud detecting profile for destination prefix <strong>"+99"</strong>. Note that all rules belong to the same profile: 1.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>The following is an example of a fraud detecting profile for destination prefix <strong>"+99"</strong>. Note that all rules belong to the same profile: <strong>1</strong>.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426529816-1426529739-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426529816:1426529739:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 07:15 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 58 from:</div>
+        <div class='diffdel'><ul><li><strong>Rule 1</strong> will obviously match from <strong>09:00 to 17:00</strong>, <strong>Monday to Friday</strong>. It will trigger a <span  style='color: #ff9900;'><strong>fraud warning</strong></span> each time the same user either:
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><strong>Rule 1</strong> will obviously match from <strong>09:00 to 17:00</strong>, <strong>Monday to Friday</strong>. It will trigger a <span  style='color: #ff9900;'><strong>fraud warning</strong></span> event/error each time the same user either:
+</li></ul>
+</div>
+        <div class='difftype'>Changed line 64 from:</div>
+        <div class='diffdel'><ul><li>The same <strong>Rule 1</strong> will trigger a <span  style='color: red;'><strong>fraud critical</strong></span> each time the same user either:
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>The same <strong>Rule 1</strong> will trigger a <span  style='color: red;'><strong>fraud critical</strong></span> event/error each time the same user either:
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426529739-1426529699-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426529739:1426529699:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 07:14 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 62 from:</div>
+        <div class='diffdel'><dl><dd><ul><li>attempts to make <strong>more than 2 simultaneous calls</strong>
+</li></ul></dd></dl>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><dl><dd><ul><li>attempts to make <strong>3 or 4 simultaneous calls</strong>
+</li></ul></dd></dl>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426529699-1426529655-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426529699:1426529655:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 07:14 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 63 from:</div>
+        <div class='diffdel'><dl><dd><ul><li>makes <strong>more than 5 consecutive calls</strong> to the same destination
+</li></ul></dd></dl>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><dl><dd><ul><li>makes <strong>between 6 and 19 consecutive calls</strong> to the same destination
+</li></ul></dd></dl>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426529655-1426529524-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426529655:1426529524:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 07:12 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 61 from:</div>
+        <div class='diffdel'><dl><dd><ul><li>makes a new call, having made <strong>at least 15 calls</strong> in the current interval
+</li></ul></dd></dl>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><dl><dd><ul><li>makes a new call, having made <strong>between 15 and 33 calls</strong> in the current interval
+</li></ul></dd></dl>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426529524-1426529448-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426529524:1426529448:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 07:10 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 58 from:</div>
+        <div class='diffdel'><ul><li><strong>Rule 1</strong> will obviously match from <strong>09:00 to 17:00</strong>, <strong>Monday to Friday</strong>. It will trigger a <strong>fraud warning</strong> each time the same user either:
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><strong>Rule 1</strong> will obviously match from <strong>09:00 to 17:00</strong>, <strong>Monday to Friday</strong>. It will trigger a <span  style='color: #ff9900;'><strong>fraud warning</strong></span> each time the same user either:
+</li></ul>
+</div>
+        <div class='difftype'>Changed line 64 from:</div>
+        <div class='diffdel'><ul><li>The same <strong>Rule 1</strong> will trigger a <strong>fraud critical</strong> each time the same user either:
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>The same <strong>Rule 1</strong> will trigger a <span  style='color: red;'><strong>fraud critical</strong></span> each time the same user either:
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426529448-1426529412-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426529448:1426529412:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 07:10 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 58-63 from:</div>
+        <div class='diffdel'><ul><li>Rule 1 will obviously match between 09:00 and 17:00, from Monday to Friday. It will trigger a <strong>fraud warning</strong> each time the same user either:
+<ul><li>has made 3 or 4 calls within the last minute
+</li><li>makes one call lasting at least 120 minutes
+</li><li>makes a new call, having made at least 15 calls in the current interval
+</li><li>attempts to make more than 2 simultaneous calls
+</li><li>makes more than 5 consecutive calls to the same destination
+</li></ul></li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><strong>Rule 1</strong> will obviously match from <strong>09:00 to 17:00</strong>, <strong>Monday to Friday</strong>. It will trigger a <strong>fraud warning</strong> each time the same user either:
+<ul><li>has made <strong>3 or 4 calls within the last minute</strong>
+</li><li>makes one call lasting <strong>at least 120 minutes</strong>
+</li><li>makes a new call, having made <strong>at least 15 calls</strong> in the current interval
+</li><li>attempts to make <strong>more than 2 simultaneous calls</strong>
+</li><li>makes <strong>more than 5 consecutive calls</strong> to the same destination
+</li></ul></li><li>The same <strong>Rule 1</strong> will trigger a <strong>fraud critical</strong> each time the same user either:
+<ul><li>has made at least <strong>5 calls within the last minute</strong>
+</li><li>makes one call lasting <strong>at least 220 minutes</strong>
+</li><li>makes a new call, having made <strong>at least 34 calls</strong> in the current interval
+</li><li>attempts to make <strong>at least 5 simultaneous calls</strong>
+</li><li>makes <strong>at least 20 consecutive calls</strong> to the same destination
+</li></ul></li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426529412-1426529147-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426529412:1426529147:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 07:05 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 48-51 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'> 1</td><td  align='center'>1</td><td  align='center'>+99</td><td  align='center'>09:00</td><td  align='center'>17:00</td><td  align='center'>Mon-Fri</td><td  align='center'>3</td><td  align='center'>5</td><td  align='center'>80</td><td  align='center'>220</td><td  align='center'>16</td><td  align='center'>35</td><td  align='center'>3</td><td  align='center'>5</td><td  align='center'>6</td><td  align='center'>20</td></tr>
+<tr ><td  align='left'> 2</td><td  align='center'>1</td><td  align='center'>+99</td><td  align='center'>17:01</td><td  align='center'>23:59</td><td  align='center'>Mon-Fri</td><td  align='center'>3</td><td  align='center'>5</td><td  align='center'>140</td><td  align='center'>250</td><td  align='center'>21</td><td  align='center'>35</td><td  align='center'>3</td><td  align='center'>5</td><td  align='center'>8</td><td  align='center'>26</td></tr>
+<tr ><td  align='left'> 3</td><td  align='center'>1</td><td  align='center'>+99</td><td  align='center'>00:00</td><td  align='center'>08:59</td><td  align='center'>Mon-Fri</td><td  align='center'>3</td><td  align='center'>4</td><td  align='center'>60</td><td  align='center'>160</td><td  align='center'>10</td><td  align='center'>20</td><td  align='center'>3</td><td  align='center'>4</td><td  align='center'>5</td><td  align='center'>15</td></tr>
+<tr ><td  align='left'> 4</td><td  align='center'>1</td><td  align='center'>+99</td><td  align='center'>00:00</td><td  align='center'>23:59</td><td  align='center'>Sat,Sun</td><td  align='center'>3</td><td  align='center'>5</td><td  align='center'>180</td><td  align='center'>290</td><td  align='center'>24</td><td  align='center'>40</td><td  align='center'>3</td><td  align='center'>5</td><td  align='center'>12</td><td  align='center'>30</td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'> 1</td><td  align='center'>1</td><td  align='center'>+99</td><td  align='center'>09:00</td><td  align='center'>17:00</td><td  align='center'>Mon-Fri</td><td  align='center'>3</td><td  align='center'>5</td><td  align='center'>120</td><td  align='center'>220</td><td  align='center'>16</td><td  align='center'>35</td><td  align='center'>3</td><td  align='center'>5</td><td  align='center'>6</td><td  align='center'>20</td></tr>
+<tr ><td  align='left'> 2</td><td  align='center'>1</td><td  align='center'>+99</td><td  align='center'>17:01</td><td  align='center'>23:59</td><td  align='center'>Mon-Fri</td><td  align='center'>3</td><td  align='center'>5</td><td  align='center'>160</td><td  align='center'>250</td><td  align='center'>21</td><td  align='center'>35</td><td  align='center'>3</td><td  align='center'>5</td><td  align='center'>8</td><td  align='center'>26</td></tr>
+<tr ><td  align='left'> 3</td><td  align='center'>1</td><td  align='center'>+99</td><td  align='center'>00:00</td><td  align='center'>08:59</td><td  align='center'>Mon-Fri</td><td  align='center'>3</td><td  align='center'>4</td><td  align='center'>80</td><td  align='center'>160</td><td  align='center'>10</td><td  align='center'>20</td><td  align='center'>3</td><td  align='center'>4</td><td  align='center'>5</td><td  align='center'>15</td></tr>
+<tr ><td  align='left'> 4</td><td  align='center'>1</td><td  align='center'>+99</td><td  align='center'>00:00</td><td  align='center'>23:59</td><td  align='center'>Sat,Sun</td><td  align='center'>3</td><td  align='center'>5</td><td  align='center'>190</td><td  align='center'>290</td><td  align='center'>24</td><td  align='center'>40</td><td  align='center'>3</td><td  align='center'>5</td><td  align='center'>12</td><td  align='center'>30</td></tr>
+</table>
+</div>
+        <div class='difftype'>Changed line 59 from:</div>
+        <div class='diffdel'><dl><dd><ul><li>has made 2 or 3 calls within the last minute
+</li></ul></dd></dl>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><dl><dd><ul><li>has made 3 or 4 calls within the last minute
+</li></ul></dd></dl>
+</div>
+        <div class='difftype'>Changed lines 61-63 from:</div>
+        <div class='diffdel'><dl><dd><ul><li>makes a new call, having made at least 4 calls in the current interval
+</li><li>attempts to make more than 1 simultaneous call
+</li><li>makes more than 1 consecutive calls to the same destination
+</li></ul></dd></dl>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><dl><dd><ul><li>makes a new call, having made at least 15 calls in the current interval
+</li><li>attempts to make more than 2 simultaneous calls
+</li><li>makes more than 5 consecutive calls to the same destination
+</li></ul></dd></dl>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426529147:1426529033:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426529147:1426529033:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426529147:1426529033:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 07:03 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 48-51 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'> 1</td><td  align='center'>1</td><td  align='center'>+99</td><td  align='center'>09:00</td><td  align='center'>17:00</td><td  align='center'>Mon-Fri</td><td  align='center'>2</td><td  align='center'>4</td><td  align='center'>120</td><td  align='center'>600</td><td  align='center'>5</td><td  align='center'>10</td><td  align='center'>1</td><td  align='center'>2</td><td  align='center'>2</td><td  align='center'>5</td></tr>
+<tr ><td  align='left'> 2</td><td  align='center'>1</td><td  align='center'>+99</td><td  align='center'>17:01</td><td  align='center'>23:59</td><td  align='center'>Mon-Fri</td><td  align='center'>1</td><td  align='center'>2</td><td  align='center'>60</td><td  align='center'>300</td><td  align='center'>1</td><td  align='center'>3</td><td  align='center'>1</td><td  align='center'>1</td><td  align='center'>1</td><td  align='center'>1</td></tr>
+<tr ><td  align='left'> 3</td><td  align='center'>1</td><td  align='center'>+99</td><td  align='center'>00:00</td><td  align='center'>08:59</td><td  align='center'>Mon-Fri</td><td  align='center'>1</td><td  align='center'>2</td><td  align='center'>60</td><td  align='center'>300</td><td  align='center'>1</td><td  align='center'>3</td><td  align='center'>1</td><td  align='center'>1</td><td  align='center'>1</td><td  align='center'>1</td></tr>
+<tr ><td  align='left'> 4</td><td  align='center'>1</td><td  align='center'>+99</td><td  align='center'>00:00</td><td  align='center'>23:59</td><td  align='center'>Sat,Sun</td><td  align='center'>1</td><td  align='center'>1</td><td  align='center'>30</td><td  align='center'>60</td><td  align='center'>1</td><td  align='center'>1</td><td  align='center'>1</td><td  align='center'>1</td><td  align='center'>1</td><td  align='center'>1</td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'> 1</td><td  align='center'>1</td><td  align='center'>+99</td><td  align='center'>09:00</td><td  align='center'>17:00</td><td  align='center'>Mon-Fri</td><td  align='center'>3</td><td  align='center'>5</td><td  align='center'>80</td><td  align='center'>220</td><td  align='center'>16</td><td  align='center'>35</td><td  align='center'>3</td><td  align='center'>5</td><td  align='center'>6</td><td  align='center'>20</td></tr>
+<tr ><td  align='left'> 2</td><td  align='center'>1</td><td  align='center'>+99</td><td  align='center'>17:01</td><td  align='center'>23:59</td><td  align='center'>Mon-Fri</td><td  align='center'>3</td><td  align='center'>5</td><td  align='center'>140</td><td  align='center'>250</td><td  align='center'>21</td><td  align='center'>35</td><td  align='center'>3</td><td  align='center'>5</td><td  align='center'>8</td><td  align='center'>26</td></tr>
+<tr ><td  align='left'> 3</td><td  align='center'>1</td><td  align='center'>+99</td><td  align='center'>00:00</td><td  align='center'>08:59</td><td  align='center'>Mon-Fri</td><td  align='center'>3</td><td  align='center'>4</td><td  align='center'>60</td><td  align='center'>160</td><td  align='center'>10</td><td  align='center'>20</td><td  align='center'>3</td><td  align='center'>4</td><td  align='center'>5</td><td  align='center'>15</td></tr>
+<tr ><td  align='left'> 4</td><td  align='center'>1</td><td  align='center'>+99</td><td  align='center'>00:00</td><td  align='center'>23:59</td><td  align='center'>Sat,Sun</td><td  align='center'>3</td><td  align='center'>5</td><td  align='center'>180</td><td  align='center'>290</td><td  align='center'>24</td><td  align='center'>40</td><td  align='center'>3</td><td  align='center'>5</td><td  align='center'>12</td><td  align='center'>30</td></tr>
+</table>
+</div>
+        <div class='difftype'>Changed line 59 from:</div>
+        <div class='diffdel'><dl><dd><ul><li>makes 2 calls within the last minute
+</li></ul></dd></dl>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><dl><dd><ul><li>has made 2 or 3 calls within the last minute
+</li></ul></dd></dl>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426529033-1426527979-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426529033:1426527979:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 06:46 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 44 from:</div>
+        <div class='diffdel'><p>The following is an example of a fraud detecting profile for destination prefix <strong>"+99"</strong>.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>The following is an example of a fraud detecting profile for destination prefix <strong>"+99"</strong>. Note that all rules belong to the same profile: 1.
+</p>
+</div>
+        <div class='difftype'>Added lines 55-63:</div>
+        <div class='diffadd'><p>Additional explanations:
+</p>
+<div class='vspace'></div><ul><li>Rule 1 will obviously match between 09:00 and 17:00, from Monday to Friday. It will trigger a <strong>fraud warning</strong> each time the same user either:
+<ul><li>makes 2 calls within the last minute
+</li><li>makes one call lasting at least 120 minutes
+</li><li>makes a new call, having made at least 4 calls in the current interval
+</li><li>attempts to make more than 1 simultaneous call
+</li><li>makes more than 1 consecutive calls to the same destination
+</li></ul></li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426527979-1426527176-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426527979:1426527176:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 06:32 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 15 from:</div>
+        <div class='diffdel'><p>With the help of the dialog module, fraud_detection is able to closely monitor the following call-related statistics:
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>With the help of the dialog module, fraud_detection is able to closely monitor the following call-related statistics for each user:
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426527176:1426527107:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426527176:1426527107:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426527176:1426527107:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 06:31 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Deleted line 45:</div>
+        <div class='diffdel'><p><span  style='color: green;'><strong>fraud_detection table</strong></span>
+</p>
+</div>
+        <div class='difftype'>Added line 53:</div>
+        <div class='diffadd'><p><span  style='color: green;'><strong>fraud_detection table</strong></span>
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426527107:1426527085:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426527107:1426527085:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426527107:1426527085:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 06:31 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added lines 43-44:</div>
+        <div class='diffadd'><p>The following is an example of a fraud detecting profile for destination prefix <strong>"+99"</strong>.
+</p>
+</div>
+        <div class='difftype'>Deleted line 54:</div>
+        <div class='diffdel'></div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426527085:1426526675:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426527085:1426526675:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426527085:1426526675:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 06:24 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Deleted line 41:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>Deleted line 51:</div>
+        <div class='diffdel'></div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426526675-1426526536-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426526675:1426526536:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 06:22 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 30-31 from:</div>
+        <div class='diffdel'><p>In order to create the <strong>fraud_detection</strong> table, edit the <em>opensipsctlrc</em> file and specify the SQL engine, DB name and credentials:
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>In order to create the <strong>fraud_detection</strong> table, first make sure <em>opensipsctlrc</em> file contains the desired SQL engine, DB name and credentials:
+</p>
+</div>
+        <div class='difftype'>Deleted line 40:</div>
+        <div class='diffdel'></div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426526536-1426526332-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426526536:1426526332:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 06:18 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 22 from:</div>
+        <div class='diffdel'><p><em>Note: some of the above statistics require a user-provisioned time interval to be sampled upon</em>
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><em>Note: some of the above statistics require a user-provisioned time interval to be sampled upon (see 'Table provisioning' below)</em>
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426526332-1426526163-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426526332:1426526163:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 06:16 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426526163:1426526159:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426526163:1426526159:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426526163:1426526159:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 06:15 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 29-31 from:</div>
+        <div class='diffdel'><p>In order to create 
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h4>Table creation</h4>
+<p>In order to create the <strong>fraud_detection</strong> table, edit the <em>opensipsctlrc</em> file and specify the SQL engine, DB name and credentials:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+    vim /usr/local/etc/opensips/opensipsctlrc
+</pre>
+<p class='vspace'>Now you can add the extra OpenSIPS tables:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+    opensipsdbctl extra
+</pre>
+<div class='vspace'></div><h4>Table provisioning</h4>
+</div>
+        <div class='difftype'>Changed line 133 from:</div>
+        <div class='diffdel'><p>@]
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>@]
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426526159-1426523257-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426526159:1426523257:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 05:27 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 6-20 from:</div>
+        <div class='diffdel'><h4>Tutorial Overview</h4>
+<p>The purpose of this tutorial is to help you understand how the <span  style='color: blue;'>fraud detection</span> module works and also how it should be used. After reading
+this tutorial you should understand which functions this module provides and also how to use it in order to determine strange patterns of sip calls.
+</p>
+<div class='vspace'></div><h4>Current features</h4>
+<p>As stated in the Chapter 1 of the documentation, the module monitors 5 parameters which are updated every time the <strong><em>check_fraud</em></strong> function is called (i.e each time a call is made). For each set of number prefix and username, unique values of the 5 parameters will be kept and monitored. Each time a value is altered, it will be compared to a threshold value. There are two threshold values for each of the 5 parameters (warning and critical thresholds), thus making a total of 10 values. This threshold values along with a time interval in which they are applicable form a so-called <em>rule</em>. It's the admin's job to provide the <em>fraud rules</em> to OpenSIPs through the db interface.
+</p>
+<p class='vspace'>Future directions for the module include adding more compression algorithms and support fore more types of routes.
+</p>
+<div class='vspace'></div><h4>Example scenario and DB provisioning</h4>
+<p>Suppose our OpenSIPs instance is responsible for routing calls to many countries as well as to the <em>FarFarAway</em> country which has the <strong>+99</strong> phone prefix. We know that there are a lot of hustlers in this fictional country and if a SIP account was hijacked it could cost our company a huge amount of money by making phoney calls to <em>FarFarAway</em>. So, we are going to look for suspicious patterns in calls to this country. For this we are going to insert four different rules:
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h2>Introduction</h2>
+<p>Fraudulent calls have been a part of VoIP since its very beginnings. Typically, there are two ways through which a malicious user can gain permission to place calls through a VoIP platform: <em>account hijacking</em> and <em>weak platform security</em>.
+</p>
+<p class='vspace'>The module provides a way of <ins>detecting suspicious calls</ins> from the same users to the same destinations might would otherwise likely end up costing the affected VoIP account (or the VoIP provider!) considerable amounts of money. This is done by closely <ins>monitoring a set of call-related parameters</ins> for each [user,destination] pair, together with sets of provisioned alerting thresholds.
+</p>
+<div class='vspace'></div><h2>Module Overview</h2>
+<h3>Functionality</h3>
+<p>With the help of the dialog module, fraud_detection is able to closely monitor the following call-related statistics:
+</p>
+<div class='vspace'></div><ul><li>calls-per-minute
+</li><li>call duration
+</li><li>total calls
+</li><li>concurrent calls
+</li><li>consecutive calls to the same destination
+</li></ul><p><em>Note: some of the above statistics require a user-provisioned time interval to be sampled upon</em>
+</p>
+<p class='vspace'><br />
+Validation of a check_fraud() call may be done either with its return code or through the event route. (scripting examples below)
+</p>
+<div class='vspace'></div><h3>DB provisioning</h3>
+<p>In order to create 
+</p>
+</div>
+        <div class='difftype'>Added lines 43-55:</div>
+        <div class='diffadd'><div class='vspace'></div><h4>Current features</h4>
+<p>As stated in the Chapter 1 of the documentation, the module monitors 5 parameters which are updated every time the <strong><em>check_fraud</em></strong> function is called (i.e each time a call is made). For each set of number prefix and username, unique values of the 5 parameters will be kept and monitored. Each time a value is altered, it will be compared to a threshold value. There are two threshold values for each of the 5 parameters (warning and critical thresholds), thus making a total of 10 values. This threshold values along with a time interval in which they are applicable form a so-called <em>rule</em>. It's the admin's job to provide the <em>fraud rules</em> to OpenSIPs through the db interface.
+</p>
+<p class='vspace'>Future directions for the module include adding more compression algorithms and support fore more types of routes.
+</p>
+<div class='vspace'></div><h4>Example scenario and DB provisioning</h4>
+<p>Suppose our OpenSIPs instance is responsible for routing calls to many countries as well as to the <em>FarFarAway</em> country which has the <strong>+99</strong> phone prefix. We know that there are a lot of hustlers in this fictional country and if a SIP account was hijacked it could cost our company a huge amount of money by making phoney calls to <em>FarFarAway</em>. So, we are going to look for suspicious patterns in calls to this country. For this we are going to insert four different rules:
+</p>
+<div class='vspace'></div>
+</div>
+        <div class='difftype'>Deleted lines 120-121:</div>
+        <div class='diffdel'></div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1426523257-1417278644-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1426523257:1417278644:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 05:30 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1417278644-1417278641-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417278644:1417278641:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 05:30 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Changed line 69 from:</div>
+        <div class='diffdel'><pre>		check_fraud("$fU", "$du", "1");
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>		check_fraud("$fU", "$dU", "1");
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1417278641-1417278530-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417278641:1417278530:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 05:28 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Changed line 69 from:</div>
+        <div class='diffdel'><pre>		check_fraud("$fU", "$dU", "1");
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>		check_fraud("$fU", "$du", "1");
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1417278530-1417278339-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417278530:1417278339:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 05:25 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Added lines 79-96:</div>
+        <div class='diffadd'><p><br clear='all' />
+</p>
+<p class='vspace'>Optionally, we can bind the warning and critical events
+</p><pre class='escaped'>
+event_route[E_FRD_WARNING] {
+
+	fetch_event_params("$var(param);$var(val);$var(thr);$var(user);$var(number);$var(ruleid)");
+	xlog("E_FRD_WARNING: $var(param);$var(val);$var(thr);$var(user);$var(number);$var(ruleid)\n");
+}
+
+event_route[E_FRD_CRITICAL] {
+
+	fetch_event_params("$var(param);$var(val);$var(thr);$var(user);$var(number);$var(ruleid)");
+	xlog("E_FRD_CRITICAL: $var(param);$var(val);$var(thr);$var(user);$var(number);$var(ruleid)\n");
+}
+
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1417278339-1417278280-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417278339:1417278280:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 05:24 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Added line 46:</div>
+        <div class='diffadd'><p><br clear='all' />
+</p>
+</div>
+        <div class='difftype'>Added line 54:</div>
+        <div class='diffadd'><p><br clear='all' />
+</p>
+</div>
+        <div class='difftype'>Changed lines 60-78 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><br clear='all' />
+Let's assume that for each INITIAL INVITE we want to check and update the fraud parameters
+</p><pre class='escaped'>
+route{
+	if (has_totag()) {
+		loose_route();
+	}
+	else {
+		record_route();
+		check_fraud("$fU", "$dU", "1");
+		if ($rc &lt; 0) {
+			xlog("Problems for user $fU rc=$rc\n");
+		}
+	}
+	t_relay();
+}
+</pre>
+<p>Some issues can be identified on the spot, hence the check of the return code. Please refer to the module's documentation for the return code's meaning.
+Please note the last parameter of the <em>check_fraud</em> function: it's the profile id we set earlier.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1417278280-1417277882-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417278280:1417277882:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 05:18 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Added lines 52-57:</div>
+        <div class='diffadd'><p>Optionally, we load the event_route module to bind the warning and critical events to an event route
+</p><pre class='escaped'>
+loadmodule "event_route.so"
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1417277882-1417277808-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417277882:1417277808:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 05:16 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Changed lines 46-53 from:</div>
+        <div class='diffdel'><p>Then we set the 
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Then we set the mandatory parameters
+</p><pre class='escaped'>
+modparam("drouting", "db_partitions_url", "mysql://root:123456@localhost/opensips")
+modparam("drouting", "use_partitions", 1)
+modparam("fraud_detection", "db_url", "mysql://root:123456@localhost/opensips")
+</pre>
+<div class='vspace'></div>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417277808:1417277311:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417277808:1417277311:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417277808:1417277311:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 05:08 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Changed lines 37-46 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h4>Example script</h4>
+<p>Firstly, we load the dependencies and the <strong>fraud_detection</strong> module
+</p><pre class='escaped'>
+loadmodule "drouting.so"
+loadmodule "dialog.so"
+loadmodule "fraud_detection.so"
+</pre>
+<p class='vspace'>Then we set the 
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1417277311-1417276829-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417277311:1417276829:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 05:00 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Changed lines 32-33 from:</div>
+        <div class='diffdel'><p>The first rule sets the thresholds for all the calls made in the working hours (9-17) in the working days to all the numbers starting with <em>+99</em>. Note that we expect everything anything between 5 and 10 calls during this period to be <em>possible</em> although not <em>probable</em>. However, more than two calls initiated in a single minute from a single user  will raise a warning. Furthermore, we expect that more than one concurrent call from the same user to be a problem. If a user calls to a number starting with <em>+99</em> twice in a row (that is without calling to any other number between this calls) will also raise an alarm.
+The second and the third rules are for time periods outside the working hours, but in the working days. Note, that we still expect some calls to be made during this periods (from people who arrive early at the office or from people who stay in late).
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>The first rule sets the thresholds for all the calls made in the working hours (9-17) in the working days to all the numbers starting with <em>+99</em>. Note that we expect anything between 5 and 10 calls during this period to be <em>possible</em> although not <em>probable</em>. However, more than two calls initiated in a single minute from a single user  will raise a warning. Furthermore, we expect that more than one concurrent call from the same user to be a problem. If a user calls a number starting with <em>+99</em> twice in a row (that is without calling any other number between this calls) will also raise an alarm.
+The second and the third rules are for time periods outside the working hours, but in the working days. Note that we still expect some calls to be made during this periods (from people who arrive early at the office or from people who stay in late).
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1417276829-1417276713-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417276829:1417276713:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 04:58 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Added line 35:</div>
+        <div class='diffadd'><p>Note, that all the rules have the same <strong>profile id</strong>. Basically, this means that they are from the same logical sub-set of rules. Every call of the <em>check_fraud</em> function will need a profile id.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1417276713-1417276584-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417276713:1417276584:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 04:56 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Changed lines 32-34 from:</div>
+        <div class='diffdel'><p>The first rule sets the thresholds for all the calls made in the working hours (9-17) in the working days to all the numbers starting with <em>+99</em>.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>The first rule sets the thresholds for all the calls made in the working hours (9-17) in the working days to all the numbers starting with <em>+99</em>. Note that we expect everything anything between 5 and 10 calls during this period to be <em>possible</em> although not <em>probable</em>. However, more than two calls initiated in a single minute from a single user  will raise a warning. Furthermore, we expect that more than one concurrent call from the same user to be a problem. If a user calls to a number starting with <em>+99</em> twice in a row (that is without calling to any other number between this calls) will also raise an alarm.
+The second and the third rules are for time periods outside the working hours, but in the working days. Note, that we still expect some calls to be made during this periods (from people who arrive early at the office or from people who stay in late).
+The fourth rule is for weekends. Here, almost any call should raise an alarm.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1417276584-1417276100-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417276584:1417276100:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 04:48 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Added line 32:</div>
+        <div class='diffadd'><p>The first rule sets the thresholds for all the calls made in the working hours (9-17) in the working days to all the numbers starting with <em>+99</em>.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417276100:1417276009:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417276100:1417276009:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417276100:1417276009:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 04:46 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Added lines 30-33:</div>
+        <div class='diffadd'><p><br clear='all' />
+</p>
+<div class='vspace'></div>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417276009:1417275614:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417276009:1417275614:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417276009:1417275614:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 04:40 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Changed lines 19-20 from:</div>
+        <div class='diffdel'><p>Suppose our OpenSIPs instance is responsible for routing calls to many countries as well as to the <em>FarFarAway</em> country which has the <strong>+99</strong> phone prefix. We know that there are a lot of hustlers in this fictional country and if a SIP account was hijacked it could cost our company a huge amount of money by making phoney calls to <em>FarFarAway</em>. So, we are going to look for suspicious patterns in calls to this country. For this we are going to insert two different rules:
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Suppose our OpenSIPs instance is responsible for routing calls to many countries as well as to the <em>FarFarAway</em> country which has the <strong>+99</strong> phone prefix. We know that there are a lot of hustlers in this fictional country and if a SIP account was hijacked it could cost our company a huge amount of money by making phoney calls to <em>FarFarAway</em>. So, we are going to look for suspicious patterns in calls to this country. For this we are going to insert four different rules:
+</p>
+</div>
+        <div class='difftype'>Changed lines 29-30 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td ><pre class='escaped'>c22
+</pre></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'></div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1417275614-1417275579-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417275614:1417275579:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 04:39 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Changed line 28 from:</div>
+        <div class='diffdel'><table ><tr ><td  align='left'> 2</td><td  align='center'>1</td><td  align='center'>+99</td><td  align='center'>17:01</td><td  align='center'>23:59</td><td  align='center'>Mon-Fri</td><td  align='center'>1</td><td  align='center'>2</td><td  align='center'>60</td><td  align='center'>300</td><td  align='center'>1</td><td  align='center'>3</td><td  align='center'>1</td><td  align='center'>1</td><td  align='center'>1</td><td  align='center'>1</td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table ><tr ><td  align='left'> 4</td><td  align='center'>1</td><td  align='center'>+99</td><td  align='center'>00:00</td><td  align='center'>23:59</td><td  align='center'>Sat,Sun</td><td  align='center'>1</td><td  align='center'>1</td><td  align='center'>30</td><td  align='center'>60</td><td  align='center'>1</td><td  align='center'>1</td><td  align='center'>1</td><td  align='center'>1</td><td  align='center'>1</td><td  align='center'>1</td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1417275579-1417275447-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417275579:1417275447:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 04:37 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Changed lines 26-27 from:</div>
+        <div class='diffdel'><table ><tr ><td > <pre  style='color: black;' class='escaped'>c21
+</pre></td><td >[@c22</td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table ><tr ><td  align='left'> 2</td><td  align='center'>1</td><td  align='center'>+99</td><td  align='center'>17:01</td><td  align='center'>23:59</td><td  align='center'>Mon-Fri</td><td  align='center'>1</td><td  align='center'>2</td><td  align='center'>60</td><td  align='center'>300</td><td  align='center'>1</td><td  align='center'>3</td><td  align='center'>1</td><td  align='center'>1</td><td  align='center'>1</td><td  align='center'>1</td></tr>
+<tr ><td  align='left'> 3</td><td  align='center'>1</td><td  align='center'>+99</td><td  align='center'>00:00</td><td  align='center'>08:59</td><td  align='center'>Mon-Fri</td><td  align='center'>1</td><td  align='center'>2</td><td  align='center'>60</td><td  align='center'>300</td><td  align='center'>1</td><td  align='center'>3</td><td  align='center'>1</td><td  align='center'>1</td><td  align='center'>1</td><td  align='center'>1</td></tr>
+<tr ><td  align='left'> 2</td><td  align='center'>1</td><td  align='center'>+99</td><td  align='center'>17:01</td><td  align='center'>23:59</td><td  align='center'>Mon-Fri</td><td  align='center'>1</td><td  align='center'>2</td><td  align='center'>60</td><td  align='center'>300</td><td  align='center'>1</td><td  align='center'>3</td><td  align='center'>1</td><td  align='center'>1</td><td  align='center'>1</td><td  align='center'>1</td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1417275447-1417275094-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417275447:1417275094:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 04:31 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Changed line 24 from:</div>
+        <div class='diffdel'><table ><tr ><td  align='center'><strong>ruleid</strong></td><td  align='center'><strong>profileid</strong></td><td  align='center'><strong>prefix</strong></td><td  align='center'><strong>start_hour</strong></td><td  align='center'><strong>end_hour</strong></td><td  align='center'><strong>daysoftheweek</strong></td><td  align='center'><strong>cpm_warning</strong></td><td  align='center'><strong>cpm_critical</strong></td><td  align='center'><strong>call_duration_warning</strong></td><td  align='center'><strong>call_duration_critical</strong></td><td  align='center'><strong>total_calls_warning</strong></td><td  align='center'><strong>total_calls_critical</strong></td><td  align='center'><strong>concurrent_calls_warning</strong></td><td  align='center'><strong>concurrent_calls_critical</strong></td><td  align='center'><strong>sequential_calls_warning</strong></td><td  align='center'><strong>sequential_calls_critical</strong></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table ><tr ><td  align='center'><strong>rule id</strong></td><td  align='center'><strong>profile id</strong></td><td  align='center'><strong>prefix</strong></td><td  align='center'><strong>start hour</strong></td><td  align='center'><strong>end hour</strong></td><td  align='center'><strong>days of the week</strong></td><td  align='center'><strong>cpm warning</strong></td><td  align='center'><strong>cpm critical</strong></td><td  align='center'><strong>call duration warning</strong></td><td  align='center'><strong>call duration critical</strong></td><td  align='center'><strong>total calls warning</strong></td><td  align='center'><strong>total calls critical</strong></td><td  align='center'><strong>concurrent calls warning</strong></td><td  align='center'><strong>concurrent calls critical</strong></td><td  align='center'><strong>sequential calls warning</strong></td><td  align='center'><strong>sequential calls critical</strong></td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1417275094-1417274870-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417275094:1417274870:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 04:27 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Changed line 25 from:</div>
+        <div class='diffdel'><table ><tr ><td  align='left'> 1</td><td  align='center'>1</td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table ><tr ><td  align='left'> 1</td><td  align='center'>1</td><td  align='center'>+99</td><td  align='center'>09:00</td><td  align='center'>17:00</td><td  align='center'>Mon-Fri</td><td  align='center'>2</td><td  align='center'>4</td><td  align='center'>120</td><td  align='center'>600</td><td  align='center'>5</td><td  align='center'>10</td><td  align='center'>1</td><td  align='center'>2</td><td  align='center'>2</td><td  align='center'>5</td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1417274870-1417273801-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417274870:1417273801:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 04:10 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417273801:1417273799:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417273801:1417273799:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417273801:1417273799:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 04:09 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Changed lines 25-28 from:</div>
+        <div class='diffdel'><table ><tr ><td > <pre  style='color: black;' class='escaped'>
+c1
+</pre></td><td ><pre  style='color: black;' class='escaped'>c2
+</pre></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table ><tr ><td  align='left'> 1</td><td  align='center'>1</td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1417273799-1417271764-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417273799:1417271764:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 03:36 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1417271764-1417271253-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417271764:1417271253:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 03:27 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Changed line 24 from:</div>
+        <div class='diffdel'><table ><tr ><td  align='center'><strong>With Script Helper</strong></td><td  align='center'><strong>Classic Script</strong></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table ><tr ><td  align='center'><strong>ruleid</strong></td><td  align='center'><strong>profileid</strong></td><td  align='center'><strong>prefix</strong></td><td  align='center'><strong>start_hour</strong></td><td  align='center'><strong>end_hour</strong></td><td  align='center'><strong>daysoftheweek</strong></td><td  align='center'><strong>cpm_warning</strong></td><td  align='center'><strong>cpm_critical</strong></td><td  align='center'><strong>call_duration_warning</strong></td><td  align='center'><strong>call_duration_critical</strong></td><td  align='center'><strong>total_calls_warning</strong></td><td  align='center'><strong>total_calls_critical</strong></td><td  align='center'><strong>concurrent_calls_warning</strong></td><td  align='center'><strong>concurrent_calls_critical</strong></td><td  align='center'><strong>sequential_calls_warning</strong></td><td  align='center'><strong>sequential_calls_critical</strong></td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1417271253-1417271235-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417271253:1417271235:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 03:27 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Changed lines 24-25 from:</div>
+        <div class='diffdel'><p><strong>ruleid</strong> || <strong>profileid</strong> || <strong>prefix</strong> || <strong>start_hour</strong> || <strong>end_hour</strong> || <strong>daysoftheweek</strong> || <strong>cpm_warning</strong> || <strong>cpm_critical</strong> || <strong>call_duration_warning</strong> || <strong>call_duration_critical</strong> || <strong>total_calls_warning</strong> || <strong>total_calls_critical</strong> || <strong>concurrent_calls_warning</strong> || <strong>concurrent_calls_critical</strong> || <strong>sequential_calls_warning</strong> || <strong>sequential_calls_critical</strong> ||
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table ><tr ><td  align='center'><strong>With Script Helper</strong></td><td  align='center'><strong>Classic Script</strong></td></tr>
+</table>
+<p>c1
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417271235:1417270988:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417271235:1417270988:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417271235:1417270988:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 03:23 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Changed line 24 from:</div>
+        <div class='diffdel'><table ><tr ><td  align='center'><strong>With Script Helper</strong></td><td  align='center'><strong>Classic Script</strong></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><strong>ruleid</strong> || <strong>profileid</strong> || <strong>prefix</strong> || <strong>start_hour</strong> || <strong>end_hour</strong> || <strong>daysoftheweek</strong> || <strong>cpm_warning</strong> || <strong>cpm_critical</strong> || <strong>call_duration_warning</strong> || <strong>call_duration_critical</strong> || <strong>total_calls_warning</strong> || <strong>total_calls_critical</strong> || <strong>concurrent_calls_warning</strong> || <strong>concurrent_calls_critical</strong> || <strong>sequential_calls_warning</strong> || <strong>sequential_calls_critical</strong> ||
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417270988:1417270626:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417270988:1417270626:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417270988:1417270626:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 03:17 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Added lines 27-29:</div>
+        <div class='diffadd'><p>@]||
+</p><table ><tr ><td > <pre  style='color: black;' class='escaped'>c21
+</pre></td><td >[@c22</td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1417270626-1417270564-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417270626:1417270564:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 03:16 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Added lines 20-27:</div>
+        <div class='diffadd'><p><br clear='all' />
+<span  style='color: green;'><strong>fraud_detection table</strong></span>
+</p>
+<table border='1' ><tr ><td  align='center'><strong>With Script Helper</strong></td><td  align='center'><strong>Classic Script</strong></td></tr>
+<tr ><td > <pre  style='color: black;' class='escaped'>c1
+</pre></td><td ><pre  style='color: black;' class='escaped'>c2
+</pre></td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1417270564-1417270018-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417270564:1417270018:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 03:06 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Changed line 19 from:</div>
+        <div class='diffdel'><p>Suppose our OpenSIPs instance is responsible for routing calls to many countries as well as to the <em>FarFarAway</em> country which has the <strong>+99</strong> phone prefix. We know that there are a lot of hustlers in this fictional country and if a SIP account was hijacked it could cost our company a huge amount of money by making phoney calls to <em>FarFarAway</em>. So, we are going to look for suspicious patterns in calls to this country.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Suppose our OpenSIPs instance is responsible for routing calls to many countries as well as to the <em>FarFarAway</em> country which has the <strong>+99</strong> phone prefix. We know that there are a lot of hustlers in this fictional country and if a SIP account was hijacked it could cost our company a huge amount of money by making phoney calls to <em>FarFarAway</em>. So, we are going to look for suspicious patterns in calls to this country. For this we are going to insert two different rules:
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1417270018-1417269913-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417270018:1417269913:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 03:05 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Changed lines 19-20 from:</div>
+        <div class='diffdel'><p>Suppose our OpenSIPs instance is responsible for routing calls to many countries as well as to the <em>FarFarAway</em> country which has the <strong>+99</strong> phone prefix. We know that there are a lot of hustlers in this fictional country and if a SIP account was hijacked it could cost our company a huge amount of money by making phoney calls to <em>FarFarAway</em>
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Suppose our OpenSIPs instance is responsible for routing calls to many countries as well as to the <em>FarFarAway</em> country which has the <strong>+99</strong> phone prefix. We know that there are a lot of hustlers in this fictional country and if a SIP account was hijacked it could cost our company a huge amount of money by making phoney calls to <em>FarFarAway</em>. So, we are going to look for suspicious patterns in calls to this country.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1417269913-1417269762-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417269913:1417269762:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 03:02 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Changed lines 15-19 from:</div>
+        <div class='diffdel'><p>Future directions for the module include adding more compression algorithms and support fore more types of routes.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Future directions for the module include adding more compression algorithms and support fore more types of routes.
+</p>
+<div class='vspace'></div><h4>Example scenario and DB provisioning</h4>
+<p>Suppose our OpenSIPs instance is responsible for routing calls to many countries as well as to the <em>FarFarAway</em> country which has the <strong>+99</strong> phone prefix. We know that there are a lot of hustlers in this fictional country and if a SIP account was hijacked it could cost our company a huge amount of money by making phoney calls to <em>FarFarAway</em>
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1417269762-1417269220-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417269762:1417269220:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 02:53 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Changed line 13 from:</div>
+        <div class='diffdel'><p>As stated in the Chapter 1 of the documentation, the module monitors 5 parameters which are updated every time the <strong><em>check_fraud</em></strong> function is called (i.e each time a call is made). For each set of number prefix and username, unique values of the 5 parameters will be kept and monitored. Each time a value is altered, it will be compared to threshold value. There are two threshold values for each of the 5 parameters, thus making a total of 10 values. This thresholds along with a time interval in which they area applicable form a so-called <em>rule</em>. It's the admin's job to provide the <em>fraud rules</em> to OpenSIPs through the db interface.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>As stated in the Chapter 1 of the documentation, the module monitors 5 parameters which are updated every time the <strong><em>check_fraud</em></strong> function is called (i.e each time a call is made). For each set of number prefix and username, unique values of the 5 parameters will be kept and monitored. Each time a value is altered, it will be compared to a threshold value. There are two threshold values for each of the 5 parameters (warning and critical thresholds), thus making a total of 10 values. This threshold values along with a time interval in which they are applicable form a so-called <em>rule</em>. It's the admin's job to provide the <em>fraud rules</em> to OpenSIPs through the db interface.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417269220:1417269004:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417269220:1417269004:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417269220:1417269004:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 02:50 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Changed line 13 from:</div>
+        <div class='diffdel'><p>As stated in the Chapter 1 of the documentation, the module monitors 5 parameters which are updated every time the <strong><em>check_fraud</em></strong> function is called (i.e each time a call is made). For each set of number prefix and username, unique values of the 5 parameters will be kept and monitored. However, it's the admin's duty to define 
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>As stated in the Chapter 1 of the documentation, the module monitors 5 parameters which are updated every time the <strong><em>check_fraud</em></strong> function is called (i.e each time a call is made). For each set of number prefix and username, unique values of the 5 parameters will be kept and monitored. Each time a value is altered, it will be compared to threshold value. There are two threshold values for each of the 5 parameters, thus making a total of 10 values. This thresholds along with a time interval in which they area applicable form a so-called <em>rule</em>. It's the admin's job to provide the <em>fraud rules</em> to OpenSIPs through the db interface.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1417269004-1417268639-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417269004:1417268639:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 02:43 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Changed lines 9-15 from:</div>
+        <div class='diffdel'><p>this tutorial you should understand which functions this module provides and also how to use it in order to determine strange patterns of sip calls.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>this tutorial you should understand which functions this module provides and also how to use it in order to determine strange patterns of sip calls.
+</p>
+<div class='vspace'></div><h4>Current features</h4>
+<p>As stated in the Chapter 1 of the documentation, the module monitors 5 parameters which are updated every time the <strong><em>check_fraud</em></strong> function is called (i.e each time a call is made). For each set of number prefix and username, unique values of the 5 parameters will be kept and monitored. However, it's the admin's duty to define 
+</p>
+<p class='vspace'>Future directions for the module include adding more compression algorithms and support fore more types of routes.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417268639:1417264996:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417268639:1417264996:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417268639:1417264996:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 01:43 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Changed lines 4-9 from:</div>
+        <div class='diffdel'><hr />
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><hr />
+<div class='vspace'></div><h4>Tutorial Overview</h4>
+<p>The purpose of this tutorial is to help you understand how the <span  style='color: blue;'>fraud detection</span> module works and also how it should be used. After reading
+this tutorial you should understand which functions this module provides and also how to use it in order to determine strange patterns of sip calls.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1417264996-1417264903-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417264996:1417264903:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 29, 2014, at 01:41 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Changed lines 1-4 from:</div>
+        <div class='diffdel'><p>Hello World
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h5>Documentation -&gt; <a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Tutorials</a> -&gt; Using the <ins>Fraud Detection</ins> module </h5>
+<p>This page has been visited 2088 times.
+(:toc-float Table of Content:)
+</p><hr />
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417264903:1417199641:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417264903:1417199641:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417264903:1417199641:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 28, 2014, at 07:34 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Added line 1:</div>
+        <div class='diffadd'><p>Hello World
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-FraudDetection-2-1-action=edit&restore=diff-1417199641-1417199641-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit&restore=diff:1417199641:1417199641:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Tutorials-FraudDetection-2-1-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=edit">Edit</a> |
+      <a rel="nofollow" href="Tutorials-FraudDetection-2-1-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=diff">History</a> |
+      <a rel="nofollow" href="Tutorials-FraudDetection-2-1-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on May 10, 2015, at 10:17 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

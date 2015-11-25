@@ -1,0 +1,233 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Tutorials-Fail2Ban | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Tutorials-Fail2Ban' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Tutorials-Fail2Ban History</h2>
+  <p><a href="Tutorials-Fail2Ban-action=diff&source=y&minor=n.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Fail2Ban?action=diff&source=y&minor=n">Hide minor edits</a> - <a href="Tutorials-Fail2Ban-action=diff&source=n&minor=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Fail2Ban?action=diff&source=n&minor=y">Show changes to output</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>May 16, 2013, at 06:14 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>!!!!!Documentation]] -&gt; [[Documentation.Tutorials | Tutorials ]] -&gt; Fail2Ban</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>!!!!!Documentation -&gt; [[Documentation.Tutorials | Tutorials ]] -&gt; Fail2Ban</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-Fail2Ban-action=edit&restore=diff-1368720849-1368720841-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Fail2Ban?action=edit&restore=diff:1368720849:1368720841:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 16, 2013, at 06:14 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>!![[Documentation.Index | Documentation]] -&gt; [[Documentation.Tutorials | Tutorials ]] -&gt; [[Documentation.Tutorials-Fail2Ban |  Fail2Ban]]</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>!!!!!Documentation]] -&gt; [[Documentation.Tutorials | Tutorials ]] -&gt; Fail2Ban</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-Fail2Ban-action=edit&restore=diff-1368720841-1368103400-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Fail2Ban?action=edit&restore=diff:1368720841:1368103400:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 02:43 PM 
+        by <span class='diffauthor' title='79.118.227.150'>79.118.227.150</span> - </div>
+        <div class='difftype'>Added lines 1-2:</div>
+        <div class='diffadd'><div class='diffmarkup'>!![[Documentation.Index | Documentation]] -&gt; [[Documentation.Tutorials | Tutorials ]] -&gt; [[Documentation.Tutorials-Fail2Ban |  Fail2Ban]]<br />----</div></div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-Fail2Ban?action=edit&restore=diff:1368103400:1366822335:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-Fail2Ban?action=edit&restore=diff:1368103400:1366822335:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-Fail2Ban?action=edit&restore=diff:1368103400:1366822335:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 24, 2013, at 06:52 PM 
+        by <span class='diffauthor' title='213.233.101.41'>213.233.101.41</span> - </div>
+        <div class='difftype'>Added lines 1-177:</div>
+        <div class='diffadd'><div class='diffmarkup'>Fail2ban is a daemon that you can install to control the intrusion attempts to your systems, we can adapt it to ban attackers after they have tried to login with wrong authentication credentials.<br /><br />[+Opensips configuration+]<br /><br />To make opensips work with fail2ban, you will have to send the logs to a different file than /var/log/syslog<br /><br />Change from:<br />[@log_facility=LOG_LOCAL0@]<br /><br />To:<br />[@log_facility=LOG_LOCAL7@]<br /><br />And from:<br /><br />[@ if (!www_authorize(&quot;&quot;, &quot;subscriber&quot;)) {<br />	www_challenge(&quot;&quot;, &quot;0&quot;);<br />	exit;<br />}@]<br /><br />To:<br /><br />[@<br />$var(auth_code) = www_authorize(&quot;&quot;, &quot;subscriber&quot;);<br />if ( $var(auth_code) == -1 || $var(auth_code) == -2 ) {<br />		xlog(&quot;L_NOTICE&quot;,&quot;Auth error for $fU@$fd from $si cause $var(auth_code)&quot;);<br />}<br />if ( $var(auth_code) &lt; 0 ) {<br />		www_challenge(&quot;&quot;, &quot;0&quot;);<br />		exit;<br />}<br />@]<br /><br /><br />[+rsyslog configuration+]<br /><br />Add to /etc/rsyslog.conf<br /><br />[@ local7.* /var/log/opensips.log @]<br /><br /><br />[+Fail2ban configuration+]<br /><br />Install fail2ban<br /><br />[@ apt-get install fail2ban @]<br /><br /><br />Add to the end of /etc/fail2ban/jail.conf this content:<br /><br />[@<br />[opensips]<br />enabled  = true<br />filter   = opensips<br />action   = iptables-allports[name=opensips, protocol=all]<br />           sendmail-whois[name=opensips, dest=destination@example.com, sender=source@example.com]<br />logpath  = /var/log/opensips.log<br />maxretry = 5<br />bantime = 3600<br />@]<br /><br />Create a file in /etc/fail2ban/filter.d/opensips.conf with the content:<br />[@<br /># Fail2Ban configuration file<br />#<br />#<br /># $Revision: 250 $<br />#<br /><br />[INCLUDES]<br /><br /># Read common prefixes. If any customizations available -- read them from<br /># common.local<br />#before = common.conf<br /><br /><br />[Definition]<br /><br />#_daemon = opensips<br /><br /># Option:  failregex<br /># Notes.:  regex to match the password failures messages in the logfile. The<br />#          host must be matched by a group named &quot;host&quot;. The tag &quot;&lt;HOST&gt;&quot; can<br />#          be used for standard IP/hostname matching and is only an alias for<br />#          (?:::f{4,6}:)?(?P&lt;host&gt;\S+)<br /># Values:  TEXT<br />#<br /><br />failregex = Auth error for .* from &lt;HOST&gt; cause -[0-9]<br /><br /># Option:  ignoreregex<br /># Notes.:  regex to ignore. If this regex matches, the line is ignored.<br /># Values:  TEXT<br />#<br />ignoreregex =<br />@]<br /><br />Restart fail2ban<br />[@ /etc/init.d/fail2ban restart @]<br /><br /><br /><br />[+opensips and rsyslog configuration notes for CentOS6+]<br /><br />NOTE: Use process above, but with some notes here<br /><br />LOCAL7 is in use by boot logging on CentOS 6, so use LOCAL6 instead.<br /><br /><br />in /usr/local/etc/openssips.conf Change from:<br />[@log_facility=LOG_LOCAL0@]<br /><br />To:<br />[@log_facility=LOG_LOCAL6@]<br /><br /><br />Add this to /etc/rsyslog.conf (near the bottom):<br /><br />[@ # logging facility for opensips<br />local6.* 	/var/log/opensips.log @]<br /><br /><br /><br />[+Fail2ban Installation and Configuration notes for CentOS6+] <br /><br />NOTE: Use process above, but with some notes here<br /><br />Follow instructions for installation here : http://www.fail2ban.org/wiki/index.php/README<br /><br />Download the latest fail2ban package from : http://sourceforge.net/projects/fail2ban/files/<br /><br />Run these commands:<br /><br />[@tar xvfj fail2ban-0.8.4.tar.bz2<br />cd fail2ban-0.8.4<br />python setup.py install@]<br /><br /><br />Edit configuration files /etc/fail2ban/jail.confand /etc/fail2ban/filter.d/opensips.conf as documented in the section above.<br /><br />To get startup / init.d script in place on CentOS6, copy the file named redhat-initd from the files folder inside fail2ban-0.8.4 directory to /etc/init.d with the command below.<br /><br />[@# cp redhat-initd /etc/init.d/fail2ban   @]<br /><br />Ensure you check the owner and permissions of the copied file and then test the script:<br /><br />[@# /etc/init.d/fail2ban <br />Usage: /etc/init.d/fail2ban {start|stop|status|restart}<br /># /etc/init.d/fail2ban status<br />Fail2ban (pid 8323) is running...<br />Status<br />|- Number of jail:	0<br />`- Jail list:		<br /># /etc/init.d/fail2ban stop<br />Stopping fail2ban:                                         [  OK  ]<br /># ps -ef | grep fail<br />root      8399  8235  0 13:10 pts/0    00:00:00 grep fail<br /># /etc/init.d/fail2ban start<br />Starting fail2ban:                                         [  OK  ]<br /># /etc/init.d/fail2ban restart<br />Stopping fail2ban:                                         [  OK  ]<br />Starting fail2ban:                                         [  OK  ]<br /># @] <br /><br /><br /><br />To ensure that fail2ban starts at startup:<br /><br /><br />[@# chkconfig --list fail2ban<br />service fail2ban supports chkconfig, but is not referenced in any runlevel (run 'chkconfig --add fail2ban')<br /># chkconfig --add fail2ban<br /># chkconfig --list fail2ban<br />fail2ban       	0:off	1:off	2:off	3:on	4:on	5:on	6:off<br /># chkconfig fail2ban on<br /># chkconfig --list fail2ban<br />fail2ban       	0:off	1:off	2:on	3:on	4:on	5:on	6:off<br /># @]</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-Fail2Ban-action=edit&restore=diff-1366822335-1366822335-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Fail2Ban?action=edit&restore=diff:1366822335:1366822335:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-Fail2Ban?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-Fail2Ban?action=edit%27" tppabs="http://www.opensips.org/Documentation/Tutorials-Fail2Ban?action=edit">Edit</a> |
+      <a rel="nofollow" href="Tutorials-Fail2Ban-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Fail2Ban?action=diff">History</a> |
+      <a rel="nofollow" href="Tutorials-Fail2Ban-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Fail2Ban?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on May 16, 2013, at 06:14 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

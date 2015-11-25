@@ -1,0 +1,288 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Core Functions - 1.11 | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Script-CoreFunctions-1-11' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Script-CoreFunctions-1-11 History</h2>
+  <p><a href="Script-CoreFunctions-1-11-action=diff&source=y&minor=n.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreFunctions-1-11?action=diff&source=y&minor=n">Hide minor edits</a> - <a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Script-CoreFunctions-1-11?action=diff&source=n&minor=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Script-CoreFunctions-1-11?action=diff&source=n&minor=y%27" tppabs="http://www.opensips.org/Documentation/Script-CoreFunctions-1-11?action=diff&source=n&minor=y">Show changes to output</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>September 17, 2014, at 11:21 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 658-659 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>Changes the logging level of the current process from script. If called without the parameter then the debug level of the current process will be reset to a default level (the default level changes with using the [[ http://www.opensips.org/Documentation/Interface-CoreMI-1-12#toc2 | debug ]] MI command). This function is very helpful if you are tracing and debugging only a specific piece of code. <br /></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>Changes the debug level of the current process from script. If called without the parameter then the debug level of the current process will be reset to the global level. If the debug level of the current process is changed then changing the global debug level (using MI function) does not affect it, so be careful and make sure to reset the process debug level when you are done. This function is very helpful if you are tracing and debugging only a specific piece of code. <br /></div></div>
+        <div class='difftype'>Changed line 668 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>      setdebug(); # reset the debug level of the current process to the default level</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>      setdebug(); # reset the debug level of the current process to the global level</div></div></div>
+      <div class='diffrestore'><a href="Script-CoreFunctions-1-11-action=edit&restore=diff-1410945695-1410945480-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreFunctions-1-11?action=edit&restore=diff:1410945695:1410945480:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>September 17, 2014, at 11:18 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 668 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>      setdebug(); # reset the debug level of the current process to the global level</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>      setdebug(); # reset the debug level of the current process to the default level</div></div></div>
+      <div class='diffrestore'><a href="Script-CoreFunctions-1-11-action=edit&restore=diff-1410945480-1410945459-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreFunctions-1-11?action=edit&restore=diff:1410945480:1410945459:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>September 17, 2014, at 11:17 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 658 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>Changes the debug level of the current process from script. If called without the parameter then the debug level of the current process will be reset to the global level. If the debug level of the current process is changed then changing the global debug level (using MI function) does not affect it, so be careful and make sure to reset the process debug level when you are done. This function is very helpful if you are tracing and debugging only a specific piece of code. </div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>Changes the logging level of the current process from script. If called without the parameter then the debug level of the current process will be reset to a default level (the default level changes with using the [[ http://www.opensips.org/Documentation/Interface-CoreMI-1-12#toc2 | debug ]] MI command). This function is very helpful if you are tracing and debugging only a specific piece of code. </div></div></div>
+      <div class='diffrestore'><a href="Script-CoreFunctions-1-11-action=edit&restore=diff-1410945459-1410526966-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreFunctions-1-11?action=edit&restore=diff:1410945459:1410526966:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>September 12, 2014, at 03:02 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added lines 758-777:</div>
+        <div class='diffadd'><div class='diffmarkup'>@]<br /><br />!!!!xlog([log_level, ]format_string)<br /><br />Allows various debugging / runtime / critical messages to be printed as the execution of the OpenSIPS script is done. All pseudo-variables included in the ''format_string'' parameter will be expanded. There are several optional logging levels which can be specified. They work in accordance with the severity levels of syslog. The levels are named as follows:<br /><br />* L_ALERT (-3)<br />* L_CRIT (-2)<br />* L_ERR (-1) - this is used by default if log_level is omitted<br />* L_WARN (0)<br />* L_NOTICE (1)<br />* L_INFO (2)<br />* L_DBG (3)<br /><br />\\<br /><br />[@<br />    # a few xlog scripting examples<br />    xlog(&quot;Received $rm from $fu (callid: $ci)\n&quot;);<br />    xlog(&quot;L_ERR&quot;, &quot;key $var(username) not found in cache!\n&quot;);</div></div></div>
+      <div class='diffrestore'><a href="Script-CoreFunctions-1-11-action=edit&restore=diff-1410526966-1402412145-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreFunctions-1-11?action=edit&restore=diff:1410526966:1402412145:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 10, 2014, at 04:55 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 587 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>This function start the script tracing - this helps to better understand the flow of execution in the OpenSIPS script, like what function is executed, what line it is, etc. Moreover, you can also trace the values of pseudo-variables, as script execution progresses.</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>This function enables script tracing - this helps to better understand the flow of execution in the OpenSIPS script (current function and line). Moreover, you can also trace the values of pseudo-variables, as script execution progresses.</div></div></div>
+      <div class='diffrestore'><a href="Script-CoreFunctions-1-11-action=edit&restore=diff-1402412145-1395340305-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreFunctions-1-11?action=edit&restore=diff:1402412145:1395340305:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 20, 2014, at 07:31 PM 
+        by <span class='diffauthor' title='89.120.101.121'>razvancrainea</span> - </div>
+        <div class='difftype'>Changed lines 1-2 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>!!!!!Documentation -&gt; [[Documentation.Manuals|Manuals]] -&gt; [[Documentation.Manual-1-11|Manual devel]] -&gt; Core functions<br />(:title Core Functions - devel :)</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>!!!!!Documentation -&gt; [[Documentation.Manuals|Manuals]] -&gt; [[Documentation.Manual-1-11|Manual 1.11]] -&gt; Core functions<br />(:title Core Functions - 1.11 :)</div></div>
+        <div class='difftype'>Changed line 8 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>|| %color=#185662%[+'''Core functions devel'''+]%% ||</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>|| %color=#185662%[+'''Core functions v1.11'''+]%% ||</div></div></div>
+      <div class='diffrestore'><a href="Script-CoreFunctions-1-11-action=edit&restore=diff-1395340305-1383571194-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreFunctions-1-11?action=edit&restore=diff:1395340305:1383571194:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 04, 2013, at 02:19 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed lines 155-156 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>!!!!cache_add( storage_id, attribute_name,increment_value,expire)<br /></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>!!!!cache_add( storage_id, attribute_name,increment_value,expire,[new_val_pvar])<br /></div></div>
+        <div class='difftype'>Added lines 161-162:</div>
+        <div class='diffadd'><div class='diffmarkup'>Optionally, the function receives one last parameter as a pvar in which to fetch the new value of the counter.<br /></div></div>
+        <div class='difftype'>Changed lines 172-173 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>!!!!cache_sub( storage_id, attribute_name,increment_value,expire)<br /></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>!!!!cache_sub( storage_id, attribute_name,increment_value,expire,[new_val_pvar])<br /></div></div>
+        <div class='difftype'>Added lines 177-178:</div>
+        <div class='diffadd'><div class='diffmarkup'><br />Optionally, the function receives one last parameter as a pvar in which to fetch the new value of the counter.</div></div></div>
+      <div class='diffrestore'><a href="Script-CoreFunctions-1-11-action=edit&restore=diff-1383571194-1375706095-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreFunctions-1-11?action=edit&restore=diff:1383571194:1375706095:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>August 05, 2013, at 02:34 PM 
+        by <span class='diffauthor' title='80.112.140.126'>razvancrainea</span> - </div>
+        <div class='difftype'>Changed lines 1-2 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>!!!!!Documentation -&gt; [[Documentation.Manuals|Manuals]] -&gt; [[Documentation.Manual-1-11|Manual 1.11]] -&gt; Core functions<br />(:title Core Functions - ver 1.11 :)</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>!!!!!Documentation -&gt; [[Documentation.Manuals|Manuals]] -&gt; [[Documentation.Manual-1-11|Manual devel]] -&gt; Core functions<br />(:title Core Functions - devel :)</div></div>
+        <div class='difftype'>Changed line 8 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>|| %color=#185662%[+'''Core functions v1.11'''+]%% ||</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>|| %color=#185662%[+'''Core functions devel'''+]%% ||</div></div></div>
+      <div class='diffrestore'><a href="Script-CoreFunctions-1-11-action=edit&restore=diff-1375706095-1375700442-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreFunctions-1-11?action=edit&restore=diff:1375706095:1375700442:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>August 05, 2013, at 01:00 PM 
+        by <span class='diffauthor' title='80.112.140.126'>razvancrainea</span> - </div>
+        <div class='difftype'>Added lines 1-754:</div>
+        <div class='diffadd'><div class='diffmarkup'>!!!!!Documentation -&gt; [[Documentation.Manuals|Manuals]] -&gt; [[Documentation.Manual-1-11|Manual 1.11]] -&gt; Core functions<br />(:title Core Functions - ver 1.11 :)<br />----<br />(:allVersions Script-CoreFunctions 1.11 :)<br /><br />\\<br /><br />|| %color=#185662%[+'''Core functions v1.11'''+]%% ||<br /><br />||[[Script-Statements-1-11|Prev]] || [[Script-CoreVar-1-11|Next]]||<br />----<br /><br />(:toc-float Table of Content:)<br />This section lists the all the functions exported by '''OpenSIPS''' core for script usage (to be used in opensips.cfg)<br /><br />!!!!add_local_rport()<br /><br />Add 'rport' parameter to the Via header generated by server (see RFC3581 for its meaning). It affects only the current processed request.<br /><br />Example of usage:<br /><br />    add_local_rport()<br /><br />!!!!append_branch()<br /><br />Similarly to t_fork_to, it extends destination set by a new entry. The difference is that current URI is taken as new entry. <br /><br />Without parameter, the function copies the current URI into a new branch. Thus, leaving the main branch (the URI) for further manipulation.<br /><br />With a parameter, the function copies the URI in the parameter into a new branch. Thus, the current URI is not manipulated.<br /><br />Note that it's not possible to append a new branch in &quot;on_failure_route&quot; block if a 6XX response has been previously received (it would be against RFC 3261).<br /><br />Example of usage:<br />[@<br />    # if someone calls B, the call should be forwarded to C too.<br />    #<br />    if (method==&quot;INVITE&quot; &amp;&amp; uri=~&quot;sip:B@xx.xxx.xx &quot;)<br />    {<br />        # copy the current branch (branches[0]) into<br />        # a new branch (branches[1])<br />        append_branch();<br />        # all URI manipulation functions work on branches[0]<br />        # thus, URI manipulation does not touch the <br />        # appended branch (branches[1])<br />        seturi(&quot;sip:C@domain&quot;);<br />        <br />        # now: branch 0 = C@domain<br />        #      branch 1 = B@xx.xx.xx.xx<br />        <br />        # and if you need a third destination ...<br />        <br />        # copy the current branch (branches[0]) into<br />        # a new branch (branches[2])<br />        append_branch();<br />        <br />        # all URI manipulation functions work on branches[0]<br />        # thus, URI manipulation does not touch the <br />        # appended branch (branches[1-2])<br />        seturi(&quot;sip:D@domain&quot;);<br />        <br />        # now: branch 0 = D@domain<br />        #      branch 1 = B@xx.xx.xx.xx<br />        #      branch 2 = C@domain<br />        <br />        t_relay();<br />        exit;<br />    };<br /><br />    # You could also use append_branch(&quot;sip:C@domain&quot;) which adds a branch with the new URI:<br />    <br />    <br />    if(method==&quot;INVITE&quot; &amp;&amp; uri=~&quot;sip:B@xx.xxx.xx &quot;) {<br />        # append a new branch with the second destination<br />        append_branch(&quot;sip:user@domain&quot;);<br />        # now: branch 0 = B@xx.xx.xx.xx<br />        # now: branch 1 = C@domain<br /><br />        t_relay();<br />        exit;<br />}<br />@]<br /><br />!!!!cache_store( storage_id, attribute_name, attribute_name [,timeout])<br /><br />This sets in a memory-cache-like-storage system a new value for an attribute. Both the attribute name and value may contain pseudo-variables. If the attribute does not already exist in the memcache, it will be inserted with the given value; if already present, its value will be replaced with the new one. The function may optionally take an extra parameter, a timeout (or lifetime) value for the attribute - after the lifetime is exceeded, the attribute is automatically purged from memcache.<br /><br />Function returns true is the new attribute was successfully inserted.<br /><br />[@<br />cache_store(&quot;local&quot;,&quot;my_attr&quot;,&quot;$avp(i:55)&quot;,1200);<br /><br />OR<br /><br />modparam(&quot;cachedb_redis&quot;,&quot;cachedb_url&quot;,&quot;redis:cluster1://192.168.2.134:6379/&quot;)<br />...<br />cache_store(&quot;redis:cluster1&quot;,&quot;passwd_$tu&quot;,&quot;$var(x)&quot;);<br />@]<br /><br />More complex examples can be found in the [[Documentation.Tutorials-KeyValueInterface | Key-Value Interface Tutorial]].<br /><br /><br />!!!!cache_remove( storage_id, attribute_name)<br /><br />This removes an attribute from a memory-cache-like-storage system. The attribute name may contain pseudo-variables.<br />Function returns false only if the ''storage_id'' is invalid.<br /><br />[@<br />cache_remove(&quot;local&quot;,&quot;my_attr&quot;);<br /><br />OR<br /><br />modparam(&quot;cachedb_redis&quot;,&quot;cachedb_url&quot;,&quot;redis:cluster1://192.168.2.134:6379/&quot;)<br />...<br />cache_remove(&quot;redis:cluster1&quot;,&quot;my_attr&quot;);<br />@]<br /><br />More complex examples can be found in the [[Documentation.Tutorials-KeyValueInterface | Key-Value Interface Tutorial]].<br /><br /><br />!!!!cache_fetch( storage_id, attribute_name, result_pvar)<br /><br />This function fetches from a memory-cache-like-storage system the value of an attribute. The attribute name may contain pseudo-variables. The result (if any) will be stored in the pseudo-variable specified by '''result_pvar'''. <br /><br />Function returns true if the attribute was found and its value returned.<br /><br />[@<br />cache_fetch(&quot;local&quot;,&quot;my_attr&quot;, $avp(i:11) );<br /><br />OR<br /><br />modparam(&quot;cachedb_redis&quot;,&quot;cachedb_url&quot;,&quot;redis:cluster1://192.168.2.134:6379/&quot;)<br />...<br />cache_fetch(&quot;redis:cluster1&quot;,&quot;my_attr&quot;,$avp(i:11));<br />@]<br /><br />More complex examples can be found in the [[Documentation.Tutorials-KeyValueInterface | Key-Value Interface Tutorial]].<br /><br />!!!!cache_counter_fetch( storage_id, counter_attribute_name, result_avp)<br /><br />This function fetches from a memory-cache-like-storage system the value of a counter. The attribute name may contain pseudo-variables. The result (if any) will be stored in the pseudo-variable specified by '''result_pvar'''.<br /><br />Function returns true if the attribute was found and its value returned.<br /><br />[@<br />cache_counter_fetch(&quot;local&quot;,&quot;my_counter&quot;, $avp(counter_val) );<br /><br />OR<br /><br />modparam(&quot;cachedb_redis&quot;,&quot;cachedb_url&quot;,&quot;redis:cluster1://192.168.2.134:6379/&quot;)<br />...<br />cache_fetch(&quot;redis:cluster1&quot;,&quot;my_counter&quot;,$avp(redis_counter_val));<br />@]<br /><br />!!!!cache_add( storage_id, attribute_name,increment_value,expire)<br /><br />This increments an attribute in a memory-cache-like-storage system that supports such an operation. The attribute name may contain pseudo-variables. If the attribute does not exit, it will be created with the increment_value. If expire &gt; 0, the key will also expire in the specified number of seconds.<br /><br />Function returns false if increment fails.<br /><br />[@<br /><br />modparam(&quot;cachedb_redis&quot;,&quot;cachedb_url&quot;,&quot;redis:cluster1://192.168.2.134:6379/&quot;)<br />...<br />cache_add(&quot;redis:cluster1&quot;,5);<br />@]<br /><br />More complex examples can be found in the [[Documentation.Tutorials-KeyValueInterface | Key-Value Interface Tutorial]].<br /><br />!!!!cache_sub( storage_id, attribute_name,increment_value,expire)<br /><br />This decrements an attribute in a memory-cache-like-storage system that supports such an operation. The attribute name may contain pseudo-variables. If expire &gt; 0, the key will also expire in the specified number of seconds.<br /><br />Function returns false if decrement fails.<br /><br />[@<br /><br />modparam(&quot;cachedb_redis&quot;,&quot;cachedb_url&quot;,&quot;redis:cluster1://192.168.2.134:6379/&quot;)<br />...<br />cache_sub(&quot;redis:cluster1&quot;,5);<br />@]<br /><br />More complex examples can be found in the [[Documentation.Tutorials-KeyValueInterface | Key-Value Interface Tutorial]].<br /><br />!!!!cache_raw_query( storage_id, raw_query,result_avp)<br /><br />The function runs the provided raw query ( in the back-end dependent language ) and returns the results ( if any ) in the provided AVP. The result_avp can be missing, if the query returns no results.<br /><br />Function returns false if query fails.<br /><br />[@<br />...<br />cache_raw_query(&quot;mongodb&quot;,&quot;{ \&quot;op\&quot; : \&quot;count\&quot;,\&quot;query\&quot;: { \&quot;username\&quot; : $rU} }&quot;,&quot;$avp(mongo_count_result)&quot;);<br />...<br />@]<br /><br />More complex examples can be found in the [[Documentation.Tutorials-KeyValueInterface | Key-Value Interface Tutorial]].<br /><br />!!!!break()<br /><br />Since v0.10.0-dev3, 'break' can no longer be used to stop the execution of a route. The only place to use is to end a 'case' block in a 'switch' statement. 'return' must be now used instead of old 'break'.<br /><br />'return' and 'break' have now a similar meaning as in c/shell.<br /><br />!!!!construct_uri(proto,user,domain,port,extra,result_avp)<br />The function builds a valid sip uri based on the arguments it receives. The result (if any) will be stored in the result_avp AVP variable.<br />The function accepts plain text arguments, as well as $var and $avp variables. If you want to omit a part of the sip uri, just set the respective parameter to a blank string.<br /><br />Example usage:<br />[@<br />construct_uri(&quot;$var(proto)&quot;, &quot;vlad&quot;, &quot;$var(domain)&quot;, &quot;&quot;, &quot;$var(params)&quot;,$avp(s:newuri));<br />xlog(&quot;Constructed URI is &lt;$avp(s:newuri)&gt; \n&quot;);<br />@]<br /><br />!!!!drop()<br /><br />Stop the execution of the configuration script and alter the implicit action which is done afterwards.<br /><br />If the function is called in a 'branch_route' then the branch is discarded (implicit action for 'branch_route' is to forward the request).<br /><br />If the function is called in a 'onreply_route' then any provisional reply is discarded (implicit action for 'onreply_route' is to send the reply upstream according to Via header).<br /><br />Example of usage:<br /><br />    onreply_route {<br />        if(status==&quot;183&quot;) {<br />            drop();<br />        }<br />    }<br /><br />!!!!exit()<br /><br />Stop the execution of the configuration script -- it has the same behaviour as return(0). It does not affect the implicit action to be taken after script execution. <br /><br />  route {<br />    if (route(2)) {<br />      xlog(&quot;L_NOTICE&quot;,&quot;method $rm is INVITE\n&quot;);<br />    } else {<br />      xlog(&quot;L_NOTICE&quot;,&quot;method is $rm\n&quot;);<br />    };<br />  }<br /><br />  route[2] {<br />    if (is_method(&quot;INVITE&quot;)) {<br />      return(1);<br />    } else if (is_method(&quot;REGISTER&quot;)) {<br />      return(-1);<br />    } else if (is_method(&quot;MESSAGE&quot;)) {<br />      sl_send_reply(&quot;403&quot;,&quot;IM not allowed&quot;);<br />      exit;<br />    };<br />  }<br /><br />!!!!force_rport()<br />Force_rport() adds the rport parameter to the first Via header. Thus, '''OpenSIPS''' will add the received IP port to the top most via header in the SIP message, even if the client does not indicate support for rport. This enables subsequent SIP messages to return to the proper port later on in a SIP transaction.<br /><br />The rport parameter is defined in RFC 3581.<br /><br />Example of usage:<br /><br />    force_rport();<br /><br />!!!!force_send_socket([proto:]address[:port])<br /><br />Force '''OpenSIPS''' to send the message from the specified socket (it _must_ be one of the sockets '''OpenSIPS''' listens on). If the protocol doesn't match (e.g. UDP message &quot;forced&quot; to a TCP socket) the closest socket of the same protocol is used.<br /><br />Example of usage:<br /><br />    force_send_socket(10.10.10.10:5060);<br /><br /><br />!!!!force_tcp_alias()<br /><br />force_tcp_alias(port)      <br /><br />adds a tcp port alias for the current connection (if tcp).<br />Usefull if you want to send all the trafic to port_alias through<br />the same connection this request came from [it could help <br />for firewall or nat traversal].<br />With no parameters adds the port from the message via as the alias.<br />When the &quot;aliased&quot; connection is closed (e.g. it's idle for too<br />much time), all the port aliases are removed.<br /><br />!!!!forward(destination)<br /><br />Forward the SIP request to the given destination in stateless mode. This has the format of [proto:]host[:port]. Host can be an IP or hostname; supported protocols are UDP, TCP and TLS. (For TLS, you need to compile the TLS support into core).<br />If proto or port are not specified, NAPTR and SRV lookups will be used to determine them (if possible).<br /><br />If destination parameter is missing, the forward will be done based on RURI.<br /><br />Example of usage:<br /><br />    forward(&quot;10.0.0.10:5060&quot;);<br />    #or<br />    forward();<br /><br />!!!!get_timestamp(sec_avp,usec_avp)<br /><br />Returns the current timestamp, seconds and microseconds of the current second, from a single system call.<br /><br />Example of usage:<br /><br />     get_timestamp($avp(sec),$avp(usec));<br /><br /><br />!!!!isdsturiset()<br /><br />Test if the dst_uri field (next hop address) is set.<br /><br />Example of usage:<br /><br />    if(isdsturiset()) {<br />        log(&quot;dst_uri is set\n&quot;);<br />    };<br /><br />!!!!isflagset(int)<br /><br />Test if a flag is set for current processed message (if the flag value is 1). The value of the parameter can be in range of 0..31.<br /><br />For more see [[Documentation/Script-Flags-1-11 | Flags Documentation]].<br /><br />Example of usage:<br /><br />    if(isflagset(3)) {<br />        log(&quot;flag 3 is set\n&quot;);<br />    };<br /><br />!!!!isbflagset([branch_idx,] flag_idx)<br /><br />Test if a flag is set for a specific branch (if the flag value is 1). The value of the &quot;flag_idx&quot; parameter can be in range of 0..31. &quot;branch_idx&quot; identify the branch for which the flags are tested - it must be a positiv number. Branch index 0 refers to the RURI branch. If this parameter is missing, 0 branch index is used as default.<br /><br />For more about script flags, see [[Documentation/Script-Flags-1-11 | Flags Documentation]].<br /><br />Example of usage:<br /><br />    if(isbflagset(1,3)) {<br />        log(&quot;flag 3 is set in branch 1\n&quot;);<br />    };<br /><br />!!!!issflagset(flag_idx)<br /><br />Test if a script flag is set (if the flag value is 1). The value of the &quot;flag_idx&quot; parameter can be in range of 0..31.<br /><br />For more about script flags, see [[Documentation/Script-Flags-1-11 | Flags Documentation]].<br /><br />Example of usage:<br /><br />    if(issflagset(2)) {<br />        log(&quot;script flag 2 is set\n&quot;);<br />    };<br /><br />!!!!log([level,] string)<br /><br />Write text message to standard error terminal or syslog. You can specify the log level as first parameter.<br /><br />Example of usage:<br /><br />    log(&quot;just some text message\n&quot;);<br /><br /><br />!!!!next_branches()<br /><br />Adds to the request a new destination set that includes all highest priority class contacts ('q' value based) from the serialized branches (see serialize_branches()). If called from a route block, it rewrites the request uri with first contact and adds the remaining contacts as parallel branches.  If called from failure route block, adds all contacts as parallel branches.  All used<br />contacts are removes the serialized branches.<br /><br />Returns true if at least one contact was added for the request's destination set - returns 1 if other branches are still pending and return 2 if no other branches are left for future processing - shortly, if 2: this is the last branch, if 1: other will follow. False is return is nothing was done (no more serialized branches).<br /><br />Example of usage:<br /><br />    next_branches();<br /><br /><br />!!!!prefix(string)<br /><br />Add the string parameter in front of username in R-URI.<br /><br />Example of usage:<br /><br />    prefix(&quot;00&quot;);<br /><br />!!!!pv_printf(pv, string)<br /><br />Prints the formatted 'string' in the AVP 'pv'. The 'string' parameter can include any pseudo-variable defined in '''OpenSIPS'''. The 'pv' can be any writable pseudo-variable -- e.g.,: AVPs, VARs, $ru, $rU, $rd, $du, $br, $fs.<br /><br />It was extended from the avp_printf(...) function exported in previous versions by the avpops module. Starting with 1.3.0, avp_printf(...) is just an alias to pv_printf(...).<br /><br />Example of usage:<br /><br />    pv_printf(&quot;$var(x)&quot;, &quot;r-uri: $ru&quot;);<br />    pv_printf(&quot;$avp(i:3)&quot;, &quot;from uri: $fu&quot;);<br /><br />[[#raise_event]]<br />!!!!raise_event(string[, avp[, avp]])<br /><br />Raises from script an event through OpenSIPS Event Interface. The first parameter is a string that indicates the event which should be raised. The next two parameters should be AVPs and they are optional. If only one is present, it should contain the values attached to the event. If both of them are specified, the first one should contain the names of the attributes, and the last one the values attached to the event.<br /><br />This function triggers an event for all subscribers for that event, regardless the transport module used.<br /><br />Example of usage (raises an event with no attributes):<br /><br />[@<br />raise_event(&quot;E_NO_PARAM&quot;);<br />@]<br /><br />Example of usage (raises an event with two attributes):<br /><br />[@<br />$avp(attr-name) = &quot;param1&quot;;<br />$avp(attr-name) = &quot;param2&quot;;<br />$avp(attr-val) = 1;<br />$avp(attr-val) = &quot;2&quot;<br />raise_event(&quot;E_TWO_PARAMS&quot;, $avp(attr-name), $avp(attr-val));<br />@]<br /><br />!!!!remove_branch(pv|int)<br /><br />Removes a given branch.  The branch to be removed can be given via an integer or a pseudovariable.<br />Once a branch is remove, all the subsequent branches are shifted (i.e. if branch n is removed, then the old n+1 branch becomes the new n branch, the old n+2 branch becomes n+1 and so on).<br /><br />Example of usage (remove all branches with URI hostname &quot;127.0.0.1&quot;):<br /><br />[@<br />$var(i) = 0;<br />while ($(branch(uri)[$var(i)]) != null) {<br />   xlog(&quot;L_INFO&quot;,&quot;$$(branch(uri)[$var(i)])=[$(branch(uri)[$var(i)])]\n&quot;);<br />   if ($(branch(uri)[$var(i)]{uri.host}) == &quot;127.0.0.1&quot;) {<br />       xlog(&quot;L_INFO&quot;,&quot;removing branch $var(i) with URI=[$(branch(uri)[$var(i)])]\n&quot;);<br />       remove_branch($var(i));<br />   } else {<br />       $var(i) = $var(i) + 1;<br />   }<br />}<br />@]<br /><br />!!!!return(int)<br /><br />The return() function allows you to return any integer value from a called route() block.<br />You can test the value returned by a route using &quot;$retcode&quot; variable.<br /><br />return(0) is same as &quot;exit()&quot;;<br /><br />In bool expressions:<br /><br />  * Negative and ZERO is FALSE<br />  * Positive is TRUE<br /><br />Example usage: <br /><br />[@<br />route {<br />  if (route(2)) {<br />    xlog(&quot;L_NOTICE&quot;,&quot;method $rm is INVITE\n&quot;);<br />  } else {<br />    xlog(&quot;L_NOTICE&quot;,&quot;method $rm is REGISTER\n&quot;);<br />  };<br />}<br />@]<br />[@<br />route[2] {<br />  if (is_method(&quot;INVITE&quot;)) {<br />    return(1);<br />  } else if (is_method(&quot;REGISTER&quot;)) {<br />    return(-1);<br />  } else {<br />    return(0);<br />  };<br />}<br />@]<br /><br />!!!!resetdsturi()<br /><br />Set the value of dst_uri filed to NULL. dst_uri field is usually set after loose_route() or lookup(&quot;location&quot;) if the contact address is behind a NAT.<br /><br />Example of usage:<br /><br />    resetdsturi();<br /><br />!!!!resetflag(int)<br /><br />Reset a flag for current processed message (set the value to 0). The value of the parameter can be in range of 0..31.<br /><br />For more see [[Documentation/Script-Flags-1-11 | Flags Documentation]].<br /><br />Example of usage:<br /><br />    resetflag(3);<br /><br />!!!!resetbflag([branch_idx,] flag_idx)<br /><br />Reset a flag for a specific branch (set flag to value 0). The value of the &quot;flag_idx&quot; parameter can be in range of 0..31. &quot;branch_idx&quot; identify the branch for which the flag is reset - it must be a positiv number. Branch index 0 refers to the RURI branch. If this parameter is missing, 0 branch index is used as default.<br /><br />For more about script flags, see [[Documentation/Script-Flags-1-11 | Flags Documentation]].<br /><br />Example of usage:<br />[@<br />    resetbflag(1,3);<br />    # or<br />    resetbflag(3); # same with resetbflag(0,3)<br />@]<br /><br /><br /><br />!!!!resetsflag(flag_idx)<br /><br />Reset a script flag (set flag to value 0). The value of the &quot;flag_idx&quot; parameter can be in range of 0..31.<br /><br />For more about script flags, see [[Documentation/Script-Flags-1-11 | Flags Documentation]].<br /><br />Example of usage:<br /><br />    resetsflag(2);<br /><br />!!!!revert_uri()<br /><br />Set the R-URI to the value of the R-URI as it was when the request was received by server (undo all changes of R-URI).<br /><br />Example of usage:<br /><br />    revert_uri();<br /><br />!!!!rewritehost() / sethost()<br /><br />Rewrite the domain part of the R-URI with the value of function's parameter. Other parts of the R-URI like username, port and URI parameters remain unchanged.<br /><br />Example of usage:<br /><br />    rewritehost(&quot;1.2.3.4&quot;);<br /><br />!!!!rewritehostport() / sethostport()<br /><br />Rewrite the domain part and port of the R-URI with the value of function's parameter. Other parts of the R-URI like username and URI parameters remain unchanged.<br /><br />Example of usage:<br /><br />    rewritehostport(&quot;1.2.3.4:5080&quot;);<br /><br />!!!!rewriteuser(string) / setuser(string)<br /><br />Rewrite the user part of the R-URI with the value of function's parameter.<br /><br />Example of usage:<br /><br />    rewriteuser(&quot;newuser&quot;);<br /><br />!!!!rewriteuserpass() / setuserpass()<br /><br />Rewrite the password part of the R-URI with the value of function's parameter.<br /><br />Example of usage:<br /><br />    rewriteuserpass(&quot;my_secret_passwd&quot;);<br /><br />!!!!rewriteport() / setport()<br /><br />Rewrites/sets the port part of the R-URI with the value of function's parameter.<br /><br />Example of usage:<br /><br />    rewriteport(&quot;5070&quot;);<br /><br />!!!!rewriteuri(str) / seturi(str)<br /><br />Rewrite the request URI.<br /><br />Example of usage:<br /><br />    rewriteuri(&quot;sip:test@opensips.org&quot;);<br /><br />!!!! route(name [, param1 [, param2 [, ...] ] ] )<br /><br />This function is used to run the code from the 'name' route, declared in the script. Optionally, it can receive several parameters (up to 7), that can be later retrieved using the '$param(idx)' pseudo-variable.<br /><br />The name of the route is an identifier format, whereas the parameters can be either int, string, or a pseudo-variable.<br /><br />Example of usage:<br /><br />   route(HANDLE_SEQUENTIALS);<br />   route(HANDLE_SEQUENTIALS, 1, &quot;param&quot;, $var(param));<br /><br /><br />!!!! script_trace( log_level, pv_format_string[, info_string])<br /><br />This function start the script tracing - this helps to better understand the flow of execution in the OpenSIPS script, like what function is executed, what line it is, etc. Moreover, you can also trace the values of pseudo-variables, as script execution progresses.<br /><br />The blocks of the script where script tracing is enabled will print a line for each individual action that is done (e.g. assignments, conditional tests, module functions, core functions, etc.). Multiple pseudo-variables can be monitored by specifying a '''pv_format_string''' (e.g. &quot;$ru---$avp(var1)&quot;).<br /><br />The logs produced by multiple/different traced regions of your script can be differentiated (tagged) by specifying an additional plain string - '''info_string''' - as the 3rd parameter.<br /><br />To disable script tracing, just do script_trace(). Otherwise, the tracing will automatically stop at the end the end of the top route.<br /><br />Example of usage:<br />    script_trace( 1, &quot;$rm from $si, ruri=$ru&quot;, &quot;me&quot;);<br /><br />will produce:<br />[@<br />    [line 578][me][module consume_credentials] -&gt; (INVITE from 127.0.0.1 , ruri=sip:111111@opensips.org)<br />    [line 581][me][core setsflag] -&gt; (INVITE from 127.0.0.1 , ruri=sip:111111@opensips.org)<br />    [line 583][me][assign equal] -&gt; (INVITE from 127.0.0.1 , ruri=sip:111111@opensips.org)<br />    [line 592][me][core if] -&gt; (INVITE from 127.0.0.1 , ruri=sip:tester@opensips.org)<br />    [line 585][me][module is_avp_set] -&gt; (INVITE from 127.0.0.1 , ruri=sip:tester@opensips.org)<br />    [line 589][me][core if] -&gt; (INVITE from 127.0.0.1 , ruri=sip:tester@opensips.org)<br />    [line 586][me][module is_method] -&gt; (INVITE from 127.0.0.1 , ruri=sip:tester@opensips.org)<br />    [line 587][me][module trace_dialog] -&gt; (INVITE 127.0.0.1 , ruri=sip:tester@opensips.org)<br />    [line 590][me][core setflag] -&gt; (INVITE from 127.0.0.1 , ruri=sip:tester@opensips.org) <br />@]<br /><br /><br />!!!!send(destination [, headers])<br /><br />Send the original SIP message to a specific destination in stateless mode. This is definied as [proto:]host[:port]. No changes are applied to received message, no Via header is added, unless headers parameter is specified. Host can be an IP or hostname; supported protocols are UDP, TCP and TLS. (For TLS, you need to compile the TLS support into core). If proto or port are not specified, NAPTR and SRV lookups will be used to determine them (if possible). The headers parameter should end in '\r\n' and can accept both plain text and pseudo variables.<br /><br />Parameter is mandatory and has string format.<br /><br />Example of usage:<br /><br />   send(&quot;udp:10.10.10.10:5070&quot;);<br />   send(&quot;udp:10.10.10.10:5070&quot;, &quot;Server: opensips\r\n&quot;);<br /><br /><br /><br />!!!!serialize_branches(clear)<br /><br />Takes all the branches added for parallel forking (with append_branch() and including the current RURI) and prepare them for serial forking. The ordering is done in increasing &quot;q&quot; order. The serialized branches are internally stored in AVPs - you will be able to fetch and use via the &quot;next_branches()&quot; function.\\<br />NOTE that (according to RFC3261), the branches with the same &quot;q&quot; value will still be parallel forked during a certain step in the serial forking (it will result a combination of serial with parallel forking).\\<br />NOTE that this function is not changing RURI in the messages - it is just converting from parallel to serial branches (preparing branches).<br /><br />If &quot;clear&quot; is set to non-zero, all previous results of another &quot;serialize_branches&quot; (serialized branches which were not yet used) will be deleted before setting the new serialized branches.<br /><br />Example of usage:<br /><br />   serialize_branches(1);<br /><br /><br /><br />!!!!set_advertised_address(ip|string)<br /><br />Same as 'advertised_address' but it affects only the current message. It has priority if 'advertised_address' is also set.<br /><br />Example of usage:<br /><br />    set_advertised_address(&quot;opensips.org&quot;);<br /><br />!!!!set_advertised_port(int)<br /><br />Same as 'advertised_port' but it affects only the current message. It has priority over 'advertised_port'.<br /><br />Example of usage:<br /><br />    set_advertised_port(5080);<br /><br /><br />!!!!setdebug([level])<br /><br />Changes the debug level of the current process from script. If called without the parameter then the debug level of the current process will be reset to the global level. If the debug level of the current process is changed then changing the global debug level (using MI function) does not affect it, so be careful and make sure to reset the process debug level when you are done. This function is very helpful if you are tracing and debugging only a specific piece of code. <br /><br />Example of usage:<br /><br />    debug= -1 # errors only<br />    .....<br />    {<br />      ......<br />      setdebug(4); # set the debug level of the current process to DBG<br />      uac_replace_from(....);<br />      setdebug(); # reset the debug level of the current process to the global level<br />      .......<br />    }<br /><br />!!!!setdsturi(string)<br /><br />Explicitely set the dst_uri field to the value of the paramater. The parameter has to be a valid SIP URI.<br /><br />Example of usage:<br /><br />    setdsturi(&quot;sip:10.10.10.10:5090&quot;);<br /><br />!!!!setflag(int)<br /><br />Set a flag for current processed message. The value of the parameter can be in range of 0..31. The flags are used to mark the message for special processing (e.g., accounting) or to keep some state (e.g., message authenticated).<br /><br />Example of usage:<br /><br />    setflag(3);<br /><br /><br />!!!!setbflag([branch_idx,] flag_idx)<br /><br />Set a flag for a specific branch (set flag to value 1). The value of the &quot;flag_idx&quot; parameter can be in range of 0..31. &quot;branch_idx&quot; identify the branch for which the flag is set - it must be a positiv number. Branch index 0 refers to the RURI branch. If this parameter is missing, 0 branch index is used as default.<br /><br />For more about script flags, see [[Documentation/Script-Flags-1-11 | Flags Documentation]].<br /><br />Example of usage:<br /><br />    setbflag(1,3);<br />    # or<br />    setbflag(3); # same with setbflag(0,3)<br /><br /><br /><br /><br />!!!!setsflag(flag_idx)<br /><br />Set a script flag (set flag to value 0). The value of the &quot;flag_idx&quot; parameter can be in range of 0..31.<br /><br />For more about script flags, see [[Documentation/Script-Flags-1-11 | Flags Documentation]].<br /><br />Example of usage:<br /><br />    setsflag(2);<br /><br />!!!!strip(int)<br /><br />Strip the first N-th characters from username of R-URI (N is the value of the parameter).<br /><br />Example of usage:<br /><br />    strip(3);<br /><br />!!!!strip_tail(int)<br /><br />Strip the last N-th characters from username of R-URI (N is the value of the parameter).<br /><br />Example of usage:<br /><br />  strip_tail(3);<br /><br />[[#subscribe_event]]<br />!!!!subscribe_event(string, string [, int])<br /><br />Subscribes an external application for a certain event for the OpenSIPS Event Interface. This is used for transport protocols that cannot subscribe by themselves (example event_rabbitmq). This function should be called only once in the startup_route if the subscription doesn't expire, or in a timer route if the subscription should be renewed once in a while.<br /><br />The first parameter is a string represents the name of the event an external application should be notified for. The second parameter is a string that specifies the socket of the external application. Note that this socket should follow the syntax of an existing loaded Event Interface transport module (example: event_datagram, event_rabbitmq). The last parameter is optional and specifies the expire time of the subscription. If it is not present, then the subscription does not expire at all.<br /><br />Example of usage (subscriber that never expires, notified by the RabbitMQ module):<br /><br />[@<br />startup_route {<br />    subscribe_event(&quot;E_PIKE_BLOCKED&quot;, &quot;rabbitmq:127.0.0.1/pike&quot;);<br />}<br />@]<br /><br />Example of usage (subscriber expires every 5 seconds, notified through UDP):<br /><br />[@<br />timer_route[event_subscribe, 4] {<br />    subscribe_event(&quot;E_PIKE_BLOCKED&quot;, &quot;udp:127.0.0.1:5051&quot;, 5);<br />}<br />@]<br /><br />!!!!use_blacklist(string)<br /><br />Enables the DNS blacklist name received as parameter. Its primary purposes will be to prevent sending requests to critical IPs (like GWs) due DNS or to avoid sending to destinations that are known to be unavailable (temporary or permanent).<br />[@<br />    use_blacklist(&quot;pstn-gws&quot;);<br />@]</div></div></div>
+      <div class='diffrestore'><a href="Script-CoreFunctions-1-11-action=edit&restore=diff-1375700442-1375700442-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreFunctions-1-11?action=edit&restore=diff:1375700442:1375700442:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Script-CoreFunctions-1-11-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreFunctions-1-11?action=edit">Edit</a> |
+      <a rel="nofollow" href="Script-CoreFunctions-1-11-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreFunctions-1-11?action=diff">History</a> |
+      <a rel="nofollow" href="Script-CoreFunctions-1-11-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreFunctions-1-11?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on September 17, 2014, at 11:21 AM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

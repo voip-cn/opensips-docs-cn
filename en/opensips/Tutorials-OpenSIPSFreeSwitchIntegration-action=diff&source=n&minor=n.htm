@@ -1,0 +1,2209 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Tutorials-OpenSIPSFreeSwitchIntegration | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Tutorials-OpenSIPSFreeSwitchIntegration' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Tutorials-OpenSIPSFreeSwitchIntegration History</h2>
+  <p><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-OpenSIPSFreeSwitchIntegration?action=diff&source=n&minor=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-OpenSIPSFreeSwitchIntegration?action=diff&source=n&minor=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-OpenSIPSFreeSwitchIntegration?action=diff&source=n&minor=y">Show minor edits</a> - <a href="Tutorials-OpenSIPSFreeSwitchIntegration-action=diff&source=y&minor=n.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-OpenSIPSFreeSwitchIntegration?action=diff&source=y&minor=n">Show changes to markup</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>May 16, 2013, at 06:06 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><h2><a class='wikilink' title='Index' href="Index.htm" tppabs="http://www.opensips.org/Documentation/Index">Documentation</a> -&gt; <a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Tutorials</a> -&gt; <a class='selflink' href="Tutorials-OpenSIPSFreeSwitchIntegration.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-OpenSIPSFreeSwitchIntegration">OpenSIPS FreeSwitch Integration</a></h2>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h5>Documentation -&gt; <a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Tutorials</a> -&gt; OpenSIPS FreeSwitch Integration</h5>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-OpenSIPSFreeSwitchIntegration-action=edit&restore=diff-1368720396-1368103621-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-OpenSIPSFreeSwitchIntegration?action=edit&restore=diff:1368720396:1368103621:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 02:47 PM 
+        by <span class='diffauthor' title='79.118.227.150'>79.118.227.150</span> - </div>
+        <div class='difftype'>Changed lines 1-2 from:</div>
+        <div class='diffdel'><h2>Resources -&gt; <a class='wikilink' title='Documentation' href="javascript:if(confirm(%27http://www.opensips.org/Resources/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/Documentation%27" tppabs="http://www.opensips.org/Resources/Documentation">Documentation</a> -&gt; <a class='wikilink' title='DocsTutorials' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsTutorials  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsTutorials%27" tppabs="http://www.opensips.org/Resources/DocsTutorials">Tutorials</a> -&gt; Realtime OpenSIPS - FreeSWITCH Integration</h2>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h2><a class='wikilink' title='Index' href="Index.htm" tppabs="http://www.opensips.org/Documentation/Index">Documentation</a> -&gt; <a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Tutorials</a> -&gt; <a class='selflink' href="Tutorials-OpenSIPSFreeSwitchIntegration.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-OpenSIPSFreeSwitchIntegration">OpenSIPS FreeSwitch Integration</a></h2>
+<hr />
+</div>
+        <div class='difftype'>Changed line 2055 from:</div>
+        <div class='diffdel'><p>Get rich!
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Get rich!
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-OpenSIPSFreeSwitchIntegration?action=edit&restore=diff:1368103621:1366822450:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-OpenSIPSFreeSwitchIntegration?action=edit&restore=diff:1368103621:1366822450:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-OpenSIPSFreeSwitchIntegration?action=edit&restore=diff:1368103621:1366822450:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 24, 2013, at 06:54 PM 
+        by <span class='diffauthor' title='213.233.101.41'>213.233.101.41</span> - </div>
+        <div class='difftype'>Added lines 1-2054:</div>
+        <div class='diffadd'><h2>Resources -&gt; <a class='wikilink' title='Documentation' href="javascript:if(confirm(%27http://www.opensips.org/Resources/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/Documentation%27" tppabs="http://www.opensips.org/Resources/Documentation">Documentation</a> -&gt; <a class='wikilink' title='DocsTutorials' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsTutorials  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsTutorials%27" tppabs="http://www.opensips.org/Resources/DocsTutorials">Tutorials</a> -&gt; Realtime OpenSIPS - FreeSWITCH Integration</h2>
+<p>This page has been visited 43423 times.
+(:toc-float Table of Content:)
+</p><hr />
+<div class='vspace'></div><h3>Realtime <strong>OpenSIPS - FreeSWITCH</strong> Integration</h3>
+<p><strong>Author <span  style='color: purple;'>Giovanni Maruzzelli &lt;gmaruzz at gmail dot com&gt;</span></strong>
+</p>
+<p class='vspace'><strong>This tutorial is made for OpenSIPS 1.8.x and FreeSWITCH 1.2.x</strong>
+</p>
+<div class='vspace'></div><hr />
+<h4>Scope</h4>
+<p>This tutorial can be used as a cut and paste complete and working installation. Please follow strictly all the steps, in the order given.
+</p>
+<p class='vspace'>This tutorial presents the concept and implementation of a realtime integration of OpenSIPS SIP server and FreeSWITCH media server.
+</p>
+<p class='vspace'>OpenSIPS is used a SIP server - users are registering with it, it routes calls, etc - while the purpose of FreeSWITCH is to provide a full set of media services - like voicemail, conference, announcements, etc.
+</p>
+<p class='vspace'>It is a realtime integration because both OpenSIPS and FreeSWITCH are provisioned in the same time when comes to user accounts - when creating a new OpenSIPS user, automatically FreeSWITCH will learn about it an provide and configure all necessary  media services for it.
+</p>
+<p class='vspace'>Both OpenSIPS and FreeSWITCH will be provisioned (for user accounts) via a shared mysql database.
+</p>
+<p class='vspace'>All FreeSWITCH functionalities will be available to OpenSIPS users by prefixing "*" (eg: star) to the extension dialed. *1234 will be passed to FreeSWITCH as 1234, while **1234 will be passed to FreeSWITCH as *1234
+</p>
+<div class='vspace'></div><hr />
+<h4>Setup presentation</h4>
+<p>This tutorial can be used as a cut and paste complete and working installation. Please follow strictly all the steps, in the order given.
+</p>
+<p class='vspace'>The following services will be offered by FreeSWITCH by this integrated configuration:
+</p>
+<div class='vspace'></div><ul><li><strong>voicemail</strong> - users will get access to their mailbox; authentication will be done by OpenSIPS; while FreeSWITCH will only provide voicemail IVR (with access PIN);
+<div class='vspace'></div></li><li><strong>conference</strong>' - OpenSIPS will detect and forward calls related to conference service (based on prefixes) to FreeSWITCH, which will provide access (pin based) to the conference rooms;
+<div class='vspace'></div></li><li><strong>all functionalities</strong> - OpenSIPS users will prefix * to reach the corresponding extension in FreeSWITCH (*1234 will be passed to FreeSWITCH as 1234, while **1234 will be passed to FreeSWITCH as *1234)
+</li></ul><div class='vspace'></div><h3>Installation and First Configuration</h3>
+<hr />
+<h4>Install Linux</h4>
+<p>Start from a fresh Debian 6 (Squeeze) base install, bring in the latest updates and reboot
+</p>
+<div class='vspace'></div><pre class='escaped'>
+apt-get clean
+apt-get update
+apt-get upgrade
+apt-get dist-upgrade
+reboot
+</pre>
+<div class='vspace'></div><hr />
+<h4>Install the prerequisites</h4>
+<pre class='escaped'>
+apt-get install build-essential \
+                subversion automake autoconf wget  libtiff4-dev libtool \
+                libncurses5-dev git-core libcurl4-openssl-dev libjpeg-dev \
+                mysql-server libmysqlclient-dev mysql-client \
+                unixodbc-dev unixodbc libmyodbc flex bison libncurses-dev \
+                build-essential openssl bison flex perl libdbi-perl \
+                libdbd-mysql-perl libdbd-pg-perl libfrontier-rpc-perl \
+                libterm-readline-gnu-perl libberkeleydb-perl ncurses-dev \
+                libpcre3-dev libxml2-dev libxmlrpc-c-dev libpcre3 libxml2 \
+                perl libdbi-perl libdbd-mysql-perl libfrontier-rpc-perl \
+                libterm-readline-gnu-perl libberkeleydb-perl apache2 \
+                libapache2-mod-php5 php5 php5-cli php5-gd php5-mysql php-pear \
+                php5-xmlrpc
+
+</pre>
+<div class='vspace'></div><hr />
+<h4>Compile and install OpenSIPS</h4>
+<pre class='escaped'>
+cd /usr/src
+svn co https://opensips.svn.sourceforge.net/svnroot/opensips/branches/1.8 opensips_1_8
+
+cd opensips_1_8
+make menuconfig
+</pre>
+<p class='vspace'>Go to 'Configure Compile Options' and then 'Configure Excluded Modules'. Select the db_mysql, db_unixodbc, dialplan, mi_xmlrpc, presence*, pua*, regex modules with the spacebar key, then hit the 'q' key. Go to 'Configure Install Prefix' and set the prefix to /usr/local/opensips . Hit 'Save Changes' and then compile and install OpenSIPS.
+</p>
+<div class='vspace'></div><hr />
+<h4>Create OpenSIPS Database and Configuration File</h4>
+<pre class='escaped'>
+cd /usr/local/opensips/etc/opensips/
+vi opensipsctlrc
+</pre>
+<p class='vspace'>modify like the follow (you'll find in the next section the file ready to be copied and pasted).
+</p>
+<div class='vspace'></div><pre class='escaped'>
+# this parameter.
+DBENGINE=MYSQL
+
+## database host
+DBHOST=localhost
+
+## database name (for ORACLE this is TNS name)
+DBNAME=opensips
+
+# database path used by dbtext or db_berkeley
+# DB_PATH="/usr/local/etc/opensips/dbtext"
+
+## database read/write user
+DBRWUSER=opensips
+
+## password for database read/write user
+DBRWPW="mydbpassword"
+
+## database super user (for ORACLE this is 'scheme-creator' user)
+DBROOTUSER="root"
+</pre>
+<p class='vspace'>then create the database
+</p>
+<div class='vspace'></div><pre class='escaped'>
+cd ../..
+cd sbin
+./opensipsdbctl create
+</pre>
+<p class='vspace'>you can then check database creation success with
+</p>
+<div class='vspace'></div><pre class='escaped'>
+mysql -D opensips -p
+</pre>
+<p class='vspace'>then create the OpenSIPS configuration file
+</p>
+<div class='vspace'></div><pre class='escaped'>
+./osipsconfig
+</pre>
+<p class='vspace'>Go to 'Generate OpenSIPS Script' and then to 'Residential Script', 'Configure Residential Script'.
+Add ENABLE_TCP, USE_ALIASES, USE_AUTH, USE_DBACC, USE_DBUSRLOC, USE_DIALOG, USE_DIALPLAN, VM_DIVERSION
+</p>
+<p class='vspace'>Hit 'q' and then go to 'Generate Residential Script', which will generate a CFG file in your install path, in the /usr/local/opensips/etc/opensips/ folder.
+</p>
+<p class='vspace'>Change its name, and edit it (you'll find in the next section the file ready to be copied and pasted).
+</p>
+<div class='vspace'></div><pre class='escaped'>
+cd ../etc/opensips
+mv opensips_residential_2012-12-19_8\:51\:27.cfg opensips_residential_01.cfg
+
+vi opensips_residential_01.cfg
+</pre>
+<p class='vspace'>Follow this guidelines
+</p>
+<div class='vspace'></div><pre class='escaped'>
+#follow CUSTOMIZE ME
+# modify db password
+
+# modify
+$du = "sip:127.0.0.2:5060"; # CUSTOMIZE ME
+#to
+$du = "sip:192.168.1.110:5090"; # CUSTOMIZE ME
+
+#modify mpath to /usr/local/opensips/lib64/opensips/modules/
+
+#modify from
+#### URI module
+loadmodule "uri.so"
+modparam("uri", "use_uri_table", 0)
+
+#to
+#### URI module
+loadmodule "uri.so"
+modparam("uri", "use_uri_table", 0)
+modparam("uri", "db_url",
+                "mysql://opensips:mydbpassword@localhost/opensips") # CUSTOMIZE ME
+
+</pre>
+<p class='vspace'>(you'll find in the next section the file ready to be copied and pasted)
+</p>
+<div class='vspace'></div><h4>Install OpenSIPS init files</h4>
+<p>then install and edit OpenSIPS init script
+</p>
+<div class='vspace'></div><pre class='escaped'>
+cd /usr/src/opensips_1_8/
+cd packaging/
+cd debian
+cp opensips.init /etc/init.d/opensips
+chmod +x /etc/init.d/opensips
+vi /etc/init.d/opensips
+</pre>
+<p class='vspace'>change the following lines, with the correct location of OpenSIPS executable, comment out those lines for debug, and edit the OPTIONS line as instructed
+</p>
+<div class='vspace'></div><pre class='escaped'>
+DAEMON=/usr/local/opensips/sbin/opensips #CUSTOMIZE
+
+#comment out if [ "$1" != "debug" ]; then
+#comment out check_fork
+#comment out fi
+
+# edit OPTIONS adding -f config-file
+OPTIONS="-P $PIDFILE -m $S_MEMORY -M $P_MEMORY -u $USER -g $GROUP -f /usr/local/opensips/etc/opensips/opensips_residential_01.cfg"
+</pre>
+<p class='vspace'>then edit the accessory files
+</p>
+<div class='vspace'></div><pre class='escaped'>
+cp opensips.default /etc/default/opensips
+vi /etc/default/opensips
+</pre>
+<p class='vspace'>edit it as in
+</p>
+<div class='vspace'></div><pre class='escaped'>
+RUN_OPENSIPS=yes
+USER=root
+GROUP=root
+S_MEMORY=128
+</pre>
+<p class='vspace'>edit the system logger configuration file so to instruct it to convey OpenSIPS info to the right file
+</p>
+<div class='vspace'></div><pre class='escaped'>
+vi /etc/rsyslog.conf
+</pre>
+<p class='vspace'>add at file's end:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+local1.* -/var/log/opensips.log
+</pre>
+<p class='vspace'>then restart the syslogger and OpenSIPS
+</p>
+<div class='vspace'></div><pre class='escaped'>
+/etc/init.d/rsyslog restart
+/etc/init.d/opensips start
+</pre>
+<div class='vspace'></div><hr />
+<h4>Install OpenSIPS Control Panel</h4>
+<p>This is a web configuration and management tool we will use to manage all our platform, both OpenSIPS and FreeSWITCH (eg we'll manage OpenSIPS, actually, but FreeSWITCH will source its user management data from the same database used by OpenSIPS and managed with OpenSIP-CP).
+</p>
+<div class='vspace'></div><pre class='escaped'>
+cd /var/www
+svn co https://opensips-cp.svn.sourceforge.net/svnroot/opensips-cp/trunk opensips-cp
+
+pear install mdb2
+pear install mdb2#mysql
+
+cd opensips-cp
+vi config/db.inc.php
+</pre>
+<p class='vspace'>edit it like this:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+//database connection user
+$config-&gt;db_user = "opensips"; //CUSTOMIZE
+
+//database connection password
+$config-&gt;db_pass = "mydbpassword"; //CUSTOMIZE
+</pre>
+<p class='vspace'>then edit the other config files
+</p>
+<div class='vspace'></div><pre class='escaped'>
+vi config/boxes.global.inc.php
+</pre>
+<p class='vspace'>make it like this:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+//## use fifo
+//$boxes[$box_id]['mi']['conn']="127.0.0.1:8000";
+$boxes[$box_id]['mi']['conn']="/tmp/opensips_fifo";
+
+//#comment out with double slashes monit stuff
+// monit host:port
+//$boxes[$box_id]['monit']['conn']="192.168.0.1:2812";
+//$boxes[$box_id]['monit']['user']="admin";
+//$boxes[$box_id]['monit']['pass']="pass";
+//$boxes[$box_id]['monit']['has_ssl']=1;
+</pre>
+<div class='vspace'></div><pre class='escaped'>
+vi config/tools/system/dialog/local.inc.php
+</pre>
+<p class='vspace'>make it like this:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+$box[1]['mi']['conn']="/tmp/opensips_fifo";;
+</pre>
+<div class='vspace'></div><pre class='escaped'>
+vi config/tools/system/dispatcher/local.inc.php
+</pre>
+<p class='vspace'>make it like this:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+$box[1]['mi']['conn']="/tmp/opensips_fifo";
+</pre>
+<p class='vspace'>then add an alias to the apache configuration
+</p>
+<div class='vspace'></div><pre class='escaped'>
+vi /etc/apache2/apache2.conf
+</pre>
+<p class='vspace'>add at end of the file:
+</p><pre class='escaped'>
+Alias /cp /var/www/opensips-cp/web
+</pre>
+<p class='vspace'>then change the ownership of the files, do the logging part and the CDR related editing
+</p>
+<div class='vspace'></div><pre class='escaped'>
+chown www-data.www-data /var/www/opensips-cp/config/access.log
+pear install log
+
+mysql -Dopensips -p &lt; config/tools/admin/add_admin/ocp_admin_privileges.mysql
+mysql -Dopensips -p -e "INSERT INTO ocp_admin_privileges (username,password,ha1,available_tools,permissions) values
+       ('admin','admin',md5('admin:admin'),'all','all');"
+mysql -Dopensips -p &lt; config/tools/system/cdrviewer/cdrs.mysql
+mysql -Dopensips -p &lt; config/tools/system/cdrviewer/opensips_cdrs.mysql
+mysql -Dopensips -p &lt; config/tools/system/smonitor/tables.mysql
+
+vi /var/www/opensips-cp/cron_job/generate-cdrs_mysql.sh
+</pre>
+<p class='vspace'>edit to look like:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+mysql -h $HOSTNAME -u $USER -p$PASS -e "call opensips_cdrs(); " $DATABASE
+</pre>
+<p class='vspace'>then activate the CDR cronjob
+</p>
+<div class='vspace'></div><pre class='escaped'>
+vi /etc/crontab
+</pre>
+<p class='vspace'>add the following lines to it
+</p>
+<div class='vspace'></div><pre class='escaped'>
+*/3 * * * * root /var/www/opensips-cp/cron_job/generate-cdrs_mysql.sh
+* * * * *   root   php /var/www/opensips-cp/cron_job/get_opensips_stats.php &gt; /dev/null
+</pre>
+<p class='vspace'>and restart both apache and OpenSIPS
+</p>
+<div class='vspace'></div><pre class='escaped'>
+/etc/init.d/apache2 restart
+/etc/init.d/opensips restart
+/etc/init.d/cron restart
+</pre>
+<div class='vspace'></div><hr />
+<h4>FreeSWITCH compile and install</h4>
+<p>Let's install FreeSWITCH and go for a coffee in the while (will take time)
+</p>
+<div class='vspace'></div><pre class='escaped'>
+cd /usr/src
+git clone -b v1.2.stable git://git.freeswitch.org/freeswitch.git
+cd freeswitch/
+
+./bootstrap.sh &amp;&amp; ./configure &amp;&amp; make &amp;&amp; make install &amp;&amp; make hd-sounds-install &amp;&amp; make hd-moh-install &amp;&amp; make samples
+</pre>
+<div class='vspace'></div><hr />
+<h4>FreeSWITCH listening ports</h4>
+<p>Edit the SIP ports for FreeSWITCH
+</p>
+<div class='vspace'></div><pre class='escaped'>
+vi /usr/local/freeswitch/conf/vars.xml
+</pre>
+<p class='vspace'>to be
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;X-PRE-PROCESS cmd="set" data="internal_sip_port=5090"/&gt;
+&lt;X-PRE-PROCESS cmd="set" data="external_sip_port=5091"/&gt;
+</pre>
+<div class='vspace'></div><hr />
+<h4>Install OpenSIPS and FreeSWITCH configs and database script, and ODBC configs</h4>
+<p>Back up the original files for your reference
+</p>
+<div class='vspace'></div><pre class='escaped'>
+cp /usr/local/opensips/etc/opensips/opensipsctlrc /usr/local/opensips/etc/opensips/opensipsctlrc.originale
+cp /usr/local/freeswitch/conf/dialplan/public.xml /usr/local/freeswitch/conf/dialplan/public.xml.original
+cp /usr/local/freeswitch/conf/vars.xml /usr/local/freeswitch/conf/vars.xml.original
+cp /usr/local/freeswitch/conf/autoload_configs/modules.conf.xml /usr/local/freeswitch/conf/autoload_configs/modules.conf.xml.original
+cp /usr/local/freeswitch/conf/autoload_configs/lua.conf.xml /usr/local/freeswitch/conf/autoload_configs/lua.conf.xml.original
+cp /usr/local/freeswitch/conf/autoload_configs/acl.conf.xml /usr/local/freeswitch/conf/autoload_configs/acl.conf.xml.original
+cp /etc/odbcinst.ini /etc/odbcinst.ini.original
+cp /etc/odbc.ini /etc/odbc.ini.original
+</pre>
+<p class='vspace'>Files' content follows, but first the files' list:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+/usr/local/opensips/etc/opensips/opensipsctlrc
+/usr/local/opensips/etc/opensips/opensips_residential_01.cfg
+/usr/local/freeswitch/conf/dialplan/public.xml
+/usr/local/freeswitch/scripts/config.lua
+/usr/local/freeswitch/scripts/xml_handler.lua
+/usr/local/freeswitch/conf/vars.xml
+/usr/local/freeswitch/conf/autoload_configs/modules.conf.xml
+/usr/local/freeswitch/conf/autoload_configs/lua.conf.xml
+/usr/local/freeswitch/conf/autoload_configs/acl.conf.xml
+/etc/odbcinst.ini
+/etc/odbc.ini
+</pre>
+<p class='vspace'>You will copy and paste each one the files, overwriting the existing ones you just backed-up.
+</p>
+<div class='vspace'></div><h3>Scripts and Configuration files you can Copy and Paste, with explanations</h3>
+<p>Below the files' content, with some explanation, file by file.
+</p>
+<p class='vspace'>You copy and paste each one the following files, overwriting the existing ones (you just made a backup of them).
+</p>
+<p class='vspace'>Then you can change them to your like, eg: changing the "mydbpasswd" password and the IP addresses.
+</p>
+<p class='vspace'>The files as they are here compose a working installation, provided you followed this tutorial step by step, and you use the same IP addresses.
+</p>
+<p class='vspace'>All that has been changed from original installed files is marked as "CUSTOMIZE"
+</p>
+<p class='vspace'>Follow "CUSTOMIZE", Neo.
+</p>
+<div class='vspace'></div><hr />
+<h4>/usr/local/opensips/etc/opensips/opensipsctlrc</h4>
+<p>In this file, that configures the behavior of the opensipsctrl utilities, you modify the DB-related values.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+
+# $Id: opensipsctlrc 9049 2012-05-24 14:03:31Z osas $
+#
+# The OpenSIPS configuration file for the control tools.
+#
+# Here you can set variables used in the opensipsctl and opensipsdbctl setup
+# scripts. Per default all variables here are commented out, the control tools
+# will use their internal default values.
+
+## your SIP domain
+# SIP_DOMAIN=opensips.org
+
+## chrooted directory
+# $CHROOT_DIR="/path/to/chrooted/directory"
+
+## database type: MYSQL, PGSQL, ORACLE, DB_BERKELEY, or DBTEXT,
+## by default none is loaded
+# If you want to setup a database with opensipsdbctl, you must at least specify
+# this parameter.
+DBENGINE=MYSQL
+
+## database host #CUSTOMIZE
+DBHOST=localhost
+
+## database name (for ORACLE this is TNS name) #CUSTOMIZE
+DBNAME=opensips
+
+# database path used by dbtext or db_berkeley
+# DB_PATH="/usr/local/etc/opensips/dbtext"
+
+## database read/write user #CUSTOMIZE
+DBRWUSER=opensips
+
+## password for database read/write user #CUSTOMIZE
+DBRWPW="mydbpassword"
+
+## database super user (for ORACLE this is 'scheme-creator' user) #CUSTOMIZE
+DBROOTUSER="root"
+
+# user name column
+# USERCOL="username"
+
+
+# SQL definitions
+# If you change this definitions here, then you must change them
+# in db/schema/entities.xml too.
+# FIXME
+
+# FOREVER="2020-05-28 21:32:15"
+# DEFAULT_ALIASES_EXPIRES=$FOREVER
+# DEFAULT_Q="1.0"
+# DEFAULT_CALLID="Default-Call-ID"
+# DEFAULT_CSEQ="13"
+# DEFAULT_LOCATION_EXPIRES=$FOREVER
+
+
+# Program to calculate a message-digest fingerprint
+# MD5="md5sum"
+
+# awk tool
+# AWK="awk"
+
+# grep tool
+# GREP="grep"
+
+# sed tool
+# SED="sed"
+
+
+# Describe what additional tables to install. Valid values for the variables
+# below are yes/no/ask. With ask (default) it will interactively ask the user
+# for an answer, while yes/no allow for automated, unassisted installs.
+#
+
+# If to install tables for the modules in the EXTRA_MODULES variable.
+# INSTALL_EXTRA_TABLES=ask
+
+# If to install presence related tables.
+# INSTALL_PRESENCE_TABLES=ask
+
+# Define what module tables should be installed.
+# If you use the postgres database and want to change the installed tables,
+# then you must also adjust the STANDARD_TABLES or EXTRA_TABLES variable
+# accordingly in the opensipsdbctl.base script.
+
+# opensips standard modules
+# STANDARD_MODULES="standard acc domain group permissions registrar usrloc
+#                   msilo alias_db uri_db speeddial avpops auth_db pdt dialog
+#                   dispatcher dialplan drouting nathelper load_balancer"
+
+# opensips extra modules
+# EXTRA_MODULES="imc cpl siptrace domainpolicy carrierroute userblacklist b2b registrant"
+
+
+## type of aliases used: DB - database aliases; UL - usrloc aliases
+## - default: none
+# ALIASES_TYPE="DB"
+
+## control engine: FIFO or UNIXSOCK
+## - default FIFO
+# CTLENGINE=xmlrpc
+
+## path to FIFO file
+# OSIPS_FIFO="/tmp/opensips_fifo"
+
+## MI_CONNECTOR control engine: FIFO, UNIXSOCK, UDP, XMLRPC
+# MI_CONNECTOR=FIFO:/tmp/opensips_fifo
+# MI_CONNECTOR=UNIXSOCK:/tmp/opensips.sock
+# MI_CONNECTOR=UDP:192.168.2.133:8000
+# MI_CONNECTOR=XMLRPC:192.168.2.133:8000
+
+## check ACL names; default on (1); off (0)
+# VERIFY_ACL=1
+
+## ACL names - if VERIFY_ACL is set, only the ACL names from below list
+## are accepted
+# ACL_GROUPS="local ld int voicemail free-pstn"
+
+## verbose - debug purposes - default '0'
+# VERBOSE=1
+
+## do (1) or don't (0) store plaintext passwords
+## in the subscriber table - default '1'
+# STORE_PLAINTEXT_PW=0
+
+## do not display the output highlighted
+# NOHLPRINT=1
+
+## OPENSIPS START Options
+## PID file path - default is: /var/run/opensips.pid
+# PID_FILE=/var/run/opensips.pid
+
+## Extra start options - default is: not set
+# example: start opensips with 64MB share memory: STARTOPTIONS="-m 64"
+# STARTOPTIONS=
+
+</pre>
+<div class='vspace'></div><hr />
+<h4>/usr/local/opensips/etc/opensips/opensips_residential_01.cfg</h4>
+<p>We created before using the osipsconfig utility a residential script, and we requested the following options: ENABLE_TCP, USE_ALIASES, USE_AUTH, USE_DBACC, USE_DBUSRLOC, USE_DIALOG, USE_DIALPLAN, VM_DIVERSION.
+</p>
+<p class='vspace'>So, we have tcp in addition to udp connectivity, aliases on login, authorization checks, db based accounting and location service, dialog tracking, dialplan transformations, and diversion (redirection) to voicemail server in case of no answer, busy, declined, etc.
+</p>
+<p class='vspace'>In this file you modify DB related values, inserting one block that was missed, IP addresses, syslog facility, modules path (follow "CUSTOMIZE").
+</p>
+<p class='vspace'>Then you add a route( marked "2") that checks if the called number begins with "*" (star) in which case strips the first * and sends the call to FreeSWITCH (marked "freeswitch").
+</p>
+<p class='vspace'>Then you put the correct FreeSWITCH IP address where it redirects to VM (marked "freeswitch").
+</p>
+<div class='vspace'></div><pre class='escaped'>
+
+#
+# $Id: opensips_residential.m4 9042 2012-05-17 13:57:10Z vladut-paiu $
+#
+# OpenSIPS residential configuration script
+#     by OpenSIPS Solutions &lt;team@opensips-solutions.com&gt;
+#
+# This script was generated via "make menuconfig", from
+#   the "Residential" scenario.
+# You can enable / disable more features / functionalities by
+#   re-generating the scenario with different options.#
+#
+# Please refer to the Core CookBook at:
+#      http://www.opensips.org/Resources/DocsCookbooks
+# for a explanation of possible statements, functions and parameters.
+#
+
+
+####### Global Parameters #########
+
+debug=3
+log_stderror=no
+log_facility=LOG_LOCAL1 # CUSTOMIZE ME
+
+fork=yes
+children=4
+
+/* uncomment the following lines to enable debugging */
+#debug=6
+#fork=no
+#log_stderror=yes
+
+/* uncomment the next line to enable the auto temporary blacklisting of
+   not available destinations (default disabled) */
+#disable_dns_blacklist=no
+
+/* uncomment the next line to enable IPv6 lookup after IPv4 dns
+   lookup failures (default disabled) */
+#dns_try_ipv6=yes
+
+/* comment the next line to enable the auto discovery of local aliases
+   based on revers DNS on IPs */
+auto_aliases=no
+
+
+listen=udp:192.168.1.110:5060   # CUSTOMIZE ME
+
+disable_tcp=no
+listen=tcp:192.168.1.110:5060   # CUSTOMIZE ME
+
+disable_tls=yes
+
+
+####### Modules Section ########
+
+#set module path
+mpath="/usr/local/opensips/lib64/opensips/modules/" # CUSTOMIZE ME
+
+#### SIGNALING module
+loadmodule "signaling.so"
+
+#### StateLess module
+loadmodule "sl.so"
+
+#### Transaction Module
+loadmodule "tm.so"
+modparam("tm", "fr_timer", 5)
+modparam("tm", "fr_inv_timer", 30)
+modparam("tm", "restart_fr_on_each_reply", 0)
+modparam("tm", "onreply_avp_mode", 1)
+
+#### Record Route Module
+loadmodule "rr.so"
+/* do not append from tag to the RR (no need for this script) */
+modparam("rr", "append_fromtag", 0)
+
+#### MAX ForWarD module
+loadmodule "maxfwd.so"
+
+#### SIP MSG OPerationS module
+loadmodule "sipmsgops.so"
+
+#### FIFO Management Interface
+loadmodule "mi_fifo.so"
+modparam("mi_fifo", "fifo_name", "/tmp/opensips_fifo")
+modparam("mi_fifo", "fifo_mode", 0666)
+
+
+#### URI module
+loadmodule "uri.so"
+modparam("uri", "use_uri_table", 0)
+modparam("uri", "db_url", # ADD and CUSTOMIZE ME
+        "mysql://opensips:mydbpassword@localhost/opensips") # ADD and CUSTOMIZE ME
+
+
+
+
+#### MYSQL module
+loadmodule "db_mysql.so"
+
+#### USeR LOCation module
+loadmodule "usrloc.so"
+modparam("usrloc", "nat_bflag", 10)
+modparam("usrloc", "db_mode",   2)
+modparam("usrloc", "db_url",
+        "mysql://opensips:mydbpassword@localhost/opensips") # CUSTOMIZE ME
+
+
+#### REGISTRAR module
+loadmodule "registrar.so"
+modparam("registrar", "tcp_persistent_flag", 7)
+
+/* uncomment the next line not to allow more than 10 contacts per AOR */
+#modparam("registrar", "max_contacts", 10)
+
+#### ACCounting module
+loadmodule "acc.so"
+/* what special events should be accounted ? */
+modparam("acc", "early_media", 0)
+modparam("acc", "report_cancels", 0)
+/* by default we do not adjust the direct of the sequential requests.
+   if you enable this parameter, be sure the enable "append_fromtag"
+   in "rr" module */
+modparam("acc", "detect_direction", 0)
+modparam("acc", "failed_transaction_flag", 3)
+/* account triggers (flags) */
+modparam("acc", "db_flag", 1)
+modparam("acc", "db_missed_flag", 2)
+modparam("acc", "db_url",
+        "mysql://opensips:mydbpassword@localhost/opensips") # CUSTOMIZE ME
+
+
+#### AUTHentication modules
+loadmodule "auth.so"
+loadmodule "auth_db.so"
+modparam("auth_db", "calculate_ha1", yes)
+modparam("auth_db", "password_column", "password")
+modparam("auth_db", "db_url",
+        "mysql://opensips:mydbpassword@localhost/opensips") # CUSTOMIZE ME
+modparam("auth_db", "load_credentials", "")
+
+
+#### ALIAS module
+loadmodule "alias_db.so"
+modparam("alias_db", "db_url",
+        "mysql://opensips:mydbpassword@localhost/opensips") # CUSTOMIZE ME
+
+
+
+
+
+
+#### DIALOG module
+loadmodule "dialog.so"
+modparam("dialog", "dlg_match_mode", 1)
+modparam("dialog", "default_timeout", 21600)  # 6 hours timeout
+modparam("dialog", "db_mode", 2)
+modparam("dialog", "db_url",
+        "mysql://opensips:mydbpassword@localhost/opensips") # CUSTOMIZE ME
+
+
+
+
+####  DIALPLAN module
+loadmodule "dialplan.so"
+modparam("dialplan", "db_url",
+        "mysql://opensips:mydbpassword@localhost/opensips") # CUSTOMIZE ME
+
+
+
+
+
+
+####### Routing Logic ########
+
+# main request routing logic
+
+route{
+
+
+        if (!mf_process_maxfwd_header("10")) {
+                sl_send_reply("483","Too Many Hops");
+                exit;
+        }
+
+        if (has_totag()) {
+                # sequential request withing a dialog should
+                # take the path determined by record-routing
+                if (loose_route()) {
+
+                        # validate the sequential request against dialog
+                        if ( $DLG_status!=NULL &amp;&amp; !validate_dialog() ) {
+                                xlog("In-Dialog $rm from $si (callid=$ci) is not valid according to dialog\n");
+                                ## exit;
+                        }
+
+                        if (is_method("BYE")) {
+                                setflag(1); # do accounting ...
+                                setflag(3); # ... even if the transaction fails
+                        } else if (is_method("INVITE")) {
+                                # even if in most of the cases is useless, do RR for
+                                # re-INVITEs alos, as some buggy clients do change route set
+                                # during the dialog.
+                                record_route();
+                        }
+
+
+
+                        # route it out to whatever destination was set by loose_route()
+                        # in $du (destination URI).
+                        route(1);
+                } else {
+
+                        if ( is_method("ACK") ) {
+                                if ( t_check_trans() ) {
+                                        # non loose-route, but stateful ACK; must be an ACK after
+                                        # a 487 or e.g. 404 from upstream server
+                                        t_relay();
+                                        exit;
+                                } else {
+                                        # ACK without matching transaction -&gt;
+                                        # ignore and discard
+                                        exit;
+                                }
+                        }
+                        sl_send_reply("404","Not here");
+                }
+                exit;
+        }
+
+        # CANCEL processing
+        if (is_method("CANCEL"))
+        {
+                if (t_check_trans())
+                        t_relay();
+                exit;
+        }
+
+        t_check_trans();
+
+        if ( !(is_method("REGISTER")  ) ) {
+
+                if (from_uri==myself)
+
+                {
+
+                        # authenticate if from local subscriber
+                        # authenticate all initial non-REGISTER request that pretend to be
+                        # generated by local subscriber (domain from FROM URI is local)
+                        if (!proxy_authorize("", "subscriber")) {
+                                proxy_challenge("", "0");
+                                exit;
+                        }
+                        if (!db_check_from()) {
+                                sl_send_reply("403","Forbidden auth ID");
+                                exit;
+                        }
+
+                        consume_credentials();
+                        # caller authenticated
+
+                } else {
+                        # if caller is not local, then called number must be local
+
+                        if (!uri==myself) {
+                                send_reply("403","Rely forbidden");
+                                exit;
+                        }
+                }
+
+        }
+
+        # preloaded route checking
+        if (loose_route()) {
+                xlog("L_ERR",
+                "Attempt to route with preloaded Route's [$fu/$tu/$ru/$ci]");
+                if (!is_method("ACK"))
+                        sl_send_reply("403","Preload Route denied");
+                exit;
+        }
+
+        # record routing
+        if (!is_method("REGISTER|MESSAGE"))
+                record_route();
+
+        # account only INVITEs
+        if (is_method("INVITE")) {
+
+                # create dialog with timeout
+                if ( !create_dialog("B") ) {
+                        send_reply("500","Internal Server Error");
+                        exit;
+                }
+
+                setflag(1); # do accounting
+        }
+
+
+        if (!uri==myself) {
+                append_hf("P-hint: outbound\r\n");
+                route(1);
+        }
+
+        # requests for my domain
+
+        if (is_method("PUBLISH|SUBSCRIBE"))
+        {
+                sl_send_reply("503", "Service Unavailable");
+                exit;
+        }
+
+        if (is_method("REGISTER"))
+        {
+
+                # authenticate the REGISTER requests
+                if (!www_authorize("", "subscriber"))
+                {
+                        www_challenge("", "0");
+                        exit;
+                }
+
+                if (!db_check_to())
+                {
+                        sl_send_reply("403","Forbidden auth ID");
+                        exit;
+                }
+
+                if ( proto==TCP ||  0 ) setflag(7);
+
+                if (!save("location"))
+                        sl_reply_error();
+
+                exit;
+        }
+
+        if ($rU==NULL) {
+                # request with no Username in RURI
+                sl_send_reply("484","Address Incomplete");
+                exit;
+        }
+
+
+        # apply DB based aliases
+        alias_db_lookup("dbaliases");
+
+
+        # apply transformations from dialplan table
+        dp_translate("0","$rU/$rU");
+
+
+        #freeswitch
+        route(2); # ADD and CUSTOMIZE ME
+
+        # do lookup with method filtering
+        if (!lookup("location","m")) {
+                if (!db_does_uri_exist()) {
+                        send_reply("420","Bad Extension");
+                        exit;
+                }
+
+
+                # redirect to a different VM system
+                $du = "sip:192.168.1.110:5090"; # CUSTOMIZE ME #freeswitch
+                route(1);
+
+        }
+
+
+        # when routing via usrloc, log the missed calls also
+        setflag(2);
+        route(1);
+}
+
+
+route[1] {
+        # for INVITEs enable some additional helper routes
+        if (is_method("INVITE")) {
+
+
+
+                t_on_branch("2");
+                t_on_reply("2");
+                t_on_failure("1");
+        }
+
+
+
+        if (!t_relay()) {
+                send_reply("500","Internal Error");
+        };
+        exit;
+}
+
+# freeswitch
+route[2] {# ADD and CUSTOMIZE ME
+        if (!is_method("INVITE")) {
+                return;
+        }
+
+        # if the called number begins with "star" (*) then strip it and redirect to freeswitch 
+        # (if it begins with two stars, eg: **, then one will be passed to FS)
+        if ($rU=~"^\*") {
+                strip(1);
+                $du = "sip:192.168.1.110:5090"; # CUSTOMIZE ME
+                route(1);
+        }
+}
+
+
+
+branch_route[2] {
+        xlog("new branch at $ru\n");
+}
+
+
+onreply_route[2] {
+
+        xlog("incoming reply\n");
+}
+
+
+failure_route[1] {
+        if (t_was_cancelled()) {
+                exit;
+        }
+
+        # uncomment the following lines if you want to block client
+        # redirect based on 3xx replies.
+        ##if (t_check_status("3[0-9][0-9]")) {
+        ##t_reply("404","Not found");
+        ##      exit;
+        ##}
+
+
+        # redirect the failed to a different VM system
+        if (t_check_status("486|408")) {
+                $du = "sip:192.168.1.110:5090"; # CUSTOMIZE ME
+                # do not set the missed call flag again
+                route(1);
+        }
+}
+
+
+
+local_route {
+        if (is_method("BYE") &amp;&amp; $DLG_dir=="UPSTREAM") {
+
+                acc_db_request("200 Dialog Timeout", "acc");
+
+        }
+}
+
+</pre>
+<div class='vspace'></div><hr />
+<h4>/usr/local/freeswitch/conf/dialplan/public.xml</h4>
+<p>Starting from the freshly installed default FreeSWITCH "public" (eg: from outside, not trusted to access services and features) dialplan, you insert as the first "extension", aptly named "from_opensips", an instruction that checks if the call is coming from the OpenSIPS server IP address, in which case the call is transferred to the corresponding destination_number in the "default" dialplan (eg: can access the services and features as an internal user).
+</p>
+<p class='vspace'>You must edit the OpenSIPS IP address.
+</p>
+<p class='vspace'>Follow "CUSTOMIZE".
+</p>
+<div class='vspace'></div><pre class='escaped'>
+
+&lt;!--
+    NOTICE:
+
+    This context is usually accessed via the external sip profile listening on port 5080.
+
+    It is recommended to have separate inbound and outbound contexts.  Not only for security
+    but clearing up why you would need to do such a thing.  You don't want outside un-authenticated
+    callers hitting your default context which allows dialing calls thru your providers and results
+    in Toll Fraud.
+--&gt;
+
+&lt;!-- http://wiki.freeswitch.org/wiki/Dialplan_XML --&gt;
+&lt;include&gt;
+  &lt;context name="public"&gt;
+
+    &lt;extension name="from_opensips"&gt;
+      &lt;condition field="network_addr" expression="^192\.168\.1\.110$"&gt; &lt;!--CUSTOMIZE--&gt;
+        &lt;action application="transfer" data="${destination_number} XML default"/&gt;
+      &lt;/condition&gt;
+    &lt;/extension&gt;
+
+    &lt;extension name="unloop"&gt;
+      &lt;condition field="${unroll_loops}" expression="^true$"/&gt;
+      &lt;condition field="${sip_looped_call}" expression="^true$"&gt;
+        &lt;action application="deflect" data="${destination_number}"/&gt;
+      &lt;/condition&gt;
+    &lt;/extension&gt;
+    &lt;!--
+        Tag anything pass thru here as an outside_call so you can make sure not
+        to create any routing loops based on the conditions that it came from
+        the outside of the switch.
+    --&gt;
+    &lt;extension name="outside_call" continue="true"&gt;
+      &lt;condition&gt;
+        &lt;action application="set" data="outside_call=true"/&gt;
+        &lt;action application="export" data="RFC2822_DATE=${strftime(%a, %d %b %Y %T %z)}"/&gt;
+      &lt;/condition&gt;
+    &lt;/extension&gt;
+
+    &lt;extension name="call_debug" continue="true"&gt;
+      &lt;condition field="${call_debug}" expression="^true$" break="never"&gt;
+        &lt;action application="info"/&gt;
+      &lt;/condition&gt;
+    &lt;/extension&gt;
+
+    &lt;extension name="public_extensions"&gt;
+      &lt;condition field="destination_number" expression="^(10[01][0-9])$"&gt;
+        &lt;action application="transfer" data="$1 XML default"/&gt;
+      &lt;/condition&gt;
+    &lt;/extension&gt;
+
+    &lt;!--
+        You can place files in the public directory to get included.
+    --&gt;
+    &lt;X-PRE-PROCESS cmd="include" data="public/*.xml"/&gt;
+    &lt;!--
+        If you have made it this far lets challenge the caller and if they authenticate
+        lets try what they dialed in the default context. (commented out by default)
+    --&gt;
+    &lt;!--
+    &lt;extension name="check_auth" continue="true"&gt;
+      &lt;condition field="${sip_authorized}" expression="^true$" break="never"&gt;
+        &lt;anti-action application="respond" data="407"/&gt;
+      &lt;/condition&gt;
+    &lt;/extension&gt;
+
+    &lt;extension name="transfer_to_default"&gt;
+      &lt;condition&gt;
+        &lt;action application="transfer" data="${destination_number} XML default"/&gt;
+      &lt;/condition&gt;
+    &lt;/extension&gt;
+    --&gt;
+  &lt;/context&gt;
+&lt;/include&gt;
+
+</pre>
+<div class='vspace'></div><hr />
+<h4>/usr/local/freeswitch/scripts/config.lua</h4>
+<p>This file you create ex-nihilo (eg: is not installed by FreeSWITCH). 
+</p>
+<p class='vspace'>It is read by the xml_handler script, and configure it with the correct values for directories and database name, user and password.
+</p>
+<p class='vspace'>Edit it all, or at least edit "mydbpassword".
+</p>
+<p class='vspace'>Follow "CUSTOMIZE".
+</p>
+<div class='vspace'></div><pre class='escaped'>
+
+--switch directories
+        sounds_dir = "/usr/local/freeswitch/sounds";
+        recordings_dir = "/usr/local/freeswitch/recordings";
+
+--database connection info
+        db_type = "mysql";
+        db_name = "opensips";
+        dsn_name = "opensips";
+        dsn_username = "opensips";
+        dsn_password = "mydbpassword"; --CUSTOMIZE
+
+--additional info
+        tmp_dir = "";
+
+</pre>
+<div class='vspace'></div><hr />
+<h4>/usr/local/freeswitch/scripts/xml_handler.lua</h4>
+<p>This file you create ex-nihilo (eg: is not installed by FreeSWITCH).
+</p>
+<p class='vspace'>It is executed by the mod_lua Lua module, and fetch from OpenSIPS database the values with which it constructs an xml directory snippet that is passed in real time to FreeSWITCH when FS needs info about users.
+</p>
+<p class='vspace'>You don't need to edit this file, but can be interesting to read.
+</p>
+<p class='vspace'>This file comes originally from FusionPBX ( www.fusionpbx.com ), an opensource web interface to configure and manage FreeSWITCH, and has been cannibalized for our tutorial purposes.
+</p>
+<p class='vspace'>Particularly, you can find there almost all the fields that are supported in FS directory (eg user management), so it can be extended easyly sourcing values from the same or other databases.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+
+
+--      HEAVILY MODIFIED AND POSSIBLY BUGIFIED BY Giovanni Maruzzelli (gmaruzz@gmail.com)
+
+--      xml_handler.lua
+--      Part of FusionPBX
+--      Copyright (C) 2010 Mark J Crane &lt;markjcrane@fusionpbx.com&gt;
+--      All rights reserved.
+--
+--      Redistribution and use in source and binary forms, with or without
+--      modification, are permitted provided that the following conditions are met:
+--
+--      1. Redistributions of source code must retain the above copyright notice,
+--         this list of conditions and the following disclaimer.
+--
+--      2. Redistributions in binary form must reproduce the above copyright
+--         notice, this list of conditions and the following disclaimer in the
+--         documentation and/or other materials provided with the distribution.
+--
+--      THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES,
+--      INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+--      AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+--      AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,
+--      OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+--      SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+--      INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+--      CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+--      ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+--      POSSIBILITY OF SUCH DAMAGE.
+
+
+--      HEAVILY MODIFIED AND POSSIBLY BUGIFIED BY Giovanni Maruzzelli (gmaruzz@gmail.com)
+
+--set the debug level
+debug["params"] = true;
+debug["sql"] = true;
+debug["xml_request"] = true;
+debug["xml_string"] = true;
+
+--show param debug info
+if (debug["params"]) then
+        freeswitch.consoleLog("notice", "[xml_handler] Params:\n" .. params:serialize() .. "\n");
+end
+
+--get the params and set them as variables
+local domain_name = params:getHeader("domain");
+local purpose   = params:getHeader("purpose");
+local profile   = params:getHeader("profile");
+local key    = params:getHeader("key");
+local user   = params:getHeader("user");
+local user_context = params:getHeader("variable_user_context");
+local call_context = params:getHeader("Caller-Context");
+local destination_number = params:getHeader("Caller-Destination-Number");
+local caller_id_number = params:getHeader("Caller-Caller-ID-Number");
+
+--include the lua script
+scripts_dir = string.sub(debug.getinfo(1).source,2,string.len(debug.getinfo(1).source)-(string.len(argv[0])+1));
+include = assert(loadfile(scripts_dir .. "/config.lua"));
+include();
+
+--connect to the database
+--ODBC - data source name
+        if (dsn_name) then
+                dbh = freeswitch.Dbh(dsn_name,dsn_username,dsn_password);
+        end
+--FreeSWITCH core db handler
+        if (db_type == "sqlite") then
+                dbh = freeswitch.Dbh("core:"..db_path.."/"..db_name);
+        end
+
+
+--handle the directory
+if (XML_REQUEST["section"] == "directory" and key and user and domain_name) then
+
+--prevent processing for invalid user
+continue = true;
+if (user == "*97") then
+        continue = false;
+end
+
+--get the extension from the database
+if (continue) then
+
+        sql = "SELECT * FROM subscriber WHERE domain = '" .. domain_name .. "' and username = '" .. user .. "' ";
+        if (debug["sql"]) then
+                freeswitch.consoleLog("notice", "[xml_handler] SQL: " .. sql .. "\n");
+        end
+        dbh:query(sql, function(row)
+                --general
+                        domain_uuid = "";
+                        extension = row.username;
+                        cidr = "";
+                        number_alias = "";
+                --params
+                        password = row.password;
+                        vm_enabled = "true";
+                        vm_password = row.password;
+                        vm_attach_file = "true";
+                        vm_keep_local_after_email = "true";
+                        vm_mailto = row.email_address;
+                        mwi_account = "";
+                        auth_acl = "";
+                --variables
+                        sip_from_user = "";
+                        call_group = "";
+                        hold_music = "";
+                        toll_allow = "";
+                        accountcode = "";
+                        user_context = "default";
+                        effective_caller_id_name = "";
+                        effective_caller_id_number = "";
+                        outbound_caller_id_name = "";
+                        outbound_caller_id_number = "";
+                        emergency_caller_id_number = "";
+                        directory_full_name = "";
+                        directory_visible = "";
+                        directory_exten_visible = "";
+                        limit_max = "";
+                        limit_destination = "";
+                        sip_force_contact = "";
+                        sip_force_expires = "";
+                        nibble_account = "";
+                        sip_bypass_media = "";
+
+                --set the dial_string
+                dial_string = "{sip_invite_domain=" .. domain_name .. ",presence_id=" .. user .. "@" ..
+domain_name .. "}${sofia_contact(" .. user .. "@" .. domain_name .. ")}";
+
+        end);
+end
+--set the xml array and then concatenate the array to a string
+if (password) then
+        local xml = {}
+        table.insert(xml, [[&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;]]);
+        table.insert(xml, [[&lt;document type="freeswitch/xml"&gt;]]);
+        table.insert(xml, [[    &lt;section name="directory"&gt;]]);
+        table.insert(xml, [[            &lt;domain name="]] .. domain_name .. [["&gt;]]);
+        if (number_alias) then
+                if (cidr) then
+                        table.insert(xml, [[                    &lt;user id="]] .. extension .. [["]] .. cidr .. number_alias .. [[&gt;]]);
+                else
+                        table.insert(xml, [[                    &lt;user id="]] .. extension .. [["]] .. number_alias .. [[&gt;]]);
+                end
+        else
+                if (cidr) then
+                        table.insert(xml, [[                    &lt;user id="]] .. extension .. [["]] .. cidr .. [[&gt;]]);
+                else
+                        table.insert(xml, [[                    &lt;user id="]] .. extension .. [["&gt;]]);
+                end
+        end
+        table.insert(xml, [[                    &lt;params&gt;]]);
+        table.insert(xml, [[                            &lt;param name="password" value="]] .. password .. [["/&gt;]]);
+        table.insert(xml, [[                            &lt;param name="vm-enabled" value="]] .. vm_enabled .. [["/&gt;]]);
+        if (string.len(vm_mailto) &gt; 0) then
+                table.insert(xml, [[                            &lt;param name="vm-password" value="]] .. vm_password  .. [["/&gt;]]);
+                table.insert(xml, [[                            &lt;param name="vm-email-all-messages" value="]] .. vm_enabled  ..[["/&gt;]]);
+                table.insert(xml, [[                            &lt;param name="vm-attach-file" value="]] .. vm_attach_file .. [["/&gt;]]);
+                table.insert(xml, [[                            &lt;param name="vm-keep-local-after-email" value="]] .. vm_keep_local_after_email .. [["/&gt;]]);
+                table.insert(xml, [[                            &lt;param name="vm-mailto" value="]] .. vm_mailto .. [["/&gt;]]);
+        end
+        if (string.len(mwi_account) &gt; 0) then
+                table.insert(xml, [[                            &lt;param name="MWI-Account" value="]] .. mwi_account .. [["/&gt;]]);
+        end
+        if (string.len(auth_acl) &gt; 0) then
+                table.insert(xml, [[                            &lt;param name="auth-acl" value="]] .. auth_acl .. [["/&gt;]]);
+        end
+        table.insert(xml, [[                            &lt;param name="dial-string" value="]] .. dial_string .. [["/&gt;]]);
+        table.insert(xml, [[                    &lt;/params&gt;]]);
+        table.insert(xml, [[                    &lt;variables&gt;]]);
+        table.insert(xml, [[                            &lt;variable name="domain_uuid" value="]] .. domain_uuid .. [["/&gt;]]);
+        if (user_context ~= "default" and user_context ~= "public" and user_context ~= "features") then
+                table.insert(xml, [[                            &lt;variable name="domain_name" value="]] .. user_context .. [["/&gt;]]);
+        end
+        table.insert(xml, [[                            &lt;variable name="caller_id_name" value="]] .. sip_from_user .. [["/&gt;]]);
+        table.insert(xml, [[                            &lt;variable name="caller_id_number" value="]] .. sip_from_user .. [["/&gt;]]);
+        if (string.len(call_group) &gt; 0) then
+                table.insert(xml, [[                            &lt;variable name="call_group" value="]] .. call_group .. [["/&gt;]]);
+        end
+        if (string.len(hold_music) &gt; 0) then
+                table.insert(xml, [[                            &lt;variable name="hold_music" value="]] .. hold_music .. [["/&gt;]]);
+        end
+        if (string.len(toll_allow) &gt; 0) then
+                table.insert(xml, [[                            &lt;variable name="toll_allow" value="]] .. toll_allow .. [["/&gt;]]);
+        end
+        if (string.len(accountcode) &gt; 0) then
+                table.insert(xml, [[                            &lt;variable name="accountcode" value="]] .. accountcode .. [["/&gt;]]);
+        end
+        table.insert(xml, [[                            &lt;variable name="user_context" value="]] .. user_context .. [["/&gt;]]);
+        if (string.len(effective_caller_id_name) &gt; 0) then
+                table.insert(xml, [[                            &lt;variable name="effective_caller_id_name" value="]] .. effective_caller_id_name.. [["/&gt;]]);
+        end
+        if (string.len(effective_caller_id_number) &gt; 0) then
+                table.insert(xml, [[                            &lt;variable name="effective_caller_id_number" value="]] .. effective_caller_id_number.. [["/&gt;]]);
+        end
+        if (string.len(outbound_caller_id_name) &gt; 0) then
+                table.insert(xml, [[                            &lt;variable name="outbound_caller_id_name" value="]] .. outbound_caller_id_name .. [["/&gt;]]);
+                table.insert(xml, [[                            &lt;variable name="outbound_caller_id_name" value="]] .. outbound_caller_id_name .. [["/&gt;]]);
+        end
+        if (string.len(outbound_caller_id_number) &gt; 0) then
+                table.insert(xml, [[                            &lt;variable name="outbound_caller_id_number" value="]] .. outbound_caller_id_number .. [["/&gt;]]);
+        end
+        if (string.len(emergency_caller_id_number) &gt; 0) then
+                table.insert(xml, [[                            &lt;variable name="emergency_caller_id_number" value="]] .. emergency_caller_id_number .. [["/&gt;]]);
+        end
+        if (string.len(directory_full_name) &gt; 0) then
+                table.insert(xml, [[                            &lt;variable name="directory_full_name" value="]] .. directory_full_name .. [["/&gt;]]);
+        end
+        if (string.len(directory_visible) &gt; 0) then
+                table.insert(xml, [[                            &lt;variable name="directory-visible" value="]] .. directory_visible .. [["/&gt;]]);
+        end
+        if (string.len(directory_exten_visible) &gt; 0) then
+                table.insert(xml, [[                            &lt;variable name="directory-exten-visible" value="]] .. directory_exten_visible .. [["/&gt;]]);
+        end
+        if (string.len(limit_max) &gt; 0) then
+                table.insert(xml, [[                            &lt;variable name="limit_max" value="]] .. limit_max .. [["/&gt;]]);
+        else
+                table.insert(xml, [[                            &lt;variable name="limit_max" value="5"/&gt;]]);
+        end
+        if (string.len(limit_destination) &gt; 0) then
+                table.insert(xml, [[                            &lt;variable name="limit_destination" value="]] .. limit_destination .. [["/&gt;]]);
+        end
+        if (string.len(sip_force_contact) &gt; 0) then
+                table.insert(xml, [[                            &lt;variable name="sip_force_contact" value="]] .. sip_force_contact .. [["/&gt;]]);
+        end
+        if (string.len(sip_force_expires) &gt; 0) then
+                table.insert(xml, [[                            &lt;variable name="sip-force-expires" value="]] .. sip_force_expires .. [["/&gt;]]);
+        end
+        if (string.len(nibble_account) &gt; 0) then
+                table.insert(xml, [[                            &lt;variable name="nibble_account" value="]] .. nibble_account .. [["/&gt;]]);
+        end
+        if (sip_bypass_media == "bypass-media") then
+                table.insert(xml, [[                            &lt;variable name="bypass_media" value="true"/&gt;]]);
+        end
+        if (sip_bypass_media == "bypass-media-after-bridge") then
+                table.insert(xml, [[                            &lt;variable name="bypass_media_after_bridge" value="true"/&gt;]]);
+        end
+        if (sip_bypass_media == "proxy-media") then
+                table.insert(xml, [[                            &lt;variable name="proxy_media" value="true"/&gt;]]);
+        end
+        table.insert(xml, [[                            &lt;variable name="record_stereo" value="true"/&gt;]]);
+        table.insert(xml, [[                            &lt;variable name="transfer_fallback_extension" value="operator"/&gt;]]);
+        table.insert(xml, [[                            &lt;variable name="export_vars" value="domain_name"/&gt;]]);
+        table.insert(xml, [[                    &lt;/variables&gt;]]);
+        table.insert(xml, [[                    &lt;/user&gt;]]);
+        table.insert(xml, [[            &lt;/domain&gt;]]);
+        table.insert(xml, [[    &lt;/section&gt;]]);
+        table.insert(xml, [[&lt;/document&gt;]]);
+        XML_STRING = table.concat(xml, "\n");
+else
+        XML_STRING = "";
+end
+
+--send the xml to a file
+if (debug["xml_string"]) then
+        local file = assert(io.open("/tmp/directory.xml", "w"));
+        file:write(XML_STRING);
+        file:close();
+end
+
+--send the xml to the console
+if (debug["xml_string"]) then
+        freeswitch.consoleLog("notice", "[xml_handler] XML_STRING: \n" .. XML_STRING .. "\n");
+end
+end
+
+if (debug["xml_request"]) then
+        freeswitch.consoleLog("notice", "[xml_handler] Section: " .. XML_REQUEST["section"] .. "\n");
+        freeswitch.consoleLog("notice", "[xml_handler] Tag Name: " .. XML_REQUEST["tag_name"] .. "\n");
+        freeswitch.consoleLog("notice", "[xml_handler] Key Name: " .. XML_REQUEST["key_name"] .. "\n");
+        freeswitch.consoleLog("notice", "[xml_handler] Key Value: " .. XML_REQUEST["key_value"] .. "\n");
+end
+
+
+</pre>
+<div class='vspace'></div><hr />
+<h4>/usr/local/freeswitch/conf/vars.xml</h4>
+<p>This file contains the variables that are interpolated into FreeSWITCH configuration files when they are sourced the first time at FreeSWITCH startup (eg: NOT when you "reload" FreeSWITCH).
+</p>
+<p class='vspace'>Here you do not have to change nothing, we configured FreeSWITCH ports before.
+</p>
+<p class='vspace'>Anyway, they're marked "CUSTOMIZE".
+</p>
+<div class='vspace'></div><pre class='escaped'>
+
+&lt;include&gt;
+  &lt;!-- Preprocessor Variables
+       These are introduced when configuration strings must be consistent across modules.
+       NOTICE: YOU CAN NOT COMMENT OUT AN X-PRE-PROCESS line, Remove the line instead.
+
+       WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
+
+       YOU SHOULD CHANGE THIS default_password value if you don't want to be subject to any
+       toll fraud in the future.  It's your responsibility to secure your own system.
+
+       This default config is used to demonstrate the feature set of FreeSWITCH.
+
+       WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
+  --&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="default_password=1234"/&gt;
+  &lt;!-- Did you change it yet? --&gt;
+
+  &lt;X-PRE-PROCESS cmd="set" data="sound_prefix=$${sounds_dir}/en/us/callie"/&gt;
+
+  &lt;!--
+      This setting is what sets the default domain FreeSWITCH will use if all else fails.
+
+      FreeSWICH will default to $${local_ip_v4} unless changed.  Changing this setting does
+      affect the sip authentication.  Please review conf/directory/default.xml for more
+      information on this topic.
+  --&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="domain=$${local_ip_v4}"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="domain_name=$${domain}"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="hold_music=local_stream://moh"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="use_profile=internal"/&gt;
+
+  &lt;!--
+      Enable ZRTP globally you can override this on a per channel basis
+
+      http://wiki.freeswitch.org/wiki/ZRTP (on how to enable zrtp)
+  --&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="zrtp_secure_media=true"/&gt;
+
+  &lt;!--
+       Examples of codec options: (module must be compiled and loaded)
+
+       codecname[@8000h|16000h|32000h[@XXi]]
+
+       XX is the frame size must be multples allowed for the codec
+       FreeSWITCH can support 10-120ms on some codecs.
+       We do not support exceeding the MTU of the RTP packet.
+
+
+       iLBC@30i         - iLBC using mode=30 which will win in all cases.
+       DVI4@8000h@20i   - IMA ADPCM 8kHz using 20ms ptime. (multiples of 10)
+       DVI4@16000h@40i  - IMA ADPCM 16kHz using 40ms ptime. (multiples of 10)
+       speex@8000h@20i  - Speex 8kHz using 20ms ptime.
+       speex@16000h@20i - Speex 16kHz using 20ms ptime.
+       speex@32000h@20i - Speex 32kHz using 20ms ptime.
+       BV16             - BroadVoice 16kb/s narrowband, 8kHz
+       BV32             - BroadVoice 32kb/s wideband, 16kHz
+       G7221@16000h     - G722.1 16kHz (aka Siren 7)
+       G7221@32000h     - G722.1C 32kHz (aka Siren 14)
+       CELT@32000h      - CELT 32kHz, only 10ms supported
+       CELT@48000h      - CELT 48kHz, only 10ms supported
+       GSM@40i          - GSM 8kHz using 40ms ptime. (GSM is done in multiples of 20, Default is 20ms)
+       G722             - G722 16kHz using default 20ms ptime. (multiples of 10)
+       PCMU             - G711 8kHz ulaw using default 20ms ptime. (multiples of 10)
+       PCMA             - G711 8kHz alaw using default 20ms ptime. (multiples of 10)
+       G726-16          - G726 16kbit adpcm using default 20ms ptime. (multiples of 10)
+       G726-24          - G726 24kbit adpcm using default 20ms ptime. (multiples of 10)
+       G726-32          - G726 32kbit adpcm using default 20ms ptime. (multiples of 10)
+       G726-40          - G726 40kbit adpcm using default 20ms ptime. (multiples of 10)
+       AAL2-G726-16     - Same as G726-16 but using AAL2 packing. (multiples of 10)
+       AAL2-G726-24     - Same as G726-24 but using AAL2 packing. (multiples of 10)
+       AAL2-G726-32     - Same as G726-32 but using AAL2 packing. (multiples of 10)
+       AAL2-G726-40     - Same as G726-40 but using AAL2 packing. (multiples of 10)
+       LPC              - LPC10 using 90ms ptime (only supports 90ms at this time in FreeSWITCH)
+       L16              - L16 isn't recommended for VoIP but you can do it. L16 can exceed the MTU rather quickly.
+
+       These are the passthru audio codecs:
+
+       G729             - G729 in passthru mode. (mod_g729)
+       G723             - G723.1 in passthru mode. (mod_g723_1)
+       AMR              - AMR in passthru mode. (mod_amr)
+
+       These are the passthru video codecs: (mod_h26x)
+
+       H261             - H.261 Video
+       H263             - H.263 Video
+       H263-1998        - H.263-1998 Video
+       H263-2000        - H.263-2000 Video
+       H264             - H.264 Video
+
+       RTP Dynamic Payload Numbers currently used in FreeSWITCH and what for.
+
+       96  - AMR
+       97  - iLBC (30)
+       98  - iLBC (20)
+       99  - Speex 8kHz, 16kHz, 32kHz
+       100 -
+       101 - telephone-event
+       102 -
+       103 -
+       104 -
+       105 -
+       106 - BV16
+       107 - G722.1 (16kHz)
+       108 -
+       109 -
+       110 -
+       111 -
+       112 -
+       113 -
+       114 - CELT 32kHz, 48kHz
+       115 - G722.1C (32kHz)
+       116 -
+       117 - SILK 8kHz
+       118 - SILK 12kHz
+       119 - SILK 16kHz
+       120 - SILK 24kHz
+       121 - AAL2-G726-40 &amp;&amp; G726-40
+       122 - AAL2-G726-32 &amp;&amp; G726-32
+       123 - AAL2-G726-24 &amp;&amp; G726-24
+       124 - AAL2-G726-16 &amp;&amp; G726-16
+       125 -
+       126 -
+       127 - BV32
+
+  --&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="global_codec_prefs=G722,PCMU,PCMA,GSM"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="outbound_codec_prefs=PCMU,PCMA,GSM"/&gt;
+
+  &lt;!--
+      xmpp_client_profile and xmpp_server_profile
+      xmpp_client_profile can be any string.
+      xmpp_server_profile is appended to "dingaling_" to form the database name
+      containing the "subscriptions" table.
+      used by: dingaling.conf.xml enum.conf.xml
+  --&gt;
+
+  &lt;X-PRE-PROCESS cmd="set" data="xmpp_client_profile=xmppc"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="xmpp_server_profile=xmpps"/&gt;
+  &lt;!--
+       THIS IS ONLY USED FOR DINGALING
+
+       bind_server_ip
+
+       Can be an ip address, a dns name, or "auto".
+       This determines an ip address available on this host to bind.
+       If you are separating RTP and SIP traffic, you will want to have
+       use different addresses where this variable appears.
+       Used by: dingaling.conf.xml
+  --&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="bind_server_ip=auto"/&gt;
+
+  &lt;!-- NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
+
+       If you're going to load test FreeSWITCH please input real IP addresses
+       for external_rtp_ip and external_sip_ip
+  --&gt;
+
+  &lt;!-- external_rtp_ip
+       Can be an one of:
+           ip address: "12.34.56.78"
+           a stun server lookup: "stun:stun.server.com"
+           a DNS name: "host:host.server.com"
+       where fs.mydomain.com is a DNS A record-useful when fs is on
+       a dynamic IP address, and uses a dynamic DNS updater.
+       If unspecified, the bind_server_ip value is used.
+       Used by: sofia.conf.xml dingaling.conf.xml
+  --&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="external_rtp_ip=stun:stun.freeswitch.org"/&gt;
+
+  &lt;!-- external_sip_ip
+      Used as the public IP address for SDP.
+       Can be an one of:
+           ip address: "12.34.56.78"
+           a stun server lookup: "stun:stun.server.com"
+           a DNS name: "host:host.server.com"
+       where fs.mydomain.com is a DNS A record-useful when fs is on
+       a dynamic IP address, and uses a dynamic DNS updater.
+       If unspecified, the bind_server_ip value is used.
+       Used by: sofia.conf.xml dingaling.conf.xml
+  --&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="external_sip_ip=stun:stun.freeswitch.org"/&gt;
+
+  &lt;!-- unroll-loops
+       Used to turn on sip loopback unrolling.
+  --&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="unroll_loops=true"/&gt;
+
+  &lt;!-- outbound_caller_id and outbound_caller_name
+       The caller ID telephone number we should use when calling out.
+       Used by: conference.conf.xml and user directory for default
+       outbound callerid name and number.
+  --&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="outbound_caller_name=FreeSWITCH"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="outbound_caller_id=0000000000"/&gt;
+
+  &lt;!-- various debug and defaults --&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="call_debug=false"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="console_loglevel=info"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="default_areacode=918"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="default_country=US"/&gt;
+
+  &lt;!-- if false or undefined, the destination number is included in presence NOTIFY dm:note.
+       if true, the destination number is not included --&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="presence_privacy=false"/&gt;
+
+  &lt;X-PRE-PROCESS cmd="set" data="be-ring=%(1000,3000,425)"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="ca-ring=%(2000,4000,440,480)"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="cn-ring=%(1000,4000,450)"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="cy-ring=%(1500,3000,425)"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="cz-ring=%(1000,4000,425)"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="de-ring=%(1000,4000,425)"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="dk-ring=%(1000,4000,425)"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="dz-ring=%(1500,3500,425)"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="eg-ring=%(2000,1000,475,375)"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="es-ring=%(1500,3000,425)"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="fi-ring=%(1000,4000,425)"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="fr-ring=%(1500,3500,440)"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="hk-ring=%(400,200,440,480);%(400,3000,440,480)"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="hu-ring=%(1250,3750,425)"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="il-ring=%(1000,3000,400)"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="in-ring=%(400,200,425,375);%(400,2000,425,375)"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="jp-ring=%(1000,2000,420,380)"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="ko-ring=%(1000,2000,440,480)"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="pk-ring=%(1000,2000,400)"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="pl-ring=%(1000,4000,425)"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="ro-ring=%(1850,4150,475,425)"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="rs-ring=%(1000,4000,425)"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="ru-ring=%(800,3200,425)"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="sa-ring=%(1200,4600,425)"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="tr-ring=%(2000,4000,450)"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="uk-ring=%(400,200,400,450);%(400,2000,400,450)"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="us-ring=%(2000,4000,440,480)"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="bong-ring=v=-7;%(100,0,941.0,1477.0);v=-7;&gt;=2;+=.1;%(1400,0,350,440)"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="sit=%(274,0,913.8);%(274,0,1370.6);%(380,0,1776.7)"/&gt;
+  &lt;!--
+      Setting up your default sip provider is easy.
+      Below are some values that should work in most cases.
+
+      These are for conf/directory/default/example.com.xml
+  --&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="default_provider=example.com"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="default_provider_username=joeuser"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="default_provider_password=password"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="default_provider_from_domain=example.com"/&gt;
+  &lt;!-- true or false --&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="default_provider_register=false"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="default_provider_contact=5000"/&gt;
+
+  &lt;!--
+      SIP and TLS settings. http://wiki.freeswitch.org/wiki/Tls
+  --&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="sip_tls_version=tlsv1"/&gt;
+
+  &lt;!-- Internal SIP Profile --&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="internal_auth_calls=true"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="internal_sip_port=5090"/&gt; &lt;!--CUSTOMIZE--&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="internal_tls_port=5061"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="internal_ssl_enable=false"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="internal_ssl_dir=$${base_dir}/conf/ssl"/&gt;
+
+  &lt;!-- External SIP Profile --&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="external_auth_calls=false"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="external_sip_port=5091"/&gt; &lt;!--CUSTOMIZE--&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="external_tls_port=5081"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="external_ssl_enable=false"/&gt;
+  &lt;X-PRE-PROCESS cmd="set" data="external_ssl_dir=$${base_dir}/conf/ssl"/&gt;
+&lt;/include&gt;
+
+
+</pre>
+<div class='vspace'></div><hr />
+<h4>/usr/local/freeswitch/conf/autoload_configs/modules.conf.xml</h4>
+<p>This file controls which FreeSWITCH modules are loaded at startup time.
+</p>
+<p class='vspace'>No changes from standard original FreeSWITCH configuration, just be sure mod_lua is not commented out. We use Lua for database user management.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+
+&lt;configuration name="modules.conf" description="Modules"&gt;
+  &lt;modules&gt;
+
+    &lt;!-- Loggers (I'd load these first) --&gt;
+    &lt;load module="mod_console"/&gt;
+    &lt;load module="mod_logfile"/&gt;
+    &lt;!-- &lt;load module="mod_syslog"/&gt; --&gt;
+
+    &lt;!--&lt;load module="mod_yaml"/&gt;--&gt;
+
+    &lt;!-- Multi-Faceted --&gt;
+    &lt;!-- mod_enum is a dialplan interface, an application interface and an api command interface --&gt;
+    &lt;load module="mod_enum"/&gt;
+
+    &lt;!-- XML Interfaces --&gt;
+    &lt;!-- &lt;load module="mod_xml_rpc"/&gt; --&gt;
+    &lt;!-- &lt;load module="mod_xml_curl"/&gt; --&gt;
+    &lt;!-- &lt;load module="mod_xml_cdr"/&gt; --&gt;
+    &lt;!-- &lt;load module="mod_xml_scgi"/&gt; --&gt;
+
+    &lt;!-- Event Handlers --&gt;
+    &lt;load module="mod_cdr_csv"/&gt;
+    &lt;!-- &lt;load module="mod_cdr_sqlite"/&gt; --&gt;
+    &lt;!-- &lt;load module="mod_event_multicast"/&gt; --&gt;
+    &lt;load module="mod_event_socket"/&gt;
+    &lt;!-- &lt;load module="mod_event_zmq"/&gt; --&gt;
+    &lt;!-- &lt;load module="mod_zeroconf"/&gt; --&gt;
+    &lt;!-- &lt;load module="mod_erlang_event"/&gt; --&gt;
+    &lt;!-- &lt;load module="mod_snmp"/&gt; --&gt;
+
+    &lt;!-- Directory Interfaces --&gt;
+    &lt;!-- &lt;load module="mod_ldap"/&gt; --&gt;
+
+    &lt;!-- Endpoints --&gt;
+    &lt;!-- &lt;load module="mod_dingaling"/&gt; --&gt;
+    &lt;!-- &lt;load module="mod_portaudio"/&gt; --&gt;
+    &lt;!-- &lt;load module="mod_alsa"/&gt; --&gt;
+    &lt;load module="mod_sofia"/&gt;
+    &lt;load module="mod_loopback"/&gt;
+    &lt;!-- &lt;load module="mod_woomera"/&gt; --&gt;
+    &lt;!-- &lt;load module="mod_freetdm"/&gt; --&gt;
+    &lt;!-- &lt;load module="mod_openzap"/&gt; --&gt;
+    &lt;!-- &lt;load module="mod_unicall"/&gt; --&gt;
+    &lt;!-- &lt;load module="mod_skinny"/&gt; --&gt;
+    &lt;!-- &lt;load module="mod_khomp"/&gt;   --&gt;
+    &lt;!-- &lt;load module="mod_rtmp"/&gt;   --&gt;
+
+    &lt;!-- Applications --&gt;
+    &lt;load module="mod_commands"/&gt;
+    &lt;load module="mod_conference"/&gt;
+    &lt;load module="mod_db"/&gt;
+    &lt;load module="mod_dptools"/&gt;
+    &lt;load module="mod_expr"/&gt;
+    &lt;load module="mod_fifo"/&gt;
+    &lt;load module="mod_hash"/&gt;
+    &lt;load module="mod_voicemail"/&gt;
+    &lt;!--&lt;load module="mod_directory"/&gt;--&gt;
+    &lt;!--&lt;load module="mod_distributor"/&gt;--&gt;
+    &lt;!--&lt;load module="mod_lcr"/&gt;--&gt;
+    &lt;load module="mod_esf"/&gt;
+    &lt;load module="mod_fsv"/&gt;
+    &lt;load module="mod_cluechoo"/&gt;
+    &lt;load module="mod_valet_parking"/&gt;
+    &lt;!--&lt;load module="mod_fsk"/&gt;--&gt;
+    &lt;!--&lt;load module="mod_spy"/&gt;--&gt;
+    &lt;!--&lt;load module="mod_random"/&gt;--&gt;
+    &lt;load module="mod_httapi"/&gt;
+
+    &lt;!-- SNOM Module --&gt;
+    &lt;!--&lt;load module="mod_snom"/&gt;--&gt;
+
+    &lt;!-- This one only works on Linux for now --&gt;
+    &lt;!--&lt;load module="mod_ladspa"/&gt;--&gt;
+
+    &lt;!-- Dialplan Interfaces --&gt;
+    &lt;!-- &lt;load module="mod_dialplan_directory"/&gt; --&gt;
+    &lt;load module="mod_dialplan_xml"/&gt;
+    &lt;load module="mod_dialplan_asterisk"/&gt;
+
+    &lt;!-- Codec Interfaces --&gt;
+    &lt;load module="mod_spandsp"/&gt;
+    &lt;load module="mod_g723_1"/&gt;
+    &lt;load module="mod_g729"/&gt;
+    &lt;load module="mod_amr"/&gt;
+    &lt;!--&lt;load module="mod_ilbc"/&gt;--&gt;
+    &lt;load module="mod_speex"/&gt;
+    &lt;load module="mod_h26x"/&gt;
+    &lt;load module="mod_vp8"/&gt;
+    &lt;!--&lt;load module="mod_siren"/&gt;--&gt;
+    &lt;!--&lt;load module="mod_isac"/&gt;--&gt;
+    &lt;!--&lt;load module="mod_celt"/&gt;--&gt;
+    &lt;!--&lt;load module="mod_opus"/&gt;--&gt;
+
+    &lt;!-- File Format Interfaces --&gt;
+    &lt;load module="mod_sndfile"/&gt;
+    &lt;load module="mod_native_file"/&gt;
+    &lt;!-- &lt;load module="mod_shell_stream"/&gt; --&gt;
+    &lt;!--For icecast/mp3 streams/files--&gt;
+    &lt;!--&lt;load module="mod_shout"/&gt;--&gt;
+    &lt;!--For local streams (play all the files in a directory)--&gt;
+    &lt;load module="mod_local_stream"/&gt;
+    &lt;load module="mod_tone_stream"/&gt;
+
+    &lt;!-- Timers --&gt;
+    &lt;!-- &lt;load module="mod_timerfd"/&gt; --&gt;
+    &lt;!-- &lt;load module="mod_posix_timer"/&gt; --&gt;
+
+    &lt;!-- Languages --&gt;
+    &lt;load module="mod_spidermonkey"/&gt;
+    &lt;!-- &lt;load module="mod_perl"/&gt; --&gt;
+    &lt;!-- &lt;load module="mod_python"/&gt; --&gt;
+    &lt;!-- &lt;load module="mod_java"/&gt; --&gt;
+    &lt;load module="mod_lua"/&gt;
+
+    &lt;!-- ASR /TTS --&gt;
+    &lt;!-- &lt;load module="mod_flite"/&gt; --&gt;
+    &lt;!-- &lt;load module="mod_pocketsphinx"/&gt; --&gt;
+    &lt;!-- &lt;load module="mod_cepstral"/&gt; --&gt;
+    &lt;!-- &lt;load module="mod_tts_commandline"/&gt; --&gt;
+    &lt;!-- &lt;load module="mod_rss"/&gt; --&gt;
+
+    &lt;!-- Say --&gt;
+    &lt;load module="mod_say_en"/&gt;
+    &lt;!-- &lt;load module="mod_say_ru"/&gt; --&gt;
+    &lt;!-- &lt;load module="mod_say_zh"/&gt; --&gt;
+
+    &lt;!-- Third party modules --&gt;
+    &lt;!--&lt;load module="mod_nibblebill"/&gt;--&gt;
+    &lt;!--&lt;load module="mod_callcenter"/&gt;--&gt;
+
+  &lt;/modules&gt;
+&lt;/configuration&gt;
+
+
+</pre>
+<div class='vspace'></div><hr />
+<h4>/usr/local/freeswitch/conf/autoload_configs/lua.conf.xml</h4>
+<p>This is the configuration file for mod_lua.
+</p>
+<p class='vspace'>Start with the standard installed file, and then add the name of the script that will provide the XML data (in our case "xml_handler.lua") for which part of FreeSWITCH (in our case just for the "directory" part).
+</p>
+<p class='vspace'>You don't need to customize this file, but the lines added are marked as "CUSTOMIZE".
+</p>
+<div class='vspace'></div><pre class='escaped'>
+
+&lt;configuration name="lua.conf" description="LUA Configuration"&gt;
+  &lt;settings&gt;
+
+    &lt;!--
+    Specify local directories that will be searched for LUA modules
+    These entries will be pre-pended to the LUA_CPATH environment variable
+    --&gt;
+    &lt;!-- &lt;param name="module-directory" value="/usr/lib/lua/5.1/?.so"/&gt; --&gt;
+    &lt;!-- &lt;param name="module-directory" value="/usr/local/lib/lua/5.1/?.so"/&gt; --&gt;
+
+    &lt;!--
+    Specify local directories that will be searched for LUA scripts
+    These entries will be pre-pended to the LUA_PATH environment variable
+    --&gt;
+    &lt;!-- &lt;param name="script-directory" value="/usr/local/lua/?.lua"/&gt; --&gt;
+    &lt;!-- &lt;param name="script-directory" value="$${base_dir}/scripts/?.lua"/&gt; --&gt;
+
+    &lt;!--&lt;param name="xml-handler-script" value="/dp.lua"/&gt;--&gt;
+    &lt;!--&lt;param name="xml-handler-bindings" value="dialplan"/&gt;--&gt;
+
+    &lt;!--
+        The following options identifies a lua script that is launched
+        at startup and may live forever in the background.
+        You can define multiple lines, one for each script you
+        need to run.
+    --&gt;
+    &lt;!--&lt;param name="startup-script" value="startup_script_1.lua"/&gt;--&gt;
+    &lt;!--&lt;param name="startup-script" value="startup_script_2.lua"/&gt;--&gt;
+        &lt;param name="xml-handler-script" value="xml_handler.lua"/&gt; &lt;!--CUSTOMIZE--&gt;
+        &lt;param name="xml-handler-bindings" value="directory"/&gt; &lt;!--CUSTOMIZE--&gt;
+  &lt;/settings&gt;
+&lt;/configuration&gt;
+
+</pre>
+<div class='vspace'></div><hr />
+<h4>/usr/local/freeswitch/conf/autoload_configs/acl.conf.xml</h4>
+<p>This file configure the Access Control List (ACL) for FreeSWITCH.
+</p>
+<p class='vspace'>Starting from the original installed file, you insert one line that allows (without further checking for authorization) any call coming from the OpenSIPS IP address.
+</p>
+<p class='vspace'>You need to customize that IP address, follow "CUSTOMIZE".
+</p>
+<div class='vspace'></div><pre class='escaped'>
+
+&lt;configuration name="acl.conf" description="Network Lists"&gt;
+  &lt;network-lists&gt;
+    &lt;!--
+         These ACL's are automatically created on startup.
+
+         rfc1918.auto  - RFC1918 Space
+         nat.auto      - RFC1918 Excluding your local lan.
+         localnet.auto - ACL for your local lan.
+         loopback.auto - ACL for your local lan.
+    --&gt;
+
+    &lt;list name="lan" default="allow"&gt;
+      &lt;node type="deny" cidr="192.168.42.0/24"/&gt;
+      &lt;node type="allow" cidr="192.168.42.42/32"/&gt;
+    &lt;/list&gt;
+
+    &lt;!--
+        This will traverse the directory adding all users
+        with the cidr= tag to this ACL, when this ACL matches
+        the users variables and params apply as if they
+        digest authenticated.
+    --&gt;
+    &lt;list name="domains" default="deny"&gt;
+      &lt;!-- domain= is special it scans the domain from the directory to build the ACL --&gt;
+      &lt;node type="allow" domain="$${domain}"/&gt;
+      &lt;!-- use cidr= if you wish to allow ip ranges to this domains acl. --&gt;
+      &lt;!-- &lt;node type="allow" cidr="192.168.0.0/24"/&gt; --&gt;
+      &lt;node type="allow" cidr="192.168.1.110/24"/&gt; &lt;!--CUSTOMIZE--&gt;
+    &lt;/list&gt;
+
+  &lt;/network-lists&gt;
+&lt;/configuration&gt;
+
+</pre>
+<div class='vspace'></div><hr />
+<h4>/etc/odbcinst.ini</h4>
+<p>This is the ODBC configuration file that tells ODBC where to find drivers.
+</p>
+<p class='vspace'>You probably don't need to customize it. Just check that is like the following.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+
+[MySQL]
+Description     = MySQL driver
+Driver          = /usr/lib64/odbc/libmyodbc.so
+Setup           = /usr/lib64/odbc/libodbcmyS.so
+UsageCount      = 1
+FileUsage       = 1
+Threading       = 0
+
+</pre>
+<div class='vspace'></div><hr />
+<h4>/etc/odbc.ini</h4>
+<p>PAY ATTENTION TO THIS FILE !!!
+</p>
+<p class='vspace'>If you insert comments in it, it will not work (brain damaged, but true).
+</p>
+<p class='vspace'>You need at least to change "mydbpassword".
+</p>
+<p class='vspace'>DON'T INSERT COMMENTS
+</p>
+<div class='vspace'></div><pre class='escaped'>
+
+[opensips]
+Driver          = /usr/lib64/odbc/libmyodbc.so
+SERVER          = 127.0.0.1
+PORT            = 3306
+DATABASE        = opensips
+OPTION          = 67108864
+USER            = opensips
+PASSWORD        = mydbpassword
+
+
+</pre>
+<div class='vspace'></div><hr />
+<h3>PROFIT !</h3>
+<p>Restart it all
+</p>
+<div class='vspace'></div><pre class='escaped'>
+
+/etc/init.d/apache2 restart
+/etc/init.d/opensips restart
+/usr/local/freeswitch/bin/freeswitch -stop
+/usr/local/freeswitch/bin/freeswitch -nc -nonat
+
+</pre>
+<p class='vspace'>Go with your browser to http://webserveripaddress/cp
+</p>
+<p class='vspace'>Use OpenSIPS-CP to create a domain, then a couple users in that domain.
+</p>
+<p class='vspace'>Verify that all is working.
+</p>
+<p class='vspace'>They can call each other, calls goes to voicemail when needed, FreeSWITCH features can be accessed prepending * (star) to the corresponding FreeSWITCH extension (eg: *9664 for Music).
+</p>
+<p class='vspace'>Get rich!
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-OpenSIPSFreeSwitchIntegration?action=edit&restore=diff:1366822450:1366822450:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-OpenSIPSFreeSwitchIntegration?action=edit&restore=diff:1366822450:1366822450:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-OpenSIPSFreeSwitchIntegration?action=edit&restore=diff:1366822450:1366822450:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Tutorials-OpenSIPSFreeSwitchIntegration-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-OpenSIPSFreeSwitchIntegration?action=edit">Edit</a> |
+      <a rel="nofollow" href="Tutorials-OpenSIPSFreeSwitchIntegration-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-OpenSIPSFreeSwitchIntegration?action=diff">History</a> |
+      <a rel="nofollow" href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-OpenSIPSFreeSwitchIntegration?action=print  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-OpenSIPSFreeSwitchIntegration?action=print%27" tppabs="http://www.opensips.org/Documentation/Tutorials-OpenSIPSFreeSwitchIntegration?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on May 16, 2013, at 06:06 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

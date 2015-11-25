@@ -1,0 +1,610 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Core Statistics - 2.1 </title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='index,follow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   <p><a class='wikilink' title='Signup' href="javascript:if(confirm(%27http://www.opensips.org/Login/Signup?action=login  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Login/Signup?action=login%27" tppabs="http://www.opensips.org/Login/Signup?action=login">Login</a> | <a class='wikilink' title='Signup' href="javascript:if(confirm(%27http://www.opensips.org/Login/Signup  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Login/Signup%27" tppabs="http://www.opensips.org/Login/Signup">Register</a> 
+</p>
+
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Interface-CoreStatistics-2-1' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h5>Documentation -&gt; <a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a> -&gt; <a class='wikilink' title='OpenSIPS Manual - 2.1' href="Manual-2-1.htm" tppabs="http://www.opensips.org/Documentation/Manual-2-1">Manual devel</a> -&gt; Core Statistics</h5>
+<hr />
+<p><span style='font-size:83%'> Pages for other versions: <a class='wikilink' title='Core Statistics - devel' href="Interface-CoreStatistics-2-2.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreStatistics-2-2">devel</a> 2.1 <a class='wikilink' title='Core Statistics - 1.11' href="Interface-CoreStatistics-1-11.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreStatistics-1-11">1.11</a>  Older versions: <a class='wikilink' title='Core Statistics - ver 1.10' href="Interface-CoreStatistics-1-10.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreStatistics-1-10">1.10</a> <a class='wikilink' title='Core Statistics - ver 1.9' href="Interface-CoreStatistics-1-9.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreStatistics-1-9">1.9</a> <a class='wikilink' title='Core Statistics - ver 1.8' href="Interface-CoreStatistics-1-8.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreStatistics-1-8">1.8</a> <a class='wikilink' title='Core Statistics - ver 1.7' href="Interface-CoreStatistics-1-7.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreStatistics-1-7">1.7</a> <a class='wikilink' title='Core Statistics - ver 1.6' href="Interface-CoreStatistics-1-6.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreStatistics-1-6">1.6</a> <a class='wikilink' title='Core Statistics - ver 1.5' href="Interface-CoreStatistics-1-5.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreStatistics-1-5">1.5</a> <a class='wikilink' title='Core Statistics - ver 1.4' href="Interface-CoreStatistics-1-4.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreStatistics-1-4">1.4</a> </span>
+</p>
+<p class='vspace'><br />
+</p><table width='100%'><tr ><td  align='center'><span  style='color: #185662;'><span style='font-size:120%'><strong>Core Statistics v2.1 </strong></span></span></td></tr>
+</table>
+<div class='vspace'></div><table width='100%'><tr ><td  align='left'><a class='wikilink' title='Statistics Interface - devel' href="Interface-Statistics-2-1.htm" tppabs="http://www.opensips.org/Documentation/Interface-Statistics-2-1">Prev</a></td><td  align='right'><a class='wikilink' title='Binary Internal Interface - devel' href="Interface-Binary-2-1.htm" tppabs="http://www.opensips.org/Documentation/Interface-Binary-2-1">Next</a></td></tr>
+</table><hr />
+<div class='vspace'></div><div class='tocfloat'><p><a name='toc' id='toc'></a><b>Table of Content</b> (<a id="tocidtog" href="javascript:toggle('tocid');">hide</a>)</p><ol class='toc' id='tocid'><li>1.&nbsp;<a href='#toc1'>"CORE" class</a><ol class='toc'><li>1.1&nbsp;<a href='#toc2'>rcv_requests</a></li><li>1.2&nbsp;<a href='#toc3'>rcv_replies</a></li><li>1.3&nbsp;<a href='#toc4'>fwd_requests</a></li><li>1.4&nbsp;<a href='#toc5'>fwd_replies</a></li><li>1.5&nbsp;<a href='#toc6'>drop_requests</a></li><li>1.6&nbsp;<a href='#toc7'>drop_replies</a></li><li>1.7&nbsp;<a href='#toc8'>err_requests</a></li><li>1.8&nbsp;<a href='#toc9'>err_replies</a></li><li>1.9&nbsp;<a href='#toc10'>bad_URIs_rcvd</a></li><li>1.10&nbsp;<a href='#toc11'>unsupported_methods</a></li><li>1.11&nbsp;<a href='#toc12'>bad_msg_hdr</a></li><li>1.12&nbsp;<a href='#toc13'>timestamp</a></li></ol></li><li>2.&nbsp;<a href='#toc14'>"LOAD" class</a><ol class='toc'><li>2.1&nbsp;<a href='#toc15'>tcp-load</a></li><li>2.2&nbsp;<a href='#toc16'>udp:int_ip:int_port-load</a></li></ol></li><li>3.&nbsp;<a href='#toc17'>"NET" class</a><ol class='toc'><li>3.1&nbsp;<a href='#toc18'>waiting_udp</a></li><li>3.2&nbsp;<a href='#toc19'>waiting_tcp</a></li><li>3.3&nbsp;<a href='#toc20'>waiting_tls</a></li></ol></li><li>4.&nbsp;<a href='#toc21'>"SHMEM" class</a><ol class='toc'><li>4.1&nbsp;<a href='#toc22'>total_size</a></li><li>4.2&nbsp;<a href='#toc23'>used_size</a></li><li>4.3&nbsp;<a href='#toc24'>real_used_size</a></li><li>4.4&nbsp;<a href='#toc25'>max_used_size</a></li><li>4.5&nbsp;<a href='#toc26'>free_size</a></li><li>4.6&nbsp;<a href='#toc27'>fragments</a></li></ol></li><li>5.&nbsp;<a href='#toc28'>"PKMEM" class</a><ol class='toc'><li>5.1&nbsp;<a href='#toc29'>N-total_size</a></li><li>5.2&nbsp;<a href='#toc30'>N-used_size</a></li><li>5.3&nbsp;<a href='#toc31'>N-real_used_size</a></li><li>5.4&nbsp;<a href='#toc32'>N-max_used_size</a></li><li>5.5&nbsp;<a href='#toc33'>N-free_size</a></li><li>5.6&nbsp;<a href='#toc34'>N-fragments</a></li></ol></li></ol></div>
+<p class='vspace'>The <strong>OpenSIPS</strong> core exports several statistics, which are grouped into <strong>classes</strong>. To view all statistics which correspond to a class, fetch the "class:" statistic (e.g. <strong>opensipsctl fifo get_statistic load: core: shmem:</strong>)
+</p>
+<div class='vspace'></div><hr />
+<h3><a name='toc1' id='toc1'></a>1.&nbsp; "CORE" class</h3>
+<h4><a name='toc2' id='toc2'></a>1.1&nbsp;rcv_requests</h4>
+<p>Returns the total number of received requests by OpenSIPS.
+</p>
+<p class='vspace'>Example of usage through MI FIFO
+</p><pre class='escaped'>
+opensipsctl fifo get_statistics rcv_requests
+
+</pre>
+<p class='vspace'>Example of usage from script
+</p><pre class='escaped'>
+xlog("Total number of received requests = $stat(rcv_requests) \n");
+
+</pre>
+<div class='vspace'></div><h4><a name='toc3' id='toc3'></a>1.2&nbsp;rcv_replies</h4>
+<p>Returns the total number of received replies by OpenSIPS.
+</p>
+<p class='vspace'>Example of usage through MI FIFO
+</p><pre class='escaped'>
+opensipsctl fifo get_statistics rcv_replies
+
+</pre>
+<p class='vspace'>Example of usage from script
+</p><pre class='escaped'>
+xlog("Total number of received replies = $stat(rcv_replies) \n");
+
+</pre>
+<div class='vspace'></div><h4><a name='toc4' id='toc4'></a>1.3&nbsp;fwd_requests</h4>
+<p>Returns the number of stateless forwarded requests by OpenSIPS.
+</p>
+<p class='vspace'>Example of usage through MI FIFO
+</p><pre class='escaped'>
+opensipsctl fifo get_statistics fwd_requests
+
+</pre>
+<p class='vspace'>Example of usage from script
+</p><pre class='escaped'>
+xlog("Total number of forwarded requests = $stat(fwd_requests) \n");
+
+</pre>
+<div class='vspace'></div><h4><a name='toc5' id='toc5'></a>1.4&nbsp;fwd_replies</h4>
+<p>Returns the number of stateless forwarded replies by OpenSIPS.
+</p>
+<p class='vspace'>Example of usage through MI FIFO
+</p><pre class='escaped'>
+opensipsctl fifo get_statistics fwd_replies
+
+</pre>
+<p class='vspace'>Example of usage from script
+</p><pre class='escaped'>
+xlog("Total number of forwarded replies = $stat(fwd_replies) \n");
+
+</pre>
+<div class='vspace'></div><h4><a name='toc6' id='toc6'></a>1.5&nbsp;drop_requests</h4>
+<p>Returns the number of requests dropped even before entering the script routing logic.
+</p>
+<p class='vspace'>Example of usage through MI FIFO
+</p><pre class='escaped'>
+opensipsctl fifo get_statistics drop_requests
+
+</pre>
+<p class='vspace'>Example of usage from script
+</p><pre class='escaped'>
+xlog("Total number of dropped requests = $stat(drop_requests) \n");
+
+</pre>
+<div class='vspace'></div><h4><a name='toc7' id='toc7'></a>1.6&nbsp;drop_replies</h4>
+<p>Returns the number of replies dropped even before entering the script routing logic, or explicitly dropped in the
+onreply_route.
+</p>
+<p class='vspace'>Example of usage through MI FIFO
+</p><pre class='escaped'>
+opensipsctl fifo get_statistics drop_replies
+
+</pre>
+<p class='vspace'>Example of usage from script
+</p><pre class='escaped'>
+xlog("Total number of dropped replies = $stat(drop_replies) \n");
+
+</pre>
+<div class='vspace'></div><h4><a name='toc8' id='toc8'></a>1.7&nbsp;err_requests</h4>
+<p>Returns the number of bogus requests from SIP point of view ( eg. : No VIA header found )
+</p>
+<p class='vspace'>Example of usage through MI FIFO
+</p><pre class='escaped'>
+opensipsctl fifo get_statistics err_requests
+
+</pre>
+<p class='vspace'>Example of usage from script
+</p><pre class='escaped'>
+xlog("Total number of error requests = $stat(err_requests) \n");
+
+</pre>
+<div class='vspace'></div><h4><a name='toc9' id='toc9'></a>1.8&nbsp;err_replies</h4>
+<p>Returns the number of bogus replies from SIP point of view ( eg. : No VIA header found )
+</p>
+<p class='vspace'>Example of usage through MI FIFO
+</p><pre class='escaped'>
+opensipsctl fifo get_statistics err_replies
+
+</pre>
+<p class='vspace'>Example of usage from script
+</p><pre class='escaped'>
+xlog("Total number of error replies = $stat(err_replies) \n");
+
+</pre>
+<div class='vspace'></div><h4><a name='toc10' id='toc10'></a>1.9&nbsp;bad_URIs_rcvd</h4>
+<p>Returns the number of URIs that OpenSIPS failed to parse.
+</p>
+<p class='vspace'>Example of usage through MI FIFO
+</p><pre class='escaped'>
+opensipsctl fifo get_statistics bad_URIs_rcvd
+
+</pre>
+<p class='vspace'>Example of usage from script
+</p><pre class='escaped'>
+xlog("Total number of bad URIs detected = $stat(bad_URIs_rcvd) \n");
+
+</pre>
+<div class='vspace'></div><h4><a name='toc11' id='toc11'></a>1.10&nbsp;unsupported_methods</h4>
+<p>Returns the number of non-standard methods encountered by OpenSIPS while parsing SIP methods.
+</p>
+<p class='vspace'>Example of usage through MI FIFO
+</p><pre class='escaped'>
+opensipsctl fifo get_statistics unsupported_methods
+
+</pre>
+<p class='vspace'>Example of usage from script
+</p><pre class='escaped'>
+xlog("Total number of unsupported methods detected = $stat(unsupported_methods) \n");
+
+</pre>
+<div class='vspace'></div><h4><a name='toc12' id='toc12'></a>1.11&nbsp;bad_msg_hdr</h4>
+<p>Returns the number of SIP headers that OpenSIPS failed to parse.
+</p>
+<p class='vspace'>Example of usage through MI FIFO
+</p><pre class='escaped'>
+opensipsctl fifo get_statistics bad_msg_hdr
+</pre>
+<p class='vspace'>Example of usage from script
+</p><pre class='escaped'>
+xlog("Total number of headers that failed to parse = $stat(bad_msg_hdr) \n");
+
+</pre>
+<div class='vspace'></div><h4><a name='toc13' id='toc13'></a>1.12&nbsp;timestamp</h4>
+<p>Returns the number of seconds elapsed from OpenSIPS starting.
+</p>
+<p class='vspace'>Example of usage through MI FIFO
+</p><pre class='escaped'>
+opensipsctl fifo get_statistics timestamp
+</pre>
+<p class='vspace'>Example of usage from script
+</p><pre class='escaped'>
+xlog("OpenSIPS has been alive for $stat(timestamp) seconds \n");
+
+</pre>
+<div class='vspace'></div><hr />
+<h3><a name='toc14' id='toc14'></a>2.&nbsp; "LOAD" class</h3>
+<p>Statistics giving information on OpenSIPS load (busy children).
+</p>
+<div class='vspace'></div><h4><a name='toc15' id='toc15'></a>2.1&nbsp;tcp-load</h4>
+<p>Returns the percentage of TCP children that are awake and processing SIP messages.
+</p>
+<p class='vspace'>Example of usage through MI FIFO
+</p><pre class='escaped'>
+opensipsctl fifo get_statistics tcp-load
+
+</pre>
+<p class='vspace'>Example of usage from script
+</p><pre class='escaped'>
+xlog("The TCP load is $stat(tcp-load) \n");
+
+</pre>
+<div class='vspace'></div><h4><a name='toc16' id='toc16'></a>2.2&nbsp;udp:int_ip:int_port-load</h4>
+<p>Returns the percentage of UDP children that are awake and processing SIP messages on the specific UDP interface
+</p>
+<p class='vspace'>Example of usage through MI FIFO:
+</p><pre class='escaped'>
+If OpenSIPS has two listen directives :
+listen=udp:192.168.2.134:5060
+listen=udp:192.168.10.13:5090
+
+Then there will be two exported statistics, udp:192.168.2.134:5060-load and udp:192.168.10.13:5090-load, and each 
+will show the percentage of working children on the respective interfaces.
+
+opensipsctl fifo get_statistics udp:192.168.2.134:5060-load
+
+</pre>
+<p class='vspace'>Example of usage from script
+</p><pre class='escaped'>
+xlog("The UDP load on 192.168.2.134:5060 is $stat(udp:192.168.2.134:5060-load) \n");
+
+</pre>
+<div class='vspace'></div><hr />
+<h3><a name='toc17' id='toc17'></a>3.&nbsp; "NET" class</h3>
+<p>Statistics giving information about UDP, TCP and TLS buffers on interfaces that OpenSIPS is listening on.
+</p>
+<div class='vspace'></div><h4><a name='toc18' id='toc18'></a>3.1&nbsp;waiting_udp</h4>
+<p>Returns the number of bytes waiting to be consumed on UDP interfaces that OpenSIPS is listening on.
+</p>
+<p class='vspace'>Example of usage through MI FIFO
+</p><pre class='escaped'>
+opensipsctl fifo get_statistics waiting_udp
+
+</pre>
+<p class='vspace'>Example of usage from script
+</p><pre class='escaped'>
+xlog("The UDP waiting buffer size is $stat(waiting_udp) \n");
+
+</pre>
+<div class='vspace'></div><h4><a name='toc19' id='toc19'></a>3.2&nbsp;waiting_tcp</h4>
+<p>Returns the number of bytes waiting to be consumed on TCP interfaces that OpenSIPS is listening on.
+</p>
+<p class='vspace'>Example of usage through MI FIFO
+</p><pre class='escaped'>
+opensipsctl fifo get_statistics waiting_tcp
+
+</pre>
+<p class='vspace'>Example of usage from script
+</p><pre class='escaped'>
+xlog("The TCP waiting buffer size is $stat(waiting_tcp) \n");
+
+</pre>
+<div class='vspace'></div><h4><a name='toc20' id='toc20'></a>3.3&nbsp;waiting_tls</h4>
+<p>Returns the number of bytes waiting to be consumed on TLS interfaces that OpenSIPS is listening on.
+</p>
+<p class='vspace'>Example of usage through MI FIFO
+</p><pre class='escaped'>
+opensipsctl fifo get_statistics waiting_tls
+
+</pre>
+<p class='vspace'>Example of usage from script
+</p><pre class='escaped'>
+xlog("The TLS waiting buffer size is $stat(waiting_tls) \n");
+
+</pre>
+<div class='vspace'></div><hr />
+<h3><a name='toc21' id='toc21'></a>4.&nbsp; "SHMEM" class</h3>
+<p>Statistics giving information on the shared memory that OpenSIPS is using.
+</p>
+<div class='vspace'></div><h4><a name='toc22' id='toc22'></a>4.1&nbsp;total_size</h4>
+<p>Returns the total size of shared memory available to OpenSIPS processes.
+</p>
+<p class='vspace'>Example of usage through MI FIFO
+</p><pre class='escaped'>
+opensipsctl fifo get_statistics total_size
+
+</pre>
+<p class='vspace'>Example of usage from script
+</p><pre class='escaped'>
+xlog("Total size of SHMEM available is $stat(total_size) \n");
+
+</pre>
+<div class='vspace'></div><h4><a name='toc23' id='toc23'></a>4.2&nbsp;used_size</h4>
+<p>Returns the amount of shared memory requested and used by OpenSIPS processes.
+</p>
+<p class='vspace'>Example of usage through MI FIFO
+</p><pre class='escaped'>
+opensipsctl fifo get_statistics used_size
+
+</pre>
+<p class='vspace'>Example of usage from script
+</p><pre class='escaped'>
+xlog("SHMEM in use = $stat(used_size) \n");
+
+</pre>
+<div class='vspace'></div><h4><a name='toc24' id='toc24'></a>4.3&nbsp;real_used_size</h4>
+<p>Returns the amount of shared memory requested by OpenSIPS processes + malloc overhead
+</p>
+<p class='vspace'>Example of usage through MI FIFO
+</p><pre class='escaped'>
+opensipsctl fifo get_statistics real_used_size
+
+</pre>
+<p class='vspace'>Example of usage from script
+</p><pre class='escaped'>
+xlog("Real SHMEM used size is $stat(real_used_size) \n");
+
+</pre>
+<div class='vspace'></div><h4><a name='toc25' id='toc25'></a>4.4&nbsp;max_used_size</h4>
+<p>Returns the maximum amount of shared memory ever used by OpenSIPS processes.
+</p>
+<p class='vspace'>Example of usage through MI FIFO
+</p><pre class='escaped'>
+opensipsctl fifo get_statistics max_used_size
+
+</pre>
+<p class='vspace'>Example of usage from script
+</p><pre class='escaped'>
+xlog("The max SHMEM ever used is $stat(max_used_size) \n");
+
+</pre>
+<div class='vspace'></div><h4><a name='toc26' id='toc26'></a>4.5&nbsp;free_size</h4>
+<p>Returns the free memory available. Computed as total_size - real_used_size
+</p>
+<p class='vspace'>Example of usage through MI FIFO
+</p><pre class='escaped'>
+opensipsctl fifo get_statistics free_size
+
+</pre>
+<p class='vspace'>Example of usage from script
+</p><pre class='escaped'>
+xlog("Free SHMEM available is $stat(free_size) \n");
+
+</pre>
+<div class='vspace'></div><h4><a name='toc27' id='toc27'></a>4.6&nbsp;fragments</h4>
+<p>Returns the total number of fragments in the shared memory.
+</p>
+<p class='vspace'>Example of usage through MI FIFO
+</p><pre class='escaped'>
+opensipsctl fifo get_statistics fragments
+
+</pre>
+<p class='vspace'>Example of usage from script
+</p><pre class='escaped'>
+xlog("The total number of SHMEM fragments is $stat(fragments) \n");
+
+</pre>
+<div class='vspace'></div><hr />
+<h3><a name='toc28' id='toc28'></a>5.&nbsp; "PKMEM" class</h3>
+<p>Various private memory related statistics for each OpenSIPS process. Each "PKMEM" statistic is prefixed by a number, representing the index of an OpenSIPS process (0, 1, ...).
+</p>
+<div class='vspace'></div><h4><a name='toc29' id='toc29'></a>5.1&nbsp;N-total_size</h4>
+<p>Returns the total size of private memory available to OpenSIPS process #N.
+</p>
+<p class='vspace'>Example of usage through MI FIFO
+</p><pre class='escaped'>
+opensipsctl fifo get_statistics 0-total_size
+
+</pre>
+<p class='vspace'>Example of usage from script
+</p><pre class='escaped'>
+xlog("Total size of PKG memory available for process #0 is $stat(0-total_size) \n");
+
+</pre>
+<div class='vspace'></div><h4><a name='toc30' id='toc30'></a>5.2&nbsp;N-used_size</h4>
+<p>Returns the amount of private memory requested and used by OpenSIPS process #N.
+</p>
+<p class='vspace'>Example of usage through MI FIFO
+</p><pre class='escaped'>
+opensipsctl fifo get_statistics 0-used_size
+
+</pre>
+<p class='vspace'>Example of usage from script
+</p><pre class='escaped'>
+xlog("PKG mem in use for process #1 = $stat(1-used_size) \n");
+
+</pre>
+<div class='vspace'></div><h4><a name='toc31' id='toc31'></a>5.3&nbsp;N-real_used_size</h4>
+<p>Returns the amount of private memory requested by OpenSIPS process #N, including allocator-specific metadata
+</p>
+<p class='vspace'>Example of usage through MI FIFO
+</p><pre class='escaped'>
+opensipsctl fifo get_statistics 0-real_used_size
+
+</pre>
+<p class='vspace'>Example of usage from script
+</p><pre class='escaped'>
+xlog("Process #0 actually uses $stat(0-real_used_size) bytes of private memory\n");
+
+</pre>
+<div class='vspace'></div><h4><a name='toc32' id='toc32'></a>5.4&nbsp;N-max_used_size</h4>
+<p>Returns the maximum amount of private memory ever used by OpenSIPS process #N.
+</p>
+<p class='vspace'>Example of usage through MI FIFO
+</p><pre class='escaped'>
+opensipsctl fifo get_statistics 0-max_used_size
+
+</pre>
+<p class='vspace'>Example of usage from script
+</p><pre class='escaped'>
+xlog("The max PKG memory ever used for process #0 is $stat(0-max_used_size) \n");
+
+</pre>
+<div class='vspace'></div><h4><a name='toc33' id='toc33'></a>5.5&nbsp;N-free_size</h4>
+<p>Returns the free private memory available for OpenSIPS process #N. Computed as total_size - real_used_size
+</p>
+<p class='vspace'>Example of usage through MI FIFO
+</p><pre class='escaped'>
+opensipsctl fifo get_statistics 0-free_size
+
+</pre>
+<p class='vspace'>Example of usage from script
+</p><pre class='escaped'>
+xlog("Free PKG memory available for process #0 is $stat(0-free_size) \n");
+
+</pre>
+<div class='vspace'></div><h4><a name='toc34' id='toc34'></a>5.6&nbsp;N-fragments</h4>
+<p>Returns the currently available number of free fragments in the private memory for OpenSIPS process #N.
+</p>
+<p class='vspace'>Example of usage through MI FIFO
+</p><pre class='escaped'>
+opensipsctl fifo get_statistics 0-fragments
+
+</pre>
+<p class='vspace'>Example of usage from script
+</p><pre class='escaped'>
+xlog("The total number of PKG fragments is $stat(0-fragments) \n");
+
+</pre>
+</div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Interface-CoreStatistics-2-1-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreStatistics-2-1?action=edit">Edit</a> |
+      <a rel="nofollow" href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Interface-CoreStatistics-2-1?action=diff  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Interface-CoreStatistics-2-1?action=diff%27" tppabs="http://www.opensips.org/Documentation/Interface-CoreStatistics-2-1?action=diff">History</a> |
+      <a rel="nofollow" href="Interface-CoreStatistics-2-1-action=print.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreStatistics-2-1?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on July 09, 2014, at 12:51 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

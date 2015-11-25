@@ -1,0 +1,280 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+  <title>openSIPS | Documentation / Tutorials</title>
+  <link rel='stylesheet' href="print.css" tppabs="http://www.opensips.org/pub/skins/print/print.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+</head>
+<body>
+  <div id='printhead'>
+    <h3>From openSIPS</h3>
+    <h1 class='pagename'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation%27" tppabs="http://www.opensips.org/Documentation">Documentation: Tutorials</a></h1>
+  </div>
+<!--PageText-->
+<div id='wikitext'>
+<h5>Documentation -&gt; Tutorials</h5>
+<hr />
+<div class='tocfloat'><p><a name='toc' id='toc'></a><b>Table of Content</b> (<a id="tocidtog" href="javascript:toggle('tocid');">hide</a>)</p><ol class='toc' id='tocid'><li>1.&nbsp;<a href='#toc1'>OpenSIPS - Getting Started</a></li><li>2.&nbsp;<a href='#toc2'>Topology Hiding with OpenSIPS</a></li><li>3.&nbsp;<a href='#toc3'>Easier scripting with the script_helper module</a></li><li>4.&nbsp;<a href='#toc4'>Fraud detection with OpenSIPS 2.1</a></li><li>5.&nbsp;<a href='#toc5'>Message compression and compaction</a></li><li>6.&nbsp;<a href='#toc6'>Emergency calls using OpenSIPS</a></li><li>7.&nbsp;<a href='#toc7'>WebSocket Integration with OpenSIPS</a></li><li>8.&nbsp;<a href='#toc8'>Dynamic Routing with Failover</a></li><li>9.&nbsp;<a href='#toc9'>B2BUA</a></li><li>10.&nbsp;<a href='#toc10'>Presence Agent</a></li><li>11.&nbsp;<a href='#toc11'>Load-Balancing</a></li><li>12.&nbsp;<a href='#toc12'>Key-Value Interface</a></li><li>13.&nbsp;<a href='#toc13'>Event Interface</a></li><li>14.&nbsp;<a href='#toc14'>MemCache Usage</a></li><li>15.&nbsp;<a href='#toc15'>OpenSIPS - FreeSwitch Media Integration</a></li><li>16.&nbsp;<a href='#toc16'>Realtime OpenSIPS - Asterisk Integration</a></li><li>17.&nbsp;<a href='#toc17'>Concurrent calls limitation</a></li><li>18.&nbsp;<a href='#toc18'>TLS setup</a></li><li>19.&nbsp;<a href='#toc19'>Perl module usage</a><ol class='toc'><li>19.1&nbsp;<a href='#toc20'>Example: replace 183 early media reply with 180 (Ringing)</a></li></ol></li><li>20.&nbsp;<a href='#toc21'>A basic tutorial on RADIUS</a></li><li>21.&nbsp;<a href='#toc22'>OpenSIPS with Radius support</a></li><li>22.&nbsp;<a href='#toc23'>OpenSIPS and MediaProxy</a></li><li>23.&nbsp;<a href='#toc24'>OpenSIPS and MSRP integration</a></li><li>24.&nbsp;<a href='#toc25'>How to install opensips in Red Hat EL 5</a></li><li>25.&nbsp;<a href='#toc26'>SIP Redirect with script</a></li><li>26.&nbsp;<a href='#toc27'>OpenSIPS and fail2ban</a></li><li>27.&nbsp;<a href='#toc28'>OpenSIPS, CentOS and MI_XMLRPC</a></li><li>28.&nbsp;<a href='#toc29'>OpenSIPS Tutorials from SmartVox</a></li><li>29.&nbsp;<a href='#toc30'>Distributed Load-Balancing with OpenSIPS and Redis (Spanish)</a></li><li>30.&nbsp;<a href='#toc31'>OpenSIPS and OpenXCAP Tutorial</a></li><li>31.&nbsp;<a href='#toc32'>Voice Transcoding with OpenSIPS and Sangoma D-series cards</a></li></ol></div>
+<div class='vspace'></div><h4><a name='toc1' id='toc1'></a>1.&nbsp; OpenSIPS - Getting Started</h4>
+<p>A crash course about how to do a quick installation of OpenSIPS ( downloading sources, compiling, installing, etc )  and OpenSIPS Control Panel ( installing, provisioning users ), and have a fully functional platform in a matter of minutes. 
+</p>
+<table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' href="Tutorials-GettingStarted-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-GettingStarted?action=print">ver 1.8.x</a></td></tr>
+</table>
+<div class='vspace'></div><hr />
+<div class='vspace'></div><h4><a name='toc2' id='toc2'></a>2.&nbsp; Topology Hiding with OpenSIPS</h4>
+<p>Short introduction on configuring and using the topology_hiding module in OpenSIPS
+</p>
+<table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' href="Tutorials-Topology-Hiding-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Topology-Hiding?action=print">ver 2.1</a></td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4><a name='toc3' id='toc3'></a>3.&nbsp; Easier scripting with the script_helper module</h4>
+<p>Module description and a complete usage example
+</p>
+<table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' href="Tutorials-ScriptHelper-1-11-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-ScriptHelper-1-11?action=print">ver 1.11</a></td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4><a name='toc4' id='toc4'></a>4.&nbsp; Fraud detection with OpenSIPS 2.1</h4>
+<p>Description of the new module along with a complete usage example
+</p>
+<table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' href="Tutorials-FraudDetection-2-1-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-FraudDetection-2-1?action=print">ver 2.1</a></td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4><a name='toc5' id='toc5'></a>5.&nbsp; Message compression and compaction</h4>
+<p>Module description and a complete usage example
+</p>
+<table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' href="Tutorials-Compression-2-1-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Compression-2-1?action=print">ver 2.1</a></td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4><a name='toc6' id='toc6'></a>6.&nbsp; Emergency calls using OpenSIPS</h4>
+<p>Architecture design and complete usage examples
+</p>
+<table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' href="Tutorials-Emergency-2-1-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Emergency-2-1?action=print">ver 2.1</a></td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4><a name='toc7' id='toc7'></a>7.&nbsp; WebSocket Integration with OpenSIPS</h4>
+<p>How to add Websocket capabilities to your existing OpenSIPS deployment.
+</p>
+<table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' href="Tutorials-WebSocket-2-1-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket-2-1?action=print">ver 2.1</a>&nbsp;</td><td  align='right'>&nbsp;</td><td  align='center'><a class='wikilink' href="Tutorials-WebSocket-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=print">ver older than 2.1</a></td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4><a name='toc8' id='toc8'></a>8.&nbsp; Dynamic Routing with Failover</h4>
+<p>How to configure OpenSips to route phone calls based on the dialed number.  This is a detailed tutorial on how to use the drouting module with mysql and includes failover support.  It does not include load balancing.
+</p>
+<table border='0' cellspacing='5' ><tr ><td  align='center'><a class='urllink' href="javascript:if(confirm(%27http://www.unixnews.net/2010/09/dynamic-routing-with-opensips.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.unixnews.net/2010/09/dynamic-routing-with-opensips.html%27" tppabs="http://www.unixnews.net/2010/09/dynamic-routing-with-opensips.html" rel='nofollow'>ver 1.6.x</a></td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4><a name='toc9' id='toc9'></a>9.&nbsp; B2BUA</h4>
+<p>Which is the architecture of the B2BUA implementation, how to define service scenario documents and how to configure OpenSIPS to offer B2BUA services.
+</p>
+<table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' href="Tutorials-B2BUA-1-6-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-B2BUA-1-6?action=print">ver 1.6.x</a></td><td  align='center'><a class='wikilink' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-B2BUA?action=print  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-B2BUA?action=print%27" tppabs="http://www.opensips.org/Documentation/Tutorials-B2BUA?action=print">latest ver</a></td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4><a name='toc10' id='toc10'></a>10.&nbsp; Presence Agent</h4>
+<p>Presence Agent - design and configuration of Presence Agent in <strong>OpenSIPS</strong>
+</p>
+<table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' href="Tutorials-Presence-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence?action=print">latest ver</a></td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4><a name='toc11' id='toc11'></a>11.&nbsp; Load-Balancing</h4>
+<p>How to use the load-balancing module from <strong>OpenSIPS</strong> to do traffic routing based on the real load of the destinations.
+</p>
+<table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' href="Tutorials-LoadBalancing-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-LoadBalancing?action=print">ver 1.5.x</a>&nbsp;</td><td  align='center'>&nbsp;<a class='wikilink' href="Tutorials-LoadBalancing-1-9-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-LoadBalancing-1-9?action=print">ver 1.9.x</a></td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4><a name='toc12' id='toc12'></a>12.&nbsp; Key-Value Interface</h4>
+<p>How to use the Key-Value interface in <strong>OpenSIPS</strong> in order to store, persistently or not, key-value information
+</p>
+<table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-KeyValueInterface?action=print  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-KeyValueInterface?action=print%27" tppabs="http://www.opensips.org/Documentation/Tutorials-KeyValueInterface?action=print">latest ver</a></td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4><a name='toc13' id='toc13'></a>13.&nbsp; Event Interface</h4>
+<p>How to use <strong>OpenSIPS</strong> Event Interface in order to send events to external applications.
+</p>
+<table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' href="Tutorials-EventInterface-1-8-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-EventInterface-1-8?action=print">ver 1.8.x</a>&nbsp;&nbsp;</td><td  align='left'><a class='wikilink' href="Tutorials-EventInterface-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-EventInterface?action=print">latest ver</a></td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4><a name='toc14' id='toc14'></a>14.&nbsp; MemCache Usage</h4>
+<p>How to use the memcache support in <strong>OpenSIPS</strong> in order to reduce the number of DB queries (authentication for example)
+</p>
+<table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' href="Tutorials-MemoryCaching-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-MemoryCaching?action=print">ver 1.5.x</a></td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4><a name='toc15' id='toc15'></a>15.&nbsp; OpenSIPS - FreeSwitch Media Integration</h4>
+<p>This tutorial presents the concept and implementation of a realtime integration of OpenSIPS SIP server and FreeSWITCH media server. OpenSIPS is used a SIP server, while the purpose of FreeSWITCH is to provide a full set of media services - like voicemail, conference, announcements, etc
+</p>
+<table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-OpenSIPSFreeSwitchIntegration?action=print  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-OpenSIPSFreeSwitchIntegration?action=print%27" tppabs="http://www.opensips.org/Documentation/Tutorials-OpenSIPSFreeSwitchIntegration?action=print">ver 1.8.x</a></td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4><a name='toc16' id='toc16'></a>16.&nbsp; Realtime OpenSIPS - Asterisk Integration</h4>
+<p>How to implement a realtime integration of OpenSIPS SIP server and Asterisk media server for Voicemail, conference and announcement services.
+</p>
+<table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' href="Tutorials-OpenSIPSAsteriskIntegration-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-OpenSIPSAsteriskIntegration?action=print">ver 1.5.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-OpenSIPSAsteriskIntegration-1-8?action=print  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-OpenSIPSAsteriskIntegration-1-8?action=print%27" tppabs="http://www.opensips.org/Documentation/Tutorials-OpenSIPSAsteriskIntegration-1-8?action=print">ver 1.8.x</a></td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4><a name='toc17' id='toc17'></a>17.&nbsp; Concurrent calls limitation</h4>
+<p>How to control in <strong>OpenSIPS</strong> how many concurrent calls a user is allow to do.
+</p>
+<table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' href="Tutorials-ConcurrentCallsLimitation-1-5-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-ConcurrentCallsLimitation-1-5?action=print">ver 1.5.x</a></td><td  align='center'><a class='wikilink' href="Tutorials-ConcurrentCallsLimitation-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-ConcurrentCallsLimitation?action=print">ver 1.8.x</a></td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4><a name='toc18' id='toc18'></a>18.&nbsp; TLS setup</h4>
+<p>How to compile and configure the TLS support in <strong>OpenSIPS</strong> / <strong>OpenSER</strong> - script example included
+</p>
+<table border='0' cellspacing='5' ><tr ><td  align='center'><a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/tutorials/tls-1.2.x.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/tutorials/tls-1.2.x.html%27" tppabs="http://www.opensips.org/html/docs/tutorials/tls-1.2.x.html" rel='nofollow'>ver 1.2.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/tutorials/tls-1.2.x.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/tutorials/tls-1.2.x.html%27" tppabs="http://www.opensips.org/html/docs/tutorials/tls-1.2.x.html" rel='nofollow'>ver 1.3.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/tutorials/tls-1.4.x.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/tutorials/tls-1.4.x.html%27" tppabs="http://www.opensips.org/html/docs/tutorials/tls-1.4.x.html" rel='nofollow'>ver 1.4.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/tutorials/tls-1.4.x.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/tutorials/tls-1.4.x.html%27" tppabs="http://www.opensips.org/html/docs/tutorials/tls-1.4.x.html" rel='nofollow'>ver 1.5.x</a>&nbsp;&nbsp;</td><td  align='center'><a class='wikilink' href="Tutorials-TLS-2-1-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=print">ver 2.1.x</a></td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4><a name='toc19' id='toc19'></a>19.&nbsp; Perl module usage</h4>
+<h5><a name='toc20' id='toc20'></a>19.1&nbsp; Example: replace 183 early media reply with 180 (Ringing)</h5>
+<p>Example script showing how to replace SIP status replies on the fly, as this is not (yet?) possible within the OpenSIPS routing script: <a class='wikilink' href="Tutorials-Perl-183-to-180-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Perl-183-to-180?action=print">Replace 183 early media reply with 180 (Ringing)</a>
+</p>
+<div class='vspace'></div><hr />
+<h4><a name='toc21' id='toc21'></a>20.&nbsp; A basic tutorial on RADIUS</h4>
+<p>How to install, configure, integrate and use FreeRADIUS server and Radiusclient-ng with OpenSIPS modules for accounting and authorization.
+</p>
+<table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' href="Tutorials-Radius-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Radius?action=print">ver 1.6.x</a></td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4><a name='toc22' id='toc22'></a>21.&nbsp; OpenSIPS with Radius support</h4>
+<p>OpenSIPS with MySQL and FreeRADIUS integration and installation/configuration :
+</p>
+<table border='0' cellspacing='5' ><tr ><td  align='center'><a class='urllink' href="javascript:if(confirm(%27http://voiprookie.blogspot.com/2009/04/freeradius-and-mysql.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://voiprookie.blogspot.com/2009/04/freeradius-and-mysql.html%27" tppabs="http://voiprookie.blogspot.com/2009/04/freeradius-and-mysql.html" rel='nofollow'>ver 1.5.x</a></td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4><a name='toc23' id='toc23'></a>22.&nbsp; OpenSIPS and MediaProxy</h4>
+<p>MediaProxy 2.3.x and  OpenSIPS 1.5.x Integration:
+</p>
+<table border='0' cellspacing='5' ><tr ><td  align='center'><a class='urllink' href="javascript:if(confirm(%27http://voiprookie.blogspot.com/2009/04/blog-post.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://voiprookie.blogspot.com/2009/04/blog-post.html%27" tppabs="http://voiprookie.blogspot.com/2009/04/blog-post.html" rel='nofollow'>ver 1.5.x</a></td></tr>
+</table>
+<p class='vspace'>How to provide <a class='urllink' href="javascript:if(confirm(%27http://mediaproxy.ag-projects.com/projects/mediaproxy/wiki/ICE  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://mediaproxy.ag-projects.com/projects/mediaproxy/wiki/ICE%27" tppabs="http://mediaproxy.ag-projects.com/projects/mediaproxy/wiki/ICE" rel='nofollow'>ICE end-to-end NAT traversal support for RTP streams</a>
+</p>
+<div class='vspace'></div><hr />
+<h4><a name='toc24' id='toc24'></a>23.&nbsp; OpenSIPS and MSRP integration</h4>
+<ul><li><a class='wikilink' href="MSRP-Chat-action=print.htm" tppabs="http://www.opensips.org/Documentation/MSRP-Chat?action=print">SylkServer integration</a> for multiparty conferencing and XMPP gateway
+</li><li><a class='wikilink' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsMSRPRelay?action=print  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsMSRPRelay?action=print%27" tppabs="http://www.opensips.org/Resources/DocsMSRPRelay?action=print">MSRPRelay integration</a> for NAT traversal of MSRP chat and MSRP file transfers
+</li></ul><div class='vspace'></div><hr />
+<h4><a name='toc25' id='toc25'></a>24.&nbsp; How to install opensips in Red Hat EL 5</h4>
+<p>How to install opensips 1.5 in a Red Hat Enterprise Linux 5 platform with Mysql Support:
+</p>
+<table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' href="Tutorials-OpenSIPSonRedHat-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-OpenSIPSonRedHat?action=print">ver 1.5.x</a></td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4><a name='toc26' id='toc26'></a>25.&nbsp; SIP Redirect with script</h4>
+<p>How setup OpenSIPS as a SIP redirect using a external script - also restricting base on ip address:
+Please note since I am new to OpenSIPS this may need be cleaned up a bit.
+</p>
+<table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' href="Tutorials-Redirect-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Redirect?action=print">ver 1.6.x</a></td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4><a name='toc27' id='toc27'></a>26.&nbsp; OpenSIPS and fail2ban</h4>
+<p>This is a small tutorial so you can use fail2ban together with opensips to block via firewall the attackers that are using wrong authentication credentials
+</p>
+<table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' href="Tutorials-Fail2Ban-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Fail2Ban?action=print">ver any</a></td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4><a name='toc28' id='toc28'></a>27.&nbsp; OpenSIPS, CentOS and MI_XMLRPC</h4>
+<p>Small tutorial on how to compile OpenSIPS or CentOS. It includes a vauable tip on how to compile correctly the MI_XMLRPC module. 
+</p><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' href="Tutorials-InstallOnCentos-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-InstallOnCentos?action=print">ver 1.6.3</a></td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4><a name='toc29' id='toc29'></a>28.&nbsp; OpenSIPS Tutorials from SmartVox</h4>
+<p>A compilation of various tutorials covering topics like software installation (including MediaProxy on CentOS), authentication, clustering and comparing OpenSIPS with Asterisk provided by <a class='urllink' href="javascript:if(confirm(%27http://kb.smartvox.co.uk/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://kb.smartvox.co.uk/%27" tppabs="http://kb.smartvox.co.uk/" rel='nofollow'>SmartVox</a>, thanks to <strong>John Quick</strong>.
+</p><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='urllink' href="javascript:if(confirm(%27http://kb.smartvox.co.uk/category/opensips/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://kb.smartvox.co.uk/category/opensips/%27" tppabs="http://kb.smartvox.co.uk/category/opensips/" rel='nofollow'>Tutorial's Home Page</a></td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4><a name='toc30' id='toc30'></a>29.&nbsp; Distributed Load-Balancing with OpenSIPS and Redis (Spanish) </h4>
+<p>How to configure a cluster of OpenSIPS load balancers which communicates via Redis (in Spanish thanks to VozToVoice).
+</p><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='urllink' href="javascript:if(confirm(%27http://www.voztovoice.org/?q=node/585  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.voztovoice.org/?q=node/585%27" tppabs="http://www.voztovoice.org/?q=node/585" rel='nofollow'>ver 1.8.2</a></td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4><a name='toc31' id='toc31'></a>30.&nbsp; OpenSIPS and OpenXCAP Tutorial</h4>
+<p>A standalone Presence Agent tutorial using OpenSIPS and OpenXCAP provided by <a class='urllink' href="javascript:if(confirm(%27http://ag-projects.com/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://ag-projects.com/%27" tppabs="http://ag-projects.com/" rel='nofollow'>AG Projects</a>.
+</p><table border='0' cellspacing='5' ><tr ><td  align='center'><a class='urllink' href="javascript:if(confirm(%27http://openxcap.org/projects/openxcap/wiki/Configuration-new  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://openxcap.org/projects/openxcap/wiki/Configuration-new%27" tppabs="http://openxcap.org/projects/openxcap/wiki/Configuration-new" rel='nofollow'>Tutorial Page</a></td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4><a name='toc32' id='toc32'></a>31.&nbsp; Voice Transcoding with OpenSIPS and Sangoma D-series cards</h4>
+<p>Performing audio transcoding using OpenSIPS and Sangoma hardware
+</p>
+<table border='0' cellspacing='5' ><tr ><td  align='center'><a class='wikilink' href="Tutorials-SangomaVoiceTranscoding-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-SangomaVoiceTranscoding?action=print">ver 1.10</a></td></tr>
+</table>
+</div>
+
+  <div id='printfoot'>
+    <div class='from'>Retrieved from http://www.opensips.org/Documentation/Tutorials</div>
+    <div class='lastmod'>Page last modified on August 17, 2015, at 06:13 PM</div></div>
+<!--HTMLFooter-->
+</body>
+</html>

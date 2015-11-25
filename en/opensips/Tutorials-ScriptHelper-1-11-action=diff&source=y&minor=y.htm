@@ -1,0 +1,531 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Tutorials-ScriptHelper-1-11 | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Tutorials-ScriptHelper-1-11' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Tutorials-ScriptHelper-1-11 History</h2>
+  <p><a href="Tutorials-ScriptHelper-1-11-action=diff&source=y&minor=n.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-ScriptHelper-1-11?action=diff&source=y&minor=n">Hide minor edits</a> - <a href="Tutorials-ScriptHelper-1-11-action=diff&source=n&minor=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-ScriptHelper-1-11?action=diff&source=n&minor=y">Show changes to output</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>April 07, 2014, at 11:00 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 8 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>The purpose of this new module is to help you %blue%start in an easy way with the OpenSIPS script%%. %blue%The learning curve gets milder%% as the beginners can start with a simplified format of the script - the idea is to %blue%shift the main focus on routing the SIP initial requests%% (which define the service logic), while transparently handle a lot of &quot;standard&quot; SIP scripting logic, in order to both save script coding time and mitigate potential SIP scripting errors. This tutorial offers both a brief overview on the features of the new module and an example script.</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>The purpose of this new module is to help you %blue%start in an easy way with the OpenSIPS script%%. %blue%The learning curve gets milder%% as the beginners can start with a simplified format of the script - the idea is to %blue%shift the main focus on routing the SIP initial requests%% (which define the service logic), while transparently handling a lot of &quot;standard&quot; SIP scripting logic, in order to both save script coding time and mitigate potential SIP scripting errors. This tutorial offers both a brief overview on the features of the new module and an example script.</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-ScriptHelper-1-11-action=edit&restore=diff-1396861225-1396860539-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-ScriptHelper-1-11?action=edit&restore=diff:1396861225:1396860539:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 07, 2014, at 10:48 AM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Changed lines 8-9 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>The purpose of this new module is to transparently handle a lot of &quot;standard&quot; SIP scripting logic, in order to both save script coding time and mitigate potential SIP scripting errors. This tutorial offers both a brief overview on the features of the new module and an example script.<br /></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>The purpose of this new module is to help you %blue%start in an easy way with the OpenSIPS script%%. %blue%The learning curve gets milder%% as the beginners can start with a simplified format of the script - the idea is to %blue%shift the main focus on routing the SIP initial requests%% (which define the service logic), while transparently handle a lot of &quot;standard&quot; SIP scripting logic, in order to both save script coding time and mitigate potential SIP scripting errors. This tutorial offers both a brief overview on the features of the new module and an example script.<br /></div></div>
+        <div class='difftype'>Changed lines 13-14 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>* transparent handling for SIP requests<br />** sequential requests are silently handled and will not hit the script at all anymore - they are routed using loose_route()</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'># '''transparent handling of SIP sequential requests'''<br />** sequential requests are properly and silently handled - they will not hit the script at all anymore</div></div>
+        <div class='difftype'>Changed lines 16-17 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>** ''[optional]'' a special route may be run just before all sequential requests are routed out<br />* ''[optional]'' embedded dialog support</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>** for sequential SIP requests, the module is automatically doing loose_route() for proper routing.<br />** optionally a special route may be run just before all sequential requests are routed out<br /># '''automatic dialog support'''<br />** automatically create dialog support for the INVITE-based sessions</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-ScriptHelper-1-11-action=edit&restore=diff-1396860539-1396608434-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-ScriptHelper-1-11?action=edit&restore=diff:1396860539:1396608434:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 04, 2014, at 12:47 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 16 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>* ''[optional]'' a special route may be run just before all sequential requests are routed out</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>** ''[optional]'' a special route may be run just before all sequential requests are routed out</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-ScriptHelper-1-11-action=edit&restore=diff-1396608434-1396545979-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-ScriptHelper-1-11?action=edit&restore=diff:1396608434:1396545979:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 03, 2014, at 07:26 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 12-15 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>As stated in the [[ http://www.opensips.org/html/docs/modules/1.12.x/script_helper.html | documentation ]], the default features are:<br />* transparent handling for sequential requests (they will not hit the script at all anymore!)<br />* record-routing for initial SIP requests (i.e. OpenSIPS adds itself in the signaling path using a ''Record-Route'' header), after which the main route is triggered, just as before<br /></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>As stated in the [[ http://www.opensips.org/html/docs/modules/1.12.x/script_helper.html | documentation ]], the module currently features:<br />* transparent handling for SIP requests<br />** sequential requests are silently handled and will not hit the script at all anymore - they are routed using loose_route()<br />** for initial SIP requests, the module performs record-routing (i.e. OpenSIPS adds itself in the signaling path using a ''Record-Route'' header), after which the main route is triggered, just as before<br />* ''[optional]'' a special route may be run just before all sequential requests are routed out<br />* ''[optional]'' embedded dialog support<br />** for sequential requests within a dialog, a complete dialog matching (Call-ID, From-tag, To-tag) will be attempted if the quick 'did'-based Record-Route parameter matching fails<br /></div></div>
+        <div class='difftype'>Deleted lines 21-26:</div>
+        <div class='diffdel'><div class='diffmarkup'>Optionally, through a series of [[ http://www.opensips.org/html/docs/modules/1.12.x/script_helper.html#id249114 | module parameters ]], the script writer may include some additional logic:<br />* dialog support (for sequential requests within a dialog, a complete dialog matching (Call-ID, From-tag, To-tag) will be attempted if the quick 'did'-based Record-Route parameter matching fails)<br />* a special route to be run before all sequential requests are routed out<br /><br />\\<br /></div></div>
+        <div class='difftype'>Changed line 37 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>||[@</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>||%block black% [@</div></div>
+        <div class='difftype'>Changed line 102 from:</div>
+        <div class='diffdel'><div class='diffmarkup'></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>@][@</div></div>
+        <div class='difftype'>Added lines 104-105:</div>
+        <div class='diffadd'><div class='diffmarkup'><br /># this route will be run right before sequential requests are routed out</div></div>
+        <div class='difftype'>Changed line 115 from:</div>
+        <div class='diffdel'><div class='diffmarkup'></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>@][@</div></div>
+        <div class='difftype'>Added lines 326-327:</div>
+        <div class='diffadd'><div class='diffmarkup'><br /></div></div>
+        <div class='difftype'>Changed line 339 from:</div>
+        <div class='diffdel'><div class='diffmarkup'></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>@][@</div></div>
+        <div class='difftype'>Changed line 396 from:</div>
+        <div class='diffdel'><div class='diffmarkup'></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>@][@</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-ScriptHelper-1-11-action=edit&restore=diff-1396545979-1395747670-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-ScriptHelper-1-11?action=edit&restore=diff:1396545979:1395747670:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 25, 2014, at 12:41 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 223 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>    route(1);</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>    route(relay);</div></div>
+        <div class='difftype'>Changed line 245 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>        t_on_failure(&quot;1&quot;);</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>        t_on_failure(&quot;failed_call&quot;);</div></div>
+        <div class='difftype'>Changed line 433 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>    route(1);</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>    route(relay);</div></div>
+        <div class='difftype'>Changed line 455 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>        t_on_failure(&quot;1&quot;);</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>        t_on_failure(&quot;failed_call&quot;);</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-ScriptHelper-1-11-action=edit&restore=diff-1395747670-1395747283-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-ScriptHelper-1-11?action=edit&restore=diff:1395747670:1395747283:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 25, 2014, at 12:34 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 76-79 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>modparam(&quot;tm&quot;, &quot;restart_fr_on_each_reply&quot;, 0)<br />modparam(&quot;tm&quot;, &quot;disable_6xx_block&quot;, 1)<br />modparam(&quot;tm&quot;, &quot;onreply_avp_mode&quot;, 1)<br /></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'></div></div>
+        <div class='difftype'>Changed line 95 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>modparam(&quot;dialog&quot;, &quot;db_mode&quot;, 0)</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>modparam(&quot;dialog&quot;, &quot;db_mode&quot;, 1)</div></div>
+        <div class='difftype'>Deleted line 96:</div>
+        <div class='diffdel'><div class='diffmarkup'>modparam(&quot;dialog&quot;, &quot;profiles_no_value&quot;, &quot;inbound/s ; outbound/s ; shared/s&quot;)</div></div>
+        <div class='difftype'>Deleted line 99:</div>
+        <div class='diffdel'><div class='diffmarkup'>modparam(&quot;usrloc&quot;, &quot;nat_bflag&quot;, &quot;NAT&quot;)</div></div>
+        <div class='difftype'>Changed lines 104-105 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>modparam(&quot;registrar&quot;, &quot;tcp_persistent_flag&quot;, &quot;TCP_PERSIST_FLAG&quot;)<br /></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'></div></div>
+        <div class='difftype'>Changed lines 286-289 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>modparam(&quot;tm&quot;, &quot;restart_fr_on_each_reply&quot;, 0)<br />modparam(&quot;tm&quot;, &quot;disable_6xx_block&quot;, 1)<br />modparam(&quot;tm&quot;, &quot;onreply_avp_mode&quot;, 1)<br /></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'></div></div>
+        <div class='difftype'>Changed line 305 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>modparam(&quot;dialog&quot;, &quot;db_mode&quot;, 0)</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>modparam(&quot;dialog&quot;, &quot;db_mode&quot;, 1)</div></div>
+        <div class='difftype'>Deleted line 306:</div>
+        <div class='diffdel'><div class='diffmarkup'>modparam(&quot;dialog&quot;, &quot;profiles_no_value&quot;, &quot;inbound/s ; outbound/s ; shared/s&quot;)</div></div>
+        <div class='difftype'>Deleted line 309:</div>
+        <div class='diffdel'><div class='diffmarkup'>modparam(&quot;usrloc&quot;, &quot;nat_bflag&quot;, &quot;NAT&quot;)</div></div>
+        <div class='difftype'>Deleted line 313:</div>
+        <div class='diffdel'><div class='diffmarkup'>modparam(&quot;registrar&quot;, &quot;tcp_persistent_flag&quot;, &quot;TCP_PERSIST_FLAG&quot;)</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-ScriptHelper-1-11-action=edit&restore=diff-1395747283-1395746981-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-ScriptHelper-1-11?action=edit&restore=diff:1395747283:1395746981:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 25, 2014, at 12:29 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 36 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>%color=#ff7f00% Table: %black%'''Scenario init node examples'''</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>%color=#ff7f00% Table: %green%'''Scripting examples'''</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-ScriptHelper-1-11-action=edit&restore=diff-1395746981-1395746842-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-ScriptHelper-1-11?action=edit&restore=diff:1395746981:1395746842:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 25, 2014, at 12:27 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 114-115 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>modparam(&quot;script_helper&quot;, &quot;create_dialog_flags&quot;, &quot;Pp&quot;)<br /></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>modparam(&quot;script_helper&quot;, &quot;create_dialog_flags&quot;, &quot;PpB&quot;)<br /></div></div>
+        <div class='difftype'>Added lines 134-190:</div>
+        <div class='diffadd'><div class='diffmarkup'><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></div></div>
+        <div class='difftype'>Added lines 197-199:</div>
+        <div class='diffadd'><div class='diffmarkup'><br /><br /></div></div>
+        <div class='difftype'>Changed lines 327-339 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>route [my_seq_route]</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /># main request routing logic<br />route</div></div>
+        <div class='difftype'>Deleted lines 340-346:</div>
+        <div class='diffdel'><div class='diffmarkup'>    xlog(&quot;---- Sequential request handler ---- \n&quot;);<br />    xlog(&quot;$rm | Call-ID: $ci | FT: $ft | TT: $tt\n&quot;);<br />}<br /><br /># main request routing logic<br />route<br />{</div></div>
+        <div class='difftype'>Changed line 352 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>        if (loose_route())</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>        if (loose_route() || match_dialog())</div></div>
+        <div class='difftype'>Added lines 362-364:</div>
+        <div class='diffadd'><div class='diffmarkup'>            xlog(&quot;---- Sequential request handler ---- \n&quot;);<br />            xlog(&quot;$rm | Call-ID: $ci | FT: $ft | TT: $tt\n&quot;);<br /></div></div>
+        <div class='difftype'>Changed line 371 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>            if ( is_method(&quot;ACK&quot;) )</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>            if (is_method(&quot;ACK&quot;))</div></div>
+        <div class='difftype'>Changed line 373 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>                if ( t_check_trans() )</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>                if (t_check_trans())</div></div>
+        <div class='difftype'>Changed lines 414-416 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>    {<br />        create_dialog(&quot;Pp&quot;);<br />    }</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>        create_dialog(&quot;PpB&quot;);</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-ScriptHelper-1-11-action=edit&restore=diff-1395746842-1395745896-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-ScriptHelper-1-11?action=edit&restore=diff:1395746842:1395745896:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 25, 2014, at 12:11 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added lines 111-115:</div>
+        <div class='diffadd'><div class='diffmarkup'>loadmodule &quot;script_helper.so&quot;<br />modparam(&quot;script_helper&quot;, &quot;sequential_route&quot;, &quot;my_seq_route&quot;)<br />modparam(&quot;script_helper&quot;, &quot;use_dialog&quot;, 1)<br />modparam(&quot;script_helper&quot;, &quot;create_dialog_flags&quot;, &quot;Pp&quot;)<br /></div></div>
+        <div class='difftype'>Changed line 134 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>    if (has_totag())</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>    if (!uri == myself)</div></div>
+        <div class='difftype'>Changed lines 136-170 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>        if (loose_route())<br />        {<br />            if (is_method(&quot;INVITE&quot;))<br />            {<br />                # even if in most of the cases is useless, do RR for<br />                # re-INVITEs alos, as some buggy clients do change route set<br />                # during the dialog.<br />                record_route();<br />            }<br /><br />            # route it out to whatever destination was set by loose_route()<br />            # in $du (destination URI).<br />            route(relay);<br />        }<br />        else<br />        {<br />            if ( is_method(&quot;ACK&quot;) )<br />            {<br />                if ( t_check_trans() )<br />                {<br />                    # non loose-route, but stateful ACK; must be an ACK after <br />                    # a 487 or e.g. 404 from upstream server<br />                    t_relay();<br />                    exit;<br />                }<br />                else<br />                {<br />                    # ACK without matching transaction -&gt;<br />                    # ignore and discard<br />                    exit;<br />                }<br />            }<br />            sl_send_reply(&quot;404&quot;,&quot;Not here&quot;);<br />        }<br />        exit;</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>        append_hf(&quot;P-hint: outbound\r\n&quot;);<br />        route(relay);</div></div>
+        <div class='difftype'>Changed lines 140-141 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>    # CANCEL processing<br />    if (is_method(&quot;CANCEL&quot;))</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>    if (is_method(&quot;PUBLISH|SUBSCRIBE&quot;))</div></div>
+        <div class='difftype'>Changed lines 142-144 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>        if (t_check_trans())<br />            t_relay();<br /></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>        sl_send_reply(&quot;503&quot;, &quot;Service Unavailable&quot;);</div></div>
+        <div class='difftype'>Changed lines 146-152 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>    t_check_trans();<br /><br />    # record routing<br />    if (!is_method(&quot;REGISTER|MESSAGE&quot;))<br />        record_route();<br /><br />    if (!uri == myself)</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>    if (is_method(&quot;REGISTER&quot;))</div></div>
+        <div class='difftype'>Changed lines 148-149 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>        append_hf(&quot;P-hint: outbound\r\n&quot;);<br />        route(relay);</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>        if (!save(&quot;location&quot;))<br />            sl_reply_error();<br /><br />        exit;</div></div>
+        <div class='difftype'>Changed line 154 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>    if (is_method(&quot;INVITE&quot;) &amp;&amp; !has_totag())</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>    if ($rU == NULL)</div></div>
+        <div class='difftype'>Changed lines 156-158 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>        create_dialog(&quot;Pp&quot;);</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>        # request with no Username in RURI<br />        sl_send_reply(&quot;484&quot;,&quot;Address Incomplete&quot;);<br />        exit;</div></div>
+        <div class='difftype'>Changed lines 161-162 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>    if (is_method(&quot;PUBLISH|SUBSCRIBE&quot;))</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>    # do lookup with method filtering<br />    if (!lookup(&quot;location&quot;,&quot;&quot;))</div></div>
+        <div class='difftype'>Changed lines 164-165 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>        sl_send_reply(&quot;503&quot;, &quot;Service Unavailable&quot;);</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>        t_newtran();<br />        t_reply(&quot;404&quot;, &quot;Not Found&quot;);</div></div>
+        <div class='difftype'>Changed lines 169-189 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>    if (is_method(&quot;REGISTER&quot;))</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>    route(1);<br />}<br /><br />route [relay]<br />{<br />    # for INVITEs enable some additional helper routes<br />    if (is_method(&quot;INVITE&quot;))<br />        t_on_failure(&quot;failed_call&quot;);<br /><br />    if (!t_relay())<br />        send_reply(&quot;500&quot;, &quot;Internal Error&quot;);<br /><br />    exit;<br />}<br /><br />failure_route [failed_call]<br />{<br />    if (t_was_cancelled())<br />        exit;<br /><br />    if (next_branches())</div></div>
+        <div class='difftype'>Changed lines 191-194 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>        if (!save(&quot;location&quot;))<br />            sl_reply_error();<br /><br />        exit;</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>        t_on_failure(&quot;1&quot;);<br />        t_relay();</div></div>
+        <div class='difftype'>Deleted lines 193-209:</div>
+        <div class='diffdel'><div class='diffmarkup'><br />    if ($rU == NULL)<br />    {<br />        # request with no Username in RURI<br />        sl_send_reply(&quot;484&quot;,&quot;Address Incomplete&quot;);<br />        exit;<br />    }<br /><br />    # do lookup with method filtering<br />    if (!lookup(&quot;location&quot;,&quot;&quot;))<br />    {<br />        t_newtran();<br />        t_reply(&quot;404&quot;, &quot;Not Found&quot;);<br />        exit;<br />    }<br /><br />    route(1);</div></div>
+        <div class='difftype'>Deleted lines 194-217:</div>
+        <div class='diffdel'><div class='diffmarkup'><br />route [relay]<br />{<br />    # for INVITEs enable some additional helper routes<br />    if (is_method(&quot;INVITE&quot;))<br />        t_on_failure(&quot;failed_call&quot;);<br /><br />    if (!t_relay())<br />        send_reply(&quot;500&quot;, &quot;Internal Error&quot;);<br /><br />    exit;<br />}<br /><br />failure_route [failed_call]<br />{<br />    if (t_was_cancelled())<br />        exit;<br /><br />    if (next_branches())<br />    {<br />        t_on_failure(&quot;1&quot;);<br />        t_relay();<br />    }<br />}</div></div>
+        <div class='difftype'>Deleted lines 266-270:</div>
+        <div class='diffdel'><div class='diffmarkup'>loadmodule &quot;script_helper.so&quot;<br />modparam(&quot;script_helper&quot;, &quot;sequential_route&quot;, &quot;my_seq_route&quot;)<br />modparam(&quot;script_helper&quot;, &quot;use_dialog&quot;, 1)<br />modparam(&quot;script_helper&quot;, &quot;create_dialog_flags&quot;, &quot;Pp&quot;)<br /></div></div>
+        <div class='difftype'>Changed line 285 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>    if (!uri == myself)</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>    if (has_totag())</div></div>
+        <div class='difftype'>Changed lines 287-288 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>        append_hf(&quot;P-hint: outbound\r\n&quot;);<br />        route(relay);</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>        if (loose_route())<br />        {<br />            if (is_method(&quot;INVITE&quot;))<br />            {<br />                # even if in most of the cases is useless, do RR for<br />                # re-INVITEs alos, as some buggy clients do change route set<br />                # during the dialog.<br />                record_route();<br />            }<br /><br />            # route it out to whatever destination was set by loose_route()<br />            # in $du (destination URI).<br />            route(relay);<br />        }<br />        else<br />        {<br />            if ( is_method(&quot;ACK&quot;) )<br />            {<br />                if ( t_check_trans() )<br />                {<br />                    # non loose-route, but stateful ACK; must be an ACK after <br />                    # a 487 or e.g. 404 from upstream server<br />                    t_relay();<br />                    exit;<br />                }<br />                else<br />                {<br />                    # ACK without matching transaction -&gt;<br />                    # ignore and discard<br />                    exit;<br />                }<br />            }<br />            sl_send_reply(&quot;404&quot;,&quot;Not here&quot;);<br />        }<br />        exit;<br />    }<br /><br />    # CANCEL processing<br />    if (is_method(&quot;CANCEL&quot;))<br />    {<br />        if (t_check_trans())<br />            t_relay();<br /><br />        exit;<br />    }<br /><br />    t_check_trans();<br /><br />    # record routing<br />    if (!is_method(&quot;REGISTER|MESSAGE&quot;))<br />        record_route();<br /><br />    if (!uri == myself)<br />    {<br />        append_hf(&quot;P-hint: outbound\r\n&quot;);<br />        route(relay);<br />    }<br /><br />    if (is_method(&quot;INVITE&quot;) &amp;&amp; !has_totag())<br />    {<br />        create_dialog(&quot;Pp&quot;);</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-ScriptHelper-1-11-action=edit&restore=diff-1395745896-1395745728-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-ScriptHelper-1-11?action=edit&restore=diff:1395745896:1395745728:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 25, 2014, at 12:08 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Deleted lines 110-114:</div>
+        <div class='diffdel'><div class='diffmarkup'>loadmodule &quot;script_helper.so&quot;<br />modparam(&quot;script_helper&quot;, &quot;sequential_route&quot;, &quot;my_seq_route&quot;)<br />modparam(&quot;script_helper&quot;, &quot;use_dialog&quot;, 1)<br />modparam(&quot;script_helper&quot;, &quot;create_dialog_flags&quot;, &quot;Pp&quot;)<br /></div></div>
+        <div class='difftype'>Changed line 129 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>    if (!uri == myself)</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>    if (has_totag())</div></div>
+        <div class='difftype'>Changed lines 131-132 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>        append_hf(&quot;P-hint: outbound\r\n&quot;);<br />        route(relay);</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>        if (loose_route())<br />        {<br />            if (is_method(&quot;INVITE&quot;))<br />            {<br />                # even if in most of the cases is useless, do RR for<br />                # re-INVITEs alos, as some buggy clients do change route set<br />                # during the dialog.<br />                record_route();<br />            }<br /><br />            # route it out to whatever destination was set by loose_route()<br />            # in $du (destination URI).<br />            route(relay);<br />        }<br />        else<br />        {<br />            if ( is_method(&quot;ACK&quot;) )<br />            {<br />                if ( t_check_trans() )<br />                {<br />                    # non loose-route, but stateful ACK; must be an ACK after <br />                    # a 487 or e.g. 404 from upstream server<br />                    t_relay();<br />                    exit;<br />                }<br />                else<br />                {<br />                    # ACK without matching transaction -&gt;<br />                    # ignore and discard<br />                    exit;<br />                }<br />            }<br />            sl_send_reply(&quot;404&quot;,&quot;Not here&quot;);<br />        }<br />        exit;<br />    }<br /><br />    # CANCEL processing<br />    if (is_method(&quot;CANCEL&quot;))<br />    {<br />        if (t_check_trans())<br />            t_relay();<br /><br />        exit;<br />    }<br /><br />    t_check_trans();<br /><br />    # record routing<br />    if (!is_method(&quot;REGISTER|MESSAGE&quot;))<br />        record_route();<br /><br />    if (!uri == myself)<br />    {<br />        append_hf(&quot;P-hint: outbound\r\n&quot;);<br />        route(relay);<br />    }<br /><br />    if (is_method(&quot;INVITE&quot;) &amp;&amp; !has_totag())<br />    {<br />        create_dialog(&quot;Pp&quot;);</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-ScriptHelper-1-11-action=edit&restore=diff-1395745728-1395745371-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-ScriptHelper-1-11?action=edit&restore=diff:1395745728:1395745371:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 25, 2014, at 12:02 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 35-36 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>[@<br /></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>[[&lt;&lt;]]<br />%color=#ff7f00% Table: %black%'''Scenario init node examples'''<br />||border=1<br />|| '''With Script Helper''' || '''Classic Script''' ||<br />||[@</div></div>
+        <div class='difftype'>Changed lines 195-196 from:</div>
+        <div class='diffdel'><div class='diffmarkup'><br />@]</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>@]||[@<br />####### Global Parameters #########<br /><br />debug = 3<br /><br /># log to syslog by default<br />log_stderror = no<br />log_facility = LOG_LOCAL0<br /><br />fork = yes<br />children = 5<br />tcp_children = 1<br /><br /># comment the next line to enable the auto discovery of local aliases<br /># based on reverse DNS on IPs<br />auto_aliases = no<br /><br />listen = udp:192.168.2.133:5060 use_children 8<br /><br />disable_tcp = no<br />disable_tls = no<br /><br />exec_msg_threshold = 200000<br /><br />####### Modules Section ########<br /><br />mpath = &quot;/usr/local/lib/opensips/modules/&quot;<br /><br />loadmodule &quot;signaling.so&quot;                                                                 <br /><br />#### Stateless module<br />loadmodule &quot;sl.so&quot;<br /><br />#### Transaction Module<br />loadmodule &quot;tm.so&quot;<br />modparam(&quot;tm&quot;, &quot;fr_timeout&quot;, 10)<br />modparam(&quot;tm&quot;, &quot;fr_inv_timeout&quot;, 40)<br />modparam(&quot;tm&quot;, &quot;restart_fr_on_each_reply&quot;, 0)<br />modparam(&quot;tm&quot;, &quot;disable_6xx_block&quot;, 1)<br />modparam(&quot;tm&quot;, &quot;onreply_avp_mode&quot;, 1)<br /><br />loadmodule &quot;rr.so&quot;<br />modparam(&quot;rr&quot;, &quot;append_fromtag&quot;, 0)<br /><br />loadmodule &quot;maxfwd.so&quot;<br />loadmodule &quot;sipmsgops.so&quot;<br /><br />#### FIFO Management Interface<br />loadmodule &quot;mi_fifo.so&quot;<br />modparam(&quot;mi_fifo&quot;, &quot;fifo_name&quot;, &quot;/tmp/opensips_fifo&quot;)<br /><br />loadmodule &quot;db_mysql.so&quot;<br />modparam(&quot;db_mysql&quot;, &quot;exec_query_threshold&quot;, 200000)<br /><br />loadmodule &quot;uri.so&quot;<br />modparam(&quot;uri&quot;, &quot;use_uri_table&quot;, 0)<br /><br />loadmodule &quot;dialog.so&quot;<br />modparam(&quot;dialog&quot;, &quot;db_url&quot;, &quot;mysql://opensips:XXXXXXXXX@192.168.2.133/opensips&quot;)<br />modparam(&quot;dialog&quot;, &quot;db_mode&quot;, 0)<br />modparam(&quot;dialog&quot;, &quot;default_timeout&quot;, 3600)<br />modparam(&quot;dialog&quot;, &quot;profiles_no_value&quot;, &quot;inbound/s ; outbound/s ; shared/s&quot;)<br />modparam(&quot;dialog&quot;, &quot;ping_interval&quot;, 5)<br /><br />loadmodule &quot;usrloc.so&quot;<br />modparam(&quot;usrloc&quot;, &quot;nat_bflag&quot;, &quot;NAT&quot;)<br />modparam(&quot;usrloc&quot;, &quot;db_mode&quot;,   1)<br />modparam(&quot;usrloc&quot;, &quot;db_url&quot;,    &quot;mysql://opensips:XXXXXXXXX@192.168.2.133/opensips&quot;)<br /><br />loadmodule &quot;registrar.so&quot;<br />modparam(&quot;registrar&quot;, &quot;tcp_persistent_flag&quot;, &quot;TCP_PERSIST_FLAG&quot;)<br /><br />loadmodule &quot;script_helper.so&quot;<br />modparam(&quot;script_helper&quot;, &quot;sequential_route&quot;, &quot;my_seq_route&quot;)<br />modparam(&quot;script_helper&quot;, &quot;use_dialog&quot;, 1)<br />modparam(&quot;script_helper&quot;, &quot;create_dialog_flags&quot;, &quot;Pp&quot;)<br /><br />route [my_seq_route]<br />{<br />    xlog(&quot;---- Sequential request handler ---- \n&quot;);<br />    xlog(&quot;$rm | Call-ID: $ci | FT: $ft | TT: $tt\n&quot;);<br />}<br /><br /># main request routing logic<br />route<br />{<br />    $T_fr_timeout = 8;<br />    $T_fr_inv_timeout = 30;<br /><br />    if (!mf_process_maxfwd_header(&quot;10&quot;))<br />    {<br />        sl_send_reply(&quot;483&quot;,&quot;Too Many Hops&quot;);<br />        exit;<br />    }<br /><br />    if (!uri == myself)<br />    {<br />        append_hf(&quot;P-hint: outbound\r\n&quot;);<br />        route(relay);<br />    }<br /><br />    if (is_method(&quot;PUBLISH|SUBSCRIBE&quot;))<br />    {<br />        sl_send_reply(&quot;503&quot;, &quot;Service Unavailable&quot;);<br />        exit;<br />    }<br /><br />    if (is_method(&quot;REGISTER&quot;))<br />    {<br />        if (!save(&quot;location&quot;))<br />            sl_reply_error();<br /><br />        exit;<br />    }<br /><br />    if ($rU == NULL)<br />    {<br />        # request with no Username in RURI<br />        sl_send_reply(&quot;484&quot;,&quot;Address Incomplete&quot;);<br />        exit;<br />    }<br /><br />    # do lookup with method filtering<br />    if (!lookup(&quot;location&quot;,&quot;&quot;))<br />    {<br />        t_newtran();<br />        t_reply(&quot;404&quot;, &quot;Not Found&quot;);<br />        exit;<br />    }<br /><br />    route(1);<br />}<br /><br />route [relay]<br />{<br />    # for INVITEs enable some additional helper routes<br />    if (is_method(&quot;INVITE&quot;))<br />        t_on_failure(&quot;failed_call&quot;);<br /><br />    if (!t_relay())<br />        send_reply(&quot;500&quot;, &quot;Internal Error&quot;);<br /><br />    exit;<br />}<br /><br />failure_route [failed_call]<br />{<br />    if (t_was_cancelled())<br />        exit;<br /><br />    if (next_branches())<br />    {<br />        t_on_failure(&quot;1&quot;);<br />        t_relay();<br />    }<br />}<br />@]||</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-ScriptHelper-1-11-action=edit&restore=diff-1395745371-1395744675-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-ScriptHelper-1-11?action=edit&restore=diff:1395745371:1395744675:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 25, 2014, at 11:51 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 19 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>* dialog support</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>* dialog support (for sequential requests within a dialog, a complete dialog matching (Call-ID, From-tag, To-tag) will be attempted if the quick 'did'-based Record-Route parameter matching fails)</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-ScriptHelper-1-11-action=edit&restore=diff-1395744675-1395744500-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-ScriptHelper-1-11?action=edit&restore=diff:1395744675:1395744500:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 25, 2014, at 11:48 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Deleted line 12:</div>
+        <div class='diffdel'><div class='diffmarkup'>* record-routing for initial SIP requests (i.e. OpenSIPS adds itself in the signaling path using a ''Record-Route'' header)</div></div>
+        <div class='difftype'>Added line 14:</div>
+        <div class='diffadd'><div class='diffmarkup'>* record-routing for initial SIP requests (i.e. OpenSIPS adds itself in the signaling path using a ''Record-Route'' header), after which the main route is triggered, just as before</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-ScriptHelper-1-11-action=edit&restore=diff-1395744500-1395731044-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-ScriptHelper-1-11?action=edit&restore=diff:1395744500:1395731044:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 25, 2014, at 08:04 AM 
+        by <span class='diffauthor' title='92.80.108.223'>liviu</span> - </div>
+        <div class='difftype'>Changed line 13 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>* record-routing for initial SIP requests (i.e. OpenSIPS adds itself in the signaling path using a ''Route'' header)</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>* record-routing for initial SIP requests (i.e. OpenSIPS adds itself in the signaling path using a ''Record-Route'' header)</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-ScriptHelper-1-11-action=edit&restore=diff-1395731044-1395683259-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-ScriptHelper-1-11?action=edit&restore=diff:1395731044:1395683259:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 24, 2014, at 06:47 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 8 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>The purpose of this new module is to transparently handle a lot of &quot;standard&quot; SIP scripting logic, in order to both save script coding time and mitigate potential SIP scripting errors. This tutorial offers a brief overview on the features of the new module.</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>The purpose of this new module is to transparently handle a lot of &quot;standard&quot; SIP scripting logic, in order to both save script coding time and mitigate potential SIP scripting errors. This tutorial offers both a brief overview on the features of the new module and an example script.</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-ScriptHelper-1-11-action=edit&restore=diff-1395683259-1395682854-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-ScriptHelper-1-11?action=edit&restore=diff:1395683259:1395682854:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 24, 2014, at 06:40 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 94 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>modparam(&quot;dialog&quot;, &quot;db_url&quot;, &quot;mysql://root:c0unterstrikE@192.168.2.133/opensips&quot;)</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>modparam(&quot;dialog&quot;, &quot;db_url&quot;, &quot;mysql://opensips:XXXXXXXXX@192.168.2.133/opensips&quot;)</div></div>
+        <div class='difftype'>Changed lines 103-104 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>modparam(&quot;usrloc&quot;, &quot;db_url&quot;,    &quot;mysql://root:c0unterstrikE@192.168.2.133/opensips&quot;)<br /></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>modparam(&quot;usrloc&quot;, &quot;db_url&quot;,    &quot;mysql://opensips:XXXXXXXXX@192.168.2.133/opensips&quot;)<br /></div></div>
+        <div class='difftype'>Deleted line 106:</div>
+        <div class='diffdel'><div class='diffmarkup'>modparam(&quot;registrar&quot;, &quot;attr_avp&quot;, &quot;$avp(attr_avp)&quot;)</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-ScriptHelper-1-11-action=edit&restore=diff-1395682854-1395682722-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-ScriptHelper-1-11?action=edit&restore=diff:1395682854:1395682722:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 24, 2014, at 06:38 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 29-30 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>* initial and sequential SIP request routing (with script helper)<br />* dialog support (with script helper)</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>* initial and sequential SIP request routing (using the script helper)<br />* dialog support (using the script helper)</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-ScriptHelper-1-11-action=edit&restore=diff-1395682722-1395682699-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-ScriptHelper-1-11?action=edit&restore=diff:1395682722:1395682699:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 24, 2014, at 06:38 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added lines 32-33:</div>
+        <div class='diffadd'><div class='diffmarkup'><br />\\</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-ScriptHelper-1-11-action=edit&restore=diff-1395682699-1395682687-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-ScriptHelper-1-11?action=edit&restore=diff:1395682699:1395682687:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 24, 2014, at 06:38 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added lines 27-31:</div>
+        <div class='diffadd'><div class='diffmarkup'><br />SIP logic provided:<br />* initial and sequential SIP request routing (with script helper)<br />* dialog support (with script helper)<br />* also acts as a SIP registrar</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-ScriptHelper-1-11-action=edit&restore=diff-1395682687-1395681924-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-ScriptHelper-1-11?action=edit&restore=diff:1395682687:1395681924:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 24, 2014, at 06:25 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 42-43 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>/* comment the next line to enable the auto discovery of local aliases<br />   based on revers DNS on IPs */</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'># comment the next line to enable the auto discovery of local aliases<br /># based on reverse DNS on IPs</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-ScriptHelper-1-11-action=edit&restore=diff-1395681924-1395681883-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-ScriptHelper-1-11?action=edit&restore=diff:1395681924:1395681883:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 24, 2014, at 06:24 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added lines 28-187:</div>
+        <div class='diffadd'><div class='diffmarkup'>[@<br /><br />####### Global Parameters #########<br /><br />debug = 3<br /><br /># log to syslog by default<br />log_stderror = no<br />log_facility = LOG_LOCAL0<br /><br />fork = yes<br />children = 5<br />tcp_children = 1<br /><br />/* comment the next line to enable the auto discovery of local aliases<br />   based on revers DNS on IPs */<br />auto_aliases = no<br /><br />listen = udp:192.168.2.133:5060 use_children 8<br /><br />disable_tcp = no<br />disable_tls = no<br /><br />exec_msg_threshold = 200000<br /><br />####### Modules Section ########<br /><br />mpath = &quot;/usr/local/lib/opensips/modules/&quot;<br /><br />loadmodule &quot;signaling.so&quot;                                                                 <br /><br />#### Stateless module<br />loadmodule &quot;sl.so&quot;<br /><br />#### Transaction Module<br />loadmodule &quot;tm.so&quot;<br />modparam(&quot;tm&quot;, &quot;fr_timeout&quot;, 10)<br />modparam(&quot;tm&quot;, &quot;fr_inv_timeout&quot;, 40)<br />modparam(&quot;tm&quot;, &quot;restart_fr_on_each_reply&quot;, 0)<br />modparam(&quot;tm&quot;, &quot;disable_6xx_block&quot;, 1)<br />modparam(&quot;tm&quot;, &quot;onreply_avp_mode&quot;, 1)<br /><br />loadmodule &quot;rr.so&quot;<br />modparam(&quot;rr&quot;, &quot;append_fromtag&quot;, 0)<br /><br />loadmodule &quot;maxfwd.so&quot;<br />loadmodule &quot;sipmsgops.so&quot;<br /><br />#### FIFO Management Interface<br />loadmodule &quot;mi_fifo.so&quot;<br />modparam(&quot;mi_fifo&quot;, &quot;fifo_name&quot;, &quot;/tmp/opensips_fifo&quot;)<br /><br />loadmodule &quot;db_mysql.so&quot;<br />modparam(&quot;db_mysql&quot;, &quot;exec_query_threshold&quot;, 200000)<br /><br />loadmodule &quot;uri.so&quot;<br />modparam(&quot;uri&quot;, &quot;use_uri_table&quot;, 0)<br /><br />loadmodule &quot;dialog.so&quot;<br />modparam(&quot;dialog&quot;, &quot;db_url&quot;, &quot;mysql://root:c0unterstrikE@192.168.2.133/opensips&quot;)<br />modparam(&quot;dialog&quot;, &quot;db_mode&quot;, 0)<br />modparam(&quot;dialog&quot;, &quot;default_timeout&quot;, 3600)<br />modparam(&quot;dialog&quot;, &quot;profiles_no_value&quot;, &quot;inbound/s ; outbound/s ; shared/s&quot;)<br />modparam(&quot;dialog&quot;, &quot;ping_interval&quot;, 5)<br /><br />loadmodule &quot;usrloc.so&quot;<br />modparam(&quot;usrloc&quot;, &quot;nat_bflag&quot;, &quot;NAT&quot;)<br />modparam(&quot;usrloc&quot;, &quot;db_mode&quot;,   1)<br />modparam(&quot;usrloc&quot;, &quot;db_url&quot;,    &quot;mysql://root:c0unterstrikE@192.168.2.133/opensips&quot;)<br /><br />loadmodule &quot;registrar.so&quot;<br />modparam(&quot;registrar&quot;, &quot;tcp_persistent_flag&quot;, &quot;TCP_PERSIST_FLAG&quot;)<br />modparam(&quot;registrar&quot;, &quot;attr_avp&quot;, &quot;$avp(attr_avp)&quot;)<br /><br />loadmodule &quot;script_helper.so&quot;<br />modparam(&quot;script_helper&quot;, &quot;sequential_route&quot;, &quot;my_seq_route&quot;)<br />modparam(&quot;script_helper&quot;, &quot;use_dialog&quot;, 1)<br />modparam(&quot;script_helper&quot;, &quot;create_dialog_flags&quot;, &quot;Pp&quot;)<br /><br />route [my_seq_route]<br />{<br />    xlog(&quot;---- Sequential request handler ---- \n&quot;);<br />    xlog(&quot;$rm | Call-ID: $ci | FT: $ft | TT: $tt\n&quot;);<br />}<br /><br /># main request routing logic<br />route<br />{<br />    $T_fr_timeout = 8;<br />    $T_fr_inv_timeout = 30;<br /><br />    if (!mf_process_maxfwd_header(&quot;10&quot;))<br />    {<br />        sl_send_reply(&quot;483&quot;,&quot;Too Many Hops&quot;);<br />        exit;<br />    }<br /><br />    if (!uri == myself)<br />    {<br />        append_hf(&quot;P-hint: outbound\r\n&quot;);<br />        route(relay);<br />    }<br /><br />    if (is_method(&quot;PUBLISH|SUBSCRIBE&quot;))<br />    {<br />        sl_send_reply(&quot;503&quot;, &quot;Service Unavailable&quot;);<br />        exit;<br />    }<br /><br />    if (is_method(&quot;REGISTER&quot;))<br />    {<br />        if (!save(&quot;location&quot;))<br />            sl_reply_error();<br /><br />        exit;<br />    }<br /><br />    if ($rU == NULL)<br />    {<br />        # request with no Username in RURI<br />        sl_send_reply(&quot;484&quot;,&quot;Address Incomplete&quot;);<br />        exit;<br />    }<br /><br />    # do lookup with method filtering<br />    if (!lookup(&quot;location&quot;,&quot;&quot;))<br />    {<br />        t_newtran();<br />        t_reply(&quot;404&quot;, &quot;Not Found&quot;);<br />        exit;<br />    }<br /><br />    route(1);<br />}<br /><br />route [relay]<br />{<br />    # for INVITEs enable some additional helper routes<br />    if (is_method(&quot;INVITE&quot;))<br />        t_on_failure(&quot;failed_call&quot;);<br /><br />    if (!t_relay())<br />        send_reply(&quot;500&quot;, &quot;Internal Error&quot;);<br /><br />    exit;<br />}<br /><br />failure_route [failed_call]<br />{<br />    if (t_was_cancelled())<br />        exit;<br /><br />    if (next_branches())<br />    {<br />        t_on_failure(&quot;1&quot;);<br />        t_relay();<br />    }<br />}<br /><br />@]</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-ScriptHelper-1-11-action=edit&restore=diff-1395681883-1395678686-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-ScriptHelper-1-11?action=edit&restore=diff:1395681883:1395678686:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 24, 2014, at 05:31 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added lines 1-27:</div>
+        <div class='diffadd'><div class='diffmarkup'>!!!!! Documentation -&gt; [[Documentation.Tutorials | Tutorials ]] -&gt; Using the [[ http://www.opensips.org/html/docs/modules/1.12.x/script_helper.html | {+Script Helper+} ]] module <br />This page has been visited {$PageCount} times.<br />(:toc-float Table of Content:)<br />----<br /><br />!!!! Tutorial Overview<br /><br />The purpose of this new module is to transparently handle a lot of &quot;standard&quot; SIP scripting logic, in order to both save script coding time and mitigate potential SIP scripting errors. This tutorial offers a brief overview on the features of the new module.<br /><br />!!!! Current features<br /><br />As stated in the [[ http://www.opensips.org/html/docs/modules/1.12.x/script_helper.html | documentation ]], the default features are:<br />* record-routing for initial SIP requests (i.e. OpenSIPS adds itself in the signaling path using a ''Route'' header)<br />* transparent handling for sequential requests (they will not hit the script at all anymore!)<br /><br />\\<br /><br />Optionally, through a series of [[ http://www.opensips.org/html/docs/modules/1.12.x/script_helper.html#id249114 | module parameters ]], the script writer may include some additional logic:<br />* dialog support<br />* a special route to be run before all sequential requests are routed out<br /><br />\\<br /><br />Future directions for the module include adding authentication and NAT support.<br /><br />!!!! Example script<br /></div></div></div>
+      <div class='diffrestore'><a href="Tutorials-ScriptHelper-1-11-action=edit&restore=diff-1395678686-1395678686-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-ScriptHelper-1-11?action=edit&restore=diff:1395678686:1395678686:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Tutorials-ScriptHelper-1-11-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-ScriptHelper-1-11?action=edit">Edit</a> |
+      <a rel="nofollow" href="Tutorials-ScriptHelper-1-11-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-ScriptHelper-1-11?action=diff">History</a> |
+      <a rel="nofollow" href="Tutorials-ScriptHelper-1-11-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-ScriptHelper-1-11?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on April 07, 2014, at 11:00 AM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

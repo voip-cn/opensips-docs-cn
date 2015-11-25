@@ -1,0 +1,1034 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Modules - 2.2 | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Modules-2-2' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Modules-2-2 History</h2>
+  <p><a href="Modules-2-2-action=diff&source=n&minor=y.htm" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=diff&source=n&minor=y">Show minor edits</a> - <a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Modules-2-2?action=diff&source=y&minor=n  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Modules-2-2?action=diff&source=y&minor=n%27" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=diff&source=y&minor=n">Show changes to markup</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>September 25, 2015, at 09:55 AM 
+        by <span class='diffauthor' title='82.208.174.39'>82.208.174.39</span> - </div>
+        <div class='difftype'>Changed lines 68-69 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>EVENT_VIRTUAL</strong></td><td  align='left'>Aggregator of event backends (failover &amp; balancing)</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>FRAUD_DETECTION</strong></td><td  align='left'>Detects fraudulent calls</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>EVENT_VIRTUAL</strong></td><td  align='left'>Aggregator of event backends (failover &amp; balancing)</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+<tr ><td  align='left'><strong>FRAUD_DETECTION</strong></td><td  align='left'>Detects fraudulent calls</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>Changed line 112 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>PROTO_WS</strong></td><td  align='left'>WebSocket protocol module - implements WS transport for SIP</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>PROTO_WS</strong></td><td  align='left'>WebSocket protocol module - implements WS transport for SIP</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>Changed line 127 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>RTPENGINE</strong></td><td  align='left'>Connector to RTPengine external RTP relay</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>RTPENGINE</strong></td><td  align='left'>Connector to RTPengine external RTP relay</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>Changed line 146 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>TOPOLOGY_HIDING</strong></td><td  align='left'>Provides Topology Hiding capabilities</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>TOPOLOGY_HIDING</strong></td><td  align='left'>Provides Topology Hiding capabilities</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Modules-2-2-action=edit&restore=diff-1443167709-1443167433-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=edit&restore=diff:1443167709:1443167433:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>September 25, 2015, at 09:50 AM 
+        by <span class='diffauthor' title='82.208.174.39'>82.208.174.39</span> - </div>
+        <div class='difftype'>Changed line 68 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>EVENT_VIRTUAL</strong></td><td  align='center'>Aggregator of event backends (failover &amp; balancing)</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>EVENT_VIRTUAL</strong></td><td  align='left'>Aggregator of event backends (failover &amp; balancing)</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Modules-2-2-action=edit&restore=diff-1443167433-1443167405-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=edit&restore=diff:1443167433:1443167405:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>September 25, 2015, at 09:50 AM 
+        by <span class='diffauthor' title='82.208.174.39'>82.208.174.39</span> - </div>
+        <div class='difftype'>Added line 68:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>EVENT_VIRTUAL</strong></td><td  align='center'>Aggregator of event backends (failover &amp; balancing)</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Modules-2-2-action=edit&restore=diff-1443167405-1442497640-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=edit&restore=diff:1443167405:1442497640:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>September 17, 2015, at 03:47 PM 
+        by <span class='diffauthor' title='82.208.174.39'>razvancrainea</span> - </div>
+        <div class='difftype'>Added line 143:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>TLS_MGM</strong></td><td  align='left'>TLS management module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Modules-2-2-action=edit&restore=diff-1442497640-1428333833-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=edit&restore=diff:1442497640:1428333833:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 06, 2015, at 05:23 PM 
+        by <span class='diffauthor' title='89.120.101.121'>razvancrainea</span> - </div>
+        <div class='difftype'>Added line 49:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>DB_SQLITE</strong></td><td  align='left'>SQLITE3-backend for database API module</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Modules-2-2-action=edit&restore=diff-1428333833-1426757200-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=edit&restore=diff:1428333833:1426757200:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 19, 2015, at 10:26 AM 
+        by <span class='diffauthor' title='89.120.101.121'>razvancrainea</span> - </div>
+        <div class='difftype'>Deleted line 94:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>PDT</strong></td><td  align='left'>Prefix-to-Domain translator module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>Added line 160:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>PDT</strong></td><td  align='left'>Prefix-to-Domain translator module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Modules-2-2-action=edit&restore=diff-1426757200-1426509084-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=edit&restore=diff:1426757200:1426509084:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 01:31 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 67 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>FRAUD_DETECTION</strong></td><td  align='left'>Detects fraudulent calls</td><td  align='center'><span  style='color: #ffC000;'>alpha</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>FRAUD_DETECTION</strong></td><td  align='left'>Detects fraudulent calls</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Modules-2-2-action=edit&restore=diff-1426509084-1426136266-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=edit&restore=diff:1426509084:1426136266:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 12, 2015, at 05:57 AM 
+        by <span class='diffauthor' title='109.96.146.76'>liviu</span> - </div>
+        <div class='difftype'>Changed line 111 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>PROTO_WS</strong></td><td  align='left'>WebSocket protocol module - implements WS transport for SIP</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>PROTO_WS</strong></td><td  align='left'>WebSocket protocol module - implements WS transport for SIP</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Modules-2-2-action=edit&restore=diff-1426136266-1426093658-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=edit&restore=diff:1426136266:1426093658:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 06:07 PM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Added lines 107-111:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>PROTO_SCTP</strong></td><td  align='left'>SCTP protocol module - implements SCTP transport for SIP</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>PROTO_TCP</strong></td><td  align='left'>TCP protocol module - implements TCP-plain transport for SIP</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PROTO_TLS</strong></td><td  align='left'>TLS protocol module - implements TLS transport for SIP</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PROTO_UDP</strong></td><td  align='left'>UDP protocol module - implements UDP-plain transport for SIP</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PROTO_WS</strong></td><td  align='left'>WebSocket protocol module - implements WS transport for SIP</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Modules-2-2-action=edit&restore=diff-1426093658-1426082923-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=edit&restore=diff:1426093658:1426082923:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 03:08 PM 
+        by <span class='diffauthor' title='89.120.101.121'>razvancrainea</span> - </div>
+        <div class='difftype'>Deleted line 137:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>TLSOPS</strong></td><td  align='left'>TLS operations module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Modules-2-2-action=edit&restore=diff-1426082923-1426069252-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=edit&restore=diff:1426082923:1426069252:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 11:20 AM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Added line 140:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>TOPOLOGY_HIDING</strong></td><td  align='left'>Provides Topology Hiding capabilities</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Modules-2-2-action=edit&restore=diff-1426069252-1424887130-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=edit&restore=diff:1426069252:1424887130:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>February 25, 2015, at 06:58 PM 
+        by <span class='diffauthor' title='89.120.101.121'>razvancrainea</span> - </div>
+        <div class='difftype'>Changed line 44 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>DB_HTTP</strong></td><td  align='left'>HTTP-backend for DB API</td><td  align='center'><span class='color'>beta</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>DB_HTTP</strong></td><td  align='left'>HTTP-backend for DB API</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>Changed line 46 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>DB_ORACLE</strong></td><td  align='left'>ORACLE-backend for database API module</td><td  align='center'><span class='color'>beta</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>DB_ORACLE</strong></td><td  align='left'>ORACLE-backend for database API module</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>Added line 60:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>EMERGENCY</strong></td><td  align='left'>Emergency module</td><td  align='center'><span  style='color: #ffC000;'>alpha</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>Changed line 67 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>FRAUD_DETECTION</strong></td><td  align='left'>Detects fraudulent calls</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>FRAUD_DETECTION</strong></td><td  align='left'>Detects fraudulent calls</td><td  align='center'><span  style='color: #ffC000;'>alpha</span></td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Modules-2-2-action=edit&restore=diff-1424887130-1424796967-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=edit&restore=diff:1424887130:1424796967:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>February 24, 2015, at 05:56 PM 
+        by <span class='diffauthor' title='89.120.101.121'>razvancrainea</span> - </div>
+        <div class='difftype'>Added line 66:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>FRAUD_DETECTION</strong></td><td  align='left'>Detects fraudulent calls</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Modules-2-2-action=edit&restore=diff-1424796967-1422268102-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=edit&restore=diff:1424796967:1422268102:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 11:28 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 10 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><a class='wikilink' title='Script Transformations - 2.2' href="Script-Tran-2-2.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-2-2">Prev</a></td><td  align='right'><a class='wikilink' title='Function-Index-2-2' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Function-Index-2-2  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Function-Index-2-2%27" tppabs="http://www.opensips.org/Documentation/Function-Index-2-2">Next</a></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><a class='wikilink' title='Asynchronous Statements - 2.2' href="Script-Async-2-2.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2">Prev</a></td><td  align='right'><a class='wikilink' title='Function-Index-2-2' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Function-Index-2-2  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Function-Index-2-2%27" tppabs="http://www.opensips.org/Documentation/Function-Index-2-2">Next</a></td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Modules-2-2-action=edit&restore=diff-1422268102-1417169242-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=edit&restore=diff:1422268102:1417169242:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 28, 2014, at 11:07 AM 
+        by <span class='diffauthor' title='89.120.101.121'>ionutionita92</span> - </div>
+        <div class='difftype'>Added line 39:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>COMPRESSION</strong></td><td  align='left'>Message compression and compaction</td><td  align='center'><span  style='color: #ffC000;'>alpha</span></td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Modules-2-2-action=edit&restore=diff-1417169242-1416936837-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=edit&restore=diff:1417169242:1416936837:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 25, 2014, at 06:33 PM 
+        by <span class='diffauthor' title='89.120.101.121'>razvancrainea</span> - </div>
+        <div class='difftype'>Deleted line 22:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>AUTH_DIAMETER</strong></td><td  align='left'>DIAMETER-backend authentication module</td><td  align='center'><span  style='color: red;'>unmaintained</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>Deleted line 38:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>CLOSEDDIAL</strong></td><td  align='left'>PBX-like dialling features</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>Deleted line 82:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>MI_XMLRPC</strong></td><td  align='left'>XMLRPC support for Management Interface</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>Changed lines 146-153 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>XMPP</strong></td><td  align='left'>SIP-to-XMPP Gateway (SIP to Jabber/Google Talk)</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>XMPP</strong></td><td  align='left'>SIP-to-XMPP Gateway (SIP to Jabber/Google Talk)</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='center'><span  style='color: #185662;'><span style='font-size:120%'><strong>Obsolete Modules</strong></span></span></td></tr>
+<tr ><td  align='center'><strong><span style='font-size:144%'>Module name</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Description</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Status</span></strong></td></tr>
+<tr ><td  align='left'><strong>AUTH_DIAMETER</strong></td><td  align='left'>DIAMETER-backend authentication module</td><td  align='center'><span  style='color: red;'>unmaintained</span></td></tr>
+<tr ><td  align='left'><strong>CLOSEDDIAL</strong></td><td  align='left'>PBX-like dialling features</td><td  align='center'><span  style='color: red;'>unmaintained</span> / <span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>MI_XMLRPC</strong></td><td  align='left'>XMLRPC support for Management Interface</td><td  align='center'><span  style='color: red;'>unmaintained</span> / <span  style='color: green;'>stable</span></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Modules-2-2-action=edit&restore=diff-1416936837-1412929093-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=edit&restore=diff:1416936837:1412929093:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>October 10, 2014, at 10:18 AM 
+        by <span class='diffauthor' title='89.120.101.121'>razvancrainea</span> - </div>
+        <div class='difftype'>Changed line 4 from:</div>
+        <div class='diffdel'><p>(:allVersions Modules 2.2:)
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>(:allVersions Modules 2.2 :)
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Modules-2-2-action=edit&restore=diff-1412929093-1412927981-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=edit&restore=diff:1412929093:1412927981:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>October 10, 2014, at 09:59 AM 
+        by <span class='diffauthor' title='89.120.101.121'>razvancrainea</span> - </div>
+        <div class='difftype'>Changed lines 17-149 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>AAA_RADIUS</strong></td><td  align='left'>RADIUS backend for the AAA API</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>ACC</strong></td><td  align='left'>Accounting module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>ALIAS_DB</strong></td><td  align='left'>Database SIP aliases module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>AUTH</strong></td><td  align='left'>Authentication Framework module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>AUTH_AAA</strong></td><td  align='left'>AAA-backend authentication module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>AUTH_DB</strong></td><td  align='left'>Database-backend authentication module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>AUTH_DIAMETER</strong></td><td  align='left'>DIAMETER-backend authentication module</td><td  align='center'><span  style='color: red;'>unmaintained</span></td></tr>
+<tr ><td  align='left'><strong>AVPOPS</strong></td><td  align='left'>AVP operation module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>BENCHMARK</strong></td><td  align='left'>Config file benchmarking</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>B2B_ENTITIES</strong></td><td  align='left'>Back-to-Back User Agent Entities</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>B2B_LOGIC</strong></td><td  align='left'>Back-to-Back User Agent Logic</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>B2B_SCA</strong></td><td  align='left'>Back-to-Back Shared Call Appearance</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>CACHEDB_CASSANDRA</strong></td><td  align='left'>Cassandra Implementation of CacheDB</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>CACHEDB_COUCHBASE</strong></td><td  align='left'>CouchBase Implementation of CacheDB</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>CACHEDB_LOCAL</strong></td><td  align='left'>Local Implementation of CacheDB</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>CACHEDB_MEMCACHED</strong></td><td  align='left'>Memcached Implementation of CacheDB</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>CACHEDB_MONGODB</strong></td><td  align='left'>MongoDB Implementation of CacheDB</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>CACHEDB_REDIS</strong></td><td  align='left'>Redis Implementation of CacheDB</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>CACHEDB_SQL</strong></td><td  align='left'>SQL-based Implementation of CacheDB</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>CALL CENTER</strong></td><td  align='left'>Inbound call center system</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>CALL CONTROL</strong></td><td  align='left'>PrePaid application module</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>CARRIERROUTE</strong></td><td  align='left'>routing extension suitable for carriers</td><td  align='center'><span  style='color: #ffC000;'>alpha</span></td></tr>
+<tr ><td  align='left'><strong>CFGUTILS</strong></td><td  align='left'>Different config utilities</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>CLOSEDDIAL</strong></td><td  align='left'>PBX-like dialling features</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>CPL-C</strong></td><td  align='left'>CPL interpreter module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DB_BERKELEY</strong></td><td  align='left'>Berkeley DB driver for DB API</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DB_CACHEDB</strong></td><td  align='left'>SQL to CacheDB translator</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>DB_FLATSTORE</strong></td><td  align='left'>Fast writing-only text-backend for database module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DB_HTTP</strong></td><td  align='left'>HTTP-backend for DB API</td><td  align='center'><span class='color'>beta</span></td></tr>
+<tr ><td  align='left'><strong>DB_MYSQL</strong></td><td  align='left'>MYSQL-backend for database API module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DB_ORACLE</strong></td><td  align='left'>ORACLE-backend for database API module</td><td  align='center'><span class='color'>beta</span></td></tr>
+<tr ><td  align='left'><strong>DB_PERLVDB</strong></td><td  align='left'>Perl Virtual Database engine</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DB_POSTGRES</strong></td><td  align='left'>POSTGRES-backend for database API module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DB_TEXT</strong></td><td  align='left'>Text-backend for database API module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DB_UNIXODBC</strong></td><td  align='left'>unixODBC driver module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DB_VIRTUAL</strong></td><td  align='left'>Middle-layer DB mixer</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DIALOG</strong></td><td  align='left'>Dialog support module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DIALPLAN</strong></td><td  align='left'>Dialplan management</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DISPATCHER</strong></td><td  align='left'>Dispatcher module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DIVERSION</strong></td><td  align='left'>Diversion header insertion module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DNS_CACHE</strong></td><td  align='left'>Module for caching DNS records that can be used with any Key-Value back-end</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DOMAIN</strong></td><td  align='left'>Multi-domain support module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DOMAINPOLICY</strong></td><td  align='left'>Policies to connect federations</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>DROUTING</strong></td><td  align='left'>Dynamic Routing / LCR</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>ENUM</strong></td><td  align='left'>ENUM lookup module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>EXEC</strong></td><td  align='left'>External exec module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>EVENT_DATAGRAM</strong></td><td  align='left'>Event datagram module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>EVENT_ROUTE</strong></td><td  align='left'>Route triggering based on events</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>EVENT_RABBITMQ</strong></td><td  align='left'>Event RabbitMQ client module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>EVENT_XMLRPC</strong></td><td  align='left'>Event XMLRPC client module</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>GFLAGS</strong></td><td  align='left'>Global shared flags module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>GROUP</strong></td><td  align='left'>User-groups module with DB-backend</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>H350</strong></td><td  align='left'>H350 implementation</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>HTTPD</strong></td><td  align='left'>Embedded HTTP server</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>IDENTITY</strong></td><td  align='left'>SIP Identity implementation</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>IMC</strong></td><td  align='left'>Instant Messaging Conferencing module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>JABBER</strong></td><td  align='left'>JABBER IM and PRESENCE interconnection module</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>JSON</strong></td><td >JSON packing function</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>LDAP</strong></td><td  align='left'>LDAP connector</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>LOAD_BALANCER</strong></td><td  align='left'>Load Balancer (for calls) module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>LUA</strong></td><td  align='left'>Call LUA scripts from OpenSIPS cfg</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>MANGLER</strong></td><td  align='left'>SIP mangler module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>MATHOPS</strong></td><td  align='left'>Math operations module</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>MAXFWD</strong></td><td  align='left'>Max-Forward processor module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>MI_DATAGRAM</strong></td><td  align='left'>DATAGRAM (unix and network) support for Management Interface</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>MI_FIFO</strong></td><td  align='left'>FIFO support for Management Interface</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>MI_HTTP</strong></td><td  align='left'>HTTP support for Management Interface</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>MI_JSON</strong></td><td  align='left'>JSON support via HTTP GET for Management Interface</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>MI_XMLRPC</strong></td><td  align='left'>XMLRPC support for Management Interface</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>MI_XMLRPC_NG</strong></td><td  align='left'>XMLRPC support for Management Interface</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>MEDIAPROXY</strong></td><td  align='left'>NAT traversal module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>MMGEOIP</strong></td><td  align='left'>MaxMind GeoIP module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>MSILO</strong></td><td  align='left'>SIP message silo module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>NAT_TRAVERSAL</strong></td><td  align='left'>NAT traversal module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>NATHELPER</strong></td><td  align='left'>NAT traversal helper module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>OPTIONS</strong></td><td  align='left'>OPTIONS server replier module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>OSP</strong></td><td  align='left'>OSP peering module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PATH</strong></td><td  align='left'>Path support for SIP frontending</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PDT</strong></td><td  align='left'>Prefix-to-Domain translator module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PEERING</strong></td><td  align='left'>Radius peering module</td><td  align='center'><span  style='color: #ffC000;'>alpha</span></td></tr>
+<tr ><td  align='left'><strong>PERL</strong></td><td  align='left'>embed execution of Perl function</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PERMISSIONS</strong></td><td  align='left'>Permissions control module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PI_HTTP</strong></td><td  align='left'>Provisioning Interface module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PIKE</strong></td><td  align='left'>Flood detector module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PRESENCE</strong></td><td  align='left'>Presence server module - common API</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PRESENCE_CALLINFO</strong></td><td  align='left'>Extension to Presence server for Call-Info</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PRESENCE_DIALOGINFO</strong></td><td  align='left'>Extension to Presence server for Dialog Info</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PRESENCE_MWI</strong></td><td  align='left'>Extension to Presence server for Message Waiting Indication</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PRESENCE_XCAPDIFF</strong></td><td  align='left'>Extension to Presence server for XCAP-DIFF event</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PRESENCE_XML</strong></td><td  align='left'>Presence server module - presence &amp; watcher info and XCAP</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PUA</strong></td><td  align='left'>Common API for presence user agent client</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PUA_BLA</strong></td><td  align='left'>BLA extension for PUA</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PUA_DIALOGINFO</strong></td><td  align='left'>Dialog-Info extension for PUA</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PUA_MI</strong></td><td  align='left'>MI extension for PUA</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PUA_USRLOC</strong></td><td  align='left'>USRLOC extension for PUA</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PUA_XMPP</strong></td><td  align='left'>XMPP extension for PUA (SIMPLE-XMPP presence gateway)</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PYTHON</strong></td><td  align='left'>Python scripting support</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>QOS</strong></td><td  align='left'>QOS (RTP) module</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>RATELIMIT</strong></td><td  align='left'>SIP traffic shaping module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>REGEX</strong></td><td  align='left'>RegExp via PCRE library</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>REGISTRAR</strong></td><td  align='left'>SIP Registrar implementation module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>REST_CLIENT</strong></td><td  align='left'>Implementation of an HTTP client</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>RLS</strong></td><td  align='left'>Resource List Server implementation</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>RR</strong></td><td  align='left'>Record-Route and Route module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>RTPENGINE</strong></td><td  align='left'>Connector to RTPengine external RTP relay</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+<tr ><td  align='left'><strong>RTPPROXY</strong></td><td  align='left'>Connector to RTPproxy external RTP relay</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>SCRIPT_HELPER</strong></td><td  align='left'>Embedded SIP routing logic and dialog management</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>SEAS</strong></td><td  align='left'>Sip Express Application Server (interface module)</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>SIGNALING</strong></td><td  align='left'>SIP signaling module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>SIPCAPTURE</strong></td><td  align='left'>SipCapture module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>SIPMSGOPS</strong></td><td  align='left'>SIP operations module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>SIPTRACE</strong></td><td  align='left'>SipTrace module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>SL</strong></td><td  align='left'>Stateless replier module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>SMS</strong></td><td  align='left'>SIP-to-SMS IM gateway module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>SNGTC</strong></td><td  align='left'>Voice Transcoding in OpenSIPS using Sangoma hardware</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>SNMPStats</strong></td><td  align='left'>SNMP interface for statistics module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>SPEEDDIAL</strong></td><td  align='left'>Per-user speed-dial controller module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>STATISTICS</strong></td><td  align='left'>Script statistics support</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>SST</strong></td><td  align='left'>SIP Session Timer support</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>STUN</strong></td><td >Built-in STUN server</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>TEXTOPS</strong></td><td  align='left'>Text operations module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>TLSOPS</strong></td><td  align='left'>TLS operations module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>TM</strong></td><td  align='left'>Transaction (stateful) module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>UAC</strong></td><td  align='left'>UAC functionalies (FROM mangling and UAC auth)</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>UAC_AUTH</strong></td><td  align='left'>UAC Authentication functionality</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>UAC_REDIRECT</strong></td><td  align='left'>UAC redirection functionality</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>UAC_REGISTRANT</strong></td><td  align='left'>SIP Registrant implementation module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>URI</strong></td><td  align='left'>Generic URI operation module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>USERBLACKLIST</strong></td><td  align='left'>User black/white listing</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>USRLOC</strong></td><td  align='left'>User location implementation module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>XCAP_CLIENT</strong></td><td  align='left'>XCAP client implementation</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>XCAP</strong></td><td  align='left'>XCAP API provider</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>XMPP</strong></td><td  align='left'>SIP-to-XMPP Gateway (SIP to Jabber/Google Talk)</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>AAA_RADIUS</strong></td><td  align='left'>RADIUS backend for the AAA API</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>ACC</strong></td><td  align='left'>Accounting module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>ALIAS_DB</strong></td><td  align='left'>Database SIP aliases module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>AUTH</strong></td><td  align='left'>Authentication Framework module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>AUTH_AAA</strong></td><td  align='left'>AAA-backend authentication module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>AUTH_DB</strong></td><td  align='left'>Database-backend authentication module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>AUTH_DIAMETER</strong></td><td  align='left'>DIAMETER-backend authentication module</td><td  align='center'><span  style='color: red;'>unmaintained</span></td></tr>
+<tr ><td  align='left'><strong>AVPOPS</strong></td><td  align='left'>AVP operation module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>BENCHMARK</strong></td><td  align='left'>Config file benchmarking</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>B2B_ENTITIES</strong></td><td  align='left'>Back-to-Back User Agent Entities</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>B2B_LOGIC</strong></td><td  align='left'>Back-to-Back User Agent Logic</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>B2B_SCA</strong></td><td  align='left'>Back-to-Back Shared Call Appearance</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>CACHEDB_CASSANDRA</strong></td><td  align='left'>Cassandra Implementation of CacheDB</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>CACHEDB_COUCHBASE</strong></td><td  align='left'>CouchBase Implementation of CacheDB</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>CACHEDB_LOCAL</strong></td><td  align='left'>Local Implementation of CacheDB</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>CACHEDB_MEMCACHED</strong></td><td  align='left'>Memcached Implementation of CacheDB</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>CACHEDB_MONGODB</strong></td><td  align='left'>MongoDB Implementation of CacheDB</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>CACHEDB_REDIS</strong></td><td  align='left'>Redis Implementation of CacheDB</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>CACHEDB_SQL</strong></td><td  align='left'>SQL-based Implementation of CacheDB</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>CALL CENTER</strong></td><td  align='left'>Inbound call center system</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>CALL CONTROL</strong></td><td  align='left'>PrePaid application module</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>CARRIERROUTE</strong></td><td  align='left'>routing extension suitable for carriers</td><td  align='center'><span  style='color: #ffC000;'>alpha</span></td></tr>
+<tr ><td  align='left'><strong>CFGUTILS</strong></td><td  align='left'>Different config utilities</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>CLOSEDDIAL</strong></td><td  align='left'>PBX-like dialling features</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>CPL-C</strong></td><td  align='left'>CPL interpreter module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DB_BERKELEY</strong></td><td  align='left'>Berkeley DB driver for DB API</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DB_CACHEDB</strong></td><td  align='left'>SQL to CacheDB translator</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>DB_FLATSTORE</strong></td><td  align='left'>Fast writing-only text-backend for database module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DB_HTTP</strong></td><td  align='left'>HTTP-backend for DB API</td><td  align='center'><span class='color'>beta</span></td></tr>
+<tr ><td  align='left'><strong>DB_MYSQL</strong></td><td  align='left'>MYSQL-backend for database API module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DB_ORACLE</strong></td><td  align='left'>ORACLE-backend for database API module</td><td  align='center'><span class='color'>beta</span></td></tr>
+<tr ><td  align='left'><strong>DB_PERLVDB</strong></td><td  align='left'>Perl Virtual Database engine</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DB_POSTGRES</strong></td><td  align='left'>POSTGRES-backend for database API module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DB_TEXT</strong></td><td  align='left'>Text-backend for database API module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DB_UNIXODBC</strong></td><td  align='left'>unixODBC driver module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DB_VIRTUAL</strong></td><td  align='left'>Middle-layer DB mixer</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DIALOG</strong></td><td  align='left'>Dialog support module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DIALPLAN</strong></td><td  align='left'>Dialplan management</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DISPATCHER</strong></td><td  align='left'>Dispatcher module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DIVERSION</strong></td><td  align='left'>Diversion header insertion module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DNS_CACHE</strong></td><td  align='left'>Module for caching DNS records that can be used with any Key-Value back-end</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DOMAIN</strong></td><td  align='left'>Multi-domain support module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DOMAINPOLICY</strong></td><td  align='left'>Policies to connect federations</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>DROUTING</strong></td><td  align='left'>Dynamic Routing / LCR</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>ENUM</strong></td><td  align='left'>ENUM lookup module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>EXEC</strong></td><td  align='left'>External exec module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>EVENT_DATAGRAM</strong></td><td  align='left'>Event datagram module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>EVENT_ROUTE</strong></td><td  align='left'>Route triggering based on events</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>EVENT_RABBITMQ</strong></td><td  align='left'>Event RabbitMQ client module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>EVENT_XMLRPC</strong></td><td  align='left'>Event XMLRPC client module</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>GFLAGS</strong></td><td  align='left'>Global shared flags module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>GROUP</strong></td><td  align='left'>User-groups module with DB-backend</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>H350</strong></td><td  align='left'>H350 implementation</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>HTTPD</strong></td><td  align='left'>Embedded HTTP server</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>IDENTITY</strong></td><td  align='left'>SIP Identity implementation</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>IMC</strong></td><td  align='left'>Instant Messaging Conferencing module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>JABBER</strong></td><td  align='left'>JABBER IM and PRESENCE interconnection module</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>JSON</strong></td><td >JSON packing function</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>LDAP</strong></td><td  align='left'>LDAP connector</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>LOAD_BALANCER</strong></td><td  align='left'>Load Balancer (for calls) module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>LUA</strong></td><td  align='left'>Call LUA scripts from OpenSIPS cfg</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>MANGLER</strong></td><td  align='left'>SIP mangler module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>MATHOPS</strong></td><td  align='left'>Math operations module</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>MAXFWD</strong></td><td  align='left'>Max-Forward processor module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>MI_DATAGRAM</strong></td><td  align='left'>DATAGRAM (unix and network) support for Management Interface</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>MI_FIFO</strong></td><td  align='left'>FIFO support for Management Interface</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>MI_HTTP</strong></td><td  align='left'>HTTP support for Management Interface</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>MI_JSON</strong></td><td  align='left'>JSON support via HTTP GET for Management Interface</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>MI_XMLRPC</strong></td><td  align='left'>XMLRPC support for Management Interface</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>MI_XMLRPC_NG</strong></td><td  align='left'>XMLRPC support for Management Interface</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>MEDIAPROXY</strong></td><td  align='left'>NAT traversal module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>MMGEOIP</strong></td><td  align='left'>MaxMind GeoIP module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>MSILO</strong></td><td  align='left'>SIP message silo module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>NAT_TRAVERSAL</strong></td><td  align='left'>NAT traversal module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>NATHELPER</strong></td><td  align='left'>NAT traversal helper module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>OPTIONS</strong></td><td  align='left'>OPTIONS server replier module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>OSP</strong></td><td  align='left'>OSP peering module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PATH</strong></td><td  align='left'>Path support for SIP frontending</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PDT</strong></td><td  align='left'>Prefix-to-Domain translator module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PEERING</strong></td><td  align='left'>Radius peering module</td><td  align='center'><span  style='color: #ffC000;'>alpha</span></td></tr>
+<tr ><td  align='left'><strong>PERL</strong></td><td  align='left'>embed execution of Perl function</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PERMISSIONS</strong></td><td  align='left'>Permissions control module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PI_HTTP</strong></td><td  align='left'>Provisioning Interface module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PIKE</strong></td><td  align='left'>Flood detector module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PRESENCE</strong></td><td  align='left'>Presence server module - common API</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PRESENCE_CALLINFO</strong></td><td  align='left'>Extension to Presence server for Call-Info</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PRESENCE_DIALOGINFO</strong></td><td  align='left'>Extension to Presence server for Dialog Info</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PRESENCE_MWI</strong></td><td  align='left'>Extension to Presence server for Message Waiting Indication</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PRESENCE_XCAPDIFF</strong></td><td  align='left'>Extension to Presence server for XCAP-DIFF event</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PRESENCE_XML</strong></td><td  align='left'>Presence server module - presence &amp; watcher info and XCAP</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PUA</strong></td><td  align='left'>Common API for presence user agent client</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PUA_BLA</strong></td><td  align='left'>BLA extension for PUA</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PUA_DIALOGINFO</strong></td><td  align='left'>Dialog-Info extension for PUA</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PUA_MI</strong></td><td  align='left'>MI extension for PUA</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PUA_USRLOC</strong></td><td  align='left'>USRLOC extension for PUA</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PUA_XMPP</strong></td><td  align='left'>XMPP extension for PUA (SIMPLE-XMPP presence gateway)</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PYTHON</strong></td><td  align='left'>Python scripting support</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>QOS</strong></td><td  align='left'>QOS (RTP) module</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>RATELIMIT</strong></td><td  align='left'>SIP traffic shaping module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>REGEX</strong></td><td  align='left'>RegExp via PCRE library</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>REGISTRAR</strong></td><td  align='left'>SIP Registrar implementation module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>REST_CLIENT</strong></td><td  align='left'>Implementation of an HTTP client</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>RLS</strong></td><td  align='left'>Resource List Server implementation</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>RR</strong></td><td  align='left'>Record-Route and Route module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>RTPENGINE</strong></td><td  align='left'>Connector to RTPengine external RTP relay</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+<tr ><td  align='left'><strong>RTPPROXY</strong></td><td  align='left'>Connector to RTPproxy external RTP relay</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>SCRIPT_HELPER</strong></td><td  align='left'>Embedded SIP routing logic and dialog management</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>SEAS</strong></td><td  align='left'>Sip Express Application Server (interface module)</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>SIGNALING</strong></td><td  align='left'>SIP signaling module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>SIPCAPTURE</strong></td><td  align='left'>SipCapture module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>SIPMSGOPS</strong></td><td  align='left'>SIP operations module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>SIPTRACE</strong></td><td  align='left'>SipTrace module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>SL</strong></td><td  align='left'>Stateless replier module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>SMS</strong></td><td  align='left'>SIP-to-SMS IM gateway module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>SNGTC</strong></td><td  align='left'>Voice Transcoding in OpenSIPS using Sangoma hardware</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>SNMPStats</strong></td><td  align='left'>SNMP interface for statistics module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>SPEEDDIAL</strong></td><td  align='left'>Per-user speed-dial controller module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>STATISTICS</strong></td><td  align='left'>Script statistics support</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>SST</strong></td><td  align='left'>SIP Session Timer support</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>STUN</strong></td><td >Built-in STUN server</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>TEXTOPS</strong></td><td  align='left'>Text operations module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>TLSOPS</strong></td><td  align='left'>TLS operations module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>TM</strong></td><td  align='left'>Transaction (stateful) module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>UAC</strong></td><td  align='left'>UAC functionalies (FROM mangling and UAC auth)</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>UAC_AUTH</strong></td><td  align='left'>UAC Authentication functionality</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>UAC_REDIRECT</strong></td><td  align='left'>UAC redirection functionality</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>UAC_REGISTRANT</strong></td><td  align='left'>SIP Registrant implementation module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>URI</strong></td><td  align='left'>Generic URI operation module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>USERBLACKLIST</strong></td><td  align='left'>User black/white listing</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>USRLOC</strong></td><td  align='left'>User location implementation module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>XCAP_CLIENT</strong></td><td  align='left'>XCAP client implementation</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>XCAP</strong></td><td  align='left'>XCAP API provider</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>XMPP</strong></td><td  align='left'>SIP-to-XMPP Gateway (SIP to Jabber/Google Talk)</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Modules-2-2-action=edit&restore=diff-1412927981-1403020646-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=edit&restore=diff:1412927981:1403020646:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 17, 2014, at 05:57 PM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Changed line 121 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>RTPENGINE</strong></td><td  align='left'>Connector to RTPengine external RTP relay</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>RTPENGINE</strong></td><td  align='left'>Connector to RTPengine external RTP relay</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Modules-2-2?action=edit&restore=diff:1403020646:1403016472:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Modules-2-2?action=edit&restore=diff:1403020646:1403016472:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=edit&restore=diff:1403020646:1403016472:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 17, 2014, at 04:47 PM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Changed line 36 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>CALL CENTER</strong></td><td  align='left'>Inbound call center system</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>CALL CENTER</strong></td><td  align='left'>Inbound call center system</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>Changed line 123 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>SCRIPT_HELPER</strong></td><td  align='left'>Embedded SIP routing logic and dialog management</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>SCRIPT_HELPER</strong></td><td  align='left'>Embedded SIP routing logic and dialog management</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Modules-2-2-action=edit&restore=diff-1403016472-1403016408-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=edit&restore=diff:1403016472:1403016408:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 17, 2014, at 04:46 PM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Changed lines 121-122 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>RTPPROXY</strong></td><td  align='left'>NAT traversal using RTPProxy module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>RTPENGINE</strong></td><td  align='left'>Connector to RTPengine external RTP relay</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+<tr ><td  align='left'><strong>RTPPROXY</strong></td><td  align='left'>Connector to RTPproxy external RTP relay</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Modules-2-2-action=edit&restore=diff-1403016408-1399652931-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=edit&restore=diff:1403016408:1399652931:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2014, at 06:28 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 36-37 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>CALL CENTER</strong></td><td  align='left'>Inbound call center system</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>CALL CONTROL</strong></td><td  align='left'>PrePaid application module</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>CALL CENTER</strong></td><td  align='left'>Inbound call center system</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+<tr ><td  align='left'><strong>CALL CONTROL</strong></td><td  align='left'>PrePaid application module</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Modules-2-2-action=edit&restore=diff-1399652931-1399651465-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=edit&restore=diff:1399652931:1399651465:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2014, at 06:04 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 36-37 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>CALL CONTROL</strong></td><td  align='left'>PrePaid application module</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>CALL CENTER</strong></td><td  align='left'>Inbound call center system</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>CALL CENTER</strong></td><td  align='left'>Inbound call center system</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>CALL CONTROL</strong></td><td  align='left'>PrePaid application module</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Modules-2-2-action=edit&restore=diff-1399651465-1399651411-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=edit&restore=diff:1399651465:1399651411:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2014, at 06:03 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 28 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>B2B_SCA</strong></td><td  align='left'>Back-to-Back Shared Call Appearance</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>B2B_SCA</strong></td><td  align='left'>Back-to-Back Shared Call Appearance</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>Changed line 30 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>CACHEDB_COUCHBASE</strong></td><td  align='left'>CouchBase Implementation of CacheDB</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>CACHEDB_COUCHBASE</strong></td><td  align='left'>CouchBase Implementation of CacheDB</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>Changed line 33 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>CACHEDB_MONGODB</strong></td><td  align='left'>MongoDB Implementation of CacheDB</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>CACHEDB_MONGODB</strong></td><td  align='left'>MongoDB Implementation of CacheDB</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>Changed lines 35-36 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>CACHEDB_SQL</strong></td><td  align='left'>SQL-based Implementation of CacheDB</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+<tr ><td  align='left'><strong>CALL CONTROL</strong></td><td  align='left'>PrePaid application module</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>CACHEDB_SQL</strong></td><td  align='left'>SQL-based Implementation of CacheDB</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>CALL CONTROL</strong></td><td  align='left'>PrePaid application module</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>CALL CENTER</strong></td><td  align='left'>Inbound call center system</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>Changed line 43 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>DB_CACHEDB</strong></td><td  align='left'>SQL to CacheDB translator</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>DB_CACHEDB</strong></td><td  align='left'>SQL to CacheDB translator</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>Changed line 64 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>EVENT_ROUTE</strong></td><td  align='left'>Route triggering based on events</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>EVENT_ROUTE</strong></td><td  align='left'>Route triggering based on events</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>Changed line 66 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>EVENT_XMLRPC</strong></td><td  align='left'>Event XMLRPC client module</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>EVENT_XMLRPC</strong></td><td  align='left'>Event XMLRPC client module</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>Changed line 79 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>MATHOPS</strong></td><td  align='left'>Math operations module</td><td  align='left'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>MATHOPS</strong></td><td  align='left'>Math operations module</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>Changed line 84 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>MI_JSON</strong></td><td  align='left'>JSON support via HTTP GET for Management Interface</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>MI_JSON</strong></td><td  align='left'>JSON support via HTTP GET for Management Interface</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>Changed line 86 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>MI_XMLRPC_NG</strong></td><td  align='left'>XMLRPC support for Management Interface</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>MI_XMLRPC_NG</strong></td><td  align='left'>XMLRPC support for Management Interface</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>Changed line 118 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>REST_CLIENT</strong></td><td  align='left'>Implementation of an HTTP client</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>REST_CLIENT</strong></td><td  align='left'>Implementation of an HTTP client</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>Changed line 130 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='left'><strong>SNGTC</strong></td><td  align='left'>Voice Transcoding in OpenSIPS using Sangoma hardware</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>SNGTC</strong></td><td  align='left'>Voice Transcoding in OpenSIPS using Sangoma hardware</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Modules-2-2-action=edit&restore=diff-1399651411-1395655729-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=edit&restore=diff:1399651411:1395655729:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 24, 2014, at 11:08 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added line 121:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='left'><strong>SCRIPT_HELPER</strong></td><td  align='left'>Embedded SIP routing logic and dialog management</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Modules-2-2-action=edit&restore=diff-1395655729-1395341317-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=edit&restore=diff:1395655729:1395341317:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 20, 2014, at 07:48 PM 
+        by <span class='diffauthor' title='89.120.101.121'>razvancrainea</span> - </div>
+        <div class='difftype'>Added lines 1-146:</div>
+        <div class='diffadd'><h5>Documentation -&gt; <a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a> -&gt; <a class='wikilink' title='OpenSIPS Manual - 2.2' href="Manual-2-2.htm" tppabs="http://www.opensips.org/Documentation/Manual-2-2">Manual devel</a> -&gt; Modules</h5>
+<p>(:title Modules - 2.2:)
+</p><hr />
+<p>(:allVersions Modules 2.2:)
+</p>
+<p class='vspace'><br />
+</p><table width='100%'><tr ><td  align='center'><span  style='color: #185662;'><span style='font-size:120%'><strong>Modules v2.2 </strong></span></span></td></tr>
+</table>
+<div class='vspace'></div><table width='100%'><tr ><td  align='left'><a class='wikilink' title='Script Transformations - 2.2' href="Script-Tran-2-2.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-2-2">Prev</a></td><td  align='right'><a class='wikilink' title='Function-Index-2-2' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Function-Index-2-2  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Function-Index-2-2%27" tppabs="http://www.opensips.org/Documentation/Function-Index-2-2">Next</a></td></tr>
+</table><hr />
+<div class='vspace'></div>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Module name</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Description</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Status</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'><strong>AAA_RADIUS</strong></td><td  align='left'>RADIUS backend for the AAA API</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>ACC</strong></td><td  align='left'>Accounting module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>ALIAS_DB</strong></td><td  align='left'>Database SIP aliases module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>AUTH</strong></td><td  align='left'>Authentication Framework module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>AUTH_AAA</strong></td><td  align='left'>AAA-backend authentication module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>AUTH_DB</strong></td><td  align='left'>Database-backend authentication module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>AUTH_DIAMETER</strong></td><td  align='left'>DIAMETER-backend authentication module</td><td  align='center'><span  style='color: red;'>unmaintained</span></td></tr>
+<tr ><td  align='left'><strong>AVPOPS</strong></td><td  align='left'>AVP operation module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>BENCHMARK</strong></td><td  align='left'>Config file benchmarking</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>B2B_ENTITIES</strong></td><td  align='left'>Back-to-Back User Agent Entities</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>B2B_LOGIC</strong></td><td  align='left'>Back-to-Back User Agent Logic</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>B2B_SCA</strong></td><td  align='left'>Back-to-Back Shared Call Appearance</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+<tr ><td  align='left'><strong>CACHEDB_CASSANDRA</strong></td><td  align='left'>Cassandra Implementation of CacheDB</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>CACHEDB_COUCHBASE</strong></td><td  align='left'>CouchBase Implementation of CacheDB</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+<tr ><td  align='left'><strong>CACHEDB_LOCAL</strong></td><td  align='left'>Local Implementation of CacheDB</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>CACHEDB_MEMCACHED</strong></td><td  align='left'>Memcached Implementation of CacheDB</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>CACHEDB_MONGODB</strong></td><td  align='left'>MongoDB Implementation of CacheDB</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+<tr ><td  align='left'><strong>CACHEDB_REDIS</strong></td><td  align='left'>Redis Implementation of CacheDB</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>CACHEDB_SQL</strong></td><td  align='left'>SQL-based Implementation of CacheDB</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+<tr ><td  align='left'><strong>CALL CONTROL</strong></td><td  align='left'>PrePaid application module</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>CARRIERROUTE</strong></td><td  align='left'>routing extension suitable for carriers</td><td  align='center'><span  style='color: #ffC000;'>alpha</span></td></tr>
+<tr ><td  align='left'><strong>CFGUTILS</strong></td><td  align='left'>Different config utilities</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>CLOSEDDIAL</strong></td><td  align='left'>PBX-like dialling features</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>CPL-C</strong></td><td  align='left'>CPL interpreter module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DB_BERKELEY</strong></td><td  align='left'>Berkeley DB driver for DB API</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DB_CACHEDB</strong></td><td  align='left'>SQL to CacheDB translator</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+<tr ><td  align='left'><strong>DB_FLATSTORE</strong></td><td  align='left'>Fast writing-only text-backend for database module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DB_HTTP</strong></td><td  align='left'>HTTP-backend for DB API</td><td  align='center'><span class='color'>beta</span></td></tr>
+<tr ><td  align='left'><strong>DB_MYSQL</strong></td><td  align='left'>MYSQL-backend for database API module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DB_ORACLE</strong></td><td  align='left'>ORACLE-backend for database API module</td><td  align='center'><span class='color'>beta</span></td></tr>
+<tr ><td  align='left'><strong>DB_PERLVDB</strong></td><td  align='left'>Perl Virtual Database engine</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DB_POSTGRES</strong></td><td  align='left'>POSTGRES-backend for database API module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DB_TEXT</strong></td><td  align='left'>Text-backend for database API module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DB_UNIXODBC</strong></td><td  align='left'>unixODBC driver module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DB_VIRTUAL</strong></td><td  align='left'>Middle-layer DB mixer</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DIALOG</strong></td><td  align='left'>Dialog support module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DIALPLAN</strong></td><td  align='left'>Dialplan management</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DISPATCHER</strong></td><td  align='left'>Dispatcher module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DIVERSION</strong></td><td  align='left'>Diversion header insertion module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DNS_CACHE</strong></td><td  align='left'>Module for caching DNS records that can be used with any Key-Value back-end</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DOMAIN</strong></td><td  align='left'>Multi-domain support module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>DOMAINPOLICY</strong></td><td  align='left'>Policies to connect federations</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>DROUTING</strong></td><td  align='left'>Dynamic Routing / LCR</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>ENUM</strong></td><td  align='left'>ENUM lookup module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>EXEC</strong></td><td  align='left'>External exec module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>EVENT_DATAGRAM</strong></td><td  align='left'>Event datagram module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>EVENT_ROUTE</strong></td><td  align='left'>Route triggering based on events</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+<tr ><td  align='left'><strong>EVENT_RABBITMQ</strong></td><td  align='left'>Event RabbitMQ client module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>EVENT_XMLRPC</strong></td><td  align='left'>Event XMLRPC client module</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+<tr ><td  align='left'><strong>GFLAGS</strong></td><td  align='left'>Global shared flags module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>GROUP</strong></td><td  align='left'>User-groups module with DB-backend</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>H350</strong></td><td  align='left'>H350 implementation</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>HTTPD</strong></td><td  align='left'>Embedded HTTP server</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>IDENTITY</strong></td><td  align='left'>SIP Identity implementation</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>IMC</strong></td><td  align='left'>Instant Messaging Conferencing module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>JABBER</strong></td><td  align='left'>JABBER IM and PRESENCE interconnection module</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>JSON</strong></td><td >JSON packing function</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>LDAP</strong></td><td  align='left'>LDAP connector</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>LOAD_BALANCER</strong></td><td  align='left'>Load Balancer (for calls) module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>LUA</strong></td><td  align='left'>Call LUA scripts from OpenSIPS cfg</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>MANGLER</strong></td><td  align='left'>SIP mangler module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>MATHOPS</strong></td><td  align='left'>Math operations module</td><td  align='left'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+<tr ><td  align='left'><strong>MAXFWD</strong></td><td  align='left'>Max-Forward processor module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>MI_DATAGRAM</strong></td><td  align='left'>DATAGRAM (unix and network) support for Management Interface</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>MI_FIFO</strong></td><td  align='left'>FIFO support for Management Interface</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>MI_HTTP</strong></td><td  align='left'>HTTP support for Management Interface</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>MI_JSON</strong></td><td  align='left'>JSON support via HTTP GET for Management Interface</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+<tr ><td  align='left'><strong>MI_XMLRPC</strong></td><td  align='left'>XMLRPC support for Management Interface</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>MI_XMLRPC_NG</strong></td><td  align='left'>XMLRPC support for Management Interface</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+<tr ><td  align='left'><strong>MEDIAPROXY</strong></td><td  align='left'>NAT traversal module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>MMGEOIP</strong></td><td  align='left'>MaxMind GeoIP module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>MSILO</strong></td><td  align='left'>SIP message silo module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>NAT_TRAVERSAL</strong></td><td  align='left'>NAT traversal module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>NATHELPER</strong></td><td  align='left'>NAT traversal helper module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>OPTIONS</strong></td><td  align='left'>OPTIONS server replier module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>OSP</strong></td><td  align='left'>OSP peering module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PATH</strong></td><td  align='left'>Path support for SIP frontending</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PDT</strong></td><td  align='left'>Prefix-to-Domain translator module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PEERING</strong></td><td  align='left'>Radius peering module</td><td  align='center'><span  style='color: #ffC000;'>alpha</span></td></tr>
+<tr ><td  align='left'><strong>PERL</strong></td><td  align='left'>embed execution of Perl function</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PERMISSIONS</strong></td><td  align='left'>Permissions control module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PI_HTTP</strong></td><td  align='left'>Provisioning Interface module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PIKE</strong></td><td  align='left'>Flood detector module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PRESENCE</strong></td><td  align='left'>Presence server module - common API</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PRESENCE_CALLINFO</strong></td><td  align='left'>Extension to Presence server for Call-Info</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PRESENCE_DIALOGINFO</strong></td><td  align='left'>Extension to Presence server for Dialog Info</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PRESENCE_MWI</strong></td><td  align='left'>Extension to Presence server for Message Waiting Indication</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PRESENCE_XCAPDIFF</strong></td><td  align='left'>Extension to Presence server for XCAP-DIFF event</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PRESENCE_XML</strong></td><td  align='left'>Presence server module - presence &amp; watcher info and XCAP</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PUA</strong></td><td  align='left'>Common API for presence user agent client</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PUA_BLA</strong></td><td  align='left'>BLA extension for PUA</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PUA_DIALOGINFO</strong></td><td  align='left'>Dialog-Info extension for PUA</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PUA_MI</strong></td><td  align='left'>MI extension for PUA</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PUA_USRLOC</strong></td><td  align='left'>USRLOC extension for PUA</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PUA_XMPP</strong></td><td  align='left'>XMPP extension for PUA (SIMPLE-XMPP presence gateway)</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>PYTHON</strong></td><td  align='left'>Python scripting support</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>QOS</strong></td><td  align='left'>QOS (RTP) module</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>RATELIMIT</strong></td><td  align='left'>SIP traffic shaping module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>REGEX</strong></td><td  align='left'>RegExp via PCRE library</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>REGISTRAR</strong></td><td  align='left'>SIP Registrar implementation module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>REST_CLIENT</strong></td><td  align='left'>Implementation of an HTTP client</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+<tr ><td  align='left'><strong>RLS</strong></td><td  align='left'>Resource List Server implementation</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>RR</strong></td><td  align='left'>Record-Route and Route module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>RTPPROXY</strong></td><td  align='left'>NAT traversal using RTPProxy module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>SEAS</strong></td><td  align='left'>Sip Express Application Server (interface module)</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>SIGNALING</strong></td><td  align='left'>SIP signaling module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>SIPCAPTURE</strong></td><td  align='left'>SipCapture module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>SIPMSGOPS</strong></td><td  align='left'>SIP operations module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>SIPTRACE</strong></td><td  align='left'>SipTrace module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>SL</strong></td><td  align='left'>Stateless replier module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>SMS</strong></td><td  align='left'>SIP-to-SMS IM gateway module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>SNGTC</strong></td><td  align='left'>Voice Transcoding in OpenSIPS using Sangoma hardware</td><td  align='center'><span  style='color: #80ff00;'>beta</span> / <span  style='color: red;'>NEW</span></td></tr>
+<tr ><td  align='left'><strong>SNMPStats</strong></td><td  align='left'>SNMP interface for statistics module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>SPEEDDIAL</strong></td><td  align='left'>Per-user speed-dial controller module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>STATISTICS</strong></td><td  align='left'>Script statistics support</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>SST</strong></td><td  align='left'>SIP Session Timer support</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>STUN</strong></td><td >Built-in STUN server</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>TEXTOPS</strong></td><td  align='left'>Text operations module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>TLSOPS</strong></td><td  align='left'>TLS operations module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>TM</strong></td><td  align='left'>Transaction (stateful) module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>UAC</strong></td><td  align='left'>UAC functionalies (FROM mangling and UAC auth)</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>UAC_AUTH</strong></td><td  align='left'>UAC Authentication functionality</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>UAC_REDIRECT</strong></td><td  align='left'>UAC redirection functionality</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>UAC_REGISTRANT</strong></td><td  align='left'>SIP Registrant implementation module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>URI</strong></td><td  align='left'>Generic URI operation module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>USERBLACKLIST</strong></td><td  align='left'>User black/white listing</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>USRLOC</strong></td><td  align='left'>User location implementation module</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>XCAP_CLIENT</strong></td><td  align='left'>XCAP client implementation</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+<tr ><td  align='left'><strong>XCAP</strong></td><td  align='left'>XCAP API provider</td><td  align='center'><span  style='color: #80ff00;'>beta</span></td></tr>
+<tr ><td  align='left'><strong>XMPP</strong></td><td  align='left'>SIP-to-XMPP Gateway (SIP to Jabber/Google Talk)</td><td  align='center'><span  style='color: green;'>stable</span></td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Modules-2-2-action=edit&restore=diff-1395341317-1395341317-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=edit&restore=diff:1395341317:1395341317:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Modules-2-2-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=edit">Edit</a> |
+      <a rel="nofollow" href="Modules-2-2-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=diff">History</a> |
+      <a rel="nofollow" href="Modules-2-2-action=print.htm" tppabs="http://www.opensips.org/Documentation/Modules-2-2?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on September 25, 2015, at 09:55 AM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

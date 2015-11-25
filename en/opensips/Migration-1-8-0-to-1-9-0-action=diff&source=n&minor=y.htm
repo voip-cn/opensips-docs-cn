@@ -1,0 +1,303 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Migration-1-8-0-to-1-9-0 | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Migration-1-8-0-to-1-9-0' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Migration-1-8-0-to-1-9-0 History</h2>
+  <p><a href="Migration-1-8-0-to-1-9-0-action=diff&source=n&minor=n.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-8-0-to-1-9-0?action=diff&source=n&minor=n">Hide minor edits</a> - <a href="Migration-1-8-0-to-1-9-0-action=diff&source=y&minor=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-8-0-to-1-9-0?action=diff&source=y&minor=y">Show changes to markup</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>June 10, 2013, at 11:34 AM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 49 from:</div>
+        <div class='diffdel'><ul><li>Flag pseudo-variables $mF, $sF, $bF are now removed, and $mf, $sf, $bf are now Read-Only
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>Flag pseudo-variables <strong>$mF</strong>, <strong>$sF</strong>, <strong>$bF</strong> have been removed, and <strong>$mf</strong>, <strong>$sf</strong>, <strong>$bf</strong> are now Read-Only
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-8-0-to-1-9-0-action=edit&restore=diff-1370856898-1370856832-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-8-0-to-1-9-0?action=edit&restore=diff:1370856898:1370856832:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 10, 2013, at 11:33 AM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed lines 48-49 from:</div>
+        <div class='diffdel'><ul><li>parameters <strong>db_url</strong> and <strong>xcap_table</strong> from <strong>xcap_client</strong> modules moved to <strong>xcap</strong> module, with same name, meaning and functionality.
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>parameters <strong>db_url</strong> and <strong>xcap_table</strong> from <strong>xcap_client</strong> modules moved to <strong>xcap</strong> module, with same name, meaning and functionality.
+</li><li>Flag pseudo-variables $mF, $sF, $bF are now removed, and $mf, $sf, $bf are now Read-Only
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Migration-1-8-0-to-1-9-0?action=edit&restore=diff:1370856832:1368721333:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Migration-1-8-0-to-1-9-0?action=edit&restore=diff:1370856832:1368721333:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Migration-1-8-0-to-1-9-0?action=edit&restore=diff:1370856832:1368721333:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 16, 2013, at 06:22 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><h2><a class='wikilink' title='Index' href="Index.htm" tppabs="http://www.opensips.org/Documentation/Index">Documentation</a> -&gt; <a class='selflink' href="Migration-1-8-0-to-1-9-0.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-8-0-to-1-9-0">Migration from 1.8.x to 1.9.0</a></h2>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h5>Documentation -&gt; <a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Migration</a> -&gt; Migration from 1.8.x to 1.9.0</h5>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-8-0-to-1-9-0-action=edit&restore=diff-1368721333-1368098112-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-8-0-to-1-9-0?action=edit&restore=diff:1368721333:1368098112:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 01:15 PM 
+        by <span class='diffauthor' title='79.118.227.150'>79.118.227.150</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><h2>Resources -&gt; <a class='wikilink' title='Documentation' href="javascript:if(confirm(%27http://www.opensips.org/Resources/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/Documentation%27" tppabs="http://www.opensips.org/Resources/Documentation">Documentation</a> -&gt; <a class='wikilink' title='DocsMigration' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsMigration  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsMigration%27" tppabs="http://www.opensips.org/Resources/DocsMigration">Version Migration</a> -&gt; Upgrading from 1.8.x to 1.9.0</h2>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h2><a class='wikilink' title='Index' href="Index.htm" tppabs="http://www.opensips.org/Documentation/Index">Documentation</a> -&gt; <a class='selflink' href="Migration-1-8-0-to-1-9-0.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-8-0-to-1-9-0">Migration from 1.8.x to 1.9.0</a></h2>
+</div>
+        <div class='difftype'>Changed line 8 from:</div>
+        <div class='diffdel'><p>You can find the all the new additions in 1.9.0 release compiled under this page. Overviewing it may help you understanding the migration / update process.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>You can find the all the new additions in 1.9.0 release compiled <a class='wikilink' title='Version-1-9-0' href="javascript:if(confirm(%27http://www.opensips.org/About/Version-1-9-0  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/Version-1-9-0%27" tppabs="http://www.opensips.org/About/Version-1-9-0">under this page</a>. Overviewing it may help you understanding the migration / update process.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-8-0-to-1-9-0-action=edit&restore=diff-1368098112-1366805503-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-8-0-to-1-9-0?action=edit&restore=diff:1368098112:1366805503:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 24, 2013, at 02:11 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Added lines 1-48:</div>
+        <div class='diffadd'><h2>Resources -&gt; <a class='wikilink' title='Documentation' href="javascript:if(confirm(%27http://www.opensips.org/Resources/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/Documentation%27" tppabs="http://www.opensips.org/Resources/Documentation">Documentation</a> -&gt; <a class='wikilink' title='DocsMigration' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsMigration  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsMigration%27" tppabs="http://www.opensips.org/Resources/DocsMigration">Version Migration</a> -&gt; Upgrading from 1.8.x to 1.9.0</h2>
+<p>This page has been visited 2547 times.
+(:toc-float Table of Content:)
+</p><hr />
+<p class='vspace'>This section is to provide useful help in migrating your OpenSIPS installations from the 1.8 branch to the 1.9 branch.
+</p>
+<p class='vspace'>You can find the all the new additions in 1.9.0 release compiled under this page. Overviewing it may help you understanding the migration / update process.
+</p>
+<div class='vspace'></div><hr />
+<h3>DB migration</h3>
+<p>You can migrate your 1.8.x DB to the 1.9.0 format by using the <strong>opensipsdbctl</strong> tool :
+</p><pre class='escaped'>
+   # opensipsdbctl migrate opensips_1_8 opensips_1_9
+   or
+   # osipsconsole 
+   &gt; migrate opensips_1_8 opensips_1_9
+   &gt; quit
+   # 
+</pre>
+<p>where :
+</p><ul><li>opensips_1_8 is the existing DB name corresponding to version 1.8.x format
+</li><li>opensips_1_9 is the DB name to be created for 1.9 format
+</li></ul><p class='vspace'>NOTE:
+</p><ul><li>the old database will not be deleted, altered or changed - it will not be touched at all
+</li><li>new database will be created and data from old DB will be imported into it
+</li></ul><p class='vspace'>NOTE:
+</p><ul><li>Due to the latest changes in the RTPProxy module, the <em>nh_sockets</em> table has been renamed to <em>rtpproxy_sockets</em>.
+</li></ul><p class='vspace'>NOTE:
+</p><ul><li>Due to some improvements in the Dialplan module, the <em>match_len</em> column that was specifying the length of the match column has been removed. Also, a new column, named <em>match_flags</em>, has been added to indicate whether the pattern matching should be done case sensitive or insensitive. The default value is 0 - <em>case sensitive</em>).
+</li></ul><p class='vspace'><span  style='color: red;'> NOTE that the migration tool is available only for MYSQL databases! </span>
+</p>
+<p class='vspace'>(:toc-back Back to Table of Contents:)
+</p>
+<div class='vspace'></div><hr />
+<h3>Script migration</h3>
+<ul><li>The <strong>match_len_col</strong> parameter from the DIALPLAN was removed and is considered obsolete. The length of the matching expression can be directly computed by OpenSIPS, so no need for it to be explicitly declared in the Database.
+</li><li>The old <strong>perlvdb</strong> module was renamed to <strong>DB_PERLVDB</strong> in order to respect the database modules naming convention.
+</li><li>1.9 supports named flags instead of just Integer flags. The migration to named flags affects all flag related functions and the module parameters used for defining flags (like flag to enable sip tracing, etc). This change is 100% backward compatible, but you will get some warning about deprecation of the ID based flags.
+</li><li>parameters <strong>db_url</strong> and <strong>xcap_table</strong> from <strong>xcap_client</strong> modules moved to <strong>xcap</strong> module, with same name, meaning and functionality.
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-1-8-0-to-1-9-0-action=edit&restore=diff-1366805503-1366805503-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-8-0-to-1-9-0?action=edit&restore=diff:1366805503:1366805503:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Migration-1-8-0-to-1-9-0-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-8-0-to-1-9-0?action=edit">Edit</a> |
+      <a rel="nofollow" href="Migration-1-8-0-to-1-9-0-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-8-0-to-1-9-0?action=diff">History</a> |
+      <a rel="nofollow" href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Migration-1-8-0-to-1-9-0?action=print  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Migration-1-8-0-to-1-9-0?action=print%27" tppabs="http://www.opensips.org/Documentation/Migration-1-8-0-to-1-9-0?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on June 10, 2013, at 11:34 AM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Tutorials-Compression-2-1 | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Tutorials-Compression-2-1' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Tutorials-Compression-2-1 History</h2>
+  <p><a href="Tutorials-Compression-2-1-action=diff&source=n&minor=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Compression-2-1?action=diff&source=n&minor=y">Show minor edits</a> - <a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-Compression-2-1?action=diff&source=y&minor=n  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-Compression-2-1?action=diff&source=y&minor=n%27" tppabs="http://www.opensips.org/Documentation/Tutorials-Compression-2-1?action=diff&source=y&minor=n">Show changes to markup</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>February 19, 2015, at 04:19 PM 
+        by <span class='diffauthor' title='89.120.101.121'>ionutionita92</span> - </div>
+        <div class='difftype'>Changed line 88 from:</div>
+        <div class='diffdel'><p>Let's assume that he loaded the "compression.so" and "tm.so" and go directly to script logic. The compressor did it for invites so the decompressor will do the same. Also keep in mind that this is one of the first things you want to do, because this function will change the sip message so all the changes to the message you have done before this will not be taken into consideration.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Let's assume that he loaded the "compression.so" and go directly to script logic. The compressor did it for invites so the decompressor will do the same. Also keep in mind that this is one of the first things you want to do, because this function will change the sip message so all the changes to the message you have done before this will not be taken into consideration.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-Compression-2-1?action=edit&restore=diff:1424359184:1417199441:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-Compression-2-1?action=edit&restore=diff:1424359184:1417199441:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-Compression-2-1?action=edit&restore=diff:1424359184:1417199441:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 28, 2014, at 07:30 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Changed line 9 from:</div>
+        <div class='diffdel'><p>this tutorial you should understand which functions this module provides and also how to use it in order to reduce the size of your SIP mesage.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>this tutorial you should understand which functions this module provides and also how to use it in order to reduce the size of your SIP message.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-Compression-2-1-action=edit&restore=diff-1417199441-1417199419-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Compression-2-1?action=edit&restore=diff:1417199441:1417199419:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 28, 2014, at 07:30 PM 
+        by <span class='diffauthor' title='188.27.255.63'>andrei_datcu</span> - </div>
+        <div class='difftype'>Changed line 9 from:</div>
+        <div class='diffdel'><p>this tutorial you should understand which functions this module provides and also how to use it in order to reduce the size of your SIP message.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>this tutorial you should understand which functions this module provides and also how to use it in order to reduce the size of your SIP mesage.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-Compression-2-1-action=edit&restore=diff-1417199419-1417190517-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Compression-2-1?action=edit&restore=diff:1417199419:1417190517:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 28, 2014, at 05:01 PM 
+        by <span class='diffauthor' title='89.120.101.121'>ionutionita92</span> - </div>
+        <div class='difftype'>Changed lines 39-40 from:</div>
+        <div class='diffdel'><p>Must load the module and tm (even though we do not use it)
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Must load the module
+</p>
+</div>
+        <div class='difftype'>Deleted line 42:</div>
+        <div class='diffdel'><p>loadmodule "tm.so"
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-Compression-2-1-action=edit&restore=diff-1417190517-1417022642-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Compression-2-1?action=edit&restore=diff:1417190517:1417022642:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 26, 2014, at 06:24 PM 
+        by <span class='diffauthor' title='89.120.101.121'>ionutionita92</span> - </div>
+        <div class='difftype'>Added lines 1-106:</div>
+        <div class='diffadd'><h5>Documentation -&gt; <a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Tutorials</a> -&gt; Using the <ins>Compression</ins> module </h5>
+<p>This page has been visited 827 times.
+(:toc-float Table of Content:)
+</p><hr />
+<div class='vspace'></div><h4>Tutorial Overview</h4>
+<p>The purpose of this tutorial is to help you understand how the <span  style='color: blue;'>compression</span> module works and also how it should be used. After reading
+this tutorial you should understand which functions this module provides and also how to use it in order to reduce the size of your SIP message.
+</p>
+<div class='vspace'></div><h4>Current features</h4>
+<p>As stated in the documentation, the module currently features:
+</p><ol><li><strong>Message compaction</strong>
+<ul><li>headers not specified in the given whitelist will be removed (excepting the mandatory ones like Via, To, From)
+</li><li>some headers which have a compact form (not all of them) will be reduced to short form( eg. Via --&gt; 'v'; Content-Length --&gt; 'l)
+</li><li>multiple headers of same type will be reduced to one header, containing all of them (eg. Header1: text1 and Header1: text2 reduced to Header1: text1, text2)
+</li><li>unnecessary sdp body a=rtpmap:CODEC_NO where CODEC_NO &lt; 98 removal
+</li></ul></li><li><strong>Message compression/decompression</strong>
+<ul><li>compression of the message body
+</li><li>compression of headers specified in a whitelist, also excepting the mandatory ones
+</li><li>base64 encoding
+</li></ul></li></ol><p class='vspace'>Future directions for the module include adding more compression algorithms and support fore more types of routes.
+</p>
+<div class='vspace'></div><h4>Example script</h4>
+<p>The following script will implement the following scenario: two SIP Servers directly connected. One of them does the compaction and the compression, and then forwards the message. The other one, receives the compressed message, decompresses the message and then forwards it.
+</p>
+<p class='vspace'>SIP logic provided for compressing server:
+</p><ul><li>message compression
+</li><li>message compaction
+</li></ul><p class='vspace'>SIP logic provided for decompressing server:
+</p><ul><li>message decompression
+</li></ul><p class='vspace'><span  style='color: blue;'>The compressing server</span>
+</p>
+<p class='vspace'>Must load the module and tm (even though we do not use it)
+</p>
+<div class='vspace'></div><pre class='escaped'>
+loadmodule "compression.so"
+loadmodule "tm.so"
+</pre>
+<p class='vspace'>Optionally, we can set the compression level(1-9), default 6:
+</p><pre class='escaped'>
+modparam("compression", "compression_level", 7)
+</pre>
+<p class='vspace'>And then let's assume that for all "INVITES" we want to do compression and compaction:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+route {
+      if (is_method("INVITE") {
+         /*
+             we want body and headers compression separately
+             will use deflate
+             won't use base64
+             let's say the headers we want to compress are Header1 and Header2      
+         */
+         if (!mc_compress("0", "bhs", "Header1|Header2")) {
+             xlog("compression failed\n");
+             exit;
+         }
+         /*
+            now do compaction but keep User-Agent and P-Asserted-Identity headers
+            the rest of them will be removed (excepting the mandatory ones)
+            VERY IMPORTANT: keep in mind that if you do compaction after compression
+            3 new headers might be added: Content-Encoding (if you compress the body),
+            Comp-Hdrs(the compressed headers), Headers-Encoding(the algorithm used to
+            compress the headers in Comp-Hdrs). These headers will not be kept by
+            openSIPS, so you must explicitly specify them in mc_compact whitelist
+            of headers not to be removed.
+         */
+         if (!mc_compact("User-Agent|P-Asserted-Identity|Content-Encoding|Comp-Hdrs|Headers-Encoding") {
+             xlog("Compaction failed\n");
+             exit;
+         }
+         $var(dest) = "SO.ME.IP.ADDRESS:SOME_PORT";
+         forward("$var(dest)");
+
+      }
+}
+</pre>
+<p class='vspace'><span  style='color: blue;'> Now let's go to the receiving server, the one doing the decompression.</span>
+</p>
+<p class='vspace'>Let's assume that he loaded the "compression.so" and "tm.so" and go directly to script logic. The compressor did it for invites so the decompressor will do the same. Also keep in mind that this is one of the first things you want to do, because this function will change the sip message so all the changes to the message you have done before this will not be taken into consideration.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+route {
+      if (is_method("REGISTER")) {
+          if (!mc_decompress()) {
+              xlog("decompression failed\n");
+              exit;
+          }
+          /* use the decompressed message */
+          #some_instructions#
+          /* forward it */
+          $var(endpoit_addr) = "SO.ME.IP.ADDRESS";
+          forward("$var(endpoint_addr)");
+      }
+}
+</pre> 
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-Compression-2-1-action=edit&restore=diff-1417022642-1417022642-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Compression-2-1?action=edit&restore=diff:1417022642:1417022642:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Tutorials-Compression-2-1-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Compression-2-1?action=edit">Edit</a> |
+      <a rel="nofollow" href="Tutorials-Compression-2-1-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Compression-2-1?action=diff">History</a> |
+      <a rel="nofollow" href="Tutorials-Compression-2-1-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Compression-2-1?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on February 19, 2015, at 04:19 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

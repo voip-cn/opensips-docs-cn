@@ -1,0 +1,263 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+  <title>openSIPS | Documentation / Tutorials-Perl-183-to-180</title>
+  <link rel='stylesheet' href="print.css" tppabs="http://www.opensips.org/pub/skins/print/print.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+</head>
+<body>
+  <div id='printhead'>
+    <h3>From openSIPS</h3>
+    <h1 class='pagename'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation%27" tppabs="http://www.opensips.org/Documentation">Documentation: Tutorials-Perl-183-to-180</a></h1>
+  </div>
+<!--PageText-->
+<div id='wikitext'>
+<h5>Documentation -&gt; <a class='wikilink' href="Tutorials-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials?action=print">Tutorials</a> -&gt; Perl</h5>
+<hr />
+<h2>Replace 183 early media reply with 180 (Ringing)</h2>
+<h3>Task</h3>
+<p>We want to catch all 183 status responses, remove the SDP body and send a plain 180 reply instead. This example script has also been posted to the OpenSIPS-Users mailinglist and should show the possibilities of the OpenSIPS Perl module.
+</p>
+<div class='vspace'></div><h3>Usage</h3>
+<pre class='escaped'>
+loadmodule "perl.so"
+modparam("perl", "filename", "/etc/opensips/perlfunctions.pl")
+
+onreply_route[1]
+{
+    ...
+    if(t_check_status("183")) {
+        perl_exec("sendReplyAs180");
+        drop();
+    }
+}
+</pre>
+<div class='vspace'></div><h3>Example script (Perl code)</h3>
+<pre class='escaped'>
+#####################################################################
+# Example perl script, sending 180 Ringing for a given reply packet
+#
+# Description
+#
+# &lt;to be done - no time right now, script has been discussed on IRC&gt;
+#
+# WARNING:
+#
+# This software is given as is, without any warranty and support.
+# It may destroy all your servers, delete all your data, kill your
+# little dog and hurt your little sister.
+#
+# I'm not responsible for such side effects - therefore you should
+# absolutely NOT use this script unless you exactly understand what
+# it will do to your environment.
+#
+# Author      : Thomas Gelf &lt;thomas@gelf.net&gt;
+# License     : Unsure, but: just use it, I'll for sure not sue you!
+# Last change : 2009/04/12
+#
+#####################################################################
+
+use OpenSIPS qw ( log );
+use OpenSIPS::Constants;
+
+###
+# Create a hashref out of ab=123;bc=45
+##
+sub splitKeyValue {
+    my @parts = split /\;/, shift;
+    my $avp;
+    my $key;
+    my $val;
+    while (my $part = shift(@parts)) {
+        ($key, $val) = split /=/, $part, 2;
+        $avp-&gt;{$key} = $val;
+    }
+    return $avp;
+}
+
+###
+# Return a hashref of arrays with all headers found in given string,
+# grouped by header name (case sensitive!)
+##
+sub parseHeaderLines {
+    my $header = shift;
+    my @lines = split /\r?\n/, $header;
+    my $headers;
+    my $key;
+    my $val;
+    while ($line = shift @lines) {
+        ($key, $val) = split /:\s*/, $line, 2;
+        my @values = split /,/, $val;
+        push @{$headers-&gt;{$key}}, @values;
+    }
+    return $headers;
+}
+
+###
+# Should be called for 183 replies, that need to be "converted" to
+# SDP-less 180 Ringing replies
+##
+sub sendReplyAs180 {
+    my $vias;
+    my $via;
+    my $via_params;
+    my $top_via;
+    my $new_header;
+    my $headers;
+    my $status_line;
+    my $port = 5060;
+    my $message = shift;
+    my @header_lines = split /\r\n/, $message-&gt;getFullHeader();
+
+    # Separate Via lines from the rest of the header
+    foreach (@header_lines) {
+        if (/^Via:/) {
+            $via .= $_ . "\r\n";
+        } else {
+            if (! $status_line) {
+                $status_line = $_ . "\r\n";
+            } else {
+                # Skip Content-* lines
+                $headers .= $_ . "\r\n" if ! /^Content-/i;
+            }
+        }
+    }
+
+    # Add Content-Length: 0
+    $headers .= "Content-Length: 0\r\n\r\n";
+
+    # Start new header with different status line
+    $new_header = "SIP/2.0 180 Ringing\r\n";
+
+    # Remove topmost Via
+    $vias = parseHeaderLines($via);
+    shift @{$vias-&gt;{Via}};
+    foreach $key (keys %$vias) {
+        # Add remaining Via's to new header
+        foreach (@{$vias-&gt;{$key}}) {
+            $new_header .= "Via: $_\r\n";
+        }
+    }
+
+    # Re-add other headers
+    $new_header .= $headers;
+
+    # Retrieve destination ip and port, with respect to received and rport
+    $top_via = $vias-&gt;{Via}[0];
+    ($dummy, $top_via) = split /\s+/, $top_via, 2;
+    ($ip, $top_via) = split /;/, $top_via, 2;
+    my $via_params = splitKeyValue($top_via);
+    if ($ip =~ /^(.+)\:(.+)$/) {
+        $ip = $1;
+        $port = $2;
+    }
+    $ip = $via_params-&gt;{received} if $via_params-&gt;{received} =~ /^[0-9\.]+$/;
+    $port = $via_params-&gt;{rport} if $via_params-&gt;{rport} =~ /^\d{4,5}$/;
+
+    # Finally send out the packet
+    log(L_INFO, "Sending reply transformed to 180 Ringing to $ip:$port");
+    sendSipMessage($ip, $port, $new_header);
+    return 1;
+}
+
+###
+# Send a given SIP message to given IP and port
+##
+sub sendSipMessage {
+    my $ip = shift;
+    my $port = shift;
+    my $msg = shift;
+    my $sock = new IO::Socket::INET (
+        PeerAddr  =&gt; $ip, 
+        PeerPort  =&gt; $port,
+        Proto     =&gt; 'udp',
+        LocalPort =&gt; '5060',
+        ReuseAddr =&gt; '1'
+    );
+    return unless $sock;
+    print $sock $msg;
+    close($sock);
+}
+</pre>
+</div>
+
+  <div id='printfoot'>
+    <div class='from'>Retrieved from http://www.opensips.org/Documentation/Tutorials-Perl-183-to-180</div>
+    <div class='lastmod'>Page last modified on May 16, 2013, at 06:10 PM</div></div>
+<!--HTMLFooter-->
+</body>
+</html>

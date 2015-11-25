@@ -1,0 +1,360 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+  <title>openSIPS | Documentation / Types of routes - ver 1.8 </title>
+  <link rel='stylesheet' href="print.css" tppabs="http://www.opensips.org/pub/skins/print/print.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+</head>
+<body>
+  <div id='printhead'>
+    <h3>From openSIPS</h3>
+    <h1 class='pagename'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation%27" tppabs="http://www.opensips.org/Documentation">Documentation: Types of routes - ver 1.8 </a></h1>
+  </div>
+<!--PageText-->
+<div id='wikitext'>
+<h5>Documentation -&gt; <a class='wikilink' href="Manuals-action=print.htm" tppabs="http://www.opensips.org/Documentation/Manuals?action=print">Manuals</a> -&gt; <a class='wikilink' href="Manual-1-8-action=print.htm" tppabs="http://www.opensips.org/Documentation/Manual-1-8?action=print">Manual 1.8</a> -&gt; Types of routes</h5>
+<hr />
+<p><span style='font-size:83%'> Pages for other versions: <a class='wikilink' href="Script-Routes-2-2-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-2-2?action=print">devel</a> <a class='wikilink' href="Script-Routes-2-1-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-2-1?action=print">2.1</a> <a class='wikilink' href="Script-Routes-1-11-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-11?action=print">1.11</a>  Older versions: <a class='wikilink' href="Script-Routes-1-10-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-10?action=print">1.10</a> <a class='wikilink' href="Script-Routes-1-9-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-9?action=print">1.9</a> 1.8 <a class='wikilink' href="Script-Routes-1-7-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-7?action=print">1.7</a> <a class='wikilink' href="Script-Routes-1-6-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-6?action=print">1.6</a> <a class='wikilink' href="Script-Routes-1-5-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-5?action=print">1.5</a> <a class='wikilink' href="Script-Routes-1-4-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-4?action=print">1.4</a> </span>
+</p>
+<p class='vspace'><br />
+</p><table width='100%'><tr ><td  align='center'><span  style='color: #185662;'><span style='font-size:120%'><strong>Types of Routes v1.8</strong></span></span></td></tr>
+</table>
+<div class='vspace'></div><table width='100%'><tr ><td  align='left'><a class='wikilink' href="Script-CoreParameters-1-8-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-1-8?action=print">Prev</a></td><td  align='right'><a class='wikilink' href="Script-Operators-1-8-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Operators-1-8?action=print">Next</a></td></tr>
+</table><hr />
+<div class='tocfloat'><p><a name='toc' id='toc'></a><b>Table of Content</b> (<a id="tocidtog" href="javascript:toggle('tocid');">hide</a>)</p><ol class='toc' id='tocid'><li>1.&nbsp;<a href='#toc1'>route</a></li><li>2.&nbsp;<a href='#toc2'>branch_route</a></li><li>3.&nbsp;<a href='#toc3'>failure_route</a></li><li>4.&nbsp;<a href='#toc4'>onreply_route</a></li><li>5.&nbsp;<a href='#toc5'>error_route</a></li><li>6.&nbsp;<a href='#toc6'>local_route</a></li><li>7.&nbsp;<a href='#toc7'>startup_route</a></li><li>8.&nbsp;<a href='#toc8'>timer_route</a></li></ol></div>
+<p class='vspace'><strong>OpenSIPS</strong> routing logic uses several types of routes. Each type of route is triggered by a certain event and allows you to process a certain type of message (request or reply).
+</p>
+<div class='vspace'></div><hr />
+<h4><a name='toc1' id='toc1'></a>1.&nbsp;route</h4>
+<p>Request routing block. It contains a set of actions to be taken for SIP requests.
+</p>
+<p class='vspace'><strong>Triggered by</strong> : receiving an external request from the network.
+</p>
+<p class='vspace'><strong>Processing</strong> : the triggering SIP request.
+</p>
+<p class='vspace'><strong>Type</strong> : initially stateless, may be forced to stateful by using TM functions.
+</p>
+<p class='vspace'><strong>Default action</strong> : if the request is not either forwarded nor replied, the route will simply discard the request at the end.
+</p>
+<p class='vspace'>The main 'route' block identified by 'route{...}' or 'route[0]{...}' is executed for each SIP request.
+</p>
+<p class='vspace'>The implicit action after execution of the main route block is to drop the SIP request. To send a reply or forward the request, explicit actions must be called inside the route block.
+</p>
+<p class='vspace'>Example of usage:
+</p><pre class='escaped'>
+    route {
+         if(is_method("OPTIONS")) {
+            # send reply for each options request
+            sl_send_reply("200", "ok");
+            exit();
+         }
+         route(1);
+    }
+    route[1] {
+         # forward according to uri
+         forward();
+    }
+</pre>
+<p class='vspace'>Note that if a 'route(X)' is called from a 'branch_route[Y]' then in 'route[X]' is just processed each separate branch instead of all branches together as occurs in main route.
+</p>
+<div class='vspace'></div><hr />
+<h4><a name='toc2' id='toc2'></a>2.&nbsp;branch_route</h4>
+<p>Request's branch routing block. It contains a set of actions to be taken for each branch of a SIP request.
+</p>
+<p class='vspace'><strong>Triggered by</strong> : preparation a new branch (of a request); the branch is well formed, but not yet sent out.
+</p>
+<p class='vspace'><strong>Processing</strong> : the SIP request (with the branch particularities, like RURI, branch flags)
+</p>
+<p class='vspace'><strong>Type</strong> : stateful
+</p>
+<p class='vspace'><strong>Default action</strong> : if the branch is not dropped (via "drop" statement), the branch will be automatically sent out.
+</p>
+<p class='vspace'>It is executed only by TM module after it was armed via t_on_branch("branch_route_index").
+</p>
+<p class='vspace'>Example of usage:
+</p><pre class='escaped'>
+    route {
+        lookup("location");
+        t_on_branch("1");
+        if(!t_relay()) {
+            sl_send_reply("500", "relaying failed");
+        }
+    }
+    branch_route[1] {
+        if(uri=~"10\.10\.10].10") {
+            # discard branches that go to 10.10.10.10
+            drop();
+        }
+    }
+</pre>
+<div class='vspace'></div><hr />
+<h4><a name='toc3' id='toc3'></a>3.&nbsp;failure_route</h4>
+<p>Failed transaction routing block. It contains a set of actions to be taken each transaction that received only negative replies (&gt;=300) for all branches.
+</p>
+<p class='vspace'><strong>Triggered by</strong> : receiving or generation(internal) of a negative reply that completes the transaction (all branches are terminated with negative replies)
+</p>
+<p class='vspace'><strong>Processing</strong> : the original SIP request (that was sent out)
+</p>
+<p class='vspace'><strong>Type</strong> : stateful
+</p>
+<p class='vspace'><strong>Default action</strong> : if no new branch is generated or no reply is forced over, by default, the winning reply will be sent back to UAC.
+</p>
+<p class='vspace'>The 'failure_route' is executed only by TM module after it was armed via t_on_failure("failure_route_index").
+</p>
+<p class='vspace'>Note that in 'failure_route' is processed the request that initiated the transaction, not the reply .
+</p>
+<p class='vspace'>Example of usage:
+</p><pre class='escaped'>
+    route {
+        lookup("location");
+        t_on_failure("1");
+        if(!t_relay()) {
+            sl_send_reply("500", "relaying failed");
+        }
+    }
+    failure_route[1] {
+        if(is_method("INVITE")) {
+             # call failed - relay to voice mail
+             t_relay("udp:voicemail.server.com:5060");
+        }
+    }
+</pre>
+<div class='vspace'></div><hr />
+<h4><a name='toc4' id='toc4'></a>4.&nbsp;onreply_route</h4>
+<p class='vspace'>Reply routing block. It contains a set of actions to be taken for SIP replies.
+</p>
+<p class='vspace'><strong>Triggered by</strong> : receiving of a reply from the network
+</p>
+<p class='vspace'><strong>Processing</strong> : the received reply
+</p>
+<p class='vspace'><strong>Type</strong> : stateful (if bound to a transaction) or stateless (if global reply route).
+</p>
+<p class='vspace'><strong>Default action</strong> : if the reply is not dropped (only provisional replies can be), it will be injected and processed by the transaction engine.
+</p>
+<p class='vspace'>There are three types of onreply routes:
+</p>
+<div class='vspace'></div><ul><li><strong>global</strong> - it catches all replies received by OpenSIPS and does not need any special arming (simple definition is enough) - named 'onreply_route {...}' or 'onreply_route[0] {...}'.
+<div class='vspace'></div></li><li><strong>per request/transaction</strong> - it catches all received replies belonging to a certain transaction and need to be armed (via "t_on_reply()" ) at request time, in REQUEST ROUTE - named 'onreply_route[N] {...}'.
+<div class='vspace'></div></li><li><strong>per branch</strong> - it catches only the replies that belong to a certain branch from a transaction. It needs to be armed (also via "t_on_reply()" ) at request time, but in BRANCH ROUTE, when a certain outgoing branch is processed - named 'onreply_route[N] {...}'.
+</li></ul><p class='vspace'>Certain 'onreply_route' blocks can be executed by TM module for special replies. For this, the 'onreply_route' must be armed for the SIP requests whose replies should be processed within it, via t_on_reply("onreply_route_index").
+</p>
+<div class='vspace'></div><pre class='escaped'>
+route {
+        seturi("sip:bob@opensips.org");  # first branch
+        append_branch("sip:alice@opensips.org"); # second branch
+
+        t_on_reply("global"); # the "global" reply route
+                              # is set the whole transaction
+        t_on_branch("1");
+
+        t_relay();
+}
+
+branch_route[1] {
+        if ($rU=="alice")
+                t_on_reply("alice"); # the "alice" reply route
+                                      # is set only for second branch
+}
+
+onreply_route {
+        xlog("OpenSIPS received a reply from $si\n");
+}
+
+
+onreply_route[alice] {
+        xlog("received reply on the branch from alice\n");
+}
+
+onreply_route[global] {
+        if (t_check_status("1[0-9][0-9]")) {
+                setflag(1);
+                log("provisional reply received\n");
+                if (t_check_status("183"))
+                        drop;
+        }
+}
+
+</pre>
+<div class='vspace'></div><hr />
+<h4><a name='toc5' id='toc5'></a>5.&nbsp;error_route</h4>
+<p>The error route is executed automatically when a parsing error occurred during SIP request processing. This allow the administrator to decide what to do in case of error.
+</p>
+<p class='vspace'><strong>Triggered by</strong> : parsing error in "route"
+</p>
+<p class='vspace'><strong>Processing</strong> : failed request
+</p>
+<p class='vspace'><strong>Type</strong> : stateless (recommended)
+</p>
+<p class='vspace'><strong>Default action</strong> : discard request.
+</p>
+<p class='vspace'>In error_route, the following pseudo-variables are available to get access to error details:
+</p><ul><li>$(err.class) - the class of error (now is '1' for parsing errors)
+</li><li>$(err.level) - severity level for the error
+</li><li>$(err.info) - text describing the error
+</li><li>$(err.rcode) - recommended reply code
+</li><li>$(err.rreason) - recommended reply reason phrase
+</li></ul><div class='vspace'></div><pre class='escaped'>
+  error_route {
+     xlog("--- error route class=$(err.class) level=$(err.level)
+            info=$(err.info) rcode=$(err.rcode) rreason=$(err.rreason) ---\n");
+     xlog("--- error from [$si:$sp]\n+++++\n$mb\n++++\n");
+     sl_send_reply("$err.rcode", "$err.rreason");
+     exit;
+  }
+</pre>
+<div class='vspace'></div><hr />
+<h4><a name='toc6' id='toc6'></a>6.&nbsp;local_route</h4>
+<p>The local route is executed automatically when a new SIP request is generated by TM, internally (no UAC side). This is a route intended to be used for message inspection, accounting and for applying last changes on the message headers. Routing and signaling functions are not allowed. 
+</p>
+<p class='vspace'><strong>Triggered by</strong> : TM generating a brand new request
+</p>
+<p class='vspace'><strong>Processing</strong> : the new request
+</p>
+<p class='vspace'><strong>Type</strong> : stateful 
+</p>
+<p class='vspace'><strong>Default action</strong> : send the request out
+</p>
+<div class='vspace'></div><pre class='escaped'>
+  local_route {
+     if (is_method("INVITE") &amp;&amp; $ru=~"@foreign.com") {
+        append_hf("P-hint: foreign request\r\n");
+        exit;
+     }
+     if (is_method("BYE") ) {
+        acc_log_request("internally generated BYE");
+     }
+  }
+</pre>
+<div class='vspace'></div><hr />
+<h4><a name='toc7' id='toc7'></a>7.&nbsp;startup_route</h4>
+<p>The <strong>startup_route</strong> is executed only once when OpenSIPS is started and before the processing of SIP messages begins. This is useful if some initiation actions are needed, like loading some data in the cache, to ease up the future processing. Notice that this route, compared to the others is not triggered at the receipt of a message, so the functions that can be called here must not do processing on the message.
+</p>
+<p class='vspace'><strong>Triggered</strong> : At startup, before the listener processes are started.
+</p>
+<p class='vspace'><strong>Processing</strong> : Initializing functions.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+  startup_route {
+    avp_db_query("select gwlist where ruleid==1",$avp(i:100));
+    cache_store("local", "rule1", "$avp(i:100)");
+  }
+</pre>
+<div class='vspace'></div><hr />
+<h4><a name='toc8' id='toc8'></a>8.&nbsp;timer_route</h4>
+<p>The <strong>timer_route</strong> is as the name suggests, a route executed periodically at a configured interval of time specified next to the name(in seconds). The same as the startup_route, this route does not process a message. You can defined more timer routes.
+</p>
+<p class='vspace'><strong>Triggered by</strong> : The time keeper.
+</p>
+<p class='vspace'><strong>Processing</strong> : Functions that do refresh actions.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+  timer_route[gw_update, 300] {
+    avp_db_query("select gwlist where ruleid==1",$avp(i:100));
+    $shv(i:100) =$avp(i:100);
+  }
+</pre>
+<div class='vspace'></div><hr />
+<div class='vspace'></div>
+    <div id='message'><form name='cbox' class='inputform' action="http://www.opensips.org/Documentation/Script-Routes-1-8" method='post' onsubmit='return checkform(this);'>
+    <input type='hidden' name='n' value='Documentation.Script-Routes-1-8' />
+    <input type='hidden' name='action' value='comment' />
+    <input type='hidden' name='order' value='chrono' /><input type='hidden' name='accesscode' value='825' />
+    <input type='hidden' name='csum' value='Comment added' />
+    <table width='90%'><tr>
+    <th class='prompt' align='right' valign='top'>Add Comment&nbsp;</th>
+    <td><textarea class='inputtext commenttext' name='text' id='text' rows=6 cols=40></textarea>
+    </td></tr><tr><th class='prompt' align='right' valign='top'>Sign as Author&nbsp;</th>
+    <td><input class='inputbox commentauthorbox' type='text' name='author' value='' size='32' /></td></tr>
+    <tr><th class='prompt' align='right' valign='top'>Enter code <em class='access'>825</em></th>
+    <td><input type='text' size='4' maxlength='3' name='access' value='' class='inputbox' /> <input class='inputbutton commentbutton' type='submit' name='post' value=' Post ' />
+    <input class='inputbutton commentbutton' type='reset' value='Reset' /></td></tr></table><br /></form></div>
+ <script type='text/javascript' language='JavaScript1.2'>
+  function checkform ( form ) {
+   if (form.text && form.text.value == "") { window.alert( 'Please enter a comment to post' ); form.text.focus(); return false; }
+   if (form.author && form.author.value == "") { window.alert( 'Please enter your name as author' ); form.author.focus(); return false; }
+   if (form.access && form.access.value == "") { window.alert( 'Please enter the code number' ); form.access.focus(); return false; }return true ;
+  }
+  </script>
+   
+</div>
+
+  <div id='printfoot'>
+    <div class='from'>Retrieved from http://www.opensips.org/Documentation/Script-Routes-1-8</div>
+    <div class='lastmod'>Page last modified on November 28, 2013, at 01:41 PM</div></div>
+<!--HTMLFooter-->
+</body>
+</html>

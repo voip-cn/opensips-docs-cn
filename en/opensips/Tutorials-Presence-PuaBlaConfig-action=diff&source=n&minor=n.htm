@@ -1,0 +1,455 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Tutorials-Presence-PuaBlaConfig | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Tutorials-Presence-PuaBlaConfig' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Tutorials-Presence-PuaBlaConfig History</h2>
+  <p><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-Presence-PuaBlaConfig?action=diff&source=n&minor=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-Presence-PuaBlaConfig?action=diff&source=n&minor=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PuaBlaConfig?action=diff&source=n&minor=y">Show minor edits</a> - <a href="Tutorials-Presence-PuaBlaConfig-action=diff&source=y&minor=n.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PuaBlaConfig?action=diff&source=y&minor=n">Show changes to markup</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>July 02, 2014, at 02:05 PM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Changed line 93 from:</div>
+        <div class='diffdel'><pre>			if (is_method("SUBSCRIBEY") &amp;&amp; uri==myself) {
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>			if (is_method("SUBSCRIBE") &amp;&amp; uri==myself) {
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-Presence-PuaBlaConfig?action=edit&restore=diff:1404302715:1404301996:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-Presence-PuaBlaConfig?action=edit&restore=diff:1404302715:1404301996:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PuaBlaConfig?action=edit&restore=diff:1404302715:1404301996:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>July 02, 2014, at 01:53 PM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Changed lines 1-6 from:</div>
+        <div class='diffdel'><p><a class='wikilink' title='Tutorials-PUAExtensions' href="Tutorials-PUAExtensions.htm#pua_bla" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtensions#pua_bla">&lt;-Back</a>
+</p>
+<p class='vspace'>Download
+</p>
+<div class='vspace'></div><pre><span style="color: #800;">#</span><span style="color: #000;"><br></span><span style="color: #800;"># OpenSIPS configuration file</span><span style="color: #000;"><br></span><span style="color: #800;"># </span><span style="color: #000;"><br></span><span style="color: #800;"># Bridge Line Appearance( event:dialog;sla) </span><span style="color: #000;"><br></span><span style="color: #800;">#</span><span style="color: #000;"><br><br></span><span style="color: #800;"># ----------- global configuration parameters ------------------------</span><span style="color: #000;"><br>debug</span><span style="color: #660;">=</span><span style="color: #066;">3</span><span style="color: #000;"><br>log_stderror</span><span style="color: #660;">=</span><span style="color: #008;">no</span><span style="color: #000;"><br>log_facility</span><span style="color: #660;">=</span><span style="color: #000;">LOG_LOCAL0<br><br>fork</span><span style="color: #660;">=</span><span style="color: #000;">yes<br>children</span><span style="color: #660;">=</span><span style="color: #066;">4</span><span style="color: #000;"><br><br>listen</span><span style="color: #660;">=</span><span style="color: #000;">udp</span><span style="color: #660;">:</span><span style="color: #066;">10.10.10.10</span><span style="color: #660;">:</span><span style="color: #066;">5060</span><span style="color: #000;"><br><br><br></span><span style="color: #800;"># ------------------ module loading ----------------------------------</span><span style="color: #000;"><br>mpath</span><span style="color: #660;">=</span><span style="color: #080;">"/usr/local/opensips/lib/modules/"</span><span style="color: #000;"><br><br>loadmodule </span><span style="color: #080;">"db_mysql.so"</span><span style="color: #000;"><br>loadmodule </span><span style="color: #080;">"sl.so"</span><span style="color: #000;"><br>loadmodule </span><span style="color: #080;">"maxfwd.so"</span><span style="color: #000;"><br>loadmodule </span><span style="color: #080;">"textops.so"</span><span style="color: #000;"><br>loadmodule </span><span style="color: #080;">"tm.so"</span><span style="color: #000;"><br>loadmodule </span><span style="color: #080;">"rr.so"</span><span style="color: #000;"><br>loadmodule </span><span style="color: #080;">"presence.so"</span><span style="color: #000;"><br>loadmodule </span><span style="color: #080;">"presence_xml.so"</span><span style="color: #000;"><br>loadmodule </span><span style="color: #080;">"mi_fifo.so"</span><span style="color: #000;"><br>loadmodule </span><span style="color: #080;">"usrloc.so"</span><span style="color: #000;"><br>loadmodule </span><span style="color: #080;">"registrar.so"</span><span style="color: #000;"><br>loadmodule </span><span style="color: #080;">"pua.so"</span><span style="color: #000;"><br>loadmodule </span><span style="color: #080;">"pua_bla.so"</span><span style="color: #000;"><br></span><span style="color: #800;"># for 1.5 you must load also signaling module; uncomment the next line</span><span style="color: #000;"><br></span><span style="color: #800;">#loadmodule "signaling.so"</span><span style="color: #000;"><br><br><br><br></span><span style="color: #800;"># Uncomment this if you want digest authentication</span><span style="color: #000;"><br></span><span style="color: #800;"># mysql.so must be loaded !</span><span style="color: #000;"><br></span><span style="color: #800;">#loadmodule "/usr/local/lib/opensips/modules/auth.so"</span><span style="color: #000;"><br></span><span style="color: #800;">#loadmodule "/usr/local/lib/opensips/modules/auth_db.so"</span><span style="color: #000;"><br><br></span><span style="color: #800;"># ----------------- setting module-specific parameters ---------------</span><span style="color: #000;"><br></span><span style="color: #800;"># --mi_fifo params --</span><span style="color: #000;"><br>modparam</span><span style="color: #660;">(</span><span style="color: #080;">"mi_fifo"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"fifo_name"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"/tmp/opensips_fifo"</span><span style="color: #660;">)</span><span style="color: #000;"><br><br></span><span style="color: #800;"># -- usrloc params --</span><span style="color: #000;"><br>modparam</span><span style="color: #660;">(</span><span style="color: #080;">"usrloc"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"db_mode"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #066;">2</span><span style="color: #660;">)</span><span style="color: #000;"><br>modparam</span><span style="color: #660;">(</span><span style="color: #080;">"usrloc"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"db_url"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"mysql://opensips:opensipsrw@localhost/opensips"</span><span style="color: #660;">)</span><span style="color: #000;"><br><br></span><span style="color: #800;"># -- auth params --</span><span style="color: #000;"><br></span><span style="color: #800;"># Uncomment if you are using auth module</span><span style="color: #000;"><br></span><span style="color: #800;">#</span><span style="color: #000;"><br></span><span style="color: #800;">#modparam("auth_db", "calculate_ha1", yes)</span><span style="color: #000;"><br></span><span style="color: #800;">#</span><span style="color: #000;"><br></span><span style="color: #800;"># If you set "calculate_ha1" parameter to yes (which true in this config), </span><span style="color: #000;"><br></span><span style="color: #800;"># uncomment also the following parameter)</span><span style="color: #000;"><br></span><span style="color: #800;">#</span><span style="color: #000;"><br></span><span style="color: #800;">#modparam("auth_db", "password_column", "password")</span><span style="color: #000;"><br><br></span><span style="color: #800;"># -- rr params --</span><span style="color: #000;"><br></span><span style="color: #800;"># add value to ;lr param to make some broken UAs happy</span><span style="color: #000;"><br>modparam</span><span style="color: #660;">(</span><span style="color: #080;">"rr"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"enable_full_lr"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #066;">1</span><span style="color: #660;">)</span><span style="color: #000;"><br><br></span><span style="color: #800;"># -- presence and presence_xml params --</span><span style="color: #000;"><br>modparam</span><span style="color: #660;">(</span><span style="color: #080;">"presence|presence_xml"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"db_url"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"mysql://opensips:opensipsrw@localhost/opensips"</span><span style="color: #660;">)</span><span style="color: #000;"><br>modparam</span><span style="color: #660;">(</span><span style="color: #080;">"presence"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"server_address"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"sip:sa@10.10.10.10:5060"</span><span style="color: #660;">)</span><span style="color: #000;"><br>modparam</span><span style="color: #660;">(</span><span style="color: #080;">"presence_xml"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"force_active"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #066;">1</span><span style="color: #660;">)</span><span style="color: #000;"><br><br></span><span style="color: #800;"># -- pua and pua_xmpp params --</span><span style="color: #000;"><br>modparam</span><span style="color: #660;">(</span><span style="color: #080;">"pua"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"db_url"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"mysql://opensips:opensipsrw@localhost/opensips"</span><span style="color: #660;">)</span><span style="color: #000;"> <br>modparam</span><span style="color: #660;">(</span><span style="color: #080;">"pua_bla"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"server_address"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"sip:sa@10.10.10.10:5060"</span><span style="color: #660;">)</span><span style="color: #000;"><br>modparam</span><span style="color: #660;">(</span><span style="color: #080;">"pua_bla"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"default_domain"</span><span style="color: #660;">,</span><span style="color: #000;"> &nbsp;</span><span style="color: #080;">"10.10.10.10"</span><span style="color: #660;">)</span><span style="color: #000;"><br>modparam</span><span style="color: #660;">(</span><span style="color: #080;">"pua_bla"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"header_name"</span><span style="color: #660;">,</span><span style="color: #000;"> &nbsp;</span><span style="color: #080;">"Sender"</span><span style="color: #660;">)</span><span style="color: #000;"><br><br></span><span style="color: #800;"># ------------------------- &nbsp;request routing logic -------------------</span><span style="color: #000;"><br><br></span><span style="color: #800;"># main routing logic</span><span style="color: #000;"><br><br>route</span><span style="color: #660;">{</span><span style="color: #000;"><br><br><br>&nbsp; </span><span style="color: #800;"># initial sanity checks -- messages with</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #800;"># max_forwards==0, or excessively long requests</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #008;">if</span><span style="color: #000;"> </span><span style="color: #660;">(!</span><span style="color: #000;">mf_process_maxfwd_header</span><span style="color: #660;">(</span><span style="color: #080;">"10"</span><span style="color: #660;">))</span><span style="color: #000;"> </span><span style="color: #660;">{</span><span style="color: #000;"><br>&nbsp; &nbsp; sl_send_reply</span><span style="color: #660;">(</span><span style="color: #080;">"483"</span><span style="color: #660;">,</span><span style="color: #080;">"Too Many Hops"</span><span style="color: #660;">);</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #008;">exit</span><span style="color: #660;">;</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #660;">};</span><span style="color: #000;"><br><br>&nbsp; </span><span style="color: #008;">if</span><span style="color: #000;"> </span><span style="color: #660;">(</span><span style="color: #000;">msg</span><span style="color: #660;">:</span><span style="color: #000;">len </span><span style="color: #660;">&gt;=</span><span style="color: #000;"> &nbsp;</span><span style="color: #066;">2048</span><span style="color: #000;"> </span><span style="color: #660;">)</span><span style="color: #000;"> </span><span style="color: #660;">{</span><span style="color: #000;"><br>&nbsp; &nbsp; sl_send_reply</span><span style="color: #660;">(</span><span style="color: #080;">"513"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"Message too big"</span><span style="color: #660;">);</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #008;">exit</span><span style="color: #660;">;</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #660;">};</span><span style="color: #000;"><br><br>&nbsp; </span><span style="color: #800;"># we record-route all messages -- to make sure that</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #800;"># subsequent messages will go through our proxy; that's</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #800;"># particularly good if upstream and downstream entities</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #800;"># use different transport protocol</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #008;">if</span><span style="color: #000;"> </span><span style="color: #660;">(!</span><span style="color: #000;">method</span><span style="color: #660;">==</span><span style="color: #080;">"REGISTER"</span><span style="color: #660;">)</span><span style="color: #000;"><br>&nbsp; &nbsp; record_route</span><span style="color: #660;">();</span><span style="color: #000;"><br><br>&nbsp; </span><span style="color: #800;"># subsequent messages withing a dialog should take the</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #800;"># path determined by record-routing</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #008;">if</span><span style="color: #000;"> </span><span style="color: #660;">(</span><span style="color: #000;">loose_route</span><span style="color: #660;">())</span><span style="color: #000;"> </span><span style="color: #660;">{</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #800;"># mark routing logic in request</span><span style="color: #000;"><br>&nbsp; &nbsp; append_hf</span><span style="color: #660;">(</span><span style="color: #080;">"P-hint: rr-enforced\r\n"</span><span style="color: #660;">);</span><span style="color: #000;"> <br>&nbsp; &nbsp; route</span><span style="color: #660;">(</span><span style="color: #066;">1</span><span style="color: #660;">);</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #660;">};</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #008;">if</span><span style="color: #660;">(</span><span style="color: #000;">method </span><span style="color: #660;">==</span><span style="color: #000;"> </span><span style="color: #080;">"INVITE"</span><span style="color: #660;">)</span><span style="color: #000;"><br>&nbsp; &nbsp; setflag</span><span style="color: #660;">(</span><span style="color: #066;">5</span><span style="color: #660;">);</span><span style="color: #000;"><br><br>&nbsp; </span><span style="color: #008;">if</span><span style="color: #000;"> </span><span style="color: #660;">(!</span><span style="color: #000;">uri</span><span style="color: #660;">==</span><span style="color: #000;">myself</span><span style="color: #660;">)</span><span style="color: #000;"> </span><span style="color: #660;">{</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #800;"># mark routing logic in request</span><span style="color: #000;"><br>&nbsp; &nbsp; append_hf</span><span style="color: #660;">(</span><span style="color: #080;">"P-hint: outbound\r\n"</span><span style="color: #660;">);</span><span style="color: #000;"> <br>&nbsp; &nbsp; </span><span style="color: #800;"># if you have some interdomain connections via TLS</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #800;">#if(uri=~"@tls_domain1.net") {</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #800;"># &nbsp;t_relay("tls:domain1.net");</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #800;"># &nbsp;exit;</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #800;">#} else if(uri=~"@tls_domain2.net") {</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #800;"># &nbsp;t_relay("tls:domain2.net");</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #800;"># &nbsp;exit;</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #800;">#}</span><span style="color: #000;"><br>&nbsp; &nbsp; route</span><span style="color: #660;">(</span><span style="color: #066;">1</span><span style="color: #660;">);</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #660;">};</span><span style="color: #000;"><br><br>&nbsp; </span><span style="color: #800;"># if the request is for other domain use UsrLoc</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #800;"># (in case, it does not work, use the following command</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #800;"># with proper names and addresses in it)</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #008;">if</span><span style="color: #000;"> </span><span style="color: #660;">(</span><span style="color: #000;">uri</span><span style="color: #660;">==</span><span style="color: #000;">myself</span><span style="color: #660;">)</span><span style="color: #000;"> </span><span style="color: #660;">{</span><span style="color: #000;"><br><br>&nbsp; &nbsp; </span><span style="color: #008;">if</span><span style="color: #660;">(</span><span style="color: #000;"> is_method</span><span style="color: #660;">(</span><span style="color: #080;">"PUBLISH|SUBSCRIBE"</span><span style="color: #660;">))</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp; route</span><span style="color: #660;">(</span><span style="color: #066;">2</span><span style="color: #660;">);</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #008;">if</span><span style="color: #660;">(</span><span style="color: #000;">is_method</span><span style="color: #660;">(</span><span style="color: #080;">"NOTIFY"</span><span style="color: #660;">))</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp; </span><span style="color: #008;">if</span><span style="color: #660;">(</span><span style="color: #000;"> $hdr</span><span style="color: #660;">(</span><span style="color: #008;">event</span><span style="color: #660;">)==</span><span style="color: #080;">"dialog;sla"</span><span style="color: #660;">)</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp; &nbsp; route</span><span style="color: #660;">(</span><span style="color: #066;">2</span><span style="color: #660;">);</span><span style="color: #000;"><br><br><br>&nbsp; &nbsp; </span><span style="color: #008;">if</span><span style="color: #000;"> </span><span style="color: #660;">(</span><span style="color: #000;">method</span><span style="color: #660;">==</span><span style="color: #080;">"REGISTER"</span><span style="color: #660;">)</span><span style="color: #000;"> </span><span style="color: #660;">{</span><span style="color: #000;"><br><br>&nbsp; &nbsp; &nbsp; </span><span style="color: #800;"># Uncomment this if you want to use digest authentication</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp; </span><span style="color: #800;">#if (!www_authorize("opensips.org", "subscriber")) {</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp; </span><span style="color: #800;"># &nbsp;www_challenge("opensips.org", "0");</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp; </span><span style="color: #800;"># &nbsp;exit;</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp; </span><span style="color: #800;">#};</span><span style="color: #000;"><br><br>&nbsp; &nbsp; &nbsp; </span><span style="color: #008;">if</span><span style="color: #660;">(</span><span style="color: #000;">$hdr</span><span style="color: #660;">(</span><span style="color: #606;">User</span><span style="color: #660;">-</span><span style="color: #606;">Agent</span><span style="color: #660;">)=~</span><span style="color: #000;"> </span><span style="color: #080;">"PolycomSoundPointIP"</span><span style="color: #660;">)</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp; &nbsp; bla_set_flag</span><span style="color: #660;">();</span><span style="color: #000;"><br><br>&nbsp; &nbsp; &nbsp; save</span><span style="color: #660;">(</span><span style="color: #080;">"location"</span><span style="color: #660;">);</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp; </span><span style="color: #008;">exit</span><span style="color: #660;">;</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #660;">};</span><span style="color: #000;"><br><br>&nbsp; &nbsp; </span><span style="color: #800;"># native SIP destinations are handled using our USRLOC DB</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #008;">if</span><span style="color: #000;"> </span><span style="color: #660;">(!</span><span style="color: #000;">lookup</span><span style="color: #660;">(</span><span style="color: #080;">"location"</span><span style="color: #660;">))</span><span style="color: #000;"> </span><span style="color: #660;">{</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp; sl_send_reply</span><span style="color: #660;">(</span><span style="color: #080;">"404"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"Not Found"</span><span style="color: #660;">);</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp; </span><span style="color: #008;">exit</span><span style="color: #660;">;</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #660;">};</span><span style="color: #000;"><br>&nbsp; &nbsp; append_hf</span><span style="color: #660;">(</span><span style="color: #080;">"P-hint: usrloc applied\r\n"</span><span style="color: #660;">);</span><span style="color: #000;"> <br>&nbsp; </span><span style="color: #660;">};</span><span style="color: #000;"><br><br>&nbsp; route</span><span style="color: #660;">(</span><span style="color: #066;">1</span><span style="color: #660;">);</span><span style="color: #000;"><br></span><span style="color: #660;">}</span><span style="color: #000;"><br><br><br>route</span><span style="color: #660;">[</span><span style="color: #066;">1</span><span style="color: #660;">]</span><span style="color: #000;"> </span><span style="color: #660;">{</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #800;"># send it out now; use stateful forwarding as it works reliably</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #800;"># even for UDP2TCP</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #008;">if</span><span style="color: #000;"> </span><span style="color: #660;">(!</span><span style="color: #000;">t_relay</span><span style="color: #660;">())</span><span style="color: #000;"> </span><span style="color: #660;">{</span><span style="color: #000;"><br>&nbsp; &nbsp; sl_reply_error</span><span style="color: #660;">();</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #660;">};</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #008;">exit</span><span style="color: #660;">;</span><span style="color: #000;"><br></span><span style="color: #660;">}</span><span style="color: #000;"><br><br><br>route</span><span style="color: #660;">[</span><span style="color: #066;">2</span><span style="color: #660;">]</span><span style="color: #000;"><br></span><span style="color: #660;">{</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #008;">if</span><span style="color: #000;"> </span><span style="color: #660;">(!</span><span style="color: #000;"> t_newtran</span><span style="color: #660;">())</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #660;">{</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp; &nbsp; sl_reply_error</span><span style="color: #660;">();</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span style="color: #008;">exit</span><span style="color: #660;">;</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp;</span><span style="color: #660;">};</span><span style="color: #000;"><br><br>&nbsp; </span><span style="color: #008;">if</span><span style="color: #660;">(</span><span style="color: #000;">is_method</span><span style="color: #660;">(</span><span style="color: #080;">"PUBLISH"</span><span style="color: #660;">)){</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #008;">if</span><span style="color: #660;">(</span><span style="color: #000;">$hdr</span><span style="color: #660;">(</span><span style="color: #606;">Sender</span><span style="color: #660;">)!=</span><span style="color: #000;"> NULL</span><span style="color: #660;">)</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp; handle_publish</span><span style="color: #660;">(</span><span style="color: #080;">"$hdr(Sender)"</span><span style="color: #660;">);</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #008;">else</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp; handle_publish</span><span style="color: #660;">();</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #660;">}</span><span style="color: #000;"> <br>&nbsp; </span><span style="color: #008;">else</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #008;">if</span><span style="color: #660;">(</span><span style="color: #000;"> is_method</span><span style="color: #660;">(</span><span style="color: #080;">"SUBSCRIBE"</span><span style="color: #660;">)){</span><span style="color: #000;"><br>&nbsp; &nbsp; handle_subscribe</span><span style="color: #660;">();</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #660;">}</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #008;">else</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #008;">if</span><span style="color: #660;">(</span><span style="color: #000;">is_method</span><span style="color: #660;">(</span><span style="color: #080;">"NOTIFY"</span><span style="color: #660;">)){</span><span style="color: #000;"><br>&nbsp; &nbsp; bla_handle_notify</span><span style="color: #660;">();</span><span style="color: #000;"><br>&nbsp; &nbsp; t_reply</span><span style="color: #660;">(</span><span style="color: #080;">"200"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"OK"</span><span style="color: #660;">);</span><span style="color: #000;"><br>&nbsp; <br>&nbsp; </span><span style="color: #660;">}</span><span style="color: #000;"> &nbsp;<br><br>&nbsp; </span><span style="color: #008;">exit</span><span style="color: #660;">;</span><span style="color: #000;"><br></span><span style="color: #660;">}</span></pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h5>Documentation -&gt; <a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Tutorials</a> -&gt; <a class='wikilink' title='Tutorials-Presence' href="Tutorials-Presence.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence">Presence</a> -&gt; <a class='wikilink' title='Tutorials-PUAExtensions' href="Tutorials-PUAExtensions.htm#pua_bla" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtensions#pua_bla">Presence User Agent Extensions</a> -&gt; PUA BLA config file</h5>
+<hr />
+<p class='vspace'><br />
+</p><pre class='escaped'>
+#
+# OpenSIPS 1.11.x configuration file
+#
+# Bridge Line Appearance( event:dialog;sla)
+# BLA + SIP Presence Server
+#
+
+# ----------- global configuration parameters ------------------------
+
+debug=3
+fork=yes
+log_stderror=no
+
+check_via=no
+dns=no
+rev_dns=no
+
+listen=udp:10.10.10.10:5060
+children=2
+
+# ------------------ module loading ----------------------------------
+mpath="/usr/local/opensips/lib/modules/"
+
+loadmodule "db_mysql.so"
+loadmodule "sl.so"
+loadmodule "signaling.so"
+loadmodule "tm.so"
+loadmodule "maxfwd.so"
+loadmodule "textops.so"
+loadmodule "sipmsgops.so"
+loadmodule "rr.so"
+loadmodule "mi_fifo.so"
+loadmodule "usrloc.so"
+loadmodule "registrar.so"
+loadmodule "presence.so"
+loadmodule "presence_xml.so"
+loadmodule "pua.so"
+loadmodule "pua_bla.so"
+
+# Uncomment this if you want digest authentication
+#loadmodule "auth.so"
+#loadmodule "auth_db.so"
+
+# ----------------- setting module-specific parameters ---------------
+modparam("mi_fifo","fifo_name","/tmp/opensips_fifo")
+
+# -- usrloc params --
+modparam("usrloc","db_mode",2)
+modparam("usrloc","db_url","mysql://opensips:opensipsrw@localhost/opensips")
+
+# -- auth params --
+# Uncomment if you are using auth module
+#modparam("auth_db", "calculate_ha1", yes)
+#modparam("auth_db", "password_column", "password")
+
+# -- presence params --
+modparam("presence|presence_xml","db_url","mysql://opensips:opensipsrw@localhost/opensips")
+modparam("presence","server_address","sip:sa@10.10.10.10:5060")
+modparam("presence_xml","force_active",1)
+
+# -- pua and pua_bla parameters --
+modparam("pua","db_url","mysql://opensips:opensipsrw@localhost/opensips")
+modparam("pua_bla", "server_address", "sip:sa@10.10.10.10:5060")
+modparam("pua_bla", "default_domain",  "10.10.10.10")
+modparam("pua_bla", "header_name",  "Sender")
+
+
+# -------------------------  request routing logic -------------------
+
+# main routing logic
+route{
+
+	# initial sanity checks
+	if(!mf_process_maxfwd_header("10")) {
+		send_reply("483","Too Many Hops");
+		exit;
+	}
+
+	if (has_totag()) {
+		# sequential requests within a dialog should
+		# take the path determined by record-routing
+		if (loose_route()) {
+			# route it out to whatever destination was set by loose_route()
+			# in $du (destination URI).
+			route(relay);
+		} else {
+			if (is_method("SUBSCRIBEY") &amp;&amp; uri==myself) {
+				# in-dialog subscribe requests
+				route(handle_presence);
+				exit;
+			} else if ( is_method("ACK") ) {
+				if ( t_check_trans() ) {
+					# non loose-route, but stateful ACK; must be an ACK after 
+					# a 487 or e.g. 404 from upstream server
+					t_relay();
+					exit;
+				} else {
+					# ACK without matching transaction -&gt;
+					# ignore and discard
+					exit;
+				}
+			}
+			send_reply("404","Not here");
+		}
+		exit;
+	}
+
+	# CANCEL processing
+	if (is_method("CANCEL")) {
+		if (t_check_trans())
+			t_relay();
+		exit;
+	}
+
+	t_check_trans();
+
+	# authenticate if from local subscriber (uncomment to enable auth)
+	# authenticate all initial non-REGISTER request that pretend to be
+	# generated by local subscriber (domain from FROM URI is local)
+	##if (!(method=="REGISTER") &amp;&amp; from_uri==myself) {
+	##  if (!proxy_authorize("", "subscriber")) {
+	##      proxy_challenge("", "0");
+	##      exit;
+	##  }
+	##  if (!db_check_from()) {
+	##      send_reply("403","Forbidden auth ID");
+	##      exit;
+	##  }
+	##
+	##  consume_credentials();
+	##}
+
+	# record routing
+	if (!is_method("REGISTER|MESSAGE"))
+		record_route();
+
+	if (uri!=myself) {
+		# routing to other SIP domains
+		route(relay);
+	}
+
+	# SIP 2 SIP presence traffic
+	if (is_method("PUBLISH|SUBSCRIBE")) {
+		route(handle_presence);
+		exit;
+	}
+
+	# handle BLA Notifications
+	if (is_method("NOTIFY") &amp;&amp; $hdr(event)=="dialog;sla") {
+		bla_handle_notify();
+		t_reply("200", "OK");
+	}
+
+	if (is_method("REGISTER")) {
+
+		# Uncomment this if you want to use digest authentication
+		#if (!www_authorize("", "subscriber")) {
+		#  www_challenge("", "0");
+		#  exit;
+		#}
+
+		if ($hdr(User-Agent)=~ "PolycomSoundPointIP")
+			bla_set_flag();
+
+		save("location");
+		exit;
+	}
+
+	# native SIP destinations are handled using our USRLOC DB
+	if(!lookup("location")) {
+		send_reply("404","Not Found");
+		exit;
+	}
+
+	route(relay);
+}
+
+
+route[relay]{
+	# send it out
+	if(!t_relay())
+		sl_reply_error();
+
+	exit;
+}
+
+
+route[handle_presence]
+{
+	if(!t_newtran()){
+		sl_reply_error();
+		exit;
+	}
+
+	if (is_method("PUBLISH")) {
+		if($hdr(Sender)!= NULL)
+			handle_publish("$hdr(Sender)");
+		else
+			handle_publish();
+	} else
+
+	if (is_method("SUBSCRIBE")) {
+		handle_subscribe();
+	}
+
+	exit;
+}
+
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-Presence-PuaBlaConfig-action=edit&restore=diff-1404301996-1368096692-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PuaBlaConfig?action=edit&restore=diff:1404301996:1368096692:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 12:51 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Added lines 1-6:</div>
+        <div class='diffadd'><p><a class='wikilink' title='Tutorials-PUAExtensions' href="Tutorials-PUAExtensions.htm#pua_bla" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtensions#pua_bla">&lt;-Back</a>
+</p>
+<p class='vspace'>Download
+</p>
+<div class='vspace'></div><pre><span style="color: #800;">#</span><span style="color: #000;"><br></span><span style="color: #800;"># OpenSIPS configuration file</span><span style="color: #000;"><br></span><span style="color: #800;"># </span><span style="color: #000;"><br></span><span style="color: #800;"># Bridge Line Appearance( event:dialog;sla) </span><span style="color: #000;"><br></span><span style="color: #800;">#</span><span style="color: #000;"><br><br></span><span style="color: #800;"># ----------- global configuration parameters ------------------------</span><span style="color: #000;"><br>debug</span><span style="color: #660;">=</span><span style="color: #066;">3</span><span style="color: #000;"><br>log_stderror</span><span style="color: #660;">=</span><span style="color: #008;">no</span><span style="color: #000;"><br>log_facility</span><span style="color: #660;">=</span><span style="color: #000;">LOG_LOCAL0<br><br>fork</span><span style="color: #660;">=</span><span style="color: #000;">yes<br>children</span><span style="color: #660;">=</span><span style="color: #066;">4</span><span style="color: #000;"><br><br>listen</span><span style="color: #660;">=</span><span style="color: #000;">udp</span><span style="color: #660;">:</span><span style="color: #066;">10.10.10.10</span><span style="color: #660;">:</span><span style="color: #066;">5060</span><span style="color: #000;"><br><br><br></span><span style="color: #800;"># ------------------ module loading ----------------------------------</span><span style="color: #000;"><br>mpath</span><span style="color: #660;">=</span><span style="color: #080;">"/usr/local/opensips/lib/modules/"</span><span style="color: #000;"><br><br>loadmodule </span><span style="color: #080;">"db_mysql.so"</span><span style="color: #000;"><br>loadmodule </span><span style="color: #080;">"sl.so"</span><span style="color: #000;"><br>loadmodule </span><span style="color: #080;">"maxfwd.so"</span><span style="color: #000;"><br>loadmodule </span><span style="color: #080;">"textops.so"</span><span style="color: #000;"><br>loadmodule </span><span style="color: #080;">"tm.so"</span><span style="color: #000;"><br>loadmodule </span><span style="color: #080;">"rr.so"</span><span style="color: #000;"><br>loadmodule </span><span style="color: #080;">"presence.so"</span><span style="color: #000;"><br>loadmodule </span><span style="color: #080;">"presence_xml.so"</span><span style="color: #000;"><br>loadmodule </span><span style="color: #080;">"mi_fifo.so"</span><span style="color: #000;"><br>loadmodule </span><span style="color: #080;">"usrloc.so"</span><span style="color: #000;"><br>loadmodule </span><span style="color: #080;">"registrar.so"</span><span style="color: #000;"><br>loadmodule </span><span style="color: #080;">"pua.so"</span><span style="color: #000;"><br>loadmodule </span><span style="color: #080;">"pua_bla.so"</span><span style="color: #000;"><br></span><span style="color: #800;"># for 1.5 you must load also signaling module; uncomment the next line</span><span style="color: #000;"><br></span><span style="color: #800;">#loadmodule "signaling.so"</span><span style="color: #000;"><br><br><br><br></span><span style="color: #800;"># Uncomment this if you want digest authentication</span><span style="color: #000;"><br></span><span style="color: #800;"># mysql.so must be loaded !</span><span style="color: #000;"><br></span><span style="color: #800;">#loadmodule "/usr/local/lib/opensips/modules/auth.so"</span><span style="color: #000;"><br></span><span style="color: #800;">#loadmodule "/usr/local/lib/opensips/modules/auth_db.so"</span><span style="color: #000;"><br><br></span><span style="color: #800;"># ----------------- setting module-specific parameters ---------------</span><span style="color: #000;"><br></span><span style="color: #800;"># --mi_fifo params --</span><span style="color: #000;"><br>modparam</span><span style="color: #660;">(</span><span style="color: #080;">"mi_fifo"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"fifo_name"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"/tmp/opensips_fifo"</span><span style="color: #660;">)</span><span style="color: #000;"><br><br></span><span style="color: #800;"># -- usrloc params --</span><span style="color: #000;"><br>modparam</span><span style="color: #660;">(</span><span style="color: #080;">"usrloc"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"db_mode"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #066;">2</span><span style="color: #660;">)</span><span style="color: #000;"><br>modparam</span><span style="color: #660;">(</span><span style="color: #080;">"usrloc"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"db_url"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"mysql://opensips:opensipsrw@localhost/opensips"</span><span style="color: #660;">)</span><span style="color: #000;"><br><br></span><span style="color: #800;"># -- auth params --</span><span style="color: #000;"><br></span><span style="color: #800;"># Uncomment if you are using auth module</span><span style="color: #000;"><br></span><span style="color: #800;">#</span><span style="color: #000;"><br></span><span style="color: #800;">#modparam("auth_db", "calculate_ha1", yes)</span><span style="color: #000;"><br></span><span style="color: #800;">#</span><span style="color: #000;"><br></span><span style="color: #800;"># If you set "calculate_ha1" parameter to yes (which true in this config), </span><span style="color: #000;"><br></span><span style="color: #800;"># uncomment also the following parameter)</span><span style="color: #000;"><br></span><span style="color: #800;">#</span><span style="color: #000;"><br></span><span style="color: #800;">#modparam("auth_db", "password_column", "password")</span><span style="color: #000;"><br><br></span><span style="color: #800;"># -- rr params --</span><span style="color: #000;"><br></span><span style="color: #800;"># add value to ;lr param to make some broken UAs happy</span><span style="color: #000;"><br>modparam</span><span style="color: #660;">(</span><span style="color: #080;">"rr"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"enable_full_lr"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #066;">1</span><span style="color: #660;">)</span><span style="color: #000;"><br><br></span><span style="color: #800;"># -- presence and presence_xml params --</span><span style="color: #000;"><br>modparam</span><span style="color: #660;">(</span><span style="color: #080;">"presence|presence_xml"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"db_url"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"mysql://opensips:opensipsrw@localhost/opensips"</span><span style="color: #660;">)</span><span style="color: #000;"><br>modparam</span><span style="color: #660;">(</span><span style="color: #080;">"presence"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"server_address"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"sip:sa@10.10.10.10:5060"</span><span style="color: #660;">)</span><span style="color: #000;"><br>modparam</span><span style="color: #660;">(</span><span style="color: #080;">"presence_xml"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"force_active"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #066;">1</span><span style="color: #660;">)</span><span style="color: #000;"><br><br></span><span style="color: #800;"># -- pua and pua_xmpp params --</span><span style="color: #000;"><br>modparam</span><span style="color: #660;">(</span><span style="color: #080;">"pua"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"db_url"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"mysql://opensips:opensipsrw@localhost/opensips"</span><span style="color: #660;">)</span><span style="color: #000;"> <br>modparam</span><span style="color: #660;">(</span><span style="color: #080;">"pua_bla"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"server_address"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"sip:sa@10.10.10.10:5060"</span><span style="color: #660;">)</span><span style="color: #000;"><br>modparam</span><span style="color: #660;">(</span><span style="color: #080;">"pua_bla"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"default_domain"</span><span style="color: #660;">,</span><span style="color: #000;"> &nbsp;</span><span style="color: #080;">"10.10.10.10"</span><span style="color: #660;">)</span><span style="color: #000;"><br>modparam</span><span style="color: #660;">(</span><span style="color: #080;">"pua_bla"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"header_name"</span><span style="color: #660;">,</span><span style="color: #000;"> &nbsp;</span><span style="color: #080;">"Sender"</span><span style="color: #660;">)</span><span style="color: #000;"><br><br></span><span style="color: #800;"># ------------------------- &nbsp;request routing logic -------------------</span><span style="color: #000;"><br><br></span><span style="color: #800;"># main routing logic</span><span style="color: #000;"><br><br>route</span><span style="color: #660;">{</span><span style="color: #000;"><br><br><br>&nbsp; </span><span style="color: #800;"># initial sanity checks -- messages with</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #800;"># max_forwards==0, or excessively long requests</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #008;">if</span><span style="color: #000;"> </span><span style="color: #660;">(!</span><span style="color: #000;">mf_process_maxfwd_header</span><span style="color: #660;">(</span><span style="color: #080;">"10"</span><span style="color: #660;">))</span><span style="color: #000;"> </span><span style="color: #660;">{</span><span style="color: #000;"><br>&nbsp; &nbsp; sl_send_reply</span><span style="color: #660;">(</span><span style="color: #080;">"483"</span><span style="color: #660;">,</span><span style="color: #080;">"Too Many Hops"</span><span style="color: #660;">);</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #008;">exit</span><span style="color: #660;">;</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #660;">};</span><span style="color: #000;"><br><br>&nbsp; </span><span style="color: #008;">if</span><span style="color: #000;"> </span><span style="color: #660;">(</span><span style="color: #000;">msg</span><span style="color: #660;">:</span><span style="color: #000;">len </span><span style="color: #660;">&gt;=</span><span style="color: #000;"> &nbsp;</span><span style="color: #066;">2048</span><span style="color: #000;"> </span><span style="color: #660;">)</span><span style="color: #000;"> </span><span style="color: #660;">{</span><span style="color: #000;"><br>&nbsp; &nbsp; sl_send_reply</span><span style="color: #660;">(</span><span style="color: #080;">"513"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"Message too big"</span><span style="color: #660;">);</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #008;">exit</span><span style="color: #660;">;</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #660;">};</span><span style="color: #000;"><br><br>&nbsp; </span><span style="color: #800;"># we record-route all messages -- to make sure that</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #800;"># subsequent messages will go through our proxy; that's</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #800;"># particularly good if upstream and downstream entities</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #800;"># use different transport protocol</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #008;">if</span><span style="color: #000;"> </span><span style="color: #660;">(!</span><span style="color: #000;">method</span><span style="color: #660;">==</span><span style="color: #080;">"REGISTER"</span><span style="color: #660;">)</span><span style="color: #000;"><br>&nbsp; &nbsp; record_route</span><span style="color: #660;">();</span><span style="color: #000;"><br><br>&nbsp; </span><span style="color: #800;"># subsequent messages withing a dialog should take the</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #800;"># path determined by record-routing</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #008;">if</span><span style="color: #000;"> </span><span style="color: #660;">(</span><span style="color: #000;">loose_route</span><span style="color: #660;">())</span><span style="color: #000;"> </span><span style="color: #660;">{</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #800;"># mark routing logic in request</span><span style="color: #000;"><br>&nbsp; &nbsp; append_hf</span><span style="color: #660;">(</span><span style="color: #080;">"P-hint: rr-enforced\r\n"</span><span style="color: #660;">);</span><span style="color: #000;"> <br>&nbsp; &nbsp; route</span><span style="color: #660;">(</span><span style="color: #066;">1</span><span style="color: #660;">);</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #660;">};</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #008;">if</span><span style="color: #660;">(</span><span style="color: #000;">method </span><span style="color: #660;">==</span><span style="color: #000;"> </span><span style="color: #080;">"INVITE"</span><span style="color: #660;">)</span><span style="color: #000;"><br>&nbsp; &nbsp; setflag</span><span style="color: #660;">(</span><span style="color: #066;">5</span><span style="color: #660;">);</span><span style="color: #000;"><br><br>&nbsp; </span><span style="color: #008;">if</span><span style="color: #000;"> </span><span style="color: #660;">(!</span><span style="color: #000;">uri</span><span style="color: #660;">==</span><span style="color: #000;">myself</span><span style="color: #660;">)</span><span style="color: #000;"> </span><span style="color: #660;">{</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #800;"># mark routing logic in request</span><span style="color: #000;"><br>&nbsp; &nbsp; append_hf</span><span style="color: #660;">(</span><span style="color: #080;">"P-hint: outbound\r\n"</span><span style="color: #660;">);</span><span style="color: #000;"> <br>&nbsp; &nbsp; </span><span style="color: #800;"># if you have some interdomain connections via TLS</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #800;">#if(uri=~"@tls_domain1.net") {</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #800;"># &nbsp;t_relay("tls:domain1.net");</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #800;"># &nbsp;exit;</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #800;">#} else if(uri=~"@tls_domain2.net") {</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #800;"># &nbsp;t_relay("tls:domain2.net");</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #800;"># &nbsp;exit;</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #800;">#}</span><span style="color: #000;"><br>&nbsp; &nbsp; route</span><span style="color: #660;">(</span><span style="color: #066;">1</span><span style="color: #660;">);</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #660;">};</span><span style="color: #000;"><br><br>&nbsp; </span><span style="color: #800;"># if the request is for other domain use UsrLoc</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #800;"># (in case, it does not work, use the following command</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #800;"># with proper names and addresses in it)</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #008;">if</span><span style="color: #000;"> </span><span style="color: #660;">(</span><span style="color: #000;">uri</span><span style="color: #660;">==</span><span style="color: #000;">myself</span><span style="color: #660;">)</span><span style="color: #000;"> </span><span style="color: #660;">{</span><span style="color: #000;"><br><br>&nbsp; &nbsp; </span><span style="color: #008;">if</span><span style="color: #660;">(</span><span style="color: #000;"> is_method</span><span style="color: #660;">(</span><span style="color: #080;">"PUBLISH|SUBSCRIBE"</span><span style="color: #660;">))</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp; route</span><span style="color: #660;">(</span><span style="color: #066;">2</span><span style="color: #660;">);</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #008;">if</span><span style="color: #660;">(</span><span style="color: #000;">is_method</span><span style="color: #660;">(</span><span style="color: #080;">"NOTIFY"</span><span style="color: #660;">))</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp; </span><span style="color: #008;">if</span><span style="color: #660;">(</span><span style="color: #000;"> $hdr</span><span style="color: #660;">(</span><span style="color: #008;">event</span><span style="color: #660;">)==</span><span style="color: #080;">"dialog;sla"</span><span style="color: #660;">)</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp; &nbsp; route</span><span style="color: #660;">(</span><span style="color: #066;">2</span><span style="color: #660;">);</span><span style="color: #000;"><br><br><br>&nbsp; &nbsp; </span><span style="color: #008;">if</span><span style="color: #000;"> </span><span style="color: #660;">(</span><span style="color: #000;">method</span><span style="color: #660;">==</span><span style="color: #080;">"REGISTER"</span><span style="color: #660;">)</span><span style="color: #000;"> </span><span style="color: #660;">{</span><span style="color: #000;"><br><br>&nbsp; &nbsp; &nbsp; </span><span style="color: #800;"># Uncomment this if you want to use digest authentication</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp; </span><span style="color: #800;">#if (!www_authorize("opensips.org", "subscriber")) {</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp; </span><span style="color: #800;"># &nbsp;www_challenge("opensips.org", "0");</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp; </span><span style="color: #800;"># &nbsp;exit;</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp; </span><span style="color: #800;">#};</span><span style="color: #000;"><br><br>&nbsp; &nbsp; &nbsp; </span><span style="color: #008;">if</span><span style="color: #660;">(</span><span style="color: #000;">$hdr</span><span style="color: #660;">(</span><span style="color: #606;">User</span><span style="color: #660;">-</span><span style="color: #606;">Agent</span><span style="color: #660;">)=~</span><span style="color: #000;"> </span><span style="color: #080;">"PolycomSoundPointIP"</span><span style="color: #660;">)</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp; &nbsp; bla_set_flag</span><span style="color: #660;">();</span><span style="color: #000;"><br><br>&nbsp; &nbsp; &nbsp; save</span><span style="color: #660;">(</span><span style="color: #080;">"location"</span><span style="color: #660;">);</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp; </span><span style="color: #008;">exit</span><span style="color: #660;">;</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #660;">};</span><span style="color: #000;"><br><br>&nbsp; &nbsp; </span><span style="color: #800;"># native SIP destinations are handled using our USRLOC DB</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #008;">if</span><span style="color: #000;"> </span><span style="color: #660;">(!</span><span style="color: #000;">lookup</span><span style="color: #660;">(</span><span style="color: #080;">"location"</span><span style="color: #660;">))</span><span style="color: #000;"> </span><span style="color: #660;">{</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp; sl_send_reply</span><span style="color: #660;">(</span><span style="color: #080;">"404"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"Not Found"</span><span style="color: #660;">);</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp; </span><span style="color: #008;">exit</span><span style="color: #660;">;</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #660;">};</span><span style="color: #000;"><br>&nbsp; &nbsp; append_hf</span><span style="color: #660;">(</span><span style="color: #080;">"P-hint: usrloc applied\r\n"</span><span style="color: #660;">);</span><span style="color: #000;"> <br>&nbsp; </span><span style="color: #660;">};</span><span style="color: #000;"><br><br>&nbsp; route</span><span style="color: #660;">(</span><span style="color: #066;">1</span><span style="color: #660;">);</span><span style="color: #000;"><br></span><span style="color: #660;">}</span><span style="color: #000;"><br><br><br>route</span><span style="color: #660;">[</span><span style="color: #066;">1</span><span style="color: #660;">]</span><span style="color: #000;"> </span><span style="color: #660;">{</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #800;"># send it out now; use stateful forwarding as it works reliably</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #800;"># even for UDP2TCP</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #008;">if</span><span style="color: #000;"> </span><span style="color: #660;">(!</span><span style="color: #000;">t_relay</span><span style="color: #660;">())</span><span style="color: #000;"> </span><span style="color: #660;">{</span><span style="color: #000;"><br>&nbsp; &nbsp; sl_reply_error</span><span style="color: #660;">();</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #660;">};</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #008;">exit</span><span style="color: #660;">;</span><span style="color: #000;"><br></span><span style="color: #660;">}</span><span style="color: #000;"><br><br><br>route</span><span style="color: #660;">[</span><span style="color: #066;">2</span><span style="color: #660;">]</span><span style="color: #000;"><br></span><span style="color: #660;">{</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #008;">if</span><span style="color: #000;"> </span><span style="color: #660;">(!</span><span style="color: #000;"> t_newtran</span><span style="color: #660;">())</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #660;">{</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp; &nbsp; sl_reply_error</span><span style="color: #660;">();</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span style="color: #008;">exit</span><span style="color: #660;">;</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp;</span><span style="color: #660;">};</span><span style="color: #000;"><br><br>&nbsp; </span><span style="color: #008;">if</span><span style="color: #660;">(</span><span style="color: #000;">is_method</span><span style="color: #660;">(</span><span style="color: #080;">"PUBLISH"</span><span style="color: #660;">)){</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #008;">if</span><span style="color: #660;">(</span><span style="color: #000;">$hdr</span><span style="color: #660;">(</span><span style="color: #606;">Sender</span><span style="color: #660;">)!=</span><span style="color: #000;"> NULL</span><span style="color: #660;">)</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp; handle_publish</span><span style="color: #660;">(</span><span style="color: #080;">"$hdr(Sender)"</span><span style="color: #660;">);</span><span style="color: #000;"><br>&nbsp; &nbsp; </span><span style="color: #008;">else</span><span style="color: #000;"><br>&nbsp; &nbsp; &nbsp; handle_publish</span><span style="color: #660;">();</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #660;">}</span><span style="color: #000;"> <br>&nbsp; </span><span style="color: #008;">else</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #008;">if</span><span style="color: #660;">(</span><span style="color: #000;"> is_method</span><span style="color: #660;">(</span><span style="color: #080;">"SUBSCRIBE"</span><span style="color: #660;">)){</span><span style="color: #000;"><br>&nbsp; &nbsp; handle_subscribe</span><span style="color: #660;">();</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #660;">}</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #008;">else</span><span style="color: #000;"><br>&nbsp; </span><span style="color: #008;">if</span><span style="color: #660;">(</span><span style="color: #000;">is_method</span><span style="color: #660;">(</span><span style="color: #080;">"NOTIFY"</span><span style="color: #660;">)){</span><span style="color: #000;"><br>&nbsp; &nbsp; bla_handle_notify</span><span style="color: #660;">();</span><span style="color: #000;"><br>&nbsp; &nbsp; t_reply</span><span style="color: #660;">(</span><span style="color: #080;">"200"</span><span style="color: #660;">,</span><span style="color: #000;"> </span><span style="color: #080;">"OK"</span><span style="color: #660;">);</span><span style="color: #000;"><br>&nbsp; <br>&nbsp; </span><span style="color: #660;">}</span><span style="color: #000;"> &nbsp;<br><br>&nbsp; </span><span style="color: #008;">exit</span><span style="color: #660;">;</span><span style="color: #000;"><br></span><span style="color: #660;">}</span></pre>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-Presence-PuaBlaConfig?action=edit&restore=diff:1368096692:1368096692:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-Presence-PuaBlaConfig?action=edit&restore=diff:1368096692:1368096692:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PuaBlaConfig?action=edit&restore=diff:1368096692:1368096692:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Tutorials-Presence-PuaBlaConfig-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PuaBlaConfig?action=edit">Edit</a> |
+      <a rel="nofollow" href="Tutorials-Presence-PuaBlaConfig-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PuaBlaConfig?action=diff">History</a> |
+      <a rel="nofollow" href="Tutorials-Presence-PuaBlaConfig-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PuaBlaConfig?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on July 02, 2014, at 02:05 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

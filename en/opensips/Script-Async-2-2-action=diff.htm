@@ -1,0 +1,935 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Asynchronous Statements - 2.2 | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Script-Async-2-2' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Script-Async-2-2 History</h2>
+  <p><a href="Script-Async-2-2-action=diff&source=n&minor=n.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=diff&source=n&minor=n">Hide minor edits</a> - <a href="Script-Async-2-2-action=diff&source=y&minor=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=diff&source=y&minor=y">Show changes to markup</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>March 06, 2015, at 12:36 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added line 3:</div>
+        <div class='diffadd'><p>This page has been visited 429 times.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1425641795-1425641696-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1425641795:1425641696:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 06, 2015, at 12:34 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 81-82 from:</div>
+        <div class='diffdel'><ul><li>rest_get
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>rest_get
+</li><li>rest_post
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1425641696-1424191853-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1425641696:1424191853:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>February 17, 2015, at 05:50 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 17 from:</div>
+        <div class='diffdel'><p>Asynchronous script operations are one of the key features of OpenSIPS 2.2. Their main advantage is that they allow the performance of the OpenSIPS script to scale with a high number of requests per second even when doing blocking I/O operations such as MySQL queries, exec commands or HTTP requests.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Asynchronous script operations are one of the key features of OpenSIPS 2.2. The main advantage of using them is the fact that they allow the performance of the OpenSIPS script to scale with a high number of requests per second even when doing blocking I/O operations such as MySQL queries, exec commands or HTTP requests.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1424191853-1423083854-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1424191853:1423083854:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>February 04, 2015, at 10:04 PM 
+        by <span class='diffauthor' title='109.96.153.126'>liviu</span> - </div>
+        <div class='difftype'>Changed line 33 from:</div>
+        <div class='diffdel'><p><em>Note that resume_route has to be a <strong>simple route</strong></em>.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><em>Note that resume_route has to be a <strong>simple route</strong></em>.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1423083854-1423083712-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1423083854:1423083712:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>February 04, 2015, at 10:01 PM 
+        by <span class='diffauthor' title='109.96.153.126'>liviu</span> - </div>
+        <div class='difftype'>Changed line 17 from:</div>
+        <div class='diffdel'><p>Asynchronous script operations are one of the key features of OpenSIPS 2.2. Their main advantage is that they allow the performance of the OpenSIPS script to scale with a high number of requests per second even when doing blocking I/O operations such as MySQL queries, exec commands or HTTP GET operations.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Asynchronous script operations are one of the key features of OpenSIPS 2.2. Their main advantage is that they allow the performance of the OpenSIPS script to scale with a high number of requests per second even when doing blocking I/O operations such as MySQL queries, exec commands or HTTP requests.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1423083712-1422293035-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1423083712:1422293035:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 06:23 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 17 from:</div>
+        <div class='diffdel'><p>One of the key features of OpenSIPS 2.2 are asynchronous script operations. Their main advantage is that they allow the performance of the OpenSIPS script to scale with a high number of requests per second even when doing blocking I/O operations such as MySQL queries, exec commands or HTTP GET operations.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Asynchronous script operations are one of the key features of OpenSIPS 2.2. Their main advantage is that they allow the performance of the OpenSIPS script to scale with a high number of requests per second even when doing blocking I/O operations such as MySQL queries, exec commands or HTTP GET operations.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422293035-1422287176-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422293035:1422287176:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 04:46 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 59 from:</div>
+        <div class='diffdel'><pre>    xlog("Great! Credit of user $avp(uid) is $avp(credit)\n");
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>    xlog("Credit of user $avp(uid) is $avp(credit)\n");
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422287176-1422287145-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422287176:1422287145:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 04:45 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 54-55 from:</div>
+        <div class='diffdel'><pre>    xlog("avp_db_query() returned with $rc\n");
+    xlog("Credit of user $avp(uid) is $avp(credit)\n");
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>    if ($rc &lt; 0) {
+        xlog("error $rc in avp_db_query()\n");
+        exit;
+    }
+
+    xlog("Great! Credit of user $avp(uid) is $avp(credit)\n");
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422287145:1422287002:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422287145:1422287002:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422287145:1422287002:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 04:43 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 54-55 from:</div>
+        <div class='diffdel'><pre>    xlog("Great! Credit of user $avp(uid) is $avp(credit)\n");
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>    xlog("avp_db_query() returned with $rc\n");
+    xlog("Credit of user $avp(uid) is $avp(credit)\n");
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422287002:1422286859:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422287002:1422286859:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422287002:1422286859:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 04:40 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 39 from:</div>
+        <div class='diffdel'><p>The return code of the function executed in async mode is available in the very beginning of the resume route in the $rc or $retcode variable. Also, all the output parameters ( variables in function parameters used to carry output values) will be available in resume route.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>The return code of the function executed in async mode is available in the very beginning of the resume route in the $rc or $retcode variable. Also, all the output parameters (variables in function parameters used to carry output values) will be available in resume route.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422286859-1422286798-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422286859:1422286798:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 04:39 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 37 from:</div>
+        <div class='diffdel'><p>When a function is called in the asynchronous manner (see below), the script is immediately halted, so any code you write after the async() call will be ignored! The current OpenSIPS worker will launch the asynchronous operation, after which it will continue to process other pending tasks (queued SIP messages, timer jobs or possibly other async operations!). As soon as all data is available, it will call the given resume route and continue processing, with a minimum of idle time.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>When a function is called in the asynchronous manner (see below), the script is immediately halted, so any code you write after the async() call will be ignored! The current OpenSIPS worker will launch the asynchronous operation, after which it will continue to process other pending tasks (queued SIP messages, timer jobs or possibly other async operations!). As soon as all data is available, it will run the given resume route and continue processing, with a minimum of idle time.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422286798-1422285824-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422286798:1422285824:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 04:23 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 1-2 from:</div>
+        <div class='diffdel'><h5>Documentation -&gt; <a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a> -&gt; <a class='wikilink' title='OpenSIPS Manual - 2.2' href="Manual-2-2.htm" tppabs="http://www.opensips.org/Documentation/Manual-2-2">Manual devel</a> -&gt; Asynchronous Statement</h5>
+<p>(:title Asynchronous Statement - 2.2:)
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h5>Documentation -&gt; <a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a> -&gt; <a class='wikilink' title='OpenSIPS Manual - 2.2' href="Manual-2-2.htm" tppabs="http://www.opensips.org/Documentation/Manual-2-2">Manual devel</a> -&gt; Asynchronous Statements</h5>
+<p>(:title Asynchronous Statements - 2.2:)
+</p>
+</div>
+        <div class='difftype'>Changed line 8 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='center'><span  style='color: #185662;'><span style='font-size:120%'><strong>Asynchronous Statement v2.2 </strong></span></span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='center'><span  style='color: #185662;'><span style='font-size:120%'><strong>Asynchronous Statements v2.2 </strong></span></span></td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422285824-1422285388-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422285824:1422285388:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 04:16 PM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Deleted lines 74-75:</div>
+        <div class='diffdel'><p><br />
+</p>
+</div>
+        <div class='difftype'>Changed lines 77-79 from:</div>
+        <div class='diffdel'><ul><li>exec
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>exec
+</li></ul><p class='vspace'>The async implementation is not limited to the above functions, but these are the first ones migrated to async support. More I/O related functions will be ported to the async support.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422285388-1422285288-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422285388:1422285288:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 04:14 PM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Added line 38:</div>
+        <div class='diffadd'></div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422285288-1422285259-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422285288:1422285259:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 04:14 PM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Changed lines 25-26 from:</div>
+        <div class='diffdel'><p>The asynchronous script logic is based on the transaction module (<strong>tm</strong>) - it must be loaded. A new transaction is created when every async operation is started. This transaction contains all necessary information to properly suspend script execution (e.g. it stores the updated SIP message, along with all $avp variables). Shortly after the resume route is completed, the transaction will be destroyed.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>The asynchronous script logic is based on the transaction module (<strong>tm</strong>) - it must be loaded. The SIP transaction is automatically and transparently created (if not existing yet) when an async operation is started. This transaction contains all necessary information to properly suspend script execution (e.g. it stores the updated SIP message, along with all $avp variables).
+</p>
+</div>
+        <div class='difftype'>Added line 38:</div>
+        <div class='diffadd'><p>The return code of the function executed in async mode is available in the very beginning of the resume route in the $rc or $retcode variable. Also, all the output parameters ( variables in function parameters used to carry output values) will be available in resume route.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422285259-1422284080-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422285259:1422284080:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 03:54 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 17 from:</div>
+        <div class='diffdel'><p>One of the key features of OpenSIPS 2.2 are asynchronous script operations. Their main advantage is that they allow the performance of the OpenSIPS script to scale with a high number of requests per second even when doing blocking I/O operations such as MySQL queries, exec scripts or HTTP GET operations.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>One of the key features of OpenSIPS 2.2 are asynchronous script operations. Their main advantage is that they allow the performance of the OpenSIPS script to scale with a high number of requests per second even when doing blocking I/O operations such as MySQL queries, exec commands or HTTP GET operations.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422284080:1422278983:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422284080:1422278983:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422284080:1422278983:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 02:29 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 17 from:</div>
+        <div class='diffdel'><p>One of the key features of OpenSIPS 2.2 are asynchronous script operations. Their main advantage is that they allow the performance of the OpenSIPS script to scale with a high number of requests per second even when doing blocking I/O operations such MySQL queries, exec scripts or HTTP GET operations.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>One of the key features of OpenSIPS 2.2 are asynchronous script operations. Their main advantage is that they allow the performance of the OpenSIPS script to scale with a high number of requests per second even when doing blocking I/O operations such as MySQL queries, exec scripts or HTTP GET operations.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422278983:1422278947:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422278983:1422278947:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422278983:1422278947:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 02:29 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 33 from:</div>
+        <div class='diffdel'><p><em>Note that</em> resume_route <em>has to be a <strong>simple route</strong></em>.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><em>Note that resume_route has to be a <strong>simple route</strong></em>.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422278947-1422278930-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422278947:1422278930:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 02:28 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 33 from:</div>
+        <div class='diffdel'><p><em>Note that the resume route has to be a <strong>simple route</strong></em>.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><em>Note that</em> resume_route <em>has to be a <strong>simple route</strong></em>.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422278930:1422278714:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422278930:1422278714:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422278930:1422278714:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 02:25 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 37 from:</div>
+        <div class='diffdel'><p>When a function is called in the asynchronous manner (see below), the script is immediately halted, so any code you write after the async() call will be ignored! The current OpenSIPS worker will launch the asynchronous operation, then it will continue to process other pending tasks (queued SIP messages, timer jobs or possibly other async operations!). As soon as all data is available, it will call the given resume route and continue processing, with a minimum of idle time.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>When a function is called in the asynchronous manner (see below), the script is immediately halted, so any code you write after the async() call will be ignored! The current OpenSIPS worker will launch the asynchronous operation, after which it will continue to process other pending tasks (queued SIP messages, timer jobs or possibly other async operations!). As soon as all data is available, it will call the given resume route and continue processing, with a minimum of idle time.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422278714:1422278666:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422278714:1422278666:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422278714:1422278666:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 02:24 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 31 from:</div>
+        <div class='diffdel'><p>async(blocking_function, resume_route)
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>async(blocking_function(...), resume_route);
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422278666:1422278643:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422278666:1422278643:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422278666:1422278643:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 02:24 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 29-33 from:</div>
+        <div class='diffdel'><p>Usage is quite straightforward. If your blocking function supports asynchronous mode (read the module documentation for this), then you can just throw it in the following function call: <strong>async</strong>(<strong>blocking_function</strong>, <strong>resume_route</strong>). Note that the resume route has to be a <strong>simple route</strong>.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Usage is quite straightforward. If your blocking function supports asynchronous mode (read the module documentation for this), then you can just throw it in the following function call:
+</p><pre class='escaped'>
+async(blocking_function, resume_route)
+</pre>
+<p><em>Note that the resume route has to be a <strong>simple route</strong></em>.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422278643-1422278439-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422278643:1422278439:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 02:20 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 21 from:</div>
+        <div class='diffdel'><p>Using asynchronous logic over simply forking a high number of children (50+ processes) also has the advantage of optimizing the usage of system resources. By requiring less processes to complete the same amount of work in the same amount of time, process context switching is minimized and overall CPU usage is improved. Less processes will also eat up less system memory.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Using asynchronous logic over simply forking a high number of children in order to scale (50+ processes) also has the advantage of optimizing the usage of system resources. By requiring less processes to complete the same amount of work in the same amount of time, process context switching is minimized and overall CPU usage is improved. Less processes will also eat up less system memory.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422278439-1422278292-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422278439:1422278292:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 02:18 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 2 from:</div>
+        <div class='diffdel'><p>(:title Asynchronous functions - 2.2:)
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>(:title Asynchronous Statement - 2.2:)
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422278292-1422278278-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422278292:1422278278:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 02:17 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><h5>Documentation -&gt; <a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a> -&gt; <a class='wikilink' title='OpenSIPS Manual - 2.2' href="Manual-2-2.htm" tppabs="http://www.opensips.org/Documentation/Manual-2-2">Manual devel</a> -&gt; Asynchronous Functions</h5>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h5>Documentation -&gt; <a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a> -&gt; <a class='wikilink' title='OpenSIPS Manual - 2.2' href="Manual-2-2.htm" tppabs="http://www.opensips.org/Documentation/Manual-2-2">Manual devel</a> -&gt; Asynchronous Statement</h5>
+</div>
+        <div class='difftype'>Changed lines 8-9 from:</div>
+        <div class='diffdel'><table width='100%'><tr ><td  align='center'><span  style='color: #185662;'><span style='font-size:120%'><strong>Asynchronous Functions v2.2 </strong></span></span></td></tr>
+</table>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><table width='100%'><tr ><td  align='center'><span  style='color: #185662;'><span style='font-size:120%'><strong>Asynchronous Statement v2.2 </strong></span></span></td></tr>
+</table>
+</div>
+        <div class='difftype'>Changed line 73 from:</div>
+        <div class='diffdel'><ul><li>exec
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>exec
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422278278-1422278192-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422278278:1422278192:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 02:16 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 33-34 from:</div>
+        <div class='diffdel'><p>When a function is called in an asynchronous manner (see below), the script is immediately halted, so any code you write after the async() call will be ignored! The current OpenSIPS worker will launch the asynchronous operation, then it will continue to process other pending tasks (queued SIP messages, timer jobs or possibly other async operations!). As soon as the data is available, it will call the given resume route and continue processing, with a minimum of idle time.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>When a function is called in the asynchronous manner (see below), the script is immediately halted, so any code you write after the async() call will be ignored! The current OpenSIPS worker will launch the asynchronous operation, then it will continue to process other pending tasks (queued SIP messages, timer jobs or possibly other async operations!). As soon as all data is available, it will call the given resume route and continue processing, with a minimum of idle time.
+</p>
+</div>
+        <div class='difftype'>Changed line 67 from:</div>
+        <div class='diffdel'><p>The following functions also have an async version:
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>The following functions may also be called asynchronously:
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422278192-1422277891-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422278192:1422277891:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 02:11 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 29 from:</div>
+        <div class='diffdel'><p>Usage is quite straightforward. If your blocking function supports asynchronous mode (read the module documentation for this), then you can just throw it in the following function call: <strong>async</strong>(<strong>blocking_function</strong>, <strong>some_resume_route</strong>). Note that the resume route has to be a <strong>simple route</strong>.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Usage is quite straightforward. If your blocking function supports asynchronous mode (read the module documentation for this), then you can just throw it in the following function call: <strong>async</strong>(<strong>blocking_function</strong>, <strong>resume_route</strong>). Note that the resume route has to be a <strong>simple route</strong>.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422277891:1422277869:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422277891:1422277869:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422277891:1422277869:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 02:11 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 29 from:</div>
+        <div class='diffdel'><p>Usage is quite straightforward. If your blocking function supports asynchronous mode (read the module documentation for this), then you can just throw it in the following function call: <strong>async</strong>(<strong>blocking_function</strong>, <strong>some_resume_route</strong>).
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Usage is quite straightforward. If your blocking function supports asynchronous mode (read the module documentation for this), then you can just throw it in the following function call: <strong>async</strong>(<strong>blocking_function</strong>, <strong>some_resume_route</strong>). Note that the resume route has to be a <strong>simple route</strong>.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422277869:1422277703:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422277869:1422277703:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422277869:1422277703:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 02:08 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 29 from:</div>
+        <div class='diffdel'><p>Usage is quite straightforward. If your blocking function supports asynchronous mode (read the module documentation for this), then you can just throw it in the following function call: <strong>async</strong>(<strong>your_function</strong>, <strong>your_resume_route</strong>).
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Usage is quite straightforward. If your blocking function supports asynchronous mode (read the module documentation for this), then you can just throw it in the following function call: <strong>async</strong>(<strong>blocking_function</strong>, <strong>some_resume_route</strong>).
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422277703-1422277651-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422277703:1422277651:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 02:07 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 29 from:</div>
+        <div class='diffdel'><p>Usage is quite straightforward. If your blocking function supports asynchronous mode (read the module documentation for this), then you can just throw it in a async(your_function, your_resume_route) call along with a resume route.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Usage is quite straightforward. If your blocking function supports asynchronous mode (read the module documentation for this), then you can just throw it in the following function call: <strong>async</strong>(<strong>your_function</strong>, <strong>your_resume_route</strong>).
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422277651-1422277597-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422277651:1422277597:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 02:06 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 25 from:</div>
+        <div class='diffdel'><p>The asynchronous script logic is based on the transaction module (<strong>tm</strong>) - it must be loaded. A new transaction is created when every async operation is started. This transaction contains all necessary information to properly suspend script execution (e.g. it stores the updated SIP message, along with all $avp variables). Shortly after the resume route is completed, this transaction will be destroyed.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>The asynchronous script logic is based on the transaction module (<strong>tm</strong>) - it must be loaded. A new transaction is created when every async operation is started. This transaction contains all necessary information to properly suspend script execution (e.g. it stores the updated SIP message, along with all $avp variables). Shortly after the resume route is completed, the transaction will be destroyed.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422277597:1422277572:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422277597:1422277572:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422277597:1422277572:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 02:06 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 25 from:</div>
+        <div class='diffdel'><p>The asynchronous script logic is based on the transaction module (<strong>tm</strong>) - it must be loaded. A new transaction is created when every async operation is started. This transaction contains all necessary information to properly suspend script execution. It stores the updated SIP message, along with all $avp variables. Shortly after the resume route is completed, this transaction will be destroyed.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>The asynchronous script logic is based on the transaction module (<strong>tm</strong>) - it must be loaded. A new transaction is created when every async operation is started. This transaction contains all necessary information to properly suspend script execution (e.g. it stores the updated SIP message, along with all $avp variables). Shortly after the resume route is completed, this transaction will be destroyed.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422277572-1422277532-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422277572:1422277532:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 02:05 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 25 from:</div>
+        <div class='diffdel'><p>The asynchronous script logic is based on the transaction module (<strong>tm</strong>) - it must be loaded. A new transaction is created when every async operation is started. This transaction contains all necessary information to properly suspend script execution. It stores the updated SIP message, along with all user $avp variables. Shortly after the resume route is completed, this transaction will be destroyed.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>The asynchronous script logic is based on the transaction module (<strong>tm</strong>) - it must be loaded. A new transaction is created when every async operation is started. This transaction contains all necessary information to properly suspend script execution. It stores the updated SIP message, along with all $avp variables. Shortly after the resume route is completed, this transaction will be destroyed.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422277532-1422277499-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422277532:1422277499:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 02:04 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 25 from:</div>
+        <div class='diffdel'><p>The asynchronous script logic is based on the transaction module (<strong>tm</strong>) - it must be loaded. A new transaction is created when every async operation is started. The transaction contains all necessary information to properly suspend script execution. It stores the updated SIP message, along with all user $avp variables. Shortly after the resume route is completed, this transaction will be destroyed.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>The asynchronous script logic is based on the transaction module (<strong>tm</strong>) - it must be loaded. A new transaction is created when every async operation is started. This transaction contains all necessary information to properly suspend script execution. It stores the updated SIP message, along with all user $avp variables. Shortly after the resume route is completed, this transaction will be destroyed.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422277499-1422277407-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422277499:1422277407:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 02:03 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 17-19 from:</div>
+        <div class='diffdel'><p>One of the key features of OpenSIPS 2.2 are asynchronous script operations. Their main advantage is that they allow the performance of the OpenSIPS script to scale with a high number of requests per second even when doing blocking I/O operations such MySQL queries, exec scripts or HTTP GET operations. Using asynchronous logic over simply forking a high number of children (50+ processes) also has the advantage of optimizing the usage of system resources. By requiring less processes to complete the same amount of work in the same amount of time, process context switching is minimized and overall CPU usage is improved. Less processes will also eat up less system memory.
+</p>
+<div class='vspace'></div><h3>Script syntax &amp; behaviour</h3>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>One of the key features of OpenSIPS 2.2 are asynchronous script operations. Their main advantage is that they allow the performance of the OpenSIPS script to scale with a high number of requests per second even when doing blocking I/O operations such MySQL queries, exec scripts or HTTP GET operations.
+</p>
+<p class='vspace'><br />
+Using asynchronous logic over simply forking a high number of children (50+ processes) also has the advantage of optimizing the usage of system resources. By requiring less processes to complete the same amount of work in the same amount of time, process context switching is minimized and overall CPU usage is improved. Less processes will also eat up less system memory.
+</p>
+<div class='vspace'></div><h3>Module requirements</h3>
+<p>The asynchronous script logic is based on the transaction module (<strong>tm</strong>) - it must be loaded. A new transaction is created when every async operation is started. The transaction contains all necessary information to properly suspend script execution. It stores the updated SIP message, along with all user $avp variables. Shortly after the resume route is completed, this transaction will be destroyed.
+</p>
+<div class='vspace'></div><h3>Script syntax and usage</h3>
+<p>Usage is quite straightforward. If your blocking function supports asynchronous mode (read the module documentation for this), then you can just throw it in a async(your_function, your_resume_route) call along with a resume route.
+</p>
+<p class='vspace'>\\
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422277407-1422275434-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422277407:1422275434:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 01:30 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 17 from:</div>
+        <div class='diffdel'><p>One of the key features of OpenSIPS 2.2 are asynchronous script operations. Their main purpose is to optimize the usage of system resources. By requiring less processes to complete the same amount of work in the same amount of time, process context switching is minimized and overall CPU usage is improved. Less processes will also eat up less system memory.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>One of the key features of OpenSIPS 2.2 are asynchronous script operations. Their main advantage is that they allow the performance of the OpenSIPS script to scale with a high number of requests per second even when doing blocking I/O operations such MySQL queries, exec scripts or HTTP GET operations. Using asynchronous logic over simply forking a high number of children (50+ processes) also has the advantage of optimizing the usage of system resources. By requiring less processes to complete the same amount of work in the same amount of time, process context switching is minimized and overall CPU usage is improved. Less processes will also eat up less system memory.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422275434-1422271619-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422275434:1422271619:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 12:26 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 21 from:</div>
+        <div class='diffdel'><p>When a function is called in an asynchronous manner (see below), the script is immediately halted, so any code you write after the async() call will be ignored! The current OpenSIPS worker will launch the asynchronous operation, then it will continue to process other pending tasks. As soon as the data is available, it will call the given resume route and continue processing, with a minimum of idle time.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>When a function is called in an asynchronous manner (see below), the script is immediately halted, so any code you write after the async() call will be ignored! The current OpenSIPS worker will launch the asynchronous operation, then it will continue to process other pending tasks (queued SIP messages, timer jobs or possibly other async operations!). As soon as the data is available, it will call the given resume route and continue processing, with a minimum of idle time.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422271619-1422271541-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422271619:1422271541:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 12:25 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 17 from:</div>
+        <div class='diffdel'><p>One of the key features of OpenSIPS 2.2 are asynchronous script operations. Their main purpose is to optimize the usage of system resources. By requiring less processes to complete the same amount of work in the same amount of time, process context switching is minimized and CPU usage is improved. Less processes will also eat up less system memory.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>One of the key features of OpenSIPS 2.2 are asynchronous script operations. Their main purpose is to optimize the usage of system resources. By requiring less processes to complete the same amount of work in the same amount of time, process context switching is minimized and overall CPU usage is improved. Less processes will also eat up less system memory.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422271541-1422271439-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422271541:1422271439:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 12:23 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 15 from:</div>
+        <div class='diffdel'><h3>Introduction</h3>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h3>Description</h3>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422271439:1422271382:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422271439:1422271382:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422271439:1422271382:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 12:23 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 59-61 from:</div>
+        <div class='diffdel'><ul><li>avp_db_query
+</li><li>rest_get
+</li><li>exec
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>avp_db_query
+</li><li>rest_get
+</li><li>exec
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422271382-1422271323-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422271382:1422271323:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 12:22 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422271323:1422271260:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422271323:1422271260:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422271323:1422271260:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 12:21 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 53-57 from:</div>
+        <div class='diffdel'><h3>Functions with asynchronous versions</h3>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h3>List of async functions</h3>
+<p>The following functions also have an async version:
+</p>
+<p class='vspace'>\\
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422271260-1422271218-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422271260:1422271218:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 12:20 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Deleted line 20:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>Changed lines 23-24 from:</div>
+        <div class='diffdel'><p>//
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><br />
+</p>
+</div>
+        <div class='difftype'>Changed lines 40-41 from:</div>
+        <div class='diffdel'><p>//
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><br />
+</p>
+</div>
+        <div class='difftype'>Changed lines 44-46 from:</div>
+        <div class='diffdel'><p>//
+</p>
+<p class='vspace'><strong><span  style='color: green;'>Preserved data (available in resume route)</span></strong>
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><br />
+<strong><span  style='color: green;'>Preserved data (still available in resume route)</span></strong>
+</p>
+</div>
+        <div class='difftype'>Changed lines 53-54 from:</div>
+        <div class='diffdel'><p>A <strong>Transformation</strong> is basically a function that is applied to a variable(script variable, pseudo-variables, AVPS, static strings) to get a special value from it. The value of the original variable is not altered.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h3>Functions with asynchronous versions</h3>
+<ul><li>avp_db_query
+</li><li>rest_get
+</li><li>exec
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422271218-1422270727-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422271218:1422270727:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 12:12 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 22-23 from:</div>
+        <div class='diffdel'><p>When a function is called in an asynchronous manner (see below), the script is immediately halted, so any code you write after the async() call will be ignored! Also, please note that only <strong>$avp</strong> variables are preserved in the resume route, along with all changes in the current SIP message. 
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>When a function is called in an asynchronous manner (see below), the script is immediately halted, so any code you write after the async() call will be ignored! The current OpenSIPS worker will launch the asynchronous operation, then it will continue to process other pending tasks. As soon as the data is available, it will call the given resume route and continue processing, with a minimum of idle time.
+</p>
+<p class='vspace'>//
+</p>
+</div>
+        <div class='difftype'>Added lines 41-45:</div>
+        <div class='diffadd'><p>//
+</p>
+<p class='vspace'>Data is copied over to the resume route as follows:
+</p>
+<p class='vspace'>//
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422270727-1422270480-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422270727:1422270480:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 12:08 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 32-33 from:</div>
+        <div class='diffdel'><p>@]
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'></div>
+        <div class='difftype'>Added line 37:</div>
+        <div class='diffadd'><p>@]
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422270480-1422270459-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422270480:1422270459:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 12:07 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 17-18 from:</div>
+        <div class='diffdel'><p>Some of the key features of OpenSIPS 2.2 are asynchronous script operations. Their main purpose is to optimize the usage of system resources. By requiring less processes to complete the same amount of work in the same amount of time, process context switching is minimized and CPU usage is improved. Less processes will also eat up less system memory.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>One of the key features of OpenSIPS 2.2 are asynchronous script operations. Their main purpose is to optimize the usage of system resources. By requiring less processes to complete the same amount of work in the same amount of time, process context switching is minimized and CPU usage is improved. Less processes will also eat up less system memory.
+</p>
+</div>
+        <div class='difftype'>Added lines 21-23:</div>
+        <div class='diffadd'><p>When a function is called in an asynchronous manner (see below), the script is immediately halted, so any code you write after the async() call will be ignored! Also, please note that only <strong>$avp</strong> variables are preserved in the resume route, along with all changes in the current SIP message. 
+</p>
+</div>
+        <div class='difftype'>Changed line 29 from:</div>
+        <div class='diffdel'><pre>    async(avp_db_query("SELECT credit FROM users WHERE uid='$id'", "$avp(credit)"), resume_route);
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>    async(avp_db_query("SELECT credit FROM users WHERE uid='$avp(uid)'", "$avp(credit)"), resume_credit);
+</pre>
+</div>
+        <div class='difftype'>Changed lines 34-46 from:</div>
+        <div class='diffdel'><p>When a function is called in an asynchronous manner, the script is immediately halted. 
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>route [resume_credit]
+{
+</p><pre>    xlog("Great! Credit of user $avp(uid) is $avp(credit)\n");
+</pre><p>}
+</p>
+<p class='vspace'><strong><span  style='color: green;'>Preserved data (available in resume route)</span></strong>
+</p><ul><li><strong>all $avp variables</strong>
+</li><li><strong>all changes in current SIP message</strong>
+</li></ul><p class='vspace'><strong><span  style='color: red;'>Ignored data (not available anymore in resume route)</span></strong>
+</p><ul><li><strong>all $var variables</strong>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422270459-1422269757-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422270459:1422269757:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 11:55 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 22 from:</div>
+        <div class='diffdel'><p>route [ ...
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>route
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422269757-1422269720-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422269757:1422269720:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 11:55 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added line 22:</div>
+        <div class='diffadd'><p>route [ ...
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422269720:1422269690:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422269720:1422269690:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422269720:1422269690:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 11:54 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 26 from:</div>
+        <div class='diffdel'><pre>    /* script is stopped right away! */
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>    /* script execution is paused right away! */
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422269690-1422269662-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422269690:1422269662:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 11:54 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added line 22:</div>
+        <div class='diffadd'><p>{
+</p>
+</div>
+        <div class='difftype'>Deleted line 25:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>Added line 27:</div>
+        <div class='diffadd'><p>}
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422269662-1422269640-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422269662:1422269640:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 11:54 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 17-21 from:</div>
+        <div class='diffdel'><p>One of the key features of OpenSIPS 2.2 are asynchronous script operations. Their main purpose is to optimize the usage of system resources. By requiring less processes to complete the same amount of work in the same amount of time, process context switching is minimized and CPU usage is improved. Less processes will also eat up less system memory.
+</p>
+<div class='vspace'></div><h3>Script behaviour</h3>
+<p>When a function is called in an asynchronous manner, the script is paused
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Some of the key features of OpenSIPS 2.2 are asynchronous script operations. Their main purpose is to optimize the usage of system resources. By requiring less processes to complete the same amount of work in the same amount of time, process context switching is minimized and CPU usage is improved. Less processes will also eat up less system memory.
+</p>
+<div class='vspace'></div><h3>Script syntax &amp; behaviour</h3>
+<pre class='escaped'>
+    /* preparation code */
+    ...
+    async(avp_db_query("SELECT credit FROM users WHERE uid='$id'", "$avp(credit)"), resume_route);
+
+    /* script is stopped right away! */
+</pre>
+<p class='vspace'>When a function is called in an asynchronous manner, the script is immediately halted. 
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422269640:1422269328:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422269640:1422269328:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422269640:1422269328:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 11:48 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added lines 15-21:</div>
+        <div class='diffadd'><h3>Introduction</h3>
+<p>One of the key features of OpenSIPS 2.2 are asynchronous script operations. Their main purpose is to optimize the usage of system resources. By requiring less processes to complete the same amount of work in the same amount of time, process context switching is minimized and CPU usage is improved. Less processes will also eat up less system memory.
+</p>
+<div class='vspace'></div><h3>Script behaviour</h3>
+<p>When a function is called in an asynchronous manner, the script is paused
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422269328-1422268073-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422269328:1422268073:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 26, 2015, at 11:27 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added lines 1-15:</div>
+        <div class='diffadd'><h5>Documentation -&gt; <a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a> -&gt; <a class='wikilink' title='OpenSIPS Manual - 2.2' href="Manual-2-2.htm" tppabs="http://www.opensips.org/Documentation/Manual-2-2">Manual devel</a> -&gt; Asynchronous Functions</h5>
+<p>(:title Asynchronous functions - 2.2:)
+</p><hr />
+<p>(:allVersions Script-Async 2.2:)
+</p>
+<p class='vspace'><br />
+</p><table width='100%'><tr ><td  align='center'><span  style='color: #185662;'><span style='font-size:120%'><strong>Asynchronous Functions v2.2 </strong></span></span></td></tr>
+</table>
+<div class='vspace'></div><table width='100%'><tr ><td  align='left'><a class='wikilink' title='Script Transformations - 2.2' href="Script-Tran-2-2.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-2-2">Prev</a></td><td  align='right'><a class='wikilink' title='Modules - 2.2' href="Modules-2-2.htm" tppabs="http://www.opensips.org/Documentation/Modules-2-2">Next</a></td></tr>
+</table><hr />
+<p class='vspace'>(:toc-float Table of Content:)
+</p>
+<p class='vspace'>A <strong>Transformation</strong> is basically a function that is applied to a variable(script variable, pseudo-variables, AVPS, static strings) to get a special value from it. The value of the original variable is not altered.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Async-2-2-action=edit&restore=diff-1422268073-1422268073-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit&restore=diff:1422268073:1422268073:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Script-Async-2-2-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=edit">Edit</a> |
+      <a rel="nofollow" href="Script-Async-2-2-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=diff">History</a> |
+      <a rel="nofollow" href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Script-Async-2-2?action=print  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Script-Async-2-2?action=print%27" tppabs="http://www.opensips.org/Documentation/Script-Async-2-2?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on March 06, 2015, at 12:36 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

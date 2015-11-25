@@ -1,0 +1,273 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / OpenSIPS Manual - 1.6 ver | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Manual-1-6' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Manual-1-6 History</h2>
+  <p><a href="Manual-1-6-action=diff&source=y&minor=y.htm" tppabs="http://www.opensips.org/Documentation/Manual-1-6?action=diff&source=y&minor=y">Show minor edits</a> - <a href="Manual-1-6-action=diff&source=n&minor=n.htm" tppabs="http://www.opensips.org/Documentation/Manual-1-6?action=diff&source=n&minor=n">Show changes to output</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>August 05, 2013, at 02:59 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed lines 4-5 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>[- Page for other versions: [[Manual|devel]] [[Manual-1-9|1.9]] [[Manual-1-8|1.8]] old versions: [[Manual-1-7|1.7]] 1.6 [[Manual-1-5|1.5]] [[Manual-1-4|1.4]] -]<br /></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>(:allVersions Manual 1.6:)<br /></div></div>
+        <div class='difftype'>Deleted line 37:</div>
+        <div class='diffdel'><div class='diffmarkup'></div></div></div>
+      <div class='diffrestore'><a href="Manual-1-6-action=edit&restore=diff-1375707549-1371128036-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Manual-1-6?action=edit&restore=diff:1375707549:1371128036:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 13, 2013, at 02:53 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Added line 32:</div>
+        <div class='diffadd'><div class='diffmarkup'>** [[Documentation.Function-Index-1-6 | Function Index]]</div></div>
+        <div class='difftype'>Deleted line 37:</div>
+        <div class='diffdel'><div class='diffmarkup'></div></div></div>
+      <div class='diffrestore'><a href="Manual-1-6-action=edit&restore=diff-1371128036-1369827587-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Manual-1-6?action=edit&restore=diff:1371128036:1369827587:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 29, 2013, at 01:39 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed lines 14-17 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>** [[Documentation/Download-1-6 | Download OpenSIPS ]]<br />** [[Documentation/Compile-And-Install-1-6 | Compile and Install OpenSIPS]]<br />** [[Documentation/Database-Deployment-1-6 | Database Deployment]]<br />** [[http://www.opensips.org/html/docs/db/db-schema-1.6.x.html|Database schema]]</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>** [[Documentation/Install-Download-1-6 | Download OpenSIPS ]]<br />** [[Documentation/Install-CompileAndInstall-1-6 | Compile and Install OpenSIPS]]<br />** [[Documentation/Install-DBDeployment-1-6 | Database Deployment]]<br />** [[Documentation/Install-DBSchema-1-6 |Database schema]]</div></div></div>
+      <div class='diffrestore'><a href="Manual-1-6-action=edit&restore=diff-1369827587-1369822332-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Manual-1-6?action=edit&restore=diff:1369827587:1369822332:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 29, 2013, at 12:12 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed lines 19-20 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>** RC files (To be done)<br />** Config file (To be done)</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>** [[Documentation/Configure-RC-1-6 | RC files]]<br />** [[Documentation/Configure-File-1-6 | Config file]]</div></div></div>
+      <div class='diffrestore'><a href="Manual-1-6-action=edit&restore=diff-1369822332-1369819376-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Manual-1-6?action=edit&restore=diff:1369822332:1369819376:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 29, 2013, at 11:22 AM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Deleted line 20:</div>
+        <div class='diffdel'><div class='diffmarkup'>** [[Generating-Configs-1-6 | Generating config files]]</div></div>
+        <div class='difftype'>Changed line 33 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>** [[Documentation.Interface-MI-1-6|MI interface]]</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>** [[Documentation.Interface-MI-1-6|MI Interface]]</div></div>
+        <div class='difftype'>Changed line 35 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>** [[Documentation.Interface-Statistics-1-6|Statistics]]</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>** [[Documentation.Interface-Statistics-1-6|Statistics Interface]]</div></div></div>
+      <div class='diffrestore'><a href="Manual-1-6-action=edit&restore=diff-1369819376-1369816307-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Manual-1-6?action=edit&restore=diff:1369819376:1369816307:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 29, 2013, at 10:31 AM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed lines 26-27 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>** [[Documentation/Script-Operators|Script operators]]<br />** [[Documentation/Script-Statements|Script statements]]</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>** [[Documentation/Script-Operators-1-6|Script operators]]<br />** [[Documentation/Script-Statements-1-6|Script statements]]</div></div>
+        <div class='difftype'>Deleted lines 35-36:</div>
+        <div class='diffdel'><div class='diffmarkup'>** [[Documentation.Interface-Events-1-6|Event Interface]]<br />** [[Documentation.Interface-CoreEvents-1-6|Core Events]]</div></div></div>
+      <div class='diffrestore'><a href="Manual-1-6-action=edit&restore=diff-1369816307-1369766413-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Manual-1-6?action=edit&restore=diff:1369816307:1369766413:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 28, 2013, at 08:40 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 23 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>** [[Documentation/Script-Format|Script format]]</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>** [[Documentation/Script-Format-1-6|Script format]]</div></div></div>
+      <div class='diffrestore'><a href="Manual-1-6-action=edit&restore=diff-1369766413-1369763010-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Manual-1-6?action=edit&restore=diff:1369766413:1369763010:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 28, 2013, at 07:43 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Added lines 1-46:</div>
+        <div class='diffadd'><div class='diffmarkup'>!!!!! Documentation -&gt; [[Documentation.Manuals|Manuals]] -&gt; Manual 1.6<br />(:title OpenSIPS Manual - 1.6 ver :)<br />----<br />[- Page for other versions: [[Manual|devel]] [[Manual-1-9|1.9]] [[Manual-1-8|1.8]] old versions: [[Manual-1-7|1.7]] 1.6 [[Manual-1-5|1.5]] [[Manual-1-4|1.4]] -]<br /><br />\\<br /><br />|| %color=#185662%[+'''OpenSIPS 1.6 Manual'''+]%% ||<br />----<br /><br /><br /><br />* '''Installation'''<br />** [[Documentation/Download-1-6 | Download OpenSIPS ]]<br />** [[Documentation/Compile-And-Install-1-6 | Compile and Install OpenSIPS]]<br />** [[Documentation/Database-Deployment-1-6 | Database Deployment]]<br />** [[http://www.opensips.org/html/docs/db/db-schema-1.6.x.html|Database schema]]<br />* '''Configuring'''<br />** RC files (To be done)<br />** Config file (To be done)<br />** [[Generating-Configs-1-6 | Generating config files]]<br />* '''OpenSIPS scripting''' <br />** [[Documentation/Script-Format|Script format]]<br />** [[Documentation/Script-CoreParameters-1-6 | Global parameters ]]<br />** [[Documentation/Script-Routes-1-6 | Types of routes]]<br />** [[Documentation/Script-Operators|Script operators]]<br />** [[Documentation/Script-Statements|Script statements]]<br />** [[Documentation/Script-CoreFunctions-1-6 | Core functions]]<br />** [[Documentation/Script-CoreVar-1-6 | Core variables]]<br />** [[Documentation/Script-Flags-1-6 | Scripting flags]]<br />** [[Documentation/Script-Tran-1-6 | Transformations]]<br />** [[Documentation.Modules-1-6| Modules documentation]]<br />* '''OpenSIPS Interfaces'''<br />** [[Documentation.Interface-MI-1-6|MI interface]]<br />** [[Documentation.Interface-CoreMI-1-6|Core MI commands]]<br />** [[Documentation.Interface-Events-1-6|Event Interface]]<br />** [[Documentation.Interface-CoreEvents-1-6|Core Events]]<br />** [[Documentation.Interface-Statistics-1-6|Statistics]]<br />** [[Documentation.Interface-CoreStatistics-1-6|Core Statistics]]<br /><br /><br /><br /><br /><br /><br /></div></div></div>
+      <div class='diffrestore'><a href="Manual-1-6-action=edit&restore=diff-1369763010-1369763010-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Manual-1-6?action=edit&restore=diff:1369763010:1369763010:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Manual-1-6-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Manual-1-6?action=edit">Edit</a> |
+      <a rel="nofollow" href="Manual-1-6-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Manual-1-6?action=diff">History</a> |
+      <a rel="nofollow" href="Manual-1-6-action=print.htm" tppabs="http://www.opensips.org/Documentation/Manual-1-6?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on August 05, 2013, at 02:59 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

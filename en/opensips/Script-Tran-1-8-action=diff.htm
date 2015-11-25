@@ -1,0 +1,665 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Script Transformations - ver 1.8 | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Script-Tran-1-8' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Script-Tran-1-8 History</h2>
+  <p><a href="Script-Tran-1-8-action=diff&source=n&minor=n.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-8?action=diff&source=n&minor=n">Hide minor edits</a> - <a href="Script-Tran-1-8-action=diff&source=y&minor=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-8?action=diff&source=y&minor=y">Show changes to markup</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>August 05, 2013, at 12:54 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 4 from:</div>
+        <div class='diffdel'><p><span style='font-size:83%'> Page for other versions: <a class='wikilink' title='Script-Tran' href="Script-Tran-2-2.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran">devel</a> <a class='wikilink' title='Script Transformations - ver 1.9' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Script-Tran-1-9  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Script-Tran-1-9%27" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-9">1.9</a> 1.8 old versions: <a class='wikilink' title='Script Transformations - ver 1.7' href="Script-Tran-1-7.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-7">1.7</a> <a class='wikilink' title='Script Transformations - ver 1.6' href="Script-Tran-1-6.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-6">1.6</a> <a class='wikilink' title='Script Transformations - ver 1.5' href="Script-Tran-1-5.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-5">1.5</a> <a class='wikilink' title='Script Transformations - ver 1.4' href="Script-Tran-1-4.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-4">1.4</a> </span>
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>(:allVersions Script-Tran 1.8:)
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Tran-1-8-action=edit&restore=diff-1375700077-1369781907-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-8?action=edit&restore=diff:1375700077:1369781907:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 29, 2013, at 12:58 AM 
+        by <span class='diffauthor' title='92.80.35.155'>92.80.35.155</span> - </div>
+        <div class='difftype'>Changed lines 1-2 from:</div>
+        <div class='diffdel'><h2><a class='createlinktext' rel='nofollow' 
+    href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">Documentation</a><a rel='nofollow' 
+    class='createlink' href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">?</a> -&gt; Script -&gt; <a class='selflink' href="Script-Tran-1-8.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-8">Transformations 1.8.x</a></h2>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h5>Documentation -&gt; <a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a> -&gt; <a class='wikilink' title='OpenSIPS Manual - 1.8 ver' href="Manual-1-8.htm" tppabs="http://www.opensips.org/Documentation/Manual-1-8">Manual 1.8</a> -&gt; Script Transformations</h5>
+<p>(:title Script Transformations - ver 1.8 :)
+</p>
+</div>
+        <div class='difftype'>Changed lines 4-5 from:</div>
+        <div class='diffdel'><p>This documentation is valid for <strong>OpenSIPS v1.8.x </strong>
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><span style='font-size:83%'> Page for other versions: <a class='wikilink' title='Script-Tran' href="Script-Tran-2-2.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran">devel</a> <a class='wikilink' title='Script Transformations - ver 1.9' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Script-Tran-1-9  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Script-Tran-1-9%27" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-9">1.9</a> 1.8 old versions: <a class='wikilink' title='Script Transformations - ver 1.7' href="Script-Tran-1-7.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-7">1.7</a> <a class='wikilink' title='Script Transformations - ver 1.6' href="Script-Tran-1-6.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-6">1.6</a> <a class='wikilink' title='Script Transformations - ver 1.5' href="Script-Tran-1-5.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-5">1.5</a> <a class='wikilink' title='Script Transformations - ver 1.4' href="Script-Tran-1-4.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-4">1.4</a> </span>
+</p>
+<p class='vspace'><br />
+</p><table width='100%'><tr ><td  align='center'><span  style='color: #185662;'><span style='font-size:120%'><strong>Script Transformations v1.8</strong></span></span></td></tr>
+</table>
+<div class='vspace'></div><table width='100%'><tr ><td  align='left'><a class='wikilink' title='Script Flags - ver 1.8' href="Script-Flags-1-8.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-8">Prev</a></td><td  align='right'><a class='wikilink' title='Modules - ver 1.8' href="Modules-1-8.htm" tppabs="http://www.opensips.org/Documentation/Modules-1-8">Next</a></td></tr>
+</table><hr />
+</div></div>
+      <div class='diffrestore'><a href="Script-Tran-1-8-action=edit&restore=diff-1369781907-1368091506-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-8?action=edit&restore=diff:1369781907:1368091506:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 11:25 AM 
+        by <span class='diffauthor' title='79.118.227.150'>79.118.227.150</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><h2>Resources -&gt; <a class='wikilink' title='Documentation' href="javascript:if(confirm(%27http://www.opensips.org/Resources/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/Documentation%27" tppabs="http://www.opensips.org/Resources/Documentation">Documentation</a> -&gt; <a class='wikilink' title='DocsCookbooks' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCookbooks  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCookbooks%27" tppabs="http://www.opensips.org/Resources/DocsCookbooks">CookBooks</a> -&gt; Script Transformations</h2>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h2><a class='createlinktext' rel='nofollow' 
+    href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">Documentation</a><a rel='nofollow' 
+    class='createlink' href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">?</a> -&gt; Script -&gt; <a class='selflink' href="Script-Tran-1-8.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-8">Transformations 1.8.x</a></h2>
+</div>
+        <div class='difftype'>Changed line 67 from:</div>
+        <div class='diffdel'><p><span  style='color: red;'>IMPORTANT</span>: To learn what variables can be used with transformations see <a class='wikilink' title='DocsCoreVar' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreVar  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreVar%27" tppabs="http://www.opensips.org/Resources/DocsCoreVar">Scripting variables list</a>.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><span  style='color: red;'>IMPORTANT</span>: To learn what variables can be used with transformations see <a class='wikilink' title='Core Variables - ver 1.8' href="Script-CoreVar-1-8.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreVar-1-8">Scripting variables list</a>.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Tran-1-8-action=edit&restore=diff-1368091506-1366801528-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-8?action=edit&restore=diff:1368091506:1366801528:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 24, 2013, at 01:05 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Added lines 1-503:</div>
+        <div class='diffadd'><h2>Resources -&gt; <a class='wikilink' title='Documentation' href="javascript:if(confirm(%27http://www.opensips.org/Resources/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/Documentation%27" tppabs="http://www.opensips.org/Resources/Documentation">Documentation</a> -&gt; <a class='wikilink' title='DocsCookbooks' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCookbooks  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCookbooks%27" tppabs="http://www.opensips.org/Resources/DocsCookbooks">CookBooks</a> -&gt; Script Transformations</h2>
+<hr />
+<p class='vspace'>This documentation is valid for <strong>OpenSIPS v1.8.x </strong>
+</p>
+<p class='vspace'>(:toc-float Table of Content:)
+</p>
+<p class='vspace'>A <strong>Transformation</strong> is basically a function that is applied to a variable(script variable, pseudo-variables, AVPS, static strings) to get a special value from it. The value of the original variable is not altered.
+</p>
+<p class='vspace'>Example of using different kind of variables in <strong>OpenSIPS script</strong>:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+# check if username in From header is equal with username in To header
+if($fU==$tU) {
+   ...
+}
+
+# r-uri username based processing
+switch($ruri.user) {
+   case "1234":
+      ...
+   break;
+   case "5678":
+      ...
+   break;
+   default:
+     ...
+}
+
+# assign integer value to an AVP
+$avp(i:11) = 1;
+
+#assing string value to an AVP
+$avp(i:22) = "opensips";
+
+# write ruri in an AVP
+$avp(i:33) = $ruri;
+
+# concat "sip:" + From username + "@" + To domain in a script variable x
+$var(x) = "sip:" + $fU +"@" + $td;
+
+
+</pre>
+<p class='vspace'>The transformations are intended to facilitate access to different attributes of variables (like strlen of value, parts of value, substrings) or complete different value of variables (encoded in hexa, md5 value, escape/unescape value for DB operations...).
+</p>
+<p class='vspace'>A transformation is represented in between <strong>'{</strong>' and <strong>'}</strong>' and follows the name of a variable. When using transformations, the variable name and transformations <strong>must</strong> be enclosed in between <strong>'(</strong>' and <strong>')</strong>'.
+</p>
+<p class='vspace'>Example:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+# the length of From URI ($fu is pseudo-variable for From URI)
+
+$(fu{s.len})
+</pre>
+<p class='vspace'>Many transformations can be applied in the same time to a variable.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+# the length of escaped 'Test' header body
+
+$(hdr(Test){s.escape.common}{s.len})
+</pre>
+<p class='vspace'>The transformations can be used anywhere, being considered parts of script variables support -- in xlog, avpops or other modules' functions and parameters, in right side assignment expressions or in comparisons.
+</p>
+<p class='vspace'><span  style='color: red;'>IMPORTANT</span>: To learn what variables can be used with transformations see <a class='wikilink' title='DocsCoreVar' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreVar  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreVar%27" tppabs="http://www.opensips.org/Resources/DocsCoreVar">Scripting variables list</a>.
+</p>
+<div class='vspace'></div><h3>String Transformations</h3>
+<p>The name of these transformation starts with 's.'. They are intended to apply string operations to variables.
+</p>
+<p class='vspace'>Available transformations in this class:
+</p>
+<div class='vspace'></div><h4>{s.len}</h4>
+<p>Return strlen of variable value
+</p>
+<div class='vspace'></div><pre class='escaped'>
+$var(x) = "abc";
+if($(var(x){s.len}) == 3)
+{
+   ...
+}
+</pre>
+<div class='vspace'></div><h4>{s.int}</h4>
+<p>Return integer value of a string-represented number
+</p>
+<div class='vspace'></div><pre class='escaped'>
+$var(x) = "1234";
+if($(var(x){s.int})==1234) {
+  ...
+}
+</pre>
+<div class='vspace'></div><h4>{s.md5}</h4>
+<p>Return md5 over variable value
+</p>
+<div class='vspace'></div><pre class='escaped'>
+xlog("MD4 over From username: $(fU{s.md5})");
+</pre>
+<div class='vspace'></div><h4>{s.substr,offset,length}</h4>
+<p>Return substring starting at offset having size of 'length'. If offset is negative, then it is counted from the end of the value, -1 being the last char. In case of positive value, 0 is first char. Length must be positive, in case of 0, substring to the end of variable value is returned. offset and length can be a varibale as well.
+</p>
+<p class='vspace'>Example:
+</p><pre class='escaped'>
+$var(x) = "abcd";
+$(var(x){s.substr,1,0}) = "bcd"
+</pre>
+<div class='vspace'></div><h4>{s.select,index,separator}</h4>
+<p>Return a field from the value of a variable. The field is selected based on separator and index. The separator must be a character used to identify the fields. Index must be a integer value or a variable. If index is negative, the count of fields starts from end of value, -1 being last field. If index is positive, 0 is the first field.
+</p>
+<p class='vspace'>Example:
+</p><pre class='escaped'>
+$var(x) = "12,34,56";
+$(var(x){s.select,1,,}) =&gt; "34" ;
+
+$var(x) = "12,34,56";
+$(var(x){s.select,-2,,}) =&gt; "34"
+</pre>
+<div class='vspace'></div><h4>{s.encode.hexa}</h4>
+<p>Return encoding in hexa of variable's value
+</p>
+<div class='vspace'></div><h4>{s.decode.hexa}</h4>
+<p>Return decoding from hexa of variable's value
+</p>
+<div class='vspace'></div><h4>{s.escape.common}</h4>
+<p>Return escaped string of variable's value. Characters escaped are ', ",  and 0. Useful when doing DB queries (care should be taken for non Latin character set).
+</p>
+<div class='vspace'></div><h4>{s.unescape.common}</h4>
+<p>Return unescaped string of variable's value. Reverse of above transformation.
+</p>
+<div class='vspace'></div><h4>{s.escape.user}</h4>
+<p>Return escaped string of variable's value, changing to '%hexa' the characters that are not allowed in user part of SIP URI following RFC requirements.
+</p>
+<div class='vspace'></div><h4>{s.unescape.user}</h4>
+<p>Return unescaped string of variable's value, changing '%hexa' to character code. Reverse of above transformation.
+</p>
+<div class='vspace'></div><h4>{s.escape.param}</h4>
+<p>Return escaped string of variable's value, changing to '%hexa' the characters that are not allowed in the param part of SIP URI following RFC requirements.
+</p>
+<div class='vspace'></div><h4>{s.unescape.param}</h4>
+<p>Return unescaped string of variable's value, changing '%hexa' to character code. Reverse of above transformation.
+</p>
+<div class='vspace'></div><h4>{s.tolower}</h4>
+<p>Return string with lower case ASCII letters.
+</p>
+<div class='vspace'></div><h4>{s.toupper}</h4>
+<p>Return string with upper case ASCII letters.
+</p>
+<div class='vspace'></div><h3>URI Transformations</h3>
+<p>The name of transformation starts with 'uri.'. The value of the variable is considered to be a SIP URI. This transformation returns parts of SIP URI (see struct sip_uri). If that part is missing, the returned value is an empty string.
+</p>
+<p class='vspace'>Available transformations in this class:
+</p>
+<div class='vspace'></div><h4>{uri.user}</h4>
+<p>Returns the user part of the URI schema.
+</p>
+<div class='vspace'></div><h4>{uri.host}</h4>
+<p>(same as <strong>{uri.domain}</strong>)
+</p>
+<p class='vspace'>Returns the domain part of the URI schema.
+</p>
+<div class='vspace'></div><h4>{uri.passwd}</h4>
+<p>Returns the password part of the URI schema.
+</p>
+<div class='vspace'></div><h4>{uri.port}</h4>
+<p>Returns the port of the URI schema.
+</p>
+<div class='vspace'></div><h4>{uri.params}</h4>
+<p>Returns all the URI parameters into a single string.
+</p>
+<div class='vspace'></div><h4>{uri.param,name}</h4>
+<p>Returns the value of URI parameter with name "name"
+</p>
+<div class='vspace'></div><h4>{uri.headers}</h4>
+<p>Returns URI headers.
+</p>
+<div class='vspace'></div><h4>{uri.transport}</h4>
+<p>Returns the value of transport URI parameter.
+</p>
+<div class='vspace'></div><h4>{uri.ttl}</h4>
+<p>Returns the value of ttl URI parameter.
+</p>
+<div class='vspace'></div><h4>{uri.uparam}</h4>
+<p>Returns the value of user URI parameter
+</p>
+<div class='vspace'></div><h4>{uri.maddr}</h4>
+<p>Returns the value of maddr URI parameter.
+</p>
+<div class='vspace'></div><h4>{uri.method}</h4>
+<p>Returns the value of method URI parameter.
+</p>
+<div class='vspace'></div><h4>{uri.lr}</h4>
+<p>Returns the value of lr URI parameter.
+</p>
+<div class='vspace'></div><h4>{uri.r2}</h4>
+<p>Returns the value of r2 URI parameter.
+</p>
+<div class='vspace'></div><h3>VIA Transformations</h3>
+<p>These transformations parse Via headers and all starts with <code>via.</code>. The value of the variable is considered to be a SIP Via header. This transformation returns parts of the via header (see struct via_body). If the requested part is missing, the returned value is an empty string. Transformation will fail (with script error) if variable holding the Via header is empty. Unless otherwise specified in descriptions below, the result of transform is a string (not an integer).
+</p>
+<p class='vspace'>Examples:
+</p><pre>    $var(upstreamtransport) = $(hdr(Via)[1]{via.transport}{s.tolower});
+    $var(upstreamip) = $(hdr(Via)[1]{via.param,received});
+    $var(clientport) = $(hdr(Via)[-1]{via.param,rport});
+</pre><p class='vspace'>Available transformations in this class:
+</p>
+<div class='vspace'></div><h4>{via.name}</h4>
+<p>Returns the <code>protocol-name</code> (of RFC3261 BNF), generally <code>SIP</code>.
+</p>
+<div class='vspace'></div><h4>{via.version}</h4>
+<p>Returns the <code>protocol-version</code> (of RFC3261 BNF), generally <code>2.0</code>.
+</p>
+<div class='vspace'></div><h4>{via.transport}</h4>
+<p>Returns the <code>transport</code> (of RFC3261 BNF), e.g., <code>UDP</code>, <code>TCP</code>, <code>TLS</code>. This is the transport protocol used to send the request message.
+</p>
+<div class='vspace'></div><h4>{via.host}</h4>
+<p>(same as <code>{via.domain}</code>)
+</p>
+<p class='vspace'>Returns the <code>host</code> portion of the <code>sent-by</code> (of RFC3261 BNF). Typically this is the IP address of the sender of the request message, and is the address to which the response will be sent.
+</p>
+<div class='vspace'></div><h4>{via.port}</h4>
+<p>Returns the <code>port</code> portion of the <code>sent-by</code> (of RFC3261 BNF). Typically this is the IP port of the sender of the request message, and is the address to which the response will be sent. Result of transform is valid as both integer and string.
+</p>
+<div class='vspace'></div><h4>{via.comment}</h4>
+<p>The comment associated with the via header. The <code>struct via_body</code> contains this field, but it isn't clear that RFC3261 allows Via headers to have comments (see text at top of page 221, and the BNF doesn't explicit allow comment within Via). The comment is the text enclosed within parens.
+</p>
+<div class='vspace'></div><h4>{via.params}</h4>
+<p>Returns all the Via headers parameters (<code>via-param</code> of RFC3261 BNF) as single string. Result can be processed using the <code>{param.*}</code> transforms. This is essentially everything after the host and port.
+</p>
+<div class='vspace'></div><h4>{via.param,name}</h4>
+<p>Returns the value of Via header parameter with name <code>name</code>. Typical parameters include <code>branch</code>, <code>rport</code> and <code>received</code>.
+</p>
+<div class='vspace'></div><h4>{via.branch}</h4>
+<p>Returns the value of the branch parameter in the VIA header.
+</p>
+<div class='vspace'></div><h4>{via.received}</h4>
+<p>Returns the value of the received parameter in the VIA header, if any.
+</p>
+<div class='vspace'></div><h4>{via.rport}</h4>
+<p>Returns the value of the rport parameter in the VIA header, if any.
+</p>
+<div class='vspace'></div><h3>Parameters List Transformations</h3>
+<p>The name of the transformation starts with "param.". The value of the variable is considered to be a string like name1=value1;name2=value2;...". The transformations returns the value for a specific parameter, or the name of a parameter at a specific index.
+</p>
+<p class='vspace'>Available transformations in this class:
+</p>
+<div class='vspace'></div><h4>{param.value,name}</h4>
+<p>Returns the value of parameter 'name'
+</p>
+<p class='vspace'>Example:
+</p><pre class='escaped'>
+"a=1;b=2;c=3"{param.value,c} = "3"
+</pre>
+<p class='vspace'>'name' can be a variable
+</p>
+<div class='vspace'></div><h4>{param.exist,name}</h4>
+<p>Returns 1 if the parameter <code>name</code> exists (with or without value), else 0. Returned value is both string and integer. <code>name</code> can be variable. This can be used to test existence of parameters that do not have values.
+</p>
+<p class='vspace'>Example:
+</p><pre class='escaped'>
+"a=0;b=2;ob;c=3"{param.exist,ob};         # returns 1
+"a=0;b=2;ob;c=3"{param.exist,a};          # returns 1
+"a=0;b=2;ob;c=3"{param.exist,foo};        # returns 0
+</pre>
+<div class='vspace'></div><h4>{param.valueat,index}</h4>
+<p>Returns the value of parameter at position give by 'index' (0-based index)
+</p>
+<p class='vspace'>Example:
+</p><pre class='escaped'>
+"a=1;b=2;c=3"{param.valueat,1} = "2"
+</pre>
+<p class='vspace'>'index' can be a variable
+</p>
+<div class='vspace'></div><h4>{param.name,index}</h4>
+<p>Returns the name of parameter at position 'index'.
+</p>
+<p class='vspace'>Example:
+</p><pre class='escaped'>
+"a=1;b=2;c=3"{param.name,1} = "b"
+</pre>
+<div class='vspace'></div><h4>{param.count}</h4>
+<p>Returns the number of parameters in the list.
+</p>
+<p class='vspace'>Example:
+</p><pre class='escaped'>
+"a=1;b=2;c=3"{param.count} = 3
+</pre>
+<div class='vspace'></div><h3>Name-address Transformations</h3>
+<p>The name of the transformation starts with 'nameaddr.'. The value of the variable is considered to be a string like '[display_name] uri'. The transformations returns the value for a specific field.
+</p>
+<p class='vspace'>Available transformations in this class:
+</p>
+<div class='vspace'></div><h4>{nameaddr.name}</h4>
+<p>Returns the value of display name
+</p>
+<p class='vspace'>Example:
+</p><pre class='escaped'>
+'"test" &lt;sip:test@opensips.org&gt;' {nameaddr.name} = "test"
+</pre>
+<div class='vspace'></div><h4>{nameaddr.uri}</h4>
+<p>Returns the value of URI
+</p>
+<p class='vspace'>Example:
+</p><pre class='escaped'>
+'"test" &lt;sip:test@opensips.org&gt;' {nameaddr.uri} = sip:test@opensips.org
+</pre>
+<div class='vspace'></div><h4>{nameaddr.len}</h4>
+<p>Returns the length of the entire name-addr part from the value.
+</p>
+<div class='vspace'></div><h4>{nameaddr.param,param_name}</h4>
+<p>Returns the value of the parameter with name param_name.
+Example:
+</p><pre class='escaped'>
+'"test" &lt;sip:test@opensips.org&gt;;tag=dat43h' {nameaddr.param,tag} = dat43h
+</pre>
+<h3>IP Transformations</h3>
+<p>The name of the transformation starts with 'ip.'. Available transformations in this class:
+</p>
+<div class='vspace'></div><h4>{ip.pton}</h4>
+<p>Returns a binary representation of a string represented IP.
+Example:
+</p><pre class='escaped'>
+"192.168.2.134" {ip.pton} returns a 4 byte binary representation of the IP provided
+</pre>
+<div class='vspace'></div><h4>{ip.ntop}</h4>
+<p>Returns a string representation of the binary IP provided
+Example:
+</p><pre class='escaped'>
+"192.168.2.134"{ip.pton}{ip.ntop} = "192.168.2.134"
+</pre>
+<div class='vspace'></div><h4>{ip.isip}</h4>
+<p>Returns 1 or 0, if the string provided is a valid IP or not.
+Example:
+</p><pre class='escaped'>
+"192.168.2.134" {ip.isip} = 1
+"192.168.2.134.1" {ip.isip} = 0
+</pre>
+<div class='vspace'></div><h4>{ip.family}</h4>
+<p>Returns INET or INET6 if the binary IP representation provided is IPv4 or IPv6.
+Example:
+</p><pre class='escaped'>
+"192.168.2.134" {ip.pton}{ip.family} = "INET"
+</pre>
+<div class='vspace'></div><h4>{ip.resolve}</h4>
+<p>Returns the resolved IP address coresponding to the string domain provided. Transformation has no effect if a string IP is provided.
+Example:
+</p><pre class='escaped'>
+"opensips.org" {ip.resolve} = "78.46.64.50"
+</pre>
+<div class='vspace'></div><h3>CSV Transformations</h3>
+<p>The name of the transformation starts with "csv.". The value of the variable is considered to be a string like "field1,field2,...". The transformations return the number of entries in the provided CSV, or the field at a specified position in the CSV.
+</p>
+<p class='vspace'>Available transformations in this class:
+</p>
+<div class='vspace'></div><h4>{csv.count}</h4>
+<p>Returns the number of entries in the provided CSV.
+Example:
+</p><pre class='escaped'>
+"a,b,c" {csv.count} = 3
+</pre>
+<div class='vspace'></div><h4>{csv.value}</h4>
+<p>Returns the entry at the specified positions. Indexing starts from 0.
+Example:
+</p><pre class='escaped'>
+"a,b,c" {csv.value,2} = c
+</pre>
+<div class='vspace'></div><h3>SDP Transformations</h3>
+<p>The name of the transformation starts with "sdp.". The value of the variable is considered to be a valid SDP body. The transformation returns a specific line in the SDP body.
+</p>
+<p class='vspace'>Available transformations in this class:
+</p>
+<div class='vspace'></div><h4>{sdp.line}</h4>
+<p>Returns the specified line in the SDP body. The transformations also accepts a second parameter, that specifies the line number of the first parameter's type to get from the SDP body. Indexing starts from 0. If the second parameter is missing, it is assumed to be 0. 
+Example:
+</p><pre class='escaped'>
+if (is_method("INVITE"))
+   {
+      $var(aline) = $(rb{sdp.line,a,1});
+      xlog("The second a line in the SDP body is $var(aline)\n");
+   }
+
+if (is_method("INVITE"))
+   {
+      $var(mline) = $(rb{sdp.line,m});
+      xlog("The first m line in the SDP body is $var(mline)\n");
+   }
+</pre>
+<div class='vspace'></div><h3>Examples</h3>
+<p>Within a variable, many transformation can be applied, being executed from left to right.
+</p>
+<div class='vspace'></div><ul><li>The length of the value of parameter at postion 1 (remember 0 is first position, 1 is second position)
+</li></ul><div class='vspace'></div><pre class='escaped'>
+$var(x) = "a=1;b=22;c=333";
+$(var(x){param.value,$(var(x){param.name,1})}{s.len}) = 2
+</pre>
+<div class='vspace'></div><ul><li>Test if whether is un-registration or not
+</li></ul><div class='vspace'></div><pre class='escaped'>
+if(is_method("REGISTER") &amp;&amp; is_present_hf("Expires") &amp;&amp; $(hdr(Expires){s.int})==0)
+    xlog("This is an un-registrationn");
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Script-Tran-1-8-action=edit&restore=diff-1366801528-1366801528-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-8?action=edit&restore=diff:1366801528:1366801528:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Script-Tran-1-8-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-8?action=edit">Edit</a> |
+      <a rel="nofollow" href="Script-Tran-1-8-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-8?action=diff">History</a> |
+      <a rel="nofollow" href="Script-Tran-1-8-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-8?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on August 05, 2013, at 12:54 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

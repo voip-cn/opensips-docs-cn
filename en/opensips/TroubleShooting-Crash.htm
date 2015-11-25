@@ -1,0 +1,261 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / TroubleShooting-Crash </title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='index,follow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   <p><a class='wikilink' title='Signup' href="javascript:if(confirm(%27http://www.opensips.org/Login/Signup?action=login  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Login/Signup?action=login%27" tppabs="http://www.opensips.org/Login/Signup?action=login">Login</a> | <a class='wikilink' title='Signup' href="javascript:if(confirm(%27http://www.opensips.org/Login/Signup  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Login/Signup%27" tppabs="http://www.opensips.org/Login/Signup">Register</a> 
+</p>
+
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.TroubleShooting-Crash' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h4>Documentation -&gt; <a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">TroubleShooting</a> -&gt; OpenSIPS crashes</h4>
+<hr />
+<div class='vspace'></div><h3>What is the problem?</h3>
+<p>Most likely you have stumbled upon a bug in OpenSIPS, which can be caused by a variety of of issues, like invalid memory access, memory corruption, etc.
+</p>
+<div class='vspace'></div><h3>Where to look for logs</h3>
+<p>If you have <strong>log_stderror=no</strong> in your config file (opensips.cfg), all the logs from <strong>OpenSIPS</strong> will be sent to the <strong>syslog</strong> service, so you have the check into the corresponding file, typically:
+</p><ol><li>/var/log/syslog
+</li><li>/var/log/messages
+</li></ol><p class='vspace'>You can simply check system log by: <br />$ tail -f /var/log/messages
+</p>
+<p class='vspace'>Note you might need root permissions to access these files! If you do not have it, set <strong>log_stderror=yes</strong> in your config and you will get the log in the console.
+</p>
+<p class='vspace'>If you have <strong>log_stderror=yes</strong>, you should get the log in the console where you are run <strong>OpenSIPS</strong>
+</p>
+<div class='vspace'></div><h3>Reading the error logs</h3>
+<p>First, you should check the error logs to make sure this was an actual crash, as opposed to the scenario where another entity forcefully killed your OpenSIPS process. A crash is usually detected by searching for the following string in the logs :
+</p><pre class='escaped'>
+child process 6645 exited by a signal 11
+</pre>
+<p class='vspace'>If you do not see such an error message, but rather you see things like 
+</p><pre class='escaped'>
+terminating due to SIGTERM
+</pre> 
+<p>or you do not see anything logs, you just notice the OpenSIPS suddenly dying, then most likely your OpenSIPS was sent a SIGTERM or a SIGKILL, and you should investigate why some other entity decided to terminate your OpenSIPS process.
+</p>
+<p class='vspace'>If you see the 'exited by a signal 11' then your OpenSIPS has crashed and you should proceed into investigating the core file. Usually, the 'exited by a signal 11' is accompanied by a 'core was generated' message, which tells you that OpenSIPS was succesful in dumping a core file
+</p>
+<div class='vspace'></div><h3>How to make sure OpenSIPS dumps a proper core file</h3>
+<p>Typically, in a crash scenario, OpenSIPS should dump a core file which contains the full memory contents at the moment of the crash.
+</p>
+<p class='vspace'>Several things have to be taken care of to make sure that your OpenSIPS dumps a proper core file, that can be used for investigating the crash. Failing to follow these steps could lead to the fact that either the core file is not being generated ( you will see in the logs a message like 'core was not generated' ), or you could end up with a core file that gets overwritten at OpenSIPS shutdown, which would not be useful for further debugging.
+</p>
+<p class='vspace'>1. Pass the '-w [FOLDER]' parameter to your OpenSIPS at startup. The [FOLDER] path that you provide must be write accessible by your OpenSIPS, and will be the folder that will contain the core files in the eventuality of a crash
+</p>
+<p class='vspace'>2. Before starting OpenSIPS, make sure to run 'ulimit -c unlimited' . This tells the system to allow OpenSIPS to dump a core file of unlimited size. This is useful, because in case of a crash, the core file will be at least the size of your shared memory + private memory. The ulimit commands usually should go in your init.d script for OpenSIPS
+</p>
+<p class='vspace'>3. If you are running OpenSIPS with a different username and group ( -u and -g params ), some kernels might need some extra configuration to allow core dumps :
+</p><ul><li>echo 1 &gt; /proc/sys/fs/suid_dumpable
+</li></ul><p class='vspace'>4. Make sure your core files do not get overwritten. There are several sysctl options that can be used for this :
+</p><ul><li>echo 1 &gt; /proc/sys/kernel/core_uses_pid
+<ul><li>When you see the message 'child process 6645 exited by a signal 11' , you should get a core file called 'core.6645' in your -w directory
+</li></ul></li><li>For more customization of the core file name, you can run setup your own core name pattern with something like : echo 'core.<span class='e'>t.sig</span><span class='s'>p' &gt; /proc/sys/kernel/core_pattern </span>
+<ul><li>This will have the core file contain the process name ( % e ), the timestamp ( % t ), the received signal ( % s ) and the pid file ( % p )
+</li></ul></li></ul><div class='vspace'></div><h3>Extracting a back trace from the core file</h3>
+<p>Browse the logs for the 
+</p>
+<div class='vspace'></div><pre class='escaped'>
+child process 6645 exited by a signal 11
+</pre>
+<p class='vspace'>and the run
+</p>
+<div class='vspace'></div><pre class='escaped'>
+gdb opensips core.6645 
+</pre>
+<p class='vspace'>Once in the gdb environment, run the following command
+</p>
+<div class='vspace'></div><pre class='escaped'>
+bt full
+</pre>
+<p class='vspace'>This will dump the full stack trace that lead to the crash. Send the crash to the OpenSIPS developers ( usually on the Sourceforge Bug tracker of on the DEV mailing list )
+</p>
+<p class='vspace'>Do not delete the core file and also make sure to keep an exact copy of your OpenSIPS binary, as the OpenSIPS developers might need to extra more information from the core file, like printing various variables, etc. The core file on it's own is useless without the exact OpenSIPS binary file that lead to the crash.
+</p>
+</div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="TroubleShooting-Crash-action=edit.htm" tppabs="http://www.opensips.org/Documentation/TroubleShooting-Crash?action=edit">Edit</a> |
+      <a rel="nofollow" href="javascript:if(confirm(%27http://www.opensips.org/Documentation/TroubleShooting-Crash?action=diff  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/TroubleShooting-Crash?action=diff%27" tppabs="http://www.opensips.org/Documentation/TroubleShooting-Crash?action=diff">History</a> |
+      <a rel="nofollow" href="TroubleShooting-Crash-action=print.htm" tppabs="http://www.opensips.org/Documentation/TroubleShooting-Crash?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on October 30, 2013, at 09:16 AM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

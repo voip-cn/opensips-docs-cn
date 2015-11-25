@@ -1,0 +1,1052 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / TroubleShooting-DoesNotStart </title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='index,follow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   <p><a class='wikilink' title='Signup' href="javascript:if(confirm(%27http://www.opensips.org/Login/Signup?action=login  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Login/Signup?action=login%27" tppabs="http://www.opensips.org/Login/Signup?action=login">Login</a> | <a class='wikilink' title='Signup' href="javascript:if(confirm(%27http://www.opensips.org/Login/Signup  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Login/Signup%27" tppabs="http://www.opensips.org/Login/Signup">Register</a> 
+</p>
+
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.TroubleShooting-DoesNotStart' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h4>Documentation -&gt; <a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a> -&gt; OpenSIPS Does Not Start</h4>
+<hr />
+<div class='vspace'></div><div  style='color: red;' > 
+<p>Where to check <strong>OpenSIPS</strong> does not start?
+</p></div>
+<div class='vspace'></div><h3>What is the problem?</h3>
+<p>More likely you have a configuration error (script error) or a permission error that prevents your <strong>OpenSIPS</strong> to start.<br />First of all you have to identify the cause of the error, so look for the <strong>OpenSIPS</strong> output.
+</p>
+<div class='vspace'></div><h3>Where to look for logs</h3>
+<p>If you have <strong>log_stderror=no</strong> in your config file (opensips.cfg), all the logs from <strong>OpenSIPS</strong> will be sent to the <strong>syslog</strong> service, so you have the check into the corresponding file, typically:
+</p><ol><li>/var/log/syslog
+</li><li>/var/log/messages
+</li></ol><p class='vspace'>You can simply check system log by: <br />$ tail -f /var/log/messages
+</p>
+<p class='vspace'>Note you might need root permissions to access these files! If you do not have it, set <strong>log_stderror=yes</strong> in your config and you will get the log in the console.
+</p>
+<p class='vspace'>If you have <strong>log_stderror=yes</strong>, you should get the log in the console where you are run <strong>OpenSIPS</strong>
+</p>
+<div class='vspace'></div><h3>Reading the error logs</h3>
+<p>The logs should give you some idea about what went wrong and prevented your <strong>OpenSIPS</strong> to start. The info from the logs is quite comprehensive to point you the problem. Even so, it some cases you may consider increasing the verbosity of the logs by setting a higher debug level (debug=4) - it is recommended to do it if you do not see any ERROR message in the first case.
+</p>
+<p class='vspace'>If no still no clue, use the <a class='wikilink' title='MailingLists' href="javascript:if(confirm(%27http://www.opensips.org/Support/MailingLists  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/MailingLists%27" tppabs="http://www.opensips.org/Support/MailingLists">mailing lists</a> to get help on this - do not forget to post the <strong>OpenSIPS</strong> logs in your email.
+</p>
+<p class='vspace'><a name='comment2' id='comment2'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Nengneng?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Nengneng?action=edit%27" tppabs="http://www.opensips.org/Profiles/Nengneng?action=edit">nengneng</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Nengneng?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Nengneng?action=edit%27" tppabs="http://www.opensips.org/Profiles/Nengneng?action=edit">?</a>  &mdash;  <span style='font-size:83%'>22 April 2009, 07:18</span>  </h5>
+</div><div class='messageitem' > 
+<p>hello,
+When I 
+</p><pre> opensipsctl start
+</pre><p class='vspace'>INFO: Starting OpenSIPS :
+</p>
+<p class='vspace'>ERROR: PID file /var/run/opensips.pid does not exist -- OpenSIPS start failed
+</p>
+<p class='vspace'>I looked for the OpenSIPS output:
+Apr 22 12:10:06 zhuruimin-desktop opensips: INFO:core:init_tcp: using epoll_lt as the TCP io watch method (auto detected) 
+Apr 22 12:10:06 zhuruimin-desktop /sbin/opensips[7098]: NOTICE:core:main: version: opensips 1.5.0-notls (i386/linux) 
+Apr 22 12:10:06 zhuruimin-desktop /sbin/opensips[7098]: INFO:core:main: using 64 Mb shared memory 
+Apr 22 12:10:06 zhuruimin-desktop /sbin/opensips[7098]: INFO:core:main: using 1 Mb private memory per process 
+Apr 22 12:10:06 zhuruimin-desktop /sbin/opensips[7098]: INFO:sl:mod_init: Initializing StateLess engine 
+Apr 22 12:10:06 zhuruimin-desktop /sbin/opensips[7098]: INFO:tm:mod_init: TM - initializing... 
+Apr 22 12:10:06 zhuruimin-desktop /sbin/opensips[7098]: INFO:maxfwd:mod_init: initializing... 
+Apr 22 12:10:06 zhuruimin-desktop /sbin/opensips[7098]: INFO:usrloc:ul_init_locks: locks array size 512 
+Apr 22 12:10:06 zhuruimin-desktop /sbin/opensips[7098]: INFO:registrar:mod_init: initializing... 
+Apr 22 12:29:00 zhuruimin-desktop -- MARK --
+Apr 22 12:49:00 zhuruimin-desktop -- MARK --
+</p>
+<p class='vspace'>i don't know how to fix it,Can anybody give me some suggestions..
+</p>
+<p class='vspace'>Thanks,
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] setting debug level to 4 may give you more hints on what the issue is.</span>
+</p></div>
+<p class='vspace'><a name='comment4' id='comment4'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Nengneng?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Nengneng?action=edit%27" tppabs="http://www.opensips.org/Profiles/Nengneng?action=edit">nengneng</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Nengneng?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Nengneng?action=edit%27" tppabs="http://www.opensips.org/Profiles/Nengneng?action=edit">?</a>  &mdash;  <span style='font-size:83%'>28 April 2009, 08:22</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hello bogdan,I am terribly sorry for sawing your response so late. I truly appreciate your prompt response.
+I did according to your propsal, and it returned the following output,(I only posted the latter part):
+</p>
+<p class='vspace'>Apr 28 13:42:36 [7334] DBG:db_mysql:db_mysql_new_connection: opening connection: mysql://xxxx:xxxx@localhost/opensips
+Apr 28 13:42:36 [7334] ERROR:db_mysql:db_mysql_new_connection: driver error(1045): Access denied for user 'opensips'@'localhost' (using password: YES)
+Apr 28 13:42:36 [7334] ERROR:core:db_do_init: could not add connection to the pool
+Apr 28 13:42:36 [7334] ERROR:auth_db:auth_fixup: unable to open database connection
+Apr 28 13:42:36 [7334] ERROR:core:fix_actions: fixing failed (code=-1) at cfg line 328
+Apr 28 13:42:36 [7334] CRITICAL:core:fix_expr: fix_actions error
+Apr 28 13:42:36 [7334] ERROR:core:main: failed to fix configuration with err code -1
+Apr 28 13:42:36 [7334] DBG:xlog:destroy: destroy module...
+Apr 28 13:42:36 [7334] DBG:tm:tm_shutdown: tm_shutdown : start
+Apr 28 13:42:36 [7334] DBG:tm:unlink_timer_lists: emptying DELETE list
+Apr 28 13:42:36 [7334] DBG:tm:tm_shutdown: emptying hash table
+Apr 28 13:42:36 [7334] DBG:tm:tm_shutdown: releasing timers
+Apr 28 13:42:36 [7334] DBG:tm:tm_shutdown: removing semaphores
+Apr 28 13:42:36 [7334] DBG:tm:tm_shutdown: destroying callback lists
+Apr 28 13:42:36 [7334] DBG:tm:tm_shutdown: tm_shutdown : done
+Apr 28 13:42:36 [7334] DBG:core:shm_mem_destroy: 
+Apr 28 13:42:36 [7334] DBG:core:shm_mem_destroy: destroying the shared memory lock
+</p>
+<p class='vspace'>Thanks in Advance
+</p>
+<div class='vspace'></div></div>
+<p class='vspace'><a name='comment5' id='comment5'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Nengneng?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Nengneng?action=edit%27" tppabs="http://www.opensips.org/Profiles/Nengneng?action=edit">nengneng</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Nengneng?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Nengneng?action=edit%27" tppabs="http://www.opensips.org/Profiles/Nengneng?action=edit">?</a>  &mdash;  <span style='font-size:83%'>28 April 2009, 09:24</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hello bogdan, I am fixed the matter up now.
+I checked the opensips.cfg, "modparam("[modulename]", "db_url",
+"mysql://opensips:opensipsrw@localhost:mysql/opensips"), but in MySQL, the user "opensips" has a password "opensips",I changed the password, and now Opensips is running.
+</p>
+<p class='vspace'>Thank you!
+</p>
+<div class='vspace'></div></div>
+<p class='vspace'><a name='comment6' id='comment6'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Nengneng?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Nengneng?action=edit%27" tppabs="http://www.opensips.org/Profiles/Nengneng?action=edit">nengneng</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Nengneng?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Nengneng?action=edit%27" tppabs="http://www.opensips.org/Profiles/Nengneng?action=edit">?</a>  &mdash;  <span style='font-size:83%'>29 April 2009, 16:45</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hello,there was something wrong when I configurate opensips-cp2.0.
+In the Makefile,I removed the "mi_xmlrpc" module, then "make all","make install", and maked the following changes in the opensips file configuration /usr/local/etc/opensips/opensips.cfg/:
+loadmodule "mi_fifo.so"
+modparam("mi_fifo", "fifo_name", "/tmp/opensips_fifo")
+modparam("mi_fifo", "fifo_mode", 0600)
+modparam("mi_fifo", "fifo_group", 0)
+modparam("mi_fifo", "fifo_group", "root")
+modparam("mi_fifo", "fifo_user", 0)
+modparam("mi_fifo", "fifo_user", "root")
+modparam("mi_fifo", "reply_dir", "/home/opensips/tmp/")
+modparam("mi_fifo", "reply_indent", "    ")
+</p>
+<p class='vspace'>when I ,"/etc/init.d/opensips start",it returned the following output,(I only posted the latter part): 
+Apr 29 22:42:39 [1478] INFO:textops:mod_init: initializing...
+Apr 29 22:42:39 [1478] DBG:core:init_mod: initializing module mi_fifo
+Apr 29 22:42:39 [1478] DBG:mi_fifo:mi_mod_init: testing fifo existance ...
+Apr 29 22:42:39 [1478] ERROR:mi_fifo:mi_mod_init: directory stat failed: No such file or directory
+Apr 29 22:42:39 [1478] ERROR:core:init_mod: failed to initialize module mi_fifo
+Apr 29 22:42:39 [1478] ERROR:core:main: error while initializing modules
+…………………………
+Can anybody give me some suggestions.Thank you!
+</p>
+<div class='vspace'></div></div>
+<p class='vspace'><a name='comment8' id='comment8'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Lawrence?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Lawrence?action=edit%27" tppabs="http://www.opensips.org/Profiles/Lawrence?action=edit">Lawrence</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Lawrence?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Lawrence?action=edit%27" tppabs="http://www.opensips.org/Profiles/Lawrence?action=edit">?</a>  &mdash;  <span style='font-size:83%'>26 July 2009, 21:26</span>  </h5>
+</div><div class='messageitem' > 
+<p>Took me abit of time... have got 99.9 percent complete... i can "service opensips start" the service will start. When 'chkconfig --add opensips' is enter'd i get 'service opensips does not support chkconfig' any ideas... built on centos 5.3
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - to be able to use the chkconfig, you need to place in the /etc/init.d/opensips file, in the begining, a line line "# chkconfig: 2345 20 80" to indicate the start / stop level - please see the man page for chkconfig.</span>
+</p></div>
+<p class='vspace'><a name='comment10' id='comment10'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/ItMightHep?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/ItMightHep?action=edit%27" tppabs="http://www.opensips.org/Profiles/ItMightHep?action=edit">ItMightHep</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/ItMightHep?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/ItMightHep?action=edit%27" tppabs="http://www.opensips.org/Profiles/ItMightHep?action=edit">?</a>  &mdash;  <span style='font-size:83%'>10 December 2009, 09:25</span>  </h5>
+</div><div class='messageitem' > 
+<pre> opensipsctl start
+</pre><p class='vspace'>INFO: Starting OpenSIPS :
+</p>
+<p class='vspace'>ERROR: PID file /var/run/opensips.pid does not exist -- OpenSIPS start failed 
+</p>
+<p class='vspace'>This issue is solved by login with user id which is used to install this in my case it is root.
+i don't have much idea on this but it might help someone.
+</p></div>
+<p class='vspace'><a name='comment11' id='comment11'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Webgeek?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Webgeek?action=edit%27" tppabs="http://www.opensips.org/Profiles/Webgeek?action=edit">Webgeek</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Webgeek?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Webgeek?action=edit%27" tppabs="http://www.opensips.org/Profiles/Webgeek?action=edit">?</a>  &mdash;  <span style='font-size:83%'>23 December 2009, 00:28</span>  </h5>
+</div><div class='messageitem' > 
+<p>I'm getting this error:
+</p>
+<p class='vspace'>opensips:~# opensips restart
+Dec 22 23:27:36 [2287] WARNING:core:fix_socket_list: could not rev. resolve 192.168.1.60
+Dec 22 23:27:36 [2287] WARNING:core:fix_socket_list: could not rev. resolve 192.168.1.60
+Listening on
+</p><pre>             udp: 127.0.0.1 [127.0.0.1]:5060
+             udp: 192.168.1.60 [192.168.1.60]:5060
+             tcp: 127.0.0.1 [127.0.0.1]:5060
+             tcp: 192.168.1.60 [192.168.1.60]:5060
+</pre><p>Aliases:
+</p><pre>             tcp: localhost:5060
+             udp: localhost:5060
+</pre><p class='vspace'>Dec 22 23:27:36 [2287] INFO:core:init_tcp: using epoll_lt as the TCP io watch method (auto detected)
+Dec 22 23:27:36 [2289] NOTICE:core:main: version: opensips 1.6.0-notls (i386/linux)
+Dec 22 23:27:36 [2289] INFO:core:main: using 32 Mb shared memory
+opensips:~# Dec 22 23:27:36 [2289] INFO:core:main: using 1 Mb private memory per process
+Dec 22 23:27:36 [2289] NOTICE:signaling:mod_init: initializing module ...
+Dec 22 23:27:36 [2289] INFO:sl:mod_init: Initializing StateLess engine
+Dec 22 23:27:36 [2289] INFO:tm:mod_init: TM - initializing...
+Dec 22 23:27:36 [2289] INFO:maxfwd:mod_init: initializing...
+Dec 22 23:27:36 [2289] INFO:usrloc:ul_init_locks: locks array size 512
+Dec 22 23:27:36 [2289] INFO:registrar:mod_init: initializing...
+Dec 22 23:27:36 [2289] INFO:textops:mod_init: initializing...
+Dec 22 23:27:36 [2289] INFO:xlog:mod_init: initializing...
+Dec 22 23:27:36 [2289] INFO:acc:mod_init: initializing...
+Dec 22 23:27:36 [2289] INFO:auth:mod_init: initializing...
+Dec 22 23:27:36 [2289] INFO:auth_db:mod_init: initializing...
+Dec 22 23:27:36 [2289] ERROR:uri:obsolete_fixup_0: You are using one of these obsolete functions: "check_to", "check_from", "does_uri_exist","get_auth_id". They have been renamed with the "db_" prefix.
+Dec 22 23:27:36 [2289] ERROR:core:fix_actions: fixing failed (code=-6) at cfg line 257
+Dec 22 23:27:36 [2289] CRITICAL:core:fix_expr: fix_actions error
+Dec 22 23:27:36 [2289] ERROR:core:main: failed to fix configuration with err code -6
+</p>
+<p class='vspace'>The main problem seems to be this:
+Dec 22 23:27:36 [2289] ERROR:uri:obsolete_fixup_0: You are using one of these obsolete functions: "check_to", "check_from", "does_uri_exist","get_auth_id". They have been renamed with the "db_" prefix.
+Dec 22 23:27:36 [2289] ERROR:core:fix_actions: fixing failed (code=-6) at cfg line 257
+</p>
+<p class='vspace'>I've spent some time lloking for the functions, but can't seem to find it.
+Thanks
+Sam
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - see migration docs <a style='color: blue' class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsMigration15to16  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsMigration15to16%27" tppabs="http://www.opensips.org/Resources/DocsMigration15to16" rel='nofollow'>http://www.opensips.org/Resources/DocsMigration15to16</a> ; check_to() -&gt; db_check_to()</span>
+</p></div>
+<p class='vspace'><a name='comment13' id='comment13'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Lawrence?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Lawrence?action=edit%27" tppabs="http://www.opensips.org/Profiles/Lawrence?action=edit">Lawrence</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Lawrence?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Lawrence?action=edit%27" tppabs="http://www.opensips.org/Profiles/Lawrence?action=edit">?</a>  &mdash;  <span style='font-size:83%'>07 January 2010, 01:14</span>  </h5>
+</div><div class='messageitem' > 
+<p>I keep getting this eror when trying to start open sips, here is all of the log tail, i cant for the life of me find where to chage the parameter.... andy ideas anyone where to begin the search? opensips: ERROR:core:get_script_route_idx: Script route &lt;1&gt; is redefined
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - your script defines twice the route id 1 - look for "route[1]" - it must be only once</span>
+</p></div>
+<p class='vspace'><a name='comment9' id='comment9'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Cicciosbo?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Cicciosbo?action=edit%27" tppabs="http://www.opensips.org/Profiles/Cicciosbo?action=edit">cicciosbo</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Cicciosbo?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Cicciosbo?action=edit%27" tppabs="http://www.opensips.org/Profiles/Cicciosbo?action=edit">?</a>  &mdash;  <span style='font-size:83%'>19 February 2010, 15:24</span>  </h5>
+</div><div class='messageitem' > 
+<p>ERROR: Error opening OpenSIPS's FIFO /tmp/opensips_fifo
+ERROR: Make sure you have the line 'modparam("mi_fifo", "fifo_name", "/tmp/opensips_fifo")' in your config
+ERROR: and also have loaded the mi_fifo module.
+</p>
+<div class='vspace'></div></div>
+<p class='vspace'>
+</p><div class='messagehead' > 
+<h5><a class='wikilink' title='Please' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Please  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Please%27" tppabs="http://www.opensips.org/Profiles/Please">please</a>  &mdash;  <span style='font-size:83%'>03 March 2010, 19:36</span>  </h5>
+</div><div class='messageitem' > 
+<p>HI
+I got some problem integration with asterisk
+</p>
+<p class='vspace'>I got error when step  #opensipsctl fifo domain reload
+This error is "500 command 'domain' not available".
+</p>
+<p class='vspace'>SO I stop the opensipsctl and start again follow
+</p>
+<p class='vspace'>[root@TEST opensips]# opensipsctl start
+</p>
+<p class='vspace'>INFO: Starting OpenSIPS :
+</p>
+<p class='vspace'>ERROR: PID file /var/run/opensips.pid does not exist -- OpenSIPS start failed
+</p>
+<p class='vspace'>So I check in /var/log/messages and got follow
+</p>
+<p class='vspace'>Mar  4 00:25:05 TEST opensips: ERROR:core:yyparse: module 'uri_db.so' not found in '/lib/opensips/modules/'
+Mar  4 00:25:05 TEST opensips: CRITICAL:core:yyerror: parse error in config file, line 37, column 13-14: failed to load module
+Mar  4 00:25:05 TEST opensips: ERROR:core:sr_load_module: could not open module &lt;/lib/opensips/modules/&gt;: /lib/opensips/modules/: cannot read file data: Is a directory
+Mar  4 00:25:05 TEST opensips: CRITICAL:core:yyerror: parse error in config file, line 37, column 13-14: failed to load module
+Mar  4 00:25:05 TEST opensips: ERROR:core:set_mod_param_regex: no module matching uri_db found
+Mar  4 00:25:05 TEST opensips: CRITICAL:core:yyerror: parse error in config file, line 63, column 19-20: Parameter &lt;use_uri_table&gt; not found in module &lt;uri_db&gt; - can't set
+Mar  4 00:25:05 TEST opensips: ERROR:core:set_mod_param_regex: no module matching uri_db found
+Mar  4 00:25:05 TEST opensips: CRITICAL:core:yyerror: parse error in config file, line 64, column 20-21: Parameter &lt;db_url&gt; not found in module &lt;uri_db&gt; - can't set
+Mar  4 00:25:05 TEST opensips: ERROR:core:main: bad config file (4 errors)
+</p>
+<p class='vspace'>Can You guys instruction to me?
+</p>
+<p class='vspace'>Thanks
+Please
+</p></div>
+<p class='vspace'>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Vishu?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Vishu?action=edit%27" tppabs="http://www.opensips.org/Profiles/Vishu?action=edit">Vishu</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Vishu?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Vishu?action=edit%27" tppabs="http://www.opensips.org/Profiles/Vishu?action=edit">?</a>  &mdash;  <span style='font-size:83%'>22 March 2010, 10:58</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hi 
+</p>
+<p class='vspace'>i am getting following error while starting opensips:
+</p>
+<p class='vspace'>debian:/etc/opensips# /etc/init.d/opensips restart
+chown: invalid user: `opensips:opensips'
+</p>
+<p class='vspace'>Can someone suggest..
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - probably you did not create the "opensips" user and "opensips" group on your system.</span>
+</p></div>
+<p class='vspace'><a name='comment12' id='comment12'></a>
+</p><div class='messagehead' > 
+<h5><a class='wikilink' title='JohnPope' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/JohnPope  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/JohnPope%27" tppabs="http://www.opensips.org/Profiles/JohnPope">john pope</a>  &mdash;  <span style='font-size:83%'>08 April 2010, 11:55</span>  </h5>
+</div><div class='messageitem' > 
+<p>set use the username password as opensips /opensipsrw in mysql gui browser
+</p></div>
+<p class='vspace'>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Robin?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Robin?action=edit%27" tppabs="http://www.opensips.org/Profiles/Robin?action=edit">Robin</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Robin?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Robin?action=edit%27" tppabs="http://www.opensips.org/Profiles/Robin?action=edit">?</a>  &mdash;  <span style='font-size:83%'>25 July 2010, 20:17</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hello,
+I really need some help with getting opensips to start.  I checked the user in MySql and in the opensips.cfg file, yet I'm getting the error in the log below.
+Jul 25 14:12:01 [20481] DBG:textops:fixup_method: using id for method [REGISTER/128]
+Jul 25 14:12:01 [20481] DBG:core:fix_actions: fixing save, line 329
+Jul 25 14:12:01 [20481] DBG:core:db_do_init: connection 0x81a386c not found in pool
+Jul 25 14:12:01 [20481] DBG:db_mysql:db_mysql_connect: opening connection: mysql://xxxx:xxxx@localhost/1sip2open
+Jul 25 14:12:01 [20481] ERROR:db_mysql:db_mysql_connect: driver error(1045): Access denied for user 'opensips'@'localhost' (using password: YES)
+Jul 25 14:12:01 [20481] ERROR:db_mysql:db_mysql_new_connection: initial connect failed
+Jul 25 14:12:01 [20481] ERROR:core:db_do_init: could not add connection to the pool
+Jul 25 14:12:01 [20481] ERROR:usrloc:register_udomain: failed to open database connection
+Jul 25 14:12:01 [20481] ERROR:registrar:domain_fixup: failed to register domain
+Jul 25 14:12:01 [20481] ERROR:core:fix_actions: fixing failed (code=-1) at cfg line 329
+Jul 25 14:12:01 [20481] CRITICAL:core:fix_expr: fix_actions error
+Jul 25 14:12:01 [20481] ERROR:core:main: failed to fix configuration with err code -1
+Jul 25 14:12:01 [20481] DBG:xlog:destroy: destroy module...
+Jul 25 14:12:01 [20481] DBG:tm:tm_shutdown: tm_shutdown : start
+</p>
+<p class='vspace'>Thanks
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - in opensips cfg, the db_url for usrloc module is not correctly set.</span>
+</p></div>
+<p class='vspace'><a name='comment16' id='comment16'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Chrispy?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Chrispy?action=edit%27" tppabs="http://www.opensips.org/Profiles/Chrispy?action=edit">Chrispy</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Chrispy?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Chrispy?action=edit%27" tppabs="http://www.opensips.org/Profiles/Chrispy?action=edit">?</a>  &mdash;  <span style='font-size:83%'>01 September 2010, 01:46</span>  </h5>
+</div><div class='messageitem' > 
+<p>Here's a weird one.  I have OpenSIPS up and running fine for over a month. It responds and mi is talking via xmlrpc to OpenSIPS-CP just fine. I start it up using chkconfig with the startup script I found on opensips.org for CentOS (/etc/init.d/opensips).
+</p>
+<p class='vspace'>The weird thing is that despite starting fine, opensips doesn't create a pid file in /var/run (or anywhere else.)  I just noticed this because I'm trying to setup Monit on the opensips box, and it wants to see the pid file.
+</p>
+<p class='vspace'>Can't be rights, I opened up /var and /var/run with chmod 777 just to ensure.
+</p>
+<p class='vspace'>CentOS 5.5, uname -a reports: 2.6.18-194.8.1.el5PAE
+OpenSIPS 1.6.2
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - do you start opensips with -p param to point to a PD file ?</span>
+</p></div>
+<p class='vspace'><a name='comment17' id='comment17'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Jm21?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Jm21?action=edit%27" tppabs="http://www.opensips.org/Profiles/Jm21?action=edit">jm21</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Jm21?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Jm21?action=edit%27" tppabs="http://www.opensips.org/Profiles/Jm21?action=edit">?</a>  &mdash;  <span style='font-size:83%'>20 September 2010, 22:22</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hi,
+I've setup Opensips with mysql support but am having issues getting it to start. i get the following error: 
+</p>
+<p class='vspace'>ERROR: No PID file found (/var/run/opensips.pid)! OpenSIPS probably not running
+INFO: check with 'ps -ef | /bin/egrep opensips'
+</p>
+<p class='vspace'>when i do a tail /var/log/messages i get the following:
+</p>
+<p class='vspace'>Sep 20 15:52:22 CL-T020-483CL opensips: INFO:acc:mod_init: initializing...
+Sep 20 15:52:22 CL-T020-483CL opensips: INFO:auth:mod_init: initializing...
+Sep 20 15:52:22 CL-T020-483CL opensips: INFO:auth_db:mod_init: initializing...
+Sep 20 15:52:22 CL-T020-483CL opensips: INFO:core:probe_max_receive_buffer: using a UDP receive buffer of 255 kb
+Sep 20 16:13:14 CL-T020-483CL opensips: INFO:core:sig_usr: signal 2 received
+Sep 20 16:13:14 CL-T020-483CL last message repeated 2 times
+Sep 20 16:13:14 CL-T020-483CL opensips: INFO:core:handle_sigs: child process 585                       6 exited normally, status=0
+Sep 20 16:13:14 CL-T020-483CL opensips: INFO:core:handle_sigs: child process 585                       7 exited normally, status=0
+Sep 20 16:13:14 CL-T020-483CL opensips: INFO:core:handle_sigs: terminating due t                       o SIGCHLD
+Sep 20 16:13:14 CL-T020-483CL opensips: INFO:core:sig_usr: signal 15 received
+</p>
+<p class='vspace'>Does anyone have an idea of whats wrong or what i could be doing wrong?
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - signal 2 is SIGINT - looks like your opensips is terminated by other app. </span>
+</p></div>
+<p class='vspace'>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Sipsip?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Sipsip?action=edit%27" tppabs="http://www.opensips.org/Profiles/Sipsip?action=edit">sipsip</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Sipsip?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Sipsip?action=edit%27" tppabs="http://www.opensips.org/Profiles/Sipsip?action=edit">?</a>  &mdash;  <span style='font-size:83%'>13 January 2011, 11:13</span>  </h5>
+</div><div class='messageitem' > 
+<p>Dear Bogdan ,
+</p>
+<p class='vspace'>When i run OpensISPS, iam getting the following error
+</p><pre> /etc/init.d/opensips start
+ *chown: `opensips:opensips': invalid user
+</pre><ul><li>Please help How to  create the "opensips" user and "opensips" group on your system ??
+</li></ul><p class='vspace'><span  style='color: blue;'>[bogdan] - use "adduser" and "addgroup" system commands </span>
+</p></div>
+<p class='vspace'>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Sipsip?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Sipsip?action=edit%27" tppabs="http://www.opensips.org/Profiles/Sipsip?action=edit">sipsip</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Sipsip?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Sipsip?action=edit%27" tppabs="http://www.opensips.org/Profiles/Sipsip?action=edit">?</a>  &mdash;  <span style='font-size:83%'>13 January 2011, 11:24</span>  </h5>
+</div><div class='messageitem' > 
+<p>this is my /etc/default/opesips 
+</p><ol><li>
+</li><li>OpenSIPS startup options
+</li><li>
+<div class='vspace'></div></li><li>Set to yes to enable opensips, once configured properly.
+</li></ol><p>RUN_OPENSIPS=yes
+</p>
+<div class='vspace'></div><ol><li>User to run as
+</li></ol><p>USER=opensips
+</p>
+<div class='vspace'></div><ol><li>Group to run as
+</li></ol><p>GROUP=opensips
+</p>
+<div class='vspace'></div><ol><li>Amount of memory to allocate for the running OpenSIPS server (in Mb)
+</li></ol><p>MEMORY=128
+</p>
+<div class='vspace'></div><ol><li>Enable the server to leave a core file when it crashes.
+</li><li>Set this to 'yes' to enable OpenSIPS to leave a core file when it crashes
+</li><li>or 'no' to disable this feature. This option is case sensitive and only
+</li><li>accepts 'yes' and 'no' and only in lowercase letters.
+</li><li>On some systems (e.g. Ubuntu 6.10, Debian 4.0) it is necessary to specify
+</li><li>a directory for the core files to get a dump. Look into the opensips
+</li><li>init file for an example configuration.
+</li></ol><p>DUMP_CORE=no
+</p>
+<p class='vspace'>so, where is the problem??
+</p></div>
+<p class='vspace'><a name='comment18' id='comment18'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/MahmutCahmut?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/MahmutCahmut?action=edit%27" tppabs="http://www.opensips.org/Profiles/MahmutCahmut?action=edit">Mahmut Cahmut</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/MahmutCahmut?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/MahmutCahmut?action=edit%27" tppabs="http://www.opensips.org/Profiles/MahmutCahmut?action=edit">?</a>  &mdash;  <span style='font-size:83%'>28 January 2011, 10:55</span>  </h5>
+</div><div class='messageitem' > 
+<p>dhcppc:~# opensipsctl start
+</p>
+<p class='vspace'>INFO: Starting OpenSIPS : 
+</p>
+<p class='vspace'>ERROR: PID file /var/run/opensips.pid does not exist -- OpenSIPS start failed
+any solution for this issue ?
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - check the log files (see the page content) for opensips errors - most probably your opensips fails to start. </span>
+</p></div>
+<p class='vspace'><a name='comment19' id='comment19'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Naser?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Naser?action=edit%27" tppabs="http://www.opensips.org/Profiles/Naser?action=edit">Naser </a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Naser?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Naser?action=edit%27" tppabs="http://www.opensips.org/Profiles/Naser?action=edit">?</a>  &mdash;  <span style='font-size:83%'>22 February 2011, 19:41</span>  </h5>
+</div><div class='messageitem' > 
+<p>I have similar problem, when i start opensips it works and give the message of listening, but when i check the status of opensips it say, opensips not running, anyone has idea about the problem,
+</p>
+<div class='vspace'></div></div>
+<p class='vspace'><a name='comment20' id='comment20'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/BhavikPandya?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/BhavikPandya?action=edit%27" tppabs="http://www.opensips.org/Profiles/BhavikPandya?action=edit">Bhavik Pandya</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/BhavikPandya?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/BhavikPandya?action=edit%27" tppabs="http://www.opensips.org/Profiles/BhavikPandya?action=edit">?</a>  &mdash;  <span style='font-size:83%'>11 April 2011, 22:12</span>  </h5>
+</div><div class='messageitem' > 
+<p>bhavik@prithvi:~$ opensipsctl restart
+</p>
+<p class='vspace'>[: 2443: restart: unexpected operator
+-e E[37;33mINFO: Stopping OpenSIPS : 
+</p>
+<p class='vspace'>-e E[37;31mERROR: No PID file found (/var/run/opensips.pid)! OpenSIPS probably not running
+</p>
+<p class='vspace'>-e E[37;33mINFO: Starting OpenSIPS : 
+</p>
+<p class='vspace'>-e E[37;31mERROR: PID file /var/run/opensips.pid does not exist -- OpenSIPS start failed
+</p>
+<p class='vspace'>-- I have checked my user name and password, its the same in opensips.cfg file and mysql. 
+-- The /var/run directory has full permissions
+-- I also have done sudo opensipsctl restart, thus trying to login as a root
+-- I tried to create a new account in mysql, but still couldnot solve this problem...
+</p>
+<p class='vspace'>Any help will be appreciated...
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - check the log files (see the page content) for opensips errors - most probably your opensips fails to start. </span>
+</p></div>
+<p class='vspace'><a name='comment21' id='comment21'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Lisongchao?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Lisongchao?action=edit%27" tppabs="http://www.opensips.org/Profiles/Lisongchao?action=edit">lisongchao</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Lisongchao?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Lisongchao?action=edit%27" tppabs="http://www.opensips.org/Profiles/Lisongchao?action=edit">?</a>  &mdash;  <span style='font-size:83%'>21 May 2011, 10:30</span>  </h5>
+</div><div class='messageitem' > 
+<p>ERROR: PID file /var/run/opensips.pid does not exist -- OpenSIPS start failed
+</p>
+<p class='vspace'>and when I check /var/log/messages that show 
+</p>
+<p class='vspace'>May 21 16:26:47 linux5-uc last message repeated 2 times
+May 21 16:26:47 linux5-uc ./opensips[8549]: ERROR:core:tcp_init: bind(8, 0x81be074, 16) on 127.0.0.1:5060 : Address already in use 
+</p>
+<p class='vspace'>help help and what's the problem???
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - either another opensips instance, either another application is listening on the same tcp:IP:PORT as you configured your opensips - check with "netstat -tlnp" </span>
+</p></div>
+<p class='vspace'><a name='comment22' id='comment22'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Sipsip?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Sipsip?action=edit%27" tppabs="http://www.opensips.org/Profiles/Sipsip?action=edit">sipsip</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Sipsip?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Sipsip?action=edit%27" tppabs="http://www.opensips.org/Profiles/Sipsip?action=edit">?</a>  &mdash;  <span style='font-size:83%'>07 July 2011, 12:28</span>  </h5>
+</div><div class='messageitem' > 
+<p>Dear Bogdan 
+I tried to set up opensips 1.6.2 but i alwyes get this error 
+</p>
+<p class='vspace'>root@debtest:~# opensipsctl start
+-e E[37;32mWARNING: database engine not found - tried 'MYSQL'
+-e Control engine 'FIFO' loaded
+</p>
+<p class='vspace'>-e E[37;33mINFO: Starting OpenSIPS :
+-e E[37;33mINFO: started (pid: 1693)
+i spent much time searching this error but find nothing , can u help me how to solve this problem ?
+</p>
+<div class='vspace'></div></div>
+<p class='vspace'><a name='comment23' id='comment23'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Prabb?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Prabb?action=edit%27" tppabs="http://www.opensips.org/Profiles/Prabb?action=edit">prabb</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Prabb?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Prabb?action=edit%27" tppabs="http://www.opensips.org/Profiles/Prabb?action=edit">?</a>  &mdash;  <span style='font-size:83%'>02 August 2011, 23:53</span>  </h5>
+</div><div class='messageitem' > 
+<p>Probably what you should have said at the head of the document, is: "create a system user with linux adduser command and nologin. Example: adduser opensips nologin.
+</p></div>
+<p class='vspace'><a name='comment24' id='comment24'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Prabb?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Prabb?action=edit%27" tppabs="http://www.opensips.org/Profiles/Prabb?action=edit">prabb</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Prabb?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Prabb?action=edit%27" tppabs="http://www.opensips.org/Profiles/Prabb?action=edit">?</a>  &mdash;  <span style='font-size:83%'>03 August 2011, 20:21</span>  </h5>
+</div><div class='messageitem' > 
+<p>If someone could write a manual for a CentOS install, it might look like
+CENTOS 5 INSTALL
+1. Prequisites include all dependency installs of centOS5, linux LAMP and asterisk; don't install asterisk.
+</p>
+<p class='vspace'>2. A system user will need to be added to install opensips with nologin.
+adduser opensips nologin.
+</p>
+<p class='vspace'>3. Download all opensips packages from opensips. rpms for CentOS are found at SourceForge.
+As of mid 2011:
+opensips-1.7.0-0.i386.rpm
+opensips-b2bua-1.7.0-0.i386.rpm
+opensips-cpl-1.7.0-0.i386.rpm
+opensips-debuginfo-1.7.0-0.i386.rpm
+opensips-jabber-1.4.5-0.i386.rpm
+opensips-mysql-1.7.0-0.i386.rpm
+</p>
+<p class='vspace'>4. Download perl-Frontier-RPC. This was found at pbone.net linked to daag.
+perl-Frontier-RPC-0.07b4-1.el5.rf.noarch.rpm.
+rpm -i perl-Frontier-RPC..etc
+</p>
+<p class='vspace'>5. rpm -i opensips-1.7 (base). Then mysql and the rest.
+</p>
+<p class='vspace'>6. At /etc/default/opensips, ensure the following is uncommented:
+</p><ol><li>Set to yes to enable opensips, once configured properly.
+</li></ol><p>RUN_OPENSIPS=yes
+</p>
+<div class='vspace'></div><ol><li>User to run as
+</li></ol><p>USER=opensips
+</p>
+<div class='vspace'></div><ol><li>Group to run as
+</li></ol><p>GROUP=opensips
+</p>
+<p class='vspace'>7. Now opensips should be able to be daemonized.
+chkconfig opensips on
+service opensips start (stop / restart / status)
+</p>
+<p class='vspace'>8. At /etc/opensips/opensips.cfg, uncomment as follows:
+/* uncomment the next line to disable TCP (default on) */
+disable_tcp=yes
+</p>
+<div class='vspace'></div><ol><li>default db_url to be used by modules requiring DB connection
+</li></ol><p>db_default_url="mysql://opensips:opensipsrw@localhost/opensips"
+</p>
+<p class='vspace'>/* uncomment next line for MySQL DB support */
+</p>
+<p class='vspace'>9. At /etc/opensips/opensipsctlrc, uncomment as follows:
+</p><ol><li>If you want to setup a database with opensipsdbctl, you must at least specify
+</li><li>this parameter.
+</li></ol><p>DBENGINE=MYSQL
+</p>
+<div class='vspace'></div><dl><dd><ol><li>database host
+</li></ol></dd></dl><p>DBHOST=localhost
+</p>
+<div class='vspace'></div><dl><dd><ol><li>database name (for ORACLE this is TNS name)
+</li></ol></dd></dl><p>DBNAME=opensips
+</p>
+<div class='vspace'></div><ol><li>database path used by dbtext or db_berkeley
+</li><li>DB_PATH="/usr/local/etc/opensips/dbtext"
+<div class='vspace'></div><ol><li>database read/write user
+</li></ol></li></ol><p>DBRWUSER=opensips
+</p>
+<div class='vspace'></div><dl><dd><ol><li>password for database read/write user
+</li></ol></dd></dl><p>DBRWPW="password"
+</p>
+<div class='vspace'></div><dl><dd><ol><li>database super user (for ORACLE this is 'scheme-creator' user)
+</li></ol></dd></dl><p>DBROOTUSER="root"
+</p>
+<div class='vspace'></div><ol><li>user name column
+</li></ol><p>USERCOL="username"
+</p>
+<p class='vspace'>10. Now at /etc/opensips/ you should be able to run the following command to create a database from script:
+opensipsdbctl create
+the process is interactive.
+</p>
+<p class='vspace'>11. service restart opensips. [OK] doesn't usually appear, status shows it running.
+</p>
+<p class='vspace'>you're welcome.
+</p>
+<div class='vspace'></div></div>
+<p class='vspace'><a name='comment25' id='comment25'></a>
+</p><div class='messagehead' > 
+<h5><a class='wikilink' title='Manish' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Manish  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Manish%27" tppabs="http://www.opensips.org/Profiles/Manish">manish</a>  &mdash;  <span style='font-size:83%'>11 August 2011, 20:30</span>  </h5>
+</div><div class='messageitem' > 
+<p>Dear Bogdan
+i am getting following error after i start opensips
+ERROR: No PID file found (/var/run/opensips/opensips.pid)! OpenSIPS probably not running
+</p>
+<p class='vspace'>can i create pid file in the /var/run/opensips
+how to check that opensips is running 
+</p>
+<p class='vspace'>if i run sudo /etc/init.d/opensips start
+it gives me
+Starting opensips: opensipsListening on 
+</p><pre>             udp: 127.0.0.1 [127.0.0.1]:5060
+             udp: 10.0.0.5 [10.0.0.5]:5060
+             tcp: 127.0.0.1 [127.0.0.1]:5060
+             tcp: 10.0.0.5 [10.0.0.5]:5060
+</pre><p>Aliases: 
+</p><pre>             tcp: ADHIRAAJ.local:5060
+             tcp: localhost:5060
+             udp: ADHIRAAJ.local:5060
+             udp: localhost:5060
+</pre><p class='vspace'>but with ps ax command 
+it doesnt show me that opensip is running
+</p>
+<p class='vspace'>pl help
+</p>
+<div class='vspace'></div></div>
+<p class='vspace'><a name='comment26' id='comment26'></a>
+</p><div class='messagehead' > 
+<h5><a class='wikilink' title='Manish' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Manish  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Manish%27" tppabs="http://www.opensips.org/Profiles/Manish">manish</a>  &mdash;  <span style='font-size:83%'>11 August 2011, 20:37</span>  </h5>
+</div><div class='messageitem' > 
+<p>also my log messages gives the following
+Aug 12 00:04:44 ADHIRAAJ opensips: INFO:core:init_tcp: using epoll_lt as the TCP io watch method (auto detected)
+Aug 12 00:04:44 ADHIRAAJ /usr/local/sbin/opensips[19285]: NOTICE:core:main: version: opensips 1.5.0-tls (i386/linux)
+Aug 12 00:04:44 ADHIRAAJ /usr/local/sbin/opensips[19285]: INFO:core:main: using 64 Mb shared memory
+Aug 12 00:04:44 ADHIRAAJ /usr/local/sbin/opensips[19285]: INFO:core:main: using 1 Mb private memory per process
+Aug 12 00:04:44 ADHIRAAJ /usr/local/sbin/opensips[19285]: NOTICE:signaling:mod_init: initializing module ...
+Aug 12 00:04:44 ADHIRAAJ /usr/local/sbin/opensips[19285]: INFO:sl:mod_init: Initializing StateLess engine
+Aug 12 00:04:44 ADHIRAAJ /usr/local/sbin/opensips[19285]: INFO:tm:mod_init: TM - initializing...
+Aug 12 00:04:44 ADHIRAAJ /usr/local/sbin/opensips[19285]: INFO:maxfwd:mod_init: initializing...
+Aug 12 00:04:44 ADHIRAAJ /usr/local/sbin/opensips[19285]: INFO:usrloc:ul_init_locks: locks array size 512
+Aug 12 00:04:44 ADHIRAAJ /usr/local/sbin/opensips[19285]: INFO:registrar:mod_init: initializing...
+Aug 12 00:04:44 ADHIRAAJ /usr/local/sbin/opensips[19285]: INFO:textops:mod_init: initializing...
+Aug 12 00:04:44 ADHIRAAJ /usr/local/sbin/opensips[19285]: INFO:xlog:mod_init: initializing...
+Aug 12 00:04:44 ADHIRAAJ /usr/local/sbin/opensips[19285]: INFO:acc:mod_init: initializing...
+Aug 12 00:04:44 ADHIRAAJ /usr/local/sbin/opensips[19285]: INFO:auth:mod_init: initializing...
+Aug 12 00:04:44 ADHIRAAJ /usr/local/sbin/opensips[19285]: INFO:auth_db:mod_init: initializing...
+Aug 12 00:04:45 ADHIRAAJ /usr/local/sbin/opensips[19285]: INFO:core:probe_max_receive_buffer: using a UDP receive buffer of 255 kb
+Aug 12 00:05:06 ADHIRAAJ opensips: INFO:core:init_tcp: using epoll_lt as the TCP io watch method (auto detected)
+Aug 12 00:05:06 ADHIRAAJ /usr/local/sbin/opensips[19306]: NOTICE:core:main: version: opensips 1.5.0-tls (i386/linux)
+Aug 12 00:05:06 ADHIRAAJ /usr/local/sbin/opensips[19306]: INFO:core:main: using 32 Mb shared memory
+Aug 12 00:05:06 ADHIRAAJ /usr/local/sbin/opensips[19306]: INFO:core:main: using 1 Mb private memory per process
+Aug 12 00:05:06 ADHIRAAJ /usr/local/sbin/opensips[19306]: NOTICE:signaling:mod_init: initializing module ...
+Aug 12 00:05:06 ADHIRAAJ /usr/local/sbin/opensips[19306]: INFO:sl:mod_init: Initializing StateLess engine
+Aug 12 00:05:06 ADHIRAAJ /usr/local/sbin/opensips[19306]: INFO:tm:mod_init: TM - initializing...
+Aug 12 00:05:06 ADHIRAAJ /usr/local/sbin/opensips[19306]: INFO:maxfwd:mod_init: initializing...
+Aug 12 00:05:06 ADHIRAAJ /usr/local/sbin/opensips[19306]: INFO:usrloc:ul_init_locks: locks array size 512
+Aug 12 00:05:06 ADHIRAAJ /usr/local/sbin/opensips[19306]: INFO:registrar:mod_init: initializing...
+Aug 12 00:05:06 ADHIRAAJ /usr/local/sbin/opensips[19306]: INFO:textops:mod_init: initializing...
+Aug 12 00:05:06 ADHIRAAJ /usr/local/sbin/opensips[19306]: INFO:xlog:mod_init: initializing...
+Aug 12 00:05:06 ADHIRAAJ /usr/local/sbin/opensips[19306]: INFO:acc:mod_init: initializing...
+Aug 12 00:05:06 ADHIRAAJ /usr/local/sbin/opensips[19306]: INFO:auth:mod_init: initializing...
+Aug 12 00:05:06 ADHIRAAJ /usr/local/sbin/opensips[19306]: INFO:auth_db:mod_init: initializing...
+Aug 12 00:05:06 ADHIRAAJ /usr/local/sbin/opensips[19306]: INFO:core:probe_max_receive_buffer: using a UDP receive buffer of 255 kb
+</p></div>
+<p class='vspace'><a name='comment29' id='comment29'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Rico?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Rico?action=edit%27" tppabs="http://www.opensips.org/Profiles/Rico?action=edit">Rico</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Rico?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Rico?action=edit%27" tppabs="http://www.opensips.org/Profiles/Rico?action=edit">?</a>  &mdash;  <span style='font-size:83%'>20 October 2011, 14:57</span>  </h5>
+</div><div class='messageitem' > 
+<div class='vspace'></div><pre> ERROR:core:db_check_table_version: invalid version 0 for table subscriber found, expected 7
+ ERROR:uri:mod_init: Invalid table version.
+ ERROR:core:init_mod: failed to initialize module uri
+ ERROR:core:main: error while initializing modules
+</pre><p class='vspace'>Opensips doen't start becose of this (module uri)..
+</p>
+<p class='vspace'>Please help.
+</p></div>
+<p class='vspace'><a name='comment28' id='comment28'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Scott?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Scott?action=edit%27" tppabs="http://www.opensips.org/Profiles/Scott?action=edit">Scott</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Scott?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Scott?action=edit%27" tppabs="http://www.opensips.org/Profiles/Scott?action=edit">?</a>  &mdash;  <span style='font-size:83%'>29 December 2011, 00:06</span>  </h5>
+</div><div class='messageitem' > 
+<p>Starting OpenSER :
+ERROR: PID file /var/run/openser.pid does not exist -- OpenSER start failed
+</p>
+<p class='vspace'>ec 28 17:01:44 localhost /usr/local/sbin/openser[8184]: INFO: statistics manager successfully initialized 
+Dec 28 17:01:44 localhost /usr/local/sbin/openser[8184]: INFO:ul_init_locks: locks array size 512 
+Dec 28 17:01:45 localhost /usr/local/sbin/openser[8184]: TextOPS - initializing 
+Dec 28 17:01:45 localhost /usr/local/sbin/openser[8184]: TM - initializing... 
+Dec 28 17:01:45 localhost /usr/local/sbin/openser[8184]: StateLess module - initializing 
+Dec 28 17:01:45 localhost /usr/local/sbin/openser[8184]: Maxfwd module- initializing 
+Dec 28 17:01:45 localhost /usr/local/sbin/openser[8184]: AUTH module - initializing 
+Dec 28 17:01:45 localhost /usr/local/sbin/openser[8184]: AUTH_DB module - initializing 
+Dec 28 17:01:45 localhost /usr/local/sbin/openser[8184]: XLOG:xdbg_fixup: ERROR: wrong format[Local user offline - M=$rm RURI=$ru F=$fu T=$tu IP=$si ID=$ci ]! 
+Dec 28 17:01:45 localhost /usr/local/sbin/openser[8184]: ERROR: fix_actions: fixing failed (code=-1) at cfg line 447 
+Dec 28 17:01:45 localhost /usr/local/sbin/openser[8184]: INFO:mi_fifo:mi_destroy: process hasn't been created -&gt; nothing to kill 
+</p>
+<p class='vspace'>thanks
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] It seams you have an old version (if xlog still a module) - print here the script line with the xlog</span>
+</p></div>
+<p class='vspace'>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Tasos?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Tasos?action=edit%27" tppabs="http://www.opensips.org/Profiles/Tasos?action=edit">Tasos</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Tasos?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Tasos?action=edit%27" tppabs="http://www.opensips.org/Profiles/Tasos?action=edit">?</a>  &mdash;  <span style='font-size:83%'>15 February 2012, 16:06</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hello,
+</p>
+<p class='vspace'>I have just installed the opensips and opensips-cp.
+I have registered a user successfully.
+If i run opensipsctl monitor i can see 1 user online.
+The problem is that this user is seen as offline in the opensips-cp.
+Any ideas?
+</p>
+<p class='vspace'>Thanks in advance
+</p></div>
+<p class='vspace'><a name='comment30' id='comment30'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Tasos?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Tasos?action=edit%27" tppabs="http://www.opensips.org/Profiles/Tasos?action=edit">Tasos</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Tasos?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Tasos?action=edit%27" tppabs="http://www.opensips.org/Profiles/Tasos?action=edit">?</a>  &mdash;  <span style='font-size:83%'>15 February 2012, 16:15</span>  </h5>
+</div><div class='messageitem' > 
+<p>Update:
+The user was created via console before i install cp.
+It seems that i cannot create a user via cp. The domain drop-down menu is empty... It seems that something is wrong.Any ideas on that?
+</p>
+<p class='vspace'>Thanks again in advance!
+</p></div>
+<p class='vspace'><a name='comment31' id='comment31'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/H-Anh?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/H-Anh?action=edit%27" tppabs="http://www.opensips.org/Profiles/H-Anh?action=edit">H-Anh</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/H-Anh?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/H-Anh?action=edit%27" tppabs="http://www.opensips.org/Profiles/H-Anh?action=edit">?</a>  &mdash;  <span style='font-size:83%'>31 March 2012, 18:36</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hi all,
+</p>
+<p class='vspace'>I have installed Opensips in Cent OS 6.
+With default opensips.cfg. Opensips started successfully.
+Then I stop opensips by Command: service opensips stop Or opensipsctl stop.
+Opensips stop [OK].
+Then I change something (ex: parameters, routing,..), then I start opensips:
+The result is:
+</p>
+<p class='vspace'>PID File /var/run/opensips.pid does not exit. OpenSIPS start failed.
+</p>
+<p class='vspace'>I've checked /etc/init.d/opensips, /etc/rc.d/init.d/functions, usr/local/etc/opensips/opensipsctlrc with the same dir for: /var/run/opensips.pid.
+Reboot the system, using root user.
+But the problem is the same.
+</p>
+<p class='vspace'>Somebody can help me?
+</p>
+<p class='vspace'>Thanks
+</p></div>
+<p class='vspace'><a name='comment32' id='comment32'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Casey?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Casey?action=edit%27" tppabs="http://www.opensips.org/Profiles/Casey?action=edit">casey</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Casey?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Casey?action=edit%27" tppabs="http://www.opensips.org/Profiles/Casey?action=edit">?</a>  &mdash;  <span style='font-size:83%'>17 April 2012, 18:35</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hi,All
+Apr 17 09:34:13 localhost opensips: CRITICAL:core:yyerror: 2parse error in config file, line 192, column 1-6: syntax error 
+Apr 17 09:34:13 localhost opensips: CRITICAL:core:yyerror: 2parse error in config file, line 192, column 1-6: Invalid arguments 
+Apr 17 09:34:13 localhost opensips: ERROR:core:main: bad config file (2 errors)
+</p>
+<p class='vspace'>Thanks
+</p></div>
+<p class='vspace'><a name='comment33' id='comment33'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Rick?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Rick?action=edit%27" tppabs="http://www.opensips.org/Profiles/Rick?action=edit">Rick</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Rick?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Rick?action=edit%27" tppabs="http://www.opensips.org/Profiles/Rick?action=edit">?</a>  &mdash;  <span style='font-size:83%'>21 May 2012, 08:13</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hi All,
+</p>
+<p class='vspace'>I also received the same error --&gt; PID File /var/run/opensips.pid does not exit. OpenSIPS start failed. 
+I see that many have observed the same error, but i see no solution to that in the site.
+Can someone who have solved this issue make a post so that others are benefited..
+</p>
+<p class='vspace'>Thanks
+</p></div>
+<p class='vspace'><a name='comment34' id='comment34'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Kumar?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Kumar?action=edit%27" tppabs="http://www.opensips.org/Profiles/Kumar?action=edit">Kumar</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Kumar?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Kumar?action=edit%27" tppabs="http://www.opensips.org/Profiles/Kumar?action=edit">?</a>  &mdash;  <span style='font-size:83%'>30 October 2012, 15:02</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hi.. I am following the webinar "OpenSIPS Kick Start.wmv"
+I have exactly everything same .. but still when i use this command, 
+</p>
+<p class='vspace'>root@opensips:/# opensipsctl restart 
+bash: opensipsctl: command not found
+</p>
+<p class='vspace'>also PID file is not there ... anyone can help?
+</p>
+<div class='vspace'></div></div>
+<p class='vspace'><a name='comment35' id='comment35'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Alvin?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Alvin?action=edit%27" tppabs="http://www.opensips.org/Profiles/Alvin?action=edit">Alvin</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Alvin?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Alvin?action=edit%27" tppabs="http://www.opensips.org/Profiles/Alvin?action=edit">?</a>  &mdash;  <span style='font-size:83%'>07 March 2013, 05:56</span>  </h5>
+</div><div class='messageitem' > 
+<pre> ERROR:db_mysql:mysql_raise_event: event not registered -1
+</pre></div>
+<p class='vspace'><a name='comment36' id='comment36'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Amrindhe?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Amrindhe?action=edit%27" tppabs="http://www.opensips.org/Profiles/Amrindhe?action=edit">amrindhe</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Amrindhe?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Amrindhe?action=edit%27" tppabs="http://www.opensips.org/Profiles/Amrindhe?action=edit">?</a>  &mdash;  <span style='font-size:83%'>20 March 2013, 23:16</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hi , I am following the webinar and was able to configure everything right upto the following error. Please guide me through for removing the same.
+root@ubuntu:/usr/local/opensips_proxy/sbin# ./opensipsdbctl create
+MySQL password for root: 
+INFO: test server charset
+INFO: creating database opensips ...
+ERROR 1007 (HY000) at line 1: Can't create database 'opensips'; database exists
+/usr/local/opensips_proxy//lib64/opensips/opensipsctl/opensipsdbctl.mysql: line 165: ./mysql/standard-create.sql: No such file or directory
+ERROR: Creating core tables failed!
+</p>
+<div class='vspace'></div></div>
+<p class='vspace'><a name='comment37' id='comment37'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Sakalaboator?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Sakalaboator?action=edit%27" tppabs="http://www.opensips.org/Profiles/Sakalaboator?action=edit">sakalaboator</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Sakalaboator?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Sakalaboator?action=edit%27" tppabs="http://www.opensips.org/Profiles/Sakalaboator?action=edit">?</a>  &mdash;  <span style='font-size:83%'>22 March 2013, 06:33</span>  </h5>
+</div><div class='messageitem' > 
+<p>I also encounter the mysql error. How to check the error code:1403 and what's the meaning?
+Mar 22 09:44:34 freeBSD /usr/local/sbin/opensips[1403]: ERROR:db_mysql:mysql_raise_event: event not registered -1
+</p></div>
+<p class='vspace'><a name='comment38' id='comment38'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Parshva?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Parshva?action=edit%27" tppabs="http://www.opensips.org/Profiles/Parshva?action=edit">Parshva</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Parshva?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Parshva?action=edit%27" tppabs="http://www.opensips.org/Profiles/Parshva?action=edit">?</a>  &mdash;  <span style='font-size:83%'>06 September 2013, 22:36</span>  </h5>
+</div><div class='messageitem' > 
+<p>When i start running opensips by /etc/init.d/opensips start I get the following error:
+</p><pre>    Sep 6 15:21:26 [17275] ERROR:core:set_mod_param_regex: parameter &lt;db_url&gt; not found in module &lt;presence_xml&gt; Sep 6 15:21:26 [17275] CRITICAL:core:yyerror: parse error in config file /usr/local/opensips_presence//etc/opensips/opensips.cfg, line 186, column 10-11: Parameter &lt;db_url&gt; not found in module &lt;presence_xml&gt; - can't set Sep 6 15:21:26 [17275] DBG:core:set_mod_param_regex: presence_xml matches module presence_xml Sep 6 15:21:26 [17275] DBG:core:set_mod_param_regex: found &lt;force_active&gt; in module presence_xml [/usr/local/opensips_presence/lib64/opensips/modules/] Sep 6 15:21:26 [17275] DBG:core:set_mod_param_regex: presence_xml matches module presence_xml Sep 6 15:21:26 [17275] DBG:core:set_mod_param_regex: found &lt;pidf_manipulation&gt; in module presence_xml [/usr/local/opensips_presence/lib64/opensips/modules/] Sep 6 15:21:26 [17275] DBG:core:set_mod_param_regex: presence_xml matches module presence_xml Sep 6 15:21:26 [17275] ERROR:core:set_mod_param_regex: parameter &lt;integrated_xcap_server&gt; not found in module &lt;presence_xml&gt; Sep 6 15:21:26 [17275] CRITICAL:core:yyerror: parse error in config file /usr/local/opensips_presence//etc/opensips/opensips.cfg, line 189, column 19-20: Parameter &lt;integrated_xcap_server&gt; not found in module &lt;presence_xml&gt; - can't set Sep 6 15:21:26 [17275] DBG:core:set_mod_param_regex: rls matches module rls Sep 6 15:21:26 [17275] ERROR:core:set_mod_param_regex: parameter &lt;db_url&gt; not found in module &lt;rls&gt; Sep 6 15:21:26 [17275] CRITICAL:core:yyerror: parse error in config file /usr/local/opensips_presence//etc/opensips/opensips.cfg, line 192, column 20-21: Parameter &lt;db_url&gt; not found in module &lt;rls&gt; - can't set Sep 6 15:21:26 [17275] DBG:core:set_mod_param_regex: rls matches module rls Sep 6 15:21:26 [17275] DBG:core:set_mod_param_regex: found &lt;server_address&gt; in module rls [/usr/local/opensips_presence/lib64/opensips/modules/] Sep 6 15:21:26 [17275] DBG:core:set_mod_param_regex: rls matches module rls Sep 6 15:21:26 [17275] DBG:core:set_mod_param_regex: found &lt;to_presence_code&gt; in module rls [/usr/local/opensips_presence/lib64/opensips/modules/] Sep 6 15:21:26 [17275] DBG:core:set_mod_param_regex: rls matches module rls Sep 6 15:21:26 [17275] ERROR:core:set_mod_param_regex: parameter &lt;integrated_xcap_server&gt; not found in module &lt;rls&gt; Sep 6 15:21:26 [17275] CRITICAL:core:yyerror: parse error in config file /usr/local/opensips_presence//etc/opensips/opensips.cfg, line 195, column 19-20: Parameter &lt;integrated_xcap_server&gt; not found in module &lt;rls&gt; - can't set Sep 6 15:21:26 [17275] DBG:core:yyparse: loading module /usr/local/opensips_presence/lib64/opensips/modules/dialog.so Sep 6 15:21:26 [17275] DBG:core:register_module: register_pv: dialog Sep 6 15:21:26 [17275] DBG:core:set_mod_param_regex: dialog matches module dialog Sep 6 15:21:26 [17275] DBG:core:set_mod_param_regex: found &lt;dlg_match_mode&gt; in module dialog [/usr/local/opensips_presence/lib64/opensips/modules/] Sep 6 15:21:26 [17275] DBG:core:set_mod_param_regex: dialog matches module dialog Sep 6 15:21:26 [17275] DBG:core:set_mod_param_regex: found &lt;default_timeout&gt; in module dialog [/usr/local/opensips_presence/lib64/opensips/modules/] Sep 6 15:21:26 [17275] DBG:core:set_mod_param_regex: dialog matches module dialog Sep 6 15:21:26 [17275] DBG:core:set_mod_param_regex: found &lt;db_mode&gt; in module dialog [/usr/local/opensips_presence/lib64/opensips/modules/] Sep 6 15:21:26 [17275] DBG:core:set_mod_param_regex: dialog matches module dialog Sep 6 15:21:26 [17275] DBG:core:set_mod_param_regex: found &lt;
+</pre><p class='vspace'>Choose an emoticon
+</p>
+<div class='vspace'></div></div>
+<p class='vspace'><a name='comment39' id='comment39'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Sukri?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Sukri?action=edit%27" tppabs="http://www.opensips.org/Profiles/Sukri?action=edit">Sukri</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Sukri?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Sukri?action=edit%27" tppabs="http://www.opensips.org/Profiles/Sukri?action=edit">?</a>  &mdash;  <span style='font-size:83%'>07 July 2014, 07:57</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hi,
+</p>
+<p class='vspace'>I'm a new one.I just asking about autostart opensips and freeswitch. After I integration between them, the opensips cannot run at startup, while freeswitch can startup..Could somebody help me.
+Now, I'm using Ubuntu 12.04 LTS 32 bit to run the server.
+</p></div>
+<div class='vspace'></div>
+    <div id='message'><form name='cbox' class='inputform' action="http://www.opensips.org/Documentation/TroubleShooting-DoesNotStart" method='post' onsubmit='return checkform(this);'>
+    <input type='hidden' name='n' value='Documentation.TroubleShooting-DoesNotStart' />
+    <input type='hidden' name='action' value='comment' />
+    <input type='hidden' name='order' value='chrono' /><input type='hidden' name='accesscode' value='646' />
+    <input type='hidden' name='csum' value='Comment added' />
+    <table width='90%'><tr>
+    <th class='prompt' align='right' valign='top'>Add Comment&nbsp;</th>
+    <td><textarea class='inputtext commenttext' name='text' id='text' rows=6 cols=40></textarea>
+    </td></tr><tr><th class='prompt' align='right' valign='top'>Sign as Author&nbsp;</th>
+    <td><input class='inputbox commentauthorbox' type='text' name='author' value='' size='32' /></td></tr>
+    <tr><th class='prompt' align='right' valign='top'>Enter code <em class='access'>646</em></th>
+    <td><input type='text' size='4' maxlength='3' name='access' value='' class='inputbox' /> <input class='inputbutton commentbutton' type='submit' name='post' value=' Post ' />
+    <input class='inputbutton commentbutton' type='reset' value='Reset' /></td></tr></table><br /></form></div>
+ <script type='text/javascript' language='JavaScript1.2'>
+  function checkform ( form ) {
+   if (form.text && form.text.value == "") { window.alert( 'Please enter a comment to post' ); form.text.focus(); return false; }
+   if (form.author && form.author.value == "") { window.alert( 'Please enter your name as author' ); form.author.focus(); return false; }
+   if (form.access && form.access.value == "") { window.alert( 'Please enter the code number' ); form.access.focus(); return false; }return true ;
+  }
+  </script>
+   
+</div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="TroubleShooting-DoesNotStart-action=edit.htm" tppabs="http://www.opensips.org/Documentation/TroubleShooting-DoesNotStart?action=edit">Edit</a> |
+      <a rel="nofollow" href="TroubleShooting-DoesNotStart-action=diff.htm" tppabs="http://www.opensips.org/Documentation/TroubleShooting-DoesNotStart?action=diff">History</a> |
+      <a rel="nofollow" href="TroubleShooting-DoesNotStart-action=print.htm" tppabs="http://www.opensips.org/Documentation/TroubleShooting-DoesNotStart?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on July 07, 2014, at 07:57 AM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

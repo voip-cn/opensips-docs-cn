@@ -1,0 +1,952 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Tutorials-TLS-2-1 | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Tutorials-TLS-2-1' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Tutorials-TLS-2-1 History</h2>
+  <p><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=diff&source=n&minor=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=diff&source=n&minor=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=diff&source=n&minor=y">Show minor edits</a> - <a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=diff&source=y&minor=n  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=diff&source=y&minor=n%27" tppabs="http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=diff&source=y&minor=n">Show changes to markup</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>March 20, 2015, at 12:20 PM 
+        by <span class='diffauthor' title='89.120.101.121'>ionutionita92</span> - </div>
+        <div class='difftype'>Changed line 113 from:</div>
+        <div class='diffdel'><p>loadmodule “proto_tls.so”
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>loadmodule "proto_tls.so"
+</p>
+</div>
+        <div class='difftype'>Changed lines 123-125 from:</div>
+        <div class='diffdel'><p>modparam(“proto_tls”, “verify_cert”, “0”) <br clear='all' />
+modparam(“proto_tls”, “require_cert”, “0”) <br clear='all' />
+modparam(“proto_tls”, “ciphers_list”, “NULL”) <br clear='all' />
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>modparam("proto_tls", "verify_cert", "0") <br clear='all' />
+modparam("proto_tls", "require_cert", "0") <br clear='all' />
+modparam("proto_tls", "ciphers_list", "NULL") <br clear='all' />
+</p>
+</div>
+        <div class='difftype'>Changed line 134 from:</div>
+        <div class='diffdel'><p>modparam(“proto_tls”, “tls_method”, “TLSv1”)
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>modparam("proto_tls", "tls_method", "TLSv1")
+</p>
+</div>
+        <div class='difftype'>Changed lines 140-143 from:</div>
+        <div class='diffdel'><h3>Setting up TLS domains</h3>
+<p>As specified in section <strong>3.1 Overview</strong>, our scenario includes two TLS connections, one from the UAC to OpenSIPS and the second one from OpenSIPS to the UAS. Whereas in the first connection OpenSIPS will be the server side of the connection, in the second one it will be the client side so we need to define two different TLS domains.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Also, in order for OpenSIPS to start, we need to configure some "global" certificates. We need to do this because we need a default match, if no domain is matched, we will need a default case, something to match everything, just like <strong>0.0.0.0</strong> route in routing tables. You can always jump over the following section <strong>3.4 Setting up TLS domains</strong> directly to <strong>3.5 Full script example</strong>, because they represent a more specific type of scripting, but it is recommended to read about <strong>server domains</strong> which allow you to use different settings on different listening interfaces. 
+</p>
+</div>
+        <div class='difftype'>Added lines 143-157:</div>
+        <div class='diffadd'><pre> modparam("proto_tls", "certificate", "$CERT_DIR/rootCA/cacert.pem")           
+ modparam("proto_tls", "private_key", "$CERT_DIR/rootCA/private/cakey.pem")    
+ modparam("proto_tls", "ca_list", "$CERT_DIR/rootCA/cacert.pem")                
+ modparam("proto_tls", "ca_dir", "$CERT_DIR/rootCA/")                
+</pre> 
+<p class='vspace'><br clear='all' />
+<br clear='all' />
+</p>
+<div class='vspace'></div><h3>Setting up TLS domains</h3>
+<p>As specified in section <strong>3.1 Overview</strong>, our scenario includes two TLS connections, one from the UAC to OpenSIPS and the second one from OpenSIPS to the UAS. Whereas in the first connection OpenSIPS will be the server side of the connection, in the second one it will be the client side so we need to define two different TLS domains.
+</p>
+<div class='vspace'></div><div class='frame lfloat frame lfloat' style='color: black;' > 
+</div>
+</div>
+        <div class='difftype'>Changed lines 159-162 from:</div>
+        <div class='diffdel'><pre> modparam(“proto_tls”, “server_domain”, “sv_dom=&lt;your-ip-address&gt;:&lt;port&gt;”)           
+ modparam(“proto_tls”, “certificate”, “sv_dom:$CERT_DIR/rootCA/cacert.pem”)           
+ modparam(“proto_tls”, “private_key”, “sv_dom:$CERT_DIR/rootCA/private/cakey.pem”)    
+ modparam(“proto_tls”, “ca_list”, “sv_dom:$CERT_DIR/rootCA/cacert.pem”)                
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre> modparam("proto_tls", "server_domain", "sv_dom=&lt;your-ip-address&gt;:&lt;port&gt;")           
+ modparam("proto_tls", "certificate", "sv_dom:$CERT_DIR/rootCA/cacert.pem")           
+ modparam("proto_tls", "private_key", "sv_dom:$CERT_DIR/rootCA/private/cakey.pem")    
+ modparam("proto_tls", "ca_list", "sv_dom:$CERT_DIR/rootCA/cacert.pem")                
+</pre>
+</div>
+        <div class='difftype'>Changed lines 165-169 from:</div>
+        <div class='diffdel'><pre> modparam(“proto_tls”, “client_domain”, “cl_dom=&lt;UAS-ip-address&gt;:&lt;port&gt;”)            
+ modparam(“proto_tls”, “certificate”, “cl_dom:$CERT_DIR/user/user-cert.pem”)          
+ modparam(“proto_tls”, “private_key”, “cl_dom:$CERT_DIR/user/user-privkey.pem”)       
+ modparam(“proto_tls”, “ca_list”, “cl_dom:$CERT_DIR/user/user-calist.pem”)             
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre> modparam("proto_tls", "client_domain", "cl_dom=&lt;UAS-ip-address&gt;:&lt;port&gt;")            
+ modparam("proto_tls", "certificate", "cl_dom:$CERT_DIR/user/user-cert.pem")          
+ modparam("proto_tls", "private_key", "cl_dom:$CERT_DIR/user/user-privkey.pem")       
+ modparam("proto_tls", "ca_list", 'cl_dom:$CERT_DIR/user/user-calist.pem")             
+</pre>
+</div>
+        <div class='difftype'>Changed lines 175-176 from:</div>
+        <div class='diffdel'><p><strong>IMPORTANT: The ip address and port from the server domain must be the ones you set in the “listen” script line for OpenSIPS to match that domain. When OpenSIPS acts as client, the ip address and port must be the ones of the server (remote peer) with whom initiates the TLS handshake.</strong>
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><strong>IMPORTANT: The ip address and port from the server domain must be the ones you set in the “listen” script line for OpenSIPS to match that domain. When OpenSIPS acts as client, the ip address and port must be the ones of the server (remote peer) with whom initiates the TLS handshake, so unless you do not know the remote address and port there is no need to define a client domain, default settings will be used.</strong>
+</p>
+</div>
+        <div class='difftype'>Changed lines 188-192 from:</div>
+        <div class='diffdel'><pre> modparam(“proto_tls”, “verify_cert”, “0”)
+ modparam(“proto_tls”, “require_cert”, “0”)
+ modparam(“proto_tls”, “ciphers_list”, “NULL”)
+ modparam(“proto_tls”, “tls_method”, “TLSv1”)
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre> modparam("proto_tls", "verify_cert", "0")
+ modparam("proto_tls", "require_cert", "0")
+ modparam("proto_tls", "ciphers_list", "NULL")
+ modparam("proto_tls", "tls_method", "TLSv1")
+
+ modparam("proto_tls", "certificate", "$CERT_DIR/rootCA/cacert.pem")           
+ modparam("proto_tls", "private_key", "$CERT_DIR/rootCA/private/cakey.pem")    
+ modparam("proto_tls", "ca_list", "$CERT_DIR/rootCA/cacert.pem")                
+ modparam("proto_tls", "ca_dir", "$CERT_DIR/rootCA/")                
+</pre><div class='vspace'></div>
+</div>
+        <div class='difftype'>Changed lines 200-204 from:</div>
+        <div class='diffdel'><pre> modparam(“proto_tls”,“server_doamain”,“sv_dom=&lt;your-ip-address&gt;:&lt;port&gt;”)
+ modparam(“proto_tls”, “certificate”,“sv_dom:$CERT_DIR/rootCA/cacert.pem”)
+ modparam(“proto_tls”,“private_key”,“sv_dom:$CERT_DIR/rootCA/private/cakey.pem”)
+ modparam(“proto_tls”, “ca_list”,“sv_dom:$CERT_DR/rootCA/cacert.pem”)
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre> modparam("proto_tls", "server_doamain", "sv_dom=&lt;your-ip-address&gt;:&lt;port&gt;")
+ modparam("proto_tls", "certificate", "sv_dom:$CERT_DIR/rootCA/cacert.pem")
+ modparam("proto_tls", "private_key", "sv_dom:$CERT_DIR/rootCA/private/cakey.pem")
+ modparam("proto_tls", "ca_list", "sv_dom:$CERT_DR/rootCA/cacert.pem")
+</pre>
+</div>
+        <div class='difftype'>Changed lines 206-209 from:</div>
+        <div class='diffdel'><pre> modparam(“proto_tls”, “client_doamain”, “cl_dom=&lt;UAS-ip-address&gt;:&lt;port&gt;”)
+ modparam(“proto_tls”, “certificate”, “cl_dom:$CERT_DIR/user/user-cert.pem”)
+ modparam(“proto_tls”,“private_key”,“cl_dom:$CERT_DIR/user/user-privkey.pem”)
+ modparam(“proto_tls”, “ca_list”,“cl_dom:$CERT_DR/user/user-calist.pem”)
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre> modparam("proto_tls", "client_doamain", "cl_dom=&lt;UAS-ip-address&gt;:&lt;port&gt;")
+ modparam("proto_tls", "certificate", "cl_dom:$CERT_DIR/user/user-cert.pem")
+ modparam("proto_tls", "private_key", "cl_dom:$CERT_DIR/user/user-privkey.pem")
+ modparam("proto_tls", "ca_list", "cl_dom:$CERT_DR/user/user-calist.pem")
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-TLS-2-1-action=edit&restore=diff-1426850401-1426596406-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=edit&restore=diff:1426850401:1426596406:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 17, 2015, at 01:46 PM 
+        by <span class='diffauthor' title='89.120.101.121'>ionutionita92</span> - </div>
+        <div class='difftype'>Changed lines 142-143 from:</div>
+        <div class='diffdel'><p>As specified in section <strong>3.1 Overview</strong>, our scenario includes two TLS connections, one from the UAC to OpenSIPS and the second one from OpenSIPS to the UAS. Whereas in the first connection OpenSIPS will be the server side of the connection, in the second one it will be the client side so it is obvious that we need to define two different TLS domains.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>As specified in section <strong>3.1 Overview</strong>, our scenario includes two TLS connections, one from the UAC to OpenSIPS and the second one from OpenSIPS to the UAS. Whereas in the first connection OpenSIPS will be the server side of the connection, in the second one it will be the client side so we need to define two different TLS domains.
+</p>
+</div>
+        <div class='difftype'>Changed line 214 from:</div>
+        <div class='diffdel'><p><strong>Wireshark</strong> allows us to catch the TLS handshake and also to decrypt the traffic, but in order to do this we must do some configuration in <strong>Wireshark</strong> first. Go to <strong>Edit &#8594; Preferences &#8594; Protocols &#8594; SSL</strong>. Click the <strong>Edit</strong> button in <strong>RSA keys list</strong> section. Click the <strong>New</strong> button and add the ip address and port on which OpenSIPS is listening, the protocol (in our case <strong>sip</strong>) and in the <strong>Key File</strong> section search for the private key OpenSIPS uses for the connection ( for the example above <strong>$CERT_DIR/rootCA/private/cakey.pem</strong>). Save the configuration and then you can see both the TLS handshakes and the TCP messages that are being sent to and from OpenSIPS listening interface.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><strong>Wireshark</strong> allows us to catch the TLS handshake and also to decrypt the traffic, but in order to do this we must configure it to know the private keys of the connection. Go to <strong>Edit &#8594; Preferences &#8594; Protocols &#8594; SSL</strong>. Click the <strong>Edit</strong> button in <strong>RSA keys list</strong> section. Click the <strong>New</strong> button and add the ip address and port on which OpenSIPS is listening, the protocol (in our case <strong>sip</strong>) and in the <strong>Key File</strong> section search for the private key OpenSIPS uses for the connection ( for the example above <strong>$CERT_DIR/rootCA/private/cakey.pem</strong>). Save the configuration and then you can see both the TLS handshakes and the TCP messages that are being sent to and from OpenSIPS listening interface.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=edit&restore=diff:1426596406:1426596218:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=edit&restore=diff:1426596406:1426596218:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=edit&restore=diff:1426596406:1426596218:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 17, 2015, at 01:43 PM 
+        by <span class='diffauthor' title='89.120.101.121'>ionutionita92</span> - </div>
+        <div class='difftype'>Changed line 199 from:</div>
+        <div class='diffdel'><p>Now that we’ve set up  OpenSIPS and started it, we need to do some debugging and see if everything works fine. There will be presented two ways to debug your TLS connection. First just verifying the TLS handshake with openSSL <strong>s_client</strong> and after this a more complex type of debugging which is teaching Wireshark to decrypt messages using the private key of the connection.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Now that we’ve set up  OpenSIPS and started it, we need to do some debugging and see if everything works fine. There will be presented two ways to debug your TLS connection. First just verifying the TLS handshake with openSSL <strong>s_client</strong> and after this a more complex type of debugging which is teaching <strong>Wireshark</strong> to decrypt messages using the private key of the connection.
+</p>
+</div>
+        <div class='difftype'>Changed lines 210-211 from:</div>
+        <div class='diffdel'><p>The ip address and the port are the ones you have set earlier in the <strong>listen</strong> section of the script. If you want more advanced debugging, check the following section which tells you how to debug the tls connection using Wireshark.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>The ip address and the port are the ones you have set earlier in the <strong>listen</strong> section of the script. If you want more advanced debugging, check the following section which tells you how to debug the tls connection using <strong>Wireshark</strong>.
+</p>
+</div>
+        <div class='difftype'>Changed line 214 from:</div>
+        <div class='diffdel'><p>Wireshark allows us to catch the TLS handshake and also to decrypt the traffic, but in order to do this we must do some configuration in Wireshark first. Go to <strong>Edit &#8594; Preferences &#8594; Protocols &#8594; SSL</strong>. Click the <strong>Edit</strong> button in <strong>RSA keys list</strong> section. Click the <strong>New</strong> button and add the ip address and port on which OpenSIPS is listening, the protocol (in our case <strong>sip</strong>) and in the <strong>Key File</strong> section search for the private key OpenSIPS uses for the connection ( for the example above <strong>$CERT_DIR/rootCA/private/cakey.pem</strong>). Save the configuration and then you can see both the TLS handshakes and the TCP messages that are being sent to and from OpenSIPS listening interface.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><strong>Wireshark</strong> allows us to catch the TLS handshake and also to decrypt the traffic, but in order to do this we must do some configuration in <strong>Wireshark</strong> first. Go to <strong>Edit &#8594; Preferences &#8594; Protocols &#8594; SSL</strong>. Click the <strong>Edit</strong> button in <strong>RSA keys list</strong> section. Click the <strong>New</strong> button and add the ip address and port on which OpenSIPS is listening, the protocol (in our case <strong>sip</strong>) and in the <strong>Key File</strong> section search for the private key OpenSIPS uses for the connection ( for the example above <strong>$CERT_DIR/rootCA/private/cakey.pem</strong>). Save the configuration and then you can see both the TLS handshakes and the TCP messages that are being sent to and from OpenSIPS listening interface.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-TLS-2-1-action=edit&restore=diff-1426596218-1426596136-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=edit&restore=diff:1426596218:1426596136:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 17, 2015, at 01:42 PM 
+        by <span class='diffauthor' title='89.120.101.121'>ionutionita92</span> - </div>
+        <div class='difftype'>Changed lines 15-16 from:</div>
+        <div class='diffdel'><p>In this chapter we will configure a new CA and a user certificate signed by the CA. Also, you can always create your own CA or set of certificates using the scripts provided by openSSL or by other means. Since creating the certificates can take time, we will do this using OpenSIPS in only a few minutes.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Before configuring OpenSIPS we need to have a CA and be able to sign certificates with this CA. In order to do this, we will configure a new CA and a user certificate signed by this CA. We will use OpenSIPS to achieve these goals, since it offers a very simple way to manage certificate related issues using <strong>opensipsctl</strong> script. Also, you can always create your own CA or set of certificates using the scripts provided by openSSL or by other means.
+</p>
+</div>
+        <div class='difftype'>Changed line 199 from:</div>
+        <div class='diffdel'><p>Now that we’ve set up  OpenSIPS and started it, we need to start the debugging and see if everything works fine. There will be presented two ways by debugging your TLS connection. First just verifying the TLS handshake with openSSL <strong>s_client</strong> and after a more complex type of debugging which is teaching Wireshark to decrypt messages using the private key of the connection.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Now that we’ve set up  OpenSIPS and started it, we need to do some debugging and see if everything works fine. There will be presented two ways to debug your TLS connection. First just verifying the TLS handshake with openSSL <strong>s_client</strong> and after this a more complex type of debugging which is teaching Wireshark to decrypt messages using the private key of the connection.
+</p>
+</div>
+        <div class='difftype'>Changed lines 214-216 from:</div>
+        <div class='diffdel'><p>Wireshark allows us to catch the TLS handshake and also to decrypt the traffic, but in order to do this we must do some configuration in Wireshark first. Go to <strong>Edit &#8594; Preferences &#8594; Protocols &#8594; SSL</strong>. Click the <strong>Edit</strong> button in <strong>RSA keys list</strong> section. Click the <strong>New</strong> button and add the ip address and port on which OpenSIPS is listening, the protocol (in our case <strong>sip</strong>) and in the <strong>Key File</strong> section search for the private key OpenSIPS uses for the connection ( for the example above <strong>$CERT_DIR/rootCA/private/cakey.pem</strong>). Save the configuration and then you can see both the TLS handshakes and the TCP messages that are being sent to and from OpenSIPS listening interface.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Wireshark allows us to catch the TLS handshake and also to decrypt the traffic, but in order to do this we must do some configuration in Wireshark first. Go to <strong>Edit &#8594; Preferences &#8594; Protocols &#8594; SSL</strong>. Click the <strong>Edit</strong> button in <strong>RSA keys list</strong> section. Click the <strong>New</strong> button and add the ip address and port on which OpenSIPS is listening, the protocol (in our case <strong>sip</strong>) and in the <strong>Key File</strong> section search for the private key OpenSIPS uses for the connection ( for the example above <strong>$CERT_DIR/rootCA/private/cakey.pem</strong>). Save the configuration and then you can see both the TLS handshakes and the TCP messages that are being sent to and from OpenSIPS listening interface.
+<br clear='all' />
+<strong>IMPORTANT: Depending on your configuration, it might be necessary to configure both the private key of the server and the client in Wireshark!!!</strong>
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=edit&restore=diff:1426596136:1426595065:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=edit&restore=diff:1426596136:1426595065:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=edit&restore=diff:1426596136:1426595065:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 17, 2015, at 01:24 PM 
+        by <span class='diffauthor' title='89.120.101.121'>ionutionita92</span> - </div>
+        <div class='difftype'>Changed line 162 from:</div>
+        <div class='diffdel'><p><strong>IMPORTANT: The ip address and port from the server domain must be the ones you set in the “listen” script line for OpenSIPS to match that domain. When OpenSIPS acts as client, the ip address and port must be the ones of the server (remote peer), with which initiates the TLS handshake.</strong>
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><strong>IMPORTANT: The ip address and port from the server domain must be the ones you set in the “listen” script line for OpenSIPS to match that domain. When OpenSIPS acts as client, the ip address and port must be the ones of the server (remote peer) with whom initiates the TLS handshake.</strong>
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-TLS-2-1-action=edit&restore=diff-1426595065-1426595011-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=edit&restore=diff:1426595065:1426595011:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 17, 2015, at 01:23 PM 
+        by <span class='diffauthor' title='89.120.101.121'>ionutionita92</span> - </div>
+        <div class='difftype'>Changed line 87 from:</div>
+        <div class='diffdel'><p>As you probably discovered, in OpenSIPS 2.1 the tls became a module, so now, every parameter we want to pass to TLS will be a <strong>modparam</strong> parameter. The scenario is very simple, UAC is trying to send an invite to an UAS by using OpenSIPS as a proxy, and both connections UAC&lt;-&gt;OpenSIPS and OpenSIPS&lt;-&gt;UAS are using encrypted data transfer, using TLS. So we will try to provide a basic TLS script configuration which tries to use basically all the configurable parameters of the TLS module, from which you can start building your own.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>As you probably discovered, in OpenSIPS 2.1 the tls became a module, so now, every parameter we want to pass to TLS will be a <strong>modparam</strong> parameter. The scenario is very simple, UAC is trying to send an invite to an UAS by using OpenSIPS as a proxy, and both connections     UAC&lt;-&gt;OpenSIPS and OpenSIPS&lt;-&gt;UAS are using encrypted data transfer, using TLS. So we will try to provide a basic TLS script configuration which tries to use basically all the configurable parameters of the TLS module, from which you can start building your own.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-TLS-2-1-action=edit&restore=diff-1426595011-1426594956-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=edit&restore=diff:1426595011:1426594956:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 17, 2015, at 01:22 PM 
+        by <span class='diffauthor' title='89.120.101.121'>ionutionita92</span> - </div>
+        <div class='difftype'>Changed line 81 from:</div>
+        <div class='diffdel'><p>is 'opensips'.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>is <strong>opensips</strong>.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-TLS-2-1-action=edit&restore=diff-1426594956-1426594925-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=edit&restore=diff:1426594956:1426594925:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 17, 2015, at 01:22 PM 
+        by <span class='diffauthor' title='89.120.101.121'>ionutionita92</span> - </div>
+        <div class='difftype'>Changed lines 10-12 from:</div>
+        <div class='diffdel'><p>Configuring TLS can sometimes be time consuming, most times because of badly generated or used certificates. What this tutorial is trying to do is providing a basic TLS configuration for OpenSIPS which we know for sure that will work and be the entry point for future, more complicated, TLS setups. At first we will be trying to do the most important thing of all: generating some certificates which we can use to later configure OpenSIPS. . If all you want to do is testing the TLS, you can always skip to section <strong>2.4 Using OpenSIPS built-in certificates</strong>. The next step will be writing a script for OpenSIPS which will use TLS. After starting OpenSIPS, what we must do is testing that OpenSIPS works fine listening for TLS connections from UACs and creating new connections with UACs and debugging the handshake.
+</p>
+<div class='vspace'></div>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Configuring TLS can sometimes be time consuming, most times because of badly generated or used certificates. What this tutorial is trying to do is providing a basic TLS configuration for OpenSIPS which we know for sure that will work and be the entry point for future, more complicated, TLS setups. At first we will be trying to do the most important thing of all: generating some certificates which we can use to later configure OpenSIPS. If all you want to do is testing the TLS, you can always skip to section <strong>2.4 Using OpenSIPS built-in certificates</strong>. The next step will be writing a script for OpenSIPS which will use TLS. After starting OpenSIPS, what we must do is testing that OpenSIPS works fine listening for TLS connections from UACs and creating new connections with UACs and debugging the handshake.
+</p>
+<div class='vspace'></div>
+</div>
+        <div class='difftype'>Changed lines 80-81 from:</div>
+        <div class='diffdel'><p>If all you want to do is testing, you can always use the certificates located in <strong>$OPENSIPS_HOME/etc/tls</strong>, but we strongly recommend to you not to use this certificates in real case scenarios, because, as you can imagine, everyone has access to them.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>If all you want to do is testing, you can always use the certificates located in <strong>$OPENSIPS_HOME/etc/tls</strong>, but we strongly recommend to you not to use this certificates in real case scenarios, because, as you can imagine, everyone has access to them. Also notice that the passphrase with which the CA is configured
+is 'opensips'.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-TLS-2-1-action=edit&restore=diff-1426594925-1426594794-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=edit&restore=diff:1426594925:1426594794:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 17, 2015, at 01:19 PM 
+        by <span class='diffauthor' title='89.120.101.121'>ionutionita92</span> - </div>
+        <div class='difftype'>Changed line 203 from:</div>
+        <div class='diffdel'><p>&gt; openssl s_client -showcerts -debug -connect &lt;your-ip-address&gt;:&lt;port&gt; -no_ssl2 -bugs
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre> openssl s_client -showcerts -debug -connect &lt;your-ip-address&gt;:&lt;port&gt; -no_ssl2 -bugs
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-TLS-2-1-action=edit&restore=diff-1426594794-1426530981-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=edit&restore=diff:1426594794:1426530981:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 07:36 PM 
+        by <span class='diffauthor' title='89.120.101.121'>ionutionita92</span> - </div>
+        <div class='difftype'>Changed lines 10-12 from:</div>
+        <div class='diffdel'><p>Configuring TLS can sometimes be time consuming, most times because of badly generated or used certificates. What this tutorial is trying to do is providing a basic TLS configuration for openSips which we know for sure that will work and be the entry point for future, more complicated, TLS setups. At first we will be trying to do the most important thing of all: generating some certificates which we can use to later configure openSips. The next step will be writing a script for openSips which will use TLS. After starting openSips, what we must do is testing that openSips works fine listening for TLS connections from UACs and creating new connections with UACs and debugging the handshake.
+</p>
+<div class='vspace'></div>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Configuring TLS can sometimes be time consuming, most times because of badly generated or used certificates. What this tutorial is trying to do is providing a basic TLS configuration for OpenSIPS which we know for sure that will work and be the entry point for future, more complicated, TLS setups. At first we will be trying to do the most important thing of all: generating some certificates which we can use to later configure OpenSIPS. . If all you want to do is testing the TLS, you can always skip to section <strong>2.4 Using OpenSIPS built-in certificates</strong>. The next step will be writing a script for OpenSIPS which will use TLS. After starting OpenSIPS, what we must do is testing that OpenSIPS works fine listening for TLS connections from UACs and creating new connections with UACs and debugging the handshake.
+</p>
+<div class='vspace'></div>
+</div>
+        <div class='difftype'>Changed lines 15-16 from:</div>
+        <div class='diffdel'><p>During this chapter we will try to configure a new CA and a user certificate signed by the CA. If all you want to do is testing the TLS, you can always skip to section <strong>2.4 Using openSips built-in certificates</strong>. Also, you can always create your own CA or set of certificates using the scripts provided by openSSL or by other means.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>In this chapter we will configure a new CA and a user certificate signed by the CA. Also, you can always create your own CA or set of certificates using the scripts provided by openSSL or by other means. Since creating the certificates can take time, we will do this using OpenSIPS in only a few minutes.
+</p>
+</div>
+        <div class='difftype'>Changed line 19 from:</div>
+        <div class='diffdel'><p>First thing we need to do is setup the context for our certificates to be created. Let’s say that you want to use $OPENSIPS_HOME/tls_cnf ($OPENSIPS_HOME represents the path to your openSips install).
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>First thing we need to do is setup the context for our certificates to be created. Let’s say that you want to use <strong>$OPENSIPS_HOME/tls_cnf</strong> (<strong>$OPENSIPS_HOME</strong> represents the path to your OpenSIPS install).
+</p>
+</div>
+        <div class='difftype'>Changed lines 22-23 from:</div>
+        <div class='diffdel'><p>&gt; cd $OPENSIPS_HOME <br clear='all' />
+&gt; mkdir tls_cnf; cd tls_cnf; mkdir tls
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>cd $OPENSIPS_HOME <br clear='all' />
+mkdir tls_cnf; cd tls_cnf; mkdir tls
+</p>
+</div>
+        <div class='difftype'>Changed line 30 from:</div>
+        <div class='diffdel'><p>Next we need to generate our certificating authority, but first we need a configuration file for this, because based on this configuration file, openSips will know the details of your request. In this configuration file you can set the paths where the CA will be generated,  validity, DN etc.  For users who did this before, it looks similar to “openssl.cnf” file. You can find an example in $OPENSIPS_HOME/etc/tls/ca.conf. In this tutorial we only want to make it work, so we will use that file by copying it to our <strong>tls_cnf/tls</strong> folder.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Next we need to generate our certificating authority, but first we need a configuration file for this, because based on this configuration file, OpenSIPS will know the details of your request. In this configuration file you can set the paths where the CA will be generated,  validity, DN etc.  For users who did this before, it looks similar to “openssl.cnf” file. You can find an example in <strong>$OPENSIPS_HOME/etc/tls/ca.conf</strong>. In this tutorial we only want to make it work, so we will use that file by copying it to our <strong>tls_cnf/tls</strong> folder.
+</p>
+</div>
+        <div class='difftype'>Changed line 32 from:</div>
+        <div class='diffdel'><p>&gt; cp $OPENSIPS_HOME/etc/tls/ca.conf $OPENSIPS_HOME/tls_cnf/tls/ 
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>cp $OPENSIPS_HOME/etc/tls/ca.conf $OPENSIPS_HOME/tls_cnf/tls/ 
+</p>
+</div>
+        <div class='difftype'>Changed line 39 from:</div>
+        <div class='diffdel'><p>Now that we set up the context, we can create the CA. Go to your $OPENSIPS_HOME/scripts folder.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Now that we set up the context, we can create the CA. Go to your <strong>$OPENSIPS_HOME/scripts</strong> folder.
+</p>
+</div>
+        <div class='difftype'>Changed line 41 from:</div>
+        <div class='diffdel'><p>&gt; cd $OPENSIPS_HOME/scripts
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>cd $OPENSIPS_HOME/scripts
+</p>
+</div>
+        <div class='difftype'>Changed line 46 from:</div>
+        <div class='diffdel'><p>Here you should be able to find the “opensipsctl” script. Use the following command:
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Here you should be able to find the <strong>opensipsctl</strong> script. Use the following command:
+</p>
+</div>
+        <div class='difftype'>Changed line 48 from:</div>
+        <div class='diffdel'><p>&gt; ./opensipsctl tls rootCA $OPENSIPS_HOME/tls_cnf/tls 
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>./opensipsctl tls rootCA $OPENSIPS_HOME/tls_cnf/tls 
+</p>
+</div>
+        <div class='difftype'>Changed lines 57-58 from:</div>
+        <div class='diffdel'><p>To create a user certificate you will need to create <strong>request.conf</strong> and <strong>&lt;user_name&gt;.conf</strong> file in order to use <strong>opensipsctl</strong>. In this tutorial we will simply use the files provided by opensips in <strong>$OPENSIPS_HOME/etc/tls</strong> called <strong>request.conf</strong> and <strong>user.conf</strong>.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>To create a user certificate you will need to create <strong>request.conf</strong> and <strong>&lt;user_name&gt;.conf</strong> file in order to use <strong>opensipsctl</strong>. In this tutorial we will simply use the files provided by OpenSIPS in <strong>$OPENSIPS_HOME/etc/tls</strong> called <strong>request.conf</strong> and <strong>user.conf</strong>.
+</p>
+</div>
+        <div class='difftype'>Changed lines 60-61 from:</div>
+        <div class='diffdel'><p>&gt; cp $OPENSIPS_HOME/etc/tls/request.conf $OPENSIPS_HOME/tls_cnf/tls/  <br clear='all' />
+&gt; cp $OPENSIPS_HOME/etc/tls/user.conf $OPENSIPS_HOME/tls_cnf/tls/     <br clear='all' />
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>cp $OPENSIPS_HOME/etc/tls/request.conf $OPENSIPS_HOME/tls_cnf/tls/  <br clear='all' />
+cp $OPENSIPS_HOME/etc/tls/user.conf $OPENSIPS_HOME/tls_cnf/tls/     <br clear='all' />
+</p>
+</div>
+        <div class='difftype'>Changed line 70 from:</div>
+        <div class='diffdel'><p>&gt; cd $OPENSIPS_HOME/scripts <br clear='all' />
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>cd $OPENSIPS_HOME/scripts <br clear='all' />
+</p>
+</div>
+        <div class='difftype'>Changed lines 77-79 from:</div>
+        <div class='diffdel'><p>The third parameter’s meaning is the name of the user which must be the same as the <strong>&lt;user_name&gt;.conf</strong> file. So, for example, if we wanted the user <strong>alice</strong>, the file must have had the name <strong>alice.conf</strong> . The fourth parameter represents the path where you have the configuration files. Now, that we have created the certificates we can move to the following section, a script example to use TLS with openSips.
+</p>
+<div class='vspace'></div><h3>Using <strong>openSips</strong> built-in certificates</h3>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>The third parameter’s meaning is the name of the user which must be the same as the <strong>&lt;user_name&gt;.conf</strong> file. So, for example, if we wanted the user <strong>alice</strong>, the file must have had the name <strong>alice.conf</strong> . The fourth parameter represents the path where you have the configuration files. Now, that we have created the certificates we can move to the following section, a script example to use TLS with OpenSIPS.
+</p>
+<div class='vspace'></div><h3>Using <strong>OpenSIPS</strong> built-in certificates</h3>
+</div>
+        <div class='difftype'>Changed lines 86-87 from:</div>
+        <div class='diffdel'><p>As you probably discovered, in openSips 2.1 the tls became a module, so now, every parameter we want to pass to TLS will be a ‘modparam’ parameter. The scenario is very simple, sipp UAC is trying to send an invite to an UAS by using openSips as a proxy, and both connections UAC&lt;-&gt;<strong>openSips</strong> and <strong>openSips</strong>&lt;-&gt;UAS are using encrypted data transfer, using TLS.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>As you probably discovered, in OpenSIPS 2.1 the tls became a module, so now, every parameter we want to pass to TLS will be a <strong>modparam</strong> parameter. The scenario is very simple, UAC is trying to send an invite to an UAS by using OpenSIPS as a proxy, and both connections UAC&lt;-&gt;OpenSIPS and OpenSIPS&lt;-&gt;UAS are using encrypted data transfer, using TLS. So we will try to provide a basic TLS script configuration which tries to use basically all the configurable parameters of the TLS module, from which you can start building your own.
+</p>
+</div>
+        <div class='difftype'>Changed line 89 from:</div>
+        <div class='diffdel'><p>In order to accept TLS connections, openSips must have a TLS listener. In order to do this we have to include the following line in our script:
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>In order to accept TLS connections, OpenSIPS must have a TLS listener. In order to do this we have to include the following line in our script:
+</p>
+</div>
+        <div class='difftype'>Changed line 97 from:</div>
+        <div class='diffdel'><p>When openSips will start, you should be able to see the listener by entering the following command in your command line
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>When OpenSIPS will start, you should be able to see the listener by entering the following command in your command line
+</p>
+</div>
+        <div class='difftype'>Changed line 99 from:</div>
+        <div class='diffdel'><pre> # netstat -tlp | grep &lt;port&gt;
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>netstat -tlp | grep &lt;port&gt;
+</p>
+</div>
+        <div class='difftype'>Changed lines 119-120 from:</div>
+        <div class='diffdel'><p>set parameters to enable certificate checking or ciphers. As <strong>openSips</strong> enables these checkings by default because a real TLS configuration must check the certificates, we will need to disable them.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>set parameters to enable certificate checking or ciphers. As OpenSIPS enables these checkings by default because a real TLS configuration must check the certificates, we will need to disable them.
+</p>
+</div>
+        <div class='difftype'>Changed lines 141-142 from:</div>
+        <div class='diffdel'><p>As specified in section <strong>3.1 Overview</strong>, our scenario includes two TLS connections, one from the UAC to openSips and the second one from openSips to the UAS. Whereas in the first connection openSips will be the server side of the connection, in the second one it will be the client side so it is obvious that we need to define two different TLS domains.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>As specified in section <strong>3.1 Overview</strong>, our scenario includes two TLS connections, one from the UAC to OpenSIPS and the second one from OpenSIPS to the UAS. Whereas in the first connection OpenSIPS will be the server side of the connection, in the second one it will be the client side so it is obvious that we need to define two different TLS domains.
+</p>
+</div>
+        <div class='difftype'>Changed lines 161-162 from:</div>
+        <div class='diffdel'><p><strong>IMPORTANT: The ip address and port from the server domain must be the ones you set in the “listen” script line for openSips to match that domain. When openSips acts as client, the ip address and port must be the ones of the server with which initiates the TLS handshake.</strong>
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><strong>IMPORTANT: The ip address and port from the server domain must be the ones you set in the “listen” script line for OpenSIPS to match that domain. When OpenSIPS acts as client, the ip address and port must be the ones of the server (remote peer), with which initiates the TLS handshake.</strong>
+</p>
+</div>
+        <div class='difftype'>Changed lines 196-198 from:</div>
+        <div class='diffdel'><h2>S_client simple testing</h2>
+<p>Now that we’ve set up  openSips and started it, we need to start the debugging and see if everything works fine. A very simple and fast method to see that the handshake works fine is the <strong>s_client</strong> tool that openSSL provides. The command for the script in the previous chapter looks like this
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h2>Troubleshooting </h2>
+<h3>Overview</h3>
+<p>Now that we’ve set up  OpenSIPS and started it, we need to start the debugging and see if everything works fine. There will be presented two ways by debugging your TLS connection. First just verifying the TLS handshake with openSSL <strong>s_client</strong> and after a more complex type of debugging which is teaching Wireshark to decrypt messages using the private key of the connection.
+</p><h3>S_client simple testing</h3>
+<p>A very simple and fast method to see that the handshake works fine is the <strong>s_client</strong> tool that openSSL provides. The command for the script in the previous chapter looks like this
+</p>
+</div>
+        <div class='difftype'>Changed lines 211-214 from:</div>
+        <div class='diffdel'><h2>Wireshark tracing</h2>
+<p>Wireshark allows us to catch the TLS handshake and also to decrypt the traffic, but in order to do this we must do some configuration in Wireshark first. Go to <strong>Edit &#8594; Preferences &#8594; Protocols &#8594; SSL</strong>. Click the <strong>Edit</strong> button in <strong>RSA keys list</strong> section. Click the <strong>New</strong> button and add the ip address and port on which openSips is listening, the protocol (in our case <strong>sip</strong>) and in the <strong>Key File</strong> section search for the private key openSips uses for the connection ( for the example above <strong>$CERT_DIR/rootCA/private/cakey.pem</strong>). Save the configuration and then you can see both the TLS handshakes and the TCP messages that are being sent to and from openSips listening interface.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h3>Wireshark tracing</h3>
+<p>Wireshark allows us to catch the TLS handshake and also to decrypt the traffic, but in order to do this we must do some configuration in Wireshark first. Go to <strong>Edit &#8594; Preferences &#8594; Protocols &#8594; SSL</strong>. Click the <strong>Edit</strong> button in <strong>RSA keys list</strong> section. Click the <strong>New</strong> button and add the ip address and port on which OpenSIPS is listening, the protocol (in our case <strong>sip</strong>) and in the <strong>Key File</strong> section search for the private key OpenSIPS uses for the connection ( for the example above <strong>$CERT_DIR/rootCA/private/cakey.pem</strong>). Save the configuration and then you can see both the TLS handshakes and the TCP messages that are being sent to and from OpenSIPS listening interface.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=edit&restore=diff:1426530981:1426526817:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=edit&restore=diff:1426530981:1426526817:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=edit&restore=diff:1426530981:1426526817:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 06:26 PM 
+        by <span class='diffauthor' title='89.120.101.121'>ionutionita92</span> - </div>
+        <div class='difftype'>Changed line 86 from:</div>
+        <div class='diffdel'><p>s you probably discovered, in openSips 2.1 the tls became a module, so now, every parameter we want to pass to TLS will be a ‘modparam’ parameter. The scenario is very simple, sipp UAC is trying to send an invite to an UAS by using openSips as a proxy, and both connections UAC&lt;-&gt;<strong>openSips</strong> and <strong>openSips</strong>&lt;-&gt;UAS are using encrypted data transfer, using TLS.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>As you probably discovered, in openSips 2.1 the tls became a module, so now, every parameter we want to pass to TLS will be a ‘modparam’ parameter. The scenario is very simple, sipp UAC is trying to send an invite to an UAS by using openSips as a proxy, and both connections UAC&lt;-&gt;<strong>openSips</strong> and <strong>openSips</strong>&lt;-&gt;UAS are using encrypted data transfer, using TLS.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-TLS-2-1-action=edit&restore=diff-1426526817-1426526727-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=edit&restore=diff:1426526817:1426526727:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 06:25 PM 
+        by <span class='diffauthor' title='89.120.101.121'>ionutionita92</span> - </div>
+        <div class='difftype'>Changed line 161 from:</div>
+        <div class='diffdel'><p><strong>IMPORTANT: The ip address and port from the server domain must be the ones you set in the “listen” script line for openSips to match that domain. When openSips acts as client, the ip address and port must be the ones of the server with which it initiates the TLS handshake.</strong>
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><strong>IMPORTANT: The ip address and port from the server domain must be the ones you set in the “listen” script line for openSips to match that domain. When openSips acts as client, the ip address and port must be the ones of the server with which initiates the TLS handshake.</strong>
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=edit&restore=diff:1426526727:1426526672:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=edit&restore=diff:1426526727:1426526672:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=edit&restore=diff:1426526727:1426526672:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 06:24 PM 
+        by <span class='diffauthor' title='89.120.101.121'>ionutionita92</span> - </div>
+        <div class='difftype'>Changed line 145 from:</div>
+        <div class='diffdel'><pre> modparam(“proto_tls”, “server_doamain”, “sv_dom=&lt;your-ip-address&gt;:&lt;port&gt;”)           
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre> modparam(“proto_tls”, “server_domain”, “sv_dom=&lt;your-ip-address&gt;:&lt;port&gt;”)           
+</pre>
+</div>
+        <div class='difftype'>Changed line 151 from:</div>
+        <div class='diffdel'><pre> modparam(“proto_tls”, “client_doamain”, “cl_dom=&lt;UAS-ip-address&gt;:&lt;port&gt;”)            
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre> modparam(“proto_tls”, “client_domain”, “cl_dom=&lt;UAS-ip-address&gt;:&lt;port&gt;”)            
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-TLS-2-1-action=edit&restore=diff-1426526672-1426526073-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=edit&restore=diff:1426526672:1426526073:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 06:14 PM 
+        by <span class='diffauthor' title='89.120.101.121'>ionutionita92</span> - </div>
+        <div class='difftype'>Changed lines 15-16 from:</div>
+        <div class='diffdel'><p>During this chapter we will try to configure a new CA and a user certificate signed by the CA. If all you want to do is testing the TLS, you can always skip to section <strong>2.4 Using openSips built-in certificates</strong>. Also, you can always create your own CA or set of certificates using the scripts provided by openSSL or by other means.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>During this chapter we will try to configure a new CA and a user certificate signed by the CA. If all you want to do is testing the TLS, you can always skip to section <strong>2.4 Using openSips built-in certificates</strong>. Also, you can always create your own CA or set of certificates using the scripts provided by openSSL or by other means.
+</p>
+</div>
+        <div class='difftype'>Changed line 99 from:</div>
+        <div class='diffdel'><ol><li>netstat -tlp | grep &lt;port&gt;
+</li></ol>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre> # netstat -tlp | grep &lt;port&gt;
+</pre>
+</div>
+        <div class='difftype'>Changed lines 141-211 from:</div>
+        <div class='diffdel'><p>As specified in section 3.1 Overview, our scenario includes two TLS connections, one from the UAC to openSips and the second one from openSips to the UAS. Whereas in the first connection openSips will be the server side of the connection, in the second one it will be the client side so it is obvious that we need to define two different TLS domains.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>As specified in section <strong>3.1 Overview</strong>, our scenario includes two TLS connections, one from the UAC to openSips and the second one from openSips to the UAS. Whereas in the first connection openSips will be the server side of the connection, in the second one it will be the client side so it is obvious that we need to define two different TLS domains.
+</p>
+<div class='vspace'></div><div class='frame lfloat frame lfloat' style='color: black;' > 
+<pre> #first the  server domain
+ modparam(“proto_tls”, “server_doamain”, “sv_dom=&lt;your-ip-address&gt;:&lt;port&gt;”)           
+ modparam(“proto_tls”, “certificate”, “sv_dom:$CERT_DIR/rootCA/cacert.pem”)           
+ modparam(“proto_tls”, “private_key”, “sv_dom:$CERT_DIR/rootCA/private/cakey.pem”)    
+ modparam(“proto_tls”, “ca_list”, “sv_dom:$CERT_DIR/rootCA/cacert.pem”)                
+
+ #and the client domain                                                               
+ modparam(“proto_tls”, “client_doamain”, “cl_dom=&lt;UAS-ip-address&gt;:&lt;port&gt;”)            
+ modparam(“proto_tls”, “certificate”, “cl_dom:$CERT_DIR/user/user-cert.pem”)          
+ modparam(“proto_tls”, “private_key”, “cl_dom:$CERT_DIR/user/user-privkey.pem”)       
+ modparam(“proto_tls”, “ca_list”, “cl_dom:$CERT_DIR/user/user-calist.pem”)             
+</pre><div class='vspace'></div></div> 
+<p class='vspace'><br clear='all' />
+<br clear='all' />
+</p>
+<p class='vspace'><strong>IMPORTANT: The ip address and port from the server domain must be the ones you set in the “listen” script line for openSips to match that domain. When openSips acts as client, the ip address and port must be the ones of the server with which it initiates the TLS handshake.</strong>
+</p>
+<div class='vspace'></div><h3>Full script example</h3>
+<p>Now that we specified all we need to set in order to be able to use TLS both as a server and as a client we will specify here a full script (only the TLS part) in order to make things more clear. Basically it is all we explained in the previous sections of this chapter put together.
+</p>
+<div class='vspace'></div><div class='frame lfloat frame lfloat' style='color: black;' > 
+<pre> #define the listener
+ listen = tls:&lt;your-ip-address&gt;:&lt;port&gt;
+
+ #set module path
+ loadmodule “proto_tls.so”
+
+ #set global tls parameters
+ modparam(“proto_tls”, “verify_cert”, “0”)
+ modparam(“proto_tls”, “require_cert”, “0”)
+ modparam(“proto_tls”, “ciphers_list”, “NULL”)
+ modparam(“proto_tls”, “tls_method”, “TLSv1”)
+
+ #server domain
+ modparam(“proto_tls”,“server_doamain”,“sv_dom=&lt;your-ip-address&gt;:&lt;port&gt;”)
+ modparam(“proto_tls”, “certificate”,“sv_dom:$CERT_DIR/rootCA/cacert.pem”)
+ modparam(“proto_tls”,“private_key”,“sv_dom:$CERT_DIR/rootCA/private/cakey.pem”)
+ modparam(“proto_tls”, “ca_list”,“sv_dom:$CERT_DR/rootCA/cacert.pem”)
+
+ #client domain
+ modparam(“proto_tls”, “client_doamain”, “cl_dom=&lt;UAS-ip-address&gt;:&lt;port&gt;”)
+ modparam(“proto_tls”, “certificate”, “cl_dom:$CERT_DIR/user/user-cert.pem”)
+ modparam(“proto_tls”,“private_key”,“cl_dom:$CERT_DIR/user/user-privkey.pem”)
+ modparam(“proto_tls”, “ca_list”,“cl_dom:$CERT_DR/user/user-calist.pem”)
+</pre><div class='vspace'></div></div> 
+<p class='vspace'><br clear='all' />
+<br clear='all' />
+</p>
+<div class='vspace'></div><h2>S_client simple testing</h2>
+<p>Now that we’ve set up  openSips and started it, we need to start the debugging and see if everything works fine. A very simple and fast method to see that the handshake works fine is the <strong>s_client</strong> tool that openSSL provides. The command for the script in the previous chapter looks like this
+</p>
+<div class='vspace'></div><div class='frame lfloat frame lfloat' style='color: black;' > 
+<p>&gt; openssl s_client -showcerts -debug -connect &lt;your-ip-address&gt;:&lt;port&gt; -no_ssl2 -bugs
+</p></div> 
+<p class='vspace'><br clear='all' />
+<br clear='all' />
+</p>
+<p class='vspace'>The ip address and the port are the ones you have set earlier in the <strong>listen</strong> section of the script. If you want more advanced debugging, check the following section which tells you how to debug the tls connection using Wireshark.
+</p>
+<div class='vspace'></div><h2>Wireshark tracing</h2>
+<p>Wireshark allows us to catch the TLS handshake and also to decrypt the traffic, but in order to do this we must do some configuration in Wireshark first. Go to <strong>Edit &#8594; Preferences &#8594; Protocols &#8594; SSL</strong>. Click the <strong>Edit</strong> button in <strong>RSA keys list</strong> section. Click the <strong>New</strong> button and add the ip address and port on which openSips is listening, the protocol (in our case <strong>sip</strong>) and in the <strong>Key File</strong> section search for the private key openSips uses for the connection ( for the example above <strong>$CERT_DIR/rootCA/private/cakey.pem</strong>). Save the configuration and then you can see both the TLS handshakes and the TCP messages that are being sent to and from openSips listening interface.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-TLS-2-1-action=edit&restore=diff-1426526073-1426525260-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=edit&restore=diff:1426526073:1426525260:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 16, 2015, at 06:01 PM 
+        by <span class='diffauthor' title='89.120.101.121'>ionutionita92</span> - </div>
+        <div class='difftype'>Added lines 1-141:</div>
+        <div class='diffadd'><h5>Documentation -&gt; <a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Tutorials</a> -&gt; TLS</h5>
+<h1>TLS</h1>
+<p  style='text-align: right;'> <strong>written by Ionut-Razvan Ionita</strong>
+</p>
+<p class='vspace'>(:toc Table of Content:)
+</p>
+<div class='vspace'></div><h2>Introduction</h2>
+<p>Configuring TLS can sometimes be time consuming, most times because of badly generated or used certificates. What this tutorial is trying to do is providing a basic TLS configuration for openSips which we know for sure that will work and be the entry point for future, more complicated, TLS setups. At first we will be trying to do the most important thing of all: generating some certificates which we can use to later configure openSips. The next step will be writing a script for openSips which will use TLS. After starting openSips, what we must do is testing that openSips works fine listening for TLS connections from UACs and creating new connections with UACs and debugging the handshake.
+</p>
+<div class='vspace'></div><h2>Generating certificates</h2>
+<h3>Overview</h3>
+<p>During this chapter we will try to configure a new CA and a user certificate signed by the CA. If all you want to do is testing the TLS, you can always skip to section <strong>2.4 Using openSips built-in certificates</strong>. Also, you can always create your own CA or set of certificates using the scripts provided by openSSL or by other means.
+</p>
+<div class='vspace'></div><h3>Creating the CA</h3>
+<h4>Creating context</h4>
+<p>First thing we need to do is setup the context for our certificates to be created. Let’s say that you want to use $OPENSIPS_HOME/tls_cnf ($OPENSIPS_HOME represents the path to your openSips install).
+Create this folder (if it doesn’t exist) and inside create a folder named tls. Will explain later why we needed  to do this.
+</p><div class='frame lfloat frame lfloat' style='color: black;' > 
+<p>&gt; cd $OPENSIPS_HOME <br clear='all' />
+&gt; mkdir tls_cnf; cd tls_cnf; mkdir tls
+</p></div>
+<p class='vspace'><br clear='all' />
+<br clear='all' />
+</p>
+<div class='vspace'></div><h4>Setting up ca.conf file</h4>
+<p>Next we need to generate our certificating authority, but first we need a configuration file for this, because based on this configuration file, openSips will know the details of your request. In this configuration file you can set the paths where the CA will be generated,  validity, DN etc.  For users who did this before, it looks similar to “openssl.cnf” file. You can find an example in $OPENSIPS_HOME/etc/tls/ca.conf. In this tutorial we only want to make it work, so we will use that file by copying it to our <strong>tls_cnf/tls</strong> folder.
+</p><div class='frame lfloat frame lfloat' style='color: black;' > 
+<p>&gt; cp $OPENSIPS_HOME/etc/tls/ca.conf $OPENSIPS_HOME/tls_cnf/tls/ 
+</p></div>
+<p class='vspace'><br clear='all' />
+<br clear='all' />
+</p>
+<div class='vspace'></div><h4>Creating the CA</h4>
+<p>Now that we set up the context, we can create the CA. Go to your $OPENSIPS_HOME/scripts folder.
+</p><div class='frame lfloat frame lfloat' style='color: black;' > 
+<p>&gt; cd $OPENSIPS_HOME/scripts
+</p></div>
+<p class='vspace'><br clear='all' />
+<br clear='all' />
+Here you should be able to find the “opensipsctl” script. Use the following command:
+</p><div class='frame lfloat frame lfloat' style='color: black;' > 
+<p>&gt; ./opensipsctl tls rootCA $OPENSIPS_HOME/tls_cnf/tls 
+</p></div>
+<p class='vspace'><br clear='all' />
+<br clear='all' />
+The rootCA parameter specifies to the script that you want to create a new certificating authority (the parameter cannot be changed). The last parameter specifies the folder where we want this CA to be installed, so we will chose the folder we set up earlier. <br clear='all' /><br clear='all' />
+After giving the command you will be requested to introduce a passphrase. We will use this passphrase later when we will create the certificates. The server certificate will consist of the certificate found in the new <strong>rootCA</strong> folder created <strong>$OPENSIPS_HOME/tls_cnf/tls/rootCA/cacert.pem</strong>, and the private key will be in <strong>$OPENSIPS_HOME/tls_cnf/tls/rootCA/private/cakey.pem</strong>.
+</p>
+<div class='vspace'></div><h3>Creating server and client certificates</h3>
+<p>To create a user certificate you will need to create <strong>request.conf</strong> and <strong>&lt;user_name&gt;.conf</strong> file in order to use <strong>opensipsctl</strong>. In this tutorial we will simply use the files provided by opensips in <strong>$OPENSIPS_HOME/etc/tls</strong> called <strong>request.conf</strong> and <strong>user.conf</strong>.
+</p>
+<div class='vspace'></div><div class='frame lfloat frame lfloat' style='color: black;' > 
+<p>&gt; cp $OPENSIPS_HOME/etc/tls/request.conf $OPENSIPS_HOME/tls_cnf/tls/  <br clear='all' />
+&gt; cp $OPENSIPS_HOME/etc/tls/user.conf $OPENSIPS_HOME/tls_cnf/tls/     <br clear='all' />
+</p></div> 
+<p class='vspace'><br clear='all' />
+<br clear='all' />
+</p>
+<p class='vspace'>Next we have to go again to <strong>$OPENSIPS_HOME/scripts</strong> and use <strong>opensipsctl</strong>.
+</p>
+<div class='vspace'></div><div class='frame lfloat frame lfloat' style='color: black;' > 
+<p>&gt; cd $OPENSIPS_HOME/scripts <br clear='all' />
+./opensipsctl tls userCERT user $OPENSIPS_HOME/tls_cnf/tls
+</p></div> 
+<p class='vspace'><br clear='all' />
+<br clear='all' />
+</p>
+<p class='vspace'>The third parameter’s meaning is the name of the user which must be the same as the <strong>&lt;user_name&gt;.conf</strong> file. So, for example, if we wanted the user <strong>alice</strong>, the file must have had the name <strong>alice.conf</strong> . The fourth parameter represents the path where you have the configuration files. Now, that we have created the certificates we can move to the following section, a script example to use TLS with openSips.
+</p>
+<div class='vspace'></div><h3>Using <strong>openSips</strong> built-in certificates</h3>
+<p>If all you want to do is testing, you can always use the certificates located in <strong>$OPENSIPS_HOME/etc/tls</strong>, but we strongly recommend to you not to use this certificates in real case scenarios, because, as you can imagine, everyone has access to them.
+<br clear='all' />
+<strong>IMPORTANT: in the following sections we will refer to the folder where the certificates are located as $CERT_DIR, so none of the paths presented above are valid anymore, but we will keep the notations rootCA as the folder where the CA is installed and user where the user certificates are.</strong>
+</p>
+<div class='vspace'></div><h2>Script example</h2>
+<h3>Overview</h3>
+<p>s you probably discovered, in openSips 2.1 the tls became a module, so now, every parameter we want to pass to TLS will be a ‘modparam’ parameter. The scenario is very simple, sipp UAC is trying to send an invite to an UAS by using openSips as a proxy, and both connections UAC&lt;-&gt;<strong>openSips</strong> and <strong>openSips</strong>&lt;-&gt;UAS are using encrypted data transfer, using TLS.
+</p>
+<div class='vspace'></div><h3>The listener</h3>
+<p>In order to accept TLS connections, openSips must have a TLS listener. In order to do this we have to include the following line in our script:
+</p><div class='frame lfloat frame lfloat' style='color: black;' > 
+<p>listen=tls:&lt;your-ip-address&gt;:&lt;port&gt;
+</p></div> 
+<p class='vspace'><br clear='all' />
+<br clear='all' />
+</p>
+<p class='vspace'>When openSips will start, you should be able to see the listener by entering the following command in your command line
+</p><div class='frame lfloat frame lfloat' style='color: black;' > 
+<ol><li>netstat -tlp | grep &lt;port&gt;
+</li></ol></div> 
+<p class='vspace'><br clear='all' />
+<br clear='all' />
+</p>
+<p class='vspace'>where port is the port you gave to listen line in your script.
+</p>
+<div class='vspace'></div><h3>Including TLS module and setting the parameters</h3>
+<p>Since TLS became a module, now we need to insert the following line in the modules section
+</p>
+<div class='vspace'></div><div class='frame lfloat frame lfloat' style='color: black;' > 
+<p>loadmodule “proto_tls.so”
+</p></div> 
+<p class='vspace'><br clear='all' />
+<br clear='all' />
+</p>
+<p class='vspace'>Since this is a test scenario, we only want to check that the TLS handshake works fine, so we won’t 
+set parameters to enable certificate checking or ciphers. As <strong>openSips</strong> enables these checkings by default because a real TLS configuration must check the certificates, we will need to disable them.
+</p>
+<div class='vspace'></div><div class='frame lfloat frame lfloat' style='color: black;' > 
+<p>modparam(“proto_tls”, “verify_cert”, “0”) <br clear='all' />
+modparam(“proto_tls”, “require_cert”, “0”) <br clear='all' />
+modparam(“proto_tls”, “ciphers_list”, “NULL”) <br clear='all' />
+</p></div> 
+<p class='vspace'><br clear='all' />
+<br clear='all' />
+</p>
+<p class='vspace'>We will need to specify the TLS method which will specify what type of protocol we will use. In this tutorial we will use “TLSv1”, but you can always use another one, see the full list in the <strong>module’s documentation section</strong>. 
+</p>
+<div class='vspace'></div><div class='frame lfloat frame lfloat' style='color: black;' > 
+<p>modparam(“proto_tls”, “tls_method”, “TLSv1”)
+</p></div> 
+<p class='vspace'><br clear='all' />
+<br clear='all' />
+</p>
+<div class='vspace'></div><h3>Setting up TLS domains</h3>
+<p>As specified in section 3.1 Overview, our scenario includes two TLS connections, one from the UAC to openSips and the second one from openSips to the UAS. Whereas in the first connection openSips will be the server side of the connection, in the second one it will be the client side so it is obvious that we need to define two different TLS domains. 
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-TLS-2-1-action=edit&restore=diff-1426525260-1426525260-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=edit&restore=diff:1426525260:1426525260:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Tutorials-TLS-2-1-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=edit">Edit</a> |
+      <a rel="nofollow" href="Tutorials-TLS-2-1-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=diff">History</a> |
+      <a rel="nofollow" href="Tutorials-TLS-2-1-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-TLS-2-1?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on July 29, 2015, at 03:10 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

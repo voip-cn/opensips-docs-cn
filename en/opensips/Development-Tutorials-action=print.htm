@@ -1,0 +1,117 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+  <title>openSIPS | Documentation / Development-Tutorials</title>
+  <link rel='stylesheet' href="print.css" tppabs="http://www.opensips.org/pub/skins/print/print.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+</head>
+<body>
+  <div id='printhead'>
+    <h3>From openSIPS</h3>
+    <h1 class='pagename'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation%27" tppabs="http://www.opensips.org/Documentation">Documentation: Development-Tutorials</a></h1>
+  </div>
+<!--PageText-->
+<div id='wikitext'>
+<h5>Documentation -&gt; Development Tutorial</h5>
+<hr />
+<p class='vspace'>The OpenSIPS Devel Documentation section is a compilation of tutorials, documents and other materials about how to do code development for OpenSIPS - this if for people who want to develop (C development) new modules or functionalities for OpenSIPS 1.x. 
+</p>
+<p class='vspace'>The tutorial aims to present and familiarize developers with the internals of OpenSIPS both core and modules. During the tutorial you will get a real example of how to build a new module (with DB, MI, variables, events, etc) from A to Z.
+</p>
+<p class='vspace'>This is an hands-on tutorial, so the only materials presented are to be the schematics (whiteboard drawings) and the C code of OpenSIPS - there is a highly technical course, so do not expect slideshows ;) . 
+</p>
+<div class='vspace'></div><hr />
+<div class='vspace'></div><h3>OpenSIPS Devel Tutorial</h3>
+<ol><li><a class='wikilink' href="Tutorials-DevelSession01-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-DevelSession01?action=print"><strong>Devel Course Session 1</strong></a>
+</li><li><a class='wikilink' href="Tutorials-DevelSession02-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-DevelSession02?action=print"><strong>Devel Course Session 2</strong></a>
+</li><li><a class='wikilink' href="Tutorials-DevelSession03-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-DevelSession03?action=print"><strong>Devel Course Session 3</strong></a>
+</li><li><a class='wikilink' href="Tutorials-DevelSession04-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-DevelSession04?action=print"><strong>Devel Course Session 4</strong></a>
+</li><li><a class='wikilink' href="Tutorials-DevelSession05-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-DevelSession05?action=print"><strong>Devel Course Session 5</strong></a>
+</li><li><a class='wikilink' href="Tutorials-DevelSession06-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-DevelSession06?action=print"><strong>Devel Course Session 6</strong></a>
+</li><li><a class='wikilink' href="Tutorials-DevelSession07-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-DevelSession07?action=print"><strong>Devel Course Session 7</strong></a>
+</li></ol><hr />
+<div class='vspace'></div><h3>OpenSIPS Devel Course Playlist (YouTube)</h3>
+<ol><li><a class='urllink' href="javascript:if(confirm(%27http://www.youtube.com/watch?v=xR4RylCNviI&list=PLLCYLy5T7bX9XdfB0XJTVyo-HVGY0EFbY  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.youtube.com/watch?v=xR4RylCNviI&list=PLLCYLy5T7bX9XdfB0XJTVyo-HVGY0EFbY%27" tppabs="http://www.youtube.com/watch?v=xR4RylCNviI&list=PLLCYLy5T7bX9XdfB0XJTVyo-HVGY0EFbY" rel='nofollow'><strong>OpenSIPS Devel Course Playlist</strong></a>
+</li></ol><div class='vspace'></div><hr />
+</div>
+
+  <div id='printfoot'>
+    <div class='from'>Retrieved from http://www.opensips.org/Documentation/Development-Tutorials</div>
+    <div class='lastmod'>Page last modified on December 28, 2013, at 12:27 AM</div></div>
+<!--HTMLFooter-->
+</body>
+</html>

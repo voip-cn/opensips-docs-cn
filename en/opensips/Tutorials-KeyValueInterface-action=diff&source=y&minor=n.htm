@@ -1,0 +1,239 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Tutorials-KeyValueInterface | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Tutorials-KeyValueInterface' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Tutorials-KeyValueInterface History</h2>
+  <p><a href="Tutorials-KeyValueInterface-action=diff&source=y&minor=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-KeyValueInterface?action=diff&source=y&minor=y">Show minor edits</a> - <a href="Tutorials-KeyValueInterface-action=diff&source=n&minor=n.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-KeyValueInterface?action=diff&source=n&minor=n">Show changes to output</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>May 16, 2013, at 06:04 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>!![[~]]Documentation -&gt; [[Documentation.Tutorials | Tutorials ]] -&gt; Key-Value Interface</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>!!!!!Documentation -&gt; [[Documentation.Tutorials | Tutorials ]] -&gt; Key-Value Interface</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-KeyValueInterface-action=edit&restore=diff-1368720267-1368720242-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-KeyValueInterface?action=edit&restore=diff:1368720267:1368720242:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 16, 2013, at 06:04 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed lines 1-2 from:</div>
+        <div class='diffdel'><div class='diffmarkup'><br />!![[Documentation.Index | Documentation]] -&gt; [[Documentation.Tutorials | Tutorials ]] -&gt; [[Documentation.Tutorials-KeyValueInterface |  Key-Value Interface]]</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>!![[~]]Documentation -&gt; [[Documentation.Tutorials | Tutorials ]] -&gt; Key-Value Interface</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-KeyValueInterface-action=edit&restore=diff-1368720242-1368107366-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-KeyValueInterface?action=edit&restore=diff:1368720242:1368107366:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 03:49 PM 
+        by <span class='diffauthor' title='79.118.227.150'>79.118.227.150</span> - </div>
+        <div class='difftype'>Changed lines 1-2 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>!!Resources -&gt; [[Resources.Documentation | Documentation]] -&gt; [[Resources.DocsTutorials | Tutorials]] -&gt; Key-Value Interface<br /></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'><br />!![[Documentation.Index | Documentation]] -&gt; [[Documentation.Tutorials | Tutorials ]] -&gt; [[Documentation.Tutorials-KeyValueInterface |  Key-Value Interface]]<br />----<br /></div></div>
+        <div class='difftype'>Changed lines 33-37 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>* store - [[http://www.opensips.org/index.php?n=Resources.DocsCoreFcn#toc101 | cache_store()]]<br />* fetch - [[http://www.opensips.org/index.php?n=Resources.DocsCoreFcn#toc102 | cache_fetch()]]<br />* remove - [[http://www.opensips.org/index.php?n=Resources.DocsCoreFcn#toc103 | cache_remove()]]<br />* add - [[http://www.opensips.org/index.php?n=Resources.DocsCoreFcn#toc104| cache_add()]]<br />* sub - [[http://www.opensips.org/index.php?n=Resources.DocsCoreFcn#toc105 | cache_sub()]]</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>* store - [[Documentation.Script-CoreFunctions#toc101 | cache_store()]]<br />* fetch - [[Documentation.Script-CoreFunctions#toc102 | cache_fetch()]]<br />* remove - [[Documentation.Script-CoreFunctions#toc103 | cache_remove()]]<br />* add - [[Documentation.Script-CoreFunctions#toc104| cache_add()]]<br />* sub - [[Documentation.Script-CoreFunctions#toc105 | cache_sub()]]</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-KeyValueInterface-action=edit&restore=diff-1368107366-1366822669-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-KeyValueInterface?action=edit&restore=diff:1368107366:1366822669:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 24, 2013, at 06:57 PM 
+        by <span class='diffauthor' title='213.233.101.41'>213.233.101.41</span> - </div>
+        <div class='difftype'>Added lines 1-199:</div>
+        <div class='diffadd'><div class='diffmarkup'>!!Resources -&gt; [[Resources.Documentation | Documentation]] -&gt; [[Resources.DocsTutorials | Tutorials]] -&gt; Key-Value Interface<br /><br />This page has been visited {$PageCount} times.<br />(:toc-float Table of Content:)<br />----<br /><br />!!! Key-Value Interface<br /><br />The Key-Value interface added into OpenSIPS provides an easy way for the script writer and the module writer to transparently access different Key-Value type back-ends, very similar to the way the DB interface allows easy connection to different types of SQL databases.<br /><br />Modules that offer actual back-end connection will use the Key-Value interface in order to provide the actual functionality to the end-user. At the current stage in time ( Official 1.7 release is out, trunk holds the future 1.8 ), there are four modules that use the interface :<br /><br />* cachedb_local - Uses OpenSIPS shared memory as storage <br />** Advantage - very fast, no external communication needed<br />** Disadvantage - low persistency, an OpenSIPS restart will cause the cache to get flushed<br />* cachedb_memcached - Uses Memcached servers as back-end<br />** Advantage - memory costs are no longer on the server. Better persistency, OpenSIPS restart will not affect memcached state<br />** Disadvantage - still behaves very much like a cache, so a Memcached server restart will cause all the information to be lost<br />* cachedb_redis - Uses Redis Cluster servers as back-end<br />** Advantage - Behaves like a DB, so a restart both on the OpenSIPS and the Redis server will not cause any data loss. Even more, because of the distributed character of the Redis Cluster, it can allow for easy and fast key-value sharing between multiple SIP instances.<br />** Disadvantage - The cost of full persistency and distribution makes it slower than the above back-ends.<br />* cachedb_cassandra - Uses Cassandra Cluster servers as back-end<br />** Advantage - Behaves like a DB, so a restart both on the OpenSIPS and the Cassandra server will not cause any data loss. Even more, because of the distributed character of the Cassandra Cluster, it can allow for easy and fast key-value sharing between multiple SIP instances.<br />** Disadvantage - The cost of full persistency and distribution makes it slower than the above back-ends.<br />----<br /><br />!!! Core API<br /><br />The OpenSIPS core offers an API for operating with any memory caching system from the script. This API is composed out of the following functions: <br /><br />* store - [[http://www.opensips.org/index.php?n=Resources.DocsCoreFcn#toc101 | cache_store()]]<br />* fetch - [[http://www.opensips.org/index.php?n=Resources.DocsCoreFcn#toc102 | cache_fetch()]]<br />* remove - [[http://www.opensips.org/index.php?n=Resources.DocsCoreFcn#toc103 | cache_remove()]]<br />* add - [[http://www.opensips.org/index.php?n=Resources.DocsCoreFcn#toc104| cache_add()]]<br />* sub - [[http://www.opensips.org/index.php?n=Resources.DocsCoreFcn#toc105 | cache_sub()]]<br /><br />Each of the above functions in the API receive as first parameter the ENGINE_ID of the targeted cache system, a plain-text string.<br />The three modules previously listed that offer the actual implementation behave in the following way, in regards to providing the ENGINE_ID :<br />* cachedb_local : the ENGINE_ID is always &quot;local&quot;<br />* cachedb_memcached : The Memcached module exports a parameter to script, [[http://www.opensips.org/html/docs/modules/devel/cachedb_memcached.html#id249176 | cachedb_url]] . The prefix part of the URL provided ( the part before :// ) will be the ENGINE_ID identifier that will be provided to the functions in the API<br />* cachedb_redis : Similar to the memcached module, the Redis module exports a parameter to script, [[http://www.opensips.org/html/docs/modules/devel/cachedb_redis.html#id249095 | cachedb_url]] . The prefix part of the URL provided ( the part before :// ) will be the ENGINE_ID identifier that will be provided to the functions in the API<br /><br />----<br /><br />!!! Use Cases and Examples<br /><br />!!!! Password caching for DB authentication<br /><br />!!!!! The idea - how to<br /><br />The idea is, after performing a DB authentication (authentication by fetching the password from DB) to store the password in memcache; the password is stored with a certain lifetime to ensure that from time to time the password is read from DB again.<br /><br />When a new authentication is needed, first we check if the password is available in memcache (previously stored and not yet expired); if so, we use the value from there to perform authentication without a DB hit.<br /><br />As we have to store in the same time the passwords of more than one users, we need to use different names for the attributes -&gt; the attribute name will contain the user name, something like &quot;passwd_username&quot;. <br /><br />!!!!! The logic - diagram <br /><br /># REGISTER request received<br /># is password stored in &quot;passwd_$tu&quot; attribute?<br />## NO -&gt; perform DB authentication <br />## store the used password into &quot;passwd_$tu&quot; with s lifetime (1200 seconds - 10 minutes)<br />## DONE<br />#YES -&gt; use the value from the memcache do to authentication from script variables.<br /># DONE<br /><br />!!!!! Script example<br /><br />Current format of authentication script for REGISTER is:<br />[@<br />	if (!www_authorize(&quot;&quot;, &quot;subscriber&quot;)) {<br />		www_challenge(&quot;&quot;, &quot;0&quot;);<br />		exit;<br />	};<br />@]<br /><br />By adding memcache support, the script looks like:<br />[@<br />....<br />loadmodule &quot;modules/db_mysql/db_mysql.so&quot;<br />loadmodule &quot;modules/auth/auth.so&quot;<br />loadmodule &quot;modules/auth_db/auth_db.so&quot;<br />loadmodule &quot;modules/localcache/localcache.so&quot;<br />....<br />modparam(&quot;auth&quot;,&quot;username_spec&quot;,&quot;$avp(i:54)&quot;)<br />modparam(&quot;auth&quot;,&quot;password_spec&quot;,&quot;$avp(i:55)&quot;)<br />modparam(&quot;auth&quot;,&quot;calculate_ha1&quot;,1)<br /><br />modparam(&quot;auth_db&quot;, &quot;calculate_ha1&quot;, yes)<br />modparam(&quot;auth_db&quot;, &quot;password_column&quot;, &quot;password&quot;)<br />modparam(&quot;auth_db&quot;, &quot;db_url&quot;,&quot;mysql://opensips:opensipsrw@localhost/opensips_1_2&quot;)<br />modparam(&quot;auth_db&quot;, &quot;load_credentials&quot;, &quot;$avp(i:55)=password&quot;)<br />....<br /><br />....<br />route[x]{<br />	.....<br />	# do we have the password cached ?<br />	if(cache_fetch(&quot;local&quot;,&quot;passwd_$tu&quot;,$avp(i:55))) {<br />		$avp(i:54) = $tU;<br />		xlog(&quot;SCRIPT: stored password is $avp(i:55)\n&quot;);<br />		# perform auth from variables<br />		# $avp(i:54) contains the username<br />		# $avp(i:55) contains the password<br />		if (!pv_www_authorize(&quot;&quot;)) {<br />			# authentication failed -&gt; do challenge			<br />			www_challenge(&quot;&quot;, &quot;0&quot;);<br />			exit;<br />		};<br />	} else {<br />		# perform DB authentication -&gt;<br />		# password will be loaded from DB automatically<br />		if (!www_authorize(&quot;&quot;, &quot;subscriber&quot;)) {<br />			# authentication failed -&gt; do challenge		<br />			www_challenge(&quot;&quot;, &quot;0&quot;);<br />			exit;<br />		};<br />		# after DB authentication, the password is available<br />		# in $avp(i:55) because of the &quot;load_credentials&quot;<br />		# module parameter.<br />		xlog(&quot;SCRIPT: storing password &lt;$avp(i:55)&gt;\n&quot;);<br />		# use a 20 minutes lifetime for the password;<br />		# after that, it will erased from cache and we do<br />		# db authentication again (refresh the passwd from DB)<br />		cache_store(&quot;local&quot;,&quot;passwd_$tu&quot;,&quot;$avp(i:55)&quot;,1200);<br />	}<br /><br />	....<br />}<br />@]<br /><br />References:<br /># auth module - see [[http://www.opensips.org/html/docs/modules/1.5.x/auth.html| functions and parameters]]<br /># auth_db module - see [[http://www.opensips.org/html/docs/modules/1.5.x/auth_db.html| functions and parameters]]<br /><br />!!!!! Performance improvement<br /><br />Assuming a 30 minute registration period and placing a call each 20 minutes, without any caching, there will be 5 authentication queries to DB per hour per user.<br /><br />This means, for 1000 users, per day : 1000 * 3 * 24 = 72000 queries per day for auth.<br /><br />If you set a 2 hours lifetime for cached data, you have one query per user at each 2 hours.<br /><br />So, for the same 1000 users, per day, you have : 1000 * 0.5 * 24 = 12000 queries per day for auth<br /><br />So, this gives you a reduction to with 83% (to 17%) of the numbers of queries! <br /><br />!!!! Simple but distributed billing<br /><br />!!!!! The idea - how to<br /><br />One can have multiple distributed OpenSIPS servers responsible for the same domain, for redundancy and load-balancing purposes, which can easily be accomplished via a simple mechanism like DNS Round-Robin.<br />Because all of the OpenSIPS servers will try to access the user's credit information, the problem occurs when you try to bill the calls done via those distributed OpenSIPS servers, but also when it comes to rejecting certain calls because the user does not have enough credit available.<br /><br />The solution would be to use a Redis DB clusters. The key will hold the actual username and the value will be the available credit. Because of the atomic nature of cache_add and cache_sub operations, all the OpenSIPS servers can reliably update the credit once the call ends. An OpenSIPS server can also consistently get the credit available for a certain user, in order to decide if it allows initial INVITEs to pass through or not. Even more, because of the persistency of Redis Server, all the credit information will not be lost in case of failures.<br /><br />!!!!! Prerequisites <br /><br />Each machine where OpenSIPS runs should have a Redis Server instance running. All the Redis Servers should be linked into a Redis cluster. A good tutorial on how create a simple Redis Cluster is located [[http://antirez.com/post/2-4-and-other-news.html| here]].<br /><br />!!!!! Script example<br /><br />Rejecting calls due to low credit and updating credit cost after each call end can be done in the following way :<br /><br />[@<br /><br />modparam(&quot;cachedb_redis&quot;,&quot;cachedb_url&quot;,&quot;redis://192.168.2.1:6379&quot;) <br />....<br /><br />route {<br />...<br />   # sequential requests<br />   if (has_totag()) {<br />      if (is_method(&quot;BYE&quot;)) {<br />          # substract from credit call_duration*cost cents<br />          $avp(cost) = $DLG_lifetime * $(dlg_val(cost){s.int});<br />          cache_sub(&quot;redis&quot;,&quot;credit_$fU&quot;,$avp(cost),0);<br />      }<br />      ...<br />   } else {<br />      # initial INVITE<br />      if (is_method(&quot;INVITE&quot;)) {<br />         # get user credit<br />         cache_fetch(&quot;redis&quot;,&quot;credit_$fU&quot;,$avp(user_credit));<br />         if ($avp(user_credit) &lt;= 1) {<br />            xlog(&quot;User $fU does not have enough credit\n&quot;);<br />            sl_send_reply(&quot;403&quot;,&quot;Forbidden - Not enough credit&quot;);<br />            exit;<br />         }<br /><br />         create_dialog();<br />         # get call cost<br />         $dlg_val(cost)= &quot;3&quot;; <br />      }<br />      ...<br />   }<br />...<br />}<br />@]</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-KeyValueInterface-action=edit&restore=diff-1366822669-1366822669-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-KeyValueInterface?action=edit&restore=diff:1366822669:1366822669:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Tutorials-KeyValueInterface-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-KeyValueInterface?action=edit">Edit</a> |
+      <a rel="nofollow" href="Tutorials-KeyValueInterface-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-KeyValueInterface?action=diff">History</a> |
+      <a rel="nofollow" href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-KeyValueInterface?action=print  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-KeyValueInterface?action=print%27" tppabs="http://www.opensips.org/Documentation/Tutorials-KeyValueInterface?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on May 16, 2013, at 06:04 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

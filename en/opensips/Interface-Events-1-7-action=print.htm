@@ -1,0 +1,145 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+  <title>openSIPS | Documentation / Events Interface - ver 1.7 </title>
+  <link rel='stylesheet' href="print.css" tppabs="http://www.opensips.org/pub/skins/print/print.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+</head>
+<body>
+  <div id='printhead'>
+    <h3>From openSIPS</h3>
+    <h1 class='pagename'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation%27" tppabs="http://www.opensips.org/Documentation">Documentation: Events Interface - ver 1.7 </a></h1>
+  </div>
+<!--PageText-->
+<div id='wikitext'>
+<h5>Documentation -&gt; <a class='wikilink' href="Manuals-action=print.htm" tppabs="http://www.opensips.org/Documentation/Manuals?action=print">Manuals</a> -&gt; <a class='wikilink' href="Manual-1-7-action=print.htm" tppabs="http://www.opensips.org/Documentation/Manual-1-7?action=print">Manual 1.7</a> -&gt; Events Interface</h5>
+<hr />
+<p><span style='font-size:83%'> Pages for other versions: <a class='wikilink' href="Interface-Events-2-2-action=print.htm" tppabs="http://www.opensips.org/Documentation/Interface-Events-2-2?action=print">devel</a> <a class='wikilink' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Interface-Events-2-1?action=print  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Interface-Events-2-1?action=print%27" tppabs="http://www.opensips.org/Documentation/Interface-Events-2-1?action=print">2.1</a> <a class='wikilink' href="Interface-Events-1-11-action=print.htm" tppabs="http://www.opensips.org/Documentation/Interface-Events-1-11?action=print">1.11</a>  Older versions: <a class='wikilink' href="Interface-Events-1-10-action=print.htm" tppabs="http://www.opensips.org/Documentation/Interface-Events-1-10?action=print">1.10</a> <a class='wikilink' href="Interface-Events-1-9-action=print.htm" tppabs="http://www.opensips.org/Documentation/Interface-Events-1-9?action=print">1.9</a> <a class='wikilink' href="Interface-Events-1-8-action=print.htm" tppabs="http://www.opensips.org/Documentation/Interface-Events-1-8?action=print">1.8</a> 1.7 </span>
+</p>
+<p class='vspace'><br />
+</p><table width='100%'><tr ><td  align='center'><span  style='color: #185662;'><span style='font-size:120%'><strong>Events Interface v1.7</strong></span></span></td></tr>
+</table>
+<div class='vspace'></div><table width='100%'><tr ><td  align='left'><a class='wikilink' href="Interface-CoreMI-1-7-action=print.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreMI-1-7?action=print">Prev</a></td><td  align='right'><a class='wikilink' href="Interface-CoreEvents-1-7-action=print.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreEvents-1-7?action=print">Next</a></td></tr>
+</table><hr />
+<div class='vspace'></div><hr />
+<p class='vspace'>The <strong>Events Interface</strong> is an OpenSIPS interface that provides different ways to notify external applications about certain events triggered inside OpenSIPS.
+</p>
+<div class='vspace'></div><h4>Overview</h4>
+<p>In order to notify an external application about OpenSIPS internal events, the <strong>Event Interface</strong> provides the following functions:
+</p><ol><li>manages exported events
+</li><li>manages subscriptions from different applications
+</li><li>exports generic functions to raise an event (regardless the transport protocol used)
+</li><li>sends the event packed in a datagram
+</li></ol><div class='vspace'></div><hr />
+<div class='vspace'></div><h4>Events</h4>
+<p>There are several types of events that can be exported by OpenSIPS:
+</p><ul><li><strong>Core events</strong> - internal events that trigger changes of OpenSIPS core/global behavior. A full list of exported core events can be found <a class='wikilink' href="Interface-CoreEvents-1-7-action=print.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreEvents-1-7?action=print">here</a>.
+</li><li><strong>Modules events</strong> - events triggered by each module, when loaded. Each module can export zero, one or more events.
+</li><li><strong>Custom events</strong> - triggered from script using the <a class='wikilink' href="Script-CoreFunctions-1-7-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreFunctions-1-7?action=print">raise_event()</a> command.
+</li></ul><div class='vspace'></div><hr />
+<div class='vspace'></div><h4>Transport Protocols</h4>
+<p>External applications can be notified about the events triggered using various transport protocols. While the interface itself is provided by OpenSIPS core, each transport protocol is implemented by a separate OpenSIPS module. Currently, in this version there is only one transport protocol available (but many others pending):
+</p>
+<div class='vspace'></div><ul><li><a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/modules/1.7.x/event_datagram  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/modules/1.7.x/event_datagram%27" tppabs="http://www.opensips.org/html/docs/modules/1.7.x/event_datagram" rel='nofollow'>event_datagram</a> - sends Datagrams over UDP or UNIX sockets
+</li></ul><p class='vspace'>An external application can subscribe to any of the exported module and can be notified using any of the loaded transport modules/protocols.
+</p>
+<div class='vspace'></div><hr />
+<div class='vspace'></div><h4>Events Subscription</h4>
+<p>Currently, an external application can only subscribe to an event using the <a class='wikilink' href="Interface-CoreMI-1-7-action=print.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreMI-1-7?action=print">event_subscribe</a> MI command.
+</p>
+<div class='vspace'></div><hr />
+<div class='vspace'></div><h4>Examples</h4>
+<p>In order to configure a RabbbitMQ server to be notified when a custom event is triggered, first you have to subscribe it to the event through MI, by sending a <a class='wikilink' href="Interface-CoreMI-1-7-action=print.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreMI-1-7?action=print">event_subscribe</a> command.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+    # opensipsctl fifo event_subscribe E_SCRIPT_CUSTOM_EVENT udp:127.0.0.1:8888
+</pre>
+<p class='vspace'>Then, in order to trigger the event from the script, call the <a class='wikilink' href="Script-CoreFunctions-1-7-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreFunctions-1-7?action=print">raise_event()</a> command when needed:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+   ....
+   raise_event("E_SCRIPT_CUSTOM_EVENT");     # raises an event without any parameters
+   ...
+</pre>
+</div>
+
+  <div id='printfoot'>
+    <div class='from'>Retrieved from http://www.opensips.org/Documentation/Interface-Events-1-7</div>
+    <div class='lastmod'>Page last modified on August 05, 2013, at 03:22 PM</div></div>
+<!--HTMLFooter-->
+</body>
+</html>

@@ -1,0 +1,450 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+  <title>openSIPS | Documentation / Script Transformations - ver 1.6 </title>
+  <link rel='stylesheet' href="print.css" tppabs="http://www.opensips.org/pub/skins/print/print.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+</head>
+<body>
+  <div id='printhead'>
+    <h3>From openSIPS</h3>
+    <h1 class='pagename'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation%27" tppabs="http://www.opensips.org/Documentation">Documentation: Script Transformations - ver 1.6 </a></h1>
+  </div>
+<!--PageText-->
+<div id='wikitext'>
+<h5>Documentation -&gt; <a class='wikilink' href="Manuals-action=print.htm" tppabs="http://www.opensips.org/Documentation/Manuals?action=print">Manuals</a> -&gt; <a class='wikilink' href="Manual-1-6-action=print.htm" tppabs="http://www.opensips.org/Documentation/Manual-1-6?action=print">Manual 1.6</a> -&gt; Script Transformations</h5>
+<hr />
+<p><span style='font-size:83%'> Pages for other versions: <a class='wikilink' href="Script-Tran-2-2-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-2-2?action=print">devel</a> <a class='wikilink' href="Script-Tran-2-1-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-2-1?action=print">2.1</a> <a class='wikilink' href="Script-Tran-1-11-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-11?action=print">1.11</a>  Older versions: <a class='wikilink' href="Script-Tran-1-10-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-10?action=print">1.10</a> <a class='wikilink' href="Script-Tran-1-9-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-9?action=print">1.9</a> <a class='wikilink' href="Script-Tran-1-8-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-8?action=print">1.8</a> <a class='wikilink' href="Script-Tran-1-7-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-7?action=print">1.7</a> 1.6 <a class='wikilink' href="Script-Tran-1-5-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-5?action=print">1.5</a> <a class='wikilink' href="Script-Tran-1-4-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-4?action=print">1.4</a> </span>
+</p>
+<p class='vspace'><br />
+</p><table width='100%'><tr ><td  align='center'><span  style='color: #185662;'><span style='font-size:120%'><strong>Script Transformations v1.6</strong></span></span></td></tr>
+</table>
+<div class='vspace'></div><table width='100%'><tr ><td  align='left'><a class='wikilink' href="Script-Flags-1-6-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-6?action=print">Prev</a></td><td  align='right'><a class='wikilink' href="Modules-1-6-action=print.htm" tppabs="http://www.opensips.org/Documentation/Modules-1-6?action=print">Next</a></td></tr>
+</table><hr />
+<div class='vspace'></div><div class='tocfloat'><p><a name='toc' id='toc'></a><b>Table of Content</b> (<a id="tocidtog" href="javascript:toggle('tocid');">hide</a>)</p><ol class='toc' id='tocid'><li>1.&nbsp;<a href='#toc1'>String Transformations</a><ol class='toc'><li>1.1&nbsp;<a href='#toc2'>{s.len}</a></li><li>1.2&nbsp;<a href='#toc3'>{s.int}</a></li><li>1.3&nbsp;<a href='#toc4'>{s.md5}</a></li><li>1.4&nbsp;<a href='#toc5'>{s.crc}</a></li><li>1.5&nbsp;<a href='#toc6'>{s.substr,offset,length}</a></li><li>1.6&nbsp;<a href='#toc7'>{s.select,index,separator}</a></li><li>1.7&nbsp;<a href='#toc8'>{s.encode.hexa}</a></li><li>1.8&nbsp;<a href='#toc9'>{s.decode.hexa}</a></li><li>1.9&nbsp;<a href='#toc10'>{s.escape.common}</a></li><li>1.10&nbsp;<a href='#toc11'>{s.unescape.common}</a></li><li>1.11&nbsp;<a href='#toc12'>{s.escape.user}</a></li><li>1.12&nbsp;<a href='#toc13'>{s.unescape.user}</a></li><li>1.13&nbsp;<a href='#toc14'>{s.escape.param}</a></li><li>1.14&nbsp;<a href='#toc15'>{s.unescape.param}</a></li><li>1.15&nbsp;<a href='#toc16'>{s.tolower}</a></li><li>1.16&nbsp;<a href='#toc17'>{s.toupper}</a></li></ol></li><li>2.&nbsp;<a href='#toc18'>URI Transformations</a><ol class='toc'><li>2.1&nbsp;<a href='#toc19'>{uri.user}</a></li><li>2.2&nbsp;<a href='#toc20'>{uri.host}</a></li><li>2.3&nbsp;<a href='#toc21'>{uri.passwd}</a></li><li>2.4&nbsp;<a href='#toc22'>{uri.port}</a></li><li>2.5&nbsp;<a href='#toc23'>{uri.params}</a></li><li>2.6&nbsp;<a href='#toc24'>{uri.param,name}</a></li><li>2.7&nbsp;<a href='#toc25'>{uri.headers}</a></li><li>2.8&nbsp;<a href='#toc26'>{uri.transport}</a></li><li>2.9&nbsp;<a href='#toc27'>{uri.ttl}</a></li><li>2.10&nbsp;<a href='#toc28'>{uri.uparam}</a></li><li>2.11&nbsp;<a href='#toc29'>{uri.maddr}</a></li><li>2.12&nbsp;<a href='#toc30'>{uri.method}</a></li><li>2.13&nbsp;<a href='#toc31'>{uri.lr}</a></li><li>2.14&nbsp;<a href='#toc32'>{uri.r2}</a></li></ol></li><li>3.&nbsp;<a href='#toc33'>Parameters List Transformations</a><ol class='toc'><li>3.1&nbsp;<a href='#toc34'>{param.value,name}</a></li><li>3.2&nbsp;<a href='#toc35'>{param.valueat,index}</a></li><li>3.3&nbsp;<a href='#toc36'>{param.name,index}</a></li><li>3.4&nbsp;<a href='#toc37'>{param.count}</a></li></ol></li><li>4.&nbsp;<a href='#toc38'>Name-address Transformations</a><ol class='toc'><li>4.1&nbsp;<a href='#toc39'>{nameaddr.name}</a></li><li>4.2&nbsp;<a href='#toc40'>{nameaddr.uri}</a></li><li>4.3&nbsp;<a href='#toc41'>{nameaddr.len}</a></li><li>4.4&nbsp;<a href='#toc42'>{nameaddr.param,param_name}</a></li></ol></li><li>5.&nbsp;<a href='#toc43'>IP Transformations</a><ol class='toc'><li>5.1&nbsp;<a href='#toc44'>{ip.pton}</a></li><li>5.2&nbsp;<a href='#toc45'>{ip.ntop}</a></li><li>5.3&nbsp;<a href='#toc46'>{ip.isip}</a></li><li>5.4&nbsp;<a href='#toc47'>{ip.family}</a></li><li>5.5&nbsp;<a href='#toc48'>{ip.resolve}</a></li></ol></li><li>6.&nbsp;<a href='#toc49'>CSV Transformations</a><ol class='toc'><li>6.1&nbsp;<a href='#toc50'>{csv.count}</a></li><li>6.2&nbsp;<a href='#toc51'>{csv.value}</a></li></ol></li><li>7.&nbsp;<a href='#toc52'>SDP Transformations</a><ol class='toc'><li>7.1&nbsp;<a href='#toc53'>{sdp.line}</a></li></ol></li><li>8.&nbsp;<a href='#toc54'>Examples</a></li></ol></div>
+<p class='vspace'>A <strong>Transformation</strong> is basically a function that is applied to a variable(script variable, pseudo-variables, AVPS, static strings) to get a special value from it. The value of the original variable is not altered.
+</p>
+<p class='vspace'>Example of using different kind of variables in <strong>OpenSIPS script</strong>:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+# check if username in From header is equal with username in To header
+if($fU==$tU) {
+   ...
+}
+
+# r-uri username based processing
+switch($ruri.user) {
+   case "1234":
+      ...
+   break;
+   case "5678":
+      ...
+   break;
+   default:
+     ...
+}
+
+# assign integer value to an AVP
+$avp(i:11) = 1;
+
+#assing string value to an AVP
+$avp(i:22) = "opensips";
+
+# write ruri in an AVP
+$avp(i:33) = $ruri;
+
+# concat "sip:" + From username + "@" + To domain in a script variable x
+$var(x) = "sip:" + $fU +"@" + $td;
+
+
+</pre>
+<p class='vspace'>The transformations are intended to facilitate access to different attributes of variables (like strlen of value, parts of value, substrings) or complete different value of variables (encoded in hexa, md5 value, escape/unescape value for DB operations...).
+</p>
+<p class='vspace'>A transformation is represented in between <strong>'{</strong>' and <strong>'}</strong>' and follows the name of a variable. When using transformations, the variable name and transformations <strong>must</strong> be enclosed in between <strong>'(</strong>' and <strong>')</strong>'.
+</p>
+<p class='vspace'>Example:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+# the length of From URI ($fu is pseudo-variable for From URI)
+
+$(fu{s.len})
+</pre>
+<p class='vspace'>Many transformations can be applied in the same time to a variable.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+# the length of escaped 'Test' header body
+
+$(hdr(Test){s.escape.common}{s.len})
+</pre>
+<p class='vspace'>The transformations can be used anywhere, being considered parts of script variables support -- in xlog, avpops or other modules' functions and parameters, in right side assignment expressions or in comparisons.
+</p>
+<p class='vspace'><span  style='color: red;'>IMPORTANT</span>: To learn what variables can be used with transformations see <a class='wikilink' href="Script-CoreVar-1-6-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreVar-1-6?action=print">Scripting variables list</a>.
+</p>
+<div class='vspace'></div><h3><a name='toc1' id='toc1'></a>1.&nbsp;String Transformations</h3>
+<p>The name of these transformation starts with 's.'. They are intended to apply string operations to variables.
+</p>
+<p class='vspace'>Available transformations in this class:
+</p>
+<div class='vspace'></div><h4><a name='toc2' id='toc2'></a>1.1&nbsp;{s.len}</h4>
+<p>Return strlen of variable value
+</p>
+<div class='vspace'></div><pre class='escaped'>
+$var(x) = "abc";
+if($(var(x){s.len}) == 3)
+{
+   ...
+}
+</pre>
+<div class='vspace'></div><h4><a name='toc3' id='toc3'></a>1.2&nbsp;{s.int}</h4>
+<p>Return integer value of a string-represented number
+</p>
+<div class='vspace'></div><pre class='escaped'>
+$var(x) = "1234";
+if($(var(x){s.int})==1234) {
+  ...
+}
+</pre>
+<div class='vspace'></div><h4><a name='toc4' id='toc4'></a>1.3&nbsp;{s.md5}</h4>
+<p>Return md5 over variable value
+</p>
+<div class='vspace'></div><pre class='escaped'>
+xlog("MD4 over From username: $(fU{s.md5})");
+</pre>
+<div class='vspace'></div><h4><a name='toc5' id='toc5'></a>1.4&nbsp;{s.crc}</h4>
+<p>IMPORTANT: Available only starting with 1.6.3 !!!
+</p>
+<p class='vspace'>Return CRC over variable value
+</p>
+<div class='vspace'></div><pre class='escaped'>
+xlog("CRC over From domain: $(fd{s.crc})");
+</pre>
+<div class='vspace'></div><h4><a name='toc6' id='toc6'></a>1.5&nbsp;{s.substr,offset,length}</h4>
+<p>Return substring starting at offset having size of 'length'. If offset is negative, then it is counted from the end of the value, -1 being the last char. In case of positive value, 0 is first char. Length must be positive, in case of 0, substring to the end of variable value is returned. offset and length can be a varibale as well.
+</p>
+<p class='vspace'>Example:
+</p><pre class='escaped'>
+$var(x) = "abcd";
+$(var(x){s.substr,1,0}) = "bcd"
+</pre>
+<div class='vspace'></div><h4><a name='toc7' id='toc7'></a>1.6&nbsp;{s.select,index,separator}</h4>
+<p>Return a field from the value of a variable. The field is selected based on separator and index. The separator must be a character used to identify the fields. Index must be a integer value or a variable. If index is negative, the count of fields starts from end of value, -1 being last field. If index is positive, 0 is the first field.
+</p>
+<p class='vspace'>Example:
+</p><pre class='escaped'>
+$var(x) = "12,34,56";
+$(var(x){s.select,1,,}) =&gt; "34" ;
+
+$var(x) = "12,34,56";
+$(var(x){s.select,-2,,}) =&gt; "34"
+</pre>
+<div class='vspace'></div><h4><a name='toc8' id='toc8'></a>1.7&nbsp;{s.encode.hexa}</h4>
+<p>Return encoding in hexa of variable's value
+</p>
+<div class='vspace'></div><h4><a name='toc9' id='toc9'></a>1.8&nbsp;{s.decode.hexa}</h4>
+<p>Return decoding from hexa of variable's value
+</p>
+<div class='vspace'></div><h4><a name='toc10' id='toc10'></a>1.9&nbsp;{s.escape.common}</h4>
+<p>Return escaped string of variable's value. Characters escaped are ', ",  and 0. Useful when doing DB queries (care should be taken for non Latin character set).
+</p>
+<div class='vspace'></div><h4><a name='toc11' id='toc11'></a>1.10&nbsp;{s.unescape.common}</h4>
+<p>Return unescaped string of variable's value. Reverse of above transformation.
+</p>
+<div class='vspace'></div><h4><a name='toc12' id='toc12'></a>1.11&nbsp;{s.escape.user}</h4>
+<p>Return escaped string of variable's value, changing to '%hexa' the characters that are not allowed in user part of SIP URI following RFC requirements.
+</p>
+<div class='vspace'></div><h4><a name='toc13' id='toc13'></a>1.12&nbsp;{s.unescape.user}</h4>
+<p>Return unescaped string of variable's value, changing '%hexa' to character code. Reverse of above transformation.
+</p>
+<div class='vspace'></div><h4><a name='toc14' id='toc14'></a>1.13&nbsp;{s.escape.param}</h4>
+<p>Return escaped string of variable's value, changing to '%hexa' the characters that are not allowed in the param part of SIP URI following RFC requirements.
+</p>
+<div class='vspace'></div><h4><a name='toc15' id='toc15'></a>1.14&nbsp;{s.unescape.param}</h4>
+<p>Return unescaped string of variable's value, changing '%hexa' to character code. Reverse of above transformation.
+</p>
+<div class='vspace'></div><h4><a name='toc16' id='toc16'></a>1.15&nbsp;{s.tolower}</h4>
+<p>Return string with lower case ASCII letters.
+</p>
+<div class='vspace'></div><h4><a name='toc17' id='toc17'></a>1.16&nbsp;{s.toupper}</h4>
+<p>Return string with upper case ASCII letters.
+</p>
+<div class='vspace'></div><h3><a name='toc18' id='toc18'></a>2.&nbsp;URI Transformations</h3>
+<p>The name of transformation starts with 'uri.'. The value of the variable is considered to be a SIP URI. This transformation returns parts of SIP URI (see struct sip_uri). If that part is missing, the returned value is an empty string.
+</p>
+<p class='vspace'>Available transformations in this class:
+</p>
+<div class='vspace'></div><h4><a name='toc19' id='toc19'></a>2.1&nbsp;{uri.user}</h4>
+<p>Returns the user part of the URI schema.
+</p>
+<div class='vspace'></div><h4><a name='toc20' id='toc20'></a>2.2&nbsp;{uri.host}</h4>
+<p>(same as <strong>{uri.domain}</strong>)
+</p>
+<p class='vspace'>Returns the domain part of the URI schema.
+</p>
+<div class='vspace'></div><h4><a name='toc21' id='toc21'></a>2.3&nbsp;{uri.passwd}</h4>
+<p>Returns the password part of the URI schema.
+</p>
+<div class='vspace'></div><h4><a name='toc22' id='toc22'></a>2.4&nbsp;{uri.port}</h4>
+<p>Returns the port of the URI schema.
+</p>
+<div class='vspace'></div><h4><a name='toc23' id='toc23'></a>2.5&nbsp;{uri.params}</h4>
+<p>Returns all the URI parameters into a single string.
+</p>
+<div class='vspace'></div><h4><a name='toc24' id='toc24'></a>2.6&nbsp;{uri.param,name}</h4>
+<p>Returns the value of URI parameter with name "name"
+</p>
+<div class='vspace'></div><h4><a name='toc25' id='toc25'></a>2.7&nbsp;{uri.headers}</h4>
+<p>Returns URI headers.
+</p>
+<div class='vspace'></div><h4><a name='toc26' id='toc26'></a>2.8&nbsp;{uri.transport}</h4>
+<p>Returns the value of transport URI parameter.
+</p>
+<div class='vspace'></div><h4><a name='toc27' id='toc27'></a>2.9&nbsp;{uri.ttl}</h4>
+<p>Returns the value of ttl URI parameter.
+</p>
+<div class='vspace'></div><h4><a name='toc28' id='toc28'></a>2.10&nbsp;{uri.uparam}</h4>
+<p>Returns the value of user URI parameter
+</p>
+<div class='vspace'></div><h4><a name='toc29' id='toc29'></a>2.11&nbsp;{uri.maddr}</h4>
+<p>Returns the value of maddr URI parameter.
+</p>
+<div class='vspace'></div><h4><a name='toc30' id='toc30'></a>2.12&nbsp;{uri.method}</h4>
+<p>Returns the value of method URI parameter.
+</p>
+<div class='vspace'></div><h4><a name='toc31' id='toc31'></a>2.13&nbsp;{uri.lr}</h4>
+<p>Returns the value of lr URI parameter.
+</p>
+<div class='vspace'></div><h4><a name='toc32' id='toc32'></a>2.14&nbsp;{uri.r2}</h4>
+<p>Returns the value of r2 URI parameter.
+</p>
+<div class='vspace'></div><h3><a name='toc33' id='toc33'></a>3.&nbsp;Parameters List Transformations</h3>
+<p>The name of the transformation starts with "param.". The value of the variable is considered to be a string like name1=value1;name2=value2;...". The transformations returns the value for a specific parameter, or the name of a parameter at a specific index.
+</p>
+<p class='vspace'>Available transformations in this class:
+</p>
+<div class='vspace'></div><h4><a name='toc34' id='toc34'></a>3.1&nbsp;{param.value,name}</h4>
+<p>Returns the value of parameter 'name'
+</p>
+<p class='vspace'>Example:
+</p><pre class='escaped'>
+"a=1;b=2;c=3"{param.value,c} = "3"
+</pre>
+<p class='vspace'>'name' can be a variable
+</p>
+<div class='vspace'></div><h4><a name='toc35' id='toc35'></a>3.2&nbsp;{param.valueat,index}</h4>
+<p>Returns the value of parameter at position give by 'index' (0-based index)
+</p>
+<p class='vspace'>Example:
+</p><pre class='escaped'>
+"a=1;b=2;c=3"{param.valueat,1} = "2"
+</pre>
+<p class='vspace'>'index' can be a variable
+</p>
+<div class='vspace'></div><h4><a name='toc36' id='toc36'></a>3.3&nbsp;{param.name,index}</h4>
+<p>Returns the name of parameter at position 'index'.
+</p>
+<p class='vspace'>Example:
+</p><pre class='escaped'>
+"a=1;b=2;c=3"{param.name,1} = "b"
+</pre>
+<div class='vspace'></div><h4><a name='toc37' id='toc37'></a>3.4&nbsp;{param.count}</h4>
+<p>Returns the number of parameters in the list.
+</p>
+<p class='vspace'>Example:
+</p><pre class='escaped'>
+"a=1;b=2;c=3"{param.count} = 3
+</pre>
+<div class='vspace'></div><h3><a name='toc38' id='toc38'></a>4.&nbsp;Name-address Transformations</h3>
+<p>The name of the transformation starts with 'nameaddr.'. The value of the variable is considered to be a string like '[display_name] uri'. The transformations returns the value for a specific field.
+</p>
+<p class='vspace'>Available transformations in this class:
+</p>
+<div class='vspace'></div><h4><a name='toc39' id='toc39'></a>4.1&nbsp;{nameaddr.name}</h4>
+<p>Returns the value of display name
+</p>
+<p class='vspace'>Example:
+</p><pre class='escaped'>
+'"test" &lt;sip:test@opensips.org&gt;' {nameaddr.name} = "test"
+</pre>
+<div class='vspace'></div><h4><a name='toc40' id='toc40'></a>4.2&nbsp;{nameaddr.uri}</h4>
+<p>Returns the value of URI
+</p>
+<p class='vspace'>Example:
+</p><pre class='escaped'>
+'"test" &lt;sip:test@opensips.org&gt;' {nameaddr.uri} = sip:test@opensips.org
+</pre>
+<div class='vspace'></div><h4><a name='toc41' id='toc41'></a>4.3&nbsp;{nameaddr.len}</h4>
+<p>Returns the length of the entire name-addr part from the value.
+</p>
+<div class='vspace'></div><h4><a name='toc42' id='toc42'></a>4.4&nbsp;{nameaddr.param,param_name}</h4>
+<p>Returns the value of the parameter with name param_name.
+Example:
+</p><pre class='escaped'>
+'"test" &lt;sip:test@opensips.org&gt;;tag=dat43h' {nameaddr.param,tag} = dat43h
+</pre>
+<div class='vspace'></div><h3><a name='toc43' id='toc43'></a>5.&nbsp;IP Transformations</h3>
+<p>The name of the transformation starts with 'ip.'. Available transformations in this class:
+</p>
+<div class='vspace'></div><h4><a name='toc44' id='toc44'></a>5.1&nbsp;{ip.pton}</h4>
+<p>Returns a binary representation of a string represented IP.
+Example:
+</p><pre class='escaped'>
+"192.168.2.134" {ip.pton} returns a 4 byte binary representation of the IP provided
+</pre>
+<div class='vspace'></div><h4><a name='toc45' id='toc45'></a>5.2&nbsp;{ip.ntop}</h4>
+<p>Returns a string representation of the binary IP provided
+Example:
+</p><pre class='escaped'>
+"192.168.2.134"{ip.pton}{ip.ntop} = "192.168.2.134"
+</pre>
+<div class='vspace'></div><h4><a name='toc46' id='toc46'></a>5.3&nbsp;{ip.isip}</h4>
+<p>Returns 1 or 0, if the string provided is a valid IP or not.
+Example:
+</p><pre class='escaped'>
+"192.168.2.134" {ip.isip} = 1
+"192.168.2.134.1" {ip.isip} = 0
+</pre>
+<div class='vspace'></div><h4><a name='toc47' id='toc47'></a>5.4&nbsp;{ip.family}</h4>
+<p>Returns INET or INET6 if the binary IP representation provided is IPv4 or IPv6.
+Example:
+</p><pre class='escaped'>
+"192.168.2.134" {ip.pton}{ip.family} = "INET"
+</pre>
+<div class='vspace'></div><h4><a name='toc48' id='toc48'></a>5.5&nbsp;{ip.resolve}</h4>
+<p>Returns the resolved IP address coresponding to the string domain provided. Transformation has no effect if a string IP is provided.
+Example:
+</p><pre class='escaped'>
+"opensips.org" {ip.resolve} = "78.46.64.50"
+</pre>
+<div class='vspace'></div><h3><a name='toc49' id='toc49'></a>6.&nbsp;CSV Transformations</h3>
+<p>The name of the transformation starts with "csv.". The value of the variable is considered to be a string like "field1,field2,...". The transformations return the number of entries in the provided CSV, or the field at a specified position in the CSV.
+</p>
+<p class='vspace'>Available transformations in this class:
+</p>
+<div class='vspace'></div><h4><a name='toc50' id='toc50'></a>6.1&nbsp;{csv.count}</h4>
+<p>Returns the number of entries in the provided CSV.
+Example:
+</p><pre class='escaped'>
+"a,b,c" {csv.count} = 3
+</pre>
+<div class='vspace'></div><h4><a name='toc51' id='toc51'></a>6.2&nbsp;{csv.value}</h4>
+<p>Returns the entry at the specified positions. Indexing starts from 0.
+Example:
+</p><pre class='escaped'>
+"a,b,c" {csv.value,2} = c
+</pre>
+<div class='vspace'></div><h3><a name='toc52' id='toc52'></a>7.&nbsp;SDP Transformations</h3>
+<p>The name of the transformation starts with "sdp.". The value of the variable is considered to be a valid SDP body. The transformation returns a specific line in the SDP body.
+</p>
+<p class='vspace'>Available transformations in this class:
+</p>
+<div class='vspace'></div><h4><a name='toc53' id='toc53'></a>7.1&nbsp;{sdp.line}</h4>
+<p>Returns the specified line in the SDP body. The transformations also accepts a second parameter, that specifies the line number of the first parameter's type to get from the SDP body. Indexing starts from 0. If the second parameter is missing, it is assumed to be 0. 
+Example:
+</p><pre class='escaped'>
+if (is_method("INVITE"))
+   {
+      $var(aline) = $(rb{sdp.line,a,1});
+      xlog("The second a line in the SDP body is $var(aline)\n");
+   }
+
+if (is_method("INVITE"))
+   {
+      $var(mline) = $(rb{sdp.line,m});
+      xlog("The first m line in the SDP body is $var(mline)\n");
+   }
+</pre>
+<div class='vspace'></div><h3><a name='toc54' id='toc54'></a>8.&nbsp;Examples</h3>
+<p>Within a variable, many transformation can be applied, being executed from left to right.
+</p>
+<div class='vspace'></div><ul><li>The length of the value of parameter at postion 1 (remember 0 is first position, 1 is second position)
+</li></ul><div class='vspace'></div><pre class='escaped'>
+$var(x) = "a=1;b=22;c=333";
+$(var(x){param.value,$(var(x){param.name,1})}{s.len}) = 2
+</pre>
+<div class='vspace'></div><ul><li>Test if whether is un-registration or not
+</li></ul><div class='vspace'></div><pre class='escaped'>
+if(is_method("REGISTER") &amp;&amp; is_present_hf("Expires") &amp;&amp; $(hdr(Expires){s.int})==0)
+    xlog("This is an un-registrationn");
+</pre>
+</div>
+
+  <div id='printfoot'>
+    <div class='from'>Retrieved from http://www.opensips.org/Documentation/Script-Tran-1-6</div>
+    <div class='lastmod'>Page last modified on August 05, 2013, at 12:54 PM</div></div>
+<!--HTMLFooter-->
+</body>
+</html>

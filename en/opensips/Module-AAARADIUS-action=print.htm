@@ -1,0 +1,758 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+  <title>openSIPS | Documentation / Module-AAARADIUS</title>
+  <link rel='stylesheet' href="print.css" tppabs="http://www.opensips.org/pub/skins/print/print.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+</head>
+<body>
+  <div id='printhead'>
+    <h3>From openSIPS</h3>
+    <h1 class='pagename'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation%27" tppabs="http://www.opensips.org/Documentation">Documentation: Module-AAARADIUS</a></h1>
+  </div>
+<!--PageText-->
+<div id='wikitext'>
+<pre>
+
+<!-- includeHTML -->
+
+<html><head><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');ga('send', 'pageview');</script><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>registrar Module</title><link rel="stylesheet" href="module-docbook.css" tppabs="http://www.opensips.org/html/css/module-docbook.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.73.2"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="book" lang="en"><div class="titlepage"><div><div><h1 class="title"><a name="id284029"></a>registrar Module</h1></div><div><div class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Jan</span> <span class="surname">Janak</span></h3><div class="affiliation"><span class="orgname">FhG FOKUS<br></span></div></div><div class="editor"><h4 class="editedby">Edited by</h4><h3 class="editor"><span class="firstname">Jan</span> <span class="surname">Janak</span></h3></div><div class="editor"><h4 class="editedby">Edited by</h4><h3 class="editor"><span class="firstname">Bogdan-Andrei</span> <span class="surname">Iancu</span></h3></div></div></div><div><p class="copyright">Copyright © 2003 FhG FOKUS</p></div><div><div class="revhistory"><table border="1" width="100%" summary="Revision history"><tr><th align="left" valign="top" colspan="2"><b>Revision History</b></th></tr><tr><td align="left">Revision $Revision: 8740 $</td><td align="left">$Date$</td></tr></table></div></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="chapter"><a href="#id249364">1. Admin Guide</a></span></dt><dd><dl><dt><span class="section"><a href="#id248030">1.1. Overview</a></span></dt><dd><dl><dt><span class="section"><a href="#id249053">1.1.1. PATH support</a></span></dt><dt><span class="section"><a href="#id249598">1.1.2. GRUU support</a></span></dt></dl></dd><dt><span class="section"><a href="#id249651">1.2. Dependencies</a></span></dt><dd><dl><dt><span class="section"><a href="#id249657">1.2.1. OpenSIPS Modules</a></span></dt><dt><span class="section"><a href="#id249675">1.2.2. External Libraries or Applications</a></span></dt></dl></dd><dt><span class="section"><a href="#id293406">1.3. Exported Parameters</a></span></dt><dd><dl><dt><span class="section"><a href="#id293411">1.3.1. <code class="varname">default_expires</code> (integer)</a></span></dt><dt><span class="section"><a href="#id293452">1.3.2. <code class="varname">min_expires</code> (integer)</a></span></dt><dt><span class="section"><a href="#id293486">1.3.3. <code class="varname">max_expires</code> (integer)</a></span></dt><dt><span class="section"><a href="#id293521">1.3.4. <code class="varname">default_q</code> (integer)</a></span></dt><dt><span class="section"><a href="#id293556">1.3.5. <code class="varname">tcp_persistent_flag</code> (integer)</a></span></dt><dt><span class="section"><a href="#id293595">1.3.6. <code class="varname">realm_prefix</code> (string)</a></span></dt><dt><span class="section"><a href="#id293632">1.3.7. <code class="varname">case_sensitive</code> (integer)</a></span></dt><dt><span class="section"><a href="#id293671">1.3.8. <code class="varname">received_avp</code> (str)</a></span></dt><dt><span class="section"><a href="#id293714">1.3.9. <code class="varname">received_param</code> (string)</a></span></dt><dt><span class="section"><a href="#id293748">1.3.10. <code class="varname">max_contacts</code> (integer)</a></span></dt><dt><span class="section"><a href="#id293789">1.3.11. <code class="varname">retry_after</code> (integer)</a></span></dt><dt><span class="section"><a href="#id293833">1.3.12. <code class="varname">sock_hdr_name</code> (string)</a></span></dt><dt><span class="section"><a href="#id293871">1.3.13. <code class="varname">mcontact_avp</code> (string)</a></span></dt><dt><span class="section"><a href="#id293909">1.3.14. <code class="varname">attr_avp</code> (string)</a></span></dt><dt><span class="section"><a href="#id293960">1.3.15. <code class="varname">gruu_secret</code> (string)</a></span></dt><dt><span class="section"><a href="#id293994">1.3.16. <code class="varname">disable_gruu</code> (int)</a></span></dt></dl></dd><dt><span class="section"><a href="#id294028">1.4. Exported Functions</a></span></dt><dd><dl><dt><span class="section"><a href="#id294034">1.4.1. 
+		<code class="function">save(domain [,flags ,[aor]])</code>
+		</a></span></dt><dt><span class="section"><a href="#id294262">1.4.2. 
+		<code class="function">remove(domain, AOR[, target])</code>
+		</a></span></dt><dt><span class="section"><a href="#id294366">1.4.3. 
+		<code class="function">lookup(domain [, flags [, aor]])</code>
+		</a></span></dt><dt><span class="section"><a href="#id294613">1.4.4. 
+		<code class="function">registered(domain [,AOR[, callid]])</code>
+		</a></span></dt><dt><span class="section"><a href="#id294694">1.4.5. 
+		<code class="function">is_other_contact(domain , IPs)</code>
+		</a></span></dt><dt><span class="section"><a href="#id294757">1.4.6. 
+		<code class="function">add_sock_hdr(hdr_name)</code>
+		</a></span></dt></dl></dd><dt><span class="section"><a href="#id294816">1.5. Exported Statistics</a></span></dt><dd><dl><dt><span class="section"><a href="#id294822">1.5.1. <code class="varname">max_expires</code></a></span></dt><dt><span class="section"><a href="#id294832">1.5.2. <code class="varname">max_contacts</code></a></span></dt><dt><span class="section"><a href="#id294843">1.5.3. <code class="varname">defaults_expires</code></a></span></dt><dt><span class="section"><a href="#id294854">1.5.4. <code class="varname">accepted_regs</code></a></span></dt><dt><span class="section"><a href="#id294864">1.5.5. <code class="varname">rejected_regs</code></a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#id296480">2. Frequently Asked Questions</a></span></dt></dl></div><div class="list-of-examples"><p><b>List of Examples</b></p><dl><dt>1.1. <a href="#id293433">Set <code class="varname">default_expires</code> parameter</a></dt><dt>1.2. <a href="#id293470">Set <code class="varname">min_expires</code> parameter</a></dt><dt>1.3. <a href="#id293505">Set <code class="varname">max_expires</code> parameter</a></dt><dt>1.4. <a href="#id293540">Set <code class="varname">default_q</code> parameter</a></dt><dt>1.5. <a href="#id293580">Set <code class="varname">tcp_persistent_flag</code> parameter</a></dt><dt>1.6. <a href="#id293616">Set <code class="varname">realm_prefix</code> parameter</a></dt><dt>1.7. <a href="#id293655">Set <code class="varname">case_sensitive</code> parameter</a></dt><dt>1.8. <a href="#id293698">Set <code class="varname">received_avp</code> parameter</a></dt><dt>1.9. <a href="#id293733">Set <code class="varname">received_param</code> parameter</a></dt><dt>1.10. <a href="#id293772">Set <code class="varname">max_contacts</code> parameter</a></dt><dt>1.11. <a href="#id293817">Set <code class="varname">retry_after</code> parameter</a></dt><dt>1.12. <a href="#id293855">Set <code class="varname">sock_hdr_namer</code> parameter</a></dt><dt>1.13. <a href="#id293893">Set <code class="varname">mcontact_avp</code> parameter</a></dt><dt>1.14. <a href="#id293941">Set <code class="varname">attr_avp</code> parameter</a></dt><dt>1.15. <a href="#id293978">Set <code class="varname">gruu_secret</code> parameter</a></dt><dt>1.16. <a href="#id294011">Set <code class="varname">gruu_secret</code> parameter</a></dt><dt>1.17. <a href="#id294242"><code class="function">save</code> usage</a></dt><dt>1.18. <a href="#id294346"><code class="function">remove</code> usage</a></dt><dt>1.19. <a href="#id294593"><code class="function">lookup</code> usage</a></dt><dt>1.20. <a href="#id294676"><code class="function">registered</code> usage</a></dt><dt>1.21. <a href="#id294739"><code class="function">is_other_contact</code> usage</a></dt><dt>1.22. <a href="#id294798"><code class="function">add_sock_hdr</code> usage</a></dt></dl></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="id249364"></a>Chapter 1. Admin Guide</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id248030"></a>1.1. Overview</h2></div></div></div><p>The module contains REGISTER processing logic.</p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id249053"></a>1.1.1. PATH support</h3></div></div></div><p>
+		Register module includes Path support (according to RFC 3327) 
+		for usage in registrars and home-proxies.
+		</p><p>
+		A call to save(...) stores, if path-support is enabled
+		in the registrar-module, the values of the Path
+		Header(s) along with the contact into usrloc. There are
+		three modes regarding the reply to a REGISTER including
+		one or more Path HFs:
+		</p><div class="itemizedlist"><ul type="disc"><li><p>
+				<span class="emphasis"><em>off</em></span> - stores the value of the 
+				Path headers into usrloc without passing it back to 
+				the UAC in the reply.
+			</p></li><li><p>
+				<span class="emphasis"><em>lazy</em></span> - stores the Path header and 
+				passes it back to the UAC if Path-support is indicated 
+				by the &#8220;<span class="quote">path</span>&#8221; param in the Supported HF.
+			</p></li><li><p>
+				<span class="emphasis"><em>strict</em></span> - rejects the registration 
+				with &#8220;<span class="quote">420 Bad Extension</span>&#8221; if there's a Path 
+				header but no support for it is indicated by the UAC. 
+				Otherwise it's stored and passed back to the UAC.
+			</p></li></ul></div><p>
+		A call to lookup(...) always uses the path header if
+		found, and inserts it as Route HF either in front of
+		the first Route HF, or after the last Via HF if no
+		Route is present. It also sets the destination uri to
+		the first Path uri, thus overwriting the received-uri,
+		because NAT has to be handled at the outbound-proxy of
+		the UAC (the first hop after client's NAT).
+		</p><p>
+		The whole process is transparent to the user, so no
+		config changes are required beside setting the
+		registrar-parameters &#8220;<span class="quote">use_path</span>&#8221; and 
+		&#8220;<span class="quote">path_mode</span>&#8221;.
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id249598"></a>1.1.2. GRUU support</h3></div></div></div><p>
+		Register module includes GRUU support (according to RFC 5627) 
+		for usage in registrars and home-proxies.
+		</p><p>
+		A call to save(...) stores, if the phone supports GRUU,
+		the values of the SIP Instance along with the contact into usrloc. 
+		The registrar module will generate two types of GRUUs :
+		</p><div class="itemizedlist"><ul type="disc"><li><p>
+				<span class="emphasis"><em>public</em></span> - exposes the underlying AOR,
+				constructed just by attaching the SIP Instance as the ;gr
+				parameter value. These are persistent, valid as long as the
+				contact registration is valid.
+			</p></li><li><p>
+				<span class="emphasis"><em>temporary</em></span> - hides the underlying AOR
+				Each new Register request leads to the construction of a 
+				new temporary GRUU, while Register requests with a different
+				Call-Id lead to the invalidation of all the previous generated
+				temporary GRUUs.
+			</p></li></ul></div><p>
+		A call to lookup(...) will try to detect if the R-URI contains a
+		GRUU. If it does, it will route the request just for the Contact
+		that the specific AOR belongs to, without appending any other branches.
+		</p><p>
+		The whole process is transparent to the user, so no
+		config changes are required.
+		</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id249651"></a>1.2. Dependencies</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id249657"></a>1.2.1. OpenSIPS Modules</h3></div></div></div><p>
+		The following modules must be loaded before this module:
+			</p><div class="itemizedlist"><ul type="disc"><li><p>
+				<span class="emphasis"><em>usrloc - User Location Module</em></span>.
+			</p></li><li><p>
+				<span class="emphasis"><em>signaling - Signaling module</em></span>.
+			</p></li></ul></div><p>
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id249675"></a>1.2.2. External Libraries or Applications</h3></div></div></div><p>
+		The following libraries or applications must be installed before 
+		running OpenSIPS with this module loaded:
+			</p><div class="itemizedlist"><ul type="disc"><li><p>
+				<span class="emphasis"><em>None</em></span>.
+			</p></li></ul></div><p>
+		</p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id293406"></a>1.3. Exported Parameters</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id293411"></a>1.3.1. <code class="varname">default_expires</code> (integer)</h3></div></div></div><p>
+		If the processed message contains neither Expires 
+		<acronym class="acronym">HFs</acronym> nor expires contact parameters, this value 
+		will be used for newly created usrloc records. The parameter contains 
+		number of second to expire (for example use 3600 for one hour).
+		</p><p>
+		<span class="emphasis"><em>
+			Default value is 3600.
+		</em></span>
+		</p><div class="example"><a name="id293433"></a><p class="title"><b>Example 1.1. Set <code class="varname">default_expires</code> parameter</b></p><div class="example-contents"><pre class="programlisting">
+...
+modparam("registrar", "default_expires", 1800)
+...
+</pre></div></div><br class="example-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id293452"></a>1.3.2. <code class="varname">min_expires</code> (integer)</h3></div></div></div><p>
+		The minimum expires value of a Contact, values lower than this 
+		minimum will be automatically set to the minimum. Value 0 disables 
+		the checking.
+		</p><p>
+		<span class="emphasis"><em>
+			Default value is 60.
+		</em></span>
+		</p><div class="example"><a name="id293470"></a><p class="title"><b>Example 1.2. Set <code class="varname">min_expires</code> parameter</b></p><div class="example-contents"><pre class="programlisting">
+...
+modparam("registrar", "min_expires", 60)
+...
+</pre></div></div><br class="example-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id293486"></a>1.3.3. <code class="varname">max_expires</code> (integer)</h3></div></div></div><p>
+		The maximum expires value of a Contact, values higher than this 
+		maximum will be automatically set to the maximum. Value 0 disables 
+		the checking.
+		</p><p>
+		<span class="emphasis"><em>
+			Default value is 0.
+		</em></span>
+		</p><div class="example"><a name="id293505"></a><p class="title"><b>Example 1.3. Set <code class="varname">max_expires</code> parameter</b></p><div class="example-contents"><pre class="programlisting">
+...
+modparam("registrar", "max_expires", 120)
+...
+</pre></div></div><br class="example-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id293521"></a>1.3.4. <code class="varname">default_q</code> (integer)</h3></div></div></div><p>
+		The parameter represents default q value for new contacts. Because 
+		OpenSIPS doesn't support float parameter types, the value in the parameter 
+		is divided by 1000 and stored as float. For example, if you want 
+		default_q to be 0.38, use value 380 here.
+		</p><p>
+		<span class="emphasis"><em>
+			Default value is 0.
+		</em></span>
+		</p><div class="example"><a name="id293540"></a><p class="title"><b>Example 1.4. Set <code class="varname">default_q</code> parameter</b></p><div class="example-contents"><pre class="programlisting">
+...
+modparam("registrar", "default_q", 1000)
+...
+</pre></div></div><br class="example-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id293556"></a>1.3.5. <code class="varname">tcp_persistent_flag</code> (integer)</h3></div></div></div><p>
+		The parameter specifies the message flag to be used to control the 
+		module behaviour regarding TCP connections. If the flag is set for a 
+		REGISTER via TCP containing a TCP contact, the module, via the 
+		&#8220;<span class="quote">save()</span>&#8221; function, will set the lifetime of the TCP
+		connection to the contact expire value. By doing this, the TCP 
+		connection will stay on as long as the contact is valid.
+		</p><p>
+		<span class="emphasis"><em>
+			Default value is -1 (disabled).
+		</em></span>
+		</p><div class="example"><a name="id293580"></a><p class="title"><b>Example 1.5. Set <code class="varname">tcp_persistent_flag</code> parameter</b></p><div class="example-contents"><pre class="programlisting">
+...
+modparam("registrar", "tcp_persistent_flag", 7)
+...
+</pre></div></div><br class="example-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id293595"></a>1.3.6. <code class="varname">realm_prefix</code> (string)</h3></div></div></div><p>
+		 Prefix to be automatically strip from realm. As an alternative to 
+		 SRV records (not all SIP clients support SRV lookup), a subdomain of 
+		 the master domain can be defined for SIP purposes (like 
+		 sip.mydomain.net pointing to same IP address as the SRV record for 
+		 mydomain.net). By ignoring the realm_prefix "sip.", at registration,
+		 sip.mydomain.net will be equivalent to mydomain.net .
+		</p><p>
+		<span class="emphasis"><em>
+			Default value is NULL (none).
+		</em></span>
+		</p><div class="example"><a name="id293616"></a><p class="title"><b>Example 1.6. Set <code class="varname">realm_prefix</code> parameter</b></p><div class="example-contents"><pre class="programlisting">
+...
+modparam("registrar", "realm_prefix", "sip.")
+...
+</pre></div></div><br class="example-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id293632"></a>1.3.7. <code class="varname">case_sensitive</code> (integer)</h3></div></div></div><p>
+		If set to 1 then <acronym class="acronym">AOR</acronym> comparison will be case 
+		sensitive (as RFC3261 instructs), if set to 0 then 
+		<acronym class="acronym">AOR</acronym> comparison will be case insensitive.
+		</p><p>
+		<span class="emphasis"><em>
+			Default value is 1.
+		</em></span>
+		</p><div class="example"><a name="id293655"></a><p class="title"><b>Example 1.7. Set <code class="varname">case_sensitive</code> parameter</b></p><div class="example-contents"><pre class="programlisting">
+...
+modparam("registrar", "case_sensitive", 0)
+...
+</pre></div></div><br class="example-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id293671"></a>1.3.8. <code class="varname">received_avp</code> (str)</h3></div></div></div><p>
+		Registrar will store the value of the AVP configured by this 
+		parameter in the received column in the user location database. 
+		It will leave the column empty if the AVP is empty. The AVP should 
+		contain a SIP URI consisting of the source IP, port,
+		and protocol of the REGISTER message being processed.
+		</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
+			The value of this parameter should be the same as the value of 
+			corresponding parameter of nathelper module.
+		</p></div><p>
+		<span class="emphasis"><em>
+			Default value is "NULL" (disabled).
+		</em></span>
+		</p><div class="example"><a name="id293698"></a><p class="title"><b>Example 1.8. Set <code class="varname">received_avp</code> parameter</b></p><div class="example-contents"><pre class="programlisting">
+...
+modparam("registrar", "received_avp", "$avp(rcv)")
+...
+</pre></div></div><br class="example-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id293714"></a>1.3.9. <code class="varname">received_param</code> (string)</h3></div></div></div><p>
+		The name of the parameter that will be appended to Contacts of 
+		200 OK when the received URI was set by nathelper module.
+		</p><p>
+		<span class="emphasis"><em>
+			Default value is "received".
+		</em></span>
+		</p><div class="example"><a name="id293733"></a><p class="title"><b>Example 1.9. Set <code class="varname">received_param</code> parameter</b></p><div class="example-contents"><pre class="programlisting">
+...
+modparam("registrar", "received_param", "rcv")
+...
+</pre></div></div><br class="example-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id293748"></a>1.3.10. <code class="varname">max_contacts</code> (integer)</h3></div></div></div><p>
+		The parameter can be used to limit the number of contacts per 
+		AOR (Address of Record) in the user location database. Value 0 
+		disables the check.
+		</p><p>
+		This is the default value and will be used only if no other value
+		(for max_contacts) is passed as parameter to the save() function.
+		That's it - the function parameter overwride this global parameter.
+		</p><p>
+		</p><p>
+		<span class="emphasis"><em>
+			Default value is 0.
+		</em></span>
+		</p><div class="example"><a name="id293772"></a><p class="title"><b>Example 1.10. Set <code class="varname">max_contacts</code> parameter</b></p><div class="example-contents"><pre class="programlisting">
+...
+# Allow no more than 10 contacts per AOR
+modparam("registrar", "max_contacts", 10)
+...
+		</pre></div></div><br class="example-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id293789"></a>1.3.11. <code class="varname">retry_after</code> (integer)</h3></div></div></div><p>
+		The registrar can generate 5xx reply to REGISTER in various 
+		situations. It can, for example, happen when the 
+		<code class="varname">max_contacts</code> parameter is set and the
+		processing of REGISTER request would exceed the limit. In this case 
+		the registrar would generate "503 Service Unavailable" response.
+		</p><p>
+		If you want to add the Retry-After header field in 5xx replies, set 
+		this parameter to a value grater than zero (0 means do not add the 
+		header field). See section 20.33 of RFC3261 for more details.
+		</p><p>
+		<span class="emphasis"><em>
+			Default value is 0 (disabled).
+		</em></span>
+		</p><div class="example"><a name="id293817"></a><p class="title"><b>Example 1.11. Set <code class="varname">retry_after</code> parameter</b></p><div class="example-contents"><pre class="programlisting">
+...
+modparam("registrar", "retry_after", 30)
+...
+		</pre></div></div><br class="example-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id293833"></a>1.3.12. <code class="varname">sock_hdr_name</code> (string)</h3></div></div></div><p>
+		Header which contains a socket description (proto:IP:port) to override
+		the received socket info. The header will be search and used only if 
+		the flag 's' (Socket header) is set at "save()" time.
+		</p><p>
+		This makes sense only in multiple replicated servers scenarios.
+		</p><p>
+		<span class="emphasis"><em>
+			Default value is NULL.
+		</em></span>
+		</p><div class="example"><a name="id293855"></a><p class="title"><b>Example 1.12. Set <code class="varname">sock_hdr_namer</code> parameter</b></p><div class="example-contents"><pre class="programlisting">
+...
+modparam("registrar", "sock_hdr_name", "Sock-Info")
+...
+		</pre></div></div><br class="example-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id293871"></a>1.3.13. <code class="varname">mcontact_avp</code> (string)</h3></div></div></div><p>
+		AVP to store the modified binding that is set during cached
+		registrations scenario (when REGISTER is forwarded to another
+		registrar).  The AVP will be used to extract the imposed
+		expires from the 200ok reply.
+		</p><p>
+		This makes sense only in cached registrations scenario.
+		</p><p>
+		<span class="emphasis"><em>
+			Default value is NULL.
+		</em></span>
+		</p><div class="example"><a name="id293893"></a><p class="title"><b>Example 1.13. Set <code class="varname">mcontact_avp</code> parameter</b></p><div class="example-contents"><pre class="programlisting">
+...
+modparam("registrar", "mcontact_avp", "$avp(register)")
+...
+		</pre></div></div><br class="example-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id293909"></a>1.3.14. <code class="varname">attr_avp</code> (string)</h3></div></div></div><p>
+		AVP to store specific additional information for each registration.
+		This information is read from the AVP and stored (in memory, db or both)
+		at every registrar 'save'. When a registrar 'lookup' or 'registered'
+		function is called, the <span class="emphasis"><em>attr_avp</em></span> is populated with
+		the value saved at [re]registration.
+		</p><p>
+		When doing call forking, the avp will hold multiple values. The position of
+		the corresponding attribute information in <span class="emphasis"><em>attr_avp</em></span> is
+		equal to the branch index. An example scenario is given below.
+		</p><p>
+		<span class="emphasis"><em>
+			Default value is NULL.
+		</em></span>
+		</p><div class="example"><a name="id293941"></a><p class="title"><b>Example 1.14. Set <code class="varname">attr_avp</code> parameter</b></p><div class="example-contents"><pre class="programlisting">
+# reading attributes from the attr_pvar when doing parallel forking
+...
+modparam("registrar", "attr_avp", "$avp(attr)")
+
+...
+if (is_method("REGISTER")) {
+	$avp(attr) = "contact_info";
+	save("location");
+	exit;
+}
+...
+lookup("location");
+t_on_branch("branch_route_1");
+...
+branch_route[branch_route_1] {
+	xlog("Attributes for branch $T_branch_idx: $(avp(attr)[$T_branch_idx])\n");
+}
+
+		</pre></div></div><br class="example-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id293960"></a>1.3.15. <code class="varname">gruu_secret</code> (string)</h3></div></div></div><p>
+		The string that will be used in XORing when generating
+		temporary GRUUs.
+		</p><p>
+		<span class="emphasis"><em>
+			If not set, 'OpenSIPS' is the default secret.
+		</em></span>
+		</p><div class="example"><a name="id293978"></a><p class="title"><b>Example 1.15. Set <code class="varname">gruu_secret</code> parameter</b></p><div class="example-contents"><pre class="programlisting">
+...
+modparam("registrar", "gruu_secret", "top_secret")
+...
+		</pre></div></div><br class="example-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id293994"></a>1.3.16. <code class="varname">disable_gruu</code> (int)</h3></div></div></div><p>
+			Globally disable GRUU handling
+		</p><p>
+		<span class="emphasis"><em>
+			Default value is 1 ( GRUU will not be handled ).
+		</em></span>
+		</p><div class="example"><a name="id294011"></a><p class="title"><b>Example 1.16. Set <code class="varname">gruu_secret</code> parameter</b></p><div class="example-contents"><pre class="programlisting">
+...
+modparam("registrar", "disable_gruu", 0)
+...
+		</pre></div></div><br class="example-break"></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id294028"></a>1.4. Exported Functions</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id294034"></a>1.4.1. 
+		<code class="function">save(domain [,flags ,[aor]])</code>
+		</h3></div></div></div><p>
+		The function processes a REGISTER message. It can add, remove or 
+		modify usrloc records depending on Contact and Expires HFs in the 
+		REGISTER message. On success, 200 OK will be returned listing all 
+		contacts that are currently in usrloc. On an error, error message 
+		will be send with a short description in reason phrase.
+		</p><p>Meaning of the parameters is as follows:</p><div class="itemizedlist"><ul type="disc"><li><p>
+			<span class="emphasis"><em>domain</em></span> - Logical domain within registrar. 
+			If database is used then this must be name of the table which 
+			stores the contacts.
+			</p></li><li><p>
+			<span class="emphasis"><em>flags</em></span> (optional)- string of 
+			the following flags:
+			</p><div class="itemizedlist"><ul type="circle"><li><p><span class="emphasis"><em>'m' (Memory only)</em></span> - save the 
+					contacts only in memory cache without no DB operation;
+					</p></li><li><p><span class="emphasis"><em>'r' (no Reply)</em></span> - do not 
+					generate a SIP reply to the current REGISTER request.
+					</p></li><li><p><span class="emphasis"><em>'s' (Socket header)</em></span> -  look 
+					into REGISTER request for a header which contains a socket
+					description (proto:IP:port). This socket info will be 
+					stored by register instead of the received socket info.
+					</p></li><li><p><span class="emphasis"><em>'cnn' (max Contacts)</em></span> -  this 
+					flag can be used to limit the number of contacts for this
+					AOR (Address of Record) in the user location database.
+					Value 0 disables the check. This parameter overrides the 
+					global "max_contacts" module parameter.
+					</p></li><li><p><span class="emphasis"><em>'e(int)' (minimum expires)</em></span> -  this
+					flag can be used to set minimum register expiration time.
+					Values lower than this minimum will be automatically set
+					to the minimum. Value 0 disables the checking.
+					This parameter overrides the global "min_expires" module parameter.
+					</p></li><li><p><span class="emphasis"><em>'E(int)' (maximum expires)</em></span> -  this
+					flag can be used to set maximum register expiration time.
+					Values higher than this maximum will be automatically set
+					to the maximum. Value 0 disables the checking.
+					This parameter overrides the global "max_expires" module parameter.
+					</p></li><li><p><span class="emphasis"><em>'f' (force registration)</em></span> - this 
+					flag can be used to force the registration of NEW contacts
+					even if the maximum number of contacts is reached. In such
+					a case, older contacts will be removed to make space to the
+					new ones, without exceeding the maximum allowed number.
+					This flag makes sense only if "cxx" is used.
+					</p></li><li><p><span class="emphasis"><em>'p0' (Path support - 'off' mode)</em></span>
+					The Path header is saved into usrloc, but is never 
+					included in the reply.
+					</p></li><li><p><span class="emphasis"><em>'p1' (Path support - lazy mode)</em></span>
+					The Path header is saved into usrloc, but is only included 
+					in the reply if path support is indicated in the 
+					registration request by the &#8220;<span class="quote">path</span>&#8221; option 
+					of the &#8220;<span class="quote">Supported</span>&#8221; header.
+					</p></li><li><p><span class="emphasis"><em>'p2' (Path support - strict mode)</em></span>
+					The path header is only saved into usrloc, if path support 
+					is indicated in the registration request by the 
+					&#8220;<span class="quote">path</span>&#8221; option of the &#8220;<span class="quote">Supported</span>&#8221; 
+					header. If no path support is indicated, the request is 
+					rejected with &#8220;<span class="quote">420 - Bad Extension</span>&#8221; and the 
+					header &#8220;<span class="quote">Unsupported: path</span>&#8221; is included in 
+					the reply along with the received &#8220;<span class="quote">Path</span>&#8221; 
+					header. This mode is the one recommended by RFC-3327.
+					</p></li><li><p><span class="emphasis"><em>'v' (path receiVed)</em></span> if set,
+					the &#8220;<span class="quote">received</span>&#8221; parameter of the first Path 
+					URI of a registration is set as received-uri and the NAT 
+					branch flag is set for this contact. This is useful if 
+					the registrar is placed behind a SIP loadbalancer, which 
+					passes the nat'ed UAC address as &#8220;<span class="quote">received</span>&#8221; 
+					parameter in it's Path uri.
+					</p></li></ul></div><p>This parameter is a string composed of a set of flags.</p></li><li><p>
+			<span class="emphasis"><em>aor</em></span> (optional) - Variable contain a custom
+			AOR; if missing, the AOR will be taken from the default place - 
+			the TO header URI.
+			</p></li></ul></div><p>
+		This function can be used from REQUEST_ROUTE and ONREPLY_ROUTE.
+		</p><div class="example"><a name="id294242"></a><p class="title"><b>Example 1.17. <code class="function">save</code> usage</b></p><div class="example-contents"><pre class="programlisting">
+...
+# save into 'location', no flags, use default AOR (TO URI)
+save("location");
+...
+# save into 'location', do not update DB, max 5 contacts per AOR,
+# use default AOR (TO URI)
+save("location","mc5");
+...
+# save into 'location', no flags, use as AOR the FROM URI
+save("location","","$fu");
+...
+# save into 'location',no DB update, no reply to send, take AOR from AVP
+save("location","mr", "$avp(aor)");
+...
+</pre></div></div><br class="example-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id294262"></a>1.4.2. 
+		<code class="function">remove(domain, AOR[, target])</code>
+		</h3></div></div></div><p>
+		Explicitly remove contacts behind a given address-of-record.
+		</p><p>Meaning of the parameters is as follows:</p><div class="itemizedlist"><ul type="disc"><li><p>
+			<span class="emphasis"><em>domain</em></span> - Logical domain within registrar. 
+			If database is used then this must be name of the table which 
+			stores the contacts.
+			</p></li><li><p>
+			<span class="emphasis"><em>AOR</em></span> - address-of-record to be searched (SIP URI)
+			</p></li><li><p>
+				<span class="emphasis"><em>target (optional)</em></span> -
+				may be specified in two ways:
+				</p><div class="itemizedlist"><ul type="circle"><li><p>
+						<span class="bold"><strong>single delete - </strong></span>
+						Specific contact to be deleted (SIP URI)
+					</p></li><li><p>
+						<span class="bold"><strong>multi delete - </strong></span>
+						IP/hostname of the AOR's contacts which will be deleted
+					</p></li></ul></div><p>
+			</p></li></ul></div><p>
+		This function can be used from REQUEST_ROUTE and ONREPLY_ROUTE.
+		</p><div class="example"><a name="id294346"></a><p class="title"><b>Example 1.18. <code class="function">remove</code> usage</b></p><div class="example-contents"><pre class="programlisting">
+...
+# remove all contacts belonging to the "bob" AOR
+remove("location", "sip:bob@atlanta.com");
+...
+# remove only bob's home phone
+remove("location", "sip:bob@atlanta.com", "sip:bob@46.50.64.78");
+...
+# remove all bob's phones which are behind "50.60.50.60"
+$var(next_hop) = "50.60.50.60"
+remove("location", "sip:bob@atlanta.com", "$var(next_hop)");
+...
+</pre></div></div><br class="example-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id294366"></a>1.4.3. 
+		<code class="function">lookup(domain [, flags [, aor]])</code>
+		</h3></div></div></div><p>
+		The functions extracts username from Request-URI and tries to find 
+		all contacts for the username in usrloc. If there are no such 
+		contacts, -1 will be returned.  If there are such contacts, 
+		Request-URI will be overwritten with the contact that has
+		the highest q value and optionally the rest will be appended to 
+		the message (depending on append_branches parameter value).
+		</p><p>
+		If the method_filtering option is enabled, the lookup function
+		will return only the contacts that support the method of the
+		processed request.
+		</p><p>Meaning of the parameters is as follows:</p><div class="itemizedlist"><ul type="disc"><li><p>
+			<span class="emphasis"><em>domain</em></span> - Name of table that should be used 
+			for the lookup.
+			</p></li><li><p><span class="emphasis"><em>flags</em></span>(optional)</p><div class="itemizedlist"><ul type="circle"><li><p>
+				<span class="emphasis"><em>'b' (no Branches)</em></span> - this flag controls how
+				lookup function processes multiple contacts.  If there are 
+				multiple contacts for the given username in usrloc and this 
+				flag is not set, Request-URI will be overwritten with the 
+				highest-q rated contact and the rest will be appended to 
+				sip_msg structure and can be later used by tm for forking. If 
+				the flag is set, only Request-URI will be overwritten 
+				with the highest-q rated contact and the rest will be left 
+				unprocessed.
+				</p></li><li><p>
+				<span class="emphasis"><em>'m' (Method filtering)</em></span> - this flag tells 
+				if the contact filtering based on supported methods should be
+				performed during lookup.
+				</p></li><li><p>
+				<span class="emphasis"><em>'u' (User-Agent filtering)</em></span> - this flag 
+				enables regexp filtering by user-agent. It's useful with 
+				enabled append_branches parameter. Regexp must follow 
+				the 'u' flag and must use format like 'u/regexp/'.
+				</p></li><li><p>
+				<span class="emphasis"><em>'i' (Case insensitive search)</em></span> - this flag 
+				enables case insensitive filtering for the 'u' flag.
+				</p></li><li><p>
+				<span class="emphasis"><em>'e' (Use extended regexp)</em></span> - this flag 
+				enables using of extended regexp format for the 'u' flag.
+				</p></li></ul></div></li><li><p>
+			<span class="emphasis"><em>AOR</em></span> (optional)- AOR to lookup for; if
+			missing, the RURI is used as AOR; This must be a variable.
+			</p></li></ul></div><p>Return codes:</p><div class="itemizedlist"><ul type="disc"><li><p>
+			<span class="emphasis"><em>1</em></span> - contacts found and returned.
+			</p><p>
+			<span class="emphasis"><em>-1</em></span> - no contact found.
+			</p><p>
+			<span class="emphasis"><em>-2</em></span> - contacts found, but method not supported.
+			</p><p>
+			<span class="emphasis"><em>-3</em></span> - internal error during processing.
+			</p></li></ul></div><p>
+		This function can be used from REQUEST_ROUTE, FAILURE_ROUTE.
+		</p><div class="example"><a name="id294593"></a><p class="title"><b>Example 1.19. <code class="function">lookup</code> usage</b></p><div class="example-contents"><pre class="programlisting">
+...
+lookup("location");  # simple lookup
+   #or
+lookup("location","m"); # lookup with method filtering
+   #or
+lookup("location","u/phone/i"); # lookup with user-agent filtering
+   #or
+lookup("location","","$var(aor)"); # simple lookup with AOR from PV
+switch ($retcode) {
+    case -1:
+    case -3:
+        sl_send_reply("404", "Not Found");
+        exit;
+    case -2:
+        sl_send_reply("405", "Not Found");
+        exit;
+};
+...
+</pre></div></div><br class="example-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id294613"></a>1.4.4. 
+		<code class="function">registered(domain [,AOR[, callid]])</code>
+		</h3></div></div></div><p>
+		The function returns true if an AOR is registered, false otherwise.
+		The function does not modify the message being process.
+		</p><p>
+		NOTE: if called for a reply (from onreply_route), you must pass an
+		AOR (as parameter), otherwise the function will fail.
+		</p><p>Meaning of the parameters is as follows:</p><div class="itemizedlist"><ul type="disc"><li><p>
+			<span class="emphasis"><em>domain</em></span> - Name of table that should be 
+			used for the lookup.
+			</p></li><li><p>
+			<span class="emphasis"><em>AOR</em></span> (optional)- AOR to lookup for; if
+			missing, the RURI is used as AOR; This must be a variable.
+			</p></li><li><p>
+			<span class="emphasis"><em>callid</em></span> (optional)- callid to check if a 
+			contact if registered with this callid (this may help you to 
+			make distinction between newly registered contact (callid 
+			not registered so far) and re-registration (callid already 
+			registered).
+			</p></li></ul></div><p>
+		This function can be used from REQUEST_ROUTE, FAILURE_ROUTE,
+			BRANCH_ROUTE, ONREPLY_ROUTE, LOCAL_ROUTE.
+		</p><div class="example"><a name="id294676"></a><p class="title"><b>Example 1.20. <code class="function">registered</code> usage</b></p><div class="example-contents"><pre class="programlisting">
+...
+if (registered("location")) {
+	sl_send_reply("100", "Trying");
+	...
+};
+if (registered("location","$fu")) {
+	xlog("caller is registered\n");
+}
+...
+</pre></div></div><br class="example-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id294694"></a>1.4.5. 
+		<code class="function">is_other_contact(domain , IPs)</code>
+		</h3></div></div></div><p>
+		This function returns true if there are any other contacts registered,
+		different from the ones from the IPs avp.
+		</p><p>Meaning of the parameters is as follows:</p><div class="itemizedlist"><ul type="disc"><li><p>
+			<span class="emphasis"><em>domain</em></span> - Name of table that should be 
+			used for contacts lookup.
+			</p></li><li><p>
+			<span class="emphasis"><em>IPs</em></span> - an AVP containing the IP's that
+				will be compared with the contacts from usrloc.
+			</p></li></ul></div><p>
+		This function can be used from REQUEST_ROUTE.
+		</p><div class="example"><a name="id294739"></a><p class="title"><b>Example 1.21. <code class="function">is_other_contact</code> usage</b></p><div class="example-contents"><pre class="programlisting">
+...
+
+if (is_other_contact("location", "$avp(ips)")) {
+	sl_send_reply("403", "Forbidden");
+	...
+};
+...
+</pre></div></div><br class="example-break"></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id294757"></a>1.4.6. 
+		<code class="function">add_sock_hdr(hdr_name)</code>
+		</h3></div></div></div><p>
+		Adds to the current REGISTER request a new header with 
+		&#8220;<span class="quote">hdr_name</span>&#8221; which contains the description of the
+		received socket (proto:ip:port)
+		</p><p>
+		This makes sense only in multiple replicated servers scenarios.
+		</p><p>Meaning of the parameters is as follows:</p><div class="itemizedlist"><ul type="disc"><li><p>
+			<span class="emphasis"><em>hdr_name</em></span> - header name to be used.
+			</p></li></ul></div><p>
+		This function can be used from REQUEST_ROUTE.
+		</p><div class="example"><a name="id294798"></a><p class="title"><b>Example 1.22. <code class="function">add_sock_hdr</code> usage</b></p><div class="example-contents"><pre class="programlisting">
+...
+add_sock_hdr("Sock-Info");
+...
+</pre></div></div><br class="example-break"></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id294816"></a>1.5. Exported Statistics</h2></div></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id294822"></a>1.5.1. <code class="varname">max_expires</code></h3></div></div></div><p>
+		Value of max_expires parameter.
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id294832"></a>1.5.2. <code class="varname">max_contacts</code></h3></div></div></div><p>
+		The value of max_contacts parameter.
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id294843"></a>1.5.3. <code class="varname">defaults_expires</code></h3></div></div></div><p>
+		The value of default_expires parameter.
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id294854"></a>1.5.4. <code class="varname">accepted_regs</code></h3></div></div></div><p>
+		Number of accepted registrations.
+		</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id294864"></a>1.5.5. <code class="varname">rejected_regs</code></h3></div></div></div><p>
+		Number of rejected registrations.
+		</p></div></div></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="id296480"></a>Chapter 2. Frequently Asked Questions</h2></div></div></div><div class="qandaset"><table border="0" summary="Q and A Set"><col align="left" width="1%"><tbody><tr class="question"><td align="left" valign="top"><a name="id296165"></a><a name="id296167"></a><p><b>2.1.</b></p></td><td align="left" valign="top"><p>What happend with the old &#8220;<span class="quote">append_branch</span>&#8221; module parameter?</p></td></tr><tr class="answer"><td align="left" valign="top"></td><td align="left" valign="top"><p>
+			It was removed as global option, as the &#8220;<span class="quote">lookup</span>&#8221; 
+			function takes this option via the flag "b" (append Branches) 
+			See the documentation of the &#8220;<span class="quote">lookup</span>&#8221; function.
+		</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id296502"></a><a name="id296504"></a><p><b>2.2.</b></p></td><td align="left" valign="top"><p>What happend with the old &#8220;<span class="quote">method_filtering</span>&#8221; module parameter?</p></td></tr><tr class="answer"><td align="left" valign="top"></td><td align="left" valign="top"><p>
+			It was removed as global option, as the &#8220;<span class="quote">lookup</span>&#8221; 
+			function takes this option via the flag "m" (Method filtering) 
+			See the documentation of the &#8220;<span class="quote">lookup</span>&#8221; function.
+		</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id296528"></a><a name="id296531"></a><p><b>2.3.</b></p></td><td align="left" valign="top"><p>What happend with the old &#8220;<span class="quote">sock_flag</span>&#8221; module parameter?</p></td></tr><tr class="answer"><td align="left" valign="top"></td><td align="left" valign="top"><p>
+			It was removed as global option, as the &#8220;<span class="quote">save</span>&#8221; 
+			function takes this option via the flag "s" (Socket header) 
+			See the documentation of the &#8220;<span class="quote">save</span>&#8221; function.
+		</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id296555"></a><a name="id296557"></a><p><b>2.4.</b></p></td><td align="left" valign="top"><p>What happend with the old &#8220;<span class="quote">use_path</span>&#8221; and &#8220;<span class="quote">path_mode</span>&#8221; module parameters?</p></td></tr><tr class="answer"><td align="left" valign="top"></td><td align="left" valign="top"><p>
+			They were removed as global option, as the &#8220;<span class="quote">save</span>&#8221; 
+			function takes these options via the flag "px" (path support) 
+			See the documentation of the &#8220;<span class="quote">save</span>&#8221; function.
+		</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id296585"></a><a name="id296587"></a><p><b>2.5.</b></p></td><td align="left" valign="top"><p>What happend with the old &#8220;<span class="quote">path_use_received</span>&#8221; module parameter?</p></td></tr><tr class="answer"><td align="left" valign="top"></td><td align="left" valign="top"><p>
+			It was removed as global option, as the &#8220;<span class="quote">save</span>&#8221; 
+			function takes this option via the flag "v" (path receiVed) 
+			See the documentation of the &#8220;<span class="quote">save</span>&#8221; function.
+		</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id296611"></a><a name="id296613"></a><p><b>2.6.</b></p></td><td align="left" valign="top"><p>What happend with the old &#8220;<span class="quote">nat_flag</span>&#8221; module parameter?</p></td></tr><tr class="answer"><td align="left" valign="top"></td><td align="left" valign="top"><p>
+			It was removed, as the module internally loads this value from the
+			&#8220;<span class="quote">USRLOC</span>&#8221; module (see the &#8220;<span class="quote">nat_bflag</span>&#8221;
+			USRLOC parameter).
+		</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id296637"></a><a name="id296639"></a><p><b>2.7.</b></p></td><td align="left" valign="top"><p>What happend with the old &#8220;<span class="quote">use_domain</span>&#8221; module parameter?</p></td></tr><tr class="answer"><td align="left" valign="top"></td><td align="left" valign="top"><p>
+			It was removed, as the module internally loads this option from the
+			&#8220;<span class="quote">USRLOC</span>&#8221; module. This was done in order to simplify the
+			configuration.
+		</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id296659"></a><a name="id296661"></a><p><b>2.8.</b></p></td><td align="left" valign="top"><p>What happend with the old &#8220;<span class="quote">save_noreply</span>&#8221; and &#8220;<span class="quote">save_memory</span>&#8221; functions?</p></td></tr><tr class="answer"><td align="left" valign="top"></td><td align="left" valign="top"><p>
+			There functions were merged into the new 
+			&#8220;<span class="quote">save(domain,flags)</span>&#8221; functions. If a reply should be
+			sent or if the DB should be updated also is controlled via the
+			flags.
+		</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id296686"></a><a name="id296688"></a><p><b>2.9.</b></p></td><td align="left" valign="top"><p>Where can I find more about OpenSIPS?</p></td></tr><tr class="answer"><td align="left" valign="top"></td><td align="left" valign="top"><p>
+			Take a look at <a class="ulink" href="javascript:if(confirm(%27http://www.opensips.org/Documentation/<a class=\%27urllink\%27 href=\%27http://www.opensips.org/\%27 rel=\%27nofollow\%27>http://www.opensips.org/</a>  \n\nThis file was not retrieved by Teleport Pro, because the server reports that this file cannot be found.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/<a class=\%27urllink\%27 href=\%27http://www.opensips.org/\%27 rel=\%27nofollow\%27>http://www.opensips.org/</a>%27" tppabs="http://www.opensips.org/Documentation/<a class=%27urllink%27 href=%27http://www.opensips.org/%27 rel=%27nofollow%27>http://www.opensips.org/</a>" target="_top"><a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/" rel='nofollow'>http://www.opensips.org/</a></a>.
+		</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id296715"></a><a name="id296717"></a><p><b>2.10.</b></p></td><td align="left" valign="top"><p>Where can I post a question about this module?</p></td></tr><tr class="answer"><td align="left" valign="top"></td><td align="left" valign="top"><p>
+			First at all check if your question was already answered on one of
+			our mailing lists: 
+		</p><div class="itemizedlist"><ul type="disc"><li><p>User Mailing List - <a class="ulink" href="javascript:if(confirm(%27http://www.opensips.org/Documentation/<a class=\%27urllink\%27 href=\%27http://lists.opensips.org/cgi-bin/mailman/listinfo/users\%27 rel=\%27nofollow\%27>http://lists.opensips.org/cgi-bin/mailman/listinfo/users</a>  \n\nThis file was not retrieved by Teleport Pro, because the server reports that this file cannot be found.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/<a class=\%27urllink\%27 href=\%27http://lists.opensips.org/cgi-bin/mailman/listinfo/users\%27 rel=\%27nofollow\%27>http://lists.opensips.org/cgi-bin/mailman/listinfo/users</a>%27" tppabs="http://www.opensips.org/Documentation/<a class=%27urllink%27 href=%27http://lists.opensips.org/cgi-bin/mailman/listinfo/users%27 rel=%27nofollow%27>http://lists.opensips.org/cgi-bin/mailman/listinfo/users</a>" target="_top"><a class='urllink' href="javascript:if(confirm(%27http://lists.opensips.org/cgi-bin/mailman/listinfo/users  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://lists.opensips.org/cgi-bin/mailman/listinfo/users%27" tppabs="http://lists.opensips.org/cgi-bin/mailman/listinfo/users" rel='nofollow'>http://lists.opensips.org/cgi-bin/mailman/listinfo/users</a></a></p></li><li><p>Developer Mailing List - <a class="ulink" href="javascript:if(confirm(%27http://www.opensips.org/Documentation/<a class=\%27urllink\%27 href=\%27http://lists.opensips.org/cgi-bin/mailman/listinfo/devel\%27 rel=\%27nofollow\%27>http://lists.opensips.org/cgi-bin/mailman/listinfo/devel</a>  \n\nThis file was not retrieved by Teleport Pro, because the server reports that this file cannot be found.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/<a class=\%27urllink\%27 href=\%27http://lists.opensips.org/cgi-bin/mailman/listinfo/devel\%27 rel=\%27nofollow\%27>http://lists.opensips.org/cgi-bin/mailman/listinfo/devel</a>%27" tppabs="http://www.opensips.org/Documentation/<a class=%27urllink%27 href=%27http://lists.opensips.org/cgi-bin/mailman/listinfo/devel%27 rel=%27nofollow%27>http://lists.opensips.org/cgi-bin/mailman/listinfo/devel</a>" target="_top"><a class='urllink' href="javascript:if(confirm(%27http://lists.opensips.org/cgi-bin/mailman/listinfo/devel  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://lists.opensips.org/cgi-bin/mailman/listinfo/devel%27" tppabs="http://lists.opensips.org/cgi-bin/mailman/listinfo/devel" rel='nofollow'>http://lists.opensips.org/cgi-bin/mailman/listinfo/devel</a></a></p></li></ul></div><p>
+			E-mails regarding any stable OpenSIPS release should be sent to 
+			<code class="email">&lt;<a class="email" href="javascript:if(confirm(%27http://www.opensips.org/Documentation/<a class=\%27urllink\%27 href=\%27mailto:users@lists.opensips.org\%27 rel=\%27nofollow\%27>users@lists.opensips.org</a>  \n\nThis file was not retrieved by Teleport Pro, because the server reports that this file cannot be found.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/<a class=\%27urllink\%27 href=\%27mailto:users@lists.opensips.org\%27 rel=\%27nofollow\%27>users@lists.opensips.org</a>%27" tppabs="http://www.opensips.org/Documentation/<a class=%27urllink%27 href=%27mailto:users@lists.opensips.org%27 rel=%27nofollow%27>users@lists.opensips.org</a>">users@lists.opensips.org</a>&gt;</code> and e-mails regarding development versions
+			should be sent to <code class="email">&lt;<a class="email" href="javascript:if(confirm(%27http://www.opensips.org/Documentation/<a class=\%27urllink\%27 href=\%27mailto:devel@lists.opensips.org\%27 rel=\%27nofollow\%27>devel@lists.opensips.org</a>  \n\nThis file was not retrieved by Teleport Pro, because the server reports that this file cannot be found.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/<a class=\%27urllink\%27 href=\%27mailto:devel@lists.opensips.org\%27 rel=\%27nofollow\%27>devel@lists.opensips.org</a>%27" tppabs="http://www.opensips.org/Documentation/<a class=%27urllink%27 href=%27mailto:devel@lists.opensips.org%27 rel=%27nofollow%27>devel@lists.opensips.org</a>">devel@lists.opensips.org</a>&gt;</code>.
+		</p><p>
+			If you want to keep the mail private, send it to 
+			<code class="email">&lt;<a class="email" href="javascript:if(confirm(%27http://www.opensips.org/Documentation/<a class=\%27urllink\%27 href=\%27mailto:users@lists.opensips.org\%27 rel=\%27nofollow\%27>users@lists.opensips.org</a>  \n\nThis file was not retrieved by Teleport Pro, because the server reports that this file cannot be found.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/<a class=\%27urllink\%27 href=\%27mailto:users@lists.opensips.org\%27 rel=\%27nofollow\%27>users@lists.opensips.org</a>%27" tppabs="http://www.opensips.org/Documentation/<a class=%27urllink%27 href=%27mailto:users@lists.opensips.org%27 rel=%27nofollow%27>users@lists.opensips.org</a>">users@lists.opensips.org</a>&gt;</code>.
+		</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id296772"></a><a name="id296774"></a><p><b>2.11.</b></p></td><td align="left" valign="top"><p>How can I report a bug?</p></td></tr><tr class="answer"><td align="left" valign="top"></td><td align="left" valign="top"><p>
+			Please follow the guidelines provided at:
+			<a class="ulink" href="javascript:if(confirm(%27http://www.opensips.org/Documentation/<a class=\%27urllink\%27 href=\%27https://github.com/OpenSIPS/opensips/issues\%27 rel=\%27nofollow\%27>https://github.com/OpenSIPS/opensips/issues</a>  \n\nThis file was not retrieved by Teleport Pro, because the server reports that this file cannot be found.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/<a class=\%27urllink\%27 href=\%27https://github.com/OpenSIPS/opensips/issues\%27 rel=\%27nofollow\%27>https://github.com/OpenSIPS/opensips/issues</a>%27" tppabs="http://www.opensips.org/Documentation/<a class=%27urllink%27 href=%27https://github.com/OpenSIPS/opensips/issues%27 rel=%27nofollow%27>https://github.com/OpenSIPS/opensips/issues</a>" target="_top"><a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/issues  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/issues%27" tppabs="https://github.com/OpenSIPS/opensips/issues" rel='nofollow'>https://github.com/OpenSIPS/opensips/issues</a></a>.
+		</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id296798"></a><a name="id296800"></a><p><b>2.12.</b></p></td><td align="left" valign="top"><p>What happened to the desc_time_order parameter?</p></td></tr><tr class="answer"><td align="left" valign="top"></td><td align="left" valign="top"><p>
+			It was removed, as its functionality was mmigrate into usrloc
+			module, were there is a parameter with the same name.
+		</p></td></tr></tbody></table></div></div></div></body></html>
+
+
+<!--/ includeHTML -->
+
+
+</pre>
+</div>
+
+  <div id='printfoot'>
+    <div class='from'>Retrieved from http://www.opensips.org/Documentation/Module-AAARADIUS</div>
+    <div class='lastmod'>Page last modified on March 24, 2015, at 03:35 PM</div></div>
+<!--HTMLFooter-->
+</body>
+</html>

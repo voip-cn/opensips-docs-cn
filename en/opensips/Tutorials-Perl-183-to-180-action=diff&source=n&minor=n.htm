@@ -1,0 +1,399 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Tutorials-Perl-183-to-180 | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Tutorials-Perl-183-to-180' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Tutorials-Perl-183-to-180 History</h2>
+  <p><a href="Tutorials-Perl-183-to-180-action=diff&source=n&minor=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Perl-183-to-180?action=diff&source=n&minor=y">Show minor edits</a> - <a href="Tutorials-Perl-183-to-180-action=diff&source=y&minor=n.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Perl-183-to-180?action=diff&source=y&minor=n">Show changes to markup</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>May 16, 2013, at 06:10 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><h2><a class='wikilink' title='Index' href="Index.htm" tppabs="http://www.opensips.org/Documentation/Index">Documentation</a> -&gt; <a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Tutorials</a> -&gt; <a class='selflink' href="Tutorials-Perl-183-to-180.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Perl-183-to-180">Perl</a></h2>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h5>Documentation -&gt; <a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Tutorials</a> -&gt; Perl</h5>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-Perl-183-to-180?action=edit&restore=diff:1368720608:1368109506:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-Perl-183-to-180?action=edit&restore=diff:1368720608:1368109506:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-Perl-183-to-180?action=edit&restore=diff:1368720608:1368109506:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 04:25 PM 
+        by <span class='diffauthor' title='79.118.227.150'>79.118.227.150</span> - </div>
+        <div class='difftype'>Changed lines 1-2 from:</div>
+        <div class='diffdel'><h1>Perl module tutorial</h1>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h2><a class='wikilink' title='Index' href="Index.htm" tppabs="http://www.opensips.org/Documentation/Index">Documentation</a> -&gt; <a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Tutorials</a> -&gt; <a class='selflink' href="Tutorials-Perl-183-to-180.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Perl-183-to-180">Perl</a></h2>
+<hr />
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-Perl-183-to-180-action=edit&restore=diff-1368109506-1366825881-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Perl-183-to-180?action=edit&restore=diff:1368109506:1366825881:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 24, 2013, at 07:51 PM 
+        by <span class='diffauthor' title='79.118.215.235'>79.118.215.235</span> - </div>
+        <div class='difftype'>Added lines 1-167:</div>
+        <div class='diffadd'><h1>Perl module tutorial</h1>
+<h2>Replace 183 early media reply with 180 (Ringing)</h2>
+<h3>Task</h3>
+<p>We want to catch all 183 status responses, remove the SDP body and send a plain 180 reply instead. This example script has also been posted to the OpenSIPS-Users mailinglist and should show the possibilities of the OpenSIPS Perl module.
+</p>
+<div class='vspace'></div><h3>Usage</h3>
+<pre class='escaped'>
+loadmodule "perl.so"
+modparam("perl", "filename", "/etc/opensips/perlfunctions.pl")
+
+onreply_route[1]
+{
+    ...
+    if(t_check_status("183")) {
+        perl_exec("sendReplyAs180");
+        drop();
+    }
+}
+</pre>
+<div class='vspace'></div><h3>Example script (Perl code)</h3>
+<pre class='escaped'>
+#####################################################################
+# Example perl script, sending 180 Ringing for a given reply packet
+#
+# Description
+#
+# &lt;to be done - no time right now, script has been discussed on IRC&gt;
+#
+# WARNING:
+#
+# This software is given as is, without any warranty and support.
+# It may destroy all your servers, delete all your data, kill your
+# little dog and hurt your little sister.
+#
+# I'm not responsible for such side effects - therefore you should
+# absolutely NOT use this script unless you exactly understand what
+# it will do to your environment.
+#
+# Author      : Thomas Gelf &lt;thomas@gelf.net&gt;
+# License     : Unsure, but: just use it, I'll for sure not sue you!
+# Last change : 2009/04/12
+#
+#####################################################################
+
+use OpenSIPS qw ( log );
+use OpenSIPS::Constants;
+
+###
+# Create a hashref out of ab=123;bc=45
+##
+sub splitKeyValue {
+    my @parts = split /\;/, shift;
+    my $avp;
+    my $key;
+    my $val;
+    while (my $part = shift(@parts)) {
+        ($key, $val) = split /=/, $part, 2;
+        $avp-&gt;{$key} = $val;
+    }
+    return $avp;
+}
+
+###
+# Return a hashref of arrays with all headers found in given string,
+# grouped by header name (case sensitive!)
+##
+sub parseHeaderLines {
+    my $header = shift;
+    my @lines = split /\r?\n/, $header;
+    my $headers;
+    my $key;
+    my $val;
+    while ($line = shift @lines) {
+        ($key, $val) = split /:\s*/, $line, 2;
+        my @values = split /,/, $val;
+        push @{$headers-&gt;{$key}}, @values;
+    }
+    return $headers;
+}
+
+###
+# Should be called for 183 replies, that need to be "converted" to
+# SDP-less 180 Ringing replies
+##
+sub sendReplyAs180 {
+    my $vias;
+    my $via;
+    my $via_params;
+    my $top_via;
+    my $new_header;
+    my $headers;
+    my $status_line;
+    my $port = 5060;
+    my $message = shift;
+    my @header_lines = split /\r\n/, $message-&gt;getFullHeader();
+
+    # Separate Via lines from the rest of the header
+    foreach (@header_lines) {
+        if (/^Via:/) {
+            $via .= $_ . "\r\n";
+        } else {
+            if (! $status_line) {
+                $status_line = $_ . "\r\n";
+            } else {
+                # Skip Content-* lines
+                $headers .= $_ . "\r\n" if ! /^Content-/i;
+            }
+        }
+    }
+
+    # Add Content-Length: 0
+    $headers .= "Content-Length: 0\r\n\r\n";
+
+    # Start new header with different status line
+    $new_header = "SIP/2.0 180 Ringing\r\n";
+
+    # Remove topmost Via
+    $vias = parseHeaderLines($via);
+    shift @{$vias-&gt;{Via}};
+    foreach $key (keys %$vias) {
+        # Add remaining Via's to new header
+        foreach (@{$vias-&gt;{$key}}) {
+            $new_header .= "Via: $_\r\n";
+        }
+    }
+
+    # Re-add other headers
+    $new_header .= $headers;
+
+    # Retrieve destination ip and port, with respect to received and rport
+    $top_via = $vias-&gt;{Via}[0];
+    ($dummy, $top_via) = split /\s+/, $top_via, 2;
+    ($ip, $top_via) = split /;/, $top_via, 2;
+    my $via_params = splitKeyValue($top_via);
+    if ($ip =~ /^(.+)\:(.+)$/) {
+        $ip = $1;
+        $port = $2;
+    }
+    $ip = $via_params-&gt;{received} if $via_params-&gt;{received} =~ /^[0-9\.]+$/;
+    $port = $via_params-&gt;{rport} if $via_params-&gt;{rport} =~ /^\d{4,5}$/;
+
+    # Finally send out the packet
+    log(L_INFO, "Sending reply transformed to 180 Ringing to $ip:$port");
+    sendSipMessage($ip, $port, $new_header);
+    return 1;
+}
+
+###
+# Send a given SIP message to given IP and port
+##
+sub sendSipMessage {
+    my $ip = shift;
+    my $port = shift;
+    my $msg = shift;
+    my $sock = new IO::Socket::INET (
+        PeerAddr  =&gt; $ip, 
+        PeerPort  =&gt; $port,
+        Proto     =&gt; 'udp',
+        LocalPort =&gt; '5060',
+        ReuseAddr =&gt; '1'
+    );
+    return unless $sock;
+    print $sock $msg;
+    close($sock);
+}
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-Perl-183-to-180-action=edit&restore=diff-1366825881-1366825881-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Perl-183-to-180?action=edit&restore=diff:1366825881:1366825881:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-Perl-183-to-180?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-Perl-183-to-180?action=edit%27" tppabs="http://www.opensips.org/Documentation/Tutorials-Perl-183-to-180?action=edit">Edit</a> |
+      <a rel="nofollow" href="Tutorials-Perl-183-to-180-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Perl-183-to-180?action=diff">History</a> |
+      <a rel="nofollow" href="Tutorials-Perl-183-to-180-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Perl-183-to-180?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on May 16, 2013, at 06:10 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

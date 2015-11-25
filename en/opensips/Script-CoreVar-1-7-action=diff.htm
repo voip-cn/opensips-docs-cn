@@ -1,0 +1,819 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Core Variables - ver 1.7 | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Script-CoreVar-1-7' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Script-CoreVar-1-7 History</h2>
+  <p><a href="Script-CoreVar-1-7-action=diff&source=n&minor=n.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreVar-1-7?action=diff&source=n&minor=n">Hide minor edits</a> - <a href="Script-CoreVar-1-7-action=diff&source=y&minor=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreVar-1-7?action=diff&source=y&minor=y">Show changes to markup</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>August 05, 2013, at 01:01 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 4 from:</div>
+        <div class='diffdel'><p><span style='font-size:83%'> Page for other versions: <a class='wikilink' title='Script-CoreVar' href="Script-CoreVar-2-2.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreVar">devel</a> <a class='wikilink' title='Core Variables - ver 1.9' href="Script-CoreVar-1-9.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreVar-1-9">1.9</a> <a class='wikilink' title='Core Variables - ver 1.8' href="Script-CoreVar-1-8.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreVar-1-8">1.8</a> old versions: 1.7 <a class='wikilink' title='Core Variables - ver 1.6' href="Script-CoreVar-1-6.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreVar-1-6">1.6</a> <a class='wikilink' title='Core Variables - ver 1.5' href="Script-CoreVar-1-5.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreVar-1-5">1.5</a> <a class='wikilink' title='Core Variables - ver 1.4' href="Script-CoreVar-1-4.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreVar-1-4">1.4</a> </span>
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>(:allVersions Script-CoreVar 1.7:)
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreVar-1-7-action=edit&restore=diff-1375700490-1369780634-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreVar-1-7?action=edit&restore=diff:1375700490:1369780634:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 29, 2013, at 12:37 AM 
+        by <span class='diffauthor' title='92.80.35.155'>92.80.35.155</span> - </div>
+        <div class='difftype'>Changed lines 1-2 from:</div>
+        <div class='diffdel'><h2><a class='createlinktext' rel='nofollow' 
+    href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">Documentation</a><a rel='nofollow' 
+    class='createlink' href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">?</a> -&gt; Script -&gt; <a class='selflink' href="Script-CoreVar-1-7.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreVar-1-7">Variables 1.7.x</a></h2>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h5>Documentation -&gt; <a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a> -&gt; <a class='wikilink' title='OpenSIPS Manual - 1.7 ver' href="Manual-1-7.htm" tppabs="http://www.opensips.org/Documentation/Manual-1-7">Manual 1.7</a> -&gt; Core variables</h5>
+<p>(:title Core Variables - ver 1.7 :)
+</p>
+</div>
+        <div class='difftype'>Changed lines 4-7 from:</div>
+        <div class='diffdel'><p>This documentation is valid for <strong>OpenSIPS v1.7.x stable</strong>.
+</p>
+<div class='vspace'></div>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><span style='font-size:83%'> Page for other versions: <a class='wikilink' title='Script-CoreVar' href="Script-CoreVar-2-2.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreVar">devel</a> <a class='wikilink' title='Core Variables - ver 1.9' href="Script-CoreVar-1-9.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreVar-1-9">1.9</a> <a class='wikilink' title='Core Variables - ver 1.8' href="Script-CoreVar-1-8.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreVar-1-8">1.8</a> old versions: 1.7 <a class='wikilink' title='Core Variables - ver 1.6' href="Script-CoreVar-1-6.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreVar-1-6">1.6</a> <a class='wikilink' title='Core Variables - ver 1.5' href="Script-CoreVar-1-5.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreVar-1-5">1.5</a> <a class='wikilink' title='Core Variables - ver 1.4' href="Script-CoreVar-1-4.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreVar-1-4">1.4</a> </span>
+</p>
+<p class='vspace'><br />
+</p><table width='100%'><tr ><td  align='center'><span  style='color: #185662;'><span style='font-size:120%'><strong>Core Variables v1.7</strong></span></span></td></tr>
+</table>
+<div class='vspace'></div><table width='100%'><tr ><td  align='left'><a class='wikilink' title='Core Functions - ver 1.7' href="Script-CoreFunctions-1-7.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreFunctions-1-7">Prev</a></td><td  align='right'><a class='wikilink' title='Script Flags - ver 1.7' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Script-Flags-1-7  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Script-Flags-1-7%27" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-7">Next</a></td></tr>
+</table><hr />
+</div>
+        <div class='difftype'>Added line 14:</div>
+        <div class='diffadd'></div></div>
+      <div class='diffrestore'><a href="Script-CoreVar-1-7-action=edit&restore=diff-1369780634-1368093968-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreVar-1-7?action=edit&restore=diff:1369780634:1368093968:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 12:06 PM 
+        by <span class='diffauthor' title='79.118.227.150'>79.118.227.150</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><h2><a class='createlinktext' rel='nofollow' 
+    href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">Documentation</a><a rel='nofollow' 
+    class='createlink' href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">?</a> -&gt; Script -&gt; <a class='wikilink' title='Script Transformations - ver 1.7' href="Script-Tran-1-7.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-7">Transformations 1.7.x</a></h2>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h2><a class='createlinktext' rel='nofollow' 
+    href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">Documentation</a><a rel='nofollow' 
+    class='createlink' href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">?</a> -&gt; Script -&gt; <a class='selflink' href="Script-CoreVar-1-7.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreVar-1-7">Variables 1.7.x</a></h2>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Script-CoreVar-1-7?action=edit&restore=diff:1368093968:1368093754:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Script-CoreVar-1-7?action=edit&restore=diff:1368093968:1368093754:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Script-CoreVar-1-7?action=edit&restore=diff:1368093968:1368093754:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 12:02 PM 
+        by <span class='diffauthor' title='79.118.227.150'>79.118.227.150</span> - </div>
+        <div class='difftype'>Changed lines 1-2 from:</div>
+        <div class='diffdel'><h2>Resources -&gt; <a class='wikilink' title='Documentation' href="javascript:if(confirm(%27http://www.opensips.org/Resources/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/Documentation%27" tppabs="http://www.opensips.org/Resources/Documentation">Documentation</a> -&gt; <a class='wikilink' title='DocsCookbooks' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCookbooks  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCookbooks%27" tppabs="http://www.opensips.org/Resources/DocsCookbooks">CookBooks</a> -&gt; Scripting variables</h2>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h2><a class='createlinktext' rel='nofollow' 
+    href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">Documentation</a><a rel='nofollow' 
+    class='createlink' href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">?</a> -&gt; Script -&gt; <a class='wikilink' title='Script Transformations - ver 1.7' href="Script-Tran-1-7.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-7">Transformations 1.7.x</a></h2>
+</div>
+        <div class='difftype'>Changed line 26 from:</div>
+        <div class='diffdel'><ul><li><strong>transformation</strong> - a series of processing actions can be applied on pseudo-variable. You can find the whole list of possible transformations <a class='wikilink' title='DocsCoreTran' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreTran  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreTran%27" tppabs="http://www.opensips.org/Resources/DocsCoreTran">here</a>. The transformations can be cascaded, using the output of one transformation as the input of another.     
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><strong>transformation</strong> - a series of processing actions can be applied on pseudo-variable. You can find the whole list of possible transformations <a class='wikilink' title='Script Transformations - ver 1.7' href="Script-Tran-1-7.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-7">here</a>. The transformations can be cascaded, using the output of one transformation as the input of another.     
+</li></ul>
+</div>
+        <div class='difftype'>Changed line 678 from:</div>
+        <div class='diffdel'><p>@]
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>@]
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Script-CoreVar-1-7?action=edit&restore=diff:1368093754:1366802431:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Script-CoreVar-1-7?action=edit&restore=diff:1368093754:1366802431:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Script-CoreVar-1-7?action=edit&restore=diff:1368093754:1366802431:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 24, 2013, at 01:20 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Added lines 1-677:</div>
+        <div class='diffadd'><h2>Resources -&gt; <a class='wikilink' title='Documentation' href="javascript:if(confirm(%27http://www.opensips.org/Resources/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/Documentation%27" tppabs="http://www.opensips.org/Resources/Documentation">Documentation</a> -&gt; <a class='wikilink' title='DocsCookbooks' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCookbooks  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCookbooks%27" tppabs="http://www.opensips.org/Resources/DocsCookbooks">CookBooks</a> -&gt; Scripting variables</h2>
+<hr />
+<p class='vspace'>This documentation is valid for <strong>OpenSIPS v1.7.x stable</strong>.
+</p>
+<p class='vspace'>(:toc-float Table of Content:)
+<strong>OpenSIPS</strong> provides multiple type of variables to be used in the routing script. The difference between the types of variables comes from (1) the visibility of the variable (when it is visible), (2) what the variable is attached to (where the variable resides), (3) read-write status of the variable (some types of the variables are read-only and (4) how multiple values (for the same variable are handled).
+</p>
+<p class='vspace'>The <strong>OpenSIPS</strong> variables can be easily identified in the script as all their names (or notations) starts with the <strong>$</strong> sign.
+</p>
+<p class='vspace'>Syntax:<br />The complete syntax for a pseudo variable is: 
+</p><div class='frame lfloat' > 
+<p>$(<span  style='color: green;'><em>&lt;context&gt;</em></span><span  style='color: black;'><strong>name</strong></span><span  style='color: green;'><em>(subname)[index]{transformation}</em></span>)
+</p></div>
+<p class='vspace'>The fields written in green are optional.
+The fields meaning is:
+</p><ul><li><strong>name</strong>(compulsory) - the pseudo-variable name(type).<br />Ex: pvar, avp, ru, DLG_status, etc.
+</li><li><strong>subname</strong> - the identifier of a certain pv from the given type.<br />Ex: hdr(From), avp(i:25).
+</li><li><strong>index</strong> - a pv can store more than one value - it can refer to a list of values. You can access a certain value from the list if you specify its index. You can also specify indexes with negative values, -1 means the last inserted, -2 the value before the previous inserted one.
+</li><li><strong>transformation</strong> - a series of processing actions can be applied on pseudo-variable. You can find the whole list of possible transformations <a class='wikilink' title='DocsCoreTran' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCoreTran  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCoreTran%27" tppabs="http://www.opensips.org/Resources/DocsCoreTran">here</a>. The transformations can be cascaded, using the output of one transformation as the input of another.     
+</li><li><strong>context</strong> - the context in which the pseudo0variable will be evaluated. Now there are 2 pv contexts: reply and request. The reply context can be used in the failure route to request for the pseudo-variable to be evaluated in the context of the reply message. The request context can be used if in a reply route is desired for the pv to be evaluated in the context of the corresponding request.
+</li></ul><p class='vspace'>Usage examples:
+</p><ul><li>Only <strong>name</strong>: <span  style='color: green;'>$ru </span>
+</li><li><strong>Name</strong> and <em>'subname</em>: <span  style='color: green;'>$hdr(Contact)</span>
+</li><li><strong>Name</strong> and <strong>index</strong>: <span  style='color: green;'>$(ct[0])</span>
+</li><li><strong>Name</strong>, <strong>subname</strong> and <strong>index</strong>: <span  style='color: green;'>$(avp(i:10)[2])</span>
+</li><li><strong>Context</strong> 
+<ul><li><span  style='color: green;'>$(&lt;request&gt;ru)</span> from a reply route will get the Request-URI from the request
+</li><li><span  style='color: green;'>$(&lt;reply&gt;hdr(Contact))</span> context can be used from failure route to access information from the reply 
+</li></ul></li></ul><p class='vspace'>Types of variables:
+</p>
+<div class='vspace'></div><ul><li><a href='#varscript'><strong>script variables</strong></a> - as the name says, these variables are strictly bound to the script routes. The variables are visible only in the routing blocks - they are not message or transaction related, but they are process related (script variables will be inherited by script routes executed by the same <strong>OpenSIPS</strong> process).<br />Script variables are read write and they can have integer or string values. A script variable can have only a single value. A new assignment (or write operation) will overwrite the existing value.
+<div class='vspace'></div></li><li><a href='#varavps'><strong>AVP - Attribute Value Pair</strong></a> - the AVPs are dynamic variables (as name) that can be created - the AVPS are linked to a singular message or transaction (if stateful processing is used). A message or a transaction will initially (when received or created) have an empty list of AVPS attached to it. During the routing script, the script directly or functions called from script may create new AVPS that will automatically attached to the message/transaction. The AVPS will be visible in all routes where any message (reply or request) of the transaction will be processed - branch_route , failure_route, onreply_route (for this last route you need to enable the TM parameter <em>onreply_avp_mode</em>).<br />AVPs are read write and an existing AVP can be even deleted (removed). An AVP may contain multiple values - a new assignment (or write operation) will add a new value to the AVP; the values are kept in "last added first to be used" order (stack).
+<div class='vspace'></div></li><li><a href='#varpv'><strong>pseudo variables</strong></a> - pseudo-variables (or PV) provide access to information from the processed SIP message (headers, RURI, transport level info, a.s.o) or from <strong>OpenSIPS</strong> inners (time values, process PID, return code of a function). Depending of what info they provide, the PVs are either bound to the message, either to nothing  (global). Most of the PVs are read-only and only several allow write operations. A PV may return several values or only one, depending of the referred info (if can have multiple values or not).<br />Standard PV is read-only and returns a single value (if not otherwise documented).
+<div class='vspace'></div></li><li><a href='#varesc'><strong>escape sequences</strong></a> - escape sequences used to format the strings; they are actually not variables, but rather formatters.
+</li></ul><p class='vspace'><a name='varscript' id='varscript'></a>
+</p><h3>Script variables</h3>
+<p><strong>Naming</strong>: **$var(name)** 
+</p>
+<p class='vspace'><strong>Hints</strong>:
+</p><ol><li>if you want to start using a script variable in a route, better initialize it with same value (or reset it), otherwise you may inherit a value from a previous route that was executed by the same process.
+</li><li>script variables are faster the AVPs, being referenced directly to memory location.
+</li><li>the value of script variables persists over a <strong>OpenSIPS</strong> process.
+</li><li>a script value can have only one value.
+</li></ol><p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+$var(a) = 2;  # sets the value of variable 'a' to integer '2'
+$var(a) = "2";  # sets the value of variable 'a' to string '2'
+$var(a) = 3 + (7&amp;(~2)); # arithmetic and bitwise operation
+$var(a) = "sip:" + $au + "@" + $fd; # compose a value from authentication username and From URI domain
+
+# using a script variable for tests
+if( [ $var(a) &amp; 4 ] ) {
+  xlog("var a has third bit set\n");
+}
+</pre>
+<p class='vspace'>Setting a variable to NULL is actually initializing the value to integer '0'. Script variables don't have NULL value.
+</p>
+<p class='vspace'><a name='varavps' id='varavps'></a>
+</p><h3>AVP variables</h3>
+<p><strong>Naming</strong>: **$avp(name)** or **$(avp(name)[N])**
+</p>
+<p class='vspace'>When using the index "N" you can force the AVP to return a certain value (the N-th value). If no index is given, the first value will be returned.
+</p>
+<p class='vspace'><strong>Hints</strong>:
+</p><ol><li>to enable AVPs in onreply_route, use "modparam("tm", "onreply_avp_mode", 1)"
+</li><li>if multiple values are used for a single AVP, the values are index in revert order than added
+</li><li>AVPs are part of the transaction context, so they will be visible everywhere where the transaction is present.
+</li><li>the value of an AVP can be deleted
+</li></ol><p class='vspace'>Example of usage:
+</p><ol><li>Transaction persistence example
+</li></ol><pre class='escaped'>
+# enable avps in onreply route
+modparam("tm", "onreply_avp_mode", 1)
+...
+route{
+...
+$avp(tmp) = $Ts ; # store the current time (at request processing)
+...
+t_onreply("1");
+t_relay();
+...
+}
+
+onreply_route[1] {
+	if (t_check_status("200")) {
+		# calculate the setup time
+		$var(setup_time) = $Ts - $avp(tmp);
+	}
+}
+</pre>
+<div class='vspace'></div><ol><li>Multilple values example
+</li></ol><pre class='escaped'>
+$avp(17) = "one";
+# we have a single value
+$avp(17) = "two";
+# we have two values ("two","one")
+$avp(17) = "three";
+# we have three values ("three","two","one")
+
+xlog("accessing values with no index: $avp(17)\n");
+# this will print the first value, which is the last added value -&gt; "three"
+
+xlog("accessing values with no index: $(avp(17)[2])\n");
+# this will print the index 2 value (third one), -&gt; "one"
+
+# remove the last value of the avp; if there is only one value, the AVP itself will be destroyed
+$avp(17) = NULL;
+
+# delete all values and destroy the AVP
+avp_delete("$avp(17)/g");
+
+# delete the value located at a certain index 
+$(avp(17)[1]) = NULL;
+
+#overwrite the value at a certain index
+$(avp(17)[0]) = "zero";
+</pre>
+<p class='vspace'>The <strong>AVPOPS</strong> module provides a lot of useful functions to operate AVPs (like checking values, pushing values into different other locations, deleting AVPs, etc).
+</p>
+<p class='vspace'><a name='varpv' id='varpv'></a>
+</p><h3>Pseudo Variables</h3>
+<p><strong>Naming</strong>: $name
+</p>
+<p class='vspace'><strong>Hints</strong>:
+</p><ol><li>the PV tokens can be given as parameters to different script functions and they will be replaced with a value before the execution of the function.
+</li><li>most of PVs are made available by <strong>OpenSIPS</strong> core, but there are also module exporting PV (to make available info specific to that module) - check the modules documentation.
+</li></ol><p class='vspace'>Predefined (provided by core) PVs are listed in alphabetical order.
+</p>
+<div class='vspace'></div><h4>URI in SIP Request's P-Asserted-Identity header</h4>
+<p><strong>$ai</strong> - reference to URI in request's P-Asserted-Identity header (see RFC 3325)
+</p>
+<div class='vspace'></div><h4>Authentication Digest URI</h4>
+<p><strong>$adu</strong> - URI from Authorization or Proxy-Authorization header. This URI is used when calculating the HTTP Digest Response.
+</p>
+<div class='vspace'></div><h4>Authentication realm</h4>
+<p><strong>$ar</strong> - realm from Authorization or Proxy-Authorization header
+</p>
+<div class='vspace'></div><h4>Auth username user</h4>
+<p><strong>$au</strong> - user part of username from Authorization or Proxy-Authorization header
+</p>
+<div class='vspace'></div><h4>Auth username domain</h4>
+<p><strong>$ad</strong> - domain part of username from Authorization or Proxy-Authorization header
+</p>
+<div class='vspace'></div><h4>Auth nonce</h4>
+<p><strong>$an</strong> - the nonce from Authorization or Proxy-Authorization header
+</p>
+<div class='vspace'></div><h4>Auth response </h4>
+<p><strong>$auth.resp</strong> - the authentication response from Authorization or Proxy-Authorization header
+</p>
+<div class='vspace'></div><h4>Auth nonce </h4>
+<p><strong>$auth.nonce</strong> - the nonce string from Authorization or Proxy-Authorization header
+</p>
+<div class='vspace'></div><h4>Auth opaque</h4>
+<p><strong>$auth.opaque</strong> - the opaque string from Authorization or Proxy-Authorization header
+</p>
+<div class='vspace'></div><h4>Auth algorithm</h4>
+<p><strong>$auth.alg</strong> - the algorithm string from Authorization or Proxy-Authorization header
+</p>
+<div class='vspace'></div><h4>Auth QOP</h4>
+<p><strong>$auth.qop</strong> - the value of qop parameter from Authorization or Proxy-Authorization header
+</p>
+<div class='vspace'></div><h4>Auth nonce count (nc)</h4>
+<p><strong>$auth.nc</strong> - the value of nonce count parameter from Authorization or Proxy-Authorization header
+</p>
+<div class='vspace'></div><h4>Auth whole username</h4>
+<p><strong>$aU</strong> - whole username from Authorization or Proxy-Authorization header
+</p>
+<div class='vspace'></div><h4>Acc username</h4>
+<p><strong>$Au</strong> - username for accounting purposes. It's a selective pseudo variable (inherited from acc module). It returns $au if exits or From username otherwise.
+</p>
+<div class='vspace'></div><h4>Argument options</h4>
+<p><strong>$argv</strong> - provides access to command line arguments specified with '-o' option.
+Examples:
+</p><pre class='escaped'>
+   # for option '-o foo=0'
+   xlog("foo is $argv(foo) \n");
+</pre>
+<div class='vspace'></div><h4>Branch</h4>
+<p><strong>$branch</strong> - this variable is used for creating new branches by writing into it the value of a SIP URI.
+Examples:
+</p><pre class='escaped'>
+   # creates a new branch
+   $branch = "sip:new@doamin.org";
+   # print its URI
+   xlog("last added branch has URI $(branch(uri)[-1]) \n");
+</pre>
+<div class='vspace'></div><h4>Branch fields</h4>
+<p><strong>$branch()</strong> - this variable provides read/write access to all fields/attributes of an already existing branch (priorly created with append_branch() ). The fields of the branch are:
+</p><ul><li>uri - the RURI of the branch  (string value)
+</li><li>duri - destination URI of the branch (outbound proxy of the branch)  (string value)
+</li><li>q - q value of the branch (int value)
+</li><li>path - the PATH string for this branch (string value)
+</li><li>flags - the branch flags of this branch (int value)
+</li><li>socket - the local socket to be used for relaying this branch (string value)
+</li></ul><p>The variable accepts also index <strong>$(branch(uri)[1])</strong> for accessing a specific branch (multiple branches can be defined at a moment). The index starts from 0 (first branch). If the index is negative, it is considered the n-th branch from the end ( index -1 means the last branch).<br />To get all branches, use the * index - $(branch(uri)[*]).<br />Examples:
+</p><pre class='escaped'>
+   # creates the first branch
+   append_branch();
+   # creates the second branch
+   force_send_socket(udp:192.168.1.10:5060);
+   $du = "sip:192.168.2.10";
+   append_branch("sip:foo@bar.com","0.5");
+
+   # display branches
+   xlog("----- branch 0: $(branch(uri)[0]) , $(branch(q)[0]), $(branch(duri)[0]), $(branch(path)[0]), $(branch(flags)[0]), $(branch(socket)[0]) \n");
+   xlog("----- branch 1: $(branch(uri)[1]) , $(branch(q)[1]), $(branch(duri)[1]), $(branch(path)[1]), $(branch(flags)[1]), $(branch(socket)[1]) \n");
+
+   # do some changes over the branches
+   $branch(uri) = "sip:user@domain.ro";   # set URI for the first branch
+   $(branch(q)[0]) = 1000;  # set to 1.00 for the first branch
+   $(branch(socket)[1]) = NULL;  # reset the socket of the second branch
+   $branch(duri) = NULL;  # reset the destination URI or the first branch
+</pre>
+<p class='vspace'><span  style='color: red;'>It is R/W variable (you can assign values to it from routing logic)</span>
+</p>
+<div class='vspace'></div><h4>Call-Id</h4>
+<p><strong>$ci</strong> - reference to body of call-id header
+</p>
+<div class='vspace'></div><h4>Content-Length</h4>
+<p><strong>$cl</strong> - reference to body of content-length header
+</p>
+<div class='vspace'></div><h4>CSeq number</h4>
+<p><strong>$cs</strong> - reference to cseq number from cseq header
+</p>
+<div class='vspace'></div><h4>Contact instance</h4>
+<p><strong>$ct</strong> - reference to contact instance/body from the contact header. A contact instance is  display_name + URI + contact_params. As a Contact header may contain multiple Contact instances and a message may contain multiple Contact headers, an index was added to the $ct variable:
+</p><ul><li>$ct -first contact instance from message
+</li><li>$(ct[n]) - the n-th contact instance form the beginning of message, starting with index 0
+</li><li>$(ct[-n]) - the n-th contact instance form the end of the message, starting with index -1 (the last contact instance)
+</li></ul><div class='vspace'></div><h4>Fields of a contact instance</h4>
+<p><strong>$ct.fields()</strong> - reference to the fields of a contact instance/body (see above). Supported fields are:
+</p><ul><li>name - display name
+</li><li>uri - contact uri
+</li><li>q  - q param (value only)
+</li><li>expires - expires param (value only) 
+</li><li>methods - methods param (value only)
+</li><li>received - received param (value only)
+</li><li>params - all params (including names)
+</li></ul><p class='vspace'>Examples:
+</p><ul><li>$ct.fields(uri) - the URI of the first contact instance
+</li><li>$(ct.fields(name)[1]) - the display name of the second contact instance
+</li></ul><div class='vspace'></div><h4>Content-Type</h4>
+<p><strong>$cT</strong> - reference to body of content-type header
+</p>
+<div class='vspace'></div><h4>Domain of destination URI</h4>
+<p><strong>$dd</strong> - reference to domain of destination uri
+</p>
+<p class='vspace'><span  style='color: red;'>It is R/W variable (you can assign values to it from routing logic)</span>
+</p>
+<div class='vspace'></div><h4>Diversion header URI</h4>
+<p><strong>$di</strong> - reference to Diversion header URI
+</p>
+<div class='vspace'></div><h4>Diversion "privacy" parameter</h4>
+<p><strong>$dip</strong> - reference to Diversion header "privacy" parameter value
+</p>
+<div class='vspace'></div><h4>Diversion "reason" parameter</h4>
+<p><strong>$dir</strong> - reference to Diversion header "reason" parameter value
+</p>
+<div class='vspace'></div><h4>Port of destination URI</h4>
+<p><strong>$dp</strong> - reference to port of destination uri
+</p>
+<p class='vspace'><span  style='color: red;'>It is R/W variable (you can assign values to it from routing logic)</span>
+</p>
+<div class='vspace'></div><h4>Transport protocol of destination URI</h4>
+<p><strong>$dP</strong> - reference to transport protocol of destination uri
+</p>
+<div class='vspace'></div><h4>Destination set</h4>
+<p><strong>$ds</strong> - reference to destination set
+</p>
+<div class='vspace'></div><h4>Destination URI</h4>
+<p><strong>$du</strong> - reference to destination uri (outbound proxy to be used for sending the request)
+If loose_route() returns TRUE a destination uri is set according to the first Route header.
+</p>
+<p class='vspace'><span  style='color: red;'>It is R/W variable (you can assign values to it from routing logic)</span>
+</p>
+<div class='vspace'></div><h4>Error class</h4>
+<p><strong>$err.class</strong> - the class of error (now is '1' for parsing errors)
+</p>
+<div class='vspace'></div><h4>Error level</h4>
+<p><strong>$err.level</strong> - severity level for the error
+</p>
+<div class='vspace'></div><h4>Error info</h4>
+<p><strong>$err.info</strong> - text describing the error
+</p>
+<div class='vspace'></div><h4>Error reply code</h4>
+<p><strong>$err.rcode</strong> - recommended reply code
+</p>
+<div class='vspace'></div><h4>Error reply reason</h4>
+<p><strong>$err.rreason</strong> - recommended reply reason phrase
+</p>
+<div class='vspace'></div><h4>From URI domain</h4>
+<p><strong>$fd</strong> - reference to domain in URI of 'From' header
+</p>
+<div class='vspace'></div><h4>From display name</h4>
+<p><strong>$fn</strong> - reference to display name of 'From' header
+</p>
+<div class='vspace'></div><h4>Forced socket</h4>
+<p><strong>$fs</strong> - reference to the forced socket for message sending (if any) in the form proto:ip:port
+</p>
+<p class='vspace'><span  style='color: red;'>It is R/W variable (you can assign values to it routing script)</span>
+</p>
+<div class='vspace'></div><h4>From tag</h4>
+<p><strong>$ft</strong> - reference to tag parameter of 'From' header
+</p>
+<div class='vspace'></div><h4>From URI</h4>
+<p><strong>$fu</strong> - reference to URI of 'From' header
+</p>
+<div class='vspace'></div><h4>From URI username</h4>
+<p><strong>$fU</strong> - reference to username in URI of 'From' header
+</p>
+<div class='vspace'></div><h4>SIP message buffer</h4>
+<p><strong>$mb</strong> - reference to SIP message buffer
+</p>
+<div class='vspace'></div><h4>Message Flags</h4>
+<p><strong>$mf</strong> - reference to message/transaction flags set for current SIP request
+</p>
+<p class='vspace'><span  style='color: red;'>It is R/W variable (you can assign values to it from routing logic)</span>
+</p>
+<div class='vspace'></div><h4>Message Flags in hexadecimal</h4>
+<p><strong>$mF</strong> -reference to message/transaction flags set for current SIP request in hexa
+</p>
+<p class='vspace'><span  style='color: red;'>It is R/W variable (you can assign values to it from routing logic)</span>
+</p>
+<div class='vspace'></div><h4>SIP message ID</h4>
+<p><strong>$mi</strong> - reference to SIP message id
+</p>
+<div class='vspace'></div><h4>SIP message length</h4>
+<p><strong>$ml</strong> - reference to SIP message length
+</p>
+<div class='vspace'></div><h4>Domain in SIP Request's original URI</h4>
+<p><strong>$od</strong> - reference to domain in request's original R-URI
+</p>
+<div class='vspace'></div><h4>Port of SIP request's original URI</h4>
+<p><strong>$op</strong> - reference to port of original R-URI
+</p>
+<div class='vspace'></div><h4>Transport protocol of SIP request original URI</h4>
+<p><strong>$oP</strong> - reference to transport protocol of original R-URI
+</p>
+<div class='vspace'></div><h4>SIP Request's original URI</h4>
+<p><strong>$ou</strong> - reference to request's original URI
+</p>
+<div class='vspace'></div><h4>Username in SIP Request's original URI</h4>
+<p><strong>$oU</strong> - reference to username in request's original URI
+</p>
+<div class='vspace'></div><h4>Domain in SIP Request's P-Preferred-Identity header URI</h4>
+<p><strong>$pd</strong> - reference to domain in request's P-Preferred-Identity header URI (see RFC 3325)
+</p>
+<div class='vspace'></div><h4>Display Name in SIP Request's P-Preferred-Identity header</h4>
+<p><strong>$pn</strong> - reference to Display Name in request's P-Preferred-Identity header (see RFC 3325)
+</p>
+<div class='vspace'></div><h4>Process id</h4>
+<p><strong>$pp</strong> - reference to process id (pid)
+</p>
+<div class='vspace'></div><h4>Protocol of received message</h4>
+<p><strong>$pr</strong> or <strong>$proto</strong> - protocol of received message (UDP, TCP, TLS, SCTP)
+</p>
+<div class='vspace'></div><h4>User in SIP Request's P-Preferred-Identity header URI</h4>
+<p><strong>$pU</strong> - reference to user in request's P-Preferred-Identity header URI (see RFC 3325)
+</p>
+<div class='vspace'></div><h4>URI in SIP Request's P-Preferred-Identity header</h4>
+<p><strong>$pu</strong> - reference to URI in request's P-Preferred-Identity header (see RFC 3325)
+</p>
+<div class='vspace'></div><h4>Domain in SIP Request's URI</h4>
+<p><strong>$rd</strong> - reference to domain in request's URI
+</p>
+<p class='vspace'><span  style='color: red;'>It is R/W variable (you can assign values to it routing script)</span>
+</p>
+<div class='vspace'></div><h4>Body of request/reply</h4>
+<p><strong>$rb</strong> - reference to message body
+</p>
+<div class='vspace'></div><h4>Returned code</h4>
+<p><strong>$rc</strong> - reference to returned code by last invoked function
+</p>
+<p class='vspace'><strong>$retcode</strong> - same as **$rc**
+</p>
+<div class='vspace'></div><h4>Remote-Party-ID header URI</h4>
+<p><strong>$re</strong> - reference to Remote-Party-ID header URI
+</p>
+<div class='vspace'></div><h4>SIP request's method</h4>
+<p><strong>$rm</strong> - reference to request's method
+</p>
+<div class='vspace'></div><h4>SIP request's port</h4>
+<p><strong>$rp</strong> - reference to port of R-URI
+</p>
+<p class='vspace'><span  style='color: red;'>It is R/W variable (you can assign values to it routing script)</span>
+</p>
+<div class='vspace'></div><h4>Transport protocol of SIP request URI</h4>
+<p><strong>$rP</strong> - reference to transport protocol of R-URI
+</p>
+<div class='vspace'></div><h4>SIP reply's reason</h4>
+<p><strong>$rr</strong> - reference to reply's reason
+</p>
+<div class='vspace'></div><h4>SIP reply's status</h4>
+<p><strong>$rs</strong> - reference to reply's status
+</p>
+<div class='vspace'></div><h4>Refer-to URI</h4>
+<p><strong>$rt</strong> - reference to URI of refer-to header
+</p>
+<div class='vspace'></div><h4>SIP Request's URI</h4>
+<p><strong>$ru</strong> - reference to request's URI
+</p>
+<p class='vspace'><span  style='color: red;'>It is R/W variable (you can assign values to it routing script)</span>
+</p>
+<div class='vspace'></div><h4>Username in SIP Request's URI</h4>
+<p><strong>$rU</strong> - reference to username in request's URI
+</p>
+<p class='vspace'><span  style='color: red;'>It is R/W variable (you can assign values to it routing script)</span>
+</p>
+<div class='vspace'></div><h4>Q value of the SIP Request's URI</h4>
+<p><strong>$ru_q</strong> - reference to q value of the R-URI
+</p>
+<p class='vspace'><span  style='color: red;'>It is R/W variable (you can assign values to it routing script)</span>
+</p>
+<div class='vspace'></div><h4>Received IP address</h4>
+<p><strong>$Ri</strong> - reference to IP address of the interface where the request has been received
+</p>
+<div class='vspace'></div><h4>Received port</h4>
+<p><strong>$Rp</strong> - reference to the port where the message was received
+</p>
+<div class='vspace'></div><h4>Script flags</h4>
+<p><strong>$sf</strong> - reference to script flags - decimal output
+</p>
+<p class='vspace'><span  style='color: red;'>It is R/W variable (you can assign values to it from routing logic)</span>
+</p>
+<div class='vspace'></div><h4>Script flags</h4>
+<p><strong>$sF</strong> - reference to script flags - hexa output
+</p>
+<p class='vspace'><span  style='color: red;'>It is R/W variable (you can assign values to it from routing logic)</span>
+</p>
+<div class='vspace'></div><h4>IP source address</h4>
+<p><strong>$si</strong> - reference to IP source address of the message
+</p>
+<div class='vspace'></div><h4>Source port</h4>
+<p><strong>$sp</strong> - reference to the source port of the message
+</p>
+<div class='vspace'></div><h4>To URI Domain</h4>
+<p><strong>$td</strong> - reference to domain in URI of 'To' header
+</p>
+<div class='vspace'></div><h4>To display name</h4>
+<p><strong>$tn</strong> - reference to display name of 'To' header
+</p>
+<div class='vspace'></div><h4>To tag</h4>
+<p><strong>$tt</strong> - reference to tag parameter of 'To' header
+</p>
+<div class='vspace'></div><h4>To URI</h4>
+<p><strong>$tu</strong> - reference to URI of 'To' header
+</p>
+<div class='vspace'></div><h4>To URI Username</h4>
+<p><strong>$tU</strong> - reference to username in URI of 'To' header
+</p>
+<div class='vspace'></div><h4>Formatted date and time</h4>
+<p><strong>$time(format)</strong> - returns the string formatted time according to UNIX date (see: <strong>man date</strong>).
+</p>
+<div class='vspace'></div><h4>Branch index</h4>
+<p><strong>$T_branch_idx</strong> - the index (starting with 1 for the first branch) of the branch for which is executed the branch_route[]. If used outside of branch_route[] block, the value is '0'. This is exported by TM module.
+</p>
+<div class='vspace'></div><h4>String formatted time</h4>
+<p><strong>$Tf</strong> - reference string formatted time
+</p>
+<div class='vspace'></div><h4>Current unix time stamp in seconds</h4>
+<p><strong>$Ts</strong> - reference to current unix time stamp in seconds
+</p>
+<div class='vspace'></div><h4>Current microseconds of the current second</h4>
+<p><strong>$Tsm</strong> - reference to current microseconds of the current second
+</p>
+<div class='vspace'></div><h4>Startup unix time stamp</h4>
+<p><strong>$TS</strong> - reference to startup unix time stamp
+</p>
+<div class='vspace'></div><h4>User agent header</h4>
+<p><strong>$ua</strong> - reference to user agent header field
+</p>
+<div class='vspace'></div><h4>SIP Headers</h4>
+<p><strong>$(hdr(name)[N])</strong> - represents the body of the N-th header identified by 'name'. If [N] is omitted then the body of the first header is printed. The first header is got when N=0, for the second N=1, a.s.o. To print the last header of that type, use -1, no other negative values are supported now. No white spaces are allowed inside the specifier (before }, before or after {, [, ] symbols). When N='*', all headers of that type are printed.
+</p>
+<p class='vspace'>The module should identify most of compact header names (the ones recognized by <strong>OpenSIPS</strong> which should be all at this moment), if not, the compact form has to be specified explicitly. It is recommended to use dedicated specifiers for headers (e.g., %ua for user agent header), if they are available -- they are faster.
+</p>
+<p class='vspace'><strong>$(hdrcnt(name))</strong> -- returns number of headers of type given by 'name'. Uses same rules for specifying header names as <strong>$hdr(name)</strong> above. Many headers (e.g., Via, Path, Record-Route) may appear more than once in the message. This variable returns the number of headers of a given type. 
+</p>
+<p class='vspace'>Note that some headers (e.g., Path) may be joined together with commas and appear as a single header line. This variable counts the number of header lines, not header values. 
+</p>
+<p class='vspace'>For message fragment below, <strong>$hdrcnt(Path)</strong> will have value 2 and <strong>$(hdr(Path)[0])</strong> will have value <strong>&lt;a.com&gt;</strong>:
+</p><pre class='escaped'>
+    Path: &lt;a.com&gt;
+    Path: &lt;b.com&gt;
+</pre>
+<p class='vspace'>For message fragment below, <strong>$hdrcnt(Path)</strong> will have value 1 and <strong>$(hdr(Path)[0])</strong> will have value <strong>&lt;a.com&gt;,&lt;b.com&gt;</strong>:
+</p><pre class='escaped'>
+    Path: &lt;a.com&gt;,&lt;b.com&gt;
+</pre>
+<p class='vspace'>Note that both examples above are semantically equivalent but the variables take on different values.
+</p>
+<p class='vspace'>
+</p>
+<div class='vspace'></div><h3>Escape Sequences</h3>
+<p>These sequences are exported, and mainly used, by xlog module to print messages in many colors (foreground and background) using escape sequences. 
+</p>
+<div class='vspace'></div><h4>Foreground and background colors</h4>
+<p class='vspace'>$C(xy) - reference to an escape sequence. ¿x¿ represents the foreground color and ¿y¿ represents the background color.
+</p>
+<p class='vspace'>Colors could be:
+</p>
+<div class='vspace'></div><ul><li>x : default color of the terminal
+</li><li>s : Black
+</li><li>r : Red
+</li><li>g : Green
+</li><li>y : Yellow
+</li><li>b : Blue
+</li><li>p : Purple
+</li><li>c : Cyan
+</li><li>w : White 
+</li></ul><div class='vspace'></div><h4>Examples</h4>
+<p class='vspace'>A few examples of usage.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+...
+route {
+...
+    $avp(uuid)="caller_id";
+    $avp(tmp)= $avp(uuid) + ": " + $fu;
+    xdbg("$(C(bg))avp(tmp)$(C(xx)) [$avp(tmp)] $(C(br))cseq$(C(xx))=[$hdr(cseq)]\n");
+...
+}
+...
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Script-CoreVar-1-7?action=edit&restore=diff:1366802431:1366802431:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Script-CoreVar-1-7?action=edit&restore=diff:1366802431:1366802431:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Script-CoreVar-1-7?action=edit&restore=diff:1366802431:1366802431:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Script-CoreVar-1-7-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreVar-1-7?action=edit">Edit</a> |
+      <a rel="nofollow" href="Script-CoreVar-1-7-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreVar-1-7?action=diff">History</a> |
+      <a rel="nofollow" href="Script-CoreVar-1-7-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreVar-1-7?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on August 05, 2013, at 01:01 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

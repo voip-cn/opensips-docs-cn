@@ -1,0 +1,269 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Migration-1-5-to-1-6 </title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='index,follow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   <p><a class='wikilink' title='Signup' href="javascript:if(confirm(%27http://www.opensips.org/Login/Signup?action=login  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Login/Signup?action=login%27" tppabs="http://www.opensips.org/Login/Signup?action=login">Login</a> | <a class='wikilink' title='Signup' href="javascript:if(confirm(%27http://www.opensips.org/Login/Signup  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Login/Signup%27" tppabs="http://www.opensips.org/Login/Signup">Register</a> 
+</p>
+
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Migration-1-5-to-1-6' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h5>Documentation -&gt; <a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Migration</a> -&gt; Migration from 1.5.x to 1.6.x</h5>
+<p>This page has been visited 1644 times.
+</p><div class='tocfloat'><p><a name='toc' id='toc'></a><b>Table of Content</b> (<a id="tocidtog" href="javascript:toggle('tocid');">hide</a>)</p><ol class='toc' id='tocid'><li>1.&nbsp;<a href='#toc1'>DB migration</a></li><li>2.&nbsp;<a href='#toc2'>Script migration</a><ol class='toc'><li>2.1&nbsp;<a href='#toc3'>OpenSIPS core</a></li><li>2.2&nbsp;<a href='#toc4'>RADIUS modules</a></li><li>2.3&nbsp;<a href='#toc5'>ALIAS_DB module</a></li><li>2.4&nbsp;<a href='#toc6'>DISPATCHER module</a></li><li>2.5&nbsp;<a href='#toc7'>GROUP module</a></li><li>2.6&nbsp;<a href='#toc8'>PERMISSIONS module</a></li><li>2.7&nbsp;<a href='#toc9'>REGISTRAR module</a></li><li>2.8&nbsp;<a href='#toc10'>TM module</a></li><li>2.9&nbsp;<a href='#toc11'>URI module</a></li></ol></li></ol></div>
+<hr />
+<p class='vspace'>This section is to provide useful help in migrating your OpenSIPS installations from any release from 1.5 branch to any release from 1.6 branch.
+</p>
+<p class='vspace'>You can find the all the new additions in 1.6.x release compiled <a class='wikilink' title='Version-1-6-0' href="javascript:if(confirm(%27http://www.opensips.org/About/Version-1-6-0  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/Version-1-6-0%27" tppabs="http://www.opensips.org/About/Version-1-6-0">under this page</a>. Reading it may help you understand the migration / update process.
+</p>
+<div class='vspace'></div><hr />
+<h3><a name='toc1' id='toc1'></a>1.&nbsp; DB migration</h3>
+<p>One table was remove, one table had its schema changed and new tables were added (corresponding to the newly added modules).
+</p>
+<p class='vspace'>The biggest change was done in the PERMISSIONS module, where the <em>trusted</em> and <em>address</em> tables were merged into the <em>address</em> table.
+</p>
+<p class='vspace'>You can migrate your 1.5.x DB to the 1.5.x format by using the <strong>opensipdbctl</strong>(deprecated)  or <strong>osipsconsole</strong> tools:
+</p><pre class='escaped'>
+   # opensipsdbctl migrate opensips_1_5 opensips_1_6
+   or
+   # osipsconsole 
+   &gt; db migrate opensips_1_5 opensips_1_6
+   &gt; quit
+   # 
+</pre>
+<p>where :
+</p><ul><li>opensips_1_5 is the existing DB name corresponding to version 1.5.x format
+</li><li>opensips_1_6 is the DB name to be created for 1.6.x format
+</li></ul><p class='vspace'>NOTE:
+</p><ul><li>the old database will not be deleted, altered or changed - it will not be touched at all
+</li><li>new database will be created and data from old DB will be imported into it
+</li></ul><p class='vspace'>Take care and edit (if necessary) the <strong>opensipsctlrc</strong> /  '''osipsconsolerc" files if you want to customize the DB users used for accessing the new DB.
+</p>
+<p class='vspace'><span  style='color: red;'> NOTE that the migration tool is available only for MYSQL databases! </span>
+</p>
+<p class='vspace'><a href='#toc'>Back to Table of Contents</a>
+</p>
+<div class='vspace'></div><hr />
+<h3><a name='toc2' id='toc2'></a>2.&nbsp; Script migration</h3>
+<h4><a name='toc3' id='toc3'></a>2.1&nbsp; OpenSIPS core</h4>
+<ol><li>"<strong>$branch</strong>" pseudovariable was replaced by "<strong>$br</strong>" variable
+</li></ol><div class='vspace'></div><h4><a name='toc4' id='toc4'></a>2.2&nbsp; RADIUS modules</h4>
+<p>A generic AAA interface was build in 1.6 ( very similar to the DB interface). Therefore some changes must be made in the script in the parts referring to modules that use RADIUS. First you must load the <strong>aaa_radius</strong> module which contains the radius implementation for the AAA interface. Second, you must change the name of the module according to the list:
+</p><ol><li><strong>auth_radius</strong> modules became <strong>auth_aaa</strong> module
+</li><li><strong>group_radius</strong> module was merged with <strong>group</strong> module
+</li><li><strong>uri_radius</strong> and <strong>uri_db</strong> were merged with <strong>uri</strong> module
+</li><li><strong>avp_radius</strong> module does not exist anymore and its functionalities were integrated in <strong>aaa_radius</strong> modules
+</li></ol><div class='vspace'></div><h4><a name='toc5' id='toc5'></a>2.3&nbsp; ALIAS_DB module</h4>
+<ol><li>use_domain module parameter was removed as replaced by the "d" per-lookup option. 
+</li></ol><div class='vspace'></div><h4><a name='toc6' id='toc6'></a>2.4&nbsp; DISPATCHER module</h4>
+<ol><li><strong>ds_is_from_list()</strong> replaced with a more generic function <strong>ds_is_in_list("ip","port")</strong>. The new function takes as parameters the IP and PORT to test against the dispatcher list, instead of using only the source IP and PORT (as ds_is_from_list()).
+</li></ol><p>ds_is_from_list() == ds_is_in_list("$si","$sp")
+</p>
+<div class='vspace'></div><h4><a name='toc7' id='toc7'></a>2.5&nbsp; GROUP module</h4>
+<ol><li><strong>is_user_in()</strong> renamed as <strong>db_is_user_in()</strong>
+</li><li><strong>get_user_group()</strong> renamed as <strong>db_get_user_group()</strong> 
+</li></ol><div class='vspace'></div><h4><a name='toc8' id='toc8'></a>2.6&nbsp; PERMISSIONS module</h4>
+<ol><li>the following script parameters are no longer used: <strong>peer_tag_avp</strong>, <strong>trusted_table</strong>, <strong>source_col</strong>
+</li></ol><ul><li><strong>ip_addr_col</strong> parameter was renamed as ip_col
+</li><li><strong>tag_col</strong> parameter was renamed as info_col
+</li><li><strong>from_col</strong> parameter was renamed as pattern_col 
+</li></ul><ol><li>the new functions <strong>check_address()</strong>, <strong>check_source_address()</strong>, <strong>get_source_group()</strong> replace old functions <strong>allow_address()</strong>, <strong>allow_source_address()</strong>, <strong>allow_trusted()</strong>
+</li></ol><div class='vspace'></div><h4><a name='toc9' id='toc9'></a>2.7&nbsp; REGISTRAR module</h4>
+<ol><li>former global parameters like <strong>method_filtering</strong>, <strong>max_contacts</strong>, <strong>append_branches</strong>, <strong>use_path</strong>, <strong>path_mode</strong> and <strong>path_use_received</strong> are now per AOR / function parameters
+</li><li>sock_flag was moved as flag of the save() function
+</li></ol><div class='vspace'></div><h4><a name='toc10' id='toc10'></a>2.8&nbsp; TM module</h4>
+<ol><li><strong>t_reply()</strong> function does not requires any more a prior create Transaction. If no transaction is found, it will be automatically created.
+</li><li><strong>t_cancel_branch()</strong> take flags ("a" - cancel all branches; "o" - cancel all other branches except current; "" - current branch); <strong>t_cancel_call()</strong> is obsoleted and removed (same as <strong>t_cancel_branch("a")</strong>).
+</li></ol><div class='vspace'></div><h4><a name='toc11' id='toc11'></a>2.9&nbsp; URI module</h4>
+<ol><li><strong>check_from()</strong>  renamed to <strong>db_check_from()</strong>
+</li><li><strong>check_to()</strong>  renamed to <strong>db_check_to()</strong>
+</li><li><strong>does_uri_exist()</strong>  renamed to <strong>db_does_uri_exist()</strong>
+</li><li><strong>get_auth_id()</strong>  renamed to <strong>db_get_auth_id()</strong>
+</li></ol>
+</div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Migration-1-5-to-1-6-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-5-to-1-6?action=edit">Edit</a> |
+      <a rel="nofollow" href="Migration-1-5-to-1-6-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-5-to-1-6?action=diff">History</a> |
+      <a rel="nofollow" href="Migration-1-5-to-1-6-action=print.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-5-to-1-6?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on May 16, 2013, at 06:25 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

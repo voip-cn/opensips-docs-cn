@@ -1,0 +1,366 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / TipsFAQ | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.TipsFAQ' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='selflink' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.TipsFAQ History</h2>
+  <p><a href="TipsFAQ-action=diff&source=n&minor=n.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ?action=diff&source=n&minor=n">Hide minor edits</a> - <a href="TipsFAQ-action=diff&source=y&minor=y.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ?action=diff&source=y&minor=y">Show changes to markup</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>November 28, 2014, at 04:31 PM 
+        by <span class='diffauthor' title='89.120.101.121'>razvancrainea</span> - </div>
+        <div class='difftype'>Added lines 101-126:</div>
+        <div class='diffadd'><h5>Migrate from CLOSEDDIAL to DIALPLAN module</h5>
+<p>Q) How can I achieve the same behavior as the obsolete CLOSEDDIAL module does
+</p>
+<p class='vspace'>A) The DIALPLAN module can be used to achieve the same behavior as the CLOSEDDIAL, which has been obsoleted. The only problem that you might face when migrating to the DIALPLAN module is that the rules are no longer grouped using names, but integers. Therefore, you have to <em>port</em> your groups from literal values (such as "companyA") to a numeric value (such as 10). Each old group has to have its own integer correspondent.
+</p>
+<p class='vspace'>Next, the database has to be updated. Each row from the old <code>closeddial</code> table has to be migrated to the <code>dialplan</code> table, according to the following rule:
+</p>
+<div class='vspace'></div><ul><li>the <code>dpid</code> column should contain the integer mapping of the literal <code>group_id</code>
+</li><li><code>cd_username</code> and <code>cd_domain</code> should be stored as a URI in the dialplan <code>match_exp</code> and <code>subst_exp</code> columns
+</li><li>the <code>repl_exp</code> should be the new URI of the user, corresponding to the closeddial <code>new_uri</code> column
+</li><li>the dialplan <code>match_flags</code>, <code>disabled</code> and <code>pr</code> columns should be 0 and the <code>attrs</code> can be <code>NULL</code>
+</li></ul><p class='vspace'><strong>Notice:</strong> if you were not using the <code>use_domain</code>, than the <code>cd_domain</code> from the <code>match_exp</code> and <code>subst_exp</code> columns should be omitted and only the <code>$rU</code> should be used in the following commands.
+</p>
+<p class='vspace'>The next step is to modify the <code>cd_lookup()</code> function with the <code>dp_translate()</code> function:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+$avp(group)=10;
+...
+dp_translate("$avp(group)", "$ru/$ru"); # if use_domain is 1
+# or
+dp_translate("$avp(group)", "$rU/$ru"); # if use_domain is 0
+</pre>
+<p class='vspace'>These are only some roughly steps that you have to follow. A full migration guide is highly dependent on your usage.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="TipsFAQ-action=edit&restore=diff-1417188711-1417180403-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ?action=edit&restore=diff:1417188711:1417180403:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 28, 2014, at 02:13 PM 
+        by <span class='diffauthor' title='89.120.101.121'>razvancrainea</span> - </div>
+        <div class='difftype'>Changed lines 72-100 from:</div>
+        <div class='diffdel'><p>This will automatically update the ha1 and ha1b fields for all subscribers.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>This will automatically update the ha1 and ha1b fields for all subscribers.
+</p>
+<div class='vspace'></div><h5>Obsolete modules</h5>
+<p>Q) Some of the modules I was using prior to <strong>OpenSIPS 2.1</strong> no longer exist. What happened to them?
+</p>
+<p class='vspace'>A) Starting from <strong>OpenSIPS 2.1</strong> we obsoleted some of the old modules (i.e mi_xmlrpc, closeddial, auth_diameter). These modules were not completely removed, but only moved in the <code>modules_obsolete</code> directory and are no longer compiled by default. If you <strong>really</strong> need these modules, you can manually move them to the <code>modules</code> directory.
+</p>
+<div class='vspace'></div><h5>Migrate to MI_XMLRPC_NG module</h5>
+<p>Q) How can I migrate from the MI_XMLRPC module to MI_XMLRPC_NG
+</p>
+<p class='vspace'>A) The first step is to remove the <code>loadmodule "mi_xmlrpc.so"</code> directive from your script and load the <code>httpd</code> and <code>mi_xmlrpc_ng</code> modules:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+loadmodule "httpd.so"
+loadmodule "mi_xmlrpc_ng.so"
+</pre>
+<p class='vspace'>Next, you have to change the default path of the module to <code>RPC2</code>, the port the server is listening on to <code>8080</code> and the buffer size if specified.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+modparam("mi_xmlrpc_ng", "mi_xmlrpc_ng_root", "RPC2")
+modparam("httpd", "port", 8080)
+modparam("httpd", "buf_size", 524288)
+</pre>
+<div class='vspace'></div><pre> <strong>Notice:</strong> the <code>reply_option</code> and <code>log_file</code> parameters have no equivalent for the new module, so if you were using these options, you have to revise your scripts logic.
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="TipsFAQ-action=edit&restore=diff-1417180403-1369675548-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ?action=edit&restore=diff:1417180403:1369675548:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 27, 2013, at 07:25 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><h2><a class='wikilink' title='Index' href="Index.htm" tppabs="http://www.opensips.org/Documentation/Index">Documentation</a> -&gt; <a class='selflink' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips and FAQ</a></h2>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h5>Documentation -&gt; Tips and FAQ</h5>
+</div>
+        <div class='difftype'>Deleted line 5:</div>
+        <div class='diffdel'><hr />
+</div></div>
+      <div class='diffrestore'><a href="TipsFAQ-action=edit&restore=diff-1369675548-1368099667-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ?action=edit&restore=diff:1369675548:1368099667:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 01:41 PM 
+        by <span class='diffauthor' title='79.118.227.150'>79.118.227.150</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><h2>Resources -&gt; <a class='wikilink' title='Documentation' href="javascript:if(confirm(%27http://www.opensips.org/Resources/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/Documentation%27" tppabs="http://www.opensips.org/Resources/Documentation">Documentation</a> -&gt; Tips and FAQa</h2>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h2><a class='wikilink' title='Index' href="Index.htm" tppabs="http://www.opensips.org/Documentation/Index">Documentation</a> -&gt; <a class='selflink' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips and FAQ</a></h2>
+</div></div>
+      <div class='diffrestore'><a href="TipsFAQ-action=edit&restore=diff-1368099667-1366819644-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ?action=edit&restore=diff:1368099667:1366819644:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 24, 2013, at 06:07 PM 
+        by <span class='diffauthor' title='213.233.101.41'>213.233.101.41</span> - </div>
+        <div class='difftype'>Added lines 1-73:</div>
+        <div class='diffadd'><h2>Resources -&gt; <a class='wikilink' title='Documentation' href="javascript:if(confirm(%27http://www.opensips.org/Resources/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/Documentation%27" tppabs="http://www.opensips.org/Resources/Documentation">Documentation</a> -&gt; Tips and FAQa</h2>
+<hr />
+<p>(:toc-float Table of Content:)
+</p>
+<div class='vspace'></div><hr />
+<h4>Tips</h4>
+<p>How to do certain things.
+</p>
+<div class='vspace'></div><h5>How to recalculate ha1 and ha1b</h5>
+<p>When you change the domain column in the subscriber table, you have to recalculate ha1 and ha1b fields. In order to do that you must have the password of each subscriber. It is stored in the 'password' column if you have set STORE_PLAINTEXT_PW=1 in opensipsctlrc (default).
+</p>
+<p class='vspace'>HA1 is a MD5 hash of "username:domain:password". For example, if you have created a SIP account 1000@mydomain.com using password 123456, then HA1 is the MD5 hash of "1000:mydomain.com:123456" (without quotes). On the other hand HA1B is the MD5 hash of "username@domain:domain:password"; so using the same example above, HA1B would be the MD5 hash of "1000@mydomain.com:mydomain.com:123456" (without quotes).
+</p>
+<p class='vspace'>To recalculate and update ha1 and ha1b columns in the subscriber table, just execute the following sql statement in mysql:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+update subscriber
+set ha1 = md5(concat(username, ':', domain, ':', password)),
+ha1b = md5(concat(username, '@', domain, ':', domain, ':', password))
+</pre>
+<p class='vspace'>Note: the above is only true if you have "use_domain" enabled for auth_db _and_ you do not use a static challenge parameter for www_authorize.
+</p>
+<p class='vspace'>If you use a static challenge for www_authorize (i.e. the first parameter of www_authorize is not the empty string), then HA1 is MD5("username:challenge:password") and HA1B is MD5("username@challenge:challenge:password"). If the challenge parameter of www_authorize is empty, OpenSIPS automatically selects the domain as the challenge value, which gives the solution presented above.
+</p>
+<p class='vspace'>If "use_domain" is false, then the HA1B field must be computed based on "username@:domain:password" or "username@:challenge:password", depending on whether challenge is empty or defined, respectively.
+</p>
+<div class='vspace'></div><h5>PHP example to communicate via mi_xmlrpc</h5>
+<pre class='escaped'>
+#!/usr/bin/php
+&lt;?php
+$params[] = "dialog:";
+$params[] = "tm:";
+$method = "get_statistics";
+$request = xmlrpc_encode_request($method,$params);
+
+$context = stream_context_create(array('http' =&gt; array(
+   'method' =&gt; "POST",
+   'header' =&gt; "Content-Type: text/xml",
+   'content' =&gt; $request
+)));
+$file = file_get_contents("http://example.opensips.org:8080/RPC2", false, $context);
+$response = xmlrpc_decode($file);
+if (is_array($response)) {
+   trigger_error("xmlrpc: $response[faultString] ($response[faultCode])");
+} else {
+   print_r($response);
+}
+?&gt;
+</pre>
+<h5>Add a new tip here</h5>
+<hr />
+<h4>FAQS</h4>
+<p>Answers to the most frequent questions
+</p>
+<div class='vspace'></div><h5>Changing FROM header</h5>
+<p>Q) How does one change the FROM Header in OpenSIPS ?
+</p>
+<p class='vspace'>A) Use the <strong>uac_replace_from()</strong> function in the <strong>uac</strong> module
+</p>
+<div class='vspace'></div><h5>Recalculating HA1 and HA1B hashes when adding a subscriber</h5>
+<p>Q) How do I re-calculate the ha1 and halb values in the subscriber table for a new subscriber?
+</p>
+<p class='vspace'>A)  Run the following mysql operation:
+</p>
+<p class='vspace'>update subscriber set ha1 = md5(concat(username, ':', domain, ':', password)), ha1b = md5(concat(username, '@', domain, ':', domain, ':', password))
+</p>
+<p class='vspace'>This will automatically update the ha1 and ha1b fields for all subscribers.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/TipsFAQ?action=edit&restore=diff:1366819644:1366819644:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/TipsFAQ?action=edit&restore=diff:1366819644:1366819644:&preview=y%27" tppabs="http://www.opensips.org/Documentation/TipsFAQ?action=edit&restore=diff:1366819644:1366819644:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="TipsFAQ-action=edit.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ?action=edit">Edit</a> |
+      <a rel="nofollow" href="TipsFAQ-action=diff.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ?action=diff">History</a> |
+      <a rel="nofollow" href="TipsFAQ-action=print.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on November 28, 2014, at 04:31 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

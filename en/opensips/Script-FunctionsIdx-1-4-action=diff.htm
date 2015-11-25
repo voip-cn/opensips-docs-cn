@@ -1,0 +1,623 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Script-FunctionsIdx-1-4 | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Script-FunctionsIdx-1-4' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Script-FunctionsIdx-1-4 History</h2>
+  <p><a href="Script-FunctionsIdx-1-4-action=diff&source=n&minor=n.htm" tppabs="http://www.opensips.org/Documentation/Script-FunctionsIdx-1-4?action=diff&source=n&minor=n">Hide minor edits</a> - <a href="Script-FunctionsIdx-1-4-action=diff&source=y&minor=y.htm" tppabs="http://www.opensips.org/Documentation/Script-FunctionsIdx-1-4?action=diff&source=y&minor=y">Show changes to markup</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 12:28 PM 
+        by <span class='diffauthor' title='79.118.227.150'>79.118.227.150</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><h2>Resources -&gt; <a class='wikilink' title='Documentation' href="javascript:if(confirm(%27http://www.opensips.org/Resources/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/Documentation%27" tppabs="http://www.opensips.org/Resources/Documentation">Documentation</a> -&gt; <a class='wikilink' title='DocsCookbooks' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCookbooks  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCookbooks%27" tppabs="http://www.opensips.org/Resources/DocsCookbooks">Cookbooks</a> -&gt; Modules Functions Index</h2>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h2><a class='createlinktext' rel='nofollow' 
+    href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">Documentation</a><a rel='nofollow' 
+    class='createlink' href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">?</a> -&gt; Script -&gt; <a class='selflink' href="Script-FunctionsIdx-1-4.htm" tppabs="http://www.opensips.org/Documentation/Script-FunctionsIdx-1-4">Modules Functions Index 1.4.x</a></h2>
+</div></div>
+      <div class='diffrestore'><a href="Script-FunctionsIdx-1-4-action=edit&restore=diff-1368095317-1366803033-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-FunctionsIdx-1-4?action=edit&restore=diff:1368095317:1366803033:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 24, 2013, at 01:30 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Added lines 1-425:</div>
+        <div class='diffadd'><h2>Resources -&gt; <a class='wikilink' title='Documentation' href="javascript:if(confirm(%27http://www.opensips.org/Resources/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/Documentation%27" tppabs="http://www.opensips.org/Resources/Documentation">Documentation</a> -&gt; <a class='wikilink' title='DocsCookbooks' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCookbooks  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCookbooks%27" tppabs="http://www.opensips.org/Resources/DocsCookbooks">Cookbooks</a> -&gt; Modules Functions Index</h2>
+<hr />
+<p>(:toc-float Table of Content:)
+</p>
+<div class='vspace'></div><h4>A</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>abort()</td><td  align='center'>cfgutils</td></tr>
+<tr ><td  align='left'>acc_db_request(comment, table)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>acc_diam_request(comment)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>acc_log_request(comment)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>acc_rad_request(comment)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>add_diversion(reason)</td><td  align='center'>diversion</td></tr>
+<tr ><td  align='left'>add_path_received()</td><td  align='center'>path</td></tr>
+<tr ><td  align='left'>add_path_received(user)</td><td  align='center'>path</td></tr>
+<tr ><td  align='left'>add_path()</td><td  align='center'>path</td></tr>
+<tr ><td  align='left'>add_path(user)</td><td  align='center'>path</td></tr>
+<tr ><td  align='left'>add_rcv_param([flag]),</td><td  align='center'>nathelper</td></tr>
+<tr ><td  align='left'>add_rr_param(param)</td><td  align='center'>rr</td></tr>
+<tr ><td  align='left'>add_sock_hdr(hdr_name)</td><td  align='center'>registrar</td></tr>
+<tr ><td  align='left'>add_uri_param(param)</td><td  align='center'>uri</td></tr>
+<tr ><td  align='left'>alias_db_lookup(table_name)</td><td  align='center'>alias_db</td></tr>
+<tr ><td  align='left'>allow_address(group_id, ip_addr_pvar, port_pvar)</td><td  align='center'>permissions</td></tr>
+<tr ><td  align='left'>allow_register(allow_file, deny_file)</td><td  align='center'>permissions</td></tr>
+<tr ><td  align='left'>allow_register(basename)</td><td  align='center'>permissions</td></tr>
+<tr ><td  align='left'>allow_routing()</td><td  align='center'>permissions</td></tr>
+<tr ><td  align='left'>allow_routing(allow_file,deny_file)</td><td  align='center'>permissions</td></tr>
+<tr ><td  align='left'>allow_routing(basename)</td><td  align='center'>permissions</td></tr>
+<tr ><td  align='left'>allow_source_address_group()</td><td  align='center'>permissions</td></tr>
+<tr ><td  align='left'>allow_source_address(group_id)</td><td  align='center'>permissions</td></tr>
+<tr ><td  align='left'>allow_trusted([src_ip_pvar, proto_pvar])</td><td  align='center'>permissions</td></tr>
+<tr ><td  align='left'>allow_uri(basename, pvar)</td><td  align='center'>permissions</td></tr>
+<tr ><td  align='left'>append_hf(txt, hdr)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>append_hf(txt)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>append_rpid_hf()</td><td  align='center'>auth</td></tr>
+<tr ><td  align='left'>append_rpid_hf(prefix, suffix)</td><td  align='center'>auth</td></tr>
+<tr ><td  align='left'>append_time()</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>append_to_reply(txt)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>append_urihf(prefix, suffix)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>avp_check(name,op_value)</td><td  align='center'>avpops</td></tr>
+<tr ><td  align='left'>avp_copy(old_name,new_name)</td><td  align='center'>avpops</td></tr>
+<tr ><td  align='left'>avp_db_delete(source,name)</td><td  align='center'>avpops</td></tr>
+<tr ><td  align='left'>avp_db_load(source,name)</td><td  align='center'>avpops</td></tr>
+<tr ><td  align='left'>avp_db_query(query[,dest])</td><td  align='center'>avpops</td></tr>
+<tr ><td  align='left'>avp_db_store(source,name)</td><td  align='center'>avpops</td></tr>
+<tr ><td  align='left'>avp_delete(name)</td><td  align='center'>avpops</td></tr>
+<tr ><td  align='left'>avp_load_radius(user)</td><td  align='center'>avp_radius</td></tr>
+<tr ><td  align='left'>avp_op(name,op_value)</td><td  align='center'>avpops</td></tr>
+<tr ><td  align='left'>avp_print()</td><td  align='center'>avpops</td></tr>
+<tr ><td  align='left'>avp_printf(dest, format)</td><td  align='center'>avpops</td></tr>
+<tr ><td  align='left'>avp_pushto(destination,name)</td><td  align='center'>avpops</td></tr>
+<tr ><td  align='left'>avp_subst(avps, subst)</td><td  align='center'>avpops</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>B</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>bla_handle_notify</td><td  align='center'>pua_bla</td></tr>
+<tr ><td  align='left'>bla_set_flag</td><td  align='center'>pua_bla</td></tr>
+<tr ><td  align='left'>bm_log_timer(name)</td><td  align='center'>benchmark</td></tr>
+<tr ><td  align='left'>bm_start_timer(name)</td><td  align='center'>benchmark</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>C</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>check_blacklist (string table)</td><td  align='center'>userblacklist</td></tr>
+<tr ><td  align='left'>check_from()</td><td  align='center'>uri_db</td></tr>
+<tr ><td  align='left'>check_route_param(re)</td><td  align='center'>rr</td></tr>
+<tr ><td  align='left'>check_to()</td><td  align='center'>uri_db</td></tr>
+<tr ><td  align='left'>check_user_blacklist (string user, string domain, string number, string table)</td><td  align='center'>userblacklist</td></tr>
+<tr ><td  align='left'>checkcallingtranslation()</td><td  align='center'>osp</td></tr>
+<tr ><td  align='left'>checkospheader()</td><td  align='center'>osp</td></tr>
+<tr ><td  align='left'>checkosproute()</td><td  align='center'>osp</td></tr>
+<tr ><td  align='left'>client_nat_test(type)</td><td  align='center'>nat_traversal</td></tr>
+<tr ><td  align='left'>consume_credentials()</td><td  align='center'>auth</td></tr>
+<tr ><td  align='left'>cpl_process_register_norpl()</td><td  align='center'>cpl-c</td></tr>
+<tr ><td  align='left'>cpl_process_register()</td><td  align='center'>cpl-c</td></tr>
+<tr ><td  align='left'>cpl_run_script(type,mode)</td><td  align='center'>cpl-c</td></tr>
+<tr ><td  align='left'>cr_next_domain(carrier, domain, prefix_matching, host, reply_code, dstavp)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>cr_prime_route(carrier, domain, prefix_matching, rewrite_user, hash_source, dstavp)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>cr_route(carrier, domain, prefix_matching, rewrite_user, hash_source, dstavp)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>cr_user_carrier(user, domain, dstavp)</td><td  align='center'>carrierroute</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>D</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>decode_contact_header()</td><td  align='center'>mangler</td></tr>
+<tr ><td  align='left'>decode_contact()</td><td  align='center'>mangler</td></tr>
+<tr ><td  align='left'>diameter_is_user_in(who, group)</td><td  align='center'>auth_diameter</td></tr>
+<tr ><td  align='left'>diameter_proxy_authorize(realm)</td><td  align='center'>auth_diameter</td></tr>
+<tr ><td  align='left'>diameter_www_authorize(realm)</td><td  align='center'>auth_diameter</td></tr>
+<tr ><td  align='left'>does_uri_exist()</td><td  align='center'>uri_db</td></tr>
+<tr ><td  align='left'>dp_apply_policy()</td><td  align='center'>domainpolicy</td></tr>
+<tr ><td  align='left'>dp_can_connect()</td><td  align='center'>domainpolicy</td></tr>
+<tr ><td  align='left'>dp_translate(id, src/dest)</td><td  align='center'>dialplan</td></tr>
+<tr ><td  align='left'>ds_is_from_list(group)</td><td  align='center'>dispatcher</td></tr>
+<tr ><td  align='left'>ds_is_from_list()</td><td  align='center'>dispatcher</td></tr>
+<tr ><td  align='left'>ds_mark_dst(s)</td><td  align='center'>dispatcher</td></tr>
+<tr ><td  align='left'>ds_mark_dst()</td><td  align='center'>dispatcher</td></tr>
+<tr ><td  align='left'>ds_next_domain()</td><td  align='center'>dispatcher</td></tr>
+<tr ><td  align='left'>ds_next_dst()</td><td  align='center'>dispatcher</td></tr>
+<tr ><td  align='left'>ds_select_domain(set, alg)</td><td  align='center'>dispatcher</td></tr>
+<tr ><td  align='left'>ds_select_dst(set, alg)</td><td  align='center'>dispatcher</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>E</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>encode_contact(encoding_prefix)</td><td  align='center'>mangler</td></tr>
+<tr ><td  align='left'>end_media_session()</td><td  align='center'>mediaproxy</td></tr>
+<tr ><td  align='left'>engage_media_proxy()</td><td  align='center'>mediaproxy</td></tr>
+<tr ><td  align='left'>enum_pv_query(pvar[,suffix[,service]])</td><td  align='center'>enum</td></tr>
+<tr ><td  align='left'>enum_query([suffix[,service]])</td><td  align='center'>enum</td></tr>
+<tr ><td  align='left'>exec_avp(command [, avplist])</td><td  align='center'>exec</td></tr>
+<tr ><td  align='left'>exec_dset(command)</td><td  align='center'>exec</td></tr>
+<tr ><td  align='left'>exec_msg(command)</td><td  align='center'>exec</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>F</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>filter_body(content_type)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>fix_contact()</td><td  align='center'>nat_traversal</td></tr>
+<tr ><td  align='left'>fix_nated_contact()</td><td  align='center'>nathelper</td></tr>
+<tr ><td  align='left'>fix_nated_register()</td><td  align='center'>nathelper</td></tr>
+<tr ><td  align='left'>fix_nated_sdp(flags [, ip_address])</td><td  align='center'>nathelper</td></tr>
+<tr ><td  align='left'>force_rtp_proxy([flags [, ip_address]])</td><td  align='center'>nathelper</td></tr>
+<tr ><td  align='left'>from_gw_grp(group-id)</td><td  align='center'>lcr</td></tr>
+<tr ><td  align='left'>from_gw([pvar])</td><td  align='center'>lcr</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>G</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>get_profile_size(profile,[value],size)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>get_redirects(max,reason)</td><td  align='center'>uac_redirect</td></tr>
+<tr ><td  align='left'>get_redirects(max)</td><td  align='center'>uac_redirect</td></tr>
+<tr ><td  align='left'>get_user_group(URI, AVP)</td><td  align='center'>group</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>H</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>h350_auth_lookup(auth_username, username_avp_spec/pwd_avp_spec)</td><td  align='center'>h350</td></tr>
+<tr ><td  align='left'>h350_result_call_preferences(avp_name_prefix)</td><td  align='center'>h350</td></tr>
+<tr ><td  align='left'>h350_result_service_level(avp_name_prefix)</td><td  align='center'>h350</td></tr>
+<tr ><td  align='left'>h350_sipuri_lookup(sip_uri)</td><td  align='center'>h350</td></tr>
+<tr ><td  align='left'>handle_publish(char* sender_uri)</td><td  align='center'>presence</td></tr>
+<tr ><td  align='left'>handle_subscribe()</td><td  align='center'>presence</td></tr>
+<tr ><td  align='left'>has_body(), has_body(mime)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>has_totag()</td><td  align='center'>uri</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>I</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>i_enum_query([suffix[,service]])</td><td  align='center'>enum</td></tr>
+<tr ><td  align='left'>imc_manager()</td><td  align='center'>imc</td></tr>
+<tr ><td  align='left'>insert_hf(txt, hdr)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>insert_hf(txt)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>is_avp_set(name)</td><td  align='center'>avpops</td></tr>
+<tr ><td  align='left'>is_direction(dir)</td><td  align='center'>rr</td></tr>
+<tr ><td  align='left'>is_domain_local(pseudo_variable)</td><td  align='center'>domain</td></tr>
+<tr ><td  align='left'>is_from_local()</td><td  align='center'>domain</td></tr>
+<tr ><td  align='left'>is_from_user_enum()</td><td  align='center'>enum</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<table border='0' ><tr ><td  align='left'>is_gflag(flag)</td><td  align='center'>gflags</td></tr>
+<tr ><td  align='left'>is_in_profile(profile,[value])</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>is_maxfwd_lt(max_value)</td><td  align='center'>maxfwd</td></tr>
+<tr ><td  align='left'>is_method(name)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>is_peer_verified</td><td  align='center'>tlsops</td></tr>
+<tr ><td  align='left'>is_present_hf(hf_name)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>is_privacy(privacy_type)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>is_rpid_user_e164()</td><td  align='center'>auth</td></tr>
+<tr ><td  align='left'>is_uri_host_local()</td><td  align='center'>domain</td></tr>
+<tr ><td  align='left'>is_uri_user_e164(pseudo-variable)</td><td  align='center'>uri</td></tr>
+<tr ><td  align='left'>is_user_in(URI, group)</td><td  align='center'>group</td></tr>
+<tr ><td  align='left'>is_user(username)</td><td  align='center'>uri</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>J</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>jab_exit_jconf()</td><td  align='center'>jabber</td></tr>
+<tr ><td  align='left'>jab_go_offline()</td><td  align='center'>jabber</td></tr>
+<tr ><td  align='left'>jab_go_online()</td><td  align='center'>jabber</td></tr>
+<tr ><td  align='left'>jab_join_jconf()</td><td  align='center'>jabber</td></tr>
+<tr ><td  align='left'>jab_send_message()</td><td  align='center'>jabber</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>K</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>L</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>ldap_filter_url_encode(string, avp_spec)</td><td  align='center'>ldap</td></tr>
+<tr ><td  align='left'>ldap_result_check(ldap_attr_name/string_to_match [, regex_subst])</td><td  align='center'>ldap</td></tr>
+<tr ><td  align='left'>ldap_result_next()</td><td  align='center'>ldap</td></tr>
+<tr ><td  align='left'>ldap_result(ldap_attr_name/avp_spec[/avp_type] [, regex_subst])</td><td  align='center'>ldap</td></tr>
+<tr ><td  align='left'>ldap_search(ldap_url)</td><td  align='center'>ldap</td></tr>
+<tr ><td  align='left'>load_contacts()</td><td  align='center'>lcr</td></tr>
+<tr ><td  align='left'>load_gws_from_grp(group-id)</td><td  align='center'>lcr</td></tr>
+<tr ><td  align='left'>load_gws([pvar])</td><td  align='center'>lcr</td></tr>
+<tr ><td  align='left'>lookup(domain)</td><td  align='center'>registrar</td></tr>
+<tr ><td  align='left'>loose_route()</td><td  align='center'>rr</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>M</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>m_dump([owner])</td><td  align='center'>msilo</td></tr>
+<tr ><td  align='left'>m_store([owner])</td><td  align='center'>msilo</td></tr>
+<tr ><td  align='left'>mf_process_maxfwd_header(max_value)</td><td  align='center'>maxfwd</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>N</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>nat_keepalive()</td><td  align='center'>nat_traversal</td></tr>
+<tr ><td  align='left'>nat_uac_test(flags)</td><td  align='center'>nathelper</td></tr>
+<tr ><td  align='left'>next_contacts()</td><td  align='center'>lcr</td></tr>
+<tr ><td  align='left'>next_gw()</td><td  align='center'>lcr</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>O</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>options_reply()</td><td  align='center'>options</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>P</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>perl_exec_simple(func, [param])</td><td  align='center'>perl</td></tr>
+<tr ><td  align='left'>perl_exec(func, [param])</td><td  align='center'>perl</td></tr>
+<tr ><td  align='left'>pike_check_req()</td><td  align='center'>pike</td></tr>
+<tr ><td  align='left'>pkg_status()</td><td  align='center'>cfgutils</td></tr>
+<tr ><td  align='left'>prefix2domain()</td><td  align='center'>pdt</td></tr>
+<tr ><td  align='left'>prefix2domain(rewrite_mode, multidomain_mode)</td><td  align='center'>pdt</td></tr>
+<tr ><td  align='left'>prefix2domain(rewrite_mode)</td><td  align='center'>pdt</td></tr>
+<tr ><td  align='left'>prepareallosproute()</td><td  align='center'>osp</td></tr>
+<tr ><td  align='left'>prepareosproute()</td><td  align='center'>osp</td></tr>
+<tr ><td  align='left'>proxy_authorize(realm, table)</td><td  align='center'>auth_db</td></tr>
+<tr ><td  align='left'>proxy_challenge(realm, qop)</td><td  align='center'>auth</td></tr>
+<tr ><td  align='left'>pua_set_publish()</td><td  align='center'>pua_usrloc</td></tr>
+<tr ><td  align='left'>pua_update_contact()</td><td  align='center'>pua</td></tr>
+<tr ><td  align='left'>pua_xmpp_notify()</td><td  align='center'>pua_xmpp</td></tr>
+<tr ><td  align='left'>pua_xmpp_req_winfo(char* request_uri, char* expires)</td><td  align='center'>pua_xmpp</td></tr>
+<tr ><td  align='left'>pv_proxy_authorize(realm)</td><td  align='center'>auth</td></tr>
+<tr ><td  align='left'>pv_www_authorize(realm)</td><td  align='center'>auth</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>Q</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>R</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>radius_does_uri_exist([pvar])</td><td  align='center'>uri_radius</td></tr>
+<tr ><td  align='left'>radius_does_uri_user_exist([pvar])</td><td  align='center'>uri_radius</td></tr>
+<tr ><td  align='left'>radius_is_user_in(URI, group)</td><td  align='center'>group_radius</td></tr>
+<tr ><td  align='left'>radius_proxy_authorize(realm [, uri_user])</td><td  align='center'>auth_radius</td></tr>
+<tr ><td  align='left'>radius_www_authorize(realm)</td><td  align='center'>auth_radius</td></tr>
+<tr ><td  align='left'>rand_event()</td><td  align='center'>cfgutils</td></tr>
+<tr ><td  align='left'>rand_get_prob()</td><td  align='center'>cfgutils</td></tr>
+<tr ><td  align='left'>rand_reset_prob()</td><td  align='center'>cfgutils</td></tr>
+<tr ><td  align='left'>rand_set_prob(probabiltiy)</td><td  align='center'>cfgutils</td></tr>
+<tr ><td  align='left'>record_route_preset(string)</td><td  align='center'>rr</td></tr>
+<tr ><td  align='left'>record_route() and record_route(string)</td><td  align='center'>rr</td></tr>
+<tr ><td  align='left'>registered(domain)</td><td  align='center'>registrar</td></tr>
+<tr ><td  align='left'>remove_hf(hname)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>replace_all(re, txt)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>replace_body_all(re, txt)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>replace_body_atonce(re, txt)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>replace_body(re, txt)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>replace(re, txt)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>reportospusage()</td><td  align='center'>osp</td></tr>
+<tr ><td  align='left'>requestosprouting()</td><td  align='center'>osp</td></tr>
+<tr ><td  align='left'>reset_gflag(flag)</td><td  align='center'>gflags</td></tr>
+<tr ><td  align='left'>reset_stat(variable)</td><td  align='center'>statistics</td></tr>
+<tr ><td  align='left'>rl_check_pipe([pipe_no])</td><td  align='center'>ratelimit</td></tr>
+<tr ><td  align='left'>rl_check([pvar])</td><td  align='center'>ratelimit</td></tr>
+<tr ><td  align='left'>rl_drop([[min ], max])</td><td  align='center'>ratelimit</td></tr>
+<tr ><td  align='left'>rls_handle_notify()</td><td  align='center'>rls</td></tr>
+<tr ><td  align='left'>rls_handle_subscribe()</td><td  align='center'>rls</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>S</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>save(domain,flags)</td><td  align='center'>registrar</td></tr>
+<tr ><td  align='left'>save(domain)</td><td  align='center'>registrar</td></tr>
+<tr ><td  align='left'>sd_lookup(table [, owner])</td><td  align='center'>speeddial</td></tr>
+<tr ><td  align='left'>sdp_mangle_ip(pattern, newip)</td><td  align='center'>mangler</td></tr>
+<tr ><td  align='left'>sdp_mangle_port(offset)</td><td  align='center'>mangler</td></tr>
+<tr ><td  align='left'>search_append_body(re, txt)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>search_append(re, txt)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>search_body(re)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>search(re)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>set_accept_filter(filter,flags)</td><td  align='center'>uac_redirect</td></tr>
+<tr ><td  align='left'>set_deny_filter(filter,flags)</td><td  align='center'>uac_redirect</td></tr>
+<tr ><td  align='left'>set_dlg_profile(profile,[value])</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>set_gflag(flag)</td><td  align='center'>gflags</td></tr>
+<tr ><td  align='left'>set_rtp_proxy_set()</td><td  align='center'>nathelper</td></tr>
+<tr ><td  align='left'>shm_status()</td><td  align='center'>cfgutils</td></tr>
+<tr ><td  align='left'>sip_trace()</td><td  align='center'>siptrace</td></tr>
+<tr ><td  align='left'>sl_reply_error()</td><td  align='center'>sl</td></tr>
+<tr ><td  align='left'>sl_send_reply(code, reason)</td><td  align='center'>sl</td></tr>
+<tr ><td  align='left'>sleep(time)</td><td  align='center'>cfgutils</td></tr>
+<tr ><td  align='left'>sms_send_msg_to_net(network_name)</td><td  align='center'>sms</td></tr>
+<tr ><td  align='left'>sms_send_msg()</td><td  align='center'>sms</td></tr>
+<tr ><td  align='left'>sstCheckMin(send_reply_flag)</td><td  align='center'>sst</td></tr>
+<tr ><td  align='left'>start_recording()</td><td  align='center'>nathelper</td></tr>
+<tr ><td  align='left'>subst_body('/re/repl/flags')</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>subst_uri('/re/repl/flags')</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>subst_user('/re/repl/flags')</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>subst('/re/repl/flags')</td><td  align='center'>textops</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>T</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>t_check_status(re)</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>t_check_trans()</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>t_flush_flags()</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>t_local_replied(reply)</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>t_newtran()</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>t_on_branch(branch_route)</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>t_on_failure(failure_route)</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>t_on_reply(reply_route)</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>t_relay([flags])</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>t_relay(proto:host:port,[flags])</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>t_release()</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>t_replicate(URI,[flags])</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>t_reply(code, reason_phrase)</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>t_was_cancelled()</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>t_write_fifo(info,fifo)</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>t_write_unix(info,sock)</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>tel2sip()</td><td  align='center'>uri</td></tr>
+<tr ><td  align='left'>to_gw([group-id])</td><td  align='center'>lcr</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>U</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>uac_auth()</td><td  align='center'>uac</td></tr>
+<tr ><td  align='left'>uac_replace_from(display,uri)</td><td  align='center'>uac</td></tr>
+<tr ><td  align='left'>uac_replace_from(uri)</td><td  align='center'>uac</td></tr>
+<tr ><td  align='left'>uac_restore_from()</td><td  align='center'>uac</td></tr>
+<tr ><td  align='left'>unforce_rtp_proxy()</td><td  align='center'>nathelper</td></tr>
+<tr ><td  align='left'>unset_dlg_profile(profile,[value])</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>update_stat(variable,value)</td><td  align='center'>statistics</td></tr>
+<tr ><td  align='left'>uri_param(param,value)</td><td  align='center'>uri</td></tr>
+<tr ><td  align='left'>uri_param(param)</td><td  align='center'>uri</td></tr>
+<tr ><td  align='left'>use_media_proxy()</td><td  align='center'>mediaproxy</td></tr>
+<tr ><td  align='left'>usleep(time)</td><td  align='center'>cfgutils</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>V</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>validateospheader()</td><td  align='center'>osp</td></tr>
+<tr ><td  align='left'>verify_destination()</td><td  align='center'>peering</td></tr>
+<tr ><td  align='left'>verify_source()</td><td  align='center'>peering</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>W</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>www_authorize(realm, table)</td><td  align='center'>auth_db</td></tr>
+<tr ><td  align='left'>www_challenge(realm, qop)</td><td  align='center'>auth</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>X</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>xdbg(format)</td><td  align='center'>xlog</td></tr>
+<tr ><td  align='left'>xlog([level,] format)</td><td  align='center'>xlog</td></tr>
+<tr ><td  align='left'>xmpp_send_message()</td><td  align='center'>xmpp</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>Y</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>Z</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Script-FunctionsIdx-1-4-action=edit&restore=diff-1366803033-1366803033-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-FunctionsIdx-1-4?action=edit&restore=diff:1366803033:1366803033:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Script-FunctionsIdx-1-4-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Script-FunctionsIdx-1-4?action=edit">Edit</a> |
+      <a rel="nofollow" href="Script-FunctionsIdx-1-4-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Script-FunctionsIdx-1-4?action=diff">History</a> |
+      <a rel="nofollow" href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Script-FunctionsIdx-1-4?action=print  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Script-FunctionsIdx-1-4?action=print%27" tppabs="http://www.opensips.org/Documentation/Script-FunctionsIdx-1-4?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on May 09, 2013, at 12:28 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

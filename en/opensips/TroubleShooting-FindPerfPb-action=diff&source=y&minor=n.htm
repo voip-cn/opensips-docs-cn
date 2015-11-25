@@ -1,0 +1,221 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / TroubleShooting-FindPerfPb | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.TroubleShooting-FindPerfPb' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.TroubleShooting-FindPerfPb History</h2>
+  <p><a href="TroubleShooting-FindPerfPb-action=diff&source=y&minor=y.htm" tppabs="http://www.opensips.org/Documentation/TroubleShooting-FindPerfPb?action=diff&source=y&minor=y">Show minor edits</a> - <a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/TroubleShooting-FindPerfPb?action=diff&source=n&minor=n  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/TroubleShooting-FindPerfPb?action=diff&source=n&minor=n%27" tppabs="http://www.opensips.org/Documentation/TroubleShooting-FindPerfPb?action=diff&source=n&minor=n">Show changes to output</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 01:49 PM 
+        by <span class='diffauthor' title='79.118.227.150'>79.118.227.150</span> - </div>
+        <div class='difftype'>Changed lines 1-2 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>!! Finding performance problems</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>!![[Documentation.Index | Documentation]] -&gt; [[Documentation.TroubleShooting-FindPerfPb |  Find Performance Problems]]<br />----</div></div></div>
+      <div class='diffrestore'><a href="TroubleShooting-FindPerfPb-action=edit&restore=diff-1368100146-1366821353-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/TroubleShooting-FindPerfPb?action=edit&restore=diff:1368100146:1366821353:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 24, 2013, at 06:35 PM 
+        by <span class='diffauthor' title='213.233.101.41'>213.233.101.41</span> - </div>
+        <div class='difftype'>Added lines 1-84:</div>
+        <div class='diffadd'><div class='diffmarkup'>!! Finding performance problems<br />(:toc-float Table of Content:)<br />!!! Background<br /><br />This document talks about OpenSIPS 1.X only design and behaviour. Please keep in mind that OpenSIPS 2.x has been redesigned to improve the multithreading / multiprocessing situation and allow switching the processing context which a long-running request is handled in the background. That change largely invalidates most of the issues mentioned here.<br /><br />The way OpenSIPS 1.X message processing works, one SIP messages will block one worker process of OpenSIPS until the resulting action is found. This usually means, until the SIP message is forwarded to some destination, or dropped. Any action blocking the processing of the current SIP message will affect the general performance. This does not imply only IO blocking as in many scripting languages, but any action which needs to be completed before the script can continue.<br /><br />As an example, if there is a problem with DNS lookup during processing of the packets, the complete DNS timeout takes 1s to be triggered and the OpenSIPS server runs with 8 children, only 8 packets can block the whole server for a second. Assuming more traffic of the same kind gets queued up, most of the processing will be completely locked up on a moderately busy server.<br /><br />Eliminating the biggest delays will improve the server performance (throughput) significantly.<br /><br />!!! Common sources of delays<br /><br />!!!! Explicit database operations<br /><br />Database operations take a (relatively) long time. At least compared to normal computation tasks. This includes the time needed to send the query to the database (if applicable), process the query and to return the results over the network (again, if applicable). If the tables being queried are not properly indexed for example, this may lead to very long query times. In case of MySQL database, such queries can be spotted in the '''slow query log''' if it is enabled. Alternatively long running queries might be logged if the correct threshold is set on the '''exec_query_threshold''' parameter in the '''db_mysql''' module.<br /><br />Database queries are triggered directly by commands like '''avp_db_query''', '''lookup''', '''save''', etc.<br /><br />Ideas:<br /><br /># Remove feature called from the script - if the feature is not needed.<br /># Find out what indexes / storage engines may affect the queries and optimize the database tables.<br /># Change the storage mode if possible to either a delayed writeback, or in-memory only operation.<br /># If the feature is not fully needed, it might be possible to replace it with similar memcache operations.<br /><br />!!!! Implicit database operations<br /><br />Database queries are run from other sources where they are not directly requested. For example accounting and dialog may be triggered on many packets just because of flag being set at some point of the script.<br /><br />Ideas:<br /><br /># Check the proportions between the performance with [[StressTests|different modules enabled]] - see if your profile matches the standard ones.<br /># See other solutions in the previous section.<br /><br />!!!! Excessive logging<br /><br />The message logging in many cases configured by default involves waiting until the syslog daemon writes the debug messages to the disk. If there are many messages to be written, this will definitely slow down processing of the messages.<br /><br />There are two ways this issue can be approached. First, the amount of messages logged can be limited in general. In general, try not to run production deployments with the '''debug''' parameter set higher than 2. If some long term debugging is needed on the system, this can be done either by turning up the debug level using the MI interface, or by changing the debug level locally using '''setdebug()''' function (described in the [[DocsCoreFcn|functions list]]).<br /><br />Second way to approach it is to make the message logging asynchronous on the server side. This way, the logging application will not have to wait until the message is flushed. If you are using standard '''syslog''' daemon, then putting a &quot;-&quot; before the filename where you log the OpenSIPS messages may improve the overall filesystem performance.<br /><br /><br />!!!! DNS resolution<br /><br />Resolving a domain name may happen in many unexpected places. Even worse - the place and the resolved name may be controlled by the user. Every time a message is sent out with a domain name included in the destination address, rather than an IP address, that name will be resolved. If the DNS server does not provide a response to such request quickly enough, the overall server throughput figure may be affected. Especially if many domain names resolutions start to timeout instead of giving a response, the situation may be bad.<br /><br />This will happen even in everyday operation on a server with a typical configuration. UDP packets are only retransmitted by the applications and the DNS query may be simply lost without a retry for a second or more.<br /><br />Ideas:<br /><br /># Install a local, caching and quick DNS server. Dnsmasq for example will allow querying all servers at the same time, instead of one-by-one if it's run with '''--all-servers'''. This will create more network traffic, but limit the number of delays because of lost DNS packets.<br /># Prevent usage of DNS names as much as possible. Drop non-ip contacts, record-routes, etc.<br /># Make sure local resources are available via '''/etc/hosts''' and don't need a remote query.<br /><br />!!!! Excessive branches<br /><br />Retrying a request which is known to fail with a lot of branches might lead to a lot of useless traffic and wasted processing time. For example many phones will register a new contact after a reboot without cleaning a previous one. This may easily lead to &gt;100 contacts per device in some extremely broken cases. OpenSIPS will generate as many branches as allowed within its limit after a '''lookup()''' on that user. Sending all those messages, which are likely to fail is going to impact the server. In case the device requested some presence subscriptions, the problem grows even more.<br /><br />Similar problem affects situations where many gateways are tried as a failover. Some codes might indicate that retrying is not a good idea - for example a PSTN number on the other side is busy. This depends on the actual call scenario and the correct way to handle it may vary from one deployment to the other.<br /><br />Ideas:<br /><br /># Limit the number of branches and allowed registrations as much as possible.<br /># Watch out for broken UAs and possibly introduce more restrictions based on the user agent identification header.<br /># Consider which situations are worth a retry / failover and cannot be recovered from.<br /><br />!!!! Other operations<br /><br />Use the benchmark module to track the request processing time or a specific part of the routing script. It may help to figure out where the delays are occurring.<br /><br />You can plug in the results from the benchmark into the statistics / graphing system like munin. To do this set the '''granularity''' parameter to 0 and use the '''bm_poll_results''' command to pull the new batch of results. This will give you an idea of the system performance not only when something goes wrong, but also some reference points for comparison in the previous days.<br /><br />!!!! Number of message processing children<br /><br />In case you have many delayed operations involving for example database access, but the hardware is not busy - you may consider adding more children to the OpenSIPS server. This may improve situation where the server is waiting for response, rather than actually doing the database lookups (also, when the lookups happen on a remote machine).<br /><br />To do this, adjust the number in the '''children''' core parameter. Keep in mind that this changes the memory requirements of the server however. The server will require a shared memory allocation and a private memory allocation for each of the children. Additionally if '''disable_tcp''' is not enabled and '''tcpchildren''' is not set, a double amount of the '''children''' will be forked - one for handling UDP and one for handling TCP messages.<br /><br />!!!! More modules means more work capacity<br /><br />Including more modules with more functionality means that OpenSIPS needs to do more work on some packets (generalisation, but statistically true). Try striping some functionality off from the configuration to see how the performance changes. Consider which functionality needs to be enabled and when does it need to be called.</div></div></div>
+      <div class='diffrestore'><a href="TroubleShooting-FindPerfPb-action=edit&restore=diff-1366821353-1366821353-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/TroubleShooting-FindPerfPb?action=edit&restore=diff:1366821353:1366821353:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="TroubleShooting-FindPerfPb-action=edit.htm" tppabs="http://www.opensips.org/Documentation/TroubleShooting-FindPerfPb?action=edit">Edit</a> |
+      <a rel="nofollow" href="TroubleShooting-FindPerfPb-action=diff.htm" tppabs="http://www.opensips.org/Documentation/TroubleShooting-FindPerfPb?action=diff">History</a> |
+      <a rel="nofollow" href="TroubleShooting-FindPerfPb-action=print.htm" tppabs="http://www.opensips.org/Documentation/TroubleShooting-FindPerfPb?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on May 09, 2013, at 01:49 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

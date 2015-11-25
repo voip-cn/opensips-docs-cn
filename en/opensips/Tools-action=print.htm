@@ -1,0 +1,201 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+  <title>openSIPS | Documentation / Tools</title>
+  <link rel='stylesheet' href="print.css" tppabs="http://www.opensips.org/pub/skins/print/print.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+</head>
+<body>
+  <div id='printhead'>
+    <h3>From openSIPS</h3>
+    <h1 class='pagename'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation%27" tppabs="http://www.opensips.org/Documentation">Documentation: Tools</a></h1>
+  </div>
+<!--PageText-->
+<div id='wikitext'>
+<h5>Documentation -&gt; OpenSIPS Tools</h5>
+<hr />
+<div class='tocfloat'><p><a name='toc' id='toc'></a><b>Table of Content</b> (<a id="tocidtog" href="javascript:toggle('tocid');">hide</a>)</p><ol class='toc' id='tocid'><li>1.&nbsp;<a href='#toc1'>m4</a></li><li>2.&nbsp;<a href='#toc2'>ngrep</a></li><li>3.&nbsp;<a href='#toc3'>SIPp</a></li><li>4.&nbsp;<a href='#toc4'>tshark</a></li><li>5.&nbsp;<a href='#toc5'>sipviewer</a></li><li>6.&nbsp;<a href='#toc6'>sipana</a></li><li>7.&nbsp;<a href='#toc7'>pcapsipdump</a></li><li>8.&nbsp;<a href='#toc8'>sipscenario</a></li><li>9.&nbsp;<a href='#toc9'>the "siptrace" table</a></li><li>10.&nbsp;<a href='#toc10'>sipinspector</a></li><li>11.&nbsp;<a href='#toc11'>Resync/reboot Linksys phones</a></li><li>12.&nbsp;<a href='#toc12'>Nagios memory check plugin</a></li></ol></div>
+<p class='vspace'>This list contains a few tools which can be used in setting up or testing your <strong>OpenSIPS</strong> installation.
+</p><hr />
+<h4><a name='toc1' id='toc1'></a>1.&nbsp; m4</h4>
+<p>Included on most Linuxes. This is a simple way to set up and use separate parameter files or even a good way of accomplishing INCLUDE's in your configs.
+Example of usage is provided by Iñaki Baz Castillo;
+</p><pre class='escaped'>
+I strongly recommend you to use M4 to compile your opensips.cfg file:
+
+file /etc/opensips/opensips.cfg.m4:
+---------------------------------------------
+debug=3
+log_stderror=no
+log_facility=LOG_LOCAL7
+fork=yes
+...
+listen=MY_IP:MY_PORT
+...
+    rewritehost("MEDIA_SERVER_IP:MEDIA_SERVER_PORT");
+...
+---------------------------------------------
+
+file /etc/opensips/defines.m4 (at your home):
+---------------------------------------------
+divert(-1)
+define(`MY_IP',		`192.168.10.23')
+define(`MY_PORT',		`5060')
+define(`MEDIA_SERVER_IP',   `192.168.10.23')
+define(`MEDIA_SERVER_PORT', `5065')
+divert(0)dnl
+---------------------------------------------
+
+file /etc/opensips/defines.m4 (at your office):
+---------------------------------------------
+divert(-1)
+define(`MY_IP',		`123.123.123.123')
+define(`MY_PORT',		`5060')
+define(`MEDIA_SERVER_IP',	`22.22.22.22')
+define(`MEDIA_SERVER_PORT',	`5065')
+divert(0)dnl
+---------------------------------------------
+
+Create a bash script:
+/usr/local/bin/op-restart.sh:
+----------------------------------------------
+#!/bin/bash
+DIR="/etc/opensips"
+m4 $DIR/defines.m4 $DIR/opensips.cfg.m4 &gt; $DIR/opensips.cfg
+/etc/init.d/opensips restart
+----------------------------------------------
+
+So you just must change the /etc/opensips/opensips.cfg.m4 file and the
+defines.m4 (this last file will be different depending on your location).
+</pre>
+<div class='vspace'></div><hr />
+<h4><a name='toc2' id='toc2'></a>2.&nbsp; ngrep</h4>
+<pre class='escaped'>
+### capture all SIP packages on 5060 on all interfaces
+ngrep -W byline -td any . port 5060
+
+### capture all SIP packages containing 'username' on port 5060 on all interfaces
+ngrep -W byline -tqd any username port 5060
+</pre>
+<div class='vspace'></div><hr />
+<h4><a name='toc3' id='toc3'></a>3.&nbsp; SIPp</h4>
+<hr />
+<h4><a name='toc4' id='toc4'></a>4.&nbsp; tshark</h4>
+<pre class='escaped'>
+### Filter on RTCP packets reporting any packet loss or jitter over 30ms:
+tshark -i eth0 -o "rtcp.heuristic_rtcp: TRUE" -R 'rtcp.ssrc.fraction &gt;= 1 or rtcp.ssrc.jitter &gt;= 30' -V
+
+### View a remote realtime capture with a local wireshark:
+wireshark -k -i &lt;(ssh -l root 192.168.10.98 tshark -w - not tcp port 22)
+</pre>
+<hr />
+<h4><a name='toc5' id='toc5'></a>5.&nbsp; sipviewer</h4>
+<hr />
+<h4><a name='toc6' id='toc6'></a>6.&nbsp; sipana</h4>
+<hr />
+<h4><a name='toc7' id='toc7'></a>7.&nbsp; pcapsipdump</h4>
+<p>pcapsipdump is libpcap-based SIP sniffer with per-call sorting capabilities. It writes SIP/RTP sessions to disk in a same format, as "tcpdump -w", but one file per SIP session (even if there is thousands of concurrent SIP sessions). 
+</p>
+<p class='vspace'>WEB page <a class='urllink' href="javascript:if(confirm(%27http://pcapsipdump.sourceforge.net/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://pcapsipdump.sourceforge.net/%27" tppabs="http://pcapsipdump.sourceforge.net/" rel='nofollow'>http://pcapsipdump.sourceforge.net/</a>
+</p><hr />
+<h4><a name='toc8' id='toc8'></a>8.&nbsp; sipscenario</h4>
+<hr />
+<h4><a name='toc9' id='toc9'></a>9.&nbsp; the "siptrace" table</h4>
+<p>Don't forget the sip_trace() command (in module <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/modules/1.4.x/siptrace.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/modules/1.4.x/siptrace.html%27" tppabs="http://www.opensips.org/html/docs/modules/1.4.x/siptrace.html" rel='nofollow'>http://www.opensips.org/html/docs/modules/1.4.x/siptrace.html</a> )
+</p>
+<p class='vspace'>(Maybe some clever usage for something other than just plain searching it (like an integration with sipscenario))
+</p>
+<div class='vspace'></div><hr />
+<h4><a name='toc10' id='toc10'></a>10.&nbsp; sipinspector</h4>
+<div class='indent'><a class='urllink' href="javascript:if(confirm(%27http://sites.google.com/site/sipinspectorsite/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://sites.google.com/site/sipinspectorsite/%27" tppabs="http://sites.google.com/site/sipinspectorsite/" rel='nofollow'>http://sites.google.com/site/sipinspectorsite/</a>
+</div><div class='vspace'></div><hr />
+<h4><a name='toc11' id='toc11'></a>11.&nbsp; Resync/reboot Linksys phones</h4>
+<p>PhPSIP UA for sending a NOTIFY to resync/reboot Linksys phone. The tool can authenticate (SIP digest) against the Linksys phone.
+</p>
+<div class='vspace'></div><div class='indent'><a class='urllink' href="javascript:if(confirm(%27http://code.google.com/p/php-sip/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://code.google.com/p/php-sip/%27" tppabs="http://code.google.com/p/php-sip/" rel='nofollow'>http://code.google.com/p/php-sip/</a>
+</div><hr />
+<h4><a name='toc12' id='toc12'></a>12.&nbsp; Nagios memory check plugin</h4>
+<div class='indent'><a class='urllink' href="javascript:if(confirm(%27http://level7systems.co.uk/en/blog/OpenSIPs+memory+check+in+Nagios  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://level7systems.co.uk/en/blog/OpenSIPs+memory+check+in+Nagios%27" tppabs="http://level7systems.co.uk/en/blog/OpenSIPs+memory+check+in+Nagios" rel='nofollow'>http://level7systems.co.uk/en/blog/OpenSIPs+memory+check+in+Nagios</a>
+</div>
+</div>
+
+  <div id='printfoot'>
+    <div class='from'>Retrieved from http://www.opensips.org/Documentation/Tools</div>
+    <div class='lastmod'>Page last modified on May 16, 2013, at 05:20 PM</div></div>
+<!--HTMLFooter-->
+</body>
+</html>

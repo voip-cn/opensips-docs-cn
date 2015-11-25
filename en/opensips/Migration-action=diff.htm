@@ -1,0 +1,486 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Migration | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Migration' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='selflink' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Migration History</h2>
+  <p><a href="Migration-action=diff&source=n&minor=n.htm" tppabs="http://www.opensips.org/Documentation/Migration?action=diff&source=n&minor=n">Hide minor edits</a> - <a href="Migration-action=diff&source=y&minor=y.htm" tppabs="http://www.opensips.org/Documentation/Migration?action=diff&source=y&minor=y">Show changes to markup</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>August 26, 2015, at 04:26 PM 
+        by <span class='diffauthor' title='82.208.174.39'>82.208.174.39</span> - </div>
+        <div class='difftype'>Changed line 6 from:</div>
+        <div class='diffdel'><ul><li><a class='wikilink' title='Migration-1-11-0-to-2-1-0' href="Migration-1-11-0-to-2-1-0.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0"><strong>Upgrade from 1.11.0 to 2.1.0</strong></a>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><a class='wikilink' title='Migration-2-1-0-to-2-2-0' href="Migration-2-1-0-to-2-2-0.htm" tppabs="http://www.opensips.org/Documentation/Migration-2-1-0-to-2-2-0"><strong>Upgrade from 2.1.0 to 2.2.0</strong></a>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-action=edit&restore=diff-1440599188-1426683215-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration?action=edit&restore=diff:1440599188:1426683215:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 18, 2015, at 01:53 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 6 from:</div>
+        <div class='diffdel'><ul><li><a class='wikilink' title='Migration-1-11-0-to-2-1-0' href="Migration-1-11-0-to-2-1-0.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0"><strong>Upgrade from 1.11.0 to 2.1.0 (work in progress)</strong></a>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><a class='wikilink' title='Migration-1-11-0-to-2-1-0' href="Migration-1-11-0-to-2-1-0.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0"><strong>Upgrade from 1.11.0 to 2.1.0</strong></a>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-action=edit&restore=diff-1426683215-1426240752-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration?action=edit&restore=diff:1426683215:1426240752:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 13, 2015, at 10:59 AM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 4 from:</div>
+        <div class='diffdel'><p>This section is to provide useful help in migrating your OpenSIPS installations between versions - typically to upgrade from one stable release to the next one (upgrade across major releases).
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>This section is meant to provide useful help in migrating OpenSIPS installations between versions - typically to upgrade from one stable release to the next one (upgrade across major releases).
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Migration-action=edit&restore=diff-1426240752-1425993047-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration?action=edit&restore=diff:1426240752:1425993047:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 10, 2015, at 02:10 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added lines 5-6:</div>
+        <div class='diffadd'><ul><li><a class='wikilink' title='Migration-1-11-0-to-2-1-0' href="Migration-1-11-0-to-2-1-0.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0"><strong>Upgrade from 1.11.0 to 2.1.0 (work in progress)</strong></a>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-action=edit&restore=diff-1425993047-1395346857-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration?action=edit&restore=diff:1425993047:1395346857:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 20, 2014, at 09:20 PM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Added lines 5-6:</div>
+        <div class='diffadd'><ul><li><a class='wikilink' title='Migration-1-10-0-to-1-11-0' href="Migration-1-10-0-to-1-11-0.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-10-0-to-1-11-0"><strong>Upgrade from 1.10.0 to 1.11.0</strong></a>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-action=edit&restore=diff-1395346857-1395309901-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration?action=edit&restore=diff:1395346857:1395309901:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 20, 2014, at 11:05 AM 
+        by <span class='diffauthor' title='89.120.101.121'>razvancrainea</span> - </div>
+        <div class='difftype'>Added lines 5-6:</div>
+        <div class='diffadd'><ul><li><a class='wikilink' title='Migration-1-9-0-to-1-10-0' href="Migration-1-9-0-to-1-10-0.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-9-0-to-1-10-0"><strong>Upgrade from 1.9.0 to 1.10.0</strong></a>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-action=edit&restore=diff-1395309901-1368717543-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration?action=edit&restore=diff:1395309901:1368717543:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 16, 2013, at 05:19 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed lines 6-18 from:</div>
+        <div class='diffdel'><ul><li><a class='wikilink' title='Migration-1-8-0-to-1-9-0' href="Migration-1-8-0-to-1-9-0.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-8-0-to-1-9-0"><strong><span style='font-size:120%'>Upgrade from 1.8.0 to 1.9.0</span></strong></a>
+<div class='vspace'></div></li><li><a class='wikilink' title='Migration-1-7-0-to-1-8-0' href="Migration-1-7-0-to-1-8-0.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-7-0-to-1-8-0"><strong><span style='font-size:120%'>Upgrade from 1.7.0 to 1.8.0</span></strong></a>
+<div class='vspace'></div></li><li><a class='wikilink' title='Migration-1-6-4-to-1-7-0' href="Migration-1-6-4-to-1-7-0.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-6-4-to-1-7-0"><strong><span style='font-size:120%'>Upgrade from 1.6.4 to 1.7.0</span></strong></a>
+<div class='vspace'></div></li><li><a class='wikilink' title='Migration-1-6-3-to-1-6-4' href="Migration-1-6-3-to-1-6-4.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-6-3-to-1-6-4"><strong><span style='font-size:120%'>Upgrade from 1.6.3 to 1.6.4</span></strong></a>
+<div class='vspace'></div></li><li><a class='wikilink' title='Migration-1-6-2-to-1-6-3' href="Migration-1-6-2-to-1-6-3.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-6-2-to-1-6-3"><strong><span style='font-size:120%'>Upgrade from 1.6.2 to 1.6.3</span></strong></a>
+<div class='vspace'></div></li><li><a class='wikilink' title='Migration-1-5-to-1-6' href="Migration-1-5-to-1-6.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-5-to-1-6"><strong><span style='font-size:120%'>Upgrade from 1.5.x to 1.6.0/1/2</span></strong></a>
+<div class='vspace'></div></li><li><a class='wikilink' title='Migration-1-4-to-1-5' href="Migration-1-4-to-1-5.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-4-to-1-5"><strong><span style='font-size:120%'>Upgrade from 1.4.x to 1.5.x</span></strong></a>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><a class='wikilink' title='Migration-1-8-0-to-1-9-0' href="Migration-1-8-0-to-1-9-0.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-8-0-to-1-9-0"><strong>Upgrade from 1.8.0 to 1.9.0</strong></a>
+<div class='vspace'></div></li><li><a class='wikilink' title='Migration-1-7-0-to-1-8-0' href="Migration-1-7-0-to-1-8-0.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-7-0-to-1-8-0"><strong>Upgrade from 1.7.0 to 1.8.0</strong></a>
+<div class='vspace'></div></li><li><a class='wikilink' title='Migration-1-6-4-to-1-7-0' href="Migration-1-6-4-to-1-7-0.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-6-4-to-1-7-0"><strong>Upgrade from 1.6.4 to 1.7.0</strong></a>
+<div class='vspace'></div></li><li><a class='wikilink' title='Migration-1-6-3-to-1-6-4' href="Migration-1-6-3-to-1-6-4.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-6-3-to-1-6-4"><strong>Upgrade from 1.6.3 to 1.6.4</strong></a>
+<div class='vspace'></div></li><li><a class='wikilink' title='Migration-1-6-2-to-1-6-3' href="Migration-1-6-2-to-1-6-3.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-6-2-to-1-6-3"><strong>Upgrade from 1.6.2 to 1.6.3</strong></a>
+<div class='vspace'></div></li><li><a class='wikilink' title='Migration-1-5-to-1-6' href="Migration-1-5-to-1-6.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-5-to-1-6"><strong>Upgrade from 1.5.x to 1.6.0/1/2</strong></a>
+<div class='vspace'></div></li><li><a class='wikilink' title='Migration-1-4-to-1-5' href="Migration-1-4-to-1-5.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-4-to-1-5"><strong>Upgrade from 1.4.x to 1.5.x</strong></a>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-action=edit&restore=diff-1368717543-1368717497-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration?action=edit&restore=diff:1368717543:1368717497:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 16, 2013, at 05:18 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><h2>Documentation -&gt; Version Migration</h2>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h5>Documentation -&gt; Version Migration</h5>
+</div></div>
+      <div class='diffrestore'><a href="Migration-action=edit&restore=diff-1368717497-1368717489-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration?action=edit&restore=diff:1368717497:1368717489:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 16, 2013, at 05:18 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><h2><a class='wikilink' title='Index' href="Index.htm" tppabs="http://www.opensips.org/Documentation/Index">Documentation</a> -&gt; <a class='selflink' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a></h2>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h2>Documentation -&gt; Version Migration</h2>
+</div></div>
+      <div class='diffrestore'><a href="Migration-action=edit&restore=diff-1368717489-1368096734-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration?action=edit&restore=diff:1368717489:1368096734:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 12:52 PM 
+        by <span class='diffauthor' title='79.118.227.150'>79.118.227.150</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><h2>Resources -&gt; <a class='wikilink' title='Documentation' href="javascript:if(confirm(%27http://www.opensips.org/Resources/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/Documentation%27" tppabs="http://www.opensips.org/Resources/Documentation">Documentation</a> -&gt; Version Migration</h2>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h2><a class='wikilink' title='Index' href="Index.htm" tppabs="http://www.opensips.org/Documentation/Index">Documentation</a> -&gt; <a class='selflink' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a></h2>
+</div></div>
+      <div class='diffrestore'><a href="Migration-action=edit&restore=diff-1368096734-1368087947-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration?action=edit&restore=diff:1368096734:1368087947:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 10:25 AM 
+        by <span class='diffauthor' title='109.99.235.212'>bogdan</span> - </div>
+        <div class='difftype'>Changed lines 16-18 from:</div>
+        <div class='diffdel'><ul><li><a class='createlinktext' rel='nofollow' 
+    href="Migration-1-5-0-to-1-6-0-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-5-0-to-1-6-0?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.5.x to 1.6.0/1/2</span></strong></a><a rel='nofollow' 
+    class='createlink' href="Migration-1-5-0-to-1-6-0-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-5-0-to-1-6-0?action=edit">?</a>
+<div class='vspace'></div></li><li><a class='createlinktext' rel='nofollow' 
+    href="Migration-1-4-0-to-1-5-0-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-4-0-to-1-5-0?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.4.x to 1.5.x</span></strong></a><a rel='nofollow' 
+    class='createlink' href="Migration-1-4-0-to-1-5-0-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-4-0-to-1-5-0?action=edit">?</a>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><a class='wikilink' title='Migration-1-5-to-1-6' href="Migration-1-5-to-1-6.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-5-to-1-6"><strong><span style='font-size:120%'>Upgrade from 1.5.x to 1.6.0/1/2</span></strong></a>
+<div class='vspace'></div></li><li><a class='wikilink' title='Migration-1-4-to-1-5' href="Migration-1-4-to-1-5.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-4-to-1-5"><strong><span style='font-size:120%'>Upgrade from 1.4.x to 1.5.x</span></strong></a>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-action=edit&restore=diff-1368087947-1368087912-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration?action=edit&restore=diff:1368087947:1368087912:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 10:25 AM 
+        by <span class='diffauthor' title='109.99.235.212'>bogdan</span> - </div>
+        <div class='difftype'>Changed lines 12-18 from:</div>
+        <div class='diffdel'><ul><li><a class='createlinktext' rel='nofollow' 
+    href="DocsMigration163to164-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration163to164?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.6.3 to 1.6.4</span></strong></a><a rel='nofollow' 
+    class='createlink' href="DocsMigration163to164-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration163to164?action=edit">?</a>
+<div class='vspace'></div></li><li><a class='createlinktext' rel='nofollow' 
+    href="DocsMigration162to163-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration162to163?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.6.2 to 1.6.3</span></strong></a><a rel='nofollow' 
+    class='createlink' href="DocsMigration162to163-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration162to163?action=edit">?</a>
+<div class='vspace'></div></li><li><a class='createlinktext' rel='nofollow' 
+    href="DocsMigration15to16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration15to16?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.5.x to 1.6.0/1/2</span></strong></a><a rel='nofollow' 
+    class='createlink' href="DocsMigration15to16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration15to16?action=edit">?</a>
+<div class='vspace'></div></li><li><a class='createlinktext' rel='nofollow' 
+    href="DocsMigration14to15-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration14to15?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.4.x to 1.5.x</span></strong></a><a rel='nofollow' 
+    class='createlink' href="DocsMigration14to15-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration14to15?action=edit">?</a>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><a class='wikilink' title='Migration-1-6-3-to-1-6-4' href="Migration-1-6-3-to-1-6-4.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-6-3-to-1-6-4"><strong><span style='font-size:120%'>Upgrade from 1.6.3 to 1.6.4</span></strong></a>
+<div class='vspace'></div></li><li><a class='wikilink' title='Migration-1-6-2-to-1-6-3' href="Migration-1-6-2-to-1-6-3.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-6-2-to-1-6-3"><strong><span style='font-size:120%'>Upgrade from 1.6.2 to 1.6.3</span></strong></a>
+<div class='vspace'></div></li><li><a class='createlinktext' rel='nofollow' 
+    href="Migration-1-5-0-to-1-6-0-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-5-0-to-1-6-0?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.5.x to 1.6.0/1/2</span></strong></a><a rel='nofollow' 
+    class='createlink' href="Migration-1-5-0-to-1-6-0-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-5-0-to-1-6-0?action=edit">?</a>
+<div class='vspace'></div></li><li><a class='createlinktext' rel='nofollow' 
+    href="Migration-1-4-0-to-1-5-0-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-4-0-to-1-5-0?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.4.x to 1.5.x</span></strong></a><a rel='nofollow' 
+    class='createlink' href="Migration-1-4-0-to-1-5-0-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-4-0-to-1-5-0?action=edit">?</a>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-action=edit&restore=diff-1368087912-1368087545-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration?action=edit&restore=diff:1368087912:1368087545:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 10:19 AM 
+        by <span class='diffauthor' title='109.99.235.212'>bogdan</span> - </div>
+        <div class='difftype'>Changed line 6 from:</div>
+        <div class='diffdel'><ul><li><a class='wikilink' title='DocsMigration180to190' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsMigration180to190  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsMigration180to190%27" tppabs="http://www.opensips.org/Resources/DocsMigration180to190"><strong><span style='font-size:120%'>Upgrade from 1.8.0 to 1.9.0</span></strong></a>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><a class='wikilink' title='Migration-1-8-0-to-1-9-0' href="Migration-1-8-0-to-1-9-0.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-8-0-to-1-9-0"><strong><span style='font-size:120%'>Upgrade from 1.8.0 to 1.9.0</span></strong></a>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-action=edit&restore=diff-1368087545-1368087509-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration?action=edit&restore=diff:1368087545:1368087509:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 10:18 AM 
+        by <span class='diffauthor' title='109.99.235.212'>bogdan</span> - </div>
+        <div class='difftype'>Changed lines 8-10 from:</div>
+        <div class='diffdel'><ul><li><a class='wikilink' title='DocsMigration170to180' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsMigration170to180  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsMigration170to180%27" tppabs="http://www.opensips.org/Resources/DocsMigration170to180"><strong><span style='font-size:120%'>Upgrade from 1.7.0 to 1.8.0</span></strong></a>
+<div class='vspace'></div></li><li><a class='wikilink' title='DocsMigration164to170' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsMigration164to170  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsMigration164to170%27" tppabs="http://www.opensips.org/Resources/DocsMigration164to170"><strong><span style='font-size:120%'>Upgrade from 1.6.4 to 1.7.0</span></strong></a>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><a class='wikilink' title='Migration-1-7-0-to-1-8-0' href="Migration-1-7-0-to-1-8-0.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-7-0-to-1-8-0"><strong><span style='font-size:120%'>Upgrade from 1.7.0 to 1.8.0</span></strong></a>
+<div class='vspace'></div></li><li><a class='wikilink' title='Migration-1-6-4-to-1-7-0' href="Migration-1-6-4-to-1-7-0.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-6-4-to-1-7-0"><strong><span style='font-size:120%'>Upgrade from 1.6.4 to 1.7.0</span></strong></a>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-action=edit&restore=diff-1368087509-1368087456-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration?action=edit&restore=diff:1368087509:1368087456:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 10:17 AM 
+        by <span class='diffauthor' title='109.99.235.212'>bogdan</span> - </div>
+        <div class='difftype'>Changed lines 6-10 from:</div>
+        <div class='diffdel'><ul><li><a class='createlinktext' rel='nofollow' 
+    href="DocsMigration180to190-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration180to190?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.8.0 to 1.9.0</span></strong></a><a rel='nofollow' 
+    class='createlink' href="DocsMigration180to190-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration180to190?action=edit">?</a>
+<div class='vspace'></div></li><li><a class='createlinktext' rel='nofollow' 
+    href="DocsMigration170to180-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration170to180?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.7.0 to 1.8.0</span></strong></a><a rel='nofollow' 
+    class='createlink' href="DocsMigration170to180-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration170to180?action=edit">?</a>
+<div class='vspace'></div></li><li><a class='createlinktext' rel='nofollow' 
+    href="DocsMigration164to170-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration164to170?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.6.4 to 1.7.0</span></strong></a><a rel='nofollow' 
+    class='createlink' href="DocsMigration164to170-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration164to170?action=edit">?</a>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><a class='wikilink' title='DocsMigration180to190' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsMigration180to190  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsMigration180to190%27" tppabs="http://www.opensips.org/Resources/DocsMigration180to190"><strong><span style='font-size:120%'>Upgrade from 1.8.0 to 1.9.0</span></strong></a>
+<div class='vspace'></div></li><li><a class='wikilink' title='DocsMigration170to180' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsMigration170to180  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsMigration170to180%27" tppabs="http://www.opensips.org/Resources/DocsMigration170to180"><strong><span style='font-size:120%'>Upgrade from 1.7.0 to 1.8.0</span></strong></a>
+<div class='vspace'></div></li><li><a class='wikilink' title='DocsMigration164to170' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsMigration164to170  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsMigration164to170%27" tppabs="http://www.opensips.org/Resources/DocsMigration164to170"><strong><span style='font-size:120%'>Upgrade from 1.6.4 to 1.7.0</span></strong></a>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-action=edit&restore=diff-1368087456-1368087412-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration?action=edit&restore=diff:1368087456:1368087412:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 10:16 AM 
+        by <span class='diffauthor' title='109.99.235.212'>bogdan</span> - </div>
+        <div class='difftype'>Changed lines 6-18 from:</div>
+        <div class='diffdel'><ul><li><a class='createlinktext' rel='nofollow' 
+    href="DocsMigration180to190-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration180to190?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.8.0 to 1.9.0</span></strong></a><a rel='nofollow' 
+    class='createlink' href="DocsMigration180to190-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration180to190?action=edit">?</a>
+<div class='vspace'></div></li><li><a class='createlinktext' rel='nofollow' 
+    href="DocsMigration170to180-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration170to180?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.7.0 to 1.8.0</span></strong></a><a rel='nofollow' 
+    class='createlink' href="DocsMigration170to180-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration170to180?action=edit">?</a>
+<div class='vspace'></div></li><li><a class='createlinktext' rel='nofollow' 
+    href="DocsMigration164to170-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration164to170?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.6.4 to 1.7.0</span></strong></a><a rel='nofollow' 
+    class='createlink' href="DocsMigration164to170-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration164to170?action=edit">?</a>
+<div class='vspace'></div></li><li><a class='createlinktext' rel='nofollow' 
+    href="DocsMigration163to164-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration163to164?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.6.3 to 1.6.4</span></strong></a><a rel='nofollow' 
+    class='createlink' href="DocsMigration163to164-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration163to164?action=edit">?</a>
+<div class='vspace'></div></li><li><a class='createlinktext' rel='nofollow' 
+    href="DocsMigration162to163-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration162to163?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.6.2 to 1.6.3</span></strong></a><a rel='nofollow' 
+    class='createlink' href="DocsMigration162to163-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration162to163?action=edit">?</a>
+<div class='vspace'></div></li><li><a class='createlinktext' rel='nofollow' 
+    href="DocsMigration15to16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration15to16?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.5.x to 1.6.0/1/2</span></strong></a><a rel='nofollow' 
+    class='createlink' href="DocsMigration15to16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration15to16?action=edit">?</a>
+<div class='vspace'></div></li><li><a class='createlinktext' rel='nofollow' 
+    href="DocsMigration14to15-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration14to15?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.4.x to 1.5.x</span></strong></a><a rel='nofollow' 
+    class='createlink' href="DocsMigration14to15-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration14to15?action=edit">?</a>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li><a class='createlinktext' rel='nofollow' 
+    href="DocsMigration180to190-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration180to190?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.8.0 to 1.9.0</span></strong></a><a rel='nofollow' 
+    class='createlink' href="DocsMigration180to190-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration180to190?action=edit">?</a>
+<div class='vspace'></div></li><li><a class='createlinktext' rel='nofollow' 
+    href="DocsMigration170to180-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration170to180?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.7.0 to 1.8.0</span></strong></a><a rel='nofollow' 
+    class='createlink' href="DocsMigration170to180-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration170to180?action=edit">?</a>
+<div class='vspace'></div></li><li><a class='createlinktext' rel='nofollow' 
+    href="DocsMigration164to170-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration164to170?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.6.4 to 1.7.0</span></strong></a><a rel='nofollow' 
+    class='createlink' href="DocsMigration164to170-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration164to170?action=edit">?</a>
+<div class='vspace'></div></li><li><a class='createlinktext' rel='nofollow' 
+    href="DocsMigration163to164-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration163to164?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.6.3 to 1.6.4</span></strong></a><a rel='nofollow' 
+    class='createlink' href="DocsMigration163to164-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration163to164?action=edit">?</a>
+<div class='vspace'></div></li><li><a class='createlinktext' rel='nofollow' 
+    href="DocsMigration162to163-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration162to163?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.6.2 to 1.6.3</span></strong></a><a rel='nofollow' 
+    class='createlink' href="DocsMigration162to163-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration162to163?action=edit">?</a>
+<div class='vspace'></div></li><li><a class='createlinktext' rel='nofollow' 
+    href="DocsMigration15to16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration15to16?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.5.x to 1.6.0/1/2</span></strong></a><a rel='nofollow' 
+    class='createlink' href="DocsMigration15to16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration15to16?action=edit">?</a>
+<div class='vspace'></div></li><li><a class='createlinktext' rel='nofollow' 
+    href="DocsMigration14to15-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration14to15?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.4.x to 1.5.x</span></strong></a><a rel='nofollow' 
+    class='createlink' href="DocsMigration14to15-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration14to15?action=edit">?</a>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-action=edit&restore=diff-1368087412-1366804279-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration?action=edit&restore=diff:1368087412:1366804279:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 24, 2013, at 01:51 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Added lines 1-18:</div>
+        <div class='diffadd'><h2>Resources -&gt; <a class='wikilink' title='Documentation' href="javascript:if(confirm(%27http://www.opensips.org/Resources/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/Documentation%27" tppabs="http://www.opensips.org/Resources/Documentation">Documentation</a> -&gt; Version Migration</h2>
+<hr />
+<p class='vspace'>This section is to provide useful help in migrating your OpenSIPS installations between versions - typically to upgrade from one stable release to the next one (upgrade across major releases).
+</p>
+<div class='vspace'></div><ul><li><a class='createlinktext' rel='nofollow' 
+    href="DocsMigration180to190-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration180to190?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.8.0 to 1.9.0</span></strong></a><a rel='nofollow' 
+    class='createlink' href="DocsMigration180to190-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration180to190?action=edit">?</a>
+<div class='vspace'></div></li><li><a class='createlinktext' rel='nofollow' 
+    href="DocsMigration170to180-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration170to180?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.7.0 to 1.8.0</span></strong></a><a rel='nofollow' 
+    class='createlink' href="DocsMigration170to180-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration170to180?action=edit">?</a>
+<div class='vspace'></div></li><li><a class='createlinktext' rel='nofollow' 
+    href="DocsMigration164to170-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration164to170?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.6.4 to 1.7.0</span></strong></a><a rel='nofollow' 
+    class='createlink' href="DocsMigration164to170-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration164to170?action=edit">?</a>
+<div class='vspace'></div></li><li><a class='createlinktext' rel='nofollow' 
+    href="DocsMigration163to164-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration163to164?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.6.3 to 1.6.4</span></strong></a><a rel='nofollow' 
+    class='createlink' href="DocsMigration163to164-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration163to164?action=edit">?</a>
+<div class='vspace'></div></li><li><a class='createlinktext' rel='nofollow' 
+    href="DocsMigration162to163-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration162to163?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.6.2 to 1.6.3</span></strong></a><a rel='nofollow' 
+    class='createlink' href="DocsMigration162to163-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration162to163?action=edit">?</a>
+<div class='vspace'></div></li><li><a class='createlinktext' rel='nofollow' 
+    href="DocsMigration15to16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration15to16?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.5.x to 1.6.0/1/2</span></strong></a><a rel='nofollow' 
+    class='createlink' href="DocsMigration15to16-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration15to16?action=edit">?</a>
+<div class='vspace'></div></li><li><a class='createlinktext' rel='nofollow' 
+    href="DocsMigration14to15-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration14to15?action=edit"><strong><span style='font-size:120%'>Upgrade from 1.4.x to 1.5.x</span></strong></a><a rel='nofollow' 
+    class='createlink' href="DocsMigration14to15-action=edit.htm" tppabs="http://www.opensips.org/Documentation/DocsMigration14to15?action=edit">?</a>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Migration-action=edit&restore=diff-1366804279-1366804279-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Migration?action=edit&restore=diff:1366804279:1366804279:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Migration-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Migration?action=edit">Edit</a> |
+      <a rel="nofollow" href="Migration-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Migration?action=diff">History</a> |
+      <a rel="nofollow" href="Migration-action=print.htm" tppabs="http://www.opensips.org/Documentation/Migration?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on August 26, 2015, at 04:26 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

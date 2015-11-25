@@ -1,0 +1,273 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Migration-1-11-0-to-2-1-0 </title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='index,follow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   <p><a class='wikilink' title='Signup' href="javascript:if(confirm(%27http://www.opensips.org/Login/Signup?action=login  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Login/Signup?action=login%27" tppabs="http://www.opensips.org/Login/Signup?action=login">Login</a> | <a class='wikilink' title='Signup' href="javascript:if(confirm(%27http://www.opensips.org/Login/Signup  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Login/Signup%27" tppabs="http://www.opensips.org/Login/Signup">Register</a> 
+</p>
+
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Migration-1-11-0-to-2-1-0' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h5>Documentation -&gt; <a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Migration</a> -&gt; Migration from 1.11.x to 2.1.0</h5>
+<p>This page has been visited 1506 times.
+</p><div class='tocfloat'><p><a name='toc' id='toc'></a><b>Table of Content</b> (<a id="tocidtog" href="javascript:toggle('tocid');">hide</a>)</p><ol class='toc' id='tocid'><li>1.&nbsp;<a href='#toc1'>DB migration</a></li><li>2.&nbsp;<a href='#toc2'>Config Script Migration</a></li><li>3.&nbsp;<a href='#toc3'>List of MI input/output changes</a></li><li>4.&nbsp;<a href='#toc4'>List of DB changes</a></li></ol></div>
+<hr />
+<p class='vspace'>This section is meant to provide useful help in migrating OpenSIPS installations from the <strong>1.11</strong> version to the latest <strong>2.1</strong> release.
+</p>
+<p class='vspace'>You can find the all the new additions compiled in the <a class='wikilink' title='Version-2-1-0' href="javascript:if(confirm(%27http://www.opensips.org/About/Version-2-1-0  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/Version-2-1-0%27" tppabs="http://www.opensips.org/About/Version-2-1-0"><strong>2.1.0</strong> release page</a>. Going through the changelog may improve your understanding of the migration / update process.
+</p>
+<div class='vspace'></div><hr />
+<h3><a name='toc1' id='toc1'></a>1.&nbsp; DB migration</h3>
+<p>For MySQL users, you can easily migrate your 1.11.x OpenSIPS databases to the 2.1.0 format with the <strong>opensipsdbctl</strong> tool:
+</p><pre class='escaped'>
+   # opensipsdbctl migrate opensips_1_11 opensips_2_1
+</pre>
+<p class='vspace'>where:
+</p><ul><li><em>opensips_1_11</em> is the existing DB name corresponding to version 1.11.x format
+</li><li><em>opensips_2_1</em> is the DB name to be created for 2.1 format
+</li></ul><p class='vspace'>NOTE:
+</p><ul><li>the old database will not be deleted, altered or changed - it will not be touched at all
+</li><li>new database will be created and data from old DB will be imported into it
+</li></ul><p class='vspace'><br />
+<span  style='color: red;'> NOTE that the migration tool is only available for MYSQL databases! </span>
+</p>
+<p class='vspace'>In order to migrate other SQL backends, the complete list of structural changes may be found below. However, if possible, we recommend re-creating the databases from scratch using the <a class='wikilink' title='Database Deployment - devel' href="Install-DBDeployment-2-1.htm" tppabs="http://www.opensips.org/Documentation/Install-DBDeployment-2-1">DB deployment tutorial</a>.
+</p>
+<div class='vspace'></div><h3><a name='toc2' id='toc2'></a>2.&nbsp; Config Script Migration</h3>
+<p>The following is the full list of backwards-incompatible syntax or functional changes in the OpenSIPS configuration script (some of them are fixes):
+</p>
+<div class='vspace'></div><ul><li>In 2.1, for each type of listener, you must load its corresponding module (e.g. <strong>loadmodule "proto_tcp.so"</strong> if you are using TCP listeners or <strong>loadmodule "proto_udp.so"</strong> if you are using UDP listeners). Additional info <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/About/Version-2-1-0  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/Version-2-1-0#toc3%27" tppabs="http://www.opensips.org/About/Version-2-1-0#toc3" rel='nofollow'>here</a>...
+</li><li>All <strong>tcp_xxx</strong> and <strong>tls_xxx</strong> core parameters have been moved to their respective modules (<a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/modules/2.1.x/proto_tcp.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/modules/2.1.x/proto_tcp.html%27" tppabs="http://www.opensips.org/html/docs/modules/2.1.x/proto_tcp.html" rel='nofollow'>proto_tcp</a>, respectively <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/modules/2.1.x/proto_tls.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/modules/2.1.x/proto_tls.html%27" tppabs="http://www.opensips.org/html/docs/modules/2.1.x/proto_tls.html" rel='nofollow'>proto_tls</a>)
+</li><li><strong><span  style='color: red;'>all tcp_ and tls_ global timeout parameters are now given in milliseconds, instead of seconds/useconds</span></strong>
+</li><li>Fix: <strong>"opensips fifo t_uac_dlg"</strong> and <strong>t_new_request()</strong> now properly handle any <strong>force_send_socket()</strong> operation done inside the local_route (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/d37ae66  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/d37ae66%27" tppabs="https://github.com/OpenSIPS/opensips/commit/d37ae66" rel='nofollow'>d37ae66</a>)
+</li><li>Fix: <strong>acc_evi_request()</strong> now properly reports E_ACC_CDR, E_ACC_EVENT and E_ACC_MISSED_EVENT (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/24bd3a8  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/24bd3a8%27" tppabs="https://github.com/OpenSIPS/opensips/commit/24bd3a8" rel='nofollow'>24bd3a8</a>)
+</li><li>Advertised address with mutiple branches: if the advertised address of the <em>first</em> branch is changed, <em>all</em> new branches will start off with the last changed value (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/ad92fa6  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/ad92fa6%27" tppabs="https://github.com/OpenSIPS/opensips/commit/ad92fa6" rel='nofollow'>ad92fa6</a>)
+</li><li>Memcached NoSQL driver bugfix: get() operations no longer create counters in case they do not exist (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/47cd18c  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/47cd18c%27" tppabs="https://github.com/OpenSIPS/opensips/commit/47cd18c" rel='nofollow'>47cd18c</a>)
+</li><li>Couchbase NoSQL driver bugfix: get() operations no longer create counters in case they do not exist (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/67023e9  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/67023e9%27" tppabs="https://github.com/OpenSIPS/opensips/commit/67023e9" rel='nofollow'>67023e9</a>)
+</li><li>make: default prefix changed to <strong>"/usr/local"</strong> from <strong>"/usr"</strong> (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/84cfab2  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/84cfab2%27" tppabs="https://github.com/OpenSIPS/opensips/commit/84cfab2" rel='nofollow'>84cfab2</a>)
+</li><li>script: variables can now be assigned NULL variables (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/5ebc1ef  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/5ebc1ef%27" tppabs="https://github.com/OpenSIPS/opensips/commit/5ebc1ef" rel='nofollow'>5ebc1ef</a>)
+</li><li>removed SSLv2 and SSLv3 support (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/4c56d98  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/4c56d98%27" tppabs="https://github.com/OpenSIPS/opensips/commit/4c56d98" rel='nofollow'>4c56d98</a> and <a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/06f9025  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/06f9025%27" tppabs="https://github.com/OpenSIPS/opensips/commit/06f9025" rel='nofollow'>06f9025</a>)
+</li><li>mi_xmlrpc_ng: default root path changed from "xmlrpc" to "RPC2" (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/e93a98b  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/e93a98b%27" tppabs="https://github.com/OpenSIPS/opensips/commit/e93a98b" rel='nofollow'>e93a98b</a>)
+</li><li>obsolete modules: mi_xmlrpc, auth_diameter, closeddial (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/d6c14c2  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/d6c14c2%27" tppabs="https://github.com/OpenSIPS/opensips/commit/d6c14c2" rel='nofollow'>d6c14c2</a>)
+</li><li>dialog: OpenSIPS no longer starts if dialog fails to establish an SQL DB connection (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/e2c77e4  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/e2c77e4%27" tppabs="https://github.com/OpenSIPS/opensips/commit/e2c77e4" rel='nofollow'>e2c77e4</a>)
+</li><li><em>Contact</em> header parsing: OpenSIPS 2.1 no longer supports this syntax: <strong>"Contact: &lt;&gt;\r\n"</strong>, as imposed by RFC3261 (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/608de67  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/608de67%27" tppabs="https://github.com/OpenSIPS/opensips/commit/608de67" rel='nofollow'>608de67</a>)
+</li><li>json: $json variables will be set to NULL if assignment fails due to parsing errors (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/8dfe15e3ce  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/8dfe15e3ce%27" tppabs="https://github.com/OpenSIPS/opensips/commit/8dfe15e3ce" rel='nofollow'>8dfe15e3ce</a>)
+</li></ul><div class='vspace'></div><h3><a name='toc3' id='toc3'></a>3.&nbsp; List of MI input/output changes</h3>
+<p>The following is the full list of backwards-incompatible changes in the output of the OpenSIPS Management Interface commands:
+</p>
+<div class='vspace'></div><ul><li><strong><span  style='color: red;'>MI output structure changed: (<a style='color: red' class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/34576f5  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/34576f5%27" tppabs="https://github.com/OpenSIPS/opensips/commit/34576f5" rel='nofollow'>34576f5</a> and <a style='color: red' class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/459dffb  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/459dffb%27" tppabs="https://github.com/OpenSIPS/opensips/commit/459dffb" rel='nofollow'>459dffb</a>)</span></strong> - make sure your MI parsing scripts are still working correctly!
+</li><li>MI output: <strong>"opensipsctl fifo list_tcp_conns"</strong> - "Timeout" field is now a human-readable date instead of UNIX timestamp (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/6ac1dc8251  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/6ac1dc8251%27" tppabs="https://github.com/OpenSIPS/opensips/commit/6ac1dc8251" rel='nofollow'>6ac1dc8251</a>)
+</li><li>MI output: <strong>"opensipsctl fifo subs_phtable_list"</strong> - "expires" field is now a human-readable date instead of UNIX timestamp (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/ddaf004  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/ddaf004%27" tppabs="https://github.com/OpenSIPS/opensips/commit/ddaf004" rel='nofollow'>ddaf004</a>)
+</li><li>MI output: <strong>"opensipsctl fifo dp_translate"</strong> may now return "404 - No translation" (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/f517529  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/f517529%27" tppabs="https://github.com/OpenSIPS/opensips/commit/f517529" rel='nofollow'>f517529</a>)
+</li><li>MI output: <strong>"opensipsctl fifo rtpproxy_show"</strong> structure change (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/213e777  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/213e777%27" tppabs="https://github.com/OpenSIPS/opensips/commit/213e777" rel='nofollow'>213e777</a>)
+</li><li>MI output: <strong>"opensipsctl fifo ds_list"</strong> state instead of flags (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/45afa00  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/45afa00%27" tppabs="https://github.com/OpenSIPS/opensips/commit/45afa00" rel='nofollow'>45afa00</a>)
+</li><li>MI output: <strong>"opensipsctl fifo dr_gw_status"</strong> changed from "Enabled : yes/no" to "State : Disabled MI / Probing / Inactive / Active (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/3866e35  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/3866e35%27" tppabs="https://github.com/OpenSIPS/opensips/commit/3866e35" rel='nofollow'>3866e35</a>)
+</li><li>MI json : on invalid command, <strong>"{"error":"Internal server error"}"</strong> has been replaced with <strong>"{"error":"Command not found"}"</strong> (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/aaaf85c  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/aaaf85c%27" tppabs="https://github.com/OpenSIPS/opensips/commit/aaaf85c" rel='nofollow'>aaaf85c</a>)
+</li><li>MI output: <strong>"opensipsctl ul show"</strong> output aligned to default JSON format (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/e8101df  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/e8101df%27" tppabs="https://github.com/OpenSIPS/opensips/commit/e8101df" rel='nofollow'>e8101df</a> + <a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/eaa5f1a  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/eaa5f1a%27" tppabs="https://github.com/OpenSIPS/opensips/commit/eaa5f1a" rel='nofollow'>eaa5f1a</a>)
+</li></ul><div class='vspace'></div><h3><a name='toc4' id='toc4'></a>4.&nbsp; List of DB changes</h3>
+<ul><li><em>cachedb_sql</em>, <strong>cachedb</strong> table - "PRIMARY KEY" attr added (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/f1fec17  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/f1fec17%27" tppabs="https://github.com/OpenSIPS/opensips/commit/f1fec17" rel='nofollow'>f1fec17</a>)
+</li><li><em>call_center</em>, <strong>cc_agents</strong> table - new "last_call_end" column (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/4b366c5  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/4b366c5%27" tppabs="https://github.com/OpenSIPS/opensips/commit/4b366c5" rel='nofollow'>4b366c5</a>)
+</li><li><em>call_center</em>, <strong>cc_calls</strong> table - NEW (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/2f6eb09  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/2f6eb09%27" tppabs="https://github.com/OpenSIPS/opensips/commit/2f6eb09" rel='nofollow'>2f6eb09</a>)
+</li><li><em>dispatcher</em>, <strong>dispatcher</strong> table - new "priority" column (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/6dc7261  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/6dc7261%27" tppabs="https://github.com/OpenSIPS/opensips/commit/6dc7261" rel='nofollow'>6dc7261</a>)
+</li><li><em>msilo</em>, <strong>silo</strong> table - DEFAULT "text/plain" removed (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/2e4b2d5  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/2e4b2d5%27" tppabs="https://github.com/OpenSIPS/opensips/commit/2e4b2d5" rel='nofollow'>2e4b2d5</a>)
+</li><li><em>siptrace</em>, <strong>siptrace</strong> table - from_ip|to_ip split into 6 columns (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/b746032  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/b746032%27" tppabs="https://github.com/OpenSIPS/opensips/commit/b746032" rel='nofollow'>b746032</a>)
+</li><li><em>pua</em>, <strong>pua</strong> table - new indexes added (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/59061f1  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/59061f1%27" tppabs="https://github.com/OpenSIPS/opensips/commit/59061f1" rel='nofollow'>59061f1</a>)
+</li><li><em>domain</em>, <strong>domain</strong> table - attributes support (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/57ec0f3  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/57ec0f3%27" tppabs="https://github.com/OpenSIPS/opensips/commit/57ec0f3" rel='nofollow'>57ec0f3</a>)
+</li><li><em>drouting</em>, <strong>dr_partitions</strong> table - NEW (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/c664d40  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/c664d40%27" tppabs="https://github.com/OpenSIPS/opensips/commit/c664d40" rel='nofollow'>c664d40</a>)
+</li><li><em>dialplan</em>, <strong>dialplan</strong> table - NEW timerec column (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/e71485f  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/e71485f%27" tppabs="https://github.com/OpenSIPS/opensips/commit/e71485f" rel='nofollow'>e71485f</a>)
+</li><li><em>fraud_detection</em>, <strong>fraud_detection</strong> table - NEW (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/f8a72e8  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/f8a72e8%27" tppabs="https://github.com/OpenSIPS/opensips/commit/f8a72e8" rel='nofollow'>f8a72e8</a>)
+</li><li><em>registrar</em>, <strong>aliases</strong> table - various column property changes (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/1572ed0  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/1572ed0%27" tppabs="https://github.com/OpenSIPS/opensips/commit/1572ed0" rel='nofollow'>1572ed0</a>)
+</li><li><em>acc</em>, <strong>missed_calls</strong> table - NEW columns: "created" and "setuptime" (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/94cf5dd  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/94cf5dd%27" tppabs="https://github.com/OpenSIPS/opensips/commit/94cf5dd" rel='nofollow'>94cf5dd</a>)
+</li><li><em>msilo</em>, <strong>silo</strong> table - "NULL" attribute added (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/e02a004  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/e02a004%27" tppabs="https://github.com/OpenSIPS/opensips/commit/e02a004" rel='nofollow'>e02a004</a>)
+</li><li><em>closeddial</em>, <strong>closeddial</strong> table - DROPPED (<a class='urllink' href="javascript:if(confirm(%27https://github.com/OpenSIPS/opensips/commit/7b30b2c  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/OpenSIPS/opensips/commit/7b30b2c%27" tppabs="https://github.com/OpenSIPS/opensips/commit/7b30b2c" rel='nofollow'>7b30b2c</a>)
+</li></ul><p class='vspace'><br />
+</p><hr />
+<p><a href='#toc'>Back to Table of Contents</a>
+</p>
+</div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Migration-1-11-0-to-2-1-0-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=edit">Edit</a> |
+      <a rel="nofollow" href="Migration-1-11-0-to-2-1-0-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=diff">History</a> |
+      <a rel="nofollow" href="Migration-1-11-0-to-2-1-0-action=print.htm" tppabs="http://www.opensips.org/Documentation/Migration-1-11-0-to-2-1-0?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on August 25, 2015, at 06:43 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

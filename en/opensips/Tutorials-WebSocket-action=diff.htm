@@ -1,0 +1,765 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Tutorials-WebSocket | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Tutorials-WebSocket' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Tutorials-WebSocket History</h2>
+  <p><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-WebSocket?action=diff&source=n&minor=n  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-WebSocket?action=diff&source=n&minor=n%27" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=diff&source=n&minor=n">Hide minor edits</a> - <a href="Tutorials-WebSocket-action=diff&source=y&minor=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=diff&source=y&minor=y">Show changes to markup</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>July 02, 2013, at 10:48 AM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 36 from:</div>
+        <div class='diffdel'><p>OverSIP has two basic configuration files that will need to be changed in order :
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>OverSIP has two basic configuration files that will need to changed in order to achieve our desired functionality :
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1372754894-1372754855-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1372754894:1372754855:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>July 02, 2013, at 10:47 AM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 52 from:</div>
+        <div class='diffdel'><ul><li>If you are using a pre 1.3.8 version, you need to edit the file and add <strong>request.fix_nat</strong> right after the <strong>def (OverSIP::SipEvents).on_request request</strong> line - basically we're forcing OverSIP to consider all requests as NAT-ed ( since we'll be using it only for Websocket clients, and they are considered NATed by default due to browser considerations )
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>If you are using a pre 1.3.8 OverSIP version, you need to edit the file and add <strong>request.fix_nat</strong> right after the <strong>def (OverSIP::SipEvents).on_request request</strong> line - basically we're forcing OverSIP to consider all requests as NAT-ed ( since we'll be using it only for Websocket clients, and they are considered NATed by default due to browser considerations )
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1372754855-1372754835-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1372754855:1372754835:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>July 02, 2013, at 10:47 AM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed lines 50-51 from:</div>
+        <div class='diffdel'><p><strong>server.rb</strong> ( by default located in /etc/oversip/server.rb ) contains the actual routing logic for the OverSIP server - written in Ruby. The default server.rb script is suitable for the purpose of WS to SIP gateway, so you shouldn't do any changes to it, with one single exception : \\
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><strong>server.rb</strong> ( by default located in /etc/oversip/server.rb ) contains the actual routing logic for the OverSIP server - written in Ruby. The default server.rb script is suitable for the purpose of WS to SIP gateway, so you shouldn't do any changes to it, with one single exception :
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1372754835-1372754811-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1372754835:1372754811:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>July 02, 2013, at 10:46 AM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed lines 51-52 from:</div>
+        <div class='diffdel'><p>If you are using a pre 1.3.8 version, you need to edit the file and add <strong>request.fix_nat</strong> right after the <strong>def (OverSIP::SipEvents).on_request request</strong> line - basically we're forcing OverSIP to consider all requests as NAT-ed ( since we'll be using it only for Websocket clients, and they are considered NATed by default due to browser considerations )
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>If you are using a pre 1.3.8 version, you need to edit the file and add <strong>request.fix_nat</strong> right after the <strong>def (OverSIP::SipEvents).on_request request</strong> line - basically we're forcing OverSIP to consider all requests as NAT-ed ( since we'll be using it only for Websocket clients, and they are considered NATed by default due to browser considerations )
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1372754811-1372754783-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1372754811:1372754783:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>July 02, 2013, at 10:46 AM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed lines 38-39 from:</div>
+        <div class='diffdel'><p><strong>oversip.conf</strong> contains the Main Configuration part of the server ( no routing logic here - just configuration parameters ). <br />
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><strong>oversip.conf</strong> ( by default located in /etc/oversip/oversip.conf ) contains the Main Configuration part of the server ( no routing logic here - just configuration parameters ). <br />
+</p>
+</div>
+        <div class='difftype'>Changed lines 50-51 from:</div>
+        <div class='diffdel'><p><strong>server.rb</strong> contains the actual routing logic for the OverSIP server - written in Ruby. The default server.rb script is suitable for the purpose of WS to SIP gateway, so you shouldn't do any changes to it, with one single exception : <br />
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><strong>server.rb</strong> ( by default located in /etc/oversip/server.rb ) contains the actual routing logic for the OverSIP server - written in Ruby. The default server.rb script is suitable for the purpose of WS to SIP gateway, so you shouldn't do any changes to it, with one single exception : <br />
+</p>
+</div>
+        <div class='difftype'>Changed line 70 from:</div>
+        <div class='diffdel'><p>Assuming that we have an account on our OpenSIPS box with the opensips-domain.com domain, and that our OverSIP is listening on IP 192.168.2.13 port 10080 for Websocket traffic, here are two screenshots that show the proper configuration of sipML5 for the SIP user configuration and for the WebSocket server configuration ( accessible from the expert mode options of sipML5 )
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Assuming that we have an account on our OpenSIPS box with the opensips-domain.com domain, and that our OverSIP is listening on IP 192.168.2.13 port 10080 for WebSocket traffic, here are two screenshots that show the proper configuration of sipML5 for the SIP user configuration and for the WebSocket server configuration ( accessible from the expert mode options of sipML5 )
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1372754783-1372754584-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1372754783:1372754584:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>July 02, 2013, at 10:43 AM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed lines 20-21 from:</div>
+        <div class='diffdel'><ul><li>For the SIP client for testing purposes, we will be using sipML5 - The client's media stack relies on WebRTC and the client can be used to connect to any SIP or IMS network from your preferred browser to make and receive audio/video calls and instant messages. sipML5 is open source and the installation is very straight-forward. Furthermore, sipML5 should work on any web browser supporting WebRTC but we highly recommend using Google Chrome or Firefox Nightly for testing.
+</li></ul><p>sipML5 can be downloaded here and installation is very straight-forward : just copy the sources to your /var/www/ folder.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>For the SIP client for testing purposes, we will be using sipML5 . It can be downloaded from here and installation is very straight-forward : just copy the sources to your /var/www/ folder. The client's media stack relies on WebRTC and the client can be used to connect to any SIP or IMS network from your preferred browser to make and receive audio/video calls and instant messages. Furthermore, sipML5 should work on any web browser supporting WebRTC but we highly recommend using Google Chrome or Firefox Nightly for testing.
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1372754584-1372754521-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1372754584:1372754521:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>July 02, 2013, at 10:42 AM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Deleted line 20:</div>
+        <div class='diffdel'></div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1372754521-1372754505-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1372754521:1372754505:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>July 02, 2013, at 10:41 AM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Deleted lines 20-21:</div>
+        <div class='diffdel'><p>\\
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1372754505-1372754484-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1372754505:1372754484:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>July 02, 2013, at 10:41 AM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Added lines 21-24:</div>
+        <div class='diffadd'><p><br />
+sipML5 can be downloaded here and installation is very straight-forward : just copy the sources to your /var/www/ folder.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1372754484-1372698635-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1372754484:1372698635:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>July 01, 2013, at 07:10 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 6 from:</div>
+        <div class='diffdel'><h4>The Problem</h4>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h4>Introduction</h4>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1372698635:1372698587:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1372698635:1372698587:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1372698635:1372698587:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>July 01, 2013, at 07:09 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 70 from:</div>
+        <div class='diffdel'><p>Assuming that we have an account on our OpenSIPS box with the opensips-domain.com domain, and that our OverSIP is listening on IP 192.168.2.13 port 10080 for Websocket traffic, below are two screenshots that show the proper configuration of sipML5
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Assuming that we have an account on our OpenSIPS box with the opensips-domain.com domain, and that our OverSIP is listening on IP 192.168.2.13 port 10080 for Websocket traffic, here are two screenshots that show the proper configuration of sipML5 for the SIP user configuration and for the WebSocket server configuration ( accessible from the expert mode options of sipML5 )
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1372698587:1372697581:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1372698587:1372697581:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1372698587:1372697581:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>July 01, 2013, at 06:53 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed lines 26-27 from:</div>
+        <div class='diffdel'><p>OpenSIPS will have to be configured with NAT support. If you do not have NAT support in your OpenSIPS script, or if you want to generate a brand new script, you should use the menuconfig tool and generate a new Residential type script, with NAT support enabled. For more information on generating scripts see this manual page <br />
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>OpenSIPS will have to be configured with NAT support. If you do not have NAT support in your OpenSIPS script, or if you want to generate a brand new script, you should use the menuconfig tool and generate a new Residential type script, with NAT support enabled. For more information on generating scripts see this manual page 
+</p>
+<p class='vspace'><br />
+</p>
+</div>
+        <div class='difftype'>Added lines 54-55:</div>
+        <div class='diffadd'><p><br />
+</p>
+</div>
+        <div class='difftype'>Added lines 71-72:</div>
+        <div class='diffadd'><p>\\
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1372697581-1372697536-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1372697581:1372697536:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>July 01, 2013, at 06:52 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed lines 26-27 from:</div>
+        <div class='diffdel'><p>OpenSIPS will have to be configured with NAT support. If you do not have NAT support in your OpenSIPS script, or if you want to generate a brand new script, you should use the menuconfig tool and generate a new Residential type script, with NAT support enabled. For more information on generating scripts see this manual page
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>OpenSIPS will have to be configured with NAT support. If you do not have NAT support in your OpenSIPS script, or if you want to generate a brand new script, you should use the menuconfig tool and generate a new Residential type script, with NAT support enabled. For more information on generating scripts see this manual page <br />
+</p>
+</div>
+        <div class='difftype'>Changed lines 52-53 from:</div>
+        <div class='diffdel'><ul><li>TODO - Test &amp; Upload very basic script files
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Here you will find attached an oversip.conf file that works well with our scenario. The config file assumes that OverSIP will listen on 192.168.2.13
+</p>
+</div>
+        <div class='difftype'>Added lines 65-66:</div>
+        <div class='diffadd'><p>Assuming that we have an account on our OpenSIPS box with the opensips-domain.com domain, and that our OverSIP is listening on IP 192.168.2.13 port 10080 for Websocket traffic, below are two screenshots that show the proper configuration of sipML5
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1372697536-1372697388-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1372697536:1372697388:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>July 01, 2013, at 06:49 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 28 from:</div>
+        <div class='diffdel'><ul><li>TODO - Test &amp; Upload very basic script file
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Here you will find attached a very basic OpenSIPS Residential script with NAT support that should work very well for our scenario.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1372697388-1371827957-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1372697388:1371827957:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 05:19 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 62 from:</div>
+        <div class='diffdel'><p>Then simply insert your OpenSIPS server credentials and hit login. You should then be able to call other users registered on a webRTC capable SIP client.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Then simply insert your OpenSIPS username credentials and hit login. You should then be able to call other users registered on a webRTC capable SIP client.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1371827957-1371827829-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371827957:1371827829:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 05:17 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed lines 28-29 from:</div>
+        <div class='diffdel'><ul><li>Test &amp; Upload very basic script file
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>TODO - Test &amp; Upload very basic script file
+</li></ul>
+</div>
+        <div class='difftype'>Changed line 52 from:</div>
+        <div class='diffdel'><ul><li>Test &amp; Upload very basic script files
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>TODO - Test &amp; Upload very basic script files
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1371827829-1371827763-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371827829:1371827763:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 05:16 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 26 from:</div>
+        <div class='diffdel'><p>OpenSIPS will have to be configured with NAT support. If you want to generate a brand new script, that can be accomplished by using the menuconfig tool and generating a new Residential type script, with NAT support enabled. For more information on generating scripts see this manual page
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>OpenSIPS will have to be configured with NAT support. If you do not have NAT support in your OpenSIPS script, or if you want to generate a brand new script, you should use the menuconfig tool and generate a new Residential type script, with NAT support enabled. For more information on generating scripts see this manual page
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1371827763-1371827682-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371827763:1371827682:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 05:14 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 13 from:</div>
+        <div class='diffdel'><p>Secondly, the solution uses entirely open source components ( both for the server and the client side ) - which give you great flexibility on the server side, as well as on the client side - since you can easily integrate the client into your existing client portals.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Secondly, the solution uses entirely open source components ( both for the server and the client side ) - which gives you great flexibility on the server side, as well as on the client side - since you can easily integrate the client into your existing client portals.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1371827682-1371827653-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371827682:1371827653:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 05:14 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 8 from:</div>
+        <div class='diffdel'><p>The purpose of this tutorial is to show how to add WebRTC functionalities to any existing OpenSIPS deployment very easily. 
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>The purpose of this tutorial is to show how to easily add WebRTC functionalities to any existing OpenSIPS deployment. 
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371827653:1371827627:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371827653:1371827627:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371827653:1371827627:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 05:13 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Added lines 5-13:</div>
+        <div class='diffadd'><h4>The Problem</h4>
+<p>The purpose of this tutorial is to show how to add WebRTC functionalities to any existing OpenSIPS deployment very easily. 
+</p>
+<p class='vspace'><br />
+The solution below requires no changes at all on the OpenSIPS side ( because it relies on a WebSocket to SIP gateway ), thus it can be easily integrated with <strong>0</strong> side-effects to your existing deployment.
+Secondly, the solution uses entirely open source components ( both for the server and the client side ) - which give you great flexibility on the server side, as well as on the client side - since you can easily integrate the client into your existing client portals.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1371827627-1371827235-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371827627:1371827235:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 05:07 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed lines 53-57 from:</div>
+        <div class='diffdel'><p>Then simply insert your OpenSIPS server credentials and hit login. You should then be able to call other users registered on a webRTC capable SIP client.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Then simply insert your OpenSIPS server credentials and hit login. You should then be able to call other users registered on a webRTC capable SIP client.
+</p>
+<p class='vspace'><br />
+Because sipML5 is fully open-source, the configuration of the WebSocket Server URL can be hard-coded into the client, and the actual SIP client can be easily embedded into an existing web interface.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371827235:1371827168:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371827235:1371827168:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371827235:1371827168:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 05:06 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Added lines 19-20:</div>
+        <div class='diffadd'><ul><li>Test &amp; Upload very basic script file
+</li></ul>
+</div>
+        <div class='difftype'>Added lines 42-43:</div>
+        <div class='diffadd'><ul><li>Test &amp; Upload very basic script files
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1371827168-1371827135-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371827168:1371827135:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 05:05 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Added lines 13-14:</div>
+        <div class='diffadd'><hr />
+</div>
+        <div class='difftype'>Added lines 19-20:</div>
+        <div class='diffadd'><hr />
+</div>
+        <div class='difftype'>Added lines 40-41:</div>
+        <div class='diffadd'><hr />
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1371827135-1371826858-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371827135:1371826858:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 05:00 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Deleted lines 16-17:</div>
+        <div class='diffdel'><ul><li>TOOD - attach some test script here ?
+</li></ul>
+</div>
+        <div class='difftype'>Deleted lines 35-36:</div>
+        <div class='diffdel'><ul><li>TODO - brush up siphub config and attach here
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371826858:1371826786:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371826858:1371826786:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371826858:1371826786:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 04:59 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 35 from:</div>
+        <div class='diffdel'><p><strong>server.rb</strong> contains the actual routing logic for the OverSIP server - written in Ruby :  \\
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><strong>server.rb</strong> contains the actual routing logic for the OverSIP server - written in Ruby. The default server.rb script is suitable for the purpose of WS to SIP gateway, so you shouldn't do any changes to it, with one single exception : \\
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1371826786-1371825654-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371826786:1371825654:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 04:40 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed lines 41-47 from:</div>
+        <div class='diffdel'><h4>sipML5 Configuration</h4>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h4>sipML5 Configuration</h4>
+<p>Deploy the sipML5 client on your web server, and access it in your browser. Go to expert mode and edit the <strong>WebSocket Server URL</strong> to match the OverSIP IP address and port that you entered in the <strong>websocket</strong> section of the oversip.conf file. Hit save and then return to the first page of the sipML5 client.
+</p>
+<p class='vspace'><br />
+Then simply insert your OpenSIPS server credentials and hit login. You should then be able to call other users registered on a webRTC capable SIP client.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1371825654-1371823841-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371825654:1371823841:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 04:10 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Added lines 38-39:</div>
+        <div class='diffadd'><ul><li>TODO - brush up siphub config and attach here
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1371823841-1371823822-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371823841:1371823822:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 04:10 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 37 from:</div>
+        <div class='diffdel'><p>If you are using a pre 1.3.8 version, you need to edit the file and add <strong>request.fix_nat</strong> right after the <strong>def (OverSIP::SipEvents).on_request request</strong> line - basically we're forcing OverSIP to consider all requests as NAT-ed ( since we'll be using it only for Websocket clients - since are NATed by default )
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>If you are using a pre 1.3.8 version, you need to edit the file and add <strong>request.fix_nat</strong> right after the <strong>def (OverSIP::SipEvents).on_request request</strong> line - basically we're forcing OverSIP to consider all requests as NAT-ed ( since we'll be using it only for Websocket clients, and they are considered NATed by default due to browser considerations )
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1371823822-1371823709-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371823822:1371823709:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 04:08 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 37 from:</div>
+        <div class='diffdel'><p>If you are using a pre 1.3.8 version, you need to edit add <strong> </strong> right after the <strong>def (OverSIP::SipEvents).on_request request</strong> line - basically we're forcing OverSIP to consider all requests as NAT-ed ( since we'll be using it only for Websocket clients - since are NATed by default )
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>If you are using a pre 1.3.8 version, you need to edit the file and add <strong>request.fix_nat</strong> right after the <strong>def (OverSIP::SipEvents).on_request request</strong> line - basically we're forcing OverSIP to consider all requests as NAT-ed ( since we'll be using it only for Websocket clients - since are NATed by default )
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371823709:1371823673:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371823709:1371823673:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371823709:1371823673:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 04:07 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Added line 33:</div>
+        <div class='diffadd'><p>\\
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371823673:1371823657:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371823673:1371823657:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371823673:1371823657:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 04:07 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1371823657-1371823628-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371823657:1371823628:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 04:07 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Added lines 33-36:</div>
+        <div class='diffadd'><p><strong>server.rb</strong> contains the actual routing logic for the OverSIP server - written in Ruby :  <br />
+If you are using a pre 1.3.8 version, you need to edit add <strong> </strong> right after the <strong>def (OverSIP::SipEvents).on_request request</strong> line - basically we're forcing OverSIP to consider all requests as NAT-ed ( since we'll be using it only for Websocket clients - since are NATed by default )
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1371823628-1371818865-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371823628:1371818865:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 02:47 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed lines 23-25 from:</div>
+        <div class='diffdel'><p><strong>oversip.conf</strong> contains the Main Configuration part of the server ( no routing logic here - just configuration parameters ). The parameters that are of interest for our configuration would be :
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p><strong>oversip.conf</strong> contains the Main Configuration part of the server ( no routing logic here - just configuration parameters ). <br />
+The parameters that are of interest for our configuration would be :
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1371818865-1371818528-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371818865:1371818528:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 02:42 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 25 from:</div>
+        <div class='diffdel'><dl><dd><ul><li>listen_ipv4 - should be configured to be the public IP address of the OverSIP server 
+</li></ul></dd></dl>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><dl><dd><ul><li>listen_ipv4 - IP address where OverSIP will listen on SIP traffic. This will be the IP with which OverSIP will communicate with OpenSIPS on UDP and/or TCP
+</li></ul></dd></dl>
+</div>
+        <div class='difftype'>Changed lines 27-30 from:</div>
+        <div class='diffdel'><dl><dd><ul><li>
+</li></ul></dd></dl>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>websocket: section
+<ul><li>sip_ws: yes - should be enabled
+</li><li>listen_ipv4: - IP address where OverSIP will be listening for requests for Websocket clients ( should be a public IP address here )
+</li><li>listen_port: - we should be editing the websocket listen port in case the default port conflicts with other applications on the server
+</li></ul></li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1371818528-1371818333-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371818528:1371818333:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 02:38 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Added lines 20-27:</div>
+        <div class='diffadd'><p>OverSIP has two basic configuration files that will need to be changed in order :
+</p>
+<p class='vspace'><strong>oversip.conf</strong> contains the Main Configuration part of the server ( no routing logic here - just configuration parameters ). The parameters that are of interest for our configuration would be :
+</p><ul><li>sip: section
+<ul><li>listen_ipv4 - should be configured to be the public IP address of the OverSIP server 
+</li><li>listen_port - we should be editing the listen port in case the default port conflicts with other applications on the server. This will be the port on which OverSIP will communicate with OpenSIPS on UDP and/or TCP
+</li><li>
+</li></ul></li></ul>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371818333:1371817594:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371818333:1371817594:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371818333:1371817594:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 02:26 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed lines 17-21 from:</div>
+        <div class='diffdel'><ul><li>TOOD - attach some test script here ?
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>TOOD - attach some test script here ?
+</li></ul><div class='vspace'></div><h4>OverSIP Configuration</h4>
+<h4>sipML5 Configuration</h4>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371817594:1371817412:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371817594:1371817412:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371817594:1371817412:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 02:23 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 15 from:</div>
+        <div class='diffdel'><p>OpenSIPS will have to be configured with NAT support. If you do not that can be accomplished by using the menuconfig tool and generating a new Residential type script, with NAT support enabled. For more information on generating scripts see this manual page
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>OpenSIPS will have to be configured with NAT support. If you want to generate a brand new script, that can be accomplished by using the menuconfig tool and generating a new Residential type script, with NAT support enabled. For more information on generating scripts see this manual page
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1371817412-1371817354-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371817412:1371817354:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 02:22 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed lines 15-17 from:</div>
+        <div class='diffdel'><p>OpenSIPS will have to be configured with NAT support - that can be accomplished by using the menuconfig tool and generating a new Residential type script, with NAT support enabled. For more information on generating scripts see this manual page
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>OpenSIPS will have to be configured with NAT support. If you do not that can be accomplished by using the menuconfig tool and generating a new Residential type script, with NAT support enabled. For more information on generating scripts see this manual page
+</p>
+<div class='vspace'></div><ul><li>TOOD - attach some test script here ?
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1371817354-1371815726-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371817354:1371815726:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 01:55 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed lines 11-15 from:</div>
+        <div class='diffdel'><ul><li>For the SIP client for testing purposes, we will be using sipML5 - The client's media stack relies on WebRTC and the client can be used to connect to any SIP or IMS network from your preferred browser to make and receive audio/video calls and instant messages. sipML5 is open source and the installation is very straight-forward. Furthermore, sipML5 should work on any web browser supporting WebRTC but we highly recommend using Google Chrome or Firefox Nightly for testing.
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>For the SIP client for testing purposes, we will be using sipML5 - The client's media stack relies on WebRTC and the client can be used to connect to any SIP or IMS network from your preferred browser to make and receive audio/video calls and instant messages. sipML5 is open source and the installation is very straight-forward. Furthermore, sipML5 should work on any web browser supporting WebRTC but we highly recommend using Google Chrome or Firefox Nightly for testing.
+</li></ul><div class='vspace'></div><h4>OpenSIPS Configuration</h4>
+<p>OpenSIPS will have to be configured with NAT support - that can be accomplished by using the menuconfig tool and generating a new Residential type script, with NAT support enabled. For more information on generating scripts see this manual page
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371815726:1371812691:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371815726:1371812691:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371815726:1371812691:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 01:04 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed lines 9-11 from:</div>
+        <div class='diffdel'><ul><li>OverSIP will be used as a WebSocket to SIP gateway - all the websocket traffic will reach OverSIP, which will decapsulate the SIP traffic and relay it to the OpenSIPS proxy. 
+</li></ul><p class='vspace'>OverSIP packages are available for Debian based systems and detailed installation instructions are available for other operating systems as well - see OverSIP deployment tutorial here
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>OverSIP will be used as a WebSocket to SIP gateway - all the websocket traffic will reach OverSIP, which will decapsulate the SIP traffic and relay it to the OpenSIPS proxy. OverSIP packages are available for Debian based systems and detailed installation instructions are available for other operating systems as well - see OverSIP deployment tutorial here
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1371812691-1371812450-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371812691:1371812450:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 01:00 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Added lines 2-3:</div>
+        <div class='diffadd'><p>This page has been visited 18767 times.
+(:toc-float Table of Content:)
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1371812450-1371812231-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371812450:1371812231:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 12:57 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 11 from:</div>
+        <div class='diffdel'><ul><li>For the SIP client for testing purposes, we will be using sipML5 - The client's media stack relies on WebRTC and the client can be used to connect to any SIP or IMS network from your preferred browser to make and receive audio/video calls and instant messages.
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>For the SIP client for testing purposes, we will be using sipML5 - The client's media stack relies on WebRTC and the client can be used to connect to any SIP or IMS network from your preferred browser to make and receive audio/video calls and instant messages. sipML5 is open source and the installation is very straight-forward. Furthermore, sipML5 should work on any web browser supporting WebRTC but we highly recommend using Google Chrome or Firefox Nightly for testing.
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371812231:1371810013:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371812231:1371810013:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371812231:1371810013:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 12:20 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 11 from:</div>
+        <div class='diffdel'><ul><li>
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>For the SIP client for testing purposes, we will be using sipML5 - The client's media stack relies on WebRTC and the client can be used to connect to any SIP or IMS network from your preferred browser to make and receive audio/video calls and instant messages.
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1371810013-1371809865-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371810013:1371809865:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 12:17 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 9 from:</div>
+        <div class='diffdel'><p>OverSIP packages are available for Debian based systems - see installation instructions here
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>OverSIP packages are available for Debian based systems and detailed installation instructions are available for other operating systems as well - see OverSIP deployment tutorial here
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1371809865-1371809673-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371809865:1371809673:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 12:14 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 7 from:</div>
+        <div class='diffdel'><ul><li>http://oversip.net | OverSIP will be used as a WebSocket to SIP gateway - all the websocket traffic will reach OverSIP, which will decapsulate the SIP traffic and relay it to the OpenSIPS proxy. 
+</li></ul>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><ul><li>OverSIP will be used as a WebSocket to SIP gateway - all the websocket traffic will reach OverSIP, which will decapsulate the SIP traffic and relay it to the OpenSIPS proxy. 
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1371809673-1371809655-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371809673:1371809655:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 12:14 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed lines 2-11 from:</div>
+        <div class='diffdel'><hr />
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><hr />
+<div class='vspace'></div><h4>Platform Components</h4>
+<ul><li>We will be using OpenSIPS as the core part of the platform, handling all the SIP traffic. For a basic tutorial of setting up OpenSIPS see the getting started tutorial
+</li><li>http://oversip.net | OverSIP will be used as a WebSocket to SIP gateway - all the websocket traffic will reach OverSIP, which will decapsulate the SIP traffic and relay it to the OpenSIPS proxy. 
+</li></ul><p class='vspace'>OverSIP packages are available for Debian based systems - see installation instructions here
+</p>
+<div class='vspace'></div><ul><li>
+</li></ul>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1371809655-1371807617-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371809655:1371807617:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>June 21, 2013, at 11:40 AM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Added lines 1-2:</div>
+        <div class='diffadd'><h5>Documentation -&gt; <a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Tutorials</a> -&gt; Deploying Websocket support with OpenSIPS and OverSIP</h5>
+<hr />
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-WebSocket-action=edit&restore=diff-1371807617-1371807617-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit&restore=diff:1371807617:1371807617:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Tutorials-WebSocket-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=edit">Edit</a> |
+      <a rel="nofollow" href="Tutorials-WebSocket-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=diff">History</a> |
+      <a rel="nofollow" href="Tutorials-WebSocket-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-WebSocket?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on July 02, 2013, at 10:48 AM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

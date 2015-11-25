@@ -1,0 +1,142 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+  <title>openSIPS | Documentation / Tutorials-Presence-PresenceServer</title>
+  <link rel='stylesheet' href="print.css" tppabs="http://www.opensips.org/pub/skins/print/print.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+</head>
+<body>
+  <div id='printhead'>
+    <h3>From openSIPS</h3>
+    <h1 class='pagename'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation%27" tppabs="http://www.opensips.org/Documentation">Documentation: Tutorials-Presence-PresenceServer</a></h1>
+  </div>
+<!--PageText-->
+<div id='wikitext'>
+<h5>Documentation -&gt; <a class='wikilink' href="Tutorials-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials?action=print">Tutorials</a> -&gt; <a class='wikilink' href="Tutorials-Presence-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence?action=print">Presence</a> -&gt; Presence Server</h5>
+<hr />
+<div class='tocfloat'><p><a name='toc' id='toc'></a><b>Table of Content</b> (<a id="tocidtog" href="javascript:toggle('tocid');">hide</a>)</p><ol class='toc' id='tocid'><li>1.&nbsp;<a href='#toc1'>Features</a></li><li>2.&nbsp;<a href='#toc2'>Architecture</a></li><li>3.&nbsp;<a href='#toc3'>Module Description</a></li><li>4.&nbsp;<a href='#toc4'>Configuration</a><ol class='toc'><li>4.1&nbsp;<a href='#toc5'>Basic Presence Server</a></li><li>4.2&nbsp;<a href='#toc6'>Presence Server with integrated XCAP</a></li><li>4.3&nbsp;<a href='#toc7'>Presence Server with external XCAP</a></li><li>4.4&nbsp;<a href='#toc8'>Presence server with shared DB</a></li></ol></li><li>5.&nbsp;<a href='#toc9'>Database</a></li></ol></div>
+<div class='vspace'></div><h3><a name='toc1' id='toc1'></a>1.&nbsp;Features</h3>
+<ul><li>privacy rules with XCAP storage 
+<ul><li>a faster integrated xcap mode that uses a database as an interface with the XCAP server ( works with OpenXCAP )
+</li></ul></li><li>fast caching with periodic update in database
+<ul><li>a fallback to database mode can be configured useful when more than one server is used for a domain
+</li></ul></li><li>extensible - new events to be handled by the server can be added easily due to the layered architecture
+</li></ul><hr />
+<div class='vspace'></div><h3><a name='toc2' id='toc2'></a>2.&nbsp;Architecture</h3>
+<p><strong>Presence Diagram</strong> (click to enlarge) 
+</p><div><a class='wikilink' href="Tutorials-Presence-PresenceDiagram-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceDiagram?action=print"><img src="presence-schema-small.jpg" tppabs="http://www.opensips.org/images/presence-schema-small.jpg" alt='' title='' /></a></div>
+<hr />
+<div class='vspace'></div><h3><a name='toc3' id='toc3'></a>3.&nbsp;Module Description</h3>
+<ul><li><a class='wikilink' href="Tutorials-Presence-PresenceModule-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceModule?action=print">PRESENCE module</a> - a general, event package independent Subscribe, Publish handler – Notify generator according to RFCs 3265 and 3903
+</li><li><a class='wikilink' href="Tutorials-Presence-PresenceAuxModules-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceAuxModules?action=print">PRESENCE_XML and PRESENCE_MWI modules</a> - clients for PRESENCE module; register specific events to be handled by PRESENCE module:
+<ul><li>presence_xml: 'presence'( RFC 3856) , 'presence.winfo' (RFC 3857), 'dialog;sla' (draft-anil-sipping- bla-03.txt)
+</li><li>presence_mwi: 'message-summary' (RFC 3842)
+</li></ul></li><li><a class='wikilink' href="Tutorials-Presence-XcapClient-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-XcapClient?action=print">XCAP_CLIENT module</a> -  an XCAP client interface with data retrieving functionality only, for OpenSIPS modules.
+</li></ul><hr />
+<div class='vspace'></div><h3><a name='toc4' id='toc4'></a>4.&nbsp;Configuration</h3>
+<p>The architecture in the <a class='wikilink' href="Tutorials-Presence-PresenceDiagram-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PresenceDiagram?action=print">diagram</a> corresponds to a full configuration, when no restrictions are imposed, with privacy permission rules handling enabled and the use of a general XCAP server. 
+There is the possibility to simplify the scheme according to the needs and resources. This can be done by configuring the modules so that some connections are removed or  others appear.
+</p>
+<div class='vspace'></div><h4><a name='toc5' id='toc5'></a>4.1&nbsp; Basic Presence Server</h4>
+<p>The most simple configuration is a presence server without privacy rules, when anybody is allowed to see the presence status of anybody and there is no need for an xcap server. In this case the xcap part disappears from the scheme.. This mode of operation is configured by setting the flag <strong>force_active</strong> which is a module parameter for <strong>presence_xml</strong> module.<br />You can see a <a class='wikilink' href="Tutorials-Presence-SimplePresConfig-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-SimplePresConfig?action=print">configuration file example for this case here</a>.
+</p>
+<div class='vspace'></div><h4><a name='toc6' id='toc6'></a>4.2&nbsp; Presence Server with integrated XCAP</h4>
+<p>If you want presence privacy rules enabled and you use a XCAP server, but one that communicates with the OpenSIPS Presence Server through a database table ( like OpenXCAP) than you can configure the presence server to work in an integrated xcap sever mode. For this you have to set the <strong>integrated_xcap_server</strong> parameter from <strong>presence_xml</strong> module. In this case the scheme simplifies by removing the xcap_client module and having the presence_xml module communicates only with the database.<br />You will notice in the configuration file that the mi_xmlrpc module is also loaded. The MI interface needs to be activated, so that OpenXCAP can signal to OpenSIPS when a change occurs in the presence rules documents. In this way the changes be effective immediately.The MI command that is sent in this case is 'refreshWatchers'.<br />See <a class='wikilink' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-Presence-OpenxcapPresConfig?action=print  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-Presence-OpenxcapPresConfig?action=print%27" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-OpenxcapPresConfig?action=print">configuration file example</a> here.
+</p>
+<div class='vspace'></div><h4><a name='toc7' id='toc7'></a>4.3&nbsp; Presence Server with external XCAP</h4>
+<p>If you decide to have a presence server with privacy authorization and not use an integrated xcap server, an improvement can be made in this case also. For a non integrated XCAp server, xcap_client module has to be used and the address of the server( or servers) must be set using the <strong>presence_xml</strong> modules parameter - <strong>xcap_server</strong>. The xcap_client module has the task to retrieve XCAP documents from XCAP servers and store them in database. Also the module can be asked to synchronize documents saved in database with those on the server. For this a mean of detecting an update is required. The general mean, that apply to every XCAP server is periodical query. There is however the possibility for the server to signal an update to the module. For this the module has to be able to send <strong>refreshXcapDoc</strong> MI command when an update occurs. If you are using a XCAP server able to send this command then you can configure the server to work in no periodical query mode. For this you have to unset the <strong>xcap_client</strong> module parameter <strong>periodical_query</strong> ( set it to 0). 
+</p>
+<div class='vspace'></div><h4><a name='toc8' id='toc8'></a>4.4&nbsp; Presence server with shared DB</h4>
+<p>Another configuration option refers to the way the presence module stores information. The default method is caching with periodical update in database for fast processing. However, if you have more presence servers serving the same domain and sharing the same database, this mode will not work. In this case you need to ensure that the servers will be able to communicate through the database. This can be achieved by setting the <strong>presence</strong> module parameter <strong>fallback2db</strong>. 
+</p><hr />
+<div class='vspace'></div><h3><a name='toc9' id='toc9'></a>5.&nbsp;Database</h3>
+<p>Presence Server requires 4 tables in database:
+</p><ol><li>active_watchers : stores the active Subscribe dialogs
+</li><li>presentity: stores the published information
+</li><li>watchers: stores the subscription status of the watchers
+</li><li>xcap: stores the XCAP documents
+</li></ol><p class='vspace'>The first three tables are only used internally by the server. The <strong>xcap</strong> table is either used as a communication interface between the XCAP server (if the server is working in 'integrated_xcap' mode) or as a communication means between the <strong>xcap_client</strong> module which populates the table and <strong>presence_xml</strong> module which uses that information. 
+</p><hr />
+<div class='vspace'></div>
+</div>
+
+  <div id='printfoot'>
+    <div class='from'>Retrieved from http://www.opensips.org/Documentation/Tutorials-Presence-PresenceServer</div>
+    <div class='lastmod'>Page last modified on July 02, 2014, at 02:28 PM</div></div>
+<!--HTMLFooter-->
+</body>
+</html>

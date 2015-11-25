@@ -1,0 +1,469 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+  <title>openSIPS | Documentation / Tutorials-WebSocket-2-1</title>
+  <link rel='stylesheet' href="print.css" tppabs="http://www.opensips.org/pub/skins/print/print.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+</head>
+<body>
+  <div id='printhead'>
+    <h3>From openSIPS</h3>
+    <h1 class='pagename'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation%27" tppabs="http://www.opensips.org/Documentation">Documentation: Tutorials-WebSocket-2-1</a></h1>
+  </div>
+<!--PageText-->
+<div id='wikitext'>
+<h5>Documentation -&gt; <a class='wikilink' href="Tutorials-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials?action=print">Tutorials</a> -&gt; <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/modules/2.1.x/proto_ws.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/modules/2.1.x/proto_ws.html%27" tppabs="http://www.opensips.org/html/docs/modules/2.1.x/proto_ws.html" rel='nofollow'><ins>WebSocket Transport</ins></a> using OpenSIPS </h5>
+<p>This page has been visited 2521 times.
+</p><div class='tocfloat'><p><a name='toc' id='toc'></a><b>Table of Content</b> (<a id="tocidtog" href="javascript:toggle('tocid');">hide</a>)</p><ol class='toc' id='tocid'><li>1.&nbsp;<a href='#toc1'>Tutorial Overview</a></li><li>2.&nbsp;<a href='#toc2'>Setup</a><ol class='toc'><li>2.1&nbsp;<a href='#toc3'>RTPengine</a></li><li>2.2&nbsp;<a href='#toc4'>OpenSIPS</a></li></ol></li><li>3.&nbsp;<a href='#toc5'>Configuration file</a></li></ol></div>
+<hr />
+<div class='vspace'></div><h3><a name='toc1' id='toc1'></a>1.&nbsp; Tutorial Overview</h3>
+<p><a class='urllink' href="javascript:if(confirm(%27http://tools.ietf.org/html/rfc6455  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://tools.ietf.org/html/rfc6455%27" tppabs="http://tools.ietf.org/html/rfc6455" rel='nofollow'>WebSocket</a> is a protocol that provides full-duplex communication between web clients and servers over TCP connections. Using the WebSocket protocol, browsers can connect to web servers and exchange data, regardless the type or nature of the application protocol. <a class='urllink' href="javascript:if(confirm(%27https://tools.ietf.org/html/rfc7118  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://tools.ietf.org/html/rfc7118%27" tppabs="https://tools.ietf.org/html/rfc7118" rel='nofollow'>RFC 7118</a> leveraged this protocol in order to allow browsers to make VoIP calls using the SIP protocol.
+</p>
+<p class='vspace'>This document describes how to use <strong>OpenSIPS</strong> as the core component of a SIP platform that connects both SIP clients (over UDP, TCP or TLS) as well as browser based clients (using SIP over WebSockets). While OpenSIPS handles the SIP signalling part, media is handled by <a class='urllink' href="javascript:if(confirm(%27https://github.com/sipwise/rtpengine  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/sipwise/rtpengine%27" tppabs="https://github.com/sipwise/rtpengine" rel='nofollow'>RTPengine</a>, a high performance media proxy that is able to handle both RTP and SRTP media streams, as well as bridging between them.
+</p>
+<p class='vspace'>This tutorial is inspired from 
+</p>
+<div class='vspace'></div><h3><a name='toc2' id='toc2'></a>2.&nbsp; Setup</h3>
+<h4><a name='toc3' id='toc3'></a>2.1&nbsp; RTPengine</h4>
+<h5>Installation</h5>
+<p>The RTPengine consists of two main components: a kernel module used to efficiently route the RTP packets directly in kernel, and a daemon used to communicate with OpenSIPS. You can find more details <a class='urllink' href="javascript:if(confirm(%27https://github.com/sipwise/rtpengine  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/sipwise/rtpengine#overview%27" tppabs="https://github.com/sipwise/rtpengine#overview" rel='nofollow'>here</a>. Both components can be installed from debs (on Debian based systems) or directly from sources. Simply follow the <a class='urllink' href="javascript:if(confirm(%27https://github.com/sipwise/rtpengine  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/sipwise/rtpengine#compiling-and-installing%27" tppabs="https://github.com/sipwise/rtpengine#compiling-and-installing" rel='nofollow'>official documentation</a> to install RTPengine.
+</p>
+<div class='vspace'></div><h5>Usage</h5>
+<p>After installing the kernel module and the additional libraries, the rtpengine daemon has to be configured. This can be done from <code>/etc/default/ngcp-rtpengine-daemon</code> if installed from debs, or from the command line if the daemon is started manually. On systemd based OSes, Eric Tamme created some <a class='urllink' href="javascript:if(confirm(%27https://github.com/etamme/federated-sip/tree/2.1-config/scripts  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/etamme/federated-sip/tree/2.1-config/scripts%27" tppabs="https://github.com/etamme/federated-sip/tree/2.1-config/scripts" rel='nofollow'>startup scripts</a>.
+</p>
+<p class='vspace'>The interesting parameters we are using are as follows:
+</p>
+<div class='vspace'></div><ul><li><code>-i</code>: the listening interface for RTP/SRTP
+</li><li><code>-n</code>: the listening IP and port that is used by OpenSIPS to communicate with the RTPengine
+</li><li><code>-c</code>: the IP and port of the CLI - this is used to gather statistics for the RTP/SRTP sessions
+</li><li><code>-m, -M</code>: both take an integer as argument and together define the local port range from which rtpengine will allocate UDP ports for media traffic relay. Default to 30000 and 40000 respectively.
+</li><li><code>-L</code>: indicates the debugging level
+</li></ul><p class='vspace'>You can find all the parameters available <a class='urllink' href="javascript:if(confirm(%27https://github.com/sipwise/rtpengine  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://github.com/sipwise/rtpengine#userspace-daemon%27" tppabs="https://github.com/sipwise/rtpengine#userspace-daemon" rel='nofollow'>here</a>.
+</p>
+<p class='vspace'>Here is an example that runs <code>rtpengine</code> from cli that talks with OpenSIPS over localhost and RTP using the 1.1.1.1 IP:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+./rtpengine -p /var/run/rtpengine.pid --i eth0/1.1.1.1 -n 127.0.0.1:60000 -c 127.0.0.0.1:60001 -m 50000 -M 55000 -E -L 7
+</pre>
+<div class='vspace'></div><h5>Troubleshoot</h5>
+<p>First make sure the <code>rtpengine</code> daemon is started:
+</p><pre class='escaped'>
+ps -ef | grep rtpengine
+</pre>
+<p class='vspace'>If the <code>rtpengine</code> daemon does not start, make sure the <code>xt_RTPENGINE</code> kernel module is loaded:
+</p><pre class='escaped'>
+lsmod | grep xt_RTPENGINE
+</pre>
+<p class='vspace'>If the module is not loaded, make sure the <code>ip_tables</code> and <code>x_tables</code> kernel modules are loaded. Also, check the logs for the last errors of the system
+</p><pre class='escaped'>
+dmesg
+</pre>
+<div class='vspace'></div><h4><a name='toc4' id='toc4'></a>2.2&nbsp; OpenSIPS</h4>
+<p>In order to use WebSocket in OpenSIPS, one has to load the <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/modules/2.1.x/proto_ws  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/modules/2.1.x/proto_ws%27" tppabs="http://www.opensips.org/html/docs/modules/2.1.x/proto_ws" rel='nofollow'>proto_ws</a> into its configuration file and define a listener for the WebSocket protocol.
+</p><pre class='escaped'>
+listen=ws:127.0.0.1:8080
+...
+loadmodule "proto_ws.so"
+</pre>
+<p class='vspace'>Next, the <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/modules/2.1.x/rtpengine  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/modules/2.1.x/rtpengine%27" tppabs="http://www.opensips.org/html/docs/modules/2.1.x/rtpengine" rel='nofollow'>rtpengine</a> module has to be loaded and configured to communicate with the <code>rtpengine</code> daemon.
+</p><pre class='escaped'>
+loadmodule "rtpengine.so"
+modparam("rtpengine", "rtpengine_sock", "udp:127.0.0.1:60000")
+</pre>
+<p class='vspace'>Note that the <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/modules/2.1.x/rtpengine  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/modules/2.1.x/rtpengine#rtpengine.p.rtpengine_sock%27" tppabs="http://www.opensips.org/html/docs/modules/2.1.x/rtpengine#rtpengine.p.rtpengine_sock" rel='nofollow'>rtpengine_sock</a> parameter should be the same as the <code>-n</code> parameter sent to the <code>rtpengine</code> daemon, and OpenSIPS should have IP connectivity to that socket.
+</p>
+<p class='vspace'>Next, the routing logic has to be changed in order to treat different the clients that use DTLS-SRTP, from the ones that use plain RTP and enable bridging if necessary. To do that, one can check if the request message was received over the WebSocket protocol. This can be achieved using the following code:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+if (proto == WS)
+    setflag(SRC_WS);
+</pre>
+<p class='vspace'>In case the request is a REGISTER, we want to store this information in the <em>location</em> table, so that we know then the user is called. To do that, we can set a branch flag before calling the <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/modules/2.1.x/registrar.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/modules/2.1.x/registrar.html#id294034%27" tppabs="http://www.opensips.org/html/docs/modules/2.1.x/registrar.html#id294034" rel='nofollow'>save()</a> function. This way, when the <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/modules/2.1.x/registrar.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/modules/2.1.x/registrar.html#id294366%27" tppabs="http://www.opensips.org/html/docs/modules/2.1.x/registrar.html#id294366" rel='nofollow'>lookup()</a> method returns, we will be able to determine whether the client uses WebSocket or not.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+    if (is_method("REGISTER")) {
+        if (isflagset(SRC_WS))
+            setbflag(DST_WS);
+
+        fix_nated_register();
+        if (!save("location"))                                                                                                                                 
+            sl_reply_error();
+
+        exit;
+    }
+</pre>
+<p class='vspace'>When a call is placed, based on the two flags (<code>STR_WS</code> and <code>DST_WS</code>) we can determine what our caller and callee can "speak" (either RTP or DTLS-SRTP) and instruct the <code>rtpengine</code> daemon how to handle the call. We can do that by tuning the parameters passed to the  <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/modules/2.1.x/rtpengine  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/modules/2.1.x/rtpengine#rtpengine.f.rtpengine_offer%27" tppabs="http://www.opensips.org/html/docs/modules/2.1.x/rtpengine#rtpengine.f.rtpengine_offer" rel='nofollow'>rtpengine_offer()</a> function.
+</p><pre class='escaped'>
+    if (isflagset(SRC_WS) &amp;&amp; isbflagset(DST_WS))
+        $var(rtpengine_flags) = "ICE=force-relay DTLS=passive";
+    else if (isflagset(SRC_WS) &amp;&amp; !isbflagset(DST_WS))
+        $var(rtpengine_flags) = "RTP/AVP replace-session-connection replace-origin ICE=remove";
+    else if (!isflagset(SRC_WS) &amp;&amp; isbflagset(DST_WS))
+        $var(rtpengine_flags) = "UDP/TLS/RTP/SAVPF ICE=force";
+    else if (!isflagset(SRC_WS) &amp;&amp; !isbflagset(DST_WS))
+        $var(rtpengine_flags) = "RTP/AVP replace-session-connection replace-origin ICE=remove";
+
+    rtpengine_offer("$var(rtpengine_flags)");
+</pre>
+<p class='vspace'>The <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/modules/2.1.x/rtpengine  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/modules/2.1.x/rtpengine#rtpengine.f.rtpengine_answer%27" tppabs="http://www.opensips.org/html/docs/modules/2.1.x/rtpengine#rtpengine.f.rtpengine_answer" rel='nofollow'>rtpengine_answer()</a> function logic should look like this:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+    if (isflagset(SRC_WS) &amp;&amp; isbflagset(DST_WS))
+        $var(rtpengine_flags) = "ICE=force-relay DTLS=passive";
+    else if (isflagset(SRC_WS) &amp;&amp; !isbflagset(DST_WS))
+        $var(rtpengine_flags) = "UDP/TLS/RTP/SAVPF ICE=force";
+    else if (!isflagset(SRC_WS) &amp;&amp; isbflagset(DST_WS))
+        $var(rtpengine_flags) = "RTP/AVP replace-session-connection replace-origin ICE=remove";
+    else if (!isflagset(SRC_WS) &amp;&amp; !isbflagset(DST_WS))
+        $var(rtpengine_flags) = "RTP/AVP replace-session-connection replace-origin ICE=remove";
+
+    rtpengine_answer("$var(rtpengine_flags)");
+</pre>
+<p class='vspace'>Now, all we have to do is to close the RTP/SRTP session when the call is ended. To do that, we use the <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/modules/2.1.x/rtpengine  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/modules/2.1.x/rtpengine#rtpengine.f.rtpengine_delete%27" tppabs="http://www.opensips.org/html/docs/modules/2.1.x/rtpengine#rtpengine.f.rtpengine_delete" rel='nofollow'>rtpengine_delete()</a> function:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+    if (is_method("BYE|CANCEL")) {                                                                                                                      
+        rtpengine_delete();
+</pre>
+<p class='vspace'>Having done all these settings should provide a full setup for interconnecting SIP clients over both UDP, TCP, etc. protocols, as well as browser based SIP clients over WebSocket.
+</p>
+<div class='vspace'></div><h3><a name='toc5' id='toc5'></a>3.&nbsp; Configuration file</h3>
+<p>The following configuration file is a minimal working example of a Residential script that can handle clients connections over both UDP and Websocket transports.  This example assumes that the SDP offer is present in the INVITE from the UAC and the SDP answer is in the 200 OK from the UAS.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+#
+# OpenSIPS residential configuration script
+#     by OpenSIPS Solutions &lt;team@opensips-solutions.com&gt;
+#
+# Please refer to the Core CookBook at:
+#      http://www.opensips.org/Resources/DocsCookbooks
+# for a explanation of possible statements, functions and parameters.
+#
+
+
+####### Global Parameters #########
+
+debug=3
+log_stderror=no
+log_facility=LOG_LOCAL0
+
+fork=yes
+children=4
+auto_aliases=no
+
+listen=udp:127.0.0.0:5060 # TODO: update with your local IP and port
+listen=ws:127.0.0.0:8080 # TODO: update with your local IP and port
+
+####### Modules Section ########
+
+# set module path
+mpath="/usr/local/lib/opensips/modules/"
+
+#### SIGNALING module
+loadmodule "signaling.so"
+
+#### StateLess module
+loadmodule "sl.so"
+
+#### Transaction Module
+loadmodule "tm.so"
+modparam("tm", "fr_timeout", 5)
+modparam("tm", "fr_inv_timeout", 30)
+modparam("tm", "restart_fr_on_each_reply", 0)
+modparam("tm", "onreply_avp_mode", 1)
+
+#### Record Route Module
+loadmodule "rr.so"
+modparam("rr", "append_fromtag", 0)
+
+#### MAX ForWarD module
+loadmodule "maxfwd.so"
+
+#### SIP MSG OPerationS module
+loadmodule "sipmsgops.so"
+
+#### FIFO Management Interface
+loadmodule "mi_fifo.so"
+modparam("mi_fifo", "fifo_name", "/tmp/opensips_fifo")
+modparam("mi_fifo", "fifo_mode", 0666)
+
+#### URI module
+loadmodule "uri.so"
+modparam("uri", "use_uri_table", 0)
+
+#### USeR LOCation module
+loadmodule "usrloc.so"
+modparam("usrloc", "nat_bflag", "NAT")
+modparam("usrloc", "db_mode",   0)
+
+#### REGISTRAR module
+loadmodule "registrar.so"
+
+#### RTPengine protocol
+loadmodule "rtpengine.so"
+modparam("rtpengine", "rtpengine_sock", "udp:127.0.0.0:60000")
+
+#### Nathelper protocol
+loadmodule "nathelper.so"
+modparam("registrar|nathelper", "received_avp", "$avp(rcv)")
+
+#### UDP protocol
+loadmodule "proto_udp.so"
+
+#### WebSocket protocol
+loadmodule "proto_ws.so"
+
+
+####### Routing Logic ########
+
+# main request routing logic
+route{
+	if (!mf_process_maxfwd_header("10")) {
+		sl_send_reply("483","Too Many Hops");
+		exit;
+	}
+
+	if (has_totag()) {
+		# sequential requests within a dialog should
+		# take the path determined by record-routing
+		if (loose_route()) {
+			if (is_method("INVITE")) {
+				# even if in most of the cases is useless, do RR for
+				# re-INVITEs alos, as some buggy clients do change route set
+				# during the dialog.
+				record_route();
+			}
+
+			# route it out to whatever destination was set by loose_route()
+			# in $du (destination URI).
+			route(relay);
+		} else {
+			if ( is_method("ACK") ) {
+				if ( t_check_trans() ) {
+					# non loose-route, but stateful ACK; must be an ACK after
+					# a 487 or e.g. 404 from upstream server
+					t_relay();
+					exit;
+				} else {
+					# ACK without matching transaction -&gt;
+					# ignore and discard
+					exit;
+				}
+			}
+			sl_send_reply("404","Not here");
+		}
+		exit;
+	}
+
+	# CANCEL processing
+	if (is_method("CANCEL")) {
+		if (t_check_trans())
+			t_relay();
+		exit;
+	}
+
+	t_check_trans();
+
+	if (!is_method("REGISTER")) {
+		if (from_uri!=myself) {
+			# if caller is not local, then called number must be local
+			if (!uri==myself) {
+				send_reply("403","Rely forbidden");
+				exit;
+			}
+		}
+	}
+
+	# preloaded route checking
+	if (loose_route()) {
+		xlog("L_ERR",
+		"Attempt to route with preloaded Route's [$fu/$tu/$ru/$ci]");
+		if (!is_method("ACK"))
+			sl_send_reply("403","Preload Route denied");
+		exit;
+	}
+
+	# record routing
+	if (!is_method("REGISTER|MESSAGE"))
+		record_route();
+
+	if (!uri==myself) {
+		append_hf("P-hint: outbound\r\n");
+		route(relay);
+	}
+
+	# requests for my domain
+	if (is_method("PUBLISH|SUBSCRIBE")) {
+		sl_send_reply("503", "Service Unavailable");
+		exit;
+	}
+
+	# check if the clients are using WebSockets
+	if (proto == WS)
+		setflag(SRC_WS);
+
+	# consider the client is behind NAT - always fix the contact
+	fix_nated_contact();
+
+	if (is_method("REGISTER")) {
+
+		# indicate that the client supports DTLS
+		# so we know when he is called
+		if (isflagset(SRC_WS))
+			setbflag(DST_WS);
+
+		fix_nated_register();
+		if (!save("location"))
+			sl_reply_error();
+
+		exit;
+	}
+
+	if ($rU==NULL) {
+		# request with no Username in RURI
+		sl_send_reply("484","Address Incomplete");
+		exit;
+	}
+
+	# do lookup with method filtering
+	if (!lookup("location","m")) {
+		t_newtran();
+		t_reply("404", "Not Found");
+		exit;
+	}
+
+	route(relay);
+}
+
+route[relay] {
+	# for INVITEs enable some additional helper routes
+	if (is_method("INVITE")) {
+		t_on_branch("handle_nat");
+		t_on_reply("handle_nat");
+	} else if (is_method("BYE|CANCEL")) {
+		rtpengine_delete();
+	}
+
+	if (!t_relay()) {
+		send_reply("500","Internal Error");
+	};
+	exit;
+}
+
+branch_route[handle_nat] {
+
+	if (!is_method("INVITE") || !has_body("application/sdp"))
+		return;
+
+	if (isflagset(SRC_WS) &amp;&amp; isbflagset(DST_WS))
+		$var(rtpengine_flags) = "ICE=force-relay DTLS=passive";
+	else if (isflagset(SRC_WS) &amp;&amp; !isbflagset(DST_WS))
+		$var(rtpengine_flags) = "RTP/AVP replace-session-connection replace-origin ICE=remove";
+	else if (!isflagset(SRC_WS) &amp;&amp; isbflagset(DST_WS))
+		$var(rtpengine_flags) = "UDP/TLS/RTP/SAVPF ICE=force";
+	else if (!isflagset(SRC_WS) &amp;&amp; !isbflagset(DST_WS))
+		$var(rtpengine_flags) = "RTP/AVP replace-session-connection replace-origin ICE=remove";
+
+	rtpengine_offer("$var(rtpengine_flags)");
+}
+
+onreply_route[handle_nat] {
+
+	fix_nated_contact();
+	if (!has_body("application/sdp"))
+		return;
+
+	if (isflagset(SRC_WS) &amp;&amp; isbflagset(DST_WS))
+		$var(rtpengine_flags) = "ICE=force-relay DTLS=passive";
+	else if (isflagset(SRC_WS) &amp;&amp; !isbflagset(DST_WS))
+		$var(rtpengine_flags) = "UDP/TLS/RTP/SAVPF ICE=force";
+	else if (!isflagset(SRC_WS) &amp;&amp; isbflagset(DST_WS))
+		$var(rtpengine_flags) = "RTP/AVP replace-session-connection replace-origin ICE=remove";
+	else if (!isflagset(SRC_WS) &amp;&amp; !isbflagset(DST_WS))
+		$var(rtpengine_flags) = "RTP/AVP replace-session-connection replace-origin ICE=remove";
+
+	rtpengine_answer("$var(rtpengine_flags)");
+}
+</pre>
+</div>
+
+  <div id='printfoot'>
+    <div class='from'>Retrieved from http://www.opensips.org/Documentation/Tutorials-WebSocket-2-1</div>
+    <div class='lastmod'>Page last modified on March 17, 2015, at 08:43 PM</div></div>
+<!--HTMLFooter-->
+</body>
+</html>

@@ -1,0 +1,1273 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Tutorials-LoadBalancing </title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='index,follow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   <p><a class='wikilink' title='Signup' href="javascript:if(confirm(%27http://www.opensips.org/Login/Signup?action=login  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Login/Signup?action=login%27" tppabs="http://www.opensips.org/Login/Signup?action=login">Login</a> | <a class='wikilink' title='Signup' href="javascript:if(confirm(%27http://www.opensips.org/Login/Signup  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Login/Signup%27" tppabs="http://www.opensips.org/Login/Signup">Register</a> 
+</p>
+
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Tutorials-LoadBalancing' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h5>Documentation -&gt; <a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Tutorials</a> -&gt; Load Balancing</h5>
+<hr />
+<p>This page has been visited 51404 times.
+</p><div class='tocfloat'><p><a name='toc' id='toc'></a><b>Table of Content</b> (<a id="tocidtog" href="javascript:toggle('tocid');">hide</a>)</p><ol class='toc' id='tocid'><li>1.&nbsp;<a href='#toc1'>Load Balancing in <strong>OpenSIPS</strong></a></li><li>2.&nbsp;<a href='#toc2'>Load Balancing - how it works</a><ol class='toc'><li>2.1&nbsp;<a href='#toc3'>Destination set</a></li><li>2.2&nbsp;<a href='#toc4'>Invoking Load-balancing</a></li><li>2.3&nbsp;<a href='#toc5'>The LB logic</a></li></ol></li><li>3.&nbsp;<a href='#toc6'>Study Case: routing the media gateways</a><ol class='toc'><li>3.1&nbsp;<a href='#toc7'>Configuration</a></li><li>3.2&nbsp;<a href='#toc8'>OpenSIPS Scripting</a></li></ol></li><li>4.&nbsp;<a href='#toc9'>Comments</a></li></ol></div>
+<hr />
+<p class='vspace'>This tutorial applies for OpenSIPS versions 1.5, 1.6, 1.7 .
+</p>
+<div class='vspace'></div><h3><a name='toc1' id='toc1'></a>1.&nbsp; Load Balancing in <strong>OpenSIPS</strong></h3>
+<p>The "load-balancing" module comes to provide traffic routing based on load. Shortly, when <strong>OpenSIPS</strong> routes calls to a set of destinations, it is able to keep the load status (as number of ongoing calls) of each destination and to choose to route to the less loaded destination (at that moment).
+<strong>OpenSIPS</strong> is aware of the capacity of each destination - it is preconfigured with the maximum load accepted by the destinations. To be more precise, when routing, <strong>OpenSIPS</strong> will consider the less loaded destination not the destination with the smallest number of ongoing calls, but the destination with the largest available slot.
+</p>
+<p class='vspace'>Also, the "load-balancing" (LB) module is able to receive feedback from the destinations (if they are capable of). This mechanism is used for notifying <strong>OpenSIPS</strong> when the maximum capacity of a destination changed (like a GW with more or less E1 cards).
+</p>
+<p class='vspace'>The "load-balancing" functionality comes to enhance the "dispatcher" one. The difference comes in having or not load information about the destinations where you are routing to:
+</p>
+<div class='vspace'></div><ul><li><strong>Dispatcher has no load information</strong> - it just blindly forwards calls to the destinations based on a probabilistic dispersion logic. It gets no feedback about the load of the destination (like how many calls that were sent actually were established or how many are still going).
+<div class='vspace'></div></li><li><strong>Load-balancer is load driven</strong> - LB routing logic is based primary on the load information. The LB module is using the DIALOG module in order to keep trace of the load (ongoing calls).
+</li></ul><p class='vspace'><span  style='color: blue;'><a style='color: blue' class='urllink' href="javascript:if(confirm(%27http://www.amoocon.de/talks/8  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.amoocon.de/talks/8%27" tppabs="http://www.amoocon.de/talks/8" rel='nofollow'>A Workshop on this topic</a> was held at Amoocon (former AsteriskTag) in Rostock, 4-5 May 2009</span>
+</p>
+<div class='vspace'></div><hr />
+<h3><a name='toc2' id='toc2'></a>2.&nbsp; Load Balancing - how it works</h3>
+<p>When looking at the LB implementation in <strong>OpenSIPS</strong>, we have 3 aspects:
+</p>
+<div class='vspace'></div><h4><a name='toc3' id='toc3'></a>2.1&nbsp; Destination set</h4>
+<p>A destination is defined by its address (a SIP URI) and its description as capacity.
+</p>
+<p class='vspace'>Form the LB module perspective, the <strong>destinations are not homogeneous</strong> - they are not alike; and not only from capacity point of view, but also from what kind of <strong>services/resources</strong> they offer. For example, you may have a set of Yate/Asterisk boxes for media-related services -some of them are doing transcoding, other voicemail or conference,  other simple announcement , other PSTN termination. But you may have mixed boxes - one box may do PSTN and voicemail in the same time. So each destination from the set may offer a different set of services/resources.
+</p>
+<p class='vspace'>So, for each destination, the LB module defines the offered resources, and for each resource, it defines the <strong>capacity / maximum load</strong> as number of concurrent calls the destination can handle for that resource.
+</p>
+<p class='vspace'>Example:
+</p><pre class='escaped'>
+4 destinations/boxes in the LB set
+    1) offers 30 channels for transcoding and 32 for PSTN
+    2) offers 100 voicemail channels and 10 for transcoding
+    3) offers 50 voicemail channels and 300 for conference
+    4) offers 10 voicemail, 10 conference, 10 transcoding and 32 PSTN
+
+This translated into the following setup:
+
++----+----------+------------------------+---------------------------------+
+| id | group_id | dst_uri                | resources                       |
++----+----------+------------------------+---------------------------------+
+|  1 |        1 | sip:yate1.mycluset.net | transc=30; pstn=32              |
+|  2 |        1 | sip:yate2.mycluset.net | vm=100; transc=10               |
+|  3 |        1 | sip:yate3.mycluset.net | vm=50; conf=300                 |
+|  4 |        1 | sip:yate4.mycluset.net | vm=10;conf=10;transc=10;pstn=32 |
++----+----------+------------------------+---------------------------------+
+
+</pre>
+<p class='vspace'>For runtime, the LB module provides MI commands for:
+</p><ul><li>reloading the definition of destination sets
+</li><li>changing the capacity for a resource for a destination
+</li></ul><div class='vspace'></div><h4><a name='toc4' id='toc4'></a>2.2&nbsp; Invoking Load-balancing</h4>
+<p>Using the LB functionality is very simple - you just have to pass to the LB module what kind of resources the call requires.
+</p>
+<p class='vspace'>The resource detection is done in the <strong>OpenSIPS</strong> routing script, based on whatever information is appropriated. For example, looking at the RURI (dialed number) you can see if the call must go to PSTN or if it a voicemail or conference number; also, by looking at the codecs advertised in the SDP, you can figure out if transcoding is or not also required.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+
+  if (!load_balance("1","transc;pstn")) {
+      sl_send_reply("500","Service full");
+      exit;
+  }
+
+</pre>
+<p class='vspace'>The first parameter of the function identifies the LB set to be used (see the group_id column in the above DB snapshot). Second parameter is list of the required resource for the call.
+</p>
+<p class='vspace'>The <strong>load_balance()</strong> will automatically create the dialog state for the call (in order to monitor it) and will also allocate the requested resources for it (from the selected box).<br />The function will set as destination URI ($du) the address of the selected destination/box.
+</p>
+<p class='vspace'>The resources will be automatically released when the call terminates. 
+</p>
+<p class='vspace'>The LB module provides an MI function that allows the admin to inspect the current load over the destinations.
+</p>
+<div class='vspace'></div><h4><a name='toc5' id='toc5'></a>2.3&nbsp; The LB logic</h4>
+<p>The logic used by the LB module to select the destination is:
+</p><ol><li>gets the <strong>destination set based on the group_id</strong> (first parameter of the <em>load_balance()</em> function)
+<div class='vspace'></div></li><li>selects from the set only the <strong>destinations that are able to provide the requested resources</strong> (second parameter of the <em>load_balance()</em> function)
+<div class='vspace'></div></li><li>for the selected destinations, it <strong>evaluated the current load</strong> for each requested resource
+<div class='vspace'></div></li><li>the winning destination is the one with <strong>the biggest value for the minimum available load</strong> per resources.
+</li></ol><div class='vspace'></div><pre class='escaped'>
+Example:
+
+4 destinations/boxes in the LB set
+    1) offers 30 channels for transcoding and 32 for PSTN
+    2) offers 100 voicemail channels and 10 for transcoding
+    3) offers 50 voicemail channels and 300 for conference
+    4) offers 10 voicemail, 10 conference, 10 transcoding and 32 PSTN
+
+when calling load_balance("1","transc;pstn") -&gt;
+
+1) only boxes (1) and (4) will be selected at as they offer both transcoding and pstn
+
+2) evaluating the load  :
+    (1) transcoding - 10 channels used; PSTN - 18 used 
+    (4) transcoding - 9 channels used; PSTN - 16 used 
+
+   evaluating available load (capacity-load) :
+    (1) transcoding - 20 channels used; PSTN - 14 used 
+    (4) transcoding - 1 channels used; PSTN - 16 used 
+
+3) for each box, the minimum available load (through all resources)
+    (1) 14 (PSTN)
+    (2) 1 (transcoding) 
+
+4) final selected box in (1) as it has the the biggest (=14) available load for the most loaded resource.
+
+</pre>
+<p class='vspace'>The selection algorithm tries to avoid the intensive usage of a resource per box.
+</p>
+<div class='vspace'></div><hr />
+<h3><a name='toc6' id='toc6'></a>3.&nbsp; Study Case: routing the media gateways</h3>
+<p class='vspace'>Here is the full configuration and script for performing LB between media peers.
+</p>
+<div class='vspace'></div><h4><a name='toc7' id='toc7'></a>3.1&nbsp; Configuration</h4>
+<p>Let's consider the case previously described:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+4 destinations/boxes in the LB set
+    1) offers 30 channels for transcoding and 32 for PSTN
+    2) offers 100 voicemail channels and 10 for transcoding
+    3) offers 50 voicemail channels and 300 for conference
+    4) offers 10 voicemail, 10 conference, 10 transcoding and 32 PSTN
+
+This translated into the following setup:
+
++----+----------+------------------------+---------------------------------+
+| id | group_id | dst_uri                | resources                       |
++----+----------+------------------------+---------------------------------+
+|  1 |        1 | sip:yate1.mycluset.net | transc=30; pstn=32              |
+|  2 |        1 | sip:yate2.mycluset.net | vm=100; transc=10               |
+|  3 |        1 | sip:yate3.mycluset.net | vm=50; conf=300                 |
+|  4 |        1 | sip:yate4.mycluset.net | vm=10;conf=10;transc=10;pstn=32 |
++----+----------+------------------------+---------------------------------+
+
+</pre>
+<div class='vspace'></div><h4><a name='toc8' id='toc8'></a>3.2&nbsp; OpenSIPS Scripting </h4>
+<div class='vspace'></div><pre class='escaped'>
+debug=1
+memlog=1
+
+fork=yes
+children=2
+log_stderror=no
+log_facility=LOG_LOCAL0
+
+disable_tcp=yes
+disable_dns_blacklist = yes
+
+auto_aliases=no
+
+check_via=no
+dns=off
+rev_dns=off
+
+listen=udp:xxx.xxx.xxx.xxx:5060
+
+
+
+loadmodule "modules/maxfwd/maxfwd.so"
+loadmodule "modules/sl/sl.so"
+loadmodule "modules/db_mysql/db_mysql.so"
+loadmodule "modules/tm/tm.so"
+loadmodule "modules/xlog/xlog.so"
+loadmodule "modules/uri/uri.so"
+loadmodule "modules/rr/rr.so"
+loadmodule "modules/dialog/dialog.so"
+loadmodule "modules/mi_fifo/mi_fifo.so"
+loadmodule "modules/mi_xmlrpc/mi_xmlrpc.so"
+loadmodule "modules/signaling/signaling.so"
+loadmodule "modules/textops/textops.so"
+loadmodule "modules/load_balancer/load_balancer.so"
+
+
+
+modparam("mi_fifo", "fifo_name", "/tmp/opensips_fifo")
+
+modparam("dialog", "dlg_flag", 13)
+modparam("dialog", "db_mode", 1)
+modparam("dialog", "db_url", "mysql://opensips:opensipsrw@localhost/opensips")
+
+modparam("rr","enable_double_rr",1)
+modparam("rr","append_fromtag",1)
+
+modparam("load_balancer", "db_url","mysql://opensips:opensipsrw@localhost/opensips")
+
+
+route{
+	if (!mf_process_maxfwd_header("3")) {
+		sl_send_reply("483","looping");
+		exit;
+	}
+
+
+	if (!has_totag()) {
+                # initial request
+		record_route();
+	} else {
+		# sequential request -&gt; obey Route indication
+		loose_route();
+                t_relay();
+                exit;
+        }
+
+        # handle cancel and re-transmissions
+	if ( is_method("CANCEL") ) {
+		if ( t_check_trans() )
+			t_relay();
+		exit;
+	}
+
+
+        # from now on we have only the initial requests
+        if (!is_method("INVITE")) {
+                send_reply("405","Method Not Allowed");
+                exit;
+        }
+
+        # detect resources and do balancing
+        if ($rU=~"^1") {
+                # looks like a Conference call
+                load_balance("1","conf");
+        } else if ($rU=~"^2") {
+                # looks like a VoiceMail call
+                load_balance("1","vm");
+        } else {
+                # PSTN call, but the GWs supports only G711
+                # for calls without G711, transcoding will be used on the GW
+                if ( !search_body("G711") ) {
+                       load_balance("1","transc;pstn");
+                } else {
+                       load_balance("1","pstn");
+                }
+        }
+
+        # LB function returns negative if no suitable destination (for requested resources) is found,
+        # or if all destinations are full
+        if ($retcode&lt;0) {
+             sl_send_reply("500","Service full");
+             exit;
+        }
+
+	xlog("Selected destination is: $du\n");
+
+        # send it out
+	if (!t_relay()) {
+		sl_reply_error();
+	}
+}
+
+
+</pre>
+<div class='vspace'></div><hr />
+<h3><a name='toc9' id='toc9'></a>4.&nbsp; Comments</h3>
+<p><a name='comment1' id='comment1'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Gavin?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Gavin?action=edit%27" tppabs="http://www.opensips.org/Profiles/Gavin?action=edit">Gavin</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Gavin?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Gavin?action=edit%27" tppabs="http://www.opensips.org/Profiles/Gavin?action=edit">?</a>  &mdash;  <span style='font-size:83%'>15 March 2009, 23:41</span>  </h5>
+</div><div class='messageitem' > 
+<p>Does this have to use Yate? Can Asterisk or FreeSwitch be used?
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - there is no dependency (regarding the application you LB) - so you can have Yate, Asterisk, FreeSwitch, Cisco GW, Audiocodec GW, etc</span>
+</p></div>
+<p class='vspace'><a name='comment3' id='comment3'></a>
+</p><div class='messagehead' > 
+<h5>  &mdash;  <span style='font-size:83%'>20 March 2009, 02:41</span>  </h5>
+</div><div class='messageitem' > 
+<p>This is nice and simple.  I am still learning OpenSIPs, but is it possible to combine this with a registrar function?  Looking how to combine Load Balancing to a few Asterisk servers with OpenSIP also performing the registration.
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - Of course it is possible - if you look at the default opensips cfg (that has the registrar capabilities), for processing the INVITE requests you can use load_balancing() function. If you have issues, use the mailing list for getting help</span>
+</p></div>
+<p class='vspace'><a name='comment5' id='comment5'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Haidavila?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Haidavila?action=edit%27" tppabs="http://www.opensips.org/Profiles/Haidavila?action=edit">haidavila</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Haidavila?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Haidavila?action=edit%27" tppabs="http://www.opensips.org/Profiles/Haidavila?action=edit">?</a>  &mdash;  <span style='font-size:83%'>04 April 2009, 04:21</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hi. I´ve installed the new version (1.5) and I'm using load_balancer module but I'm having a problem... When a SIP server goes down and if it had the best attributes, load_balancer keeps sending the calls to it and all my calls drop. Is this normal? Can Opensips notices that this server is not working and pass it to the next sip server?
+</p>
+<p class='vspace'>Thank you!
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan]- unfortunately in the current version (1.5) you can not disable from script a destination; but you can do it from outside, via MI command (lb_resize to 0); you can use exec() from script to run the opensipsctl and resize the 0 the guilty server. Hope it will help. - btw, we can do disable from script with 1.6 </span>
+</p></div>
+<p class='vspace'><a name='comment7' id='comment7'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Haidavila?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Haidavila?action=edit%27" tppabs="http://www.opensips.org/Profiles/Haidavila?action=edit">haidavila</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Haidavila?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Haidavila?action=edit%27" tppabs="http://www.opensips.org/Profiles/Haidavila?action=edit">?</a>  &mdash;  <span style='font-size:83%'>11 April 2009, 03:21</span>  </h5>
+</div><div class='messageitem' > 
+<p>Thank you bogdan, it really helped me.
+</p>
+<p class='vspace'>Regards!
+</p></div>
+<p class='vspace'><a name='comment8' id='comment8'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Elred?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Elred?action=edit%27" tppabs="http://www.opensips.org/Profiles/Elred?action=edit">elred</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Elred?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Elred?action=edit%27" tppabs="http://www.opensips.org/Profiles/Elred?action=edit">?</a>  &mdash;  <span style='font-size:83%'>14 April 2009, 19:01</span>  </h5>
+</div><div class='messageitem' > 
+<p>What if you have, let's say, 3 phones. You want each phone being able to contact each others. BUT, if you don't fall on the same server where the REGISTER was broadcasted, the PABX won't know the IP of the callee, and call won't be achieved.
+Is there a way to bounce REGISTER to multiple PABX ?
+Thanks !
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - I do not think this is a typical case of LB (as there is some relation between the PBX you balance). What you can do is to separately deal with REGISTER and fork it (from LB server, with no LB) to all PBX and to do do LB only for INVITEs. Just an idea</span>
+</p></div>
+<p class='vspace'><a name='comment11' id='comment11'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Asterisktech?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Asterisktech?action=edit%27" tppabs="http://www.opensips.org/Profiles/Asterisktech?action=edit">asterisktech</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Asterisktech?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Asterisktech?action=edit%27" tppabs="http://www.opensips.org/Profiles/Asterisktech?action=edit">?</a>  &mdash;  <span style='font-size:83%'>21 April 2009, 14:25</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hi,
+</p>
+<p class='vspace'>I also would appreciate if someone could post here a howto of integration of opensips with asterisk.
+</p>
+<p class='vspace'>asterisktech
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - what kind of "integration" you have in mind? I mean what opensips to do and what asterisk to do.</span>
+</p></div>
+<p class='vspace'><a name='comment13' id='comment13'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Geejee?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Geejee?action=edit%27" tppabs="http://www.opensips.org/Profiles/Geejee?action=edit">geejee</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Geejee?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Geejee?action=edit%27" tppabs="http://www.opensips.org/Profiles/Geejee?action=edit">?</a>  &mdash;  <span style='font-size:83%'>10 May 2009, 10:35</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hi,
+</p>
+<p class='vspace'>what I like to do is to connect more than one client (e.g. desktop phone and soft phone) to one asterisk sip account. Asterisk cannot handle this because only one client can register.
+So opensips should work as sort of client inbetween. Username/password verification should be done by Asterisk.
+Does anyone know how to do this and give me a sample configuration for opensips?
+</p>
+<p class='vspace'>Thanks
+</p>
+<div class='vspace'></div></div>
+<p class='vspace'><a name='comment14' id='comment14'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Sriram?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Sriram?action=edit%27" tppabs="http://www.opensips.org/Profiles/Sriram?action=edit">sriram</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Sriram?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Sriram?action=edit%27" tppabs="http://www.opensips.org/Profiles/Sriram?action=edit">?</a>  &mdash;  <span style='font-size:83%'>09 June 2009, 18:15</span>  </h5>
+</div><div class='messageitem' > 
+<p>HI,
+</p>
+<p class='vspace'>I am load balancing the calls between gateways with different port values. Say I have total of 15 ports, the load balance modules works fine till 15th call. At 16th call load balance fails(this is the only call made,means all 15 ports are free ) and I am not getting calls on the gateway if I don't issue lb_reload command.  
+I would appreciate if someone could let me know any other method to call get the current load status automatically set without entering the lb_reload comman statement.
+</p>
+<p class='vspace'>thanks
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - upgrade from svn to the latest version and if you still have issue, pleas post on the users mailing list </span>
+</p></div>
+<p class='vspace'><a name='comment15' id='comment15'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Javier?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Javier?action=edit%27" tppabs="http://www.opensips.org/Profiles/Javier?action=edit">Javier</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Javier?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Javier?action=edit%27" tppabs="http://www.opensips.org/Profiles/Javier?action=edit">?</a>  &mdash;  <span style='font-size:83%'>31 July 2009, 02:25</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hi,
+</p>
+<p class='vspace'>I'm getting the error:
+ERROR:core:yyparse: module 'mi_xmlrpc.so' not found in '/usr/local/lib/opensips/modules/'
+all the time whenever I try to use the load_balancer module. 
+This is something I got since 1.5.1 and thought was a bug in that version and used dispatcher instead.
+Today, I made a fresh install of opensips 1.5.2 over a Centos 5.1 and got the same error.
+Could somebody point me in the right direction to solve this problem ?
+</p>
+<p class='vspace'>thanks!
+</p></div>
+<p class='vspace'><a name='comment16' id='comment16'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Vaitek?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Vaitek?action=edit%27" tppabs="http://www.opensips.org/Profiles/Vaitek?action=edit">vaitek</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Vaitek?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Vaitek?action=edit%27" tppabs="http://www.opensips.org/Profiles/Vaitek?action=edit">?</a>  &mdash;  <span style='font-size:83%'>01 August 2009, 10:17</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hello Bogdan,
+Great work... what if one of balanced server has ended the call in case of the limit call time ? - OpenSIPS doesn't release resources as I realised... - how can I tell LB module that it should release resources? Is there any way to shere information about resources between LB and VOIP(switches,gateways,etc) ?
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - if the call is release properly (from signalling point of view, with a BYE) the LB will see the call as terminated and release the resources.</span>
+</p></div>
+<p class='vspace'><a name='comment17' id='comment17'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Plimaye?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Plimaye?action=edit%27" tppabs="http://www.opensips.org/Profiles/Plimaye?action=edit">plimaye</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Plimaye?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Plimaye?action=edit%27" tppabs="http://www.opensips.org/Profiles/Plimaye?action=edit">?</a>  &mdash;  <span style='font-size:83%'>02 August 2009, 20:33</span>  </h5>
+</div><div class='messageitem' > 
+<p>Javier,
+</p>
+<p class='vspace'>You need to uncomment mi_xmlrpc in Makefile to compile the module , but you will require xmlrpc-c and xmlrpc-c-devel installed ( I am using xmlrpc-c-1.16.6-1.1582 on Centos 5.3) to compile 1.5.2. So far its working but its not supported. Will update this if I find issues with xmlrpc-c version.
+</p></div>
+<p class='vspace'><a name='comment18' id='comment18'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Javier?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Javier?action=edit%27" tppabs="http://www.opensips.org/Profiles/Javier?action=edit">Javier</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Javier?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Javier?action=edit%27" tppabs="http://www.opensips.org/Profiles/Javier?action=edit">?</a>  &mdash;  <span style='font-size:83%'>04 August 2009, 17:40</span>  </h5>
+</div><div class='messageitem' > 
+<p>Plimaye, Thank you very much for your help.
+I did that and certainly, it was in the exclude modules at makefile. I commented it.
+After that, I ran make clean, make and make install again and compiled ok (no errors) but I can't find xmlrpc-c and xmlrpc-c-devel to install.
+</p>
+<p class='vspace'>and every time I try to run opensips, I get: 
+</p>
+<p class='vspace'>ERROR:core:sr_load_module: could not open module &lt;mi_xmlrpc.so&gt;: mi_xmlrpc.so: cannot open shared object file: No such file or directory
+</p>
+<p class='vspace'>and really mi_xmlrpc.so is there in the modules folder!!!
+</p>
+<p class='vspace'>If you have any other suggestion, please let me know.
+</p>
+<p class='vspace'>Thanks a lot again!
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - check if your cfg file is pointing to the right directory for loading the modules</span>
+</p>
+<div class='vspace'></div></div>
+<p class='vspace'><a name='comment20' id='comment20'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Alp?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Alp?action=edit%27" tppabs="http://www.opensips.org/Profiles/Alp?action=edit">Alp</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Alp?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Alp?action=edit%27" tppabs="http://www.opensips.org/Profiles/Alp?action=edit">?</a>  &mdash;  <span style='font-size:83%'>06 August 2009, 16:49</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hello,
+I am getting this error while initializing LB module. I couldnt find anything wrong why its getting me this error.
+</p>
+<p class='vspace'>Aug  6 17:44:49 ubuntu /sbin/opensips[7696]: INFO:load_balancer:mod_init: Load-Balancer module - initializing 
+Aug  6 17:44:49 ubuntu /sbin/opensips[7696]: ERROR:load_balancer:mod_init: Can't load dialog hooks
+Aug  6 17:44:49 ubuntu /sbin/opensips[7696]: ERROR:core:init_mod: failed to initialize module load_balancer 
+Aug  6 17:44:49 ubuntu /sbin/opensips[7696]: ERROR:core:main: error while initializing modules 
+</p>
+<div class='vspace'></div></div>
+<p class='vspace'><a name='comment21' id='comment21'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Alp?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Alp?action=edit%27" tppabs="http://www.opensips.org/Profiles/Alp?action=edit">Alp</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Alp?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Alp?action=edit%27" tppabs="http://www.opensips.org/Profiles/Alp?action=edit">?</a>  &mdash;  <span style='font-size:83%'>06 August 2009, 17:32</span>  </h5>
+</div><div class='messageitem' > 
+<p>I added module Dialog.so and add modparam("dialog", "dlg_flag", 4) in opensips.cfg file and it works!!
+</p>
+<div class='vspace'></div></div>
+<p class='vspace'><a name='comment22' id='comment22'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Alp?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Alp?action=edit%27" tppabs="http://www.opensips.org/Profiles/Alp?action=edit">Alp</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Alp?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Alp?action=edit%27" tppabs="http://www.opensips.org/Profiles/Alp?action=edit">?</a>  &mdash;  <span style='font-size:83%'>06 August 2009, 18:04</span>  </h5>
+</div><div class='messageitem' > 
+<p>There is one more bracket ')' in line if (!search_body("G711") )) {. It gives error.
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - fixed, thank you </span>
+</p></div>
+<p class='vspace'><a name='comment23' id='comment23'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Motto?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Motto?action=edit%27" tppabs="http://www.opensips.org/Profiles/Motto?action=edit">motto</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Motto?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Motto?action=edit%27" tppabs="http://www.opensips.org/Profiles/Motto?action=edit">?</a>  &mdash;  <span style='font-size:83%'>08 August 2009, 00:52</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hey,
+</p><pre> default load_balance configuration doesn't process "ACK" SIP packet from the Asterisk END, so the Asterisk after SIP ACK retransmiting several times hangup a call.
+ Any idea on that ?
+</pre><p class='vspace'><span  style='color: blue;'>[bogdan] - the ACK (if properly formed by caller device) should contain the Route header and OpenSIPS will route it as sequential request (via loose_route() )</span>
+</p></div>
+<p class='vspace'><a name='comment24' id='comment24'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Ravi?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Ravi?action=edit%27" tppabs="http://www.opensips.org/Profiles/Ravi?action=edit">ravi</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Ravi?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Ravi?action=edit%27" tppabs="http://www.opensips.org/Profiles/Ravi?action=edit">?</a>  &mdash;  <span style='font-size:83%'>14 August 2009, 17:04</span>  </h5>
+</div><div class='messageitem' > 
+<p>is there anyway, loadbalancer can get destination ip address dynamically.
+Ex: i have 3 asterisk servers to be load balanced but some time i want to upgrade one asterisk server that case i want to remove that asterisk server ip address from load balancer database is that possible?
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - update the IPs in DB and do via MI a "lb_reload" </span>
+</p></div>
+<p class='vspace'><a name='comment25' id='comment25'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Javier?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Javier?action=edit%27" tppabs="http://www.opensips.org/Profiles/Javier?action=edit">Javier</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Javier?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Javier?action=edit%27" tppabs="http://www.opensips.org/Profiles/Javier?action=edit">?</a>  &mdash;  <span style='font-size:83%'>18 August 2009, 15:24</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hi Bogdan,
+</p>
+<p class='vspace'>Thank you for your suggestion "Javier, check if your cfg file is pointing to the right directory for loading the modules."
+Really, the opensips.cfg is pointing properly to the modules directory.
+</p>
+<p class='vspace'>Any other suggestion ?
+</p>
+<p class='vspace'>Thank you, 
+</p>
+<p class='vspace'>Javier.
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - check if the  mi_xmlrpc.so file really exists in the directory you configured </span>
+</p></div>
+<p class='vspace'><a name='comment26' id='comment26'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Ricardo?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Ricardo?action=edit%27" tppabs="http://www.opensips.org/Profiles/Ricardo?action=edit">Ricardo</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Ricardo?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Ricardo?action=edit%27" tppabs="http://www.opensips.org/Profiles/Ricardo?action=edit">?</a>  &mdash;  <span style='font-size:83%'>18 August 2009, 20:27</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hi Bogdan.
+Is possible to mix the load_balancer module with the LCR module?... i need the features from the LCR to route the calls, but also i need to know the status of a GW with E1/T1 and balance the load between several Gw's.
+Is this possible?
+Thanks
+</p>
+<p class='vspace'>Ricardo.-
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - that is a bit tricky as you have two engines for doing routing (but on different criteria) DR - prefix routing, LB - load routing; only if you chain them, like first DR to select a set of GWs(per prefix) and after that LB to choose one of the GWs from the DR set</span>
+</p></div>
+<p class='vspace'><a name='comment27' id='comment27'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Ravi?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Ravi?action=edit%27" tppabs="http://www.opensips.org/Profiles/Ravi?action=edit">ravi</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Ravi?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Ravi?action=edit%27" tppabs="http://www.opensips.org/Profiles/Ravi?action=edit">?</a>  &mdash;  <span style='font-size:83%'>26 August 2009, 17:47</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hi Bogdan, is possible to assign variable in load_balance("$var(a0)","vm") or load_balance("$avp(i:55)","vm") function?
+</p>
+<p class='vspace'>Ravi
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - starting with 1.6 yes </span>
+</p></div>
+<p class='vspace'><a name='comment28' id='comment28'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Raj?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Raj?action=edit%27" tppabs="http://www.opensips.org/Profiles/Raj?action=edit">Raj</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Raj?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Raj?action=edit%27" tppabs="http://www.opensips.org/Profiles/Raj?action=edit">?</a>  &mdash;  <span style='font-size:83%'>30 October 2009, 10:14</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hi Bogdam, I am using OpenSIPSv1.5.3 on centOS. If I load load_balancer.so the server start is failed.
+loadmodule "modules/load_balancer/load_balancer.so"
+modparam("load_balancer", "db_url","mysql://opensips:opensipsw@localhost/opensips"), I have created opensips user and password in db. Please suggest me with a solution if possible.
+</p>
+<p class='vspace'>Raj
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - see <a style='color: blue' class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsTsStart  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsTsStart%27" tppabs="http://www.opensips.org/Resources/DocsTsStart" rel='nofollow'>http://www.opensips.org/Resources/DocsTsStart</a> ; it must be an error reported </span>
+</p></div>
+<p class='vspace'><a name='comment29' id='comment29'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/JG?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/JG?action=edit%27" tppabs="http://www.opensips.org/Profiles/JG?action=edit">JG</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/JG?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/JG?action=edit%27" tppabs="http://www.opensips.org/Profiles/JG?action=edit">?</a>  &mdash;  <span style='font-size:83%'>12 November 2009, 21:41</span>  </h5>
+</div><div class='messageitem' > 
+<p>I just installed OpenSips but i just don't understand the configuration part for the LB, i just want to do something like this:
+</p>
+<p class='vspace'>prefix 044
+redirect to ZAP Channel 37 and ZAP Channel 38
+</p>
+<p class='vspace'>One call to 37 and the next to 38 and if both are busy to the default unicall
+</p>
+<p class='vspace'>Can you guys help me out...
+</p>
+<p class='vspace'>Thanks in advanced
+</p>
+<p class='vspace'>JG
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - post your question on the user mailing list </span>
+</p></div>
+<p class='vspace'>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/LouisFox?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/LouisFox?action=edit%27" tppabs="http://www.opensips.org/Profiles/LouisFox?action=edit">LouisFox</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/LouisFox?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/LouisFox?action=edit%27" tppabs="http://www.opensips.org/Profiles/LouisFox?action=edit">?</a>  &mdash;  <span style='font-size:83%'>11 March 2010, 09:10</span>  </h5>
+</div><div class='messageitem' > 
+<p>I have a PSTN VoIP Gateway that is sending and receiving VoIP SIP calls to a SIP Gateway on the internet. I have 3 WAN connections. Can I use the load balancer to do call load balancing between the VoIP Gateway and the SIP Proxy. Can the load balancer distribute the VoIP load between the 3 connections equally and then also to receive and forward calls from the SIP Gateway to the VoIP PSTN Gateway. 
+It is a single Internet SIP Proxy Service.  8 Calls per link
+</p>
+<div class='vspace'></div></div>
+<p class='vspace'>
+</p><div class='messagehead' > 
+<h5>  &mdash;  <span style='font-size:83%'>16 July 2010, 19:49</span>  </h5>
+</div><div class='messageitem' > 
+<p>is there a way to load balance based on calls per second (CPS) instead of total concurrent call? i have two sip carrier with 50 cps each and my auto dealers are dialing @ 60 calls per second.
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - no, it is not possible </span>
+</p></div>
+<p class='vspace'>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/AnhHa?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/AnhHa?action=edit%27" tppabs="http://www.opensips.org/Profiles/AnhHa?action=edit">Anh Ha</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/AnhHa?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/AnhHa?action=edit%27" tppabs="http://www.opensips.org/Profiles/AnhHa?action=edit">?</a>  &mdash;  <span style='font-size:83%'>22 July 2010, 08:43</span>  </h5>
+</div><div class='messageitem' > 
+<p>In the Load_balancer tables : 
+</p>
+<div class='vspace'></div><pre> 4  	 2  	 sip:192.168.1.1  	 pstn=300  	 0  	 VNP #1
+</pre><hr />
+<p>In opensips.cfg:
+</p>
+<p class='vspace'>if    (uri=~"^sip:.....9[0-2]*@")
+</p><pre>     {
+   xlog("route to Vinaphone");
+          load_balance("2","pstn");
+        # route(4);
+     }
+</pre><div class='vspace'></div><hr />
+<p>when i call 99984917xxxx , it matches the condition but it doesn't route the call to 192.168.1.1
+If i have "route(4);" bellow "load_balance("2","pstn");", then it routes follow route(4)
+</p>
+<p class='vspace'>Please help me
+Tks
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - post your question on the user mailing list </span>
+</p>
+<div class='vspace'></div></div>
+<p class='vspace'>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/H3xd?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/H3xd?action=edit%27" tppabs="http://www.opensips.org/Profiles/H3xd?action=edit">h3xd</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/H3xd?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/H3xd?action=edit%27" tppabs="http://www.opensips.org/Profiles/H3xd?action=edit">?</a>  &mdash;  <span style='font-size:83%'>22 September 2010, 05:21</span>  </h5>
+</div><div class='messageitem' > 
+<p>Can the LB be used to balance between multiple NAT traversal systems?
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - no, as a nat traversal system must be directly linked to the nated entity, so adding a LB between NAT traversal system and nated entity will break the NAT visibility at network level </span>
+</p></div>
+<p class='vspace'>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Opensipnewbie?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Opensipnewbie?action=edit%27" tppabs="http://www.opensips.org/Profiles/Opensipnewbie?action=edit">opensipnewbie</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Opensipnewbie?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Opensipnewbie?action=edit%27" tppabs="http://www.opensips.org/Profiles/Opensipnewbie?action=edit">?</a>  &mdash;  <span style='font-size:83%'>29 September 2010, 11:45</span>  </h5>
+</div><div class='messageitem' > 
+<p>Is it possible to load balance in stateless mode?
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - not with LB module (as the load is the number of calls, it must be dialog stateful) ; for stateless approaches, see the dispatcher module </span>
+</p></div>
+<p class='vspace'>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Merik?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Merik?action=edit%27" tppabs="http://www.opensips.org/Profiles/Merik?action=edit">merik</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Merik?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Merik?action=edit%27" tppabs="http://www.opensips.org/Profiles/Merik?action=edit">?</a>  &mdash;  <span style='font-size:83%'>19 October 2010, 16:38</span>  </h5>
+</div><div class='messageitem' > 
+<p>it's very hard for me to configure opensips with module load_balance .someone have a good tutorial or a typical config of opensip.cfg to load_balance 3 asterisk
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - if this tutorial (which will cover your case) does not help you, use the mailing lists </span>
+</p></div>
+<p class='vspace'>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Elwan?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Elwan?action=edit%27" tppabs="http://www.opensips.org/Profiles/Elwan?action=edit">elwan</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Elwan?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Elwan?action=edit%27" tppabs="http://www.opensips.org/Profiles/Elwan?action=edit">?</a>  &mdash;  <span style='font-size:83%'>08 December 2010, 23:31</span>  </h5>
+</div><div class='messageitem' > 
+<p>its work with me but sometime i got no sound :(
+and also i see the opensips ip not the user ip
+what it's  worng ??
+</p></div>
+<p class='vspace'><a name='comment30' id='comment30'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Dcola?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Dcola?action=edit%27" tppabs="http://www.opensips.org/Profiles/Dcola?action=edit">dcola</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Dcola?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Dcola?action=edit%27" tppabs="http://www.opensips.org/Profiles/Dcola?action=edit">?</a>  &mdash;  <span style='font-size:83%'>06 January 2011, 23:23</span>  </h5>
+</div><div class='messageitem' > 
+<p>Is it possible to use the load balancer for failover to maintain a call dialog? In other words load_balance() an initial INVITE to one server and when that server goes down and a BYE comes into opensips from the user agent, lb_disable() that dead server and route the BYE to another server with the same call dialog using failure_route?
+</p></div>
+<p class='vspace'><a name='comment31' id='comment31'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Mesha?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Mesha?action=edit%27" tppabs="http://www.opensips.org/Profiles/Mesha?action=edit">Mesha</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Mesha?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Mesha?action=edit%27" tppabs="http://www.opensips.org/Profiles/Mesha?action=edit">?</a>  &mdash;  <span style='font-size:83%'>19 January 2011, 13:07</span>  </h5>
+</div><div class='messageitem' > 
+<p>Registered OpenSIPS user. Incoming call on registered any softphone = everything ok.
+Registered OpenSIPS user. Incoming call on registered any hardphone (Grandstream (handytone,GXVxxx), matrix, hanglong) = no audio both ways??? Problem!!! What can be a solution?
+</p></div>
+<p class='vspace'><a name='comment32' id='comment32'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Chaithu1987?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Chaithu1987?action=edit%27" tppabs="http://www.opensips.org/Profiles/Chaithu1987?action=edit">chaithu1987</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Chaithu1987?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Chaithu1987?action=edit%27" tppabs="http://www.opensips.org/Profiles/Chaithu1987?action=edit">?</a>  &mdash;  <span style='font-size:83%'>17 March 2011, 22:11</span>  </h5>
+</div><div class='messageitem' > 
+<p>I am new to opensips,can any one give me some idea which version of opensips to use for sip dialog(invite---100 trying----bye) and registration.
+</p></div>
+<p class='vspace'><a name='comment33' id='comment33'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Jarce?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Jarce?action=edit%27" tppabs="http://www.opensips.org/Profiles/Jarce?action=edit">jarce</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Jarce?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Jarce?action=edit%27" tppabs="http://www.opensips.org/Profiles/Jarce?action=edit">?</a>  &mdash;  <span style='font-size:83%'>07 April 2011, 22:11</span>  </h5>
+</div><div class='messageitem' > 
+<p>???
+</p></div>
+<p class='vspace'><a name='comment34' id='comment34'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Jarce?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Jarce?action=edit%27" tppabs="http://www.opensips.org/Profiles/Jarce?action=edit">jarce</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Jarce?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Jarce?action=edit%27" tppabs="http://www.opensips.org/Profiles/Jarce?action=edit">?</a>  &mdash;  <span style='font-size:83%'>07 April 2011, 22:15</span>  </h5>
+</div><div class='messageitem' > 
+<p>hello, there are forums in Spanish on this site?
+</p></div>
+<p class='vspace'><a name='comment35' id='comment35'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/ThienVo?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/ThienVo?action=edit%27" tppabs="http://www.opensips.org/Profiles/ThienVo?action=edit">ThienVo</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/ThienVo?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/ThienVo?action=edit%27" tppabs="http://www.opensips.org/Profiles/ThienVo?action=edit">?</a>  &mdash;  <span style='font-size:83%'>26 April 2011, 16:23</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hi sir Bongdan
+I have this problem,please help me.
+I use LB for 2 asterisk gateway.But when call terminal BYE package throught direct from asterisk to user not throught opensips.So resources can't release and finally after any call opensips notify serveice full untill i restart opensips.How to make opensips receive BYE package to release resources.
+Thanks alot
+</p></div>
+<p class='vspace'><a name='comment36' id='comment36'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Sd?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Sd?action=edit%27" tppabs="http://www.opensips.org/Profiles/Sd?action=edit">sd</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Sd?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Sd?action=edit%27" tppabs="http://www.opensips.org/Profiles/Sd?action=edit">?</a>  &mdash;  <span style='font-size:83%'>23 June 2011, 12:11</span>  </h5>
+</div><div class='messageitem' > 
+<p>sd
+</p></div>
+<p class='vspace'><a name='comment37' id='comment37'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Sanjeev?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Sanjeev?action=edit%27" tppabs="http://www.opensips.org/Profiles/Sanjeev?action=edit">Sanjeev</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Sanjeev?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Sanjeev?action=edit%27" tppabs="http://www.opensips.org/Profiles/Sanjeev?action=edit">?</a>  &mdash;  <span style='font-size:83%'>23 June 2011, 12:22</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hi Sir, 
+</p>
+<p class='vspace'>i wanted to setup loadblanacer, i am using two server for load balancing, 10.0.3.30 &amp; 10.0.12.75,
+in live scenario 400 calls will come, i want 200 calls on 10.0.3.30 server and 200 calls 10.0.12.75 server, i have installed openser on 10.0.1.138 server now when i edit following lines then getting following error
+</p>
+<p class='vspace'>if (loose_route()) {
+t_relay();
+};
+ds_select_dst("1", "0");
+record_route();
+t_relay();
+Jun 22 16:10:18 Testing openser: parse error (101,1-2): syntax error 
+Jun 22 16:10:18 Testing openser: parse error (101,1-2):  
+</p>
+<p class='vspace'>Error
+Jun 22 16:10:18 Testing openser: INFO:mi_fifo:mi_destroy:memory for the child's mi_fifo_pid was not allocated -&gt; nothing to destroy 
+Jun 22 16:10:30 Testing openser: parse error (101,1-2): syntax error 
+Jun 22 16:10:30 Testing openser: parse error (101,1-2):  
+Jun 22 16:10:30 Testing openser: INFO:mi_fifo:mi_destroy:memory for the child's mi_fifo_pid was not allocated -&gt;
+</p>
+<p class='vspace'>Can you please share sample file with below configuration or let me know how i can achive this
+</p></div>
+<p class='vspace'><a name='comment38' id='comment38'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Sanjeev?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Sanjeev?action=edit%27" tppabs="http://www.opensips.org/Profiles/Sanjeev?action=edit">Sanjeev</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Sanjeev?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Sanjeev?action=edit%27" tppabs="http://www.opensips.org/Profiles/Sanjeev?action=edit">?</a>  &mdash;  <span style='font-size:83%'>24 June 2011, 06:47</span>  </h5>
+</div><div class='messageitem' > 
+<p>do i have to register UA client with OpenSER for using LoadBalancing Feature?
+</p></div>
+<p class='vspace'><a name='comment39' id='comment39'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Khainou?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Khainou?action=edit%27" tppabs="http://www.opensips.org/Profiles/Khainou?action=edit">Khainou</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Khainou?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Khainou?action=edit%27" tppabs="http://www.opensips.org/Profiles/Khainou?action=edit">?</a>  &mdash;  <span style='font-size:83%'>04 August 2011, 13:52</span>  </h5>
+</div><div class='messageitem' > 
+<p>I set up this feature, but the number of "load" in opensipsctl lb_list fifo does not decrease.
+</p>
+<p class='vspace'>So, resources are always used. To reset, I have to restart.
+</p>
+<p class='vspace'>How can I do to make this work?
+</p>
+<p class='vspace'>Thank you!
+</p>
+<p class='vspace'>Here is my configuration file:
+</p>
+<p class='vspace'>route{
+</p>
+<div class='vspace'></div><pre> if ($rU=="dialog") {
+                xlog("L_INFO","---------dialog---------");
+                if (load_balance("1","dialog"))
+                        route(1);
+                else
+                        route(2);
+        }
+        else {
+                xlog("L_INFO","---------conf---------");
+                if (load_balance("1","conf"))
+                        route(1);
+                else
+                        route(2);
+        }
+</pre><p>}
+route[1] {
+</p><pre>        xlog("l'appel est dirige vers :  $dun");
+        t_relay();
+        exit();
+</pre><p>}
+</p>
+<p class='vspace'>route[2] {
+</p><pre>        xlog(" ---- Service Full ---- ");
+        sl_send_reply("500","Service full");
+        exit();
+</pre><p>}
+</p>
+<p class='vspace'>And lb_list :
+Destination:: sip:X.X.X.X:5060 id=1 group=1 enabled=yes auto-re=on
+</p><pre>        Resource:: dialog max=2 load=0
+</pre><p>Destination:: sip:X.X.X.X:5060 id=1 group=1 enabled=yes auto-re=on
+</p><pre>        Resource:: dialog max=2 load=0
+</pre><p>Destination:: sip:X.X.X.X:5060 id=2 group=1 enabled=yes auto-re=on
+</p><pre>        Resource:: conf max=2 load=0
+</pre><p>Destination:: sip:X.X.X.X:5060 id=2 group=1 enabled=yes auto-re=on
+</p><pre>        Resource:: conf max=2 load=0
+</pre><div class='vspace'></div></div>
+<p class='vspace'><a name='comment40' id='comment40'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Khainou?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Khainou?action=edit%27" tppabs="http://www.opensips.org/Profiles/Khainou?action=edit">Khainou</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Khainou?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Khainou?action=edit%27" tppabs="http://www.opensips.org/Profiles/Khainou?action=edit">?</a>  &mdash;  <span style='font-size:83%'>04 August 2011, 15:14</span>  </h5>
+</div><div class='messageitem' > 
+<p>Thanks to the forum, I solved the problem!
+</p>
+<p class='vspace'>;)
+</p></div>
+<p class='vspace'><a name='comment41' id='comment41'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/SumanSinghRana?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/SumanSinghRana?action=edit%27" tppabs="http://www.opensips.org/Profiles/SumanSinghRana?action=edit">Suman Singh Rana</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/SumanSinghRana?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/SumanSinghRana?action=edit%27" tppabs="http://www.opensips.org/Profiles/SumanSinghRana?action=edit">?</a>  &mdash;  <span style='font-size:83%'>02 December 2011, 12:31</span>  </h5>
+</div><div class='messageitem' > 
+<p>Can we run OpenSip 1.6.4 run on 64 bit linux machine (x86_64 GNU/Linux. 
+</p>
+<p class='vspace'>I am using opensips-1.6.4-2-notls_src.tar  right on 32bit Linux machine ( i386 GNU/Linux )
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - yes, you can </span>
+</p></div>
+<p class='vspace'><a name='comment42' id='comment42'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/AllenFord?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/AllenFord?action=edit%27" tppabs="http://www.opensips.org/Profiles/AllenFord?action=edit">Allen Ford</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/AllenFord?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/AllenFord?action=edit%27" tppabs="http://www.opensips.org/Profiles/AllenFord?action=edit">?</a>  &mdash;  <span style='font-size:83%'>06 December 2011, 22:17</span>  </h5>
+</div><div class='messageitem' > 
+<p>Im getting error :
+</p>
+<p class='vspace'>Dec  6 15:58:04 c-24-30-48-18 /sbin/opensips[25235]: ERROR:load_balancer:do_load_balance: unknown resource in input string
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - this error means you ask for a resource (in load_balance() function), that does not appear in the definition of the peers/destinations </span>
+</p></div>
+<p class='vspace'><a name='comment43' id='comment43'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Rana?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Rana?action=edit%27" tppabs="http://www.opensips.org/Profiles/Rana?action=edit">Rana</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Rana?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Rana?action=edit%27" tppabs="http://www.opensips.org/Profiles/Rana?action=edit">?</a>  &mdash;  <span style='font-size:83%'>08 December 2011, 08:28</span>  </h5>
+</div><div class='messageitem' > 
+<p>Can we run OpenSip LB on 64 bit linux machine ?
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - yes, you can </span>
+</p></div>
+<p class='vspace'><a name='comment44' id='comment44'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/AllenFord?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/AllenFord?action=edit%27" tppabs="http://www.opensips.org/Profiles/AllenFord?action=edit">Allen Ford</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/AllenFord?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/AllenFord?action=edit%27" tppabs="http://www.opensips.org/Profiles/AllenFord?action=edit">?</a>  &mdash;  <span style='font-size:83%'>09 December 2011, 14:56</span>  </h5>
+</div><div class='messageitem' > 
+<p>Im unable to recieve calls with this setup...   is there anyway we can intergrate nathelper and rtpproxy in here?  been trying too do it for 2 days
+</p></div>
+<p class='vspace'><a name='comment45' id='comment45'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/AllenFord?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/AllenFord?action=edit%27" tppabs="http://www.opensips.org/Profiles/AllenFord?action=edit">Allen Ford</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/AllenFord?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/AllenFord?action=edit%27" tppabs="http://www.opensips.org/Profiles/AllenFord?action=edit">?</a>  &mdash;  <span style='font-size:83%'>11 December 2011, 21:31</span>  </h5>
+</div><div class='messageitem' > 
+<p>i found my problem,    when 2 extensions call each other it goes to asterisk via the load balancer,  then asterisk sends it back since it shows registered via opensips...    im getting loop
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - please do not post net traces here (because of size) - better use the "users" mailing list.</span>
+</p></div>
+<p class='vspace'><a name='comment46' id='comment46'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/TimBurke?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/TimBurke?action=edit%27" tppabs="http://www.opensips.org/Profiles/TimBurke?action=edit">Tim Burke</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/TimBurke?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/TimBurke?action=edit%27" tppabs="http://www.opensips.org/Profiles/TimBurke?action=edit">?</a>  &mdash;  <span style='font-size:83%'>11 January 2012, 19:25</span>  </h5>
+</div><div class='messageitem' > 
+<p>Is there any means of keeping two instances of OpenSIPS synchronized in terms of the current call count of a destination?  I'm wondering about the fault tolerance of losing one instance and having the other instance pick up the load balancing.  Or perhaps even active/active operation of multiple instances of OpenSIPS.
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - the possibility the exchange load information between multiple load-balancers will be available with 1.8 version (via distributed dialog profiles).</span>
+</p></div>
+<p class='vspace'><a name='comment47' id='comment47'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/IonutMuntean?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/IonutMuntean?action=edit%27" tppabs="http://www.opensips.org/Profiles/IonutMuntean?action=edit">Ionut Muntean</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/IonutMuntean?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/IonutMuntean?action=edit%27" tppabs="http://www.opensips.org/Profiles/IonutMuntean?action=edit">?</a>  &mdash;  <span style='font-size:83%'>25 April 2012, 14:12</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hello all! Need to do some simple, round-robin load balancing to a cluster of Yate servers, no load check, just take the calls and give them to the next Yate in the list. Is there a simple example for this somewhere?
+</p></div>
+<p class='vspace'><a name='comment48' id='comment48'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/TimBurke?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/TimBurke?action=edit%27" tppabs="http://www.opensips.org/Profiles/TimBurke?action=edit">Tim Burke</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/TimBurke?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/TimBurke?action=edit%27" tppabs="http://www.opensips.org/Profiles/TimBurke?action=edit">?</a>  &mdash;  <span style='font-size:83%'>17 July 2012, 16:43</span>  </h5>
+</div><div class='messageitem' > 
+<p>"Also, the "load-balancing" (LB) module is able to receive feedback from the destinations (if they are capable of)."
+</p>
+<p class='vspace'>Does anyone know more details about that?  Is this referring to updating and reloading the LB database?
+</p></div>
+<p class='vspace'><a name='comment49' id='comment49'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Pepper?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Pepper?action=edit%27" tppabs="http://www.opensips.org/Profiles/Pepper?action=edit">Pepper</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Pepper?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Pepper?action=edit%27" tppabs="http://www.opensips.org/Profiles/Pepper?action=edit">?</a>  &mdash;  <span style='font-size:83%'>20 August 2012, 03:46</span>  </h5>
+</div><div class='messageitem' > 
+<p>That really captures the spriit of it. Thanks for posting.
+</p></div>
+<p class='vspace'><a name='comment50' id='comment50'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Terje?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Terje?action=edit%27" tppabs="http://www.opensips.org/Profiles/Terje?action=edit">Terje</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Terje?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Terje?action=edit%27" tppabs="http://www.opensips.org/Profiles/Terje?action=edit">?</a>  &mdash;  <span style='font-size:83%'>20 August 2012, 04:19</span>  </h5>
+</div><div class='messageitem' > 
+<p>For xmpp to PSTN, you can simply use asertisk to convert jingle to sip, and then sip to anything you want, provided you have the proper hardware. I assume that others sip servers can do it  ( callweaver, opensip, etc ), since both sip, jingle and the regular telephone are standardized features.
+</p></div>
+<p class='vspace'><a name='comment51' id='comment51'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Jean?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Jean?action=edit%27" tppabs="http://www.opensips.org/Profiles/Jean?action=edit">Jean</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Jean?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Jean?action=edit%27" tppabs="http://www.opensips.org/Profiles/Jean?action=edit">?</a>  &mdash;  <span style='font-size:83%'>20 August 2012, 13:33</span>  </h5>
+</div><div class='messageitem' > 
+<p>I managed to dig up those two files  I've only ineucdld the parts that you might need to change (I didn't include the entire file just the statements concerning the two IP phones I setup.You'll need to find their MAC address (on the back of the phone) and then depending on software version the phone is running you may need to tweak the rtp_method.unistim.conf[phone1]                     ; name of the devicedevice=001765ffe0fc         ; mac address of the phonertp_port=10000              ; RTP port used by the phone, default = 10000. RTCP = rtp_port+1rtp_method=3                ; If you don't have sound, you can try 1, 2 or 3, default = 0status_method=0             ; If you don't see status text, try 1, default = 0titledefault=Asterisk       ; default = "TimeZone (your time zone)". 12 characters maxmaintext0="Asterisk PBX"  ; default = "Welcome", 24 characters max;maintext1="a custom text"   ; default = the name of the device, 24 characters max;maintext2="(main page)"     ; default = the public IP of the phone, 24 characters max;dateformat=1                ; 0 = month/day, 1 (default) = day/month;timeformat=1                ; 0 = 0:00am ; 1 (default) = 0h00, 2 = 0:00;contrast=8                  ; define the contrast of the LCD. From 0 to 15. Default = 8;country=us                  ; country (ccTLD) for dial tone frequency. See README, default = us;ringvolume=2                ; ring volume : 0,1,2,3, can be overrided by Dial(), default = 2ringstyle=3                 ; ring style : 0 to 7, can be overrided by Dial(), default = 3callhistory=1               ; 0 = disable, 1 = enable call history, default = 1callerid="Customer Support" &lt;555-234-5678&gt;context=michael             ; context, default="default"mailbox=2000                ; Specify the mailbox number. Used by Message Waiting Indication;linelabel="Support"         ; Softkey label for the next line=&gt; entry, 9 char max.;extension=line              ; Add an extension into the dialplan. Only valid in context specified previously.                             ; none=don't add (default), ask=prompt user, line=use the line numberline =&gt; 100                 ; Only one line by device is currently supported.                             ; Beware ! only bookmark and softkey entries are allowed after line=&gt;;bookmark=Hans C.@123        ; Use a softkey to dial 123. Name : 9 char max;bookmark=Mailbox@011@54     ; 54 shows a mailbox icon. See #define FAV_ICON_ for other values (32 to 63)bookmark=Test@*@USTM/phone2  ; Display an icon if violet is connected (dynamic), only for unistim device;bookmark=4@Pager@54321@51   ; Display a pager icon and dial 54321 when softkey 4 is pressed[phone2]                     ; name of the devicedevice=0018b0342c34         ; mac address of the phonertp_port=10000              ; RTP port used by the phone, default = 10000. RTCP = rtp_port+1rtp_method=3                ; If you don't have sound, you can try 1, 2 or 3, default = 0status_method=0             ; If you don't see status text, try 1, default = 0titledefault=Asterisk       ; default = "TimeZone (your time zone)". 12 characters maxmaintext0="Asterisk PBX"  ; default = "Welcome", 24 characters max;maintext1="a custom text"   ; default = the name of the device, 24 characters max;maintext2="(main page)"     ; default = the public IP of the phone, 24 characters max;dateformat=1                ; 0 = month/day, 1 (default) = day/month;timeformat=1                ; 0 = 0:00am ; 1 (default) = 0h00, 2 = 0:00;contrast=8                  ; define the contrast of the LCD. From 0 to 15. Default = 8;country=us                  ; country (ccTLD) for dial tone frequency. See README, default = us;ringvolume=2                ; ring volume : 0,1,2,3, can be overrided by Dial(), default = 2ringstyle=3                 ; ring style : 0 to 7, can be overrided by Dial(), default = 3callhistory=1               ; 0 = disable, 1 = enable call history, default = 1callerid="Customer Support" &lt;555-234-5678&gt;context=michael             ; context, default="default"mailbox=2001                ; Specify the mailbox number. Used by Message Waiting Indication;linelabel="Support"         ; Softkey label for the next line=&gt; entry, 9 char max.;extension=line               ; Add an extension into the dialplan. Only valid in context specified previously.                             ; none=don't add (default), ask=prompt user, line=use the line numberline =&gt; 101                 ; Only one line by device is currently supported.                             ; Beware ! only bookmark and softkey entries are allowed after line=&gt;;bookmark=Hans C.@123        ; Use a softkey to dial 123. Name : 9 char max;bookmark=Mailbox@011@54     ; 54 shows a mailbox icon. See #define FAV_ICON_ for other values (32 to 63)bookmark=Test@*@USTM/phone1  ; Display an icon if violet is connected (dynamic), only for unistim device;bookmark=4@Pager@54321@51   ; Display a pager icon and dial 54321 when softkey 4 is pressedI then added the following lines in the extensions.conf file;exten =&gt; 100,1,Dial(USTM/100@phone1)exten =&gt; 101,1,Dial(USTM/101@phone2)It's not to complicated after you spend some time with it.Good Luck!
+</p></div>
+<p class='vspace'><a name='comment52' id='comment52'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Sandeep?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Sandeep?action=edit%27" tppabs="http://www.opensips.org/Profiles/Sandeep?action=edit">Sandeep</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Sandeep?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Sandeep?action=edit%27" tppabs="http://www.opensips.org/Profiles/Sandeep?action=edit">?</a>  &mdash;  <span style='font-size:83%'>22 August 2012, 05:14</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hi Mark,What's really neat is that the i2002 pnoehs were still running the UNIStim stack with firmware 0604DAD and 0604DBG (no SIP firmware available for the i2002/i2004 pnoehs). Thanks to the efforts of  and others they were able to reverse engineer the UNIStim stack and provide the channel driver for using Nortel's proprietary protocol on Asterisk.I will comment that it took me about 30 minutes to realize that you couldn't just pickup the handset and dial a number. You had to pickup the handset, dial the phone number and then select the softkey labeled  Call . I spent that first 30 minutes running packet traces trying to figure out if I had a G.711/GSM codec issue or what the problem was.Thanks again for the comment!
+</p></div>
+<p class='vspace'><a name='comment53' id='comment53'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Mulker?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Mulker?action=edit%27" tppabs="http://www.opensips.org/Profiles/Mulker?action=edit">Mulker</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Mulker?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Mulker?action=edit%27" tppabs="http://www.opensips.org/Profiles/Mulker?action=edit">?</a>  &mdash;  <span style='font-size:83%'>22 August 2012, 06:00</span>  </h5>
+</div><div class='messageitem' > 
+<p>I am just installing an asetsirk server into my small business, I have 8 Grandstream 2000 phones for hte initial deployment. These are configured and working fine. I am replaceing a Nortel BCM50 and I have 3 IP phones I would LOVE to get working on the system.I am on CentOS 5.2 like you, and used hte AsteriskNOW 1.6Beta for my base intstall of everything.Can I get a DETAILED instruction on how you got the nortels to work? Heck I would even pay you fo rhte consult to help me.. I truely like the nortel phones and it would save me about $400 if I can re-use the 3 IP phones I have.[removed by moderator]PS: I am not a  Phone Guy' so this is all new to me, I am a MCSE/T type.
+</p></div>
+<p class='vspace'><a name='comment54' id='comment54'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Mohammed?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Mohammed?action=edit%27" tppabs="http://www.opensips.org/Profiles/Mohammed?action=edit">Mohammed</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Mohammed?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Mohammed?action=edit%27" tppabs="http://www.opensips.org/Profiles/Mohammed?action=edit">?</a>  &mdash;  <span style='font-size:83%'>29 August 2012, 10:06</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hi Sir,
+I need to know how to register outbound trunk in Opensips which required username and password?
+for example in asterisk it is (register =&gt; username:password@server-ip:5060), How can i do this in Opensips?
+</p>
+<p class='vspace'>Thanks in advanced
+Mohammed
+</p></div>
+<p class='vspace'><a name='comment55' id='comment55'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Johan?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Johan?action=edit%27" tppabs="http://www.opensips.org/Profiles/Johan?action=edit">Johan</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Johan?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Johan?action=edit%27" tppabs="http://www.opensips.org/Profiles/Johan?action=edit">?</a>  &mdash;  <span style='font-size:83%'>04 September 2012, 15:20</span>  </h5>
+</div><div class='messageitem' > 
+<p>I have the basic load-balance configuration as written above. 
+One proxy, two end servers.
+</p>
+<p class='vspace'>As test I have setup a call to server1 and server2.
+Then I pull the network cable out of server2.
+</p>
+<p class='vspace'>Problem is that the call stays connected to server2.
+How can I configure that the proxy will send a BYE to both ends, when a server is down (lb_status sees it's down).
+I want the call to disconnect, not to proceed on the other server.
+</p></div>
+<p class='vspace'><a name='comment56' id='comment56'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Anand?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Anand?action=edit%27" tppabs="http://www.opensips.org/Profiles/Anand?action=edit">anand</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Anand?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Anand?action=edit%27" tppabs="http://www.opensips.org/Profiles/Anand?action=edit">?</a>  &mdash;  <span style='font-size:83%'>11 February 2013, 10:26</span>  </h5>
+</div><div class='messageitem' > 
+<p>hiii
+</p></div>
+<p class='vspace'><a name='comment57' id='comment57'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Sonu?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Sonu?action=edit%27" tppabs="http://www.opensips.org/Profiles/Sonu?action=edit">sonu</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Sonu?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Sonu?action=edit%27" tppabs="http://www.opensips.org/Profiles/Sonu?action=edit">?</a>  &mdash;  <span style='font-size:83%'>11 February 2013, 12:01</span>  </h5>
+</div><div class='messageitem' > 
+<p>I have two asterisk box,How i can verify both are alive or any one goesdown using opensips.cgf
+</p></div>
+<p class='vspace'><a name='comment58' id='comment58'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/BFSP?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/BFSP?action=edit%27" tppabs="http://www.opensips.org/Profiles/BFSP?action=edit">BFSP</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/BFSP?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/BFSP?action=edit%27" tppabs="http://www.opensips.org/Profiles/BFSP?action=edit">?</a>  &mdash;  <span style='font-size:83%'>24 February 2013, 01:58</span>  </h5>
+</div><div class='messageitem' > 
+<p>Is there a way to use the receiving interface IP as the resource parameter in LB? This would greatly simplify using the correct table when listening on multiple interfaces on a single server.
+</p>
+<p class='vspace'>if (!load_balance($Ri,"transc;pstn")) {
+</p><pre>      sl_send_reply("500","Service full");
+      exit;
+</pre><p>}
+</p>
+<div class='vspace'></div></div>
+<p class='vspace'><a name='comment59' id='comment59'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/BFSP?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/BFSP?action=edit%27" tppabs="http://www.opensips.org/Profiles/BFSP?action=edit">BFSP</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/BFSP?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/BFSP?action=edit%27" tppabs="http://www.opensips.org/Profiles/BFSP?action=edit">?</a>  &mdash;  <span style='font-size:83%'>24 February 2013, 02:07</span>  </h5>
+</div><div class='messageitem' > 
+<p>Looks like there is a solution using a transformation. 
+</p>
+<p class='vspace'>$var(ip) = $Ri{ip.pton};
+</p>
+<p class='vspace'>if (!load_balance("$var(ip)","transc;pstn")) {
+</p><pre>      sl_send_reply("500","Service full");
+      exit;
+</pre><p>}
+</p></div>
+<p class='vspace'><a name='comment60' id='comment60'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/BFSP?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/BFSP?action=edit%27" tppabs="http://www.opensips.org/Profiles/BFSP?action=edit">BFSP</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/BFSP?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/BFSP?action=edit%27" tppabs="http://www.opensips.org/Profiles/BFSP?action=edit">?</a>  &mdash;  <span style='font-size:83%'>28 February 2013, 04:05</span>  </h5>
+</div><div class='messageitem' > 
+<p>Big let down. Doesn't work. I didn't realize the {ip.pton} transformation literally transforms the value into ASCII characters representing the binary value. 
+</p></div>
+<p class='vspace'><a name='comment61' id='comment61'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/BFSP?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/BFSP?action=edit%27" tppabs="http://www.opensips.org/Profiles/BFSP?action=edit">BFSP</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/BFSP?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/BFSP?action=edit%27" tppabs="http://www.opensips.org/Profiles/BFSP?action=edit">?</a>  &mdash;  <span style='font-size:83%'>08 January 2014, 10:52</span>  </h5>
+</div><div class='messageitem' > 
+<p>how i can use load balance on User registration ?? 
+</p></div>
+<p class='vspace'><a name='comment62' id='comment62'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Mokbat?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Mokbat?action=edit%27" tppabs="http://www.opensips.org/Profiles/Mokbat?action=edit">mokbat</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Mokbat?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Mokbat?action=edit%27" tppabs="http://www.opensips.org/Profiles/Mokbat?action=edit">?</a>  &mdash;  <span style='font-size:83%'>23 June 2014, 18:00</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hi Bogdan,
+</p>
+<p class='vspace'>Is there any way to say that opensips is loaded and will not process any requests any more? Any place where I could add a custom message to say Opensips will not handle more calls. I am running into a situation where opensips is not responding to the BYE that is being sent by the UA via a proxy. I am trying to test hairpin scenario.
+</p>
+<p class='vspace'>Thanks for the wonderful tool and help.
+</p>
+<p class='vspace'><span  style='color: blue;'>[bogdan] - take a look at the "load" class statistics - <a style='color: blue' class='urllink' href="Interface-CoreStatistics-1-11.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreStatistics-1-11" rel='nofollow'>http://www.opensips.org/Documentation/Interface-CoreStatistics-1-11</a> .</span>
+</p></div>
+<p class='vspace'><a name='comment63' id='comment63'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/SCC?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/SCC?action=edit%27" tppabs="http://www.opensips.org/Profiles/SCC?action=edit">SCC</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/SCC?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/SCC?action=edit%27" tppabs="http://www.opensips.org/Profiles/SCC?action=edit">?</a>  &mdash;  <span style='font-size:83%'>16 September 2014, 23:09</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hi,
+the load balancing module seems very complete. One thing that i cannot find anywhere is how to load balance between opensips servers. For example, suppose there is no NAT between telco, Opensips servers and Asterisk servers (they're all on the same network). At the moment there exists,say 20 Asterisk servers for 3 Opensips (failover for me should always have a pair of servers + 1, reducing failover probability to 33%). Both OpenSips do load balance SIP calls to Asterisk servers and know exactly what each server can handle (say 2.000 simultaneous calls per server, total of 40.000 calls). In this concept, only 1 Opensips server handles the calls (Master), the second is Slave (listenning for any Master's failure) and the third Opensips server handles failover of Slave server. All Opensips share the same configuration DB and rules (get a SIP request, route to Asterisk, pass media from Asterisk to Telco directly for example).
+</p>
+<p class='vspace'>Now, say, we need to had 10 more Asterisk servers and need to add one more Opensips server to the network.
+We would like then to set a Master+Master configuration, a Slave to failover one master and the forth server to failover the slave or a master.
+Knowing this, a Master+Master configuration should receive calls all the time, meaning both Opensips Master Server will be live, thus, receiving SIP requests and routing requests to Asterisk boxes (we now have 30 call toasters).
+Question is : we know that 1 Opensips can load balance calls to each one of the Asterisk boxes. If we had another Opensips, how will be load balancing handled? Do both Master Opensips server know exactly the load of each Asterisk servers? Can each Master know what each one of them is processing (Master A knows that Master B is processing 5.000 cps and is load balancing those calls for each available Asterisk)
+</p>
+<p class='vspace'>Thanks in advance
+</p>
+<p class='vspace'>SCC
+</p></div>
+<p class='vspace'><a name='comment64' id='comment64'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Thiendv?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Thiendv?action=edit%27" tppabs="http://www.opensips.org/Profiles/Thiendv?action=edit">thiendv</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Thiendv?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Thiendv?action=edit%27" tppabs="http://www.opensips.org/Profiles/Thiendv?action=edit">?</a>  &mdash;  <span style='font-size:83%'>17 December 2014, 05:25</span>  </h5>
+</div><div class='messageitem' > 
+<p>Hi, i want to know, how many maximum concurrent call handled by Opensip if the media resource server is unlimited?
+</p></div>
+<p class='vspace'><a name='comment65' id='comment65'></a>
+</p><div class='messagehead' > 
+<h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Lkumar?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Lkumar?action=edit%27" tppabs="http://www.opensips.org/Profiles/Lkumar?action=edit">lkumar</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Lkumar?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Lkumar?action=edit%27" tppabs="http://www.opensips.org/Profiles/Lkumar?action=edit">?</a>  &mdash;  <span style='font-size:83%'>29 December 2014, 10:34</span>  </h5>
+</div><div class='messageitem' > 
+<p>Is it possible to use the load balancer for failover to maintain a call dialog? In other words load_balance() an initial INVITE to one server and when that server goes down and a BYE comes into opensips from the user agent, lb_disable() that dead server and route the BYE to another server with the same call dialog using failure_route?
+any help for same will be appropriated 
+</p></div>
+<div class='vspace'></div>
+    <div id='message'><form name='cbox' class='inputform' action="http://www.opensips.org/Documentation/Tutorials-LoadBalancing" method='post' onsubmit='return checkform(this);'>
+    <input type='hidden' name='n' value='Documentation.Tutorials-LoadBalancing' />
+    <input type='hidden' name='action' value='comment' />
+    <input type='hidden' name='order' value='chrono' /><input type='hidden' name='accesscode' value='347' />
+    <input type='hidden' name='csum' value='Comment added' />
+    <table width='90%'><tr>
+    <th class='prompt' align='right' valign='top'>Add Comment&nbsp;</th>
+    <td><textarea class='inputtext commenttext' name='text' id='text' rows=6 cols=40></textarea>
+    </td></tr><tr><th class='prompt' align='right' valign='top'>Sign as Author&nbsp;</th>
+    <td><input class='inputbox commentauthorbox' type='text' name='author' value='' size='32' /></td></tr>
+    <tr><th class='prompt' align='right' valign='top'>Enter code <em class='access'>347</em></th>
+    <td><input type='text' size='4' maxlength='3' name='access' value='' class='inputbox' /> <input class='inputbutton commentbutton' type='submit' name='post' value=' Post ' />
+    <input class='inputbutton commentbutton' type='reset' value='Reset' /></td></tr></table><br /></form></div>
+ <script type='text/javascript' language='JavaScript1.2'>
+  function checkform ( form ) {
+   if (form.text && form.text.value == "") { window.alert( 'Please enter a comment to post' ); form.text.focus(); return false; }
+   if (form.author && form.author.value == "") { window.alert( 'Please enter your name as author' ); form.author.focus(); return false; }
+   if (form.access && form.access.value == "") { window.alert( 'Please enter the code number' ); form.access.focus(); return false; }return true ;
+  }
+  </script>
+   
+</div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Tutorials-LoadBalancing-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-LoadBalancing?action=edit">Edit</a> |
+      <a rel="nofollow" href="Tutorials-LoadBalancing-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-LoadBalancing?action=diff">History</a> |
+      <a rel="nofollow" href="Tutorials-LoadBalancing-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-LoadBalancing?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on December 29, 2014, at 10:34 AM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

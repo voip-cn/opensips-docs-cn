@@ -1,0 +1,363 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Tutorials-PUAExtensions </title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='index,follow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   <p><a class='wikilink' title='Signup' href="javascript:if(confirm(%27http://www.opensips.org/Login/Signup?action=login  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Login/Signup?action=login%27" tppabs="http://www.opensips.org/Login/Signup?action=login">Login</a> | <a class='wikilink' title='Signup' href="javascript:if(confirm(%27http://www.opensips.org/Login/Signup  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Login/Signup%27" tppabs="http://www.opensips.org/Login/Signup">Register</a> 
+</p>
+
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Tutorials-PUAExtensions' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h5>Documentation -&gt; <a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Tutorials</a> -&gt; <a class='wikilink' title='Tutorials-Presence' href="Tutorials-Presence.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence">Presence</a> -&gt; Presence User Agent Extensions</h5>
+<hr />
+<p  style='text-align: right;'> <strong>written by Anca Vamanu</strong>
+</p>
+<p class='vspace'>OpenSIPS has some presence extensions that offer some very interesting features:
+</p><ul><li>Get presence status from Register
+</li><li>Gateway to xmpp presence
+</li><li>Sending Publish and Subscribe messages using the MI interface
+</li><li>Bridge Line Appearance (BLA, event: dialog;sla)
+</li><li>Busy Lamp Field (BLF, event:dialog)
+</li></ul><p class='vspace'>They are implemented as presence user agent in modules named pua_&lt;extension&gt;:
+</p><ol><li><a href='#pua_usrloc'>pua_usrloc</a>
+</li><li><a href='#pua_mi'>pua_mi</a>
+</li><li><a href='#pua_xmpp'>pua_xmpp</a>
+</li><li><a href='#pua_bla'>pua_bla</a>
+</li><li><a href='#pua_dialoginfo'>pua_dialoginfo</a>
+</li></ol><div class='vspace'></div><hr />
+<p class='vspace'><a name='pua_usrloc' id='pua_usrloc'></a>
+</p><h4>pua_usrloc</h4>
+<p>There are still many SIP phones( especially hard phones) that do not implement presence, or not presence with a 
+central server. Even so, the server is aware if the phone is online or not from whether the phone is registered or
+not. This information is used by this module to send basic presence information to the Presence Server about any 
+phone.
+The modules parameters that can be configured are the following:
+</p><ul><li>default_domain : (mandatory) the default domain to use when constructing the presentity uri if it is missing from
+</li></ul><p>recorded aor
+</p><ul><li>entity_prefix : the prefix when constructing entity attribute to be added to presence node in xml pidf. (ex: 
+</li></ul><p>'pres').
+You can filter for which users or phones to have this feature enabled. In the configuration file you must call the 
+function <strong>pua_set_publish</strong> exported by the module when a Register for one ot the users is being processed. 
+</p>
+<p class='vspace'>See here a <a class='wikilink' title='Tutorials-Presence-PuaUsrlocConfig' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-Presence-PuaUsrlocConfig  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-Presence-PuaUsrlocConfig%27" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PuaUsrlocConfig">configuration file example</a>.
+</p>
+<p class='vspace'>It is not a must for the presence server to run on the same machine as the pua_usrloc extension, as the 
+communication is through PUBLISH SIP messages. 
+You can read the <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/modules/1.11.x/pua_usrloc.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/modules/1.11.x/pua_usrloc.html%27" tppabs="http://www.opensips.org/html/docs/modules/1.11.x/pua_usrloc.html" rel='nofollow'>modules readme here</a>.
+</p>
+<div class='vspace'></div><hr /> 
+<p class='vspace'><a name='pua_mi' id='pua_mi'></a>
+</p><h4>pua_mi</h4>
+<p>OpenSIPS offers the possibility to publish any kind of information to the Presence Server or subscribe to the 
+presence state of a resource through the MI interface. This module requires the <strong>pua</strong> core and at least one <a class='urllink' href="Interface-MI-1-11.htm" tppabs="http://www.opensips.org/Documentation/Interface-MI-1-11" rel='nofollow'>MI backend module</a>.
+</p>
+<p class='vspace'>The commands and their parameters:
+</p>
+<p class='vspace'>1. <strong>pua_publish</strong>
+</p><pre class='escaped'> 
+ &lt;presentity_uri&gt; 
+ &lt;expires&gt;
+ &lt;event package&gt;
+ &lt;content_type&gt;     - body type if body of a type different from default event content-type or . 
+ &lt;ETag&gt;             - ETag that publish should match or . if no ETag
+ &lt;extra_headers&gt;    - extra headers to be added to the request or .
+ &lt;publish_body&gt;     - may not be present in case of update for expire
+</pre>
+<p>Example:
+</p><pre class='escaped'>
+:pua_publish:fifo_reply
+sip:system@192.168.2.132
+3600
+presence
+application/pidf+xml
+.
+.
+&lt;?xml version='1.0'?&gt;&lt;presence xmlns='urn:ietf:params:xml:ns:pidf' xmlns:dm='urn:ietf:params:xml:ns:pidf:data-model'
+ xmlns:rpid='urn:ietf:params:xml:ns:pidf:rpid' xmlns:c='urn:ietf:params:xml:ns:pidf:cipid' 
+entity='system@domain'&gt;&lt;tuple id='0x81475a0'&gt;&lt;status&gt;&lt;basic&gt;open&lt;/basic&gt;&lt;/status&gt;&lt;/tuple&gt;&lt;dm:person 
+id='pdd748945'&gt;&lt;rpid:activities&gt;&lt;rpid:away/&gt;away&lt;/rpid:activities&gt;&lt;dm:note&gt;CPU:16 
+MEM:476&lt;/dm:note&gt;&lt;/dm:person&gt;&lt;/presence&gt;
+</pre>
+<p>This example publishes the state of a system( CPU/MEM). This feature can be used in many applications, one example is
+advertising and publishing news and offers through the presence status of a dummy SIP account.
+</p>
+<p class='vspace'>2. <strong>pua_subscribe</strong>
+</p><pre class='escaped'>
+&lt;presentity_uri&gt;
+&lt;watcher_uri&gt;
+&lt;event_package&gt; 
+&lt;expires&gt;
+</pre>
+<p>You can read the <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/modules/1.11.x/pua_mi.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/modules/1.11.x/pua_mi.html%27" tppabs="http://www.opensips.org/html/docs/modules/1.11.x/pua_mi.html" rel='nofollow'>modules readme here</a>.
+</p>
+<div class='vspace'></div><hr />
+<p class='vspace'><a name='pua_xmpp' id='pua_xmpp'></a>
+</p><h4>pua_xmpp</h4>
+<p>This module implements a presence gateway between XMPP and SIP. It requires <strong>pua</strong> and <strong>xmpp</strong> modules.
+You have to respect the uri format rules described in [link| xmpp-sip tutorial]. 
+The module has one mandatory parameter:
+</p><ul><li><strong>server_address</strong> - the IP address of the machine where the OpenSIPS XMPP gateway is running
+</li></ul><p>Ex: modparam( "pua_xmpp", "server_address", "sip:xmppgw@10.10.10.10")
+</p>
+<p class='vspace'>The operations performed by <strong>pua_xmpp</strong> module consist in translating the presence information format from xmpp
+to sip and back and also dealing with logic incompatibilities( SIP is time based while XMPP is not).
+In the SIP part, the module sends Subscribe messages on behalf of the xmpp users and catches Notifies in the script.
+Also it detects Subscribes to users in XMPP domains and sends Subscribes with event presence.winfo to on behalf of
+those users to be notified when others Subscribe to its presence.
+</p>
+<p class='vspace'>This is achieved by calling the following functions in the script:
+</p><ul><li><strong>pua_xmpp_notify()</strong>
+</li><li><strong>pua_xmpp_req_winfo(char* request_uri, char* expires)</strong>
+</li></ul><p class='vspace'>See a <a class='wikilink' title='Tutorials-Presence-PuaXmppConfig' href="Tutorials-Presence-PuaXmppConfig.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PuaXmppConfig">configuration example here</a>.
+</p>
+<p class='vspace'>You can read the <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/modules/1.11.x/pua_xmpp.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/modules/1.11.x/pua_xmpp.html%27" tppabs="http://www.opensips.org/html/docs/modules/1.11.x/pua_xmpp.html" rel='nofollow'>module readme here</a>.
+</p>
+<div class='vspace'></div><hr />
+<p class='vspace'><a name='pua_bla' id='pua_bla'></a>
+</p><h4>pua_bla</h4>
+<p>This module implements BLA( Bridge Line Appearance ) according to draft <a class='urllink' href="javascript:if(confirm(%27http://tools.ietf.org/draft/draft-anil-sipping-bla/draft-anil-sipping-bla-03.txt  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://tools.ietf.org/draft/draft-anil-sipping-bla/draft-anil-sipping-bla-03.txt%27" tppabs="http://tools.ietf.org/draft/draft-anil-sipping-bla/draft-anil-sipping-bla-03.txt" rel='nofollow'>draft-anil-sipping-bla-03.txt</a>.
+The implementation is compatible with Polycom phones SoundPoint IP430 SIP.
+</p>
+<p class='vspace'>The module requires central <strong>pua</strong> module and a presence server( either collocated with the BLA server or remote).
+It also requires to monitor Register messages which means that as pua_usrloc, it has to be collocated with the registrar or Register messages has to be forwarded to the server.
+</p>
+<p class='vspace'>The BLA server works as a central entity that gathers bridge line information from the phones and then distributes it
+to all the phones registered to the line. 
+The gathering part is done by the pua_bla module, with functionalities provided by the pua module. It is achieved by 
+sending Subscribe messages to the phones when registering and then catching the Notifies from the phones. The Notify
+is then transformed in a Publish message and sent to the presence server. 
+The presence server is the one that will deal with the distributing part. It will receive the subscribe messages from
+the phones and using the published information sent by the pua_bla module, it will send Notifies with the state of the line. 
+To configure the pua_bla module you can set these parameters:
+</p>
+<div class='vspace'></div><ul><li><strong>default_domain(str)</strong> - (mandatory) the default domain 
+</li><li><strong>header_name(str)</strong> -  (mandatory) the header name to be used for comprising information about the sender of the Notify in the generated Publish message; in the configuration file of the presence server the content of this header has to be given as a parameter for the handle_publish function 
+</li><li><strong>outbound_proxy(str)</strong> - the address of the outbound proxy if one is used
+</li><li><strong>server_address(str)</strong> - (mandatory) the IP address of the bla server 
+</li></ul><p class='vspace'>To achieved the functionalities described above, the following functions exported by the pua_bla module have to be used in the script:
+</p><ul><li><strong>bla_set_flag</strong>: should be called upon receiving a Register message for those registrations that are addressed to a BLA
+</li><li><strong>bla_handle_notify</strong>: Should be called when receiving a Notify with a BLA information ( event: dialog;sla).
+</li></ul><p>See here a <a class='wikilink' title='Tutorials-Presence-PuaBlaConfig' href="Tutorials-Presence-PuaBlaConfig.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PuaBlaConfig">configuration file example</a>.
+</p>
+<p class='vspace'>You can read the <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/modules/1.11.x/pua_bla.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/modules/1.11.x/pua_bla.html%27" tppabs="http://www.opensips.org/html/docs/modules/1.11.x/pua_bla.html" rel='nofollow'>module readme here</a>.
+</p>
+<div class='vspace'></div><hr />
+<p class='vspace'><a name='pua_dialoginfo' id='pua_dialoginfo'></a>
+</p><h4>pua_dialoginfo</h4>
+<p>This module enables BLF feature in the server by monitoring and publishing dialog information to the presence server. Basically this module uses the 'dialog' module, which is a tracker for dialogs and registers callback that are called whenever a call dialog SIP message is received. These callbacks code the new state of the dialog into an application/dialog-info+xml data format text and send these to the presence server as a body for a Publish message.
+</p>
+<p class='vspace'>Then, the rest of the job is done by the presence server. To enable handling for this event in the presence server you need to load the 'presence_dialoginfo' module that will register the 'dialog-info' event to the presence server. The presence server will receive Subscribe messages from the UA's and generate Notifies with the information received in Publish messages sent by the pua_dialoginfo module. 
+</p>
+<p class='vspace'>See here a <a class='wikilink' title='Tutorials-Presence-PuaDialoinfoConfig' href="Tutorials-Presence-PuaDialoinfoConfig.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-Presence-PuaDialoinfoConfig">configuration file example</a>.
+</p>
+<p class='vspace'>You can read the <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/modules/1.11.x/pua_dialoginfo.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/modules/1.11.x/pua_dialoginfo.html%27" tppabs="http://www.opensips.org/html/docs/modules/1.11.x/pua_dialoginfo.html" rel='nofollow'>modules readme here</a>.
+</p>
+<div class='vspace'></div>
+    <div id='message'><form name='cbox' class='inputform' action="http://www.opensips.org/Documentation/Tutorials-PUAExtensions" method='post' onsubmit='return checkform(this);'>
+    <input type='hidden' name='n' value='Documentation.Tutorials-PUAExtensions' />
+    <input type='hidden' name='action' value='comment' />
+    <input type='hidden' name='order' value='chrono' /><input type='hidden' name='accesscode' value='662' />
+    <input type='hidden' name='csum' value='Comment added' />
+    <table width='90%'><tr>
+    <th class='prompt' align='right' valign='top'>Add Comment&nbsp;</th>
+    <td><textarea class='inputtext commenttext' name='text' id='text' rows=6 cols=40></textarea>
+    </td></tr><tr><th class='prompt' align='right' valign='top'>Sign as Author&nbsp;</th>
+    <td><input class='inputbox commentauthorbox' type='text' name='author' value='' size='32' /></td></tr>
+    <tr><th class='prompt' align='right' valign='top'>Enter code <em class='access'>662</em></th>
+    <td><input type='text' size='4' maxlength='3' name='access' value='' class='inputbox' /> <input class='inputbutton commentbutton' type='submit' name='post' value=' Post ' />
+    <input class='inputbutton commentbutton' type='reset' value='Reset' /></td></tr></table><br /></form></div>
+ <script type='text/javascript' language='JavaScript1.2'>
+  function checkform ( form ) {
+   if (form.text && form.text.value == "") { window.alert( 'Please enter a comment to post' ); form.text.focus(); return false; }
+   if (form.author && form.author.value == "") { window.alert( 'Please enter your name as author' ); form.author.focus(); return false; }
+   if (form.access && form.access.value == "") { window.alert( 'Please enter the code number' ); form.access.focus(); return false; }return true ;
+  }
+  </script>
+   
+</div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Tutorials-PUAExtensions-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtensions?action=edit">Edit</a> |
+      <a rel="nofollow" href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-PUAExtensions?action=diff  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-PUAExtensions?action=diff%27" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtensions?action=diff">History</a> |
+      <a rel="nofollow" href="Tutorials-PUAExtensions-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-PUAExtensions?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on July 02, 2014, at 01:55 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

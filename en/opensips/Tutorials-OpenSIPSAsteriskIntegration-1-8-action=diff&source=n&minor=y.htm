@@ -1,0 +1,887 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Tutorials-OpenSIPSAsteriskIntegration-1-8 | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Tutorials-OpenSIPSAsteriskIntegration-1-8' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Tutorials-OpenSIPSAsteriskIntegration-1-8 History</h2>
+  <p><a href="Tutorials-OpenSIPSAsteriskIntegration-1-8-action=diff&source=n&minor=n.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-OpenSIPSAsteriskIntegration-1-8?action=diff&source=n&minor=n">Hide minor edits</a> - <a href="Tutorials-OpenSIPSAsteriskIntegration-1-8-action=diff&source=y&minor=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-OpenSIPSAsteriskIntegration-1-8?action=diff&source=y&minor=y">Show changes to markup</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>May 16, 2013, at 06:08 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><h2>Resources -&gt; <a class='wikilink' title='Documentation' href="javascript:if(confirm(%27http://www.opensips.org/Resources/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/Documentation%27" tppabs="http://www.opensips.org/Resources/Documentation">Documentation</a> -&gt; <a class='wikilink' title='DocsTutorials' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsTutorials  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsTutorials%27" tppabs="http://www.opensips.org/Resources/DocsTutorials">Tutorials</a> -&gt; Realtime OpenSIPS - Asterisk Integration</h2>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h5>Documentation -&gt; <a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Tutorials</a> -&gt; Realtime OpenSIPS - Asterisk Integration</h5>
+</div></div>
+      <div class='diffrestore'><a href="Tutorials-OpenSIPSAsteriskIntegration-1-8-action=edit&restore=diff-1368720529-1366821818-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-OpenSIPSAsteriskIntegration-1-8?action=edit&restore=diff:1368720529:1366821818:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 24, 2013, at 06:43 PM 
+        by <span class='diffauthor' title='213.233.101.41'>213.233.101.41</span> - </div>
+        <div class='difftype'>Added lines 1-718:</div>
+        <div class='diffadd'><h2>Resources -&gt; <a class='wikilink' title='Documentation' href="javascript:if(confirm(%27http://www.opensips.org/Resources/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/Documentation%27" tppabs="http://www.opensips.org/Resources/Documentation">Documentation</a> -&gt; <a class='wikilink' title='DocsTutorials' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsTutorials  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsTutorials%27" tppabs="http://www.opensips.org/Resources/DocsTutorials">Tutorials</a> -&gt; Realtime OpenSIPS - Asterisk Integration</h2>
+<p>This page has been visited 11430 times.
+(:toc-float Table of Content:)
+</p><hr />
+<div class='vspace'></div><h3>Realtime <strong>OpenSIPS - Asterisk</strong> Integration</h3>
+<p><strong>This tutorial is made for OpenSIPS 1.8.x and Asterisk 1.8.x</strong>
+</p>
+<div class='vspace'></div><hr />
+<h4>Scope</h4>
+<p>This tutorial presents the concept and implementation of a realtime integration of OpenSIPS SIP server and Asterisk media server.
+</p>
+<p class='vspace'>OpenSIPS is used a SIP server - users are registering with it, it routes calls, etc - while the purpose of Asterisk is to provide a full set of media services - like voicemail, conference, announcements, etc.
+</p>
+<p class='vspace'>It is a realtime integration because both OpenSIPS and Asterisk are provisioned in the same same time when comes to user accounts - when creating a new OpenSIPS users, automatically Asterisk will learn about it an provide and configure all necessary  media services for it.
+</p>
+<p class='vspace'>Both OpenSIPS and Asterisk will be provisioned (for user accounts) via a shared mysql database.
+</p>
+<div class='vspace'></div><hr />
+<h4>Setup presentation</h4>
+<p>The following services will be offered by this integrated configuration:
+</p><ul><li><strong>voicemail</strong> - users will get access to their mailbox; authentication will be done by OpenSIPS; while Asterisk will only provide voicemail IVR (with no access PIN);
+<div class='vspace'></div></li><li><strong>conference</strong>' - opensips will detect and forward calls related to conference service (based on prefixes) to Asterisk, which will provide access (pin based) to the conference rooms;
+<div class='vspace'></div></li><li><strong>announcements</strong> - OpenSIPS will identify the cases and types of announcements that needs to be played and will simply redirect to Asterisk.
+</li></ul><div class='vspace'></div><hr />
+<h4>Prerequisites  </h4>
+<h4>OpenSIPS</h4>
+<p>Install OpenSIPS 1.8.x with mysql DB support (db_mysql module). if you use sources (tarballs or svn checkouts) do the following:
+</p><pre class='escaped'>
+   $ make include_modules="db_mysql" prefix="/" all
+   $ make include_modules="db_mysql" prefix="/" install
+</pre>
+<div class='vspace'></div><h4>Asterisk</h4>
+<p>Install Asterisk 1.8 from local repository:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+   # apt-get install asterisk
+</pre>
+<p class='vspace'><strong>Note:</strong> if your repository does not have the Asterisk 1.8 version, you must install a backported version of Asterisk, by following these steps:
+</p><pre> * add the following line in the <em>/etc/apt/sources.lst</em> file:
+</pre><pre class='escaped'>
+deb http://backports.debian.org/debian-backports squeeze-backports main
+</pre>
+<pre> * update the repository:
+</pre><pre class='escaped'>
+apt-get update
+</pre>
+<pre> * install asterisk from backports repository
+</pre><pre class='escaped'>
+apt-get -t squeeze-backports install asterisk
+</pre>
+<p class='vspace'>Install UnixODBC interface:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+   # apt-get install unixodbc-dev libmyodbc
+   # apt-get install asterisk-voicemail-odbcstorage
+</pre>
+<p class='vspace'>The latest version of the Meetme application needs the DAHDI telephony interface. Install the Asterisk Dahdi application:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+   # apt-get install asterisk-dahdi dahdi
+</pre>
+<p class='vspace'>If a module package is not available for your platform, you must create your own package from dahdi sources, by issuing the following commands:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+   # apt-get install dahdi-linux dahdi-source
+   # cd /usr/src
+   # m-a a-i dahdi
+   # dpkg -i dahdi-modules-*.deb
+   # modprobe dahdi
+</pre>
+<div class='vspace'></div><hr />
+<h4>DB Setup</h4>
+<p>Only <strong>voicemail</strong> and <strong>conference</strong> services do require DB support. While the <strong>conference</strong> DB table will be exclusively be used by Asterisk (OpenSIPS does not require any information form there), the <strong>voicemail</strong> service do require a tight sharing of DB information about users between OpenSIPS and Asterisk.
+</p>
+<p class='vspace'>Considering OpenSIPS as the core SIP element of the platform, the core DB will be also belonging to OpenSIPS - we will use the OpenSIPS DB to drive both OpenSIPS and Asterisk. The tables required by Asterisk (for voicemail service) will be mapped over the OpenSIPS tables.
+</p>
+<p class='vspace'>This approach assumes two steps:
+</p><ol><li>creating the OpenSIP tables and extend them to contain also the fields (info) required by Asterisk.
+</li><li>creating the mysql views over the OpenSIPS tables, in order to simulate the Asterisk tables
+</li></ol><div class='vspace'></div><h5>Creating the OpenSIPS tables</h5>
+<p>In file <strong>/etc/opensips/opensipsctlrc</strong> enable the mysql backend (see <strong>DBENGINE</strong>) and also configure the host where the mysql server is located, the name to be used for creating the opensips table, the read-only (ro) and read-write (rw) usernames and passwords to be created for accessing the opensips DB - see all the varaibles with <strong>DB</strong> prefix in the file.
+</p>
+<p class='vspace'>Proceed with creation of the OpenSIPS standard database:
+</p><pre class='escaped'>
+   $ opensipsdbctl create
+</pre>
+<p class='vspace'>If you use the default values to DB host and mysql access users, you can access the DB by:
+</p><pre class='escaped'>
+   $ mysql -h'localhost' -u'opensips' -p'opensipsrw' opensips
+     &gt;
+</pre>
+<p class='vspace'>Once the default tables are created, we need to alter the <strong>subscriber</strong> table in order to add some additional fields required by the Asterisk DB view. These changes are:
+</p><ul><li>add <strong>vm_password</strong> to be used as voicemail pin
+</li><li>add <strong>first_name</strong> and <strong>last_name</strong> as subscriber name
+</li><li>add <strong>email_address</strong> as subscriber's email address
+</li><li>add <strong>datetime_created</strong> as timestamp of the subscriber creation.
+</li></ul><p class='vspace'>Login to the <strong>opensips</strong> database (use the above login command) and run:
+</p><pre class='escaped'>
+  &gt; alter table subscriber add column `vmail_password` varchar(8) NOT NULL default '1234';
+  &gt; alter table subscriber add column `first_name` varchar(25) NOT NULL default '';
+  &gt; alter table subscriber add column `last_name` varchar(45) NOT NULL default '';
+  &gt; alter table subscriber add column `email_address` varchar(50) NOT NULL default '';
+  &gt; alter table subscriber add column `datetime_created` datetime NOT NULL default '0000-00-00 00:00:00';
+</pre>
+<div class='vspace'></div><h5>Creating the Asterisk tables</h5>
+<p>Create a separate database to be used by Asterisk - login as root into mysql server and run:
+</p><pre class='escaped'>
+  &gt; create database asterisk;
+  &gt; GRANT ALL PRIVILEGES ON asterisk.* TO 'asterisk' IDENTIFIED  BY 'asterisk_pwd';
+</pre>
+<p class='vspace'>Create the Asterisk tables which are exclusively used only by Asterisk (as mysql tables):
+</p><pre class='escaped'>
+# create table for the meetme service
+
+CREATE TABLE `meetme` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `confno` varchar(80) NOT NULL DEFAULT '0',
+  `username` varchar(64) NOT NULL DEFAULT '',
+  `domain` varchar(128) NOT NULL DEFAULT '',
+  `pin` varchar(20) DEFAULT NULL,
+  `adminpin` varchar(20) DEFAULT NULL,
+  `members` int(11) DEFAULT NULL,
+  PRIMARY KEY (`confno`),
+  UNIQUE KEY `id` (`id`)
+);
+
+
+
+# create table to store the voicemail massages
+CREATE TABLE `voicemessages` (
+  `id` int(11) NOT NULL auto_increment,
+  `msgnum` int(11) NOT NULL default '0',
+  `dir` varchar(80) default '',
+  `context` varchar(80) default '',
+  `macrocontext` varchar(80) default '',
+  `callerid` varchar(40) default '',
+  `origtime` varchar(40) default '',
+  `duration` varchar(20) default '',
+  `mailboxuser` varchar(80) default '',
+  `mailboxcontext` varchar(80) default '',
+  `recording` longblob,
+  PRIMARY KEY  (`id`),
+  KEY `dir` (`dir`)
+);
+</pre>
+<p class='vspace'>Create the Asterisk tables (as mysql views) that import the information from OpenSIPS tables:
+</p><pre class='escaped'>
+# create the asterisk users tables as a view over the OpenSIPS subscriber table
+CREATE VIEW `sipusers` AS select
+  `opensips`.`subscriber`.`username` AS `name`
+  ,_latin1'friend' AS `type`,
+  NULL AS `secret`,
+  `opensips`.`subscriber`.`domain` AS `host`,
+  concat(`opensips`.`subscriber`.`rpid`,_latin1' ',_latin1'&lt;',`opensips`.`subscriber`.`username`,_latin1'&gt;') AS `callerid`,
+  _latin1'default' AS `context`,
+  `opensips`.`subscriber`.`username` AS `mailbox`,
+  _latin1'yes' AS `nat`,
+  _latin1'no' AS `qualify`,
+  `opensips`.`subscriber`.`username` AS `fromuser`,
+  NULL AS `authuser`,
+  `opensips`.`subscriber`.`domain` AS `fromdomain`,
+  NULL AS `insecure`,
+  _latin1'no' AS `canreinvite`,
+  NULL AS `disallow`,
+  NULL AS `allow`,
+  NULL AS `restrictcid`,
+  `opensips`.`subscriber`.`domain` AS `defaultip`,
+  `opensips`.`subscriber`.`domain` AS `ipaddr`,
+  _latin1'5060' AS `port`,
+  NULL AS `regseconds`,
+  `opensips`.`subscriber`.`username` AS `defaultuser`,
+  NULL AS `fullcontact`,
+  `opensips`.`subscriber`.`domain` AS `regserver`,
+  NULL AS `useragent`,
+  0 AS `lastms`
+from `opensips`.`subscriber`;
+
+# create the asterisk voceimail users table as a view over the OpenSIPS subscriber table
+CREATE VIEW `vmusers` AS select
+  concat(`opensips`.`subscriber`.`username`,`opensips`.`subscriber`.`domain`) AS `uniqueid`,
+  `opensips`.`subscriber`.`username` AS `customer_id`,
+  _latin1'default' AS `context`,
+  `opensips`.`subscriber`.`username` AS `mailbox`,
+  `opensips`.`subscriber`.`vmail_password` AS `password`,
+  _latin1'joe' AS `fullname`,
+  `opensips`.`subscriber`.`email_address` AS `email`,
+  NULL AS `pager`,
+  `opensips`.`subscriber`.`datetime_created` AS `stamp`
+from `opensips`.`subscriber`;
+
+#create the asterisk voicemail aliases table as a view over the OpenSIPS dbaliases table
+CREATE VIEW `asterisk`.`vmaliases` AS select
+  `opensips`.`dbaliases`.`alias_username` AS `alias`,
+  _latin1'default' AS `context`,
+  `opensips`.`dbaliases`.`username` AS `mailbox`
+from `opensips`.`dbaliases`;
+</pre>
+<p class='vspace'>Configure the access for Asterisk to the created database (via unixodbc):
+</p><ul><li>in <em>etc/odbcinst.ini</em>
+</li></ul><pre class='escaped'>
+[MySQL]
+Description     = MySQL driver
+Driver      = /usr/lib/odbc/libmyodbc.so
+Setup       = /usr/lib/odbc/libodbcmyS.so
+CPTimeout       =
+CPReuse     =
+UsageCount      = 1
+</pre>
+<div class='vspace'></div><ul><li>in <em>/etc/odbc.ini</em>
+</li></ul><pre class='escaped'>
+[MySQL-asterisk]
+Description = MySQL Asterisk database
+Trace       = Off
+TraceFile   = stderr
+Driver      = MySQL
+SERVER      = localhost
+USER        = asterisk
+PASSWORD    = asterisk_pwd
+PORT        = 3306
+DATABASE    = asterisk
+</pre>
+<div class='vspace'></div><ul><li>in <em>/etc/asterisk/res_odbc.conf</em>
+</li></ul><pre class='escaped'>
+[asterisk]
+enabled =&gt; yes
+dsn =&gt; MySQL-asterisk
+username =&gt; asterisk
+password =&gt; asterisk_pwd
+pre-connect =&gt; yes
+</pre>
+<div class='vspace'></div><ul><li>in <em>/etc/asterisk/extconfig.conf</em>
+</li></ul><pre class='escaped'>
+sipusers =&gt; odbc,asterisk,sipusers
+sippeers =&gt; odbc,asterisk,sipusers
+voicemail =&gt; odbc,asterisk,vmusers
+meetme =&gt; odbc,asterisk,meetme
+</pre>
+<div class='vspace'></div><hr />
+<h4>Asterisk dialplan</h4>
+<p>The following extensions are set for Asterisk:
+</p>
+<div class='vspace'></div><ol><li><strong>VMR_</strong> prefix indicates that the caller (identify by SIP FROM header) leaves a voicemail message to the user indicated by the RURI (after the prefix).
+<div class='vspace'></div></li><li><strong>VM_pickup</strong> RURI indicates that the caller (identify by SIP FROM header) accesses his own voicemailbox IVR (to listen his messages); the access is done directly, without any PIN required from Asterisk
+<div class='vspace'></div></li><li><strong>AN_notavailable</strong> plays the "Not Available" audio message
+<div class='vspace'></div></li><li><strong>AN_time</strong> plays the current time message (for the given timezone)
+<div class='vspace'></div></li><li><strong>AN_date</strong> plays the current time message (for the given timezone)
+<div class='vspace'></div></li><li><strong>AN_echo</strong> accesses the echo audio service
+<div class='vspace'></div></li><li><strong>CR_</strong> prefix indicates access to a conference room; the number of the room is part of the RURI, after the prefix (like CR_3322); Asterisk will perform the checks for conference room existence and for the access PIN code. 
+</li></ol><p class='vspace'>Set in <em>/etc/asterisk/extensions.conf</em>' :
+</p><pre class='escaped'>
+[general]
+static=yes
+writeprotect=no
+
+[default]
+
+; Voicemail 
+exten =&gt; _VMR_.,n,Ringing
+exten =&gt; _VMR_.,n,Wait(1)
+exten =&gt; _VMR_.,n,Answer
+exten =&gt; _VMR_.,n,Wait(1)
+exten =&gt; _VMR_.,n,Voicemail(${EXTEN:4}|u)
+exten =&gt; _VMR_.,n,Hangup
+
+; Allow users to call their Voicemail directly
+exten =&gt; VM_pickup,n,Ringing
+exten =&gt; VM_pickup,n,wait(1)
+exten =&gt; VM_pickup,n,VoicemailMain(${CALLERIDNUM}|s)
+exten =&gt; VM_pickup,n,Hangup
+
+
+; announcement: not available
+exten =&gt; AN_notavailable,1,Ringing
+exten =&gt; AN_notavailable,2,Playback(notavailable)
+exten =&gt; AN_notavailable,3,Hangup
+
+; announcement: time
+exten =&gt; AN_time,1,Ringing
+exten =&gt; AN_time,2,Wait(1)
+exten =&gt; AN_time,3,SayUnixTime(,Europe/Bucharest,HMp)
+exten =&gt; AN_time,4,Hangup
+
+; announcement:date
+exten =&gt; AN_date,1,Ringing
+exten =&gt; AN_date,2,SayUnixTime(,Europe/Bucharest,ABdY)
+exten =&gt; AN_date,3,Hangup
+
+; announcement: echo
+exten =&gt; AN_echo,1,Ringing
+exten =&gt; AN_echo,2,Answer
+exten =&gt; AN_echo,3,Echo
+
+; Conference service
+exten =&gt; _CR_.,1,Ringing
+exten =&gt; _CR_.,n,Wait(1)
+exten =&gt; _CR_.,n,MeetMe(${EXTEN:3}|Mi)
+
+
+</pre>
+<div class='vspace'></div><hr />
+<h4>OpenSIPS configuration</h4>
+<p>In this example we take the OpenSIPS default config file that provides user registration and authentication against the DB and extends the script for adding the following media oriented services:
+</p>
+<div class='vspace'></div><ol><li>voicemail
+<ol><li>leaving a message - if the called user is not registered on OpenSIPS, the call will be forwarded by OpenSIPS (by adding <strong>VMR_</strong> prefix) to Asterisk
+</li><li>listening messages -if a subscriber calls to the *1111 number, OpenSIPS will rewrite it to <strong>VM_pickup</strong> and send it to Asterisk
+</li></ol></li><li>announcements 
+<ol><li>service number *2111 for listening the current time message - OpenSIPS will rewrite it to <strong>AN_time</strong> and send it to Asterisk
+</li><li>service number *2112 for listening the current date message - OpenSIPS will rewrite it to <strong>AN_date</strong> and send it to Asterisk
+</li><li>service number *2113 for accessing the echo service - OpenSIPS will rewrite it to <strong>AN_echo</strong> and send it to Asterisk
+</li></ol></li><li>conference
+<ol><li>service number *3XXX for dialling into the conference room XXX - OpenSIPS will rewrite it to <strong>CR_XXX</strong> and send it to Asterisk
+</li></ol></li></ol><p class='vspace'>In <em>/etc/opensips/opensips.cfg</em> place (see the ASTERISK_HOOKS markers to find the script parts relevant to Asterisk integration):
+</p><pre class='escaped'>
+
+####### Global Parameters #########
+
+debug=3
+log_stderror=no
+log_facility=LOG_LOCAL0
+
+fork=yes
+children=4
+
+/* uncomment the following lines to enable debugging */
+#debug=6
+#fork=no
+#log_stderror=yes
+
+port=5060
+
+/* uncomment and configure the following line if you want opensips to 
+   bind on a specific interface/port/proto (default bind on all available) */
+#listen=udp:192.168.1.2:5060
+
+
+####### Modules Section ########
+
+#set module path
+mpath="/lib/opensips/modules/"
+
+loadmodule "db_mysql.so"
+loadmodule "signaling.so"
+loadmodule "sl.so"
+loadmodule "tm.so"
+loadmodule "rr.so"
+loadmodule "maxfwd.so"
+loadmodule "usrloc.so"
+loadmodule "registrar.so"
+loadmodule "textops.so"
+loadmodule "mi_fifo.so"
+loadmodule "uri_db.so"
+loadmodule "uri.so"
+loadmodule "xlog.so"
+loadmodule "acc.so"
+loadmodule "auth.so"
+loadmodule "auth_db.so"
+loadmodule "domain.so"
+
+# ----------------- setting module-specific parameters ---------------
+
+
+# ----- mi_fifo params -----
+modparam("mi_fifo", "fifo_name", "/tmp/opensips_fifo")
+
+# ----- rr params -----
+# do not append from tag to the RR (no need for this script)
+modparam("rr", "append_fromtag", 0)
+
+# ----- usrloc params -----
+modparam("usrloc", "db_mode",   2)
+modparam("usrloc", "db_url",
+	"mysql://opensips:opensipsrw@localhost/opensips")
+
+# ----- uri_db params -----
+modparam("uri_db", "use_uri_table", 0)
+modparam("uri_db", "db_url", "")
+
+# ----- acc params -----
+/* what sepcial events should be accounted ? */
+modparam("acc", "early_media", 1)
+modparam("acc", "report_cancels", 1)
+/* account triggers (flags) */
+modparam("acc", "failed_transaction_flag", 3)
+modparam("acc", "log_flag", 1)
+modparam("acc", "log_missed_flag", 2)
+/* uncomment the following lines to enable DB accounting also */
+modparam("acc", "db_flag", 1)
+modparam("acc", "db_missed_flag", 2)
+
+# ----- auth_db params -----
+modparam("auth_db", "calculate_ha1", yes)
+modparam("auth_db", "password_column", "password")
+modparam("auth_db", "db_url",
+	"mysql://opensips:opensipsrw@localhost/opensips")
+modparam("auth_db", "load_credentials", "")
+
+# ----- domain params -----
+modparam("domain", "db_url",
+	"mysql://opensips:opensipsrw@localhost/opensips")
+modparam("domain", "db_mode", 1)   # Use caching
+
+# ----- multi-module params -----
+/* uncomment the following line if you want to enable multi-domain support
+   in the modules (dafault off) */
+modparam("alias_db|auth_db|usrloc|uri_db", "use_domain", 1)
+
+
+####### Routing Logic ########
+
+
+# main request routing logic
+
+route{
+
+	if (!mf_process_maxfwd_header("10")) {
+		send_reply("483","Too Many Hops");
+		exit;
+	}
+
+	if (has_totag()) {
+		# sequential request withing a dialog should
+		# take the path determined by record-routing
+		if (loose_route()) {
+			if (is_method("BYE")) {
+				setflag(1); # do accounting ...
+				setflag(3); # ... even if the transaction fails
+			} else if (is_method("INVITE")) {
+				# even if in most of the cases is useless, do RR for
+				# re-INVITEs alos, as some buggy clients do change route set
+				# during the dialog.
+				record_route();
+			}
+			# route it out to whatever destination was set by loose_route()
+			# in $du (destination URI).
+			route(1);
+		} else {
+			if ( is_method("ACK") ) {
+				if ( t_check_trans() ) {
+					# non loose-route, but stateful ACK; must be an ACK after 
+					# a 487 or e.g. 404 from upstream server
+					t_relay();
+					exit;
+				} else {
+					# ACK without matching transaction -&gt;
+					# ignore and discard
+					exit;
+				}
+			}
+			send_reply("404","Not here");
+		}
+		exit;
+	}
+
+	#initial requests
+
+	# CANCEL processing
+	if (is_method("CANCEL")) {
+		if (t_check_trans())
+			t_relay();
+		exit;
+	}
+
+	t_check_trans();
+
+	# authenticate if from local subscriber
+	if (!(method=="REGISTER") &amp;&amp; is_from_local()) {
+		if (!proxy_authorize("", "subscriber")) {
+			proxy_challenge("", "0");
+			exit;
+		}
+		if (!check_from()) {
+			send_reply("403","Forbidden auth ID");
+			exit;
+		}
+
+		consume_credentials();
+		# caller authenticated
+	}
+
+	# preloaded route checking
+	if (loose_route()) {
+		xlog("L_ERR",
+		"Attempt to route with preloaded Route's [$fu/$tu/$ru/$ci]");
+		if (!is_method("ACK"))
+			send_reply("403","Preload Route denied");
+		exit;
+	}
+
+	# record routing
+	if (!is_method("REGISTER|MESSAGE"))
+		record_route();
+
+	# account only INVITEs
+	if (is_method("INVITE")) {
+		setflag(1); # do accounting
+	}
+
+	# if not a targetting a local SIP domain, just send it out
+	# based on DNS (calls to foreign SIP domains)
+	if (!is_uri_host_local()) {
+		append_hf("P-hint: outbound\r\n"); 
+		route(1);
+	}
+
+	# requests for my domain
+
+	if (is_method("REGISTER")) {
+		# authenticate the REGISTER requests
+		if (!www_authorize("", "subscriber")) {
+			www_challenge("", "0");
+			exit;
+		}
+		if (!check_to()) {
+			send_reply("403","Forbidden auth ID");
+			exit;
+		}
+
+		if (!save("location"))
+			sl_reply_error();
+
+		exit;
+	}
+
+	if ($rU==NULL) {
+		# request with no Username in RURI
+		send_reply("484","Address Incomplete");
+		exit;
+	}
+
+	# ASTERISK HOOK - BEGIN
+	# media service number? (digits starting with *)
+	if ($rU=~"^\*[1-9]+") {
+		# we do provide access to media services only to our
+		# subscribers, who were previously authenticated 
+		if (!is_from_local()) {
+			send_reply("403","Forbidden access to media service");
+			exit;
+		}
+		#identify the services and translate to Asterisk extensions
+		if ($rU=="*1111") {
+			# access to own voicemail IVR
+			$ru = "sip:VM_pickup@ASTERISK_IP:ASTERISK_PORT";
+		} else
+		if ($rU=="*2111") {
+			# access to the "say time" announcement 
+			$ru = "sip:AN_time@ASTERISK_IP:ASTERISK_PORT";
+		} else
+		if ($rU=="*2112") {
+			# access to the "say date" announcement 
+			$ru = "sip:AN_date@ASTERISK_IP:ASTERISK_PORT";
+		} else
+		if ($rU=="*2113") {
+			# access to the "echo" service
+			$ru = "sip:AN_echo@ASTERISK_IP:ASTERISK_PORT";
+		} else
+		if ($rU=~"\*3[0-9]{3}") {
+			# access to the conference service 
+			# remove the "*3" prefix and place the "CR_" prefix
+			strip(2);
+			prefix("CR_");
+			rewritehostport("ASTERISK_IP:ASTERISK_PORT");
+		} else {
+			# unknown service
+			$ru = "sip:AN_notavailable@ASTERISK_IP:ASTERISK_PORT";
+		}
+		# after setting the proper RURI (to point to corresponding ASTERISK extension),
+		# simply forward the call
+		t_relay();
+		exit;
+	}
+	# ASTERISK HOOK - END
+
+	# do lookup
+	if (!lookup("location")) {
+		# ASTERISK HOOK - BEGIN
+		# callee is not registered, so different to Voicemail
+		# First add the VM recording prefix to the RURI
+		prefix("VMR_");
+		# forward to the call to Asterisk (replace below with real IP and port)
+ 		rewritehostport("ASTERISK_IP:ASTERISK_PORT");
+		route(1);
+		# ASTERISK HOOK - END
+		exit;
+	}
+
+	# when routing via usrloc, log the missed calls also
+	setflag(2);
+
+	# arm a failure route in order to catch failed calls
+	# targeting local subscribers; if we fail to deliver
+	# the call to the user, we send the call to voicemail
+	t_on_failure("1");
+
+	route(1);
+}
+
+
+route[1] {
+	if (!t_relay()) {
+		sl_reply_error();
+	};
+	exit;
+}
+
+
+failure_route[1] {
+	if (t_was_cancelled()) {
+		exit;
+	}
+
+	# if the failure code is "408 - timeout" or "486 - busy",
+	# forward the calls to voicemail recording
+	if (t_check_status("486|408")) {
+		# ASTERISK HOOK - BEGIN
+		# First revert the RURI to get the original user in RURI
+		# Then add the VM recording prefix to the RURI
+		revert_uri();
+		prefix("VMR_");
+		# forward to the call to Asterisk (replace below with real IP and port)
+ 		rewritehostport("ASTERISK_IP:ASTERISK_PORT");
+		t_relay();
+		# ASTERISK HOOK - END
+		exit;
+	}
+}
+</pre>
+<div class='vspace'></div><hr />
+<h4>How to use it</h4>
+<p>Add a SIP domain in the OpenSIPS server (note that the sip domain most point -via DNS- to your opensips server; also for a SIP domain, you can use the IP address of the SIP server too):
+</p><pre class='escaped'>
+$ mysql -h'localhost' -u'opensips' -p'opensipsrw' opensips
+ &gt; insert into domain (domain) values ("test.com");
+
+$ opensipsctl fifo domain_reload
+</pre>
+<p class='vspace'>Create some subscribers with your OpenSIPS platform (alice@test.com with SIP password '1234'):
+</p><pre class='escaped'>
+$ opensipsctl add alice@test.com 1234
+$ opensipsctl add bob@test.com 4321
+</pre>
+<p class='vspace'>If you want to change the voicemail pin (for subscriber alice@test.com):
+</p><pre class='escaped'>
+$ mysql -h'localhost' -u'opensips' -p'opensipsrw' opensips
+ &gt; update subscriber set vm_password="6745" where username="alice" and domain="test.com";
+</pre>
+<div class='vspace'></div><h5>Test voicemail</h5>
+<p>Register your <strong>alice</strong> subscriber (ex: using twinkle soft client) to your server. Keep <strong>bob</strong> unregistered.
+</p>
+<p class='vspace'>From <strong>alice</strong> dial <strong>bob</strong> address -  you should get the prompt for leaving a voicemail messages/recording.
+</p>
+<p class='vspace'>Register <strong>bob</strong> also and dial <strong>*1111</strong> - you should get the voicemail IVR and listen the recording left by <strong>alice</strong>.
+</p>
+<div class='vspace'></div><h5>Test announcements</h5>
+<p>Form a registered subscriber, simply dial the service numbers as configured in OpenSIPS (see the beginning of the previous chapter).
+</p>
+<div class='vspace'></div><h5>Test conference </h5>
+<p>Add a conference room to your system:
+</p><pre class='escaped'>
+$ mysql -h'localhost' -u'asterisk' -p'asterisk_pwd' asterisk
+ &gt; insert into meetme (confno, pin, adminpin) values ("761","1122","4322");
+</pre>
+<p class='vspace'>From a registered SIP user, dial <strong>*3761</strong> (to dial in conf room 761) and at IVR prompt type <strong>1122</strong> access pin.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-OpenSIPSAsteriskIntegration-1-8?action=edit&restore=diff:1366821818:1366821818:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-OpenSIPSAsteriskIntegration-1-8?action=edit&restore=diff:1366821818:1366821818:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-OpenSIPSAsteriskIntegration-1-8?action=edit&restore=diff:1366821818:1366821818:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Tutorials-OpenSIPSAsteriskIntegration-1-8-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-OpenSIPSAsteriskIntegration-1-8?action=edit">Edit</a> |
+      <a rel="nofollow" href="Tutorials-OpenSIPSAsteriskIntegration-1-8-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-OpenSIPSAsteriskIntegration-1-8?action=diff">History</a> |
+      <a rel="nofollow" href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-OpenSIPSAsteriskIntegration-1-8?action=print  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-OpenSIPSAsteriskIntegration-1-8?action=print%27" tppabs="http://www.opensips.org/Documentation/Tutorials-OpenSIPSAsteriskIntegration-1-8?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on May 16, 2013, at 06:08 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

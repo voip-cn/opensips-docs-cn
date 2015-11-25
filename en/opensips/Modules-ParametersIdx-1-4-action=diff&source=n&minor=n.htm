@@ -1,0 +1,990 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Modules-ParametersIdx-1-4 | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Modules-ParametersIdx-1-4' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Modules-ParametersIdx-1-4 History</h2>
+  <p><a href="Modules-ParametersIdx-1-4-action=diff&source=n&minor=y.htm" tppabs="http://www.opensips.org/Documentation/Modules-ParametersIdx-1-4?action=diff&source=n&minor=y">Show minor edits</a> - <a href="Modules-ParametersIdx-1-4-action=diff&source=y&minor=n.htm" tppabs="http://www.opensips.org/Documentation/Modules-ParametersIdx-1-4?action=diff&source=y&minor=n">Show changes to markup</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>April 24, 2013, at 01:43 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Added lines 1-802:</div>
+        <div class='diffadd'><h2>Resources -&gt; <a class='wikilink' title='Documentation' href="javascript:if(confirm(%27http://www.opensips.org/Resources/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/Documentation%27" tppabs="http://www.opensips.org/Resources/Documentation">Documentation</a> -&gt; <a class='wikilink' title='DocsCookbooks' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCookbooks  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCookbooks%27" tppabs="http://www.opensips.org/Resources/DocsCookbooks">Cookbooks</a> -&gt; Modules Parameters Index</h2>
+<hr />
+<p>(:toc-float Table of Content:)
+</p>
+<div class='vspace'></div><h4>A</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>acc_callid_column (string)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>acc_db_table (string)</td><td  align='center'>uac_redirect</td></tr>
+<tr ><td  align='left'>acc_from_tag_column (string)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>acc_function (string)</td><td  align='center'>uac_redirect</td></tr>
+<tr ><td  align='left'>acc_method_column (string)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>acc_sip_code_column (string)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>acc_sip_reason_column (string)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>acc_time_column (string)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>acc_to_tag_column (string)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>accept (string)</td><td  align='center'>options</td></tr>
+<tr ><td  align='left'>accept_encoding (string)</td><td  align='center'>options</td></tr>
+<tr ><td  align='left'>accept_filter (string)</td><td  align='center'>uac_redirect</td></tr>
+<tr ><td  align='left'>accept_language (string)</td><td  align='center'>options</td></tr>
+<tr ><td  align='left'>active_watchers_table(str)</td><td  align='center'>presence</td></tr>
+<tr ><td  align='left'>add_date (int)</td><td  align='center'>msilo</td></tr>
+<tr ><td  align='left'>add_username (integer)</td><td  align='center'>rr</td></tr>
+<tr ><td  align='left'>address_table (string)</td><td  align='center'>permissions</td></tr>
+<tr ><td  align='left'>alias_domain_column (str)</td><td  align='center'>alias_db</td></tr>
+<tr ><td  align='left'>alias_user_column (str)</td><td  align='center'>alias_db</td></tr>
+<tr ><td  align='left'>aliases (string)</td><td  align='center'>jabber</td></tr>
+<tr ><td  align='left'>allow_suffix (string)</td><td  align='center'>permissions</td></tr>
+<tr ><td  align='left'>aor_avp (str)</td><td  align='center'>registrar</td></tr>
+<tr ><td  align='left'>append_branches (int)</td><td  align='center'>alias_db</td></tr>
+<tr ><td  align='left'>append_branches (integer)</td><td  align='center'>registrar</td></tr>
+<tr ><td  align='left'>append_fromtag (integer)</td><td  align='center'>rr</td></tr>
+<tr ><td  align='left'>append_hf(txt, hdr)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>append_hf(txt)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>append_time()</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>append_to_reply(txt)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>append_urihf(prefix, suffix)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>attribute_column (string)</td><td  align='center'>avpops</td></tr>
+<tr ><td  align='left'>attrs_col (string)</td><td  align='center'>dialplan</td></tr>
+<tr ><td  align='left'>attrs_pvar (string)</td><td  align='center'>dialplan</td></tr>
+<tr ><td  align='left'>auth_password_avp (string)</td><td  align='center'>uac</td></tr>
+<tr ><td  align='left'>auth_realm_avp (string)</td><td  align='center'>uac</td></tr>
+<tr ><td  align='left'>auth_username_avp (string)</td><td  align='center'>uac</td></tr>
+<tr ><td  align='left'>auto_reconnect (int)</td><td  align='center'>db_unixodbc</td></tr>
+<tr ><td  align='left'>auto_reconnect (integer)</td><td  align='center'>db_mysql</td></tr>
+<tr ><td  align='left'>auto_reload (integer)</td><td  align='center'>db_berkeley</td></tr>
+<tr ><td  align='left'>avp_table (string)</td><td  align='center'>avpops</td></tr>
+<tr ><td  align='left'>avp_url (string)</td><td  align='center'>avpops</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>B</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>backend(string)</td><td  align='center'>xmpp</td></tr>
+<tr ><td  align='left'>base_dn (string)</td><td  align='center'>h350</td></tr>
+<tr ><td  align='left'>bl_algorithm (string)</td><td  align='center'>enum</td></tr>
+<tr ><td  align='left'>branchlabel (string)</td><td  align='center'>enum</td></tr>
+<tr ><td  align='left'>buf_size (integer)</td><td  align='center'>xlog</td></tr>
+<tr ><td  align='left'>buffer_size (integer)</td><td  align='center'>mi_xmlrpc</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>C</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>cache_time (integer)</td><td  align='center'>jabber</td></tr>
+<tr ><td  align='left'>calculate_ha1 (integer)</td><td  align='center'>auth_db</td></tr>
+<tr ><td  align='left'>calculate_ha1 (integer)</td><td  align='center'>auth</td></tr>
+<tr ><td  align='left'>callee_contact_column (string)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>callee_cseq_column (string)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>callee_route_column (string)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>callee_service_type (integer)</td><td  align='center'>avp_radius</td></tr>
+<tr ><td  align='left'>callee_sock_column (string)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>caller_contact_column (string)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>caller_cseq_column (string)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>caller_route_column (string)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>caller_service_type (integer)</td><td  align='center'>avp_radius</td></tr>
+<tr ><td  align='left'>caller_sock_column (string)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>callid_column (string)</td><td  align='center'>usrloc</td></tr>
+<tr ><td  align='left'>callid_column (string)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>carrier_column (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>carrier_id_col (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>carrier_name_col (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>carrier_table (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>case_sensitive (int)</td><td  align='center'>cpl-c</td></tr>
+<tr ><td  align='left'>case_sensitive (integer)</td><td  align='center'>registrar</td></tr>
+<tr ><td  align='left'>cflags_column (string)</td><td  align='center'>usrloc</td></tr>
+<tr ><td  align='left'>char_list (string)</td><td  align='center'>pdt</td></tr>
+<tr ><td  align='left'>check_all_branches (integer)</td><td  align='center'>permissions</td></tr>
+<tr ><td  align='left'>check_domain (integer)</td><td  align='center'>pdt</td></tr>
+<tr ><td  align='left'>check_time (int)</td><td  align='center'>msilo</td></tr>
+<tr ><td  align='left'>check_time (integer)</td><td  align='center'>jabber</td></tr>
+<tr ><td  align='left'>children_count (string)</td><td  align='center'>mi_datagram</td></tr>
+<tr ><td  align='left'>clean_period (int)</td><td  align='center'>msilo</td></tr>
+<tr ><td  align='left'>clean_period (int)</td><td  align='center'>presence</td></tr>
+<tr ><td  align='left'>clean_period (int)</td><td  align='center'>rls</td></tr>
+<tr ><td  align='left'>cnt_avp (str)</td><td  align='center'>dispatcher</td></tr>
+<tr ><td  align='left'>comment_column (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>config_file (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>config_file (string)</td><td  align='center'>ldap</td></tr>
+<tr ><td  align='left'>config_source (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>contact_avp (AVP string)</td><td  align='center'>lcr</td></tr>
+<tr ><td  align='left'>contact_column (string)</td><td  align='center'>usrloc</td></tr>
+<tr ><td  align='left'>contact_flds_separator (string)</td><td  align='center'>mangler</td></tr>
+<tr ><td  align='left'>contact_hdr (string)</td><td  align='center'>msilo</td></tr>
+<tr ><td  align='left'>content_type_hdr (string)</td><td  align='center'>msilo</td></tr>
+<tr ><td  align='left'>cpl_bin_column (string)</td><td  align='center'>cpl-c</td></tr>
+<tr ><td  align='left'>cpl_dtd_file (string)</td><td  align='center'>cpl-c</td></tr>
+<tr ><td  align='left'>cpl_xml_column (string)</td><td  align='center'>cpl-c</td></tr>
+<tr ><td  align='left'>credential (string)</td><td  align='center'>uac</td></tr>
+<tr ><td  align='left'>cseq_column (string)</td><td  align='center'>usrloc</td></tr>
+<tr ><td  align='left'>cseq_delay (integer)</td><td  align='center'>usrloc</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>D</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>db_extra (string)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>db_failure_table (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>db_flag (integer)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>db_missed_flag (integer)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>db_mode (integer)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>db_mode (integer)</td><td  align='center'>db_text</td></tr>
+<tr ><td  align='left'>db_mode (integer)</td><td  align='center'>usrloc</td></tr>
+<tr ><td  align='left'>db_mode (integer)</td><td  align='center'>domain</td></tr>
+<tr ><td  align='left'>db_mode (integer)</td><td  align='center'>permissions</td></tr>
+<tr ><td  align='left'>db_scheme (string)</td><td  align='center'>avpops</td></tr>
+<tr ><td  align='left'>db_table (str)</td><td  align='center'>pua</td></tr>
+<tr ><td  align='left'>db_table (string)</td><td  align='center'>msilo</td></tr>
+<tr ><td  align='left'>db_table (string)</td><td  align='center'>userblacklist</td></tr>
+<tr ><td  align='left'>db_table (string)</td><td  align='center'>cpl-c</td></tr>
+<tr ><td  align='left'>db_table (string)</td><td  align='center'>uri_db</td></tr>
+<tr ><td  align='left'>db_table (string)</td><td  align='center'>pdt</td></tr>
+<tr ><td  align='left'>db_table (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>db_table_acc (string)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>db_table_missed_calls (string)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>db_update_period (integer)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>db_url (str)</td><td  align='center'>alias_db</td></tr>
+<tr ><td  align='left'>db_url (str)</td><td  align='center'>imc</td></tr>
+<tr ><td  align='left'>db_url (str)</td><td  align='center'>siptrace</td></tr>
+<tr ><td  align='left'>db_url (str)</td><td  align='center'>pua</td></tr>
+<tr ><td  align='left'>db_url (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>db_url (string)</td><td  align='center'>cpl-c</td></tr>
+<tr ><td  align='left'>db_url (string)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>db_url (string)</td><td  align='center'>avpops</td></tr>
+<tr ><td  align='left'>db_url (string)</td><td  align='center'>jabber</td></tr>
+<tr ><td  align='left'>db_url (string)</td><td  align='center'>dispatcher</td></tr>
+<tr ><td  align='left'>db_url (string)</td><td  align='center'>usrloc</td></tr>
+<tr ><td  align='left'>db_url (string)</td><td  align='center'>group</td></tr>
+<tr ><td  align='left'>db_url (string)</td><td  align='center'>dialplan</td></tr>
+<tr ><td  align='left'>db_url (string)</td><td  align='center'>uri_db</td></tr>
+<tr ><td  align='left'>db_url (string)</td><td  align='center'>lcr</td></tr>
+<tr ><td  align='left'>db_url (string)</td><td  align='center'>permissions</td></tr>
+<tr ><td  align='left'>db_url (string)</td><td  align='center'>pdt</td></tr>
+<tr ><td  align='left'>db_url (string)</td><td  align='center'>speeddial</td></tr>
+<tr ><td  align='left'>db_url (string)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>db_url (string)</td><td  align='center'>domainpolicy</td></tr>
+<tr ><td  align='left'>db_url (string)</td><td  align='center'>auth_db</td></tr>
+<tr ><td  align='left'>db_url (string)</td><td  align='center'>userblacklist</td></tr>
+<tr ><td  align='left'>db_url (string)</td><td  align='center'>domain</td></tr>
+<tr ><td  align='left'>db_url (string)</td><td  align='center'>msilo</td></tr>
+</table><p>db_url(str)&amp;
+</p><table border='0' ><tr ><td  align='left'>db_url(str)</td><td  align='center'>presence_xml</td></tr>
+<tr ><td  align='left'>db_url(str)</td><td  align='center'>rls</td></tr>
+<tr ><td  align='left'>db_url(str)</td><td  align='center'>xcap_client</td></tr>
+<tr ><td  align='left'>default_allow_file (string)</td><td  align='center'>permissions</td></tr>
+<tr ><td  align='left'>default_deny_file (string)</td><td  align='center'>permissions</td></tr>
+<tr ><td  align='left'>default_domain (str)</td><td  align='center'>pua_usrloc</td></tr>
+<tr ><td  align='left'>default_domain(str)</td><td  align='center'>pua_bla</td></tr>
+<tr ><td  align='left'>default_expires (int)</td><td  align='center'>pua</td></tr>
+<tr ><td  align='left'>default_expires (integer)</td><td  align='center'>registrar</td></tr>
+<tr ><td  align='left'>default_filter (string)</td><td  align='center'>uac_redirect</td></tr>
+<tr ><td  align='left'>default_net (string)</td><td  align='center'>sms</td></tr>
+<tr ><td  align='left'>default_q (integer)</td><td  align='center'>registrar</td></tr>
+<tr ><td  align='left'>default_timeout (integer)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>default_tree (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>delay_time (integer)</td><td  align='center'>jabber</td></tr>
+<tr ><td  align='left'>delete_timer (integer)</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>deny_filter (string)</td><td  align='center'>uac_redirect</td></tr>
+<tr ><td  align='left'>deny_suffix (string)</td><td  align='center'>permissions</td></tr>
+<tr ><td  align='left'>desc_time_order (integer)</td><td  align='center'>usrloc</td></tr>
+<tr ><td  align='left'>destination_col (string)</td><td  align='center'>dispatcher</td></tr>
+<tr ><td  align='left'>detect_direction (integer)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>device_ip</td><td  align='center'>osp</td></tr>
+<tr ><td  align='left'>device_port</td><td  align='center'>osp</td></tr>
+<tr ><td  align='left'>diameter_client_host (string)</td><td  align='center'>auth_diameter</td></tr>
+<tr ><td  align='left'>diameter_client_host (string)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>diameter_client_port (int)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>diameter_client_port (int)</td><td  align='center'>auth_diameter</td></tr>
+<tr ><td  align='left'>diameter_extra (string)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>diameter_flag (integer)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>diameter_missed_flag (integer)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>disable (int)</td><td  align='center'>mediaproxy</td></tr>
+<tr ><td  align='left'>disable_6xx_block (integer)</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>dlg_extra_hdrs (string)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>dlg_flag (integer)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>dlg_major_threshold (Integer)</td><td  align='center'>snmpstats</td></tr>
+<tr ><td  align='left'>dlg_match_mode (integer)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>dlg_minor_threshold (Integer)</td><td  align='center'>snmpstats</td></tr>
+<tr ><td  align='left'>domain (string)</td><td  align='center'>sms</td></tr>
+<tr ><td  align='left'>domain_col (string)</td><td  align='center'>domain</td></tr>
+<tr ><td  align='left'>domain_column (str)</td><td  align='center'>alias_db</td></tr>
+<tr ><td  align='left'>domain_column (string)</td><td  align='center'>group</td></tr>
+<tr ><td  align='left'>domain_column (string)</td><td  align='center'>avpops</td></tr>
+<tr ><td  align='left'>domain_column (string)</td><td  align='center'>speeddial</td></tr>
+<tr ><td  align='left'>domain_column (string)</td><td  align='center'>auth_db</td></tr>
+<tr ><td  align='left'>domain_column (string)</td><td  align='center'>cpl-c</td></tr>
+<tr ><td  align='left'>domain_column (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>domain_column (string)</td><td  align='center'>usrloc</td></tr>
+<tr ><td  align='left'>domain_column (string)</td><td  align='center'>pdt</td></tr>
+<tr ><td  align='left'>domain_column (string)</td><td  align='center'>uri_db</td></tr>
+<tr ><td  align='left'>domain_prefix (str)</td><td  align='center'>alias_db</td></tr>
+<tr ><td  align='left'>domain_prefix (string)</td><td  align='center'>speeddial</td></tr>
+<tr ><td  align='left'>domain_prefix_avp (string)</td><td  align='center'>domainpolicy</td></tr>
+<tr ><td  align='left'>domain_replacement_avp (string)</td><td  align='center'>domainpolicy</td></tr>
+<tr ><td  align='left'>domain_separator (string)</td><td  align='center'>xmpp</td></tr>
+<tr ><td  align='left'>domain_suffix (string)</td><td  align='center'>enum</td></tr>
+<tr ><td  align='left'>domain_suffix_avp (string)</td><td  align='center'>domainpolicy</td></tr>
+<tr ><td  align='left'>domain_table (string)</td><td  align='center'>domain</td></tr>
+<tr ><td  align='left'>dp_col_att (string)</td><td  align='center'>domainpolicy</td></tr>
+<tr ><td  align='left'>dp_col_rule (string)</td><td  align='center'>domainpolicy</td></tr>
+<tr ><td  align='left'>dp_col_type (string)</td><td  align='center'>domainpolicy</td></tr>
+<tr ><td  align='left'>dp_col_val (string)</td><td  align='center'>domainpolicy</td></tr>
+<tr ><td  align='left'>dp_table (string)</td><td  align='center'>domainpolicy</td></tr>
+<tr ><td  align='left'>dpid_col (string)</td><td  align='center'>dialplan</td></tr>
+<tr ><td  align='left'>ds_ping_from (string)</td><td  align='center'>dispatcher</td></tr>
+<tr ><td  align='left'>ds_ping_interval (int)</td><td  align='center'>dispatcher</td></tr>
+<tr ><td  align='left'>ds_ping_method (string)</td><td  align='center'>dispatcher</td></tr>
+<tr ><td  align='left'>ds_probing_mode (int)</td><td  align='center'>dispatcher</td></tr>
+<tr ><td  align='left'>ds_probing_threshhold (int)</td><td  align='center'>dispatcher</td></tr>
+<tr ><td  align='left'>dst_avp (str)</td><td  align='center'>dispatcher</td></tr>
+<tr ><td  align='left'>duplicate_uri (str)</td><td  align='center'>siptrace</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>E</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>early_media (integer)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>enable (int)</td><td  align='center'>benchmark</td></tr>
+<tr ><td  align='left'>enable_crypto_hardware_support</td><td  align='center'>osp</td></tr>
+<tr ><td  align='left'>enable_double_rr (integer)</td><td  align='center'>rr</td></tr>
+<tr ><td  align='left'>enable_full_lr (integer)</td><td  align='center'>rr</td></tr>
+<tr ><td  align='left'>enable_sphere_check (int)</td><td  align='center'>presence</td></tr>
+<tr ><td  align='left'>enable_stats (integer)</td><td  align='center'>sst</td></tr>
+<tr ><td  align='left'>enable_stats (integer)</td><td  align='center'>sl</td></tr>
+<tr ><td  align='left'>enable_stats (integer)</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>enable_stats (integer)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>entity_prefix (str)</td><td  align='center'>pua_usrloc</td></tr>
+<tr ><td  align='left'>expire_time (int)</td><td  align='center'>msilo</td></tr>
+<tr ><td  align='left'>expires_column (string)</td><td  align='center'>usrloc</td></tr>
+<tr ><td  align='left'>expires_offset (int)</td><td  align='center'>presence</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>F</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>failed_transaction_flag (integer)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>failure_carrier_column (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>failure_comment_column (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>failure_domain_column (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>failure_flags_column (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>failure_host_name_column (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>failure_id_column (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>failure_mask_column (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>failure_next_domain_column (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>failure_reply_code_column (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>failure_scan_prefix_column (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>fallback_default (int)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>fallback2db (int)</td><td  align='center'>presence</td></tr>
+<tr ><td  align='left'>fetch_rows (int)</td><td  align='center'>dialplan</td></tr>
+<tr ><td  align='left'>fetch_rows (integer)</td><td  align='center'>pdt</td></tr>
+<tr ><td  align='left'>fetch_rows (integer)</td><td  align='center'>usrloc</td></tr>
+<tr ><td  align='left'>fifo_group (integer) fifo_group (string)</td><td  align='center'>mi_fifo</td></tr>
+<tr ><td  align='left'>fifo_mode (integer)</td><td  align='center'>mi_fifo</td></tr>
+<tr ><td  align='left'>fifo_name (string)</td><td  align='center'>mi_fifo</td></tr>
+<tr ><td  align='left'>fifo_user (integer) fifo_group (string)</td><td  align='center'>mi_fifo</td></tr>
+<tr ><td  align='left'>filename (string)</td><td  align='center'>perl</td></tr>
+<tr ><td  align='left'>filter_body(content_type)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>flags (int)</td><td  align='center'>dispatcher</td></tr>
+<tr ><td  align='left'>flags_avp (AVP string)</td><td  align='center'>lcr</td></tr>
+<tr ><td  align='left'>flags_col (string)</td><td  align='center'>dispatcher</td></tr>
+<tr ><td  align='left'>flags_column (string)</td><td  align='center'>usrloc</td></tr>
+<tr ><td  align='left'>flags_column (string)</td><td  align='center'>lcr</td></tr>
+<tr ><td  align='left'>flags_column (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>flush (integer)</td><td  align='center'>db_flatstore</td></tr>
+<tr ><td  align='left'>force_active (int)</td><td  align='center'>presence_xml</td></tr>
+<tr ><td  align='left'>force_color (integer)</td><td  align='center'>xlog</td></tr>
+<tr ><td  align='left'>force_dst (int)</td><td  align='center'>dispatcher</td></tr>
+<tr ><td  align='left'>force_socket (string)</td><td  align='center'>nathelper</td></tr>
+<tr ><td  align='left'>fr_inv_timer (integer)</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>fr_inv_timer (integer)</td><td  align='center'>lcr</td></tr>
+<tr ><td  align='left'>fr_inv_timer_avp (AVP string)</td><td  align='center'>lcr</td></tr>
+<tr ><td  align='left'>fr_inv_timer_avp (string)</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>fr_inv_timer_next (integer)</td><td  align='center'>lcr</td></tr>
+<tr ><td  align='left'>fr_timer (integer)</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>fr_timer_avp (string)</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>from_address (string)</td><td  align='center'>msilo</td></tr>
+<tr ><td  align='left'>from_col (string)</td><td  align='center'>permissions</td></tr>
+<tr ><td  align='left'>from_passwd (string)</td><td  align='center'>uac</td></tr>
+<tr ><td  align='left'>from_restore_mode (string)</td><td  align='center'>uac</td></tr>
+<tr ><td  align='left'>from_tag_column (string)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>from_uri_column (string)</td><td  align='center'>lcr</td></tr>
+<tr ><td  align='left'>from_uri_column (string)</td><td  align='center'>dialog</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>G</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>gateway_domain (string)</td><td  align='center'>xmpp</td></tr>
+<tr ><td  align='left'>granularity (int)</td><td  align='center'>benchmark</td></tr>
+<tr ><td  align='left'>group_column (string)</td><td  align='center'>group</td></tr>
+<tr ><td  align='left'>grp_avp (str)</td><td  align='center'>dispatcher</td></tr>
+<tr ><td  align='left'>grp_col (string)</td><td  align='center'>permissions</td></tr>
+<tr ><td  align='left'>grp_id_column (string)</td><td  align='center'>lcr</td></tr>
+<tr ><td  align='left'>gw_name_column (string)</td><td  align='center'>lcr</td></tr>
+<tr ><td  align='left'>gw_table (string)</td><td  align='center'>lcr</td></tr>
+<tr ><td  align='left'>gw_uri_avp (AVP string)</td><td  align='center'>lcr</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>H</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>h_entry_column (string)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>h_id_column (string)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>has_body(), has_body(mime)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>hash_file (string)</td><td  align='center'>cfgutils</td></tr>
+<tr ><td  align='left'>hash_pvar (str)</td><td  align='center'>dispatcher</td></tr>
+<tr ><td  align='left'>hash_size (int)</td><td  align='center'>rls</td></tr>
+<tr ><td  align='left'>hash_size (int)</td><td  align='center'>pua</td></tr>
+<tr ><td  align='left'>hash_size (integer)</td><td  align='center'>imc</td></tr>
+<tr ><td  align='left'>hash_size (integer)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>hash_size (integer)</td><td  align='center'>usrloc</td></tr>
+<tr ><td  align='left'>header_name(str)</td><td  align='center'>pua_bla</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>I</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>I_enum_suffix (string)</td><td  align='center'>enum</td></tr>
+<tr ><td  align='left'>id_column (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>imc_cmd_start_char (str)</td><td  align='center'>imc</td></tr>
+<tr ><td  align='left'>initial (integer)</td><td  align='center'>gflags</td></tr>
+<tr ><td  align='left'>initial_probability (string)</td><td  align='center'>cfgutils</td></tr>
+<tr ><td  align='left'>insert_hf(txt, hdr)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>insert_hf(txt)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>integrated_xcap_server (int)</td><td  align='center'>presence_xml</td></tr>
+<tr ><td  align='left'>integrated_xcap_server (int)</td><td  align='center'>rls</td></tr>
+<tr ><td  align='left'>ip_addr_col (string)</td><td  align='center'>permissions</td></tr>
+<tr ><td  align='left'>ip_addr_column (string)</td><td  align='center'>lcr</td></tr>
+<tr ><td  align='left'>is_method(name)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>is_present_hf(hf_name)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>is_privacy(privacy_type)</td><td  align='center'>textops</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>J</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>jaddress (string)</td><td  align='center'>jabber</td></tr>
+<tr ><td  align='left'>jdomain (string)</td><td  align='center'>jabber</td></tr>
+<tr ><td  align='left'>journal_roll_interval (integer seconds)</td><td  align='center'>db_berkeley</td></tr>
+<tr ><td  align='left'>jport (integer)</td><td  align='center'>jabber</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>K</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>keepalive_extra_headers (string)</td><td  align='center'>nat_traversal</td></tr>
+<tr ><td  align='left'>keepalive_from (string)</td><td  align='center'>nat_traversal</td></tr>
+<tr ><td  align='left'>keepalive_interval (integer)</td><td  align='center'>nat_traversal</td></tr>
+<tr ><td  align='left'>keepalive_method (string)</td><td  align='center'>nat_traversal</td></tr>
+<tr ><td  align='left'>keepalive_state_file (string)</td><td  align='center'>nat_traversal</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>L</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>lcr_table (string)</td><td  align='center'>lcr</td></tr>
+<tr ><td  align='left'>ldap_session (string)</td><td  align='center'>h350</td></tr>
+<tr ><td  align='left'>links (string)</td><td  align='center'>sms</td></tr>
+<tr ><td  align='left'>list_file (string)</td><td  align='center'>dispatcher</td></tr>
+<tr ><td  align='left'>load_credentials (string)</td><td  align='center'>auth_db</td></tr>
+<tr ><td  align='left'>log_dir (string)</td><td  align='center'>cpl-c</td></tr>
+<tr ><td  align='left'>log_enable (integer)</td><td  align='center'>db_berkeley</td></tr>
+<tr ><td  align='left'>log_extra (string)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>log_facility (string)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>log_file(string)</td><td  align='center'>mi_xmlrpc</td></tr>
+<tr ><td  align='left'>log_flag (integer)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>log_level (integer)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>log_missed_flag (integer)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>loglevel (int)</td><td  align='center'>benchmark</td></tr>
+<tr ><td  align='left'>lookup_append_branches (int)</td><td  align='center'>cpl-c</td></tr>
+<tr ><td  align='left'>lookup_domain (string)</td><td  align='center'>cpl-c</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>M</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>mask_col (string)</td><td  align='center'>permissions</td></tr>
+<tr ><td  align='left'>mask_column (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>match_exp_col (string)</td><td  align='center'>dialplan</td></tr>
+<tr ><td  align='left'>match_len_col (string)</td><td  align='center'>dialplan</td></tr>
+<tr ><td  align='left'>match_op_col (string)</td><td  align='center'>dialplan</td></tr>
+<tr ><td  align='left'>matching_mode (integer)</td><td  align='center'>usrloc</td></tr>
+<tr ><td  align='left'>max_contacts (integer)</td><td  align='center'>registrar</td></tr>
+<tr ><td  align='left'>max_destinations</td><td  align='center'>osp</td></tr>
+<tr ><td  align='left'>max_expires (int)</td><td  align='center'>rls</td></tr>
+<tr ><td  align='left'>max_expires (int)</td><td  align='center'>presence</td></tr>
+<tr ><td  align='left'>max_expires (integer)</td><td  align='center'>registrar</td></tr>
+<tr ><td  align='left'>max_jobs (integer)</td><td  align='center'>jabber</td></tr>
+<tr ><td  align='left'>max_limit (integer)</td><td  align='center'>maxfwd</td></tr>
+<tr ><td  align='left'>max_messages (int)</td><td  align='center'>msilo</td></tr>
+<tr ><td  align='left'>max_sms_parts (integer)</td><td  align='center'>sms</td></tr>
+<tr ><td  align='left'>media_relay_avp (string)</td><td  align='center'>mediaproxy</td></tr>
+<tr ><td  align='left'>mediaproxy_socket (string)</td><td  align='center'>mediaproxy</td></tr>
+<tr ><td  align='left'>mediaproxy_timeout (int)</td><td  align='center'>mediaproxy</td></tr>
+<tr ><td  align='left'>members_table (str)</td><td  align='center'>imc</td></tr>
+<tr ><td  align='left'>method_filtering (integer)</td><td  align='center'>registrar</td></tr>
+<tr ><td  align='left'>methods_column (string)</td><td  align='center'>usrloc</td></tr>
+<tr ><td  align='left'>min_expires (int)</td><td  align='center'>pua</td></tr>
+<tr ><td  align='left'>min_expires (integer)</td><td  align='center'>registrar</td></tr>
+<tr ><td  align='left'>min_se (integer)</td><td  align='center'>sst</td></tr>
+<tr ><td  align='left'>modems (string)</td><td  align='center'>sms</td></tr>
+<tr ><td  align='left'>modpath (string)</td><td  align='center'>perl</td></tr>
+<tr ><td  align='left'>MsgQueueMajorThreshold (Integer)</td><td  align='center'>snmpstats</td></tr>
+<tr ><td  align='left'>MsgQueueMinorThreshold (Integer)</td><td  align='center'>snmpstats</td></tr>
+<tr ><td  align='left'>multi_leg_info (string)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>multiple_gid (integer)</td><td  align='center'>group</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>N</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>nat_bflag (integer)</td><td  align='center'>usrloc</td></tr>
+<tr ><td  align='left'>natping_interval (integer)</td><td  align='center'>nathelper</td></tr>
+<tr ><td  align='left'>natping_processes (integer)</td><td  align='center'>nathelper</td></tr>
+<tr ><td  align='left'>natping_socket (string)</td><td  align='center'>nathelper</td></tr>
+<tr ><td  align='left'>networks (string)</td><td  align='center'>sms</td></tr>
+<tr ><td  align='left'>new_uri_column (string)</td><td  align='center'>speeddial</td></tr>
+<tr ><td  align='left'>nonce_expire (integer)</td><td  align='center'>auth</td></tr>
+<tr ><td  align='left'>nortpproxy_str (string)</td><td  align='center'>nathelper</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>O</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>offline_message (string)</td><td  align='center'>msilo</td></tr>
+<tr ><td  align='left'>onreply_avp_mode (integer)</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>outbound_proxy (str)</td><td  align='center'>pua</td></tr>
+<tr ><td  align='left'>outbound_proxy (str)</td><td  align='center'>imc</td></tr>
+<tr ><td  align='left'>outbound_proxy (string)</td><td  align='center'>xmpp</td></tr>
+<tr ><td  align='left'>outbound_proxy (string)</td><td  align='center'>msilo</td></tr>
+<tr ><td  align='left'>outbound_proxy(str)</td><td  align='center'>pua_bla</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>P</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>pass_provisional_replies (integer)</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>password_column (string)</td><td  align='center'>auth_db</td></tr>
+<tr ><td  align='left'>password_column_2 (string)</td><td  align='center'>auth_db</td></tr>
+<tr ><td  align='left'>password_spec (string)</td><td  align='center'>auth</td></tr>
+<tr ><td  align='left'>path_column (string)</td><td  align='center'>usrloc</td></tr>
+<tr ><td  align='left'>path_mode (integer)</td><td  align='center'>registrar</td></tr>
+<tr ><td  align='left'>path_use_received (integer)</td><td  align='center'>registrar</td></tr>
+<tr ><td  align='left'>peer_tag_avp (AVP string)</td><td  align='center'>permissions</td></tr>
+<tr ><td  align='left'>periodical_query(int)</td><td  align='center'>xcap_client</td></tr>
+<tr ><td  align='left'>persistence</td><td  align='center'>osp</td></tr>
+<tr ><td  align='left'>pidf_manipulation (int)</td><td  align='center'>presence_xml</td></tr>
+<tr ><td  align='left'>pike_log_level (integer)</td><td  align='center'>pike</td></tr>
+<tr ><td  align='left'>ping_interval (int)</td><td  align='center'>db_unixodbc</td></tr>
+<tr ><td  align='left'>ping_interval (integer)</td><td  align='center'>db_mysql</td></tr>
+<tr ><td  align='left'>ping_nated_only (integer)</td><td  align='center'>nathelper</td></tr>
+<tr ><td  align='left'>pipe (integer:string:integer)</td><td  align='center'>ratelimit</td></tr>
+<tr ><td  align='left'>port_col (string)</td><td  align='center'>permissions</td></tr>
+<tr ><td  align='left'>port_column (string)</td><td  align='center'>lcr</td></tr>
+<tr ><td  align='left'>port_override_avp (string)</td><td  align='center'>domainpolicy</td></tr>
+<tr ><td  align='left'>port(integer)</td><td  align='center'>mi_xmlrpc</td></tr>
+<tr ><td  align='left'>pr_col (string)</td><td  align='center'>dialplan</td></tr>
+<tr ><td  align='left'>prefix (string)</td><td  align='center'>pdt</td></tr>
+<tr ><td  align='left'>prefix_column (string)</td><td  align='center'>lcr</td></tr>
+<tr ><td  align='left'>prefix_column (string)</td><td  align='center'>pdt</td></tr>
+<tr ><td  align='left'>prefix_mode (integer)</td><td  align='center'>lcr</td></tr>
+<tr ><td  align='left'>pres_htable_size (int)</td><td  align='center'>presence</td></tr>
+<tr ><td  align='left'>presentity_table(str)</td><td  align='center'>presence</td></tr>
+<tr ><td  align='left'>priority (str)</td><td  align='center'>jabber</td></tr>
+<tr ><td  align='left'>priority_column (string)</td><td  align='center'>lcr</td></tr>
+<tr ><td  align='left'>private_key, local_certificate, ca_certificates</td><td  align='center'>osp</td></tr>
+<tr ><td  align='left'>prob_column (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>profiles_no_value (string)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>profiles_with_value (string)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>proto_col (string)</td><td  align='center'>permissions</td></tr>
+<tr ><td  align='left'>proxy (string)</td><td  align='center'>jabber</td></tr>
+<tr ><td  align='left'>proxy_recurse (int)</td><td  align='center'>cpl-c</td></tr>
+<tr ><td  align='left'>proxy_route (int)</td><td  align='center'>cpl-c</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>Q</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>q_column (string)</td><td  align='center'>usrloc</td></tr>
+<tr ><td  align='left'>query_period(int)</td><td  align='center'>xcap_client</td></tr>
+<tr ><td  align='left'>queue (integer:string)</td><td  align='center'>ratelimit</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>R</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>radius_config (string)</td><td  align='center'>uri_radius</td></tr>
+<tr ><td  align='left'>radius_config (string)</td><td  align='center'>avp_radius</td></tr>
+<tr ><td  align='left'>radius_config (string)</td><td  align='center'>group_radius</td></tr>
+<tr ><td  align='left'>radius_config (string)</td><td  align='center'>peering</td></tr>
+<tr ><td  align='left'>radius_config (string)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>radius_config (string)</td><td  align='center'>auth_radius</td></tr>
+<tr ><td  align='left'>radius_extra (string)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>radius_flag (integer)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>radius_missed_flag (integer)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>re_exp_column (string)</td><td  align='center'>group</td></tr>
+<tr ><td  align='left'>re_gid_column (string)</td><td  align='center'>group</td></tr>
+<tr ><td  align='left'>re_table (string)</td><td  align='center'>group</td></tr>
+<tr ><td  align='left'>realm_prefix (string)</td><td  align='center'>registrar</td></tr>
+<tr ><td  align='left'>realm_prefix (string)</td><td  align='center'>auth</td></tr>
+<tr ><td  align='left'>realm_prefix (string)</td><td  align='center'>cpl-c</td></tr>
+<tr ><td  align='left'>received_avp (str)</td><td  align='center'>nathelper</td></tr>
+<tr ><td  align='left'>received_avp (str)</td><td  align='center'>registrar</td></tr>
+<tr ><td  align='left'>received_column (string)</td><td  align='center'>usrloc</td></tr>
+<tr ><td  align='left'>received_param (string)</td><td  align='center'>registrar</td></tr>
+<tr ><td  align='left'>reconnect (fixedpoint)</td><td  align='center'>db_oracle</td></tr>
+<tr ><td  align='left'>registrar (string)</td><td  align='center'>jabber</td></tr>
+<tr ><td  align='left'>reject_to_small (integer)</td><td  align='center'>sst</td></tr>
+<tr ><td  align='left'>reminder (string)</td><td  align='center'>msilo</td></tr>
+<tr ><td  align='left'>remove_hf(hname)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>remove_latency (integer)</td><td  align='center'>pike</td></tr>
+<tr ><td  align='left'>repl_exp_col (string)</td><td  align='center'>dialplan</td></tr>
+<tr ><td  align='left'>replace_all(re, txt)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>replace_body_all(re, txt)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>replace_body_atonce(re, txt)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>replace_body(re, txt)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>replace(re, txt)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>reply_code (integer)</td><td  align='center'>ratelimit</td></tr>
+<tr ><td  align='left'>reply_dir (string)</td><td  align='center'>mi_fifo</td></tr>
+<tr ><td  align='left'>reply_indent (string)</td><td  align='center'>mi_datagram</td></tr>
+<tr ><td  align='left'>reply_indent (string)</td><td  align='center'>mi_fifo</td></tr>
+<tr ><td  align='left'>reply_option (integer)</td><td  align='center'>mi_xmlrpc</td></tr>
+<tr ><td  align='left'>reply_reason (string)</td><td  align='center'>ratelimit</td></tr>
+<tr ><td  align='left'>report_ack (integer)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>report_cancels (integer)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>reqs_density_per_unit (integer)</td><td  align='center'>pike</td></tr>
+<tr ><td  align='left'>restart_fr_on_each_reply (integer)</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>retry_after (integer)</td><td  align='center'>registrar</td></tr>
+<tr ><td  align='left'>retry_delay</td><td  align='center'>osp</td></tr>
+<tr ><td  align='left'>retry_limit</td><td  align='center'>osp</td></tr>
+<tr ><td  align='left'>rewrite_host_column (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>rewrite_prefix_column (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>rewrite_suffix_column (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>rlpres_table(str)</td><td  align='center'>rls</td></tr>
+<tr ><td  align='left'>rls_event (str)</td><td  align='center'>rls</td></tr>
+<tr ><td  align='left'>rlsubs_table(str)</td><td  align='center'>rls</td></tr>
+<tr ><td  align='left'>rooms_table (str)</td><td  align='center'>imc</td></tr>
+<tr ><td  align='left'>rpid_avp (AVP string)</td><td  align='center'>lcr</td></tr>
+<tr ><td  align='left'>rpid_avp (string)</td><td  align='center'>auth</td></tr>
+<tr ><td  align='left'>rpid_prefix (string)</td><td  align='center'>auth</td></tr>
+<tr ><td  align='left'>rpid_suffix (string)</td><td  align='center'>auth</td></tr>
+<tr ><td  align='left'>rr_param (string)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>rr_store_param (string)</td><td  align='center'>uac</td></tr>
+<tr ><td  align='left'>rtpproxy_disable_tout (integer)</td><td  align='center'>nathelper</td></tr>
+<tr ><td  align='left'>rtpproxy_retr (integer)</td><td  align='center'>nathelper</td></tr>
+<tr ><td  align='left'>rtpproxy_sock (string)</td><td  align='center'>nathelper</td></tr>
+<tr ><td  align='left'>rtpproxy_tout (integer)</td><td  align='center'>nathelper</td></tr>
+<tr ><td  align='left'>ruri_matching (integer)</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>ruri_user_avp (AVP string)</td><td  align='center'>lcr</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>S</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>sampling_time_unit (integer)</td><td  align='center'>pike</td></tr>
+<tr ><td  align='left'>sc_body (string)</td><td  align='center'>msilo</td></tr>
+<tr ><td  align='left'>sc_ctype (string)</td><td  align='center'>msilo</td></tr>
+<tr ><td  align='left'>sc_exp_time (string)</td><td  align='center'>msilo</td></tr>
+<tr ><td  align='left'>sc_from (string)</td><td  align='center'>msilo</td></tr>
+<tr ><td  align='left'>sc_inc_time (string)</td><td  align='center'>msilo</td></tr>
+<tr ><td  align='left'>sc_mid (string)</td><td  align='center'>msilo</td></tr>
+<tr ><td  align='left'>sc_snd_time (string)</td><td  align='center'>msilo</td></tr>
+<tr ><td  align='left'>sc_to (string)</td><td  align='center'>msilo</td></tr>
+<tr ><td  align='left'>sc_uri_host (string)</td><td  align='center'>msilo</td></tr>
+<tr ><td  align='left'>sc_uri_user (string)</td><td  align='center'>msilo</td></tr>
+<tr ><td  align='left'>scan_prefix_column (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>sd_domain_column (string)</td><td  align='center'>speeddial</td></tr>
+<tr ><td  align='left'>sd_user_column (string)</td><td  align='center'>speeddial</td></tr>
+<tr ><td  align='left'>sdomain_column (string)</td><td  align='center'>pdt</td></tr>
+<tr ><td  align='left'>search_append_body(re, txt)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>search_append(re, txt)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>search_body(re)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>search_scope (string)</td><td  align='center'>h350</td></tr>
+<tr ><td  align='left'>search(re)</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>secret (string)</td><td  align='center'>auth</td></tr>
+<tr ><td  align='left'>send_socket_avp (string)</td><td  align='center'>domainpolicy</td></tr>
+<tr ><td  align='left'>send_time (int)</td><td  align='center'>msilo</td></tr>
+<tr ><td  align='left'>server_address (str)</td><td  align='center'>presence</td></tr>
+<tr ><td  align='left'>server_address(str)</td><td  align='center'>pua_bla</td></tr>
+<tr ><td  align='left'>server_address(str)</td><td  align='center'>pua_xmpp</td></tr>
+<tr ><td  align='left'>service_type (integer)</td><td  align='center'>acc</td></tr>
+<tr ><td  align='left'>service_type (integer)</td><td  align='center'>auth_radius</td></tr>
+<tr ><td  align='left'>service_type (integer)</td><td  align='center'>uri_radius</td></tr>
+<tr ><td  align='left'>setid_col (string)</td><td  align='center'>dispatcher</td></tr>
+<tr ><td  align='left'>setid_pvar (str)</td><td  align='center'>dispatcher</td></tr>
+<tr ><td  align='left'>setvars (integer)</td><td  align='center'>exec</td></tr>
+<tr ><td  align='left'>shvset (string)</td><td  align='center'>cfgutils</td></tr>
+<tr ><td  align='left'>signaling_ip_avp (string)</td><td  align='center'>mediaproxy</td></tr>
+<tr ><td  align='left'>sipEntityType (String)</td><td  align='center'>snmpstats</td></tr>
+<tr ><td  align='left'>sipping_bflag (integer)</td><td  align='center'>nathelper</td></tr>
+<tr ><td  align='left'>sipping_from (string)</td><td  align='center'>nathelper</td></tr>
+<tr ><td  align='left'>sipping_method (string)</td><td  align='center'>nathelper</td></tr>
+<tr ><td  align='left'>sleep_time (integer)</td><td  align='center'>jabber</td></tr>
+<tr ><td  align='left'>sms_report_type (integer)</td><td  align='center'>sms</td></tr>
+<tr ><td  align='left'>snd_time_avp (str)</td><td  align='center'>msilo</td></tr>
+<tr ><td  align='left'>snmpCommunity (String)</td><td  align='center'>snmpstats</td></tr>
+<tr ><td  align='left'>snmpgetPath (String)</td><td  align='center'>snmpstats</td></tr>
+<tr ><td  align='left'>sock_flag (integer)</td><td  align='center'>registrar</td></tr>
+<tr ><td  align='left'>sock_hdr_name (string)</td><td  align='center'>registrar</td></tr>
+<tr ><td  align='left'>socket_column (string)</td><td  align='center'>usrloc</td></tr>
+<tr ><td  align='left'>socket_name (string)</td><td  align='center'>mi_datagram</td></tr>
+<tr ><td  align='left'>socket_timeout (integer)</td><td  align='center'>mi_datagram</td></tr>
+<tr ><td  align='left'>source_col (string)</td><td  align='center'>permissions</td></tr>
+<tr ><td  align='left'>sp1_uri, sp2_uri, ..., sp16_uri</td><td  align='center'>osp</td></tr>
+<tr ><td  align='left'>sp1_weight, sp2_weight, ..., sp16_weight</td><td  align='center'>osp</td></tr>
+<tr ><td  align='left'>ssl_lifetime</td><td  align='center'>osp</td></tr>
+<tr ><td  align='left'>sst_flag (integer)</td><td  align='center'>sst</td></tr>
+<tr ><td  align='left'>start_time_column (string)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>state_column (string)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>strip_column (string)</td><td  align='center'>lcr</td></tr>
+<tr ><td  align='left'>strip_column (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>subs_htable_size (int)</td><td  align='center'>presence</td></tr>
+<tr ><td  align='left'>subscriber_carrier_col (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>subscriber_domain_col (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>subscriber_table (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>subscriber_user_col (string)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>subst_body('/re/repl/flags')</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>subst_exp_col (string)</td><td  align='center'>dialplan</td></tr>
+<tr ><td  align='left'>subst_uri('/re/repl/flags')</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>subst_user('/re/repl/flags')</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>subst('/re/repl/flags')</td><td  align='center'>textops</td></tr>
+<tr ><td  align='left'>suffix (string)</td><td  align='center'>diversion</td></tr>
+<tr ><td  align='left'>support (string)</td><td  align='center'>options</td></tr>
+<tr ><td  align='left'>syn_branch (integer)</td><td  align='center'>tm</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>T</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>T1_timer (integer)</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>T2_timer (integer)</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>table (str)</td><td  align='center'>siptrace</td></tr>
+<tr ><td  align='left'>table (string)</td><td  align='center'>group</td></tr>
+<tr ><td  align='left'>table_name (string)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>table_name (string)</td><td  align='center'>dialplan</td></tr>
+<tr ><td  align='left'>table_name (string)</td><td  align='center'>dispatcher</td></tr>
+<tr ><td  align='left'>tag_col (string)</td><td  align='center'>permissions</td></tr>
+<tr ><td  align='left'>tag_column (string)</td><td  align='center'>lcr</td></tr>
+<tr ><td  align='left'>tcp_persistent_flag (integer)</td><td  align='center'>registrar</td></tr>
+<tr ><td  align='left'>tel_uri_params (string)</td><td  align='center'>enum</td></tr>
+<tr ><td  align='left'>time_to_kill (integer)</td><td  align='center'>exec</td></tr>
+<tr ><td  align='left'>timeout</td><td  align='center'>osp</td></tr>
+<tr ><td  align='left'>timeout (fixedpoint)</td><td  align='center'>db_oracle</td></tr>
+<tr ><td  align='left'>timeout_avp (string)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>timeout_avp (string)</td><td  align='center'>sst</td></tr>
+<tr ><td  align='left'>timeout_column (string)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>timeout_interval (integer)</td><td  align='center'>db_mysql</td></tr>
+<tr ><td  align='left'>timer_avp (string)</td><td  align='center'>cpl-c</td></tr>
+<tr ><td  align='left'>timer_interval (integer)</td><td  align='center'>ratelimit</td></tr>
+<tr ><td  align='left'>timer_interval (integer)</td><td  align='center'>usrloc</td></tr>
+<tr ><td  align='left'>to_presence_code (int)</td><td  align='center'>rls</td></tr>
+<tr ><td  align='left'>to_tag_column (string)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>to_tag_pref (str)</td><td  align='center'>presence</td></tr>
+<tr ><td  align='left'>to_uri_column (string)</td><td  align='center'>dialog</td></tr>
+<tr ><td  align='left'>token_format</td><td  align='center'>osp</td></tr>
+<tr ><td  align='left'>trace_flag (integer)</td><td  align='center'>siptrace</td></tr>
+<tr ><td  align='left'>trace_local_ip (str)</td><td  align='center'>siptrace</td></tr>
+<tr ><td  align='left'>trace_on (integer)</td><td  align='center'>siptrace</td></tr>
+<tr ><td  align='left'>trace_table_avp (str)</td><td  align='center'>siptrace</td></tr>
+<tr ><td  align='left'>traced_user_avp (str)</td><td  align='center'>siptrace</td></tr>
+<tr ><td  align='left'>transport_column (string)</td><td  align='center'>lcr</td></tr>
+<tr ><td  align='left'>transport_override_avp (string)</td><td  align='center'>domainpolicy</td></tr>
+<tr ><td  align='left'>trusted_table (string)</td><td  align='center'>permissions</td></tr>
+<tr ><td  align='left'>tw_append (string)</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>type_column (string)</td><td  align='center'>avpops</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>U</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>unix_socket_group (integer) unix_socket_group (string)</td><td  align='center'>mi_datagram</td></tr>
+<tr ><td  align='left'>unix_socket_mode (integer)</td><td  align='center'>mi_datagram</td></tr>
+<tr ><td  align='left'>unix_socket_user (integer) unix_socket_group (string)</td><td  align='center'>mi_datagram</td></tr>
+<tr ><td  align='left'>unix_tx_timeout (integer)</td><td  align='center'>tm</td></tr>
+<tr ><td  align='left'>update_period (int)</td><td  align='center'>pua</td></tr>
+<tr ><td  align='left'>uri_scheme_column (string)</td><td  align='center'>lcr</td></tr>
+<tr ><td  align='left'>uriuser_column (string)</td><td  align='center'>uri_db</td></tr>
+<tr ><td  align='left'>use_contact (int)</td><td  align='center'>msilo</td></tr>
+<tr ><td  align='left'>use_contact (integer)</td><td  align='center'>sms</td></tr>
+<tr ><td  align='left'>use_default (int)</td><td  align='center'>dispatcher</td></tr>
+<tr ><td  align='left'>use_domain (int)</td><td  align='center'>alias_db</td></tr>
+<tr ><td  align='left'>use_domain (int)</td><td  align='center'>auth_diameter</td></tr>
+<tr ><td  align='left'>use_domain (int)</td><td  align='center'>speeddial</td></tr>
+<tr ><td  align='left'>use_domain (int)</td><td  align='center'>carrierroute</td></tr>
+<tr ><td  align='left'>use_domain (integer)</td><td  align='center'>group_radius</td></tr>
+<tr ><td  align='left'>use_domain (integer)</td><td  align='center'>group</td></tr>
+<tr ><td  align='left'>use_domain (integer)</td><td  align='center'>avpops</td></tr>
+<tr ><td  align='left'>use_domain (integer)</td><td  align='center'>auth_db</td></tr>
+<tr ><td  align='left'>use_domain (integer)</td><td  align='center'>cpl-c</td></tr>
+<tr ><td  align='left'>use_domain (integer)</td><td  align='center'>uri_db</td></tr>
+<tr ><td  align='left'>use_domain (integer)</td><td  align='center'>userblacklist</td></tr>
+<tr ><td  align='left'>use_domain (integer)</td><td  align='center'>usrloc</td></tr>
+<tr ><td  align='left'>use_escape_common (int)</td><td  align='center'>db_unixodbc</td></tr>
+<tr ><td  align='left'>use_path (integer)</td><td  align='center'>registrar</td></tr>
+<tr ><td  align='left'>use_received (int)</td><td  align='center'>path</td></tr>
+<tr ><td  align='left'>use_rpid_for_calling_number</td><td  align='center'>osp</td></tr>
+<tr ><td  align='left'>use_ruri_flag (integer)</td><td  align='center'>auth_radius</td></tr>
+<tr ><td  align='left'>use_sip_uri_host (integer)</td><td  align='center'>uri_radius</td></tr>
+<tr ><td  align='left'>use_uri_table (integer)</td><td  align='center'>uri_db</td></tr>
+<tr ><td  align='left'>user_agent_column (string)</td><td  align='center'>usrloc</td></tr>
+<tr ><td  align='left'>user_column (str)</td><td  align='center'>alias_db</td></tr>
+<tr ><td  align='left'>user_column (string)</td><td  align='center'>usrloc</td></tr>
+<tr ><td  align='left'>user_column (string)</td><td  align='center'>auth_db</td></tr>
+<tr ><td  align='left'>user_column (string)</td><td  align='center'>speeddial</td></tr>
+<tr ><td  align='left'>user_column (string)</td><td  align='center'>group</td></tr>
+<tr ><td  align='left'>user_column (string)</td><td  align='center'>uri_db</td></tr>
+<tr ><td  align='left'>username_column (string)</td><td  align='center'>avpops</td></tr>
+<tr ><td  align='left'>username_column (string)</td><td  align='center'>cpl-c</td></tr>
+<tr ><td  align='left'>username_spec (string)</td><td  align='center'>auth</td></tr>
+<tr ><td  align='left'>uuid_column (string)</td><td  align='center'>avpops</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>V</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>validate_call_id</td><td  align='center'>osp</td></tr>
+<tr ><td  align='left'>value_column (string)</td><td  align='center'>avpops</td></tr>
+<tr ><td  align='left'>variable (string)</td><td  align='center'>statistics</td></tr>
+<tr ><td  align='left'>varset (string)</td><td  align='center'>cfgutils</td></tr>
+<tr ><td  align='left'>verify_destination_service_type (integer)</td><td  align='center'>peering</td></tr>
+<tr ><td  align='left'>verify_source_service_type (integer)</td><td  align='center'>peering</td></tr>
+<tr ><td  align='left'>via1_matching (integer)</td><td  align='center'>tm</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>W</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>waitn_time (int)</td><td  align='center'>rls</td></tr>
+<tr ><td  align='left'>watchers_table(str)</td><td  align='center'>presence</td></tr>
+<tr ><td  align='left'>workers (integer)</td><td  align='center'>jabber</td></tr>
+<tr ><td  align='left'>wt_timer (integer)</td><td  align='center'>tm</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>X</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>xcap_root (str)</td><td  align='center'>rls</td></tr>
+<tr ><td  align='left'>xcap_server (str)</td><td  align='center'>presence_xml</td></tr>
+<tr ><td  align='left'>xcap_table(str)</td><td  align='center'>rls</td></tr>
+<tr ><td  align='left'>xcap_table(str)</td><td  align='center'>presence_xml</td></tr>
+<tr ><td  align='left'>xcap_table(str)</td><td  align='center'>xcap_client</td></tr>
+<tr ><td  align='left'>xmpp_domain (string)</td><td  align='center'>xmpp</td></tr>
+<tr ><td  align='left'>xmpp_host (string)</td><td  align='center'>xmpp</td></tr>
+<tr ><td  align='left'>xmpp_password (string)</td><td  align='center'>xmpp</td></tr>
+<tr ><td  align='left'>xmpp_port (integer)</td><td  align='center'>xmpp</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>Y</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+</table>
+<div class='vspace'></div><hr />
+<h4>Z</h4>
+<table border='0' ><tr ><td  align='center'><strong><span style='font-size:144%'>Function</span></strong></td><td  align='center'><strong><span style='font-size:144%'>Module</span></strong></td></tr>
+<tr ><td >&nbsp;</td><td >&nbsp;</td><td >&nbsp;</td></tr>
+</table>
+</div></div>
+      <div class='diffrestore'><a href="Modules-ParametersIdx-1-4-action=edit&restore=diff-1366803810-1366803810-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Modules-ParametersIdx-1-4?action=edit&restore=diff:1366803810:1366803810:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Modules-ParametersIdx-1-4-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Modules-ParametersIdx-1-4?action=edit">Edit</a> |
+      <a rel="nofollow" href="Modules-ParametersIdx-1-4-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Modules-ParametersIdx-1-4?action=diff">History</a> |
+      <a rel="nofollow" href="Modules-ParametersIdx-1-4-action=print.htm" tppabs="http://www.opensips.org/Documentation/Modules-ParametersIdx-1-4?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on April 24, 2013, at 01:43 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

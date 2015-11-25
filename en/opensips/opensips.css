@@ -1,0 +1,334 @@
+/***********************************************************************
+** pmwiki.css
+**  Copyright 2004-2006 Patrick R. Michaud (pmichaud@pobox.com)
+**  Copyright 2006 Hagan Fox
+**  This file is part of PmWiki; you can redistribute it and/or modify
+**  it under the terms of the GNU General Public License as published
+**  by the Free Software Foundation; either version 2 of the License, or
+**  (at your option) any later version.  See pmwiki.php for full details.
+***********************************************************************/
+
+/* This sets the overall frame for the site */
+body {
+	font-family:Arial,Helvetica,sans-serif; font-size:11pt;
+	font-size:16px;
+}
+
+/* These control the fixed-width text elements of the page */
+textarea, pre, code { font-size:0.9em; }
+pre, code { 
+	font-family:'Lucida Console','Andale Mono','Courier New','Courier'; 
+#	width: 1000px;
+}
+/*pre { line-height:1.2em; }*/
+/*pre { line-height:2.66em; }*/
+pre code, code code, pre pre { font-size:100%; }
+
+/* These primarily adjust the size and spacing of heading elements,
+** most browsers have atrocious defaults for these. */
+h1, h2, h3, h4, h5, h6 { margin-top:1.0em; margin-bottom:0.6em; color:#185662; font-family:"Trebuchet MS", sans-serif, Verdana, Arial; }
+h1, h2, h3, h6 { font-weight:normal; }
+h4, h5 { font-weight:bold; }
+h1 code, h2 code, h3 code, h4 code { font-size:1em; }
+h1 { font-size:1.8em; }
+h2 { font-size:1.44em; }
+h3 { font-size:1.22em; }
+h4 { font-size:1.07em; }
+h5 { font-size:1.0em; }
+h6 { font-size:1.0em; }
+
+/* the main div containing everything */
+#main {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+/* The #wikilogo element is the logo from $PageLogoFmt */
+#wikilogo {
+	background-image:url(header_bkg.jpg)/*tpa=http://www.opensips.org/pub/skins/opensips/images/header_bkg.jpg*/;
+	background-repeat:repeat-x;
+     /* Safari 4-5, Chrome 1-9 */ 
+     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#669B68), to(#C4D4BC)); 
+     /* Safari 5.1, Chrome 10+ */ 
+     background: -webkit-linear-gradient(top, #669B68, #C4D4BC); 
+     /* Firefox 3.6+ */ 
+     background: -moz-linear-gradient(top, #669B68, #C4D4BC);
+     /* IE 10 */
+     background: -ms-linear-gradient(top, #669B68, #C4D4BC);
+     /* Opera 11.10+ */ background: -o-linear-gradient(top, #669B68, #C4D4BC);	
+	text-align:left;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.motto {
+	position:absolute;
+	margin-left:280px;
+	margin-top:41px;
+}
+
+.logo {
+	 -moz-border-radius: 10px;
+        border-radius: 10px;
+}
+
+/* This controls the rest of the heading (primarily the search box) */
+#wikihead { 
+  float:right; 
+  font-family:Verdana,sans-serif; font-size:85%;
+  margin-top:-60px;
+  margin-right:-40px;
+  color:#FFFFE6;
+  
+}
+#wikihead input { font-size:85%; } 
+
+#wikihead a {
+	font-family:"Trebuchet MS", sans-serif, Verdana, Arial;
+	font-weight:bold;
+	color:#FFFFE6;
+	text-decoration:none;
+}
+
+#wikihead a:hover {
+	text-decoration:underline;
+}
+
+/* These are for the left-sidebar. */
+#wikileft { 
+  width:155px; 
+  padding:6px; 
+  line-height:1.66em;
+  font-size:9.4pt; font-family:"Trebuchet MS", sans-serif, Verdana, Arial;
+  color:#666666;
+ -moz-border-radius: 7px;
+  border-radius: 7px;
+}
+
+#wikileft .vspace { border-radius: 7px; }
+#wikileft a { text-decoration:none; color:#666666; font-family:"Trebuchet MS", sans-serif, Verdana, Arial; }
+#wikileft a:hover { text-decoration:underline;}
+#wikileft ul { list-style:none; padding:0px; margin-bottom:1.25em; }
+#wikileft li { margin:0px; padding-left: 6px; }
+
+#osTopNav {
+  #  background-image:url(menu_bkg.jpg)/*tpa=http://www.opensips.org/pub/skins/opensips/images/menu_bkg.jpg*/;
+  #  background-repeat:repeat-x;
+     /* Safari 4-5, Chrome 1-9 */ 
+     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#528c5a), to(#c3d7bc)); 
+     /* Safari 5.1, Chrome 10+ */ 
+     background: -webkit-linear-gradient(top, #528c5a, #c3d7bc); 
+     /* Firefox 3.6+ */ 
+     background: -moz-linear-gradient(top, #528c5a, #c3d7bc);
+     /* IE 10 */
+     background: -ms-linear-gradient(top, #528c5a, #c3d7bc);
+     /* Opera 11.10+ */ background: -o-linear-gradient(top, #528c5a, #c3d7bc);	
+
+     color: #666666;
+     font-size: 0.9em;
+     text-shadow: black 0.1em 0.1em 0.2em;
+     margin: 2px 0 0;
+#     overflow: visible;
+     padding: 0;
+     margin-top: 5px;
+     text-align: left;
+     -moz-border-radius: 7px;
+     border-radius: 7px;
+     overflow: auto;
+     overflow-y:visible;
+}
+
+#osTopNavLeft {
+    border: 0 none;
+    float: left;
+    height: 23px;
+    margin: 0;
+    padding-right: 10px;
+    width: 10px;
+}
+
+#osTopNavRight {
+    border: 0 none;
+    float: right;
+    height: 23px;
+    margin: 0;
+    padding: 0;
+    width: 10px;
+}
+
+#osTopNavList {
+    height: 23px;
+    list-style: none outside none;
+    margin: 0;
+    padding: 5px 0 0;
+    text-align: center;
+}
+
+#osTopNavList li {
+    border-left: 1px solid #C8C8C8;
+    display: inline;
+    padding: 0 1em 0 1.2em;
+}
+#osTopNavList li a {
+    color: #FFFFFF;
+    font-weight: bold;
+    text-decoration: none;
+}
+#osTopNavList li:first-child {
+    border-left: 0 none;
+    padding-left: 0;
+}
+
+.sidehead {
+  margin:-6px; padding:6px 6px 12px 12px;
+  font-size:11pt; font-weight:bold; font-style:normal; 
+  background-image:url(sidehead.jpg)/*tpa=http://www.opensips.org/pub/skins/opensips/images/sidehead.jpg*/;
+  background-repeat:repeat-x;
+  color:#185662;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+
+}
+.sidehead a 
+  { color:#505050; font-weight:bold; font-style:normal; }
+  
+
+  
+/* These are for the right-sidebar. */
+
+#wikiright { 
+  width:230px; 
+  padding:6px 6px 12px 12px; 
+  line-height:1.66em;
+  font-size:9.4pt; font-family:"Trebuchet MS", sans-serif, Verdana, Arial;
+  color:#666666;
+  background-image:url(sidehead.jpg)/*tpa=http://www.opensips.org/pub/skins/opensips/images/sidehead.jpg*/;
+  background-repeat:repeat-x;
+ -moz-border-radius: 7px;
+  border-radius: 7px;
+}
+#wikiright .vspace { margin-top:1.125em; }
+#wikiright a { text-decoration:none; color:#666666; font-family:"Trebuchet MS", sans-serif, Verdana, Arial; }
+#wikiright a:hover { text-decoration:underline; }
+#wikiright ul { list-style:none; padding:6px; margin:0px; }
+#wikiright li { margin:0px; padding-left: 6px; }
+
+
+/* These affect the main content area. */
+
+#wikibody { 
+  padding:0px 10px 10px 10px; background-color:white; 
+
+  	font-family:"Trebuchet MS", sans-serif, Verdana, Arial;
+	color:#666666;
+	font-size:81.3%;
+	padding-left:19px;
+	padding-right:19px;
+}
+
+#wikimid {
+	border-top:10px solid #FFFFFF;
+}
+
+#wikicmds { 
+  float:right; white-space:nowrap; 
+  font-family:Verdana,sans-serif; font-size:80%; 
+
+}
+#wikicmds ul { list-style:none; margin:0px; padding:0px; }
+#wikicmds li { display:inline; margin:0px 5px; }
+#wikicmds li a { text-decoration:none; color:#185662; border:none; font-size:118%; font-family:Verdana, Arial, Helvetica, sans-serif; }
+#wikicmds li a.createlink { display:none; }
+#wikicmds li a:hover { text-decoration:underline; color:#185662; }
+.pagegroup {  margin-bottom:2px; color:#185662; }
+.pagegroup a {text-decoration:none; color:#185662; font-family:"Trebuchet MS", sans-serif, Verdana, Arial;}
+.pagegroup a:hover {text-decoration:underline;}
+.pagetitle { line-height:1em; margin:0px; font-size:1.6em; font-weight:normal; }
+.wikiaction { margin-top:4px; margin-bottom:4px; }
+#wikitext { margin-top:12px; line-height:1.66em; }
+#wikitext table { font-size:100%; line-height:1.66em; } /* For MSIE 5.5 */
+
+/* These are for the edit form. */
+#wikiedit form { margin:0px; width:100%; }
+#wikiedit textarea { width:100%; }
+.wikimessage { margin-top:4px; margin-bottom:4px; font-style:italic; }
+
+/* These affect the lines at the very bottom. */
+#wikifoot { 
+  padding-left:206px; padding-bottom:4px;
+  font-family:Verdana,sans-serif; font-size:80%; 
+  color:#A8A8A8;
+  padding-right:206px;
+}
+
+#wikifoot a {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#185662;
+	text-decoration:none;
+}
+
+#wikifoot a:hover {
+	text-decoration:underline;
+}
+
+.bottomline {
+	color:#D3F3C7;
+	background-color:#D3F3C7;
+	height:1px;
+	margin-bottom:8px;
+	border:0px;
+}
+
+/* These affect the printed appearance of the web view (not the separate
+** print view) of pages.  The sidebar and action links aren't printed. */
+@media print {
+  body { width:auto; margin:0px; padding:0.5em; }
+  #wikihead, #wikileft, #wikicmds, .footnav { display:none; }
+  #wikifoot { padding:2px; }
+}
+
+.urllink {
+	font-family:"Trebuchet MS", sans-serif, Verdana, Arial;
+	color:#185662;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+.urllink:hover {
+	text-decoration:underline;
+}
+
+#wikibody a {
+	font-family:"Trebuchet MS", sans-serif, Verdana, Arial;
+	color:#185662;
+	font-weight:bold;
+	text-decoration:none;
+	width: 100px;
+}
+
+#wikibody a:hover {
+	text-decoration:underline;
+}
+
+#formbutton {
+cursor:pointer;
+border:0px;
+margin:0px;
+background:#999;
+color:#666;
+background:url(go.jpg)/*tpa=http://www.opensips.org/pub/skins/opensips/images/go.jpg*/ no-repeat left bottom;
+width:29px;
+height:23px;
+}
+
+.escaped {
+	padding:6px;
+	border:1px solid #EBEBEB;
+	background-color:#FBFEFA;
+}
+
+object { overflow:hidden; }
+iframe { overflow:hidden; }
+
+/* #vspace { line-height: 2.66em; }
+.vspace { line-height: 2.66em; } */

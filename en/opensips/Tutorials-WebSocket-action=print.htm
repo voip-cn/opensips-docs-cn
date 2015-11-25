@@ -1,0 +1,151 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+  <title>openSIPS | Documentation / Tutorials-WebSocket</title>
+  <link rel='stylesheet' href="print.css" tppabs="http://www.opensips.org/pub/skins/print/print.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+</head>
+<body>
+  <div id='printhead'>
+    <h3>From openSIPS</h3>
+    <h1 class='pagename'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation%27" tppabs="http://www.opensips.org/Documentation">Documentation: Tutorials-WebSocket</a></h1>
+  </div>
+<!--PageText-->
+<div id='wikitext'>
+<h5>Documentation -&gt; <a class='wikilink' href="Tutorials-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials?action=print">Tutorials</a> -&gt; Deploying Websocket support with OpenSIPS and OverSIP</h5>
+<p>This page has been visited 18767 times.
+</p><div class='tocfloat'><p><a name='toc' id='toc'></a><b>Table of Content</b> (<a id="tocidtog" href="javascript:toggle('tocid');">hide</a>)</p><ol class='toc' id='tocid'><li>1.&nbsp;<a href='#toc1'>Introduction</a></li><li>2.&nbsp;<a href='#toc2'>Platform Components</a></li><li>3.&nbsp;<a href='#toc3'>OpenSIPS Configuration</a></li><li>4.&nbsp;<a href='#toc4'>OverSIP Configuration</a></li><li>5.&nbsp;<a href='#toc5'>sipML5 Configuration</a></li></ol></div>
+<hr />
+<div class='vspace'></div><h4><a name='toc1' id='toc1'></a>1.&nbsp; Introduction</h4>
+<p>The purpose of this tutorial is to show how to easily add WebRTC functionalities to any existing OpenSIPS deployment. 
+</p>
+<p class='vspace'><br />
+The solution below requires no changes at all on the OpenSIPS side ( because it relies on a WebSocket to SIP gateway ), thus it can be easily integrated with <strong>0</strong> side-effects to your existing deployment.
+Secondly, the solution uses entirely open source components ( both for the server and the client side ) - which gives you great flexibility on the server side, as well as on the client side - since you can easily integrate the client into your existing client portals.
+</p>
+<div class='vspace'></div><h4><a name='toc2' id='toc2'></a>2.&nbsp; Platform Components</h4>
+<ul><li>We will be using OpenSIPS as the core part of the platform, handling all the SIP traffic. For a basic tutorial of setting up OpenSIPS see the <a class='urllink' href="Tutorials-GettingStarted.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-GettingStarted" rel='nofollow'>getting started tutorial</a>
+</li><li><a class='urllink' href="javascript:if(confirm(%27http://oversip.net/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://oversip.net/%27" tppabs="http://oversip.net/" rel='nofollow'>OverSIP</a> will be used as a WebSocket to SIP gateway - all the websocket traffic will reach OverSIP, which will decapsulate the SIP traffic and relay it to the OpenSIPS proxy. OverSIP packages are available for Debian based systems and detailed installation instructions are available for other operating systems as well - see OverSIP deployment tutorial <a class='urllink' href="javascript:if(confirm(%27http://oversip.net/documentation/1.3.x/installation/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://oversip.net/documentation/1.3.x/installation/%27" tppabs="http://oversip.net/documentation/1.3.x/installation/" rel='nofollow'>here</a>
+<div class='vspace'></div></li><li>For the SIP client for testing purposes, we will be using <a class='urllink' href="javascript:if(confirm(%27http://sipml5.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://sipml5.org/%27" tppabs="http://sipml5.org/" rel='nofollow'>sipML5</a> . It can be downloaded from <a class='urllink' href="javascript:if(confirm(%27http://code.google.com/p/sipml5/source/checkout  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://code.google.com/p/sipml5/source/checkout%27" tppabs="http://code.google.com/p/sipml5/source/checkout" rel='nofollow'>here</a> and installation is very straight-forward : just copy the sources to your /var/www/ folder. The client's media stack relies on WebRTC and the client can be used to connect to any SIP or IMS network from your preferred browser to make and receive audio/video calls and instant messages. Furthermore, sipML5 should work on any web browser supporting WebRTC but we highly recommend using <a class='urllink' href="javascript:if(confirm(%27https://www.google.com/intl/en/chrome/browser/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://www.google.com/intl/en/chrome/browser/%27" tppabs="https://www.google.com/intl/en/chrome/browser/" rel='nofollow'>Google Chrome</a> or <a class='urllink' href="javascript:if(confirm(%27http://nightly.mozilla.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://nightly.mozilla.org/%27" tppabs="http://nightly.mozilla.org/" rel='nofollow'>Firefox Nightly</a> for testing.
+</li></ul><div class='vspace'></div><hr />
+<div class='vspace'></div><h4><a name='toc3' id='toc3'></a>3.&nbsp; OpenSIPS Configuration</h4>
+<p>OpenSIPS will have to be configured with NAT support. If you do not have NAT support in your OpenSIPS script, or if you want to generate a brand new script, you should use the menuconfig tool and generate a new Residential type script, with NAT support enabled. For more information on generating scripts see <a class='urllink' href="Generating-Configs-2-2.htm" tppabs="http://www.opensips.org/Documentation/Generating-Configs" rel='nofollow'>this manual page</a> 
+</p>
+<p class='vspace'><br />
+<a class='urllink' href="javascript:if(confirm(%27http://opensips.org/uploads/Resources/opensips_residential_nat.cfg  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://opensips.org/uploads/Resources/opensips_residential_nat.cfg%27" tppabs="http://opensips.org/uploads/Resources/opensips_residential_nat.cfg" rel='nofollow'>Here</a> you will find attached a very basic OpenSIPS Residential script with NAT support that should work very well for our scenario.
+</p>
+<div class='vspace'></div><hr />
+<div class='vspace'></div><h4><a name='toc4' id='toc4'></a>4.&nbsp; OverSIP Configuration</h4>
+<p>OverSIP has two basic configuration files that will need to changed in order to achieve our desired functionality :
+</p>
+<p class='vspace'><strong>oversip.conf</strong> ( by default located in /etc/oversip/oversip.conf ) contains the Main Configuration part of the server ( no routing logic here - just configuration parameters ). <br />
+The parameters that are of interest for our configuration would be :
+</p><ul><li>sip: section
+<ul><li>listen_ipv4 - IP address where OverSIP will listen on SIP traffic. This will be the IP with which OverSIP will communicate with OpenSIPS on UDP and/or TCP
+</li><li>listen_port - we should be editing the listen port in case the default port conflicts with other applications on the server. This will be the port on which OverSIP will communicate with OpenSIPS on UDP and/or TCP
+</li></ul></li><li>websocket: section
+<ul><li>sip_ws: yes - should be enabled
+</li><li>listen_ipv4: - IP address where OverSIP will be listening for requests for Websocket clients ( should be a public IP address here )
+</li><li>listen_port: - we should be editing the websocket listen port in case the default port conflicts with other applications on the server
+</li></ul></li></ul><p><br />
+<strong>server.rb</strong> ( by default located in /etc/oversip/server.rb ) contains the actual routing logic for the OverSIP server - written in Ruby. The default server.rb script is suitable for the purpose of WS to SIP gateway, so you shouldn't do any changes to it, with one single exception :
+</p>
+<div class='vspace'></div><ul><li>If you are using a pre 1.3.8 OverSIP version, you need to edit the file and add <strong>request.fix_nat</strong> right after the <strong>def (OverSIP::SipEvents).on_request request</strong> line - basically we're forcing OverSIP to consider all requests as NAT-ed ( since we'll be using it only for Websocket clients, and they are considered NATed by default due to browser considerations )
+</li></ul><p class='vspace'><br />
+<a class='urllink' href="javascript:if(confirm(%27http://opensips.org/uploads/Resources/oversip.conf  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://opensips.org/uploads/Resources/oversip.conf%27" tppabs="http://opensips.org/uploads/Resources/oversip.conf" rel='nofollow'>Here</a> you will find attached an oversip.conf file that works well with our scenario. The config file assumes that OverSIP will listen on 192.168.2.13
+</p>
+<div class='vspace'></div><hr />
+<div class='vspace'></div><h4><a name='toc5' id='toc5'></a>5.&nbsp; sipML5 Configuration</h4>
+<p>Deploy the sipML5 client on your web server, and access it in your browser. Go to expert mode and edit the <strong>WebSocket Server URL</strong> to match the OverSIP IP address and port that you entered in the <strong>websocket</strong> section of the oversip.conf file. Hit save and then return to the first page of the sipML5 client.
+</p>
+<p class='vspace'><br />
+Then simply insert your OpenSIPS username credentials and hit login. You should then be able to call other users registered on a webRTC capable SIP client.
+</p>
+<p class='vspace'><br />
+Assuming that we have an account on our OpenSIPS box with the opensips-domain.com domain, and that our OverSIP is listening on IP 192.168.2.13 port 10080 for WebSocket traffic, here are two screenshots that show the proper configuration of sipML5 for the <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/uploads/Resources/user_config.png  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/uploads/Resources/user_config.png%27" tppabs="http://www.opensips.org/uploads/Resources/user_config.png" rel='nofollow'>SIP user configuration</a> and for the <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/uploads/Resources/websocket_config.png  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/uploads/Resources/websocket_config.png%27" tppabs="http://www.opensips.org/uploads/Resources/websocket_config.png" rel='nofollow'>WebSocket server configuration</a> ( accessible from the expert mode options of sipML5 )
+</p>
+<p class='vspace'><br />
+Because sipML5 is fully open-source, the configuration of the WebSocket Server URL can be hard-coded into the client, and the actual SIP client can be easily embedded into an existing web interface.
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='from'>Retrieved from http://www.opensips.org/Documentation/Tutorials-WebSocket</div>
+    <div class='lastmod'>Page last modified on July 02, 2013, at 10:48 AM</div></div>
+<!--HTMLFooter-->
+</body>
+</html>

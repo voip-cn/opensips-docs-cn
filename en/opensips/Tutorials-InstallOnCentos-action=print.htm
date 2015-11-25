@@ -1,0 +1,130 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+  <title>openSIPS | Documentation / Tutorials-InstallOnCentos</title>
+  <link rel='stylesheet' href="print.css" tppabs="http://www.opensips.org/pub/skins/print/print.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+</head>
+<body>
+  <div id='printhead'>
+    <h3>From openSIPS</h3>
+    <h1 class='pagename'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation%27" tppabs="http://www.opensips.org/Documentation">Documentation: Tutorials-InstallOnCentos</a></h1>
+  </div>
+<!--PageText-->
+<div id='wikitext'>
+<h5>Documentation -&gt; <a class='wikilink' href="Tutorials-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials?action=print">Tutorials</a> -&gt; Installing OpenSIPS 1.6.3 on CentOS 5.5 with mi-xmlrpc</h5>
+<hr />
+<p class='vspace'>Recently, I heard from some people that is difficult to install OpenSIPS on CentOS, mainly the mi_xmlrpc module. Some servers do not support Debian or Ubuntu, where the compilation process is quite simple,  but in most cases they support RedHat and CentOS. The instructions below are valid for both. Using the preinstalled operating system is sometimes valuable because of the tech support and improved drivers. The objective of this tutorial is to show you how to compile successfully OpenSIPS on CentOS. This configuration was tested with CentOS 5.5.
+</p>
+<p class='vspace'>The installation process is described step by step below:
+</p>
+<p class='vspace'><em>Step 1</em>: install the dependencies.
+</p>
+<div class='vspace'></div><pre> yum install gcc gcc-c++ bison flex zlib-devel openssl-devel mysql-devel subversion pcre-devel
+</pre><p class='vspace'><em>Step 2</em>: Download the OpenSIPS source from the svn repository.
+</p>
+<div class='vspace'></div><pre> cd /usr/src
+ svn co <a class='urllink' href="javascript:if(confirm(%27https://opensips.svn.sourceforge.net/svnroot/opensips/branches/1.6  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://opensips.svn.sourceforge.net/svnroot/opensips/branches/1.6%27" tppabs="https://opensips.svn.sourceforge.net/svnroot/opensips/branches/1.6" rel='nofollow'>https://opensips.svn.sourceforge.net/svnroot/opensips/branches/1.6</a> opensips_1_6
+</pre><p class='vspace'><em>Step 3</em>: Compile the library xmlrpc-c. If you forget to use --disable-abyss-threads, the system will eventually dump the core because OpenSIPS is multiprocess but not multithreaded.  The newest versions of xmlrpc compile by default with threads enabled. This problem do not occur with Debian or Ubuntu because they use an old version of xml-rpc (0.9.1) that does not support threads. 
+</p>
+<div class='vspace'></div><pre> wget <a class='urllink' href="javascript:if(confirm(%27http://sourceforge.net/projects/xmlrpc-c/files/Xmlrpc-c%20Super%20Stable/1.06.41/xmlrpc-c-1.06.41.tgz  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://sourceforge.net/projects/xmlrpc-c/files/Xmlrpc-c%20Super%20Stable/1.06.41/xmlrpc-c-1.06.41.tgz%27" tppabs="http://sourceforge.net/projects/xmlrpc-c/files/Xmlrpc-c%20Super%20Stable/1.06.41/xmlrpc-c-1.06.41.tgz" rel='nofollow'>http://sourceforge.net/projects/xmlrpc-c/files/Xmlrpc-c%20Super%20Stable/1.06.41/xmlrpc-c-1.06.41.tgz</a>
+ tar -xzvf xmlrpc-c-1.06.41.tgz
+ ./configure --disable-abyss-threads
+ make
+ make install
+</pre><p class='vspace'>By default xmlrpc is installed at /usr/local/lib. If your system can only find libraries at /usr/lib, please create a symbolic link pointing to the correct library or change the library path. 
+</p>
+<p class='vspace'><em>Step 4</em>: Use your favorite Linux editor to edit the Makefile
+</p>
+<p class='vspace'>Remove from the “Exclude=” (line 52) the modules db_mysql and mi_xmlrpc. This will make the compilation process include the modules db_mysql and mi_xmlrpc.
+</p>
+<div class='vspace'></div><pre> cd /usr/src/opensips_1_6
+ vi Makefile
+</pre><p class='vspace'><em>Step 5</em>: Compile and install the core and modules. 
+</p>
+<div class='vspace'></div><pre> cd opensips_1_6
+ make prefix=/ all
+ make prefix=/ install
+</pre>
+</div>
+
+  <div id='printfoot'>
+    <div class='from'>Retrieved from http://www.opensips.org/Documentation/Tutorials-InstallOnCentos</div>
+    <div class='lastmod'>Page last modified on May 16, 2013, at 06:14 PM</div></div>
+<!--HTMLFooter-->
+</body>
+</html>

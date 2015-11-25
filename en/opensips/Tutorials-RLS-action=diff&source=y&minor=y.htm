@@ -1,0 +1,259 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Tutorials-RLS | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Tutorials-RLS' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Tutorials-RLS History</h2>
+  <p><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-RLS?action=diff&source=y&minor=n  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-RLS?action=diff&source=y&minor=n%27" tppabs="http://www.opensips.org/Documentation/Tutorials-RLS?action=diff&source=y&minor=n">Hide minor edits</a> - <a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-RLS?action=diff&source=n&minor=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-RLS?action=diff&source=n&minor=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-RLS?action=diff&source=n&minor=y">Show changes to output</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>July 02, 2014, at 02:13 PM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Added line 12:</div>
+        <div class='diffadd'><div class='diffmarkup'>----</div></div>
+        <div class='difftype'>Added line 19:</div>
+        <div class='diffadd'><div class='diffmarkup'>----</div></div>
+        <div class='difftype'>Changed line 82 from:</div>
+        <div class='diffdel'><div class='diffmarkup'></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>----</div></div>
+        <div class='difftype'>Added line 89:</div>
+        <div class='diffadd'><div class='diffmarkup'>----</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-RLS-action=edit&restore=diff-1404303202-1404303150-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-RLS?action=edit&restore=diff:1404303202:1404303150:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>July 02, 2014, at 02:12 PM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Changed lines 83-96 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>The server is implemented in '''rls''' module. You can configure this module by setting its parameters:<br />* '''db_url(str)''': the database URL<br />* '''xcap_table(str)''': the name of the table storing xcap documents<br />* '''rlsubs_table(str)''': the name of the subscription info table used by the module<br />* '''rlpres_table(str)''': the name of the presence info table used by the module<br />* '''clean_period(int)''': the interval(in seconds) at which to check for expired subscriptions<br />* '''waitn_time(int)''': the interval( in seconds) to wait for information to be sent to a user to accumulate<br />* '''max_expires(int)''': the maximum expires interval ( in seconds) for Subscriptions to RLs<br />* '''hash_size(int)''': the size of the hash table that will store subscription infomation( it will be used as the power of 2)<br />* '''xcap_root(str)''': the XCAP root part of the URL used for retrieving an XCAP document<br />* '''integrated_xcap_server(int)''': flag to configure whether the communication with xcap servers will be done through database interface or HTTP requests.<br />* '''to_presence_code(int)''': the numerical code to be returned by the '''rls_handle_subscribe()''' function if it deduces that the Subscription if for presence server<br />* '''rls_event(str)''': the events to be handled by the RLS servers ( if you want some additional ones to 'presence')<br /></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>The server is implemented in '''rls''' module. To understand the parameters required by this module, read the [[ http://www.opensips.org/html/docs/modules/1.11.x/rls.html| modules readme here]].</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-RLS-action=edit&restore=diff-1404303150-1383584940-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-RLS?action=edit&restore=diff:1404303150:1383584940:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 04, 2013, at 06:09 PM 
+        by <span class='diffauthor' title='109.99.235.212'>bogdan</span> - </div>
+        <div class='difftype'>Changed lines 2-3 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>!!Resource List Server<br /></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>----</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-RLS-action=edit&restore=diff-1383584940-1383584866-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-RLS?action=edit&restore=diff:1383584940:1383584866:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>November 04, 2013, at 06:07 PM 
+        by <span class='diffauthor' title='109.99.235.212'>bogdan</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>!![[Documentation/Documentation | Documentation]] -&gt; [[Documentation/Tutorials-Presence | Presence Tutorial]] -&gt; Resource List Server</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>!!!!! Documentation -&gt; [[Documentation.Tutorials | Tutorials ]] -&gt; [[Documentation/Tutorials-Presence | Presence]] -&gt; Resource List Server</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-RLS-action=edit&restore=diff-1383584866-1368096884-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-RLS?action=edit&restore=diff:1383584866:1368096884:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 12:54 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>!!Resources -&gt; [[Resources.Documentation | Documentation]] -&gt; [[Resources.DocsPapPa | Presence]] -&gt; Resource List Server</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>!![[Documentation/Documentation | Documentation]] -&gt; [[Documentation/Tutorials-Presence | Presence Tutorial]] -&gt; Resource List Server</div></div>
+        <div class='difftype'>Changed line 99 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>See a [[rls_config | configuration file example]].</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>See a [[Documentation/Tutorials-RLSConfig | configuration file example]].</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-RLS-action=edit&restore=diff-1368096884-1366969049-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-RLS?action=edit&restore=diff:1368096884:1366969049:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 26, 2013, at 11:37 AM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Added lines 1-191:</div>
+        <div class='diffadd'><div class='diffmarkup'>!!Resources -&gt; [[Resources.Documentation | Documentation]] -&gt; [[Resources.DocsPapPa | Presence]] -&gt; Resource List Server<br />!!Resource List Server<br /><br />%block text-align=right% '''written by Anca Vamanu'''<br /><br />OpenSIPS has a Resource List Server implementation following the specification in RFC 4662 and RFC 4826. <br /><br /># [[#rls_features| Features]]<br /># [[#description| Description]]<br /># [[#rls_configuration| Configuration]]<br /># [[#rls_database| Database]]<br /><br />[[#rls_features]]<br />!!! Features:<br />* independent from presence servers ( retrieves information using Subscribe- Notify mechanism )<br />* works with XCAP servers for storage <br />* can handle any event; 'presence' is enabled by default<br /><br />[[#description]]<br />!!! Description<br /><br />As mentioned in the previous section, the RLS server is independent from the presence server. Its task is to handle Subscribe messages that have as a target a list and generate Notifies for them with the aggregated state of the entries in the list.<br />For example, The RLS server might get a Subscribe message from 'alice' to her buddy list named 'alice-list'.<br /><br />[@<br />SUBSCRIBE sip:alice-list@opensips.org SIP/2.0.<br />Via: SIP/2.0/UDP 192.168.2.7:42521;rport;branch=z9hG4bKPjbcrHyV7gv7ksDabu36LZHlNnLEO-aXvc.<br />Max-Forwards: 70.<br />From: sip:alice@opensips.org;tag=3Rx6IkYlLyY88snX9vGQnhdUbsLk0Fck.<br />To: sip:alice-list@opensips.org.<br />Contact: &lt;sip:0OAcbgzCkI@192.168.2.7:42521&gt;.<br />Call-ID: eY-mlt.Enp1zYoMpWBBYT7rblVtStXHY.<br />CSeq: 9492 SUBSCRIBE.<br />Event: presence.<br />Expires: 300.<br />Accept: multipart/related, application/rlmi+xml, application/pidf+xml.<br />Allow-Events: presence.winfo, message-summary, xcap-diff, presence.<br />User-Agent: ag-projects/sipclient-0.3.0-pjsip-1.0-trunk.<br />Supported: eventlist.<br />Content-Length:  0.<br />@]<br /><br />Processing steps:<br /># The first step is to check if the subscription should really be handled by the RLS server.\\<br />\\<br />The primary condition is having 'eventlist' as a value in a 'Supported' header.\\<br />\\<br />The second is that the list definition exists on the server( in fact on the XCAP server from that domain). You probably already know that the client stores the list definition on an XCAP server and the SIP RLS server has to get the list from the XCAP server. OpenSIPS can communicate with an XCAP server in two modes - that you can configure  with the 'integrated_xcap_server' parameter. First, there is the common method defined by the XCAP protocol that evolves HTTP requests for retrieving information from the XCAP server. You will have the server working in this mode if you don't set the 'integrated_xcap_server' parameter, but  you have to set the 'xcap_root' parameter with the addresses of the XCAp servers( you can set this more that once in case you use more XCAP servers). Then, you have a special communication mode, more efficient, that uses database as a intermediary: the XCAP server writes in a database table and the RLS server reads from there. The known XCAP server that can work in this mode is OpenXCAP. If you user this in your platform, you can set the 'integrated_xcap_server' parameter.\\<br />\\<br />Using the means conform to the mode of operation, the RLS server will look for the list definition. If none is found, the RLS server will assume that the SUBSCRIBE message is not for him, even though it contains 'eventlist' in Supported header, and should forward the message to the presence server (from the script file). The rls_handle_suscribe function will return a code( the default one is '10', but it can also be configured through the parameter 'to_presence_code') when it deduces that the SUBSCRIBE message might be for the presence server. As you will see in the configuration file example, in this case the message should be handled by the presence server( calling handle_subscribe method if the server is collocated with the RLS server, or forwarding it to the presence server).<br /><br /><br /># To continue with our example, let's consider that the list has the following description:\\<br />[@<br />&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;<br />   &lt;rls-services xmlns=&quot;urn:ietf:params:xml:ns:rls-services&quot;<br />      xmlns:rl=&quot;urn:ietf:params:xml:ns:resource-lists&quot;<br />      xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;<br />	&lt;service uri=&quot;sip:alice-list@opensips.org&quot;&gt;<br />	   &lt;list name=&quot;alice-list&quot;&gt;<br />	      &lt;rl:entry uri=&quot;bob@opensips.org&quot;/&gt;<br />	      &lt;rl:entry uri=&quot;claire@opensips.org&quot;/&gt;<br />           &lt;/list&gt;<br />           &lt;packages&gt;<br />              &lt;package&gt;presence&lt;/package&gt;<br />           &lt;/packages&gt;<br />        &lt;/service&gt;<br />   &lt;/rls-services&gt; <br />@]\\<br />\\<br />The second step is to send an immediate Notify with the presence information of the entries in the list. The RLS will check to see if it has any information stored and will send that in a Notify with a multi-part body. For the first SUBSCRIBE message, the server will not have any information stored and The Notify will contain no presence state. \\<br />\\<br /><br /># The RLS server has to get the presence information from the presence servers. The next step is to send SUBSCRIBE messages on behalf of alice for the presence state of the entries in the list: bob and claire. The reason for which the RLS server sends for entry in the list a Subscribe message on behalf of the requester is related to the privacy authorization rules. Let's consider that there is another subscription from 'tom' to a list that also contains 'bob' as an entry. The RLS server might already have stored the presence state of bob due to the subscription that it already sent on behalf of alice, but it can not use this. The reason for this is that the RLS server does not know if tom is allowed to see the presence state of bob, or if this should be transformed according to some rules that bob has defined. Therefore, the RLS server has to send a SUBSCRIBE for each entry in every list and use only those responses when constructing the aggregated Notify.\\<br />\\<br />For this case, the OpenSIPS RLS server will send two SUBSCRIBE messages: to bob and claire, to the presence server in the local domain. If you set the 'presence_sever' parameter, the address in there will be used as an outbound proxy for the Subscribe messages. It will the receive Notifies from the presence server. It is easy to detect this in the configuration file, since they have as a target the RLS server( have the RLS's server address in R-URI). This should be handled by the rls module by calling rls_handle_notify function.<br /><br /># Constructing Notify messages when receiving Notifies from presence servers with status updates. \\<br />Due to a performance considerations, the RLS server will not send immediate RL Notifies when receiving a status update. It will wait a configurable amount of time( through the module parameter 'waitn_time') hoping to receive some more updates in the mean time and send more information in one Notify.<br /><br /><br />[[#rls_configuration]]<br />!!! Configuration<br />The server is implemented in '''rls''' module. You can configure this module by setting its parameters:<br />* '''db_url(str)''': the database URL<br />* '''xcap_table(str)''': the name of the table storing xcap documents<br />* '''rlsubs_table(str)''': the name of the subscription info table used by the module<br />* '''rlpres_table(str)''': the name of the presence info table used by the module<br />* '''clean_period(int)''': the interval(in seconds) at which to check for expired subscriptions<br />* '''waitn_time(int)''': the interval( in seconds) to wait for information to be sent to a user to accumulate<br />* '''max_expires(int)''': the maximum expires interval ( in seconds) for Subscriptions to RLs<br />* '''hash_size(int)''': the size of the hash table that will store subscription infomation( it will be used as the power of 2)<br />* '''xcap_root(str)''': the XCAP root part of the URL used for retrieving an XCAP document<br />* '''integrated_xcap_server(int)''': flag to configure whether the communication with xcap servers will be done through database interface or HTTP requests.<br />* '''to_presence_code(int)''': the numerical code to be returned by the '''rls_handle_subscribe()''' function if it deduces that the Subscription if for presence server<br />* '''rls_event(str)''': the events to be handled by the RLS servers ( if you want some additional ones to 'presence')<br /><br /><br />See a [[rls_config | configuration file example]].<br /><br />[[#rls_database]]<br />!!! Database<br /><br />It uses 2 tables in database: '''rls_presentity''' and '''rls_watchers'''  <br /><br />'''rls_presentity'''<br /><br />|| border=1<br />||! Field          ||! Type             ||! Null ||! Key ||! Default ||! Extra          ||<br />|| id             || int(10) unsigned || NO   || PRI || NULL    || auto_increment ||<br />|| rlsubs_did     || varchar(512)     || NO   || MUL || NULL    ||                ||<br />|| resource_uri   || varchar(128)     || NO   ||     || NULL    ||                ||<br />|| content_type   || varchar(64)      || NO   ||     || NULL    ||                ||<br />|| presence_state || blob             || NO   ||     || NULL    ||                ||<br />|| expires        || int(11)          || NO   ||     || NULL    ||                ||<br />|| updated        || int(11)          || NO   || MUL || NULL    ||                ||<br />|| auth_state     || int(11)          || NO   ||     || NULL    ||                ||<br />|| reason         || varchar(64)      || NO   ||     || NULL    ||		  ||<br /><br />[@<br />CREATE TABLE `rls_presentity` (<br />  `id` int(10) unsigned NOT NULL auto_increment,<br />  `rlsubs_did` varchar(512) NOT NULL,<br />  `resource_uri` varchar(128) NOT NULL,<br />  `content_type` varchar(64) NOT NULL,<br />  `presence_state` blob NOT NULL,<br />  `expires` int(11) NOT NULL,<br />  `updated` int(11) NOT NULL,<br />  `auth_state` int(11) NOT NULL,<br />  `reason` varchar(64) NOT NULL,<br />  PRIMARY KEY  (`id`),<br />  UNIQUE KEY `rls_presentity_idx` (`rlsubs_did`,`resource_uri`),<br />  KEY `updated_idx` (`updated`)<br />) ENGINE=MyISAM;<br />@]<br /><br />'''rls_watchers'''<br /><br />||! Field            ||! Type             ||! Null ||! Key ||! Default  ||! Extra          ||<br />|| id               || int(10) unsigned || NO   || PRI || NULL     || auto_increment ||<br />|| presentity_uri   || varchar(128)     || NO   || MUL || NULL     ||                ||<br />|| to_user          || varchar(64)      || NO   ||     || NULL     ||                ||<br />|| to_domain        || varchar(64)      || NO   ||     || NULL     ||                ||<br />|| watcher_username || varchar(64)      || NO   ||     || NULL     ||                ||<br />|| watcher_domain   || varchar(64)      || NO   ||     || NULL     ||                ||<br />|| event            || varchar(64)      || NO   ||     || presence ||                ||<br />|| event_id         || varchar(64)      || YES  ||     || NULL     ||                ||<br />|| to_tag           || varchar(64)      || NO   ||     || NULL     ||                ||<br />|| from_tag         || varchar(64)      || NO   ||     || NULL     ||                ||<br />|| callid           || varchar(64)      || NO   ||     || NULL     ||                ||<br />|| local_cseq       || int(11)          || NO   ||     || NULL     ||                ||<br />|| remote_cseq      || int(11)          || NO   ||     || NULL     ||                ||<br />|| contact          || varchar(64)      || NO   ||     || NULL     ||                ||<br />|| record_route     || text             || YES  ||     || NULL     ||                ||<br />|| expires          || int(11)          || NO   ||     || NULL     ||                ||<br />|| status           || int(11)          || NO   ||     || 2        ||                ||<br />|| reason           || varchar(64)      || NO   ||     || NULL     ||                ||<br />|| version          || int(11)          || NO   ||     || 0        ||                ||<br />|| socket_info      || varchar(64)      || NO   ||     || NULL     ||                ||<br />|| local_contact    || varchar(128)     || NO   ||     || NULL     ||                ||<br /><br />[@<br />CREATE TABLE `rls_watchers` (<br />  `id` int(10) unsigned NOT NULL auto_increment,<br />  `presentity_uri` varchar(128) NOT NULL,<br />  `to_user` varchar(64) NOT NULL,<br />  `to_domain` varchar(64) NOT NULL,<br />  `watcher_username` varchar(64) NOT NULL,<br />  `watcher_domain` varchar(64) NOT NULL,<br />  `event` varchar(64) NOT NULL default 'presence',<br />  `event_id` varchar(64) default NULL,<br />  `to_tag` varchar(64) NOT NULL,<br />  `from_tag` varchar(64) NOT NULL,<br />  `callid` varchar(64) NOT NULL,<br />  `local_cseq` int(11) NOT NULL,<br />  `remote_cseq` int(11) NOT NULL,<br />  `contact` varchar(64) NOT NULL,<br />  `record_route` text,<br />  `expires` int(11) NOT NULL,<br />  `status` int(11) NOT NULL default '2',<br />  `reason` varchar(64) NOT NULL,<br />  `version` int(11) NOT NULL default '0',<br />  `socket_info` varchar(64) NOT NULL,<br />  `local_contact` varchar(128) NOT NULL,<br />  PRIMARY KEY  (`id`),<br />  UNIQUE KEY `rls_watcher_idx` (`presentity_uri`,`callid`,`to_tag`,`from_tag`)<br />) ENGINE=MyISAM ;<br />@]<br /><br /><br />(:commentboxchrono:)</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-RLS-action=edit&restore=diff-1366969049-1366969049-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-RLS?action=edit&restore=diff:1366969049:1366969049:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Tutorials-RLS-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-RLS?action=edit">Edit</a> |
+      <a rel="nofollow" href="Tutorials-RLS-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-RLS?action=diff">History</a> |
+      <a rel="nofollow" href="Tutorials-RLS-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-RLS?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on July 02, 2014, at 02:13 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

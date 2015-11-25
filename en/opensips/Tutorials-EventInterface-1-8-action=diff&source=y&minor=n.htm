@@ -1,0 +1,265 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Tutorials-EventInterface-1-8 | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Tutorials-EventInterface-1-8' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Tutorials-EventInterface-1-8 History</h2>
+  <p><a href="Tutorials-EventInterface-1-8-action=diff&source=y&minor=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-EventInterface-1-8?action=diff&source=y&minor=y">Show minor edits</a> - <a href="Tutorials-EventInterface-1-8-action=diff&source=n&minor=n.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-EventInterface-1-8?action=diff&source=n&minor=n">Show changes to output</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>May 16, 2013, at 06:04 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>!![[Documentation.Index | Documentation]] -&gt; [[Documentation.Tutorials | Tutorials ]] -&gt; [[Documentation.Tutorials-EventInterface-1-8 |  Event Interface 1.8]]</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>!!!!!Documentation -&gt; [[Documentation.Tutorials | Tutorials ]] -&gt; Event Interface 1.8</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-EventInterface-1-8-action=edit&restore=diff-1368720299-1368102381-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-EventInterface-1-8?action=edit&restore=diff:1368720299:1368102381:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 02:26 PM 
+        by <span class='diffauthor' title='79.118.227.150'>79.118.227.150</span> - </div>
+        <div class='difftype'>Changed lines 34-35 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>An external application should subscribe for an event using MI commands when the subscription nature is very dynamic: it subscribes for a short period, receives notifications, then decides to unsubscribe and so on. The MI function used to subscribe for an event is [[http://www.opensips.org/Resources/DocsCoreMi18#toc15 | event_subscribe ]].<br /></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>An external application should subscribe for an event using MI commands when the subscription nature is very dynamic: it subscribes for a short period, receives notifications, then decides to unsubscribe and so on. The MI function used to subscribe for an event is [[Documentation/Interface-CoreMI-1-8#toc15 | event_subscribe ]].<br /></div></div>
+        <div class='difftype'>Changed lines 42-43 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>The first parameter is the name of the event (see [[http://www.opensips.org/Resources/DocsTutEventInterface18#toc6 | here ]]), the second parameter is the listening socket name (the format depends on the transport module used) and the last parameter is the expiration period expressed in seconds. Note that if the last parameter is missing, a default subscription period of 3600s (1h) is assumed.<br /></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>The first parameter is the name of the event (see [[Documentation.Tutorials-EventInterface-1-8#toc6 | here ]]), the second parameter is the listening socket name (the format depends on the transport module used) and the last parameter is the expiration period expressed in seconds. Note that if the last parameter is missing, a default subscription period of 3600s (1h) is assumed.<br /></div></div>
+        <div class='difftype'>Changed line 152 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>The [[http://www.opensips.org/html/docs/modules/1.8.x/event_rabbitmq | event_rabbitmq ]] module provides this functionality. Note that in this case, the &quot;external application&quot; is the RabbitMQ server, so you do not have the possibility to subscribe for events from it. Therefore the programmer should either use a different application to subscribe for the event, or subscribes for it directly from the OpenSIPS script (as discussed [[http://www.opensips.org/Resources/DocsTutEventInterface18#toc5 | here]]). For more information please visit the module's documentation page.</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>The [[http://www.opensips.org/html/docs/modules/1.8.x/event_rabbitmq | event_rabbitmq ]] module provides this functionality. Note that in this case, the &quot;external application&quot; is the RabbitMQ server, so you do not have the possibility to subscribe for events from it. Therefore the programmer should either use a different application to subscribe for the event, or subscribes for it directly from the OpenSIPS script (as discussed [[Documentation.Tutorials-EventInterface-1-8#toc5 | here]]). For more information please visit the module's documentation page.</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-EventInterface-1-8-action=edit&restore=diff-1368102381-1368102289-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-EventInterface-1-8?action=edit&restore=diff:1368102381:1368102289:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 02:24 PM 
+        by <span class='diffauthor' title='79.118.227.150'>79.118.227.150</span> - </div>
+        <div class='difftype'>Changed lines 52-53 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>The Event Interface allows the script writer to subscribe for an event directly from the OpenSIPS configuration script. This is usually used when a subscription is permanent, that never expires. For example a server that is continuously listening from events from OpenSIPS and process them accordingly. The command used to subscribe for an event from script is [[http://www.opensips.org/Resources/DocsCoreFcn18#toc154 | subscribe_event]].<br /></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>The Event Interface allows the script writer to subscribe for an event directly from the OpenSIPS configuration script. This is usually used when a subscription is permanent, that never expires. For example a server that is continuously listening from events from OpenSIPS and process them accordingly. The command used to subscribe for an event from script is [[Documentation.Script-CoreFunctions-1-8#toc154 | subscribe_event]].<br /></div></div>
+        <div class='difftype'>Changed lines 64-65 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>If the script writer wants the subscription to expire after 1200 second, the third parameter of the [[http://www.opensips.org/Resources/DocsCoreFcn18#toc154 | subscribe_event]] function can be specified:<br /></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>If the script writer wants the subscription to expire after 1200 second, the third parameter of the [[Documentation.Script-CoreFunctions-1-8#toc154 | subscribe_event]] function can be specified:<br /></div></div>
+        <div class='difftype'>Changed lines 80-81 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>* [[ http://www.opensips.org/Resources/DocsCoreEvi18#toc1 | E_CORE_THRESHOLD ]] - raised when using debugging bottleneck detection and the limit is exceeded.<br /></div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>* [[ Documentation.Interface-CoreEvents-1-8#toc1 | E_CORE_THRESHOLD ]] - raised when using debugging bottleneck detection and the limit is exceeded.<br /></div></div>
+        <div class='difftype'>Changed line 88 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>In order to raise an event from the script, the [[http://www.opensips.org/Resources/DocsCoreFcn18#toc129 | raise_event ]] function has to be used. The function receives one, two or three parameters, depending on the script writer needs. If the event has no parameters, then only the first parameter is needed - the event's name.</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>In order to raise an event from the script, the [[Documentation.Script-CoreFunctions-1-8#toc129 | raise_event ]] function has to be used. The function receives one, two or three parameters, depending on the script writer needs. If the event has no parameters, then only the first parameter is needed - the event's name.</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-EventInterface-1-8-action=edit&restore=diff-1368102289-1368102119-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-EventInterface-1-8?action=edit&restore=diff:1368102289:1368102119:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 02:21 PM 
+        by <span class='diffauthor' title='79.118.227.150'>79.118.227.150</span> - </div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Tutorials-EventInterface-1-8?action=edit&restore=diff:1368102119:1368101952:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Tutorials-EventInterface-1-8?action=edit&restore=diff:1368102119:1368101952:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Tutorials-EventInterface-1-8?action=edit&restore=diff:1368102119:1368101952:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 09, 2013, at 02:19 PM 
+        by <span class='diffauthor' title='79.118.227.150'>79.118.227.150</span> - </div>
+        <div class='difftype'>Changed lines 1-2 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>!!Resources -&gt; [[Resources.Documentation | Documentation]] -&gt; [[Resources.DocsTutorials | Tutorials]] -&gt; Event Interface</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>!![[Documentation.Index | Documentation]] -&gt; [[Documentation.Tutorials | Tutorials ]] -&gt; [[Documentation.Tutorials-EventInterface-1-8 |  Event Interface 1.8]]<br />----</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-EventInterface-1-8-action=edit&restore=diff-1368101952-1366822239-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-EventInterface-1-8?action=edit&restore=diff:1368101952:1366822239:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 24, 2013, at 06:50 PM 
+        by <span class='diffauthor' title='213.233.101.41'>213.233.101.41</span> - </div>
+        <div class='difftype'>Added lines 1-151:</div>
+        <div class='diffadd'><div class='diffmarkup'>!!Resources -&gt; [[Resources.Documentation | Documentation]] -&gt; [[Resources.DocsTutorials | Tutorials]] -&gt; Event Interface<br /><br />This page has been visited {$PageCount} times.<br />(:toc-float Table of Content:)<br />----<br /><br />''' This tutorial is for OpenSIPS 1.8.x version'''<br /><br />!!! Event Interface<br /><br />The OpenSIPS Event Interface provides an easy way to notify external applications whenever certain events occur inside OpenSIPS. Basically it provides two interfaces: one for the OpenSIPS internal modules and core, that is used to advertise and raise events, and an interface for the external applications, allowing them to register for specific events, and notifying them when those events are triggered by the modules, core, or by the OpenSIPS script.<br /><br />----<br /><br />!!! Overview<br /><br />OpenSIPS can notify an external application using different transport protocols:<br />* [[http://www.opensips.org/html/docs/modules/1.8.x/event_datagram | event_datagram ]] - sends Datagrams over UDP or UNIX sockets<br />* [[http://www.opensips.org/html/docs/modules/1.8.x/event_rabbitmq | event_rabbitmq ]] - sends an AMQP message to a RabbitMQ server<br /><br />In order to receive an event notification, an external application has to subscribe for a specific event to the Event interface. This can be done either using an MI command, or can be done directly from the OpenSIPS script. The subscription command has to specify the event that the external application wants to register to, and a socket where the notification has to be sent. The format of the socket is different, depending on the transport module used (you can find more information about this in the module's documentation page). <br /><br />When an event is triggered, the Event Interface will send to each application that is subscribed for that event a notification, using the desired transport type. The event details are packed differently for each transport module (consult the transport module's documentation page for more details).<br /><br />----<br /><br />!!! Event Subscription<br /><br />As mentioned above, an external application can subscribe for an event either using MI, or directly from OpenSIPS script. In the next sections we will describe the use case of each of them.<br /><br />!!!! MI Subscription<br /><br />An external application should subscribe for an event using MI commands when the subscription nature is very dynamic: it subscribes for a short period, receives notifications, then decides to unsubscribe and so on. The MI function used to subscribe for an event is [[http://www.opensips.org/Resources/DocsCoreMi18#toc15 | event_subscribe ]].<br /><br />For example, to subscribe for the E_PIKE_BLOCKED event for only 1200 seconds, an external application that listens on localhost, UDP port 8888, has to issue the following MI command:<br /><br />[@<br />   $ opensipsctl fifo event_subscribe E_PIKE_BLOCKED udp:127.0.0.1:8888 1200<br />@]<br /><br />The first parameter is the name of the event (see [[http://www.opensips.org/Resources/DocsTutEventInterface18#toc6 | here ]]), the second parameter is the listening socket name (the format depends on the transport module used) and the last parameter is the expiration period expressed in seconds. Note that if the last parameter is missing, a default subscription period of 3600s (1h) is assumed.<br /><br />In order to unsubscribe for an event, the external application has to use the same event and socket used at subscription time, but specify an expiration time of 0. The following command unsubscribes the previously registered application.<br /><br />[@<br />   $ opensipsctl fifo event_subscribe E_PIKE_BLOCKED udp:127.0.0.1:8888 0<br />@]<br /><br />!!!! Script Subscription<br /><br />The Event Interface allows the script writer to subscribe for an event directly from the OpenSIPS configuration script. This is usually used when a subscription is permanent, that never expires. For example a server that is continuously listening from events from OpenSIPS and process them accordingly. The command used to subscribe for an event from script is [[http://www.opensips.org/Resources/DocsCoreFcn18#toc154 | subscribe_event]].<br /><br />Usually these kind of subscriptions are permanent, therefore they should be registered at when OpenSIPS starts. Therefore this should be done in ''startup_route'', but this is not a requirement, as the function can be used in any route.<br /><br />Here is an example of subscription for the E_PIKE_BLOCKED event at OpenSIPS startup, without any expire time, from the OpenSIPS configuration script:<br /><br />[@<br />   startup_route() {<br />      subscribe_event(&quot;E_PIKE_BLOCKED&quot;, &quot;udp:127.0.0.1:8888&quot;);<br />   }<br />@]<br /><br />If the script writer wants the subscription to expire after 1200 second, the third parameter of the [[http://www.opensips.org/Resources/DocsCoreFcn18#toc154 | subscribe_event]] function can be specified:<br /><br />[@<br />   timer_route[event_subscribe,3600] {<br />      subscribe_event(&quot;E_PIKE_BLOCKED&quot;, &quot;udp:127.0.0.1:8888&quot;, 1200);<br />   }<br />@]<br /><br />----<br />!!! Events<br /><br />There are two types of events: static/predefined events, exported by OpenSIPS code and modules, and documented by each module, and dynamic events that can be raised by the script writer directly from the script. A few examples of predefined events:<br /><br />* [[ http://www.opensips.org/html/docs/modules/1.8.x/pike#id250185 | E_PIKE_BLOCKED ]] - raised when '''pike''' module decides an IP should be blocked.<br />* [[ http://www.opensips.org/html/docs/modules/1.8.x/rtpproxy#id293504 | E_RTPPROXY_STATUS ]] - raised when a RTPProxy connects or disconnects.<br />* [[ http://www.opensips.org/html/docs/modules/1.8.x/dispatcher#id293668 | E_DISPATCHER_STATUS ]] - raised by the '''dispatcher''' module when a destination address becomes active/inactive.<br />* [[ http://www.opensips.org/Resources/DocsCoreEvi18#toc1 | E_CORE_THRESHOLD ]] - raised when using debugging bottleneck detection and the limit is exceeded.<br /><br />!!!! Events Name<br /><br />Although there is not a strict events naming imposed by the Event Interface, it is a good practice for an event's name to follow the format @@E_''MODULE''_''NAME''@@, where ''MODULE'' is the name of the module that exports the event, '''CORE''' if the event is exported by OpenSIPS core, and '''SCRIPT''' if it is a dynamic event raised from the script, and ''NAME'' is the name of the event.<br /><br />!!!! Raising an Event<br /><br />In order to raise an event from the script, the [[http://www.opensips.org/Resources/DocsCoreFcn18#toc129 | raise_event ]] function has to be used. The function receives one, two or three parameters, depending on the script writer needs. If the event has no parameters, then only the first parameter is needed - the event's name.<br /><br />If the script writer wants to attach some extra information to the event, then the second and optionally the third parameter has to be used. The extra information has to be stored in an AVP as values, for example:<br /><br />[@<br />    $avp(values) = &quot;value1&quot;;<br />    $avp(values) = &quot;value2&quot;;<br />    ...<br />@]<br /><br />If the parameters also have some names, then a new AVP have to store them. Note that the number of values in the first AVP has to be the same as in the one for the attributes:<br /><br />[@<br />    $avp(attributes) = &quot;param1&quot;;<br />    $avp(values) = &quot;value1&quot;;<br />    $avp(attributes) = &quot;param2&quot;;<br />    $avp(values) = &quot;value2&quot;;<br />    ...<br />@]<br /><br />In order to raise the event from the script, the following code has to be used:<br /><br />[@<br />   raise_event(&quot;E_SCRIPT_EVENT&quot;);     # raises an event without any parameters<br /><br />   raise_event(&quot;E_SCRIPT_EVENT&quot;, $avp(values));     # raises an event that has only values parameters<br /><br />   raise_event(&quot;E_SCRIPT_EVENT&quot;, $avp(attributes), $avp(values));     # raises an event with multiple attribute-value pairs<br />@]<br /><br />!!!! Example<br /><br />A practical use case of dynamic events is raising an event from the script when the TCP load is greater than 80%:<br /><br />[@<br />   route[TCP_LOAD_CHECK] {<br /><br />      if ($stat(tcp-load) &gt; 80) {<br />         # raise the event, specifying the limit and the real load<br />         $avp(attrs) = &quot;limit&quot;;<br />         $avp(vals) = 80;<br />         $avp(attrs) = &quot;load&quot;;<br />         $avp(vals) = $stat(tcp-load);<br /><br />         raise_event(&quot;E_SCRIPT_TCP_LOAD&quot;, $avp(attrs), $avp(vals));<br />      }<br />   }<br />@]<br /><br />----<br />!!! Transport Modules<br /><br />There are several transport modules that can be used to notify an external application. At the time this tutorial was written, the following transport methods were supported:<br /><br />!!!! Datagram Messages<br /><br />External applications can be notified when OpenSIPS internal events are triggered using either UDP or UNIX datagrams. This allows programmers to write a simple UDP server that receives the notification and process it in the preferred programming language.<br /><br />In order to support this type of communication, the [[http://www.opensips.org/html/docs/modules/1.8.x/event_datagram | event_datagram ]] module has to be loaded. Consult the module's documentation page for more information about subscription socket and encapsulation format.<br /><br />!!!! RabbitMQ Messages<br /><br />OpenSIPS can also communicate with a [[http://www.rabbitmq.com/ | RabbitMQ]] server using the AMQP (Advanced Message Queuing Protocol) messages. This type of communication leverages all the features the queuing server has.<br /><br />The [[http://www.opensips.org/html/docs/modules/1.8.x/event_rabbitmq | event_rabbitmq ]] module provides this functionality. Note that in this case, the &quot;external application&quot; is the RabbitMQ server, so you do not have the possibility to subscribe for events from it. Therefore the programmer should either use a different application to subscribe for the event, or subscribes for it directly from the OpenSIPS script (as discussed [[http://www.opensips.org/Resources/DocsTutEventInterface18#toc5 | here]]). For more information please visit the module's documentation page.</div></div></div>
+      <div class='diffrestore'><a href="Tutorials-EventInterface-1-8-action=edit&restore=diff-1366822239-1366822239-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-EventInterface-1-8?action=edit&restore=diff:1366822239:1366822239:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Tutorials-EventInterface-1-8-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-EventInterface-1-8?action=edit">Edit</a> |
+      <a rel="nofollow" href="Tutorials-EventInterface-1-8-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-EventInterface-1-8?action=diff">History</a> |
+      <a rel="nofollow" href="Tutorials-EventInterface-1-8-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials-EventInterface-1-8?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on May 16, 2013, at 06:04 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

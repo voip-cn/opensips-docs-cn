@@ -1,0 +1,371 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Script Flags - ver 1.4 | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Script-Flags-1-4' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Script-Flags-1-4 History</h2>
+  <p><a href="Script-Flags-1-4-action=diff&source=n&minor=n.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-4?action=diff&source=n&minor=n">Hide minor edits</a> - <a href="Script-Flags-1-4-action=diff&source=y&minor=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-4?action=diff&source=y&minor=y">Show changes to markup</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>August 05, 2013, at 12:58 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 4 from:</div>
+        <div class='diffdel'><p><span style='font-size:83%'> Page for other versions: <a class='wikilink' title='Script-Flags' href="Script-Flags-2-2.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags">devel</a> <a class='wikilink' title='Script Flags - ver 1.9' href="Script-Flags-1-9.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-9">1.9</a> <a class='wikilink' title='Script Flags - ver 1.8' href="Script-Flags-1-8.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-8">1.8</a> old versions: <a class='wikilink' title='Script Flags - ver 1.7' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Script-Flags-1-7  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Script-Flags-1-7%27" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-7">1.7</a> <a class='wikilink' title='Script Flags - ver 1.6' href="Script-Flags-1-6.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-6">1.6</a> <a class='wikilink' title='Script Flags - ver 1.5' href="Script-Flags-1-5.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-5">1.5</a> 1.4 </span>
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>(:allVersions Script-Flags 1.4:)
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Flags-1-4-action=edit&restore=diff-1375700336-1369781558-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-4?action=edit&restore=diff:1375700336:1369781558:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 29, 2013, at 12:52 AM 
+        by <span class='diffauthor' title='92.80.35.155'>92.80.35.155</span> - </div>
+        <div class='difftype'>Changed lines 1-2 from:</div>
+        <div class='diffdel'><h2><a class='createlinktext' rel='nofollow' 
+    href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">Documentation</a><a rel='nofollow' 
+    class='createlink' href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">?</a> -&gt; Script -&gt; <a class='selflink' href="Script-Flags-1-4.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-4">Flags 1.4</a></h2>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h5>Documentation -&gt; <a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a> -&gt; <a class='wikilink' title='OpenSIPS Manual - 1.4 ver' href="Manual-1-4.htm" tppabs="http://www.opensips.org/Documentation/Manual-1-4">Manual 1.4</a> -&gt; Script Flags</h5>
+<p>(:title Script Flags - ver 1.4 :)
+</p>
+</div>
+        <div class='difftype'>Added lines 4-12:</div>
+        <div class='diffadd'><p><span style='font-size:83%'> Page for other versions: <a class='wikilink' title='Script-Flags' href="Script-Flags-2-2.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags">devel</a> <a class='wikilink' title='Script Flags - ver 1.9' href="Script-Flags-1-9.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-9">1.9</a> <a class='wikilink' title='Script Flags - ver 1.8' href="Script-Flags-1-8.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-8">1.8</a> old versions: <a class='wikilink' title='Script Flags - ver 1.7' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Script-Flags-1-7  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Script-Flags-1-7%27" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-7">1.7</a> <a class='wikilink' title='Script Flags - ver 1.6' href="Script-Flags-1-6.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-6">1.6</a> <a class='wikilink' title='Script Flags - ver 1.5' href="Script-Flags-1-5.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-5">1.5</a> 1.4 </span>
+</p>
+<p class='vspace'><br />
+</p><table width='100%'><tr ><td  align='center'><span  style='color: #185662;'><span style='font-size:120%'><strong>Script Flags v1.4</strong></span></span></td></tr>
+</table>
+<div class='vspace'></div><table width='100%'><tr ><td  align='left'><a class='wikilink' title='Core Variables - ver 1.4' href="Script-CoreVar-1-4.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreVar-1-4">Prev</a></td><td  align='right'><a class='wikilink' title='Script Transformations - ver 1.4' href="Script-Tran-1-4.htm" tppabs="http://www.opensips.org/Documentation/Script-Tran-1-4">Next</a></td></tr>
+</table><hr />
+</div>
+        <div class='difftype'>Deleted lines 13-14:</div>
+        <div class='diffdel'><p>This documentation is valid for <strong>OpenSIPS v1.4.x / devel</strong>
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Flags-1-4-action=edit&restore=diff-1369781558-1368357031-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-4?action=edit&restore=diff:1369781558:1368357031:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 12, 2013, at 01:10 PM 
+        by <span class='diffauthor' title='79.118.227.150'>79.118.227.150</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><h2>Resources -&gt; <a class='wikilink' title='Documentation' href="javascript:if(confirm(%27http://www.opensips.org/Resources/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/Documentation%27" tppabs="http://www.opensips.org/Resources/Documentation">Documentation</a> -&gt; <a class='wikilink' title='DocsCookbooks' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCookbooks  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCookbooks%27" tppabs="http://www.opensips.org/Resources/DocsCookbooks">CookBooks</a> -&gt; Scripting Flags v1.4.x</h2>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h2><a class='createlinktext' rel='nofollow' 
+    href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">Documentation</a><a rel='nofollow' 
+    class='createlink' href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">?</a> -&gt; Script -&gt; <a class='selflink' href="Script-Flags-1-4.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-4">Flags 1.4</a></h2>
+</div></div>
+      <div class='diffrestore'><a href="Script-Flags-1-4-action=edit&restore=diff-1368357031-1366830325-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-4?action=edit&restore=diff:1368357031:1366830325:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 24, 2013, at 09:05 PM 
+        by <span class='diffauthor' title='92.80.24.181'>92.80.24.181</span> - </div>
+        <div class='difftype'>Added lines 1-142:</div>
+        <div class='diffadd'><h2>Resources -&gt; <a class='wikilink' title='Documentation' href="javascript:if(confirm(%27http://www.opensips.org/Resources/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/Documentation%27" tppabs="http://www.opensips.org/Resources/Documentation">Documentation</a> -&gt; <a class='wikilink' title='DocsCookbooks' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCookbooks  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCookbooks%27" tppabs="http://www.opensips.org/Resources/DocsCookbooks">CookBooks</a> -&gt; Scripting Flags v1.4.x</h2>
+<hr />
+<p>(:toc-float Table of Content:)
+</p>
+<p class='vspace'>This documentation is valid for <strong>OpenSIPS v1.4.x / devel</strong>
+</p>
+<div class='vspace'></div><h3>Types of flags</h3>
+<ul><li><strong>message flags</strong> (or transaction flags) these flags are transaction persistent. They are visible in all routes and cases where the transaction context is visible
+</li><li><strong>branch flags</strong>  are saved also in transaction, but per branch; also they will be saved in usrloc (per contact). A new set of functions were added for manipulating these flags from script. So, there flags will be registration persistent and branch persistent.
+</li><li><strong>script flags</strong>  are no-message-related flags - they are only script persistent and you can strictly use them for scripting. Once you exit a top level route, they will be lost. These flags are useful and they offer an option to de-congest the message flags - many flags have no need to be saved as they just reflect some scripting status.
+</li></ul><div class='vspace'></div><hr />
+<h3>Corresponding Functions</h3>
+<div class='vspace'></div><h4>Message/transaction flags</h4>
+<p>setflag(flag_idx)
+resetflag(flag_idx)
+isflagset(flag_idx)
+</p>
+<div class='vspace'></div><h4>Branch flags</h4>
+<p>setbflag/setbranchflag(branch_idx,flag_idx)
+resetbflag/resetbranchflag(branch_idx,flag_idx)
+isbflagset/isbranchflagset(branch_idx,flag_idx)
+</p>
+<p class='vspace'>or, the shorter format, working on the default (branch 0) flags:
+</p>
+<p class='vspace'>setbflag(flag_idx)
+resetbflag(flag_idx)
+isbflagset(flag_idx)
+</p>
+<div class='vspace'></div><h4>Script flags</h4>
+<p>setsflag/setscriptflag(flag_idx)
+resetsflag/resetscriptflag(flag_idx)
+issflagset/isscriptflagset(flag_idx)
+</p>
+<div class='vspace'></div><hr />
+<h3>Flags and Pseudo Variables</h3>
+<div class='vspace'></div><h4>Message/transaction flags</h4>
+<p>$mf - decimal value
+$mF - hexa value
+</p>
+<div class='vspace'></div><h4>Branch flags</h4>
+<p>$bf - decimal value
+$bF - hexa value
+</p>
+<div class='vspace'></div><h4>Script flags</h4>
+<p>$sf - decimal value
+$sF - hexa valu
+</p>
+<div class='vspace'></div><hr />
+<h3>Flags and routes</h3>
+<div class='vspace'></div><h4>Message/transaction flags</h4>
+<p class='vspace'>These flags will show up in all routes where messages related to the initial request are processed. So, they will be visible and changeable in onbranch, failure and onreply routes; the flags will be visible in all branch routes; if you change a flag in a branch route, the next branch routes will inherit the change.
+</p>
+<div class='vspace'></div><h4>Branch flags</h4>
+<p class='vspace'>There flags will show up in all routes where messages related to initial branch request are processed. So, in branch route you will see different sets of flags (as they are different branches); in onreply route yo will see the branch flags corresponding to the branch the reply belongs to; in failure route, the branch flags corresponding to the branch the winning reply belongs to will be visible.
+In request route, you can have multiple branches (as a result of a lookup(), enum query, append_branch(), etc) - the default branch is 0 (corresponding to the RURI); In reply routes there will be only one branch , the 0 one. In branch route the default branch is the current process branch (having index 0); In failure route, initially there is only one branch (index 0), corresponding the failed branch.
+</p>
+<div class='vspace'></div><h4>Script flags</h4>
+<p class='vspace'>There flags are available only in script and are reset after each top level route execution (routes internally triggered by OpenSIPS). They will be persistent per main route, onreply_route, branch_route, failure_route. Note they will be inherit in routes called from other routes.
+</p>
+<div class='vspace'></div><hr />
+<h3>Example</h3>
+<div class='vspace'></div><h4>Nat flag handling</h4>
+<pre class='escaped'>
+ ..........
+ # 3 - the nat flag
+ modparam("usrloc","nat_bflag",3)
+ ..........
+
+ route {
+   ..........
+   if (nat detected)
+      setbflag(3); # set branch flag 3 for the branch 0
+
+   ..........
+   if (is_method("REGISTER")) {
+      # the branch flags (including 3) will be saved into location
+      save("location");
+      exit;
+   } else {
+      # lookup will load the branch flag from location
+      if (!lookup("location")) {
+         sl_send_reply("404","Not Found");
+         exit;
+      }
+      t_on_branch("1")
+      t_relay();
+   }
+ }
+
+ branch_route[1] {
+   xlog("-------branch=$T_branch_idx, branch flags=$bF\n");
+   if (isbflagset(3)) {
+      #current branch is marked as natted
+      .........
+   }
+ }
+</pre>
+<p class='vspace'>if no parallel forking is done, you can get rid of the branch route and add instead of t_on_branch():
+</p><pre class='escaped'>
+   ........
+   if (isbflagset(3)) {
+      #current branch is marked as natted
+      .........
+   }
+   ......... 
+</pre>
+<div class='vspace'></div><hr />
+<p class='vspace'>(:commentboxchrono:)
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Flags-1-4-action=edit&restore=diff-1366830325-1366830325-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-4?action=edit&restore=diff:1366830325:1366830325:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Script-Flags-1-4-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-4?action=edit">Edit</a> |
+      <a rel="nofollow" href="Script-Flags-1-4-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-4?action=diff">History</a> |
+      <a rel="nofollow" href="Script-Flags-1-4-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Flags-1-4?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on August 05, 2013, at 12:58 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

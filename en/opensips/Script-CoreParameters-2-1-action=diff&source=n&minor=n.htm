@@ -1,0 +1,2485 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Core Parameters - 2.1 | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Script-CoreParameters-2-1' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Script-CoreParameters-2-1 History</h2>
+  <p><a href="Script-CoreParameters-2-1-action=diff&source=n&minor=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=diff&source=n&minor=y">Show minor edits</a> - <a href="Script-CoreParameters-2-1-action=diff&source=y&minor=n.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=diff&source=y&minor=n">Show changes to markup</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>April 21, 2015, at 02:10 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 438-439 from:</div>
+        <div class='diffdel'><p>Maximum number of TCP connections opened from a single OpenSIPS worker to each individual SQL backend. Default value is 10.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Maximum number of TCP connections opened from a single OpenSIPS worker to each <strong>individual SQL backend</strong>. Default value is 10.
+</p>
+</div>
+        <div class='difftype'>Changed line 446 from:</div>
+        <div class='diffdel'><pre>    db_max_async_connections=220
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>    db_max_async_connections = 220
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1429618201-1429618117-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1429618201:1429618117:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 21, 2015, at 02:08 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 34-35 from:</div>
+        <div class='diffdel'><pre>    if(af==INET6) {
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>[@
+</p><pre>    if (af == INET6) {
+</pre>
+</div>
+        <div class='difftype'>Changed lines 38-40 from:</div>
+        <div class='diffdel'><div class='vspace'></div>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>@]
+</p>
+<div class='vspace'></div>
+</div>
+        <div class='difftype'>Changed lines 47-48 from:</div>
+        <div class='diffdel'><pre>   if(dst_ip==127.0.0.1) {
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>[@
+</p><pre>   if (dst_ip == 127.0.0.1) {
+</pre>
+</div>
+        <div class='difftype'>Added line 51:</div>
+        <div class='diffadd'><p>@]
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1429618117-1429618081-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1429618117:1429618081:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 21, 2015, at 02:08 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 56-57 from:</div>
+        <div class='diffdel'><pre>   if(dst_port==5061)
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>[@
+</p><pre>   if (dst_port == 5061)
+</pre>
+</div>
+        <div class='difftype'>Changed lines 61-62 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>@]
+</p>
+<div class='vspace'></div>
+</div>
+        <div class='difftype'>Changed lines 69-70 from:</div>
+        <div class='diffdel'><pre>    if(is_method("INVITE") &amp;&amp; from_uri=~".*@opensips.org")
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>[@
+</p><pre>    if (is_method("INVITE") &amp;&amp; from_uri =~ ".*@opensips.org")
+</pre>
+</div>
+        <div class='difftype'>Changed lines 74-75 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>@]
+</p>
+</div>
+        <div class='difftype'>Changed lines 81-82 from:</div>
+        <div class='diffdel'><pre>    if(method=="REGISTER")
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>[@
+</p><pre>    if (method == "REGISTER")
+</pre>
+</div>
+        <div class='difftype'>Changed lines 86-87 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>@]
+</p>
+</div>
+        <div class='difftype'>Changed lines 93-94 from:</div>
+        <div class='diffdel'><pre>    if(msg:len&gt;2048)
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>[@
+</p><pre>    if (msg:len &gt; 2048)
+</pre>
+</div>
+        <div class='difftype'>Changed line 96 from:</div>
+        <div class='diffdel'><pre>        sl_send_reply("413", "message too large");
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>        sl_send_reply("413", "Message Too Large");
+</pre>
+</div>
+        <div class='difftype'>Changed lines 99-100 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>@]
+</p>
+</div>
+        <div class='difftype'>Changed line 106 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>[@
+</p>
+</div>
+        <div class='difftype'>Changed line 109 from:</div>
+        <div class='diffdel'><pre>       if($retcode==1)
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>       if ($retcode == 1)
+</pre>
+</div>
+        <div class='difftype'>Deleted line 113:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>Changed line 116 from:</div>
+        <div class='diffdel'><pre>       if(is_method("INVITE"))
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>       if (is_method("INVITE"))
+</pre>
+</div>
+        <div class='difftype'>Changed lines 120-121 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>@]
+</p>
+</div>
+        <div class='difftype'>Changed lines 127-128 from:</div>
+        <div class='diffdel'><pre>    if(proto==UDP)
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>[@
+</p><pre>    if (proto == UDP)
+</pre>
+</div>
+        <div class='difftype'>Changed lines 132-133 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>@]
+</p>
+</div>
+        <div class='difftype'>Changed lines 139-140 from:</div>
+        <div class='diffdel'><pre>    if(status=="200")
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>[@
+</p><pre>    if (status == "200")
+</pre>
+</div>
+        <div class='difftype'>Changed lines 143-144 from:</div>
+        <div class='diffdel'><pre>    };
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>   };
+</pre><p>@]
+</p>
+</div>
+        <div class='difftype'>Changed lines 151-152 from:</div>
+        <div class='diffdel'><pre>    if(src_ip==127.0.0.1)
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>[@
+</p><pre>    if (src_ip == 127.0.0.1)
+</pre>
+</div>
+        <div class='difftype'>Changed lines 156-157 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>@]
+</p>
+</div>
+        <div class='difftype'>Changed lines 163-164 from:</div>
+        <div class='diffdel'><pre>    if(src_port==5061)
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>[@
+</p><pre>    if (src_port == 5061)
+</pre>
+</div>
+        <div class='difftype'>Changed lines 168-169 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>@]
+</p>
+</div>
+        <div class='difftype'>Changed lines 175-176 from:</div>
+        <div class='diffdel'><pre>  if(to_uri=~"sip:.+@opensips.org")
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>[@
+</p><pre>  if (to_uri =~ "sip:.+@opensips.org")
+</pre>
+</div>
+        <div class='difftype'>Changed lines 180-182 from:</div>
+        <div class='diffdel'><div class='vspace'></div>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>@]
+</p>
+<div class='vspace'></div>
+</div>
+        <div class='difftype'>Changed lines 188-189 from:</div>
+        <div class='diffdel'><pre>    if(uri=~"sip:.+@opensips.org")
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>[@
+</p><pre>    if (uri =~ "sip:.+@opensips.org")
+</pre>
+</div>
+        <div class='difftype'>Changed lines 193-194 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>@]
+</p>
+</div>
+        <div class='difftype'>Changed lines 209-210 from:</div>
+        <div class='diffdel'><pre>    if(af==INET)
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>[@
+</p><pre>    if (af == INET)
+</pre>
+</div>
+        <div class='difftype'>Changed lines 214-215 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>@]
+</p>
+</div>
+        <div class='difftype'>Changed lines 221-222 from:</div>
+        <div class='diffdel'><pre>  if(af==INET6)
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>[@
+</p><pre>  if (af == INET6)
+</pre>
+</div>
+        <div class='difftype'>Changed lines 226-227 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>@]
+</p>
+</div>
+        <div class='difftype'>Changed lines 233-234 from:</div>
+        <div class='diffdel'><pre>  if(proto==TCP)
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>[@
+</p><pre>  if (proto == TCP)
+</pre>
+</div>
+        <div class='difftype'>Changed lines 238-239 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>@]
+</p>
+</div>
+        <div class='difftype'>Changed lines 245-246 from:</div>
+        <div class='diffdel'><pre>  if(proto==UDP)
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>[@
+</p><pre>  if (proto == UDP)
+</pre>
+</div>
+        <div class='difftype'>Changed lines 250-251 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>@]
+</p>
+</div>
+        <div class='difftype'>Changed lines 257-258 from:</div>
+        <div class='diffdel'><pre>    if(msg:len&gt;max_len)
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>[@
+</p><pre>    if (msg:len &gt; max_len)
+</pre>
+</div>
+        <div class='difftype'>Changed lines 263-264 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>@]
+</p>
+</div>
+        <div class='difftype'>Changed lines 274-275 from:</div>
+        <div class='diffdel'><pre>    if(uri==myself) {
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>[@
+</p><pre>    if (uri == myself) {
+</pre>
+</div>
+        <div class='difftype'>Changed lines 278-280 from:</div>
+        <div class='diffdel'><h4>null</h4>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>@]
+</p>
+<div class='vspace'></div><h4>NULL</h4>
+</div>
+        <div class='difftype'>Changed lines 285-288 from:</div>
+        <div class='diffdel'><pre>    $avp(i:12) = null;
+    $var(x) = null;
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre class='escaped'>
+    $var(x) = NULL;
+</pre>
+</div>
+        <div class='difftype'>Changed line 322 from:</div>
+        <div class='diffdel'><pre>    advertised_address="opensips.org"
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>    advertised_address = "opensips.org"
+</pre>
+</div>
+        <div class='difftype'>Changed line 333 from:</div>
+        <div class='diffdel'><pre>    advertised_port=5080
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>    advertised_port = 5080
+</pre>
+</div>
+        <div class='difftype'>Changed lines 348-349 from:</div>
+        <div class='diffdel'><pre>    alias=other.domain.com:5060
+    alias=another.domain.com:5060
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>    alias = other.domain.com:5060
+    alias = another.domain.com:5060
+</pre>
+</div>
+        <div class='difftype'>Changed lines 362-363 from:</div>
+        <div class='diffdel'><pre>    auto_aliases=no
+    auto_aliases=0
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>    auto_aliases = no
+    auto_aliases = 0
+</pre>
+</div>
+        <div class='difftype'>Changed line 372 from:</div>
+        <div class='diffdel'><pre>    bin_listen=10.0.0.150:5062
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>    bin_listen = 10.0.0.150:5062
+</pre>
+</div>
+        <div class='difftype'>Changed line 381 from:</div>
+        <div class='diffdel'><pre>    bin_children=4
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>    bin_children = 4
+</pre>
+</div>
+        <div class='difftype'>Changed lines 389-391 from:</div>
+        <div class='diffdel'><pre>    check_via=1 
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre class='escaped'>
+    check_via = 1
+</pre>
+</div>
+        <div class='difftype'>Changed line 399 from:</div>
+        <div class='diffdel'><pre>    children=16
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>    children = 16
+</pre>
+</div>
+        <div class='difftype'>Changed lines 409-411 from:</div>
+        <div class='diffdel'><pre>    chroot=/other/fakeroot
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre class='escaped'>
+    chroot = /other/fakeroot
+</pre>
+</div>
+        <div class='difftype'>Changed lines 419-422 from:</div>
+        <div class='diffdel'><pre>    db_version_table="version_1_8"
+</pre><div class='vspace'></div>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre class='escaped'>
+    db_version_table = "version_1_8"
+</pre>
+<div class='vspace'></div>
+</div>
+        <div class='difftype'>Changed lines 429-432 from:</div>
+        <div class='diffdel'><pre>    db_default_url="mysql://opensips:opensipsrw@localhost/opensips"
+</pre><div class='vspace'></div>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre class='escaped'>
+    db_default_url = "mysql://opensips:opensipsrw@localhost/opensips"
+</pre>
+<div class='vspace'></div>
+</div>
+        <div class='difftype'>Changed lines 490-492 from:</div>
+        <div class='diffdel'><pre>    disable_core_dump=yes
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre class='escaped'>
+    disable_core_dump = yes
+</pre>
+</div>
+        <div class='difftype'>Changed lines 503-506 from:</div>
+        <div class='diffdel'><pre>    disable_dns_blacklist=no
+</pre><div class='vspace'></div>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre class='escaped'>
+    disable_dns_blacklist = no
+</pre>
+<div class='vspace'></div>
+</div>
+        <div class='difftype'>Changed lines 1056-1058 from:</div>
+        <div class='diffdel'><pre>    tcp_connection_lifetime=3600
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre class='escaped'>
+    tcp_connection_lifetime = 3600
+</pre>
+</div>
+        <div class='difftype'>Changed lines 1065-1067 from:</div>
+        <div class='diffdel'><pre>    tcp_max_connections=4096
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre class='escaped'>
+    tcp_max_connections = 4096
+</pre>
+</div>
+        <div class='difftype'>Changed lines 1074-1076 from:</div>
+        <div class='diffdel'><pre>    tcp_max_msg_time=8
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre class='escaped'>
+    tcp_max_msg_time = 8
+</pre>
+</div>
+        <div class='difftype'>Changed line 1085 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>[@
+</p>
+</div>
+        <div class='difftype'>Changed line 1088 from:</div>
+        <div class='diffdel'><pre>     route{
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>     route {
+</pre>
+</div>
+        <div class='difftype'>Changed line 1090 from:</div>
+        <div class='diffdel'><pre>         if( destination_behin_nat &amp;&amp; proto==TCP )
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>         if(destination_behind_nat &amp;&amp; proto == TCP )
+</pre>
+</div>
+        <div class='difftype'>Changed line 1095 from:</div>
+        <div class='diffdel'><pre>         if ($var(retcode)==-6) {
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>         if ($var(retcode) == -6) {
+</pre>
+</div>
+        <div class='difftype'>Changed line 1098 from:</div>
+        <div class='diffdel'><pre>             send_reply("404","Not found");
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>             send_reply("404", "Not Found");
+</pre>
+</div>
+        <div class='difftype'>Changed line 1100 from:</div>
+        <div class='diffdel'><pre>         } else if ($var(retcode)&lt;0) {
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>         } else if ($var(retcode) &lt; 0) {
+</pre>
+</div>
+        <div class='difftype'>Changed lines 1106-1107 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>@]
+</p>
+</div>
+        <div class='difftype'>Changed line 1114 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>[@
+</p>
+</div>
+        <div class='difftype'>Changed lines 1116-1117 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>@]
+</p>
+</div>
+        <div class='difftype'>Changed line 1123 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>[@
+</p>
+</div>
+        <div class='difftype'>Changed lines 1125-1126 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>@]
+</p>
+</div>
+        <div class='difftype'>Changed line 1132 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>[@
+</p>
+</div>
+        <div class='difftype'>Changed lines 1134-1135 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>@]
+</p>
+</div>
+        <div class='difftype'>Changed line 1141 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>[@
+</p>
+</div>
+        <div class='difftype'>Changed lines 1143-1144 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>@]
+</p>
+</div>
+        <div class='difftype'>Changed line 1150 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>[@
+</p>
+</div>
+        <div class='difftype'>Added line 1152:</div>
+        <div class='diffadd'><p>@]
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1429618081-1429617622-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1429618081:1429617622:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 21, 2015, at 02:00 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 1028-1029 from:</div>
+        <div class='diffdel'><p>Time in seconds before an ongoing blocking attempt to connect will be aborted.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Time in milliseconds before an ongoing blocking attempt to connect will be aborted. Default value is 100ms.
+</p>
+</div>
+        <div class='difftype'>Changed lines 1032-1034 from:</div>
+        <div class='diffdel'><pre>    tcp_connect_timeout=5
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre class='escaped'>
+    tcp_connect_timeout = 5
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1429617622-1426266033-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1429617622:1426266033:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 13, 2015, at 06:00 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added lines 289-299:</div>
+        <div class='diffadd'><h4>abort_on_assert</h4>
+<p>Default value: false
+</p>
+<p class='vspace'><br />
+Only relevant if asserts are enabled. Set to <em>true</em> in order to make OpenSIPS shut down immediately in case a script assert fails.
+</p>
+<p class='vspace'>Example of usage:
+</p><pre class='escaped'>
+    abort_on_assert = true
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1426266033-1426265917-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1426266033:1426265917:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 13, 2015, at 05:58 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added lines 608-620:</div>
+        <div class='diffadd'><h4>enable_asserts</h4>
+<p>Default value: false
+</p>
+<p class='vspace'><br />
+Set to <em>true</em> in order to enable the assert script statement.
+</p>
+<p class='vspace'>Example of usage:
+</p><pre class='escaped'>
+    enable_asserts = true
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1426265917-1426093887-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1426265917:1426093887:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 11, 2015, at 06:11 PM 
+        by <span class='diffauthor' title='89.120.101.121'>razvancrainea</span> - </div>
+        <div class='difftype'>Changed lines 985-988 from:</div>
+        <div class='diffdel'><h4>tcp_async</h4>
+<p>If the TCP connect and write operations should be done in an asynchronous mode. Default value is 0 ( blocking connect &amp; write )
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h4>tcp_children</h4>
+<p>Number of children processes to be created for reading from TCP connections. If no value is explicitly set, the same number of TCP children as UDP children (see "children" parameter) will be used.
+</p>
+</div>
+        <div class='difftype'>Changed lines 991-996 from:</div>
+        <div class='diffdel'><pre>    tcp_async=1
+</pre><div class='vspace'></div><h4>tcp_async_local_connect_timeout</h4>
+<p>If tcp_async is enabled, this specifies the number of microseconds that a connect will be tried in blocking mode ( optimization ). If the connect operation lasts more than this, the connect will go to async mode and will be passed to TCP MAIN for polling. Default value is 10000 ( 10 ms )
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>    tcp_children=4
+</pre><div class='vspace'></div><h4>tcp_accept_aliases</h4>
+<div class='vspace'></div><h4>tcp_listen_backlog</h4>
+<p>The backlog argument defines the maximum length to which the queue of pending connections for the TCP listeners may grow. If a connection  request arrives when the queue is full, the client may receive an error with an indication  of  ECONNREFUSED  or,  if  the underlying protocol supports retransmission, the request may be ignored so that a later reattempt at connection succeeds.
+</p>
+<p class='vspace'>Default configured value is 10.
+</p>
+<div class='vspace'></div><h4>tcp_connect_timeout</h4>
+<p>Time in seconds before an ongoing blocking attempt to connect will be aborted.
+</p>
+</div>
+        <div class='difftype'>Changed lines 1008-1013 from:</div>
+        <div class='diffdel'><pre>    tcp_async_local_connect_timeout=20000
+</pre><div class='vspace'></div><h4>tcp_async_local_write_timeout</h4>
+<p>If tcp_async is enabled, this specifies the number of microseconds that a write op will be tried in blocking mode ( optimization ). If the write operation lasts more than this, the write will go to async mode and will be passed to TCP MAIN for polling. Default value is 10000 ( 10 ms )
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>    tcp_connect_timeout=5
+</pre><div class='vspace'></div><h4>tcp_connection_lifetime!!!!</h4>
+<p>Lifetime in seconds for TCP sessions. TCP sessions which are inactive for &gt;tcp_connection_lifetime will be closed by <strong>OpenSIPS</strong>. Default value is defined in tcp_conn.h: #define DEFAULT_TCP_CONNECTION_LIFETIME 120. Setting this value to 0 will close the TCP connection pretty quick ;-). You can also set the TCP lifetime to the expire value of the REGISTER by using the tcp_persistent_flag parameter of the registrar module.
+</p>
+</div>
+        <div class='difftype'>Changed lines 1017-1022 from:</div>
+        <div class='diffdel'><pre>    tcp_async_local_write_timeout=20000
+</pre><div class='vspace'></div><h4>tcp_async_max_postponed_chunks</h4>
+<p>If tcp_async is enabled, this specifies the maximum number of SIP messages that can be stashed for later/async writing. If the connection pending writes exceed this number, the connection will be marked as broken and dropped. Default value is 32
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>    tcp_connection_lifetime=3600
+</pre><div class='vspace'></div><h4>tcp_max_connections</h4>
+<p>maximum number of tcp connections (if the number is exceeded no new tcp connections will be accepted). Default is defined in tcp_conn.h: #define DEFAULT_TCP_MAX_CONNECTIONS 2048
+</p>
+</div>
+        <div class='difftype'>Changed lines 1025-1030 from:</div>
+        <div class='diffdel'><pre>    tcp_async_max_postponed_chunks=64
+</pre><div class='vspace'></div><h4>tcp_children</h4>
+<p>Number of children processes to be created for reading from TCP connections. If no value is explicitly set, the same number of TCP children as UDP children (see "children" parameter) will be used.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>    tcp_max_connections=4096
+</pre><div class='vspace'></div><h4>tcp_max_msg_time</h4>
+<p>The maximum number of seconds that a SIP message is expected to arrive via TCP. If a single SIP packet is still not fully received after this number of seconds, the connection is dropped ( either the connection is very overloaded and this leads to high fragmentation - or we are the victim of an ongoing attack where the attacker is sending the traffic very fragmented in order to decrease our performance ). Default value is is 4
+</p>
+</div>
+        <div class='difftype'>Changed lines 1033-1048 from:</div>
+        <div class='diffdel'><pre>    tcp_children=4
+</pre><div class='vspace'></div><h4>tcp_accept_aliases</h4>
+<div class='vspace'></div><h4>tcp_listen_backlog</h4>
+<p>The backlog argument defines the maximum length to which the queue of pending connections for the TCP listeners may grow. If a connection  request arrives when the queue is full, the client may receive an error with an indication  of  ECONNREFUSED  or,  if  the underlying protocol supports retransmission, the request may be ignored so that a later reattempt at connection succeeds.
+</p>
+<p class='vspace'>Default configured value is 10.
+</p>
+<div class='vspace'></div><h4>tcp_send_timeout</h4>
+<p>Time in seconds after a TCP connection will be closed if it is not available
+for blocking writing in this interval (and <strong>OpenSIPS</strong> wants to send something on it).
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>    tcp_max_msg_time=8
+</pre><div class='vspace'></div><h4>tcp_no_new_conn_bflag</h4>
+<p>A branch flag to be used as marker to instruct OpenSIPS not to attempt to open a new TCP connection when delivering a request, but only to reuse an existing one (if available). If no existing conn, a generic send error will be returned.
+</p>
+<p class='vspace'>This is intended to be used in NAT scenarios, where makes no sense to open a TCP connection towards a destination behind a NAT (like TCP connection created during registration was lost, so there is no way to contact the device until it re-REGISTER). Also this can be used to detect when a NATed registered user lost his TCP connection, so that opensips can disable his registration as useless.
+</p>
+</div>
+        <div class='difftype'>Changed lines 1043-1048 from:</div>
+        <div class='diffdel'><pre>    tcp_send_timeout=3
+</pre><div class='vspace'></div><h4>tcp_connect_timeout</h4>
+<p>Time in seconds before an ongoing blocking attempt to connect will be aborted.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>     tcp_no_new_conn_bflag = 6
+     ....
+     route{
+         ....
+         if( destination_behin_nat &amp;&amp; proto==TCP )
+            setbflag(6);
+         ....
+         t_relay("0x02"); # no auto error reply
+         $var(retcode) = $rc;
+         if ($var(retcode)==-6) {
+             #send error
+             xlog("unable to send request to destination");
+             send_reply("404","Not found");
+             exit;
+         } else if ($var(retcode)&lt;0) {
+             sl_reply_error();
+             exit;
+         }
+         ....
+     }
+</pre><div class='vspace'></div><h4>tcp_threshold</h4>
+<p>A number representing the maximum number of microseconds sending of a TCP request is expected to last. Anything above the set number will trigger a warning message to the logging facility.
+</p>
+<p class='vspace'>Default value is 0 ( logging disabled ).
+</p>
+</div>
+        <div class='difftype'>Changed lines 1071-1078 from:</div>
+        <div class='diffdel'><pre>    tcp_connect_timeout=5
+</pre><div class='vspace'></div><h4>tcp_connection_lifetime!!!!</h4>
+<p>Lifetime in seconds for TCP sessions. TCP sessions which are inactive for &gt;tcp_connection_lifetime will be closed by <strong>OpenSIPS</strong>. Default value is defined in tcp_conn.h: #define DEFAULT_TCP_CONNECTION_LIFETIME 120. Setting this value to 0 will close the TCP connection pretty quick ;-). You can also set the TCP lifetime to the expire value of the REGISTER by using the tcp_persistent_flag parameter of the registrar module.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>    tcp_threshold = 60000
+</pre><div class='vspace'></div><h4>tcp_keepalive</h4>
+<p>Enable / disable TCP keepalive
+</p>
+</div>
+        <div class='difftype'>Changed lines 1079-1084 from:</div>
+        <div class='diffdel'><pre>    tcp_connection_lifetime=3600
+</pre><div class='vspace'></div><h4>tcp_max_connections</h4>
+<p>maximum number of tcp connections (if the number is exceeded no new tcp connections will be accepted). Default is defined in tcp_conn.h: #define DEFAULT_TCP_MAX_CONNECTIONS 2048
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>    tcp_keepalive = 1
+</pre><div class='vspace'></div><h4>tcp_keepcount</h4>
+<p>Number of keepalives to send before closing the connection (Linux only)
+</p>
+</div>
+        <div class='difftype'>Changed lines 1087-1092 from:</div>
+        <div class='diffdel'><pre>    tcp_max_connections=4096
+</pre><div class='vspace'></div><h4>tcp_max_msg_chunks</h4>
+<p>The maximum number of chunks that a SIP message is expected to arrive via TCP. If a packet is received more fragmented than this, the connection is dropped ( either the connection is very overloaded and this leads to high fragmentation - or we are the victim of an ongoing attack where the attacker is sending the traffic very fragmented in order to decrease our performance ). Default value is is 4
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>    tcp_keepcount = 5
+</pre><div class='vspace'></div><h4>tcp_keepidle</h4>
+<p>Amount of time before OpenSIPS will start to send keepalives if the connection is idle (Linux only)
+</p>
+</div>
+        <div class='difftype'>Changed lines 1095-1100 from:</div>
+        <div class='diffdel'><pre>    tcp_max_msg_chunks=8
+</pre><div class='vspace'></div><h4>tcp_max_msg_time</h4>
+<p>The maximum number of seconds that a SIP message is expected to arrive via TCP. If a single SIP packet is still not fully received after this number of seconds, the connection is dropped ( either the connection is very overloaded and this leads to high fragmentation - or we are the victim of an ongoing attack where the attacker is sending the traffic very fragmented in order to decrease our performance ). Default value is is 4
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>    tcp_keepidle = 30
+</pre><div class='vspace'></div><h4>tcp_keepinterval</h4>
+<p>Interval between keepalive probes, if the previous one failed (Linux only)
+</p>
+</div>
+        <div class='difftype'>Deleted lines 1102-1171:</div>
+        <div class='diffdel'><pre>    tcp_max_msg_time=8
+</pre><div class='vspace'></div><h4>tcp_no_new_conn_bflag</h4>
+<p>A branch flag to be used as marker to instruct OpenSIPS not to attempt to open a new TCP connection when delivering a request, but only to reuse an existing one (if available). If no existing conn, a generic send error will be returned.
+</p>
+<p class='vspace'>This is intended to be used in NAT scenarios, where makes no sense to open a TCP connection towards a destination behind a NAT (like TCP connection created during registration was lost, so there is no way to contact the device until it re-REGISTER). Also this can be used to detect when a NATed registered user lost his TCP connection, so that opensips can disable his registration as useless.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>     tcp_no_new_conn_bflag = 6
+     ....
+     route{
+         ....
+         if( destination_behin_nat &amp;&amp; proto==TCP )
+            setbflag(6);
+         ....
+         t_relay("0x02"); # no auto error reply
+         $var(retcode) = $rc;
+         if ($var(retcode)==-6) {
+             #send error
+             xlog("unable to send request to destination");
+             send_reply("404","Not found");
+             exit;
+         } else if ($var(retcode)&lt;0) {
+             sl_reply_error();
+             exit;
+         }
+         ....
+     }
+</pre><div class='vspace'></div><h4>tcp_threshold</h4>
+<p>A number representing the maximum number of microseconds sending of a TCP request is expected to last. Anything above the set number will trigger a warning message to the logging facility.
+</p>
+<p class='vspace'>Default value is 0 ( logging disabled ).
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    tcp_threshold = 60000
+</pre><div class='vspace'></div><h4>tcp_keepalive</h4>
+<p>Enable / disable TCP keepalive
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    tcp_keepalive = 1
+</pre><div class='vspace'></div><h4>tcp_keepcount</h4>
+<p>Number of keepalives to send before closing the connection (Linux only)
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    tcp_keepcount = 5
+</pre><div class='vspace'></div><h4>tcp_keepidle</h4>
+<p>Amount of time before OpenSIPS will start to send keepalives if the connection is idle (Linux only)
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    tcp_keepidle = 30
+</pre><div class='vspace'></div><h4>tcp_keepinterval</h4>
+<p>Interval between keepalive probes, if the previous one failed (Linux only)
+</p>
+<p class='vspace'>Example of usage:
+</p>
+</div>
+        <div class='difftype'>Deleted lines 1103-1118:</div>
+        <div class='diffdel'><h4>tcp_crlf_pingpong</h4>
+<p>Send CRLF pong (\r\n) to incoming CRLFCRLF ping. By default it is enabled (1).
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    tcp_crlf_pingpong = 0
+</pre><div class='vspace'></div><h4>tcp_crlf_drop</h4>
+<p>Drop CRLF (\r\n) ping messages. By default it is disabled (0).
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    tcp_crlf_drop = 1
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1426093887-1425648524-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1426093887:1425648524:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 06, 2015, at 02:28 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 783 from:</div>
+        <div class='diffdel'><p>Memory warming is useful when dealing with high volumes of traffic (thousands of cps on multi-core machines - the more cores, the more useful), because processes must mutually exclude themselves when chopping up the initial big memory chunk. By performing fragmentation on startup, OpenSIPS will also behave optimally in the first minute(s) after a restart. Fragmentation usually lasts a few seconds (e.g. ~5 seconds on an 8GB shm pool and 2.4Ghz processor) - traffic will not be processed at all during this period.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Memory warming is useful when dealing with high volumes of traffic (thousands of cps on multi-core machines - the more cores, the more useful), because processes must mutually exclude themselves when chopping up the initial big memory chunk. By performing fragmentation on startup, OpenSIPS will also behave optimally in the first minute(s) after a restart. Fragmentation usually lasts a few seconds (e.g. ~5 seconds on an 8GB shm pool and 2.4Ghz CPU) - traffic will not be processed at all during this period.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1425648524-1425648502-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1425648524:1425648502:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 06, 2015, at 02:28 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 783 from:</div>
+        <div class='diffdel'><p>Memory warming is useful when dealing with high volumes of traffic (thousands of cps on multi-core machines - the more cores, the more useful), because processes must mutually exclude themselves when chopping up the initial big memory chunk. By performing fragmentation on startup, OpenSIPS will also behave optimally in the first minute(s) after a restart. Fragmentation usually lasts a few seconds - OpenSIPS will not process traffic during this period.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Memory warming is useful when dealing with high volumes of traffic (thousands of cps on multi-core machines - the more cores, the more useful), because processes must mutually exclude themselves when chopping up the initial big memory chunk. By performing fragmentation on startup, OpenSIPS will also behave optimally in the first minute(s) after a restart. Fragmentation usually lasts a few seconds (e.g. ~5 seconds on an 8GB shm pool and 2.4Ghz processor) - traffic will not be processed at all during this period.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1425648502:1425648312:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1425648502:1425648312:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1425648502:1425648312:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 06, 2015, at 02:25 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 779 from:</div>
+        <div class='diffdel'><p>Only relevant when the HP_MALLOC compile flag is enabled. If set to "on", on each startup, OpenSIPS will attempt to restore the memory fragmentation pattern it had before the stop/restart. If no pattern_file from a previous run is found, memory warning is skipped, and the memory allocator simply starts with a big chunk of memory.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Only relevant when the HP_MALLOC compile flag is enabled. If set to "on", on each startup, OpenSIPS will attempt to restore the memory fragmentation pattern it had before the stop/restart. If no pattern_file from a previous run is found, memory warning is skipped, and the memory allocator simply starts with a big chunk of memory, like all other allocators.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1425648312-1425647819-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1425648312:1425647819:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 06, 2015, at 02:16 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 805 from:</div>
+        <div class='diffdel'><p>Default value: CFG_DIR/mem_warming_pattern
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Default value: "CFG_DIR/mem_warming_pattern"
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1425647819-1425647765-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1425647819:1425647765:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 06, 2015, at 02:16 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 779-780 from:</div>
+        <div class='diffdel'><p>Only relevant when the HP_MALLOC compile flag is enabled. If set to "on", on each startup, OpenSIPS will attempt to restore the memory fragmentation pattern it had before the stop/restart. If no <a class='createlinktext' rel='nofollow' 
+    href="PatternFile-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PatternFile?action=edit">pattern_file </a><a rel='nofollow' 
+    class='createlink' href="PatternFile-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PatternFile?action=edit">?</a> from a previous run is found, memory warning is skipped, and the memory allocator simply starts with a big chunk of memory.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Only relevant when the HP_MALLOC compile flag is enabled. If set to "on", on each startup, OpenSIPS will attempt to restore the memory fragmentation pattern it had before the stop/restart. If no pattern_file from a previous run is found, memory warning is skipped, and the memory allocator simply starts with a big chunk of memory.
+</p>
+</div>
+        <div class='difftype'>Changed lines 790-793 from:</div>
+        <div class='diffdel'><h4>mem_warming_pattern_file</h4>
+<p>Default value: CFG_DIR/mem_warming_pattern
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h4>mem_warming_percentage</h4>
+<p>Default value: 75
+</p>
+</div>
+        <div class='difftype'>Changed lines 796-797 from:</div>
+        <div class='diffdel'><p>The memory fragmentation pattern of a previous OpenSIPS run. Used at startup, if <a class='createlinktext' rel='nofollow' 
+    href="MemWarming-action=edit.htm" tppabs="http://www.opensips.org/Documentation/MemWarming?action=edit">mem_warming </a><a rel='nofollow' 
+    class='createlink' href="MemWarming-action=edit.htm" tppabs="http://www.opensips.org/Documentation/MemWarming?action=edit">?</a> is enabled.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>How much of OpenSIPS's memory should be fragmented with the pattern of the previous run, upon a restart. Used at startup, if mem_warming is enabled.
+</p>
+</div>
+        <div class='difftype'>Changed line 800 from:</div>
+        <div class='diffdel'><pre>    mem_warming_pattern_file = "/var/tmp/my_memory_pattern"
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>    mem_warming_percentage = 50
+</pre>
+</div>
+        <div class='difftype'>Changed lines 803-806 from:</div>
+        <div class='diffdel'><h4>mem_warming_percentage</h4>
+<p>Default value: 75
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h4>mem_warming_pattern_file</h4>
+<p>Default value: CFG_DIR/mem_warming_pattern
+</p>
+</div>
+        <div class='difftype'>Changed lines 809-810 from:</div>
+        <div class='diffdel'><p>How much of OpenSIPS's memory should be fragmented with the pattern of the previous run, upon a restart. Used at startup, if <a class='createlinktext' rel='nofollow' 
+    href="MemWarming-action=edit.htm" tppabs="http://www.opensips.org/Documentation/MemWarming?action=edit">mem_warming </a><a rel='nofollow' 
+    class='createlink' href="MemWarming-action=edit.htm" tppabs="http://www.opensips.org/Documentation/MemWarming?action=edit">?</a> is enabled.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>The memory fragmentation pattern of a previous OpenSIPS run. Used at startup, if mem_warming is enabled.
+</p>
+</div>
+        <div class='difftype'>Changed line 813 from:</div>
+        <div class='diffdel'><pre>    mem_warming_percentage = 50
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>    mem_warming_pattern_file = "/var/tmp/my_memory_pattern"
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1425647765-1425647665-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1425647765:1425647665:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 06, 2015, at 02:14 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 787 from:</div>
+        <div class='diffdel'><pre>    mem_warming=on
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>    mem_warming = on
+</pre>
+</div>
+        <div class='difftype'>Changed lines 800-813 from:</div>
+        <div class='diffdel'><pre>    mem_warming_pattern_file="/var/tmp/my_memory_pattern"
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><pre>    mem_warming_pattern_file = "/var/tmp/my_memory_pattern"
+</pre><p>@]
+</p>
+<div class='vspace'></div><h4>mem_warming_percentage</h4>
+<p>Default value: 75
+</p>
+<p class='vspace'><br />
+How much of OpenSIPS's memory should be fragmented with the pattern of the previous run, upon a restart. Used at startup, if <a class='createlinktext' rel='nofollow' 
+    href="MemWarming-action=edit.htm" tppabs="http://www.opensips.org/Documentation/MemWarming?action=edit">mem_warming </a><a rel='nofollow' 
+    class='createlink' href="MemWarming-action=edit.htm" tppabs="http://www.opensips.org/Documentation/MemWarming?action=edit">?</a> is enabled.
+</p>
+<p class='vspace'>Example of usage:
+[@
+</p><pre>    mem_warming_percentage = 50
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1425647665-1425647534-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1425647665:1425647534:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 06, 2015, at 02:12 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Deleted lines 787-799:</div>
+        <div class='diffdel'><p>@]
+</p>
+<div class='vspace'></div><h4>mem_warming_pattern_file</h4>
+<p>Default value: CFG_DIR/mem_warming_pattern
+</p>
+<p class='vspace'><br />
+The memory fragmentation pattern of a previous OpenSIPS run. Used at startup, if <a class='createlinktext' rel='nofollow' 
+    href="MemWarming-action=edit.htm" tppabs="http://www.opensips.org/Documentation/MemWarming?action=edit">mem_warming </a><a rel='nofollow' 
+    class='createlink' href="MemWarming-action=edit.htm" tppabs="http://www.opensips.org/Documentation/MemWarming?action=edit">?</a> is enabled.
+</p>
+<p class='vspace'>Example of usage:
+[@
+</p><pre>    mem_warming_pattern_file="/var/tmp/my_memory_pattern"
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1425647534-1425647481-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1425647534:1425647481:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 06, 2015, at 02:11 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 783-784 from:</div>
+        <div class='diffdel'><p>Memory warming is useful when dealing with high volumes of traffic, because processes must mutually exclude themselves when chopping up the initial big memory chunk. By performing fragmentation on startup, OpenSIPS will also behave optimally in the first minute(s) after a restart.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Memory warming is useful when dealing with high volumes of traffic (thousands of cps on multi-core machines - the more cores, the more useful), because processes must mutually exclude themselves when chopping up the initial big memory chunk. By performing fragmentation on startup, OpenSIPS will also behave optimally in the first minute(s) after a restart. Fragmentation usually lasts a few seconds - OpenSIPS will not process traffic during this period.
+</p>
+</div>
+        <div class='difftype'>Added lines 788-813:</div>
+        <div class='diffadd'><p>@]
+</p>
+<div class='vspace'></div><h4>mem_warming_pattern_file</h4>
+<p>Default value: CFG_DIR/mem_warming_pattern
+</p>
+<p class='vspace'><br />
+The memory fragmentation pattern of a previous OpenSIPS run. Used at startup, if <a class='createlinktext' rel='nofollow' 
+    href="MemWarming-action=edit.htm" tppabs="http://www.opensips.org/Documentation/MemWarming?action=edit">mem_warming </a><a rel='nofollow' 
+    class='createlink' href="MemWarming-action=edit.htm" tppabs="http://www.opensips.org/Documentation/MemWarming?action=edit">?</a> is enabled.
+</p>
+<p class='vspace'>Example of usage:
+</p><pre class='escaped'>
+    mem_warming_pattern_file="/var/tmp/my_memory_pattern"
+</pre>
+<div class='vspace'></div><h4>mem_warming_pattern_file</h4>
+<p>Default value: CFG_DIR/mem_warming_pattern
+</p>
+<p class='vspace'><br />
+The memory fragmentation pattern of a previous OpenSIPS run. Used at startup, if <a class='createlinktext' rel='nofollow' 
+    href="MemWarming-action=edit.htm" tppabs="http://www.opensips.org/Documentation/MemWarming?action=edit">mem_warming </a><a rel='nofollow' 
+    class='createlink' href="MemWarming-action=edit.htm" tppabs="http://www.opensips.org/Documentation/MemWarming?action=edit">?</a> is enabled.
+</p>
+<p class='vspace'>Example of usage:
+[@
+</p><pre>    mem_warming_pattern_file="/var/tmp/my_memory_pattern"
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1425647481-1425646967-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1425647481:1425646967:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 06, 2015, at 02:02 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 783 from:</div>
+        <div class='diffdel'><p>Memory warming is useful when dealing with high volumes of traffic, because fragmenting the big chunk of memory is a "critical region" from locking point of view. The initial fragmentation allows the HP allocator to behave optimally in the first minute(s) after a restart.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Memory warming is useful when dealing with high volumes of traffic, because processes must mutually exclude themselves when chopping up the initial big memory chunk. By performing fragmentation on startup, OpenSIPS will also behave optimally in the first minute(s) after a restart.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1425646967-1425646699-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1425646967:1425646699:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 06, 2015, at 01:58 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added lines 780-783:</div>
+        <div class='diffadd'><p><br />
+Memory warming is useful when dealing with high volumes of traffic, because fragmenting the big chunk of memory is a "critical region" from locking point of view. The initial fragmentation allows the HP allocator to behave optimally in the first minute(s) after a restart.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1425646699-1425645972-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1425646699:1425645972:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 06, 2015, at 01:46 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 257-269 from:</div>
+        <div class='diffdel'><h4>mem_warming</h4>
+<p>Default value: off
+</p>
+<p class='vspace'><br />
+Only relevant when the HP_MALLOC compile flag is enabled. If set to "on", on each startup, OpenSIPS will attempt to restore the memory fragmentation pattern it had before the stop/restart. If no <a class='createlinktext' rel='nofollow' 
+    href="PatternFile-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PatternFile?action=edit">pattern_file </a><a rel='nofollow' 
+    class='createlink' href="PatternFile-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PatternFile?action=edit">?</a> from a previous run is found, memory warning is skipped, and the memory allocator simply starts with a big chunk of memory.
+</p>
+<p class='vspace'>Example of usage:
+</p><pre class='escaped'>
+    mem_warming=on
+</pre>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'></div>
+        <div class='difftype'>Added lines 772-784:</div>
+        <div class='diffadd'><h4>mem_warming</h4>
+<p>Default value: off
+</p>
+<p class='vspace'><br />
+Only relevant when the HP_MALLOC compile flag is enabled. If set to "on", on each startup, OpenSIPS will attempt to restore the memory fragmentation pattern it had before the stop/restart. If no <a class='createlinktext' rel='nofollow' 
+    href="PatternFile-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PatternFile?action=edit">pattern_file </a><a rel='nofollow' 
+    class='createlink' href="PatternFile-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PatternFile?action=edit">?</a> from a previous run is found, memory warning is skipped, and the memory allocator simply starts with a big chunk of memory.
+</p>
+<p class='vspace'>Example of usage:
+</p><pre class='escaped'>
+    mem_warming=on
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1425645972-1425645918-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1425645972:1425645918:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 06, 2015, at 01:45 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 257-268 from:</div>
+        <div class='diffdel'></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h4>mem_warming</h4>
+<p>Default value: off
+</p>
+<p class='vspace'><br />
+Only relevant when the HP_MALLOC compile flag is enabled. If set to "on", on each startup, OpenSIPS will attempt to restore the memory fragmentation pattern it had before the stop/restart. If no <a class='createlinktext' rel='nofollow' 
+    href="PatternFile-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PatternFile?action=edit">pattern_file </a><a rel='nofollow' 
+    class='createlink' href="PatternFile-action=edit.htm" tppabs="http://www.opensips.org/Documentation/PatternFile?action=edit">?</a> from a previous run is found, memory warning is skipped, and the memory allocator simply starts with a big chunk of memory.
+</p>
+<p class='vspace'>Example of usage:
+</p><pre class='escaped'>
+    mem_warming=on
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1425645918-1425558344-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1425645918:1425558344:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 05, 2015, at 01:25 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 1234 from:</div>
+        <div class='diffdel'><p>Only relevant when  is set to <em>true</em>. Enables the use of the , otherwise they will have no effect.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Only relevant when log_stderror is set to <em>true</em>. Enables the use of the color escape sequences, otherwise they will have no effect.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1425558344-1425558049-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1425558344:1425558049:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 05, 2015, at 01:20 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added lines 1217-1220:</div>
+        <div class='diffadd'><p>Default value: 4096
+</p>
+<p class='vspace'><br />
+</p>
+</div>
+        <div class='difftype'>Added lines 1226-1238:</div>
+        <div class='diffadd'><p>@]
+</p>
+<div class='vspace'></div><h4>xlog_force_color</h4>
+<p>Default value: false
+</p>
+<p class='vspace'><br />
+Only relevant when  is set to <em>true</em>. Enables the use of the , otherwise they will have no effect.
+</p>
+<p class='vspace'>Usage example:
+[@
+</p><pre>    xlog_force_color = true
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1425558049-1425557628-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1425558049:1425557628:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 05, 2015, at 01:13 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added lines 1213-1221:</div>
+        <div class='diffadd'><p>@]
+</p>
+<div class='vspace'></div><h4>xlog_buf_size</h4>
+<p>Size of the buffer used to print a single line on the chosen logging facility of OpenSIPS. If the buffer is too small, an overflow error will be printed, and the concerned line will be skipped.
+</p>
+<p class='vspace'>Usage example:
+[@
+</p><pre>    xlog_buf_size = 8388608 #given in bytes
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1425557628-1422528509-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1425557628:1422528509:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 29, 2015, at 11:48 AM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Changed line 849 from:</div>
+        <div class='diffdel'><p>The poll method to be used by the I/O internal reactor - by default the best one for the current OS is selected. The available types are: poll, epoll_lt, epoll_et, sigio_rt, select, kqueue, /dev/poll
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>The poll method to be used by the I/O internal reactor - by default the best one for the current OS is selected. The available types are: poll, epoll_lt, epoll_et, sigio_rt, select, kqueue, /dev/poll .
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1422528509-1422528267-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1422528509:1422528267:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 29, 2015, at 11:44 AM 
+        by <span class='diffauthor' title='89.120.101.121'>89.120.101.121</span> - </div>
+        <div class='difftype'>Changed lines 847-850 from:</div>
+        <div class='diffdel'><h4>port</h4>
+<p>The port the SIP server listens to. The default value for it is 5060.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h4>poll_method</h4>
+<p>The poll method to be used by the I/O internal reactor - by default the best one for the current OS is selected. The available types are: poll, epoll_lt, epoll_et, sigio_rt, select, kqueue, /dev/poll
+</p>
+</div>
+        <div class='difftype'>Added lines 853-861:</div>
+        <div class='diffadd'><pre>    poll_method=select
+</pre><div class='vspace'></div><h4>port</h4>
+<p>The port the SIP server listens to. The default value for it is 5060.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+</div>
+        <div class='difftype'>Deleted lines 1041-1048:</div>
+        <div class='diffdel'><h4>tcp_poll_method</h4>
+<p>poll method used (by default the best one for the current OS is selected). For available types see io_wait.c and poll_types.h: none, poll, epoll_lt, epoll_et, sigio_rt, select, kqueue, /dev/poll
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    tcp_poll_method=select
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1422528267-1422012678-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1422528267:1422012678:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 23, 2015, at 12:31 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added line 421:</div>
+        <div class='diffadd'><p>[@
+</p>
+</div>
+        <div class='difftype'>Added line 423:</div>
+        <div class='diffadd'><p>@]
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1422012678-1422012649-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1422012678:1422012649:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>January 23, 2015, at 12:30 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added lines 411-421:</div>
+        <div class='diffadd'><h4>db_max_async_connections</h4>
+<p>Maximum number of TCP connections opened from a single OpenSIPS worker to each individual SQL backend. Default value is 10.
+</p>
+<p class='vspace'>Individual backends are determined from DB URLs as follows:
+</p><pre>        [ scheme, user, pass, host, port, database ]
+</pre><p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    db_max_async_connections=220
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1422012649-1418989859-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1422012649:1418989859:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>December 19, 2014, at 12:50 PM 
+        by <span class='diffauthor' title='89.120.101.121'>razvancrainea</span> - </div>
+        <div class='difftype'>Added lines 1098-1113:</div>
+        <div class='diffadd'><h4>tcp_crlf_pingpong</h4>
+<p>Send CRLF pong (\r\n) to incoming CRLFCRLF ping. By default it is enabled (1).
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    tcp_crlf_pingpong = 0
+</pre><div class='vspace'></div><h4>tcp_crlf_drop</h4>
+<p>Drop CRLF (\r\n) ping messages. By default it is disabled (0).
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    tcp_crlf_drop = 1
+</pre>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1418989859-1395346162-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1418989859:1395346162:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 20, 2014, at 09:09 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed line 906 from:</div>
+        <div class='diffdel'><p>Only relevant when the HP_MALLOC compile flag is enabled. It controls how many memory buckets will be optimized. (e.g. setting it to 2% will optimize the first 81 most used buckets as frequency). The default value is 1%.
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Only relevant when the HP_MALLOC compile flag is enabled. It controls how many memory buckets will be optimized. (e.g. setting it to 2% will optimize the first 81 most used buckets as frequency). The default value is 1.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1395346162-1395346136-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1395346162:1395346136:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 20, 2014, at 09:08 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 906-907 from:</div>
+        <div class='diffdel'><p>Only relevant when the HP_MALLOC compile flag is enabled. It controls how many memory buckets will be optimized. (e.g. setting it to 2% will optimize the first 81 most used buckets as frequency)
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Only relevant when the HP_MALLOC compile flag is enabled. It controls how many memory buckets will be optimized. (e.g. setting it to 2% will optimize the first 81 most used buckets as frequency). The default value is 1%.
+</p>
+</div>
+        <div class='difftype'>Changed line 910 from:</div>
+        <div class='diffdel'><p>Only relevant when the HP_MALLOC compile flag is enabled. It represents the optimization factor of a single bucket (e.g. setting it to 4 will cause the optimized buckets to be further split into 4)
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>Only relevant when the HP_MALLOC compile flag is enabled. It represents the optimization factor of a single bucket (e.g. setting it to 4 will cause the optimized buckets to be further split into 4). The default value is 8.
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1395346136-1395346048-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1395346136:1395346048:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 20, 2014, at 09:07 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Changed lines 904-910 from:</div>
+        <div class='diffdel'><h4>shm_hash_split_percentage (with HP_MALLOC compile flag enabled)</h4>
+<p>This parameter controls how many memory buckets will be optimized. (e.g. setting it to 2% will optimize the first 81 most used buckets as frequency)
+</p>
+<div class='vspace'></div><h4>shm_secondary_hash_size (with HP_MALLOC compile flag enabled)</h4>
+<p>This parameter represents the optimization factor of a single bucket (e.g. setting it to 4 will cause the optimized buckets to be further split into 4)
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h4>shm_hash_split_percentage</h4>
+<p>Only relevant when the HP_MALLOC compile flag is enabled. It controls how many memory buckets will be optimized. (e.g. setting it to 2% will optimize the first 81 most used buckets as frequency)
+</p>
+<div class='vspace'></div><h4>shm_secondary_hash_size</h4>
+<p>Only relevant when the HP_MALLOC compile flag is enabled. It represents the optimization factor of a single bucket (e.g. setting it to 4 will cause the optimized buckets to be further split into 4)
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1395346048-1395345797-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1395346048:1395345797:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 20, 2014, at 09:03 PM 
+        by <span class='diffauthor' title='89.120.101.121'>liviu</span> - </div>
+        <div class='difftype'>Added lines 903-910:</div>
+        <div class='diffadd'><h4>shm_hash_split_percentage (with HP_MALLOC compile flag enabled)</h4>
+<p>This parameter controls how many memory buckets will be optimized. (e.g. setting it to 2% will optimize the first 81 most used buckets as frequency)
+</p>
+<div class='vspace'></div><h4>shm_secondary_hash_size (with HP_MALLOC compile flag enabled)</h4>
+<p>This parameter represents the optimization factor of a single bucket (e.g. setting it to 4 will cause the optimized buckets to be further split into 4)
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1395345797-1395339871-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1395345797:1395339871:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 20, 2014, at 07:24 PM 
+        by <span class='diffauthor' title='89.120.101.121'>razvancrainea</span> - </div>
+        <div class='difftype'>Added lines 1-1177:</div>
+        <div class='diffadd'><h5>Documentation -&gt; <a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a> -&gt; <a class='wikilink' title='OpenSIPS Manual - 2.1' href="Manual-2-1.htm" tppabs="http://www.opensips.org/Documentation/Manual-2-1">Manual devel</a> -&gt; Core Parameters</h5>
+<p>(:title Core Parameters - 2.1:)
+</p><hr />
+<p>(:allVersions Script-CoreParameters 2.1:)
+</p>
+<p class='vspace'><br />
+</p><table width='100%'><tr ><td  align='center'><span  style='color: #185662;'><span style='font-size:120%'><strong>Core Parameters v2.1 </strong></span></span></td></tr>
+</table>
+<div class='vspace'></div><table width='100%'><tr ><td  align='left'><a class='wikilink' title='Script Format - devel' href="Script-Format-2-1.htm" tppabs="http://www.opensips.org/Documentation/Script-Format-2-1">Prev</a></td><td  align='right'><a class='wikilink' title='Types of routes - 2.1' href="Script-Routes-2-1.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-2-1">Next</a></td></tr>
+</table><hr />
+<p class='vspace'>(:toc-float Table of Content:)
+This section lists the all the parameters exported by <strong>OpenSIPS</strong> core for script usage (to be used in opensips.cfg)
+</p>
+<p class='vspace'>This document is for <strong>OpenSIPS 1.12.x</strong> 
+</p>
+<div class='vspace'></div><ol><li><a href='#keywords'>Core keywords</a>
+</li><li><a href='#values'>Core values</a>
+</li><li><a href='#parameters'>Core parameters</a>
+</li></ol><div class='vspace'></div><hr />
+<p><a name='keywords' id='keywords'></a>
+</p><h3>Core Keywords</h3>
+<p>Keywords specific to SIP messages which can be used mainly in 'if' expressions.
+</p>
+<div class='vspace'></div><h4>af</h4>
+<p>The address family of the received SIP message. It is INET if the message was received over IPv4 or INET6 if the message was received over IPv6.
+</p>
+<p class='vspace'>Exampe of usage:
+</p>
+<div class='vspace'></div><pre>    if(af==INET6) {
+        log("Message received over IPv6 link\n");
+    };
+</pre><div class='vspace'></div><h4>dst_ip</h4>
+<p>The IP of the local interface where the SIP message was received. When the proxy listens on many network interfaces, makes possible to detect which was the one that received the packet.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>   if(dst_ip==127.0.0.1) {
+      log("message received on loopback interface\n");
+   };
+</pre><div class='vspace'></div><h4>dst_port</h4>
+<p>The local port where the SIP packet was received. When <strong>OpenSIPS</strong> is listening on many ports, it is useful to learn which was the one that received the SIP packet.
+</p>
+<p class='vspace'>Example of usage:
+</p><pre>   if(dst_port==5061)
+   {
+       log("message was received on port 5061\n");
+   };
+</pre><div class='vspace'></div><h4>from_uri</h4>
+<p>This script variable is a reference to the URI of 'From' header. It can be used to test 'From'- header URI value.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    if(is_method("INVITE") &amp;&amp; from_uri=~".*@opensips.org")
+    {
+        log("the caller is from opensips.org\n");
+    };
+</pre><div class='vspace'></div><h4>method</h4>
+<p>The variable is a reference to the SIP method of the message.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    if(method=="REGISTER")
+    {
+       log("this SIP request is a REGISTER message\n");
+    };
+</pre><div class='vspace'></div><h4>msg:len</h4>
+<p>The variable is a reference to the size of the message. It can be used in 'if' constructs to test message's size.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    if(msg:len&gt;2048)
+    {
+        sl_send_reply("413", "message too large");
+        exit;
+    };
+</pre><div class='vspace'></div><h4>$retcode</h4>
+<p>It represents the value returned by last function executed (similar to $? from bash -- if you wish, you can use also $? in OpenSIPS config, both names '$retcode' and '$?' are supported). If tested after a call of a route, it is the value retuned by that route.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>   route {
+       route(1);
+       if($retcode==1)
+       {
+           log("The request is an INVITE\n");
+       };
+   }
+
+
+   route[1] {
+       if(is_method("INVITE"))
+           return(1);
+       return(2);
+   }
+</pre><div class='vspace'></div><h4>proto</h4>
+<p>This variable can be used to test the transport protocol of the SIP message.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    if(proto==UDP)
+    {
+        log("SIP message received over UDP\n");
+    };
+</pre><div class='vspace'></div><h4>status</h4>
+<p>If used in onreply_route, this variable is a reference to the status code of the reply. If it used in a standard route block, the variable is a reference to the status of the last reply sent out for the current request.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    if(status=="200")
+    {
+        log("this is a 200 OK reply\n");
+    };
+</pre><div class='vspace'></div><h4>src_ip</h4>
+<p>Reference to source IP address of the SIP message.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    if(src_ip==127.0.0.1)
+    {
+        log("the message was sent from localhost!\n");
+    };
+</pre><div class='vspace'></div><h4>src_port</h4>
+<p>Reference to source port of the SIP message (from which port the message was sent by previous hop).
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    if(src_port==5061)
+    {
+        log("message sent from port 5061\n");
+    }
+</pre><div class='vspace'></div><h4>to_uri</h4>
+<p>This variable can be used to test the value of URI from To header.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>  if(to_uri=~"sip:.+@opensips.org")
+  {
+      log("this is a request for opensips.org users\n");
+  };
+</pre><div class='vspace'></div><h4>uri</h4>
+<p>This variable can be used to test the value of the request URI.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    if(uri=~"sip:.+@opensips.org")
+    {
+        log("this is a request for opensips.org users\n");
+    };
+</pre><p class='vspace'>(:toc-back:)
+</p>
+<div class='vspace'></div><hr />
+<p><a name='values' id='values'></a>
+</p><h3>Core Values</h3>
+<p>Values that can be used in 'if' expressions to check against Core Keywords
+</p>
+<div class='vspace'></div><h4>INET</h4>
+<p>This keyword can be used to test whether the SIP packet was received over an IPv4 connection.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    if(af==INET)
+    {
+        log("the SIP message was received over IPv4\n");
+    };
+</pre><div class='vspace'></div><h4>INET6</h4>
+<p>This keyword can be used to test whether the SIP packet was received over an IPv6 connection.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>  if(af==INET6)
+  {
+      log("the SIP message was received over IPv6\n");
+  };
+</pre><div class='vspace'></div><h4>TCP</h4>
+<p>This keyword can be used to test the value of 'proto' and check whether the SIP packet was received over TCP or not.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>  if(proto==TCP)
+  {
+      log("the SIP message was received over TCP\n");
+  };
+</pre><div class='vspace'></div><h4>UDP</h4>
+<p>This keyword can be used to test the value of 'proto' and check whether the SIP packet was received over UDP or not.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>  if(proto==UDP)
+  {
+      log("the SIP message was received over UDP\n");
+  };
+</pre><div class='vspace'></div><h4>max_len</h4>
+<p>This keyword is set to the maximum size of an UDP packet. It can be used to test message's size.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    if(msg:len&gt;max_len)
+    {
+        sl_send_reply("413", "message too large to be forwarded over UDP without fragmentation");
+        exit;
+    }
+</pre><div class='vspace'></div><h4>myself</h4>
+<p>It is a reference to the list of local IP addresses, hostnames and aliases that has been set in <strong>OpenSIPS</strong> configuration file. This lists contain the domains served by <strong>OpenSIPS</strong>.
+</p>
+<p class='vspace'>The variable can be used to test if the host part of an URI is in the list. The usefulness of this test is to select the messages that has to be processed locally or has to be forwarded to another server.
+</p>
+<p class='vspace'>See "alias" to add hostnames,IP addresses and aliases to the list.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    if(uri==myself) {
+        log("the request is for local processing\n");
+    };
+</pre><div class='vspace'></div><h4>null</h4>
+<p>Can be used in assignment to reset the value of a per-script variable or to delete an avp.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    $avp(i:12) = null;
+    $var(x) = null;
+</pre><p class='vspace'>(:toc-back:)
+</p>
+<div class='vspace'></div><hr />
+<p><a name='parameters' id='parameters'></a>
+</p><h3>Core parameters</h3>
+<p>Global parameters that can be set in configuration file. Accepted values are, depending on the actual parameters strings, numbers and yes/ no. If you need to specify either "yes" or "no" as part of a string, wrap this in double quotes.
+</p>
+<div class='vspace'></div><h4>advertised_address</h4>
+<p>It can be an IP address or string and represents the address advertised in Via header and
+other destination lumps (e.g RR header). If empty or not set (default value) the socket
+address from where the request will be sent is used.
+</p>
+<p class='vspace'><span  style='color: red;'>WARNING</span>: 
+</p><pre>  - don't set it unless you know what you are doing (e.g. nat traversal)
+  - you can set anything here, no check is made (e.g. foo.bar will be
+  accepted even if foo.bar doesn't exist)
+</pre><p class='vspace'>Example of usage:
+</p><pre class='escaped'>
+    advertised_address="opensips.org"
+</pre>
+<p class='vspace'><span  style='color: blue;'>NOTE</span>: Aside this global approach, you can also define an advertise IP and port in a per-interface manner (see the "listen" parameter). When advertise values are defined per interface, they will be used only for traffic leaving that interface only.
+</p>
+<div class='vspace'></div><h4>advertised_port</h4>
+<p>The port advertised in Via header and other destination lumps (e.g. RR). If empty or not set (default value) the port from where the message will be sent is used. Same warnings as for 'advertised_address'.
+</p>
+<p class='vspace'>Example of usage:
+</p><pre class='escaped'>
+    advertised_port=5080
+</pre>
+<p class='vspace'><span  style='color: blue;'>NOTE</span>: Aside this global approach, you can also define an advertise IP and port in a per-interface manner (see the "listen" parameter). When advertise values are defined per interface, they will be used only for traffic leaving that interface only.
+</p>
+<div class='vspace'></div><h4>alias</h4>
+<p>Parameter to set alias hostnames for the server. It can be set many times, each value being added in a list to match the hostname when 'myself' is checked.
+</p>
+<p class='vspace'>It is necessary to include the port (the port value used in the "port=" or "listen=" definitions) in the alias definition otherwise the loose_route() function will not work as expected for local forwards
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+    alias=other.domain.com:5060
+    alias=another.domain.com:5060
+</pre>
+<div class='vspace'></div><h4>auto_aliases</h4>
+<p>This parameter controls if aliases should be automatically discovered and added during fixing listening sockets. The auto discovered aliases are result of the DNS lookup (if listen is a name and not IP) or of a reverse DNS lookup on the listen IP.
+</p>
+<p class='vspace'>Far backward compatibility reasons, the default value is "on".
+</p>
+<p class='vspace'>Example of usage:
+</p><pre class='escaped'>
+    auto_aliases=no
+    auto_aliases=0
+</pre>
+<div class='vspace'></div><h4>bin_listen</h4>
+<p>Defines a UDP listening interface for one or more Binary Packet Receivers. Default value is <strong>"null"</strong> (not listening).
+</p>
+<p class='vspace'>Example of usage:
+</p><pre class='escaped'>
+    bin_listen=10.0.0.150:5062
+</pre>
+<div class='vspace'></div><h4>bin_children</h4>
+<p>The number of UDP listeners for the Binary Internal Interface. Default value is <strong>1</strong>.
+</p>
+<p class='vspace'>Example of usage:
+</p><pre class='escaped'>
+    bin_children=4
+</pre>
+<div class='vspace'></div><h4>check_via</h4>
+<p>Check if the address in top most via of replies is local. Default value is 0 (check disabled).
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    check_via=1 
+</pre><div class='vspace'></div><h4>children</h4>
+<p>Number of children to fork for <strong>each</strong> UDP or SCTP interface you have defined. Default value is 8.
+</p>
+<p class='vspace'>Example of usage:
+</p><pre class='escaped'>
+    children=16
+</pre>
+<p class='vspace'><span  style='color: blue;'>NOTE</span>: this global value (applicable for all UDP/SCTP interfaces) can be override if you set a different number of children in the definition of a specific interface - so actually you can define a different number of children for each interface (see the "listen" parameter for syntax).  
+</p>
+<div class='vspace'></div><h4>chroot</h4>
+<p>The value must be a valid path in the system. If set, <strong>OpenSIPS</strong> will chroot (change root directory) to its value.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    chroot=/other/fakeroot
+</pre><div class='vspace'></div><h4>db_version_table</h4>
+<p>The name of the table version to be used by the DB API to check the version of the used tables.<br />Default value is <strong>"version"</strong>
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    db_version_table="version_1_8"
+</pre><div class='vspace'></div><h4>db_default_url</h4>
+<p>The default DB URL to be used by modules if no per-module URL is given. Default is NULL (not defined)
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    db_default_url="mysql://opensips:opensipsrw@localhost/opensips"
+</pre><div class='vspace'></div><h4>debug</h4>
+<p>Set the debug level. Higher values make <strong>OpenSIPS</strong> to print more debug messages.
+</p>
+<p class='vspace'>Examples of usage:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+    debug=1 -- print only important messages (like errors or more critical situations) 
+    - recommended for running proxy as daemon
+
+    debug=4 -- print a lot of debug messages - use it only when doing debugging sessions
+</pre>
+<p class='vspace'>Actual values are:
+</p><ul><li>-3 - Alert level
+</li><li>-2 - Critical level
+</li><li>-1 - Error level
+</li><li> 1 - Warning level
+</li><li> 2 - Notice level
+</li><li> 3 - Info level
+</li><li> 4 - Debug level
+</li></ul><p class='vspace'>The 'debug' parameter is usually used in concordance with 'log_stderror' parameter.
+</p>
+<p class='vspace'>Value of 'debug' parameter can also be get and set dynamically using 'debug' Core MI function.
+</p>
+<div class='vspace'></div><h4>disable_503_translation</h4>
+<p>If 'yes', OpenSIPS will not translate the received 503 replies into 500 replies (RFC 3261 clearly states that a proxy should never relay a 503 response, but instead it must transform it into a 500).
+</p>
+<p class='vspace'>Default value is 'no' (do translation).
+</p>
+<div class='vspace'></div><h4>disable_core_dump</h4>
+<p>Can be 'yes' or 'no'. By default core dump limits are set to unlimited or
+a high enough value. Set this config variable to 'yes' to disable core dump-ing
+(will set core limits to 0).
+</p>
+<p class='vspace'>Default value is 'no'.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    disable_core_dump=yes
+</pre><div class='vspace'></div><h4>disable_dns_blacklist</h4>
+<p>The DNS resolver, when configured with failover, can automatically store in a temporary blacklist the failed destinations. This will prevent (for a limited period of time) <strong>OpenSIPS</strong> to send requests to destination known as failed. So, the blacklist can be used as a memory for the DNS resolver. 
+</p>
+<p class='vspace'>The temporary blacklist created by DNS resolver is named "dns" and it is by default selected for usage (no need use the use_blacklist()) function. The rules from this list have a life time of 4 minutes - you can change it at compile time, from resolve.c .
+</p>
+<p class='vspace'>Can be 'yes' or 'no'. By default the blacklist is disabled (Default value is 'yes').
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    disable_dns_blacklist=no
+</pre><div class='vspace'></div><h4>disable_dns_failover</h4>
+<p>Can be 'yes' or 'no'. By default DNS-based failover is enabled. Set this config variable to 'yes' to disable the DNS-based failover. This is a global option, affecting the core and the modules also.
+</p>
+<p class='vspace'>Default value is 'no'.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    disable_dns_failover=yes
+</pre><div class='vspace'></div><h4>disable_stateless_fwd</h4>
+<p>Can be 'yes' or 'no'. This parameter controls the handling of stateless replies:
+</p><pre class='escaped'>
+    yes - drop stateless replies if stateless fwd functions (like forward) are not used in script
+    no - forward stateless replies
+</pre>
+<p>Default value is 'yes'.
+</p>
+<div class='vspace'></div><h4>disable_tcp</h4>
+<p>Global parameter to disable TCP support in the SIP server. Default value is 'no'.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    disable_tcp=yes
+</pre><div class='vspace'></div><h4>disable_tls</h4>
+<p>Global parameter to disable TLS support in the SIP server. Default value is 'yes'.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    disable_tcp=no
+</pre><div class='vspace'></div><h4>dns</h4>
+<p>This parameter controls if the SIP server should attempt to lookup its own domain name in DNS. If this parameter is set to yes and the domain name is not in DNS a warning is printed on syslog and a "received=" field is added to the via header. 
+</p>
+<p class='vspace'>Default is no.
+</p>
+<div class='vspace'></div><h4>dns_retr_time</h4>
+<p>Time in seconds before retrying a dns request. Default value is system specific,
+depends also on the '/etc/resolv.conf' content (usually 5s).
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    dns_retr_time=3
+</pre><div class='vspace'></div><h4>dns_retr_no</h4>
+<p>Number of dns retransmissions before giving up. Default value is system specific,
+depends also on the '/etc/resolv.conf' content (usually 4).
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    dns_retr_no=3
+</pre><div class='vspace'></div><h4>dns_servers_no</h4>
+<p>How many dns servers from the ones defined in '/etc/resolv.conf' will be used. 
+Default value is to use all of them.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    dns_servers_no=2
+</pre><div class='vspace'></div><h4>dns_try_ipv6</h4>
+<p>Can be 'yes' or 'no'. If it is set to 'yes' and a DNS lookup fails, it will retry it
+for ipv6 (AAAA record). Default value is 'no'.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    dns_try_ipv6=yes
+</pre><div class='vspace'></div><h4>dns_try_naptr</h4>
+<p>Disables the NAPTR lookups when doing DNS based routing for SIP requests - if disabled, the DNS lookup will start with SRV lookups.
+Can be 'yes' or 'no'. By default it is enabled, value 'yes'.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    dns_try_naptr=no
+</pre><div class='vspace'></div><h4>dns_use_search_list</h4>
+<p>Can be 'yes' or 'no'. If set to 'no', the search list in '/etc/resolv.conf'
+will be ignored (=&gt; fewer lookups =&gt; gives up faster). Default value is 'yes'.
+</p>
+<p class='vspace'>HINT: even if you don't have a search list defined, setting this option
+to 'no' will still be "faster", because an empty search list is in 
+fact search "" (so even if the search list is empty/missing there will
+still be 2 dns queries, eg. foo+'.' and foo+""+'.')
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    dns_use_search_list=no
+</pre><div class='vspace'></div><h4>dst_blacklist</h4>
+<p>Definition of a static (read-only) IP/destination blacklist. These lists can be selected from script (at runtime) to filter  the outgoing requests, based on IP, protocol, port, etc.
+</p>
+<p class='vspace'>Its primary purposes will be to prevent sending requests to critical IPs (like GWs) due DNS or to avoid sending to destinations that are known to be unavailable (temporary or permanent). 
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+   # filter out requests going to ips of my gws
+   dst_blacklist = gw:{( tcp , 192.168.2.100 , 5060 , "" ),( any , 192.168.2.101 , 0 , "" )}
+   # block requests going to "evil" networks
+   dst_blacklist = net_filter:{ ( any , 192.168.1.120/255.255.255.0 , 0 , "" )}
+   # block message requests with nasty words
+   dst_blacklist = msg_filter:{ ( any , 192.168.20.0/255.255.255.0 , 0 , "MESSAGE*ugly_word" )}
+   # block requests not going to a specific subnet
+   dst_blacklist = net_filter2:{ !( any , 192.168.30.0/255.255.255.0 , 0 , "" )}
+</pre>
+<p class='vspace'>Each rule is defined by:
+</p><ul><li>protocol : TCP, UDP, TLS or "any" for anything
+</li><li>port : number or 0 for any
+</li><li>ip/mask
+</li><li>test patter - is a filename like matching (see  "man 3 fnmatch") applied on the outgoing request buffer (first_line+hdrs+body) 
+</li></ul><div class='vspace'></div><h4>event_pkg_threshold</h4>
+<p>A number representing the percentage threshold above which the E_CORE_PKG_THRESHOLD event is raised, warning about low amount of free private memory. It accepts integer values between 0 and 100.
+</p>
+<p class='vspace'>Default value is 0 ( event disabled ).
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    event_pkg_threshold = 90
+</pre><div class='vspace'></div><h4>event_shm_threshold</h4>
+<p>A number representing the percentage threshold above which the E_CORE_SHM_THRESHOLD event is raised, warning about low amount of free shared memory. It accepts integer values between 0 and 100.
+</p>
+<p class='vspace'>Default value is 0 ( event disabled ).
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    event_shm_threshold = 90
+</pre><div class='vspace'></div><h4>exec_dns_threshold</h4>
+<p>A number representing the maximum number of microseconds a DNS query is expected to last. Anything above the set number will trigger a warning message to the logging facility.
+</p>
+<p class='vspace'>Default value is 0 ( logging disabled ).
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    exec_dns_threshold = 60000
+</pre><div class='vspace'></div><h4>exec_msg_threshold</h4>
+<p>A number representing the maximum number of microseconds the processing of a SIP msg is expected to last. Anything above the set number will trigger a warning message to the logging facility.
+Aside from the message and the processing time, the most time consuming function calls from the script will also be logged.
+</p>
+<p class='vspace'>Default value is 0 ( logging disabled ).
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    exec_msg_threshold = 60000
+</pre><div class='vspace'></div><h4>fork</h4>
+<p>If set to 'yes' the proxy will fork and run in daemon mode - one process will be created for each network interface the proxy listens to and for each protocol (TCP/UDP), multiplied with the value of 'children' parameter.
+</p>
+<p class='vspace'>When set to 'no', the proxy will stay bound to the terminal and runs as single process. First interface is used for listening to. OpenSIPS will only listen on UDP. Since the process is attached to the controlling terminal, not PID file will be created even if the -P command line option was specified.
+</p>
+<p class='vspace'>Default value is 'yes'.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    fork=no
+</pre><div class='vspace'></div><h4>group gid</h4>
+<p>The group id to run <strong>OpenSIPS</strong>.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>  group="opensips"
+</pre><div class='vspace'></div><h4>include_file</h4>
+<p>Can be called from outside route blocks to load additional routes/blocks or from inside them to simply preform more functions. The file path can be relative or absolute. If it is not an absolute path, first attempt is to locate it relative to current directory. If that fails, second try is relative to directory of the file that includes it. Will throw an error if file is not found.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+    include_file "proxy_regs.cfg"
+</pre>
+<div class='vspace'></div><h4>import_file</h4>
+<p>Same as include_file but will not throw an error if file is not found.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+    import_file "proxy_regs.cfg"
+</pre>
+<div class='vspace'></div><h4>listen</h4>
+<p>Set the network addresses the SIP server should listen to. It can be an IP address, hostname or network interface id or combination of protocol:address:port (e.g., udp:10.10.10.10:5060). This parameter can be set multiple times in same configuration file, the server listening on all addresses specified.
+</p>
+<p class='vspace'>The listen definition may accept several optional parameters for:
+</p><ul><li>configuring an advertise IP and port only for this interface. Syntax "AS 11.22.33.44:5060"
+</li><li>setting a different number of children for this interface only (for UDP and SCTP interfaces only). This will override the global "children" parameter. Syntax "use_children 5"
+</li></ul><p>Remember that this parameters have affect only for the interface they are configured for; if not defined per interface, the global values will be used.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+    listen=10.10.10.10
+    listen=eth1:5062
+    listen=udp:10.10.10.10:5064
+    listen=udp:127.0.0.1:5060 use_children 5
+    listen=udp:127.0.0.1:5060 as 99.88.44.33:5060 use_children 3
+    listen=127.0.0.1 use_children 3
+</pre>
+<p class='vspace'>If you omit this directive then the SIP server will listen on all interfaces. On start the SIP server reports all the interfaces that it is listening on. Even if you specify only UDP interfaces here, the server will start the TCP engine too. If you don't want this, you need to disable the TCP support completely with the core parameter disable_tcp.
+</p>
+<div class='vspace'></div><h4>log_facility</h4>
+<p>If <strong>OpenSIPS</strong> logs to syslog, you can control the facility for logging. Very
+useful when you want to divert all <strong>OpenSIPS</strong> logs to a different log file.
+See the man page syslog(3) for more details.
+</p>
+<p class='vspace'>For more see: http://www.voice-system.ro/docs/ser-syslog/
+</p>
+<p class='vspace'>Default value is LOG_DAEMON.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    log_facility=LOG_LOCAL0
+</pre><div class='vspace'></div><h4>log_name</h4>
+<p>Set the id to be printed in syslog. The value must be a string and has
+effect only when <strong>OpenSIPS</strong> runs in daemon mode (fork=yes), after daemonize.
+Default value is argv[0].
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    log_name="osips-5070"
+</pre><div class='vspace'></div><h4>log_stderror</h4>
+<p>With this parameter you can make <strong>OpenSIPS</strong> to write log and debug messages to standard error. Possible values are:
+</p>
+<p class='vspace'>- "yes" - write the messages to standard error
+</p>
+<p class='vspace'>- "no" - write the messages to syslog
+</p>
+<p class='vspace'>Default value is "no".
+</p>
+<p class='vspace'>For more see: http://www.voice-system.ro/docs/ser-syslog/
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    log_stderror=yes
+</pre><div class='vspace'></div><h4>max_while_loops</h4>
+<p>The parameters set the value of maximum loops that can be done within a "while". Comes as a protection to avoid infinite loops in config file execution. Default is 100.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    max_while_loops=200
+</pre><div class='vspace'></div><h4>maxbuffer</h4>
+<p>The size in bytes not to be exceeded during the auto-probing procedure of discovering the maximum buffer size for receiving UDP messages. Default value is 262144.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    maxbuffer=65536
+</pre><div class='vspace'></div><h4>memdump | mem_dump</h4>
+<p>Log level to print memory status information (runtime and shutdown). It has to be less than the value of 'debug' parameter if you want memory info to be logged. Default: memdump=L_DBG (4)
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    memdump=2
+</pre><p class='vspace'>NOTE that setting memlog (see below), will also set the memdump parameter - if you want different values for memlog and memdump, you need to first set memlog and then memdump.
+</p>
+<div class='vspace'></div><h4>memlog | mem_log</h4>
+<p>Log level to print memory debug info. It has to be less than the value of 'debug' parameter if you want memory info to be logged. Default: memlog=L_DBG (4)
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    memlog=2
+</pre><p class='vspace'>NOTE: by setting memlog parameter, the memdump will automatically be set to the same value (see memdump docs).
+</p>
+<div class='vspace'></div><h4>mcast_loopback</h4>
+<p>It can be 'yes' or 'no'. If set to 'yes', multicast datagram are sent over loopback. Default value is 'no'.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    mcast_loopback=yes
+</pre><div class='vspace'></div><h4>mcast_ttl</h4>
+<p>Set the value for multicast ttl. Default value is OS specific (usually 1).
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    mcast_ttl=32
+</pre><div class='vspace'></div><h4>mhomed</h4>
+<p>Set the server to try to locate outbound interface on multihomed host. By default is not (0) - it is rather time consuming.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    mhomed=1
+</pre><div class='vspace'></div><h4>mpath</h4>
+<p>Set the module search path.  This can be used to simplify the loadmodule parameter
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+    mpath="/usr/local/lib/opensips/modules"
+    loadmodule "mysql.so"
+    loadmodule "uri.so"
+    loadmodule "uri_db.so"
+    loadmodule "sl.so"
+    loadmodule "tm.so"
+    ...
+</pre>
+<div class='vspace'></div><h4>open_files_limit</h4>
+<p>If set and bigger than the current open file limit, <strong>OpenSIPS</strong> will try
+to increase its open file limit to this number. Note: <strong>OpenSIPS</strong> must be
+started as root to be able to increase a limit past the hard limit
+(which, for open files, is 1024 on most systems).
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    open_files_limit=2048
+</pre><div class='vspace'></div><h4>port</h4>
+<p>The port the SIP server listens to. The default value for it is 5060.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    port=5080
+</pre><div class='vspace'></div><h4>reply_to_via</h4>
+<p>If it is set to 1, any local reply is sent to the address advertised in top most Via of the request. Default value is 0 (off).
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    reply_to_via=0
+</pre><div class='vspace'></div><h4>query_buffer_size</h4>
+<p>If set to a value greater than 1, inserts to DB will not be flushed one by one. Rows to be inserted will be kept in memory until until they gather up to query_buffer_size rows, and only then they will be flushed to the database.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    query_buffer_size=5
+</pre><div class='vspace'></div><h4>query_flush_time</h4>
+<p>If query_buffer_size is set to a value greater than 1, a timer will trigger once every query_flush_time seconds,
+ensuring that no row will be kept for too long in memory.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>     query_flush_time=10
+</pre><div class='vspace'></div><h4>rev_dns</h4>
+<p>This parameter controls if the SIP server should attempt to lookup its own IP address in DNS. If this parameter is set to yes and the IP address is not in DNS a warning is printed on syslog and a "received=" field is added to the via header. 
+</p>
+<p class='vspace'>Default is no.
+</p>
+<div class='vspace'></div><h4>server_header</h4>
+<p>The body of Server header field generated by <strong>OpenSIPS</strong> when it sends a request as UAS.  It defaults to "OpenSIPS (&lt;version&gt; (&lt;arch&gt;/&lt;os&gt;))".  
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+server_header="Server: My Company SIP Proxy"
+</pre>
+<p class='vspace'>Please note that you have to add the header name "Server:", otherwise <strong>OpenSIPS</strong> will just write a header like:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+My Company SIP Proxy
+</pre>
+<div class='vspace'></div><h4>server_signature</h4>
+<p>This parameter controls the "Server" header in any locally generated message. 
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>     server_signature=no
+</pre><p class='vspace'>If it is enabled (default=yes) a header is generated as in the following example:
+</p>
+<div class='vspace'></div><pre>     Server: OpenSIPS (0.9.5 (i386/linux))
+</pre><div class='vspace'></div><h4>sip_warning</h4>
+<p>Can be 0 or 1. If set to 1 (default value is 0) a 'Warning' header is added to each reply generated by <strong>OpenSIPS</strong>.
+The header contains several details that help troubleshooting using the network traffic dumps.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    sip_warning=0
+</pre><div class='vspace'></div><h4>tcp_async</h4>
+<p>If the TCP connect and write operations should be done in an asynchronous mode. Default value is 0 ( blocking connect &amp; write )
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    tcp_async=1
+</pre><div class='vspace'></div><h4>tcp_async_local_connect_timeout</h4>
+<p>If tcp_async is enabled, this specifies the number of microseconds that a connect will be tried in blocking mode ( optimization ). If the connect operation lasts more than this, the connect will go to async mode and will be passed to TCP MAIN for polling. Default value is 10000 ( 10 ms )
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    tcp_async_local_connect_timeout=20000
+</pre><div class='vspace'></div><h4>tcp_async_local_write_timeout</h4>
+<p>If tcp_async is enabled, this specifies the number of microseconds that a write op will be tried in blocking mode ( optimization ). If the write operation lasts more than this, the write will go to async mode and will be passed to TCP MAIN for polling. Default value is 10000 ( 10 ms )
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    tcp_async_local_write_timeout=20000
+</pre><div class='vspace'></div><h4>tcp_async_max_postponed_chunks</h4>
+<p>If tcp_async is enabled, this specifies the maximum number of SIP messages that can be stashed for later/async writing. If the connection pending writes exceed this number, the connection will be marked as broken and dropped. Default value is 32
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    tcp_async_max_postponed_chunks=64
+</pre><div class='vspace'></div><h4>tcp_children</h4>
+<p>Number of children processes to be created for reading from TCP connections. If no value is explicitly set, the same number of TCP children as UDP children (see "children" parameter) will be used.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    tcp_children=4
+</pre><div class='vspace'></div><h4>tcp_accept_aliases</h4>
+<div class='vspace'></div><h4>tcp_listen_backlog</h4>
+<p>The backlog argument defines the maximum length to which the queue of pending connections for the TCP listeners may grow. If a connection  request arrives when the queue is full, the client may receive an error with an indication  of  ECONNREFUSED  or,  if  the underlying protocol supports retransmission, the request may be ignored so that a later reattempt at connection succeeds.
+</p>
+<p class='vspace'>Default configured value is 10.
+</p>
+<div class='vspace'></div><h4>tcp_send_timeout</h4>
+<p>Time in seconds after a TCP connection will be closed if it is not available
+for blocking writing in this interval (and <strong>OpenSIPS</strong> wants to send something on it).
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    tcp_send_timeout=3
+</pre><div class='vspace'></div><h4>tcp_connect_timeout</h4>
+<p>Time in seconds before an ongoing blocking attempt to connect will be aborted.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    tcp_connect_timeout=5
+</pre><div class='vspace'></div><h4>tcp_connection_lifetime!!!!</h4>
+<p>Lifetime in seconds for TCP sessions. TCP sessions which are inactive for &gt;tcp_connection_lifetime will be closed by <strong>OpenSIPS</strong>. Default value is defined in tcp_conn.h: #define DEFAULT_TCP_CONNECTION_LIFETIME 120. Setting this value to 0 will close the TCP connection pretty quick ;-). You can also set the TCP lifetime to the expire value of the REGISTER by using the tcp_persistent_flag parameter of the registrar module.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    tcp_connection_lifetime=3600
+</pre><div class='vspace'></div><h4>tcp_max_connections</h4>
+<p>maximum number of tcp connections (if the number is exceeded no new tcp connections will be accepted). Default is defined in tcp_conn.h: #define DEFAULT_TCP_MAX_CONNECTIONS 2048
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    tcp_max_connections=4096
+</pre><div class='vspace'></div><h4>tcp_max_msg_chunks</h4>
+<p>The maximum number of chunks that a SIP message is expected to arrive via TCP. If a packet is received more fragmented than this, the connection is dropped ( either the connection is very overloaded and this leads to high fragmentation - or we are the victim of an ongoing attack where the attacker is sending the traffic very fragmented in order to decrease our performance ). Default value is is 4
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    tcp_max_msg_chunks=8
+</pre><div class='vspace'></div><h4>tcp_max_msg_time</h4>
+<p>The maximum number of seconds that a SIP message is expected to arrive via TCP. If a single SIP packet is still not fully received after this number of seconds, the connection is dropped ( either the connection is very overloaded and this leads to high fragmentation - or we are the victim of an ongoing attack where the attacker is sending the traffic very fragmented in order to decrease our performance ). Default value is is 4
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    tcp_max_msg_time=8
+</pre><div class='vspace'></div><h4>tcp_poll_method</h4>
+<p>poll method used (by default the best one for the current OS is selected). For available types see io_wait.c and poll_types.h: none, poll, epoll_lt, epoll_et, sigio_rt, select, kqueue, /dev/poll
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    tcp_poll_method=select
+</pre><div class='vspace'></div><h4>tcp_no_new_conn_bflag</h4>
+<p>A branch flag to be used as marker to instruct OpenSIPS not to attempt to open a new TCP connection when delivering a request, but only to reuse an existing one (if available). If no existing conn, a generic send error will be returned.
+</p>
+<p class='vspace'>This is intended to be used in NAT scenarios, where makes no sense to open a TCP connection towards a destination behind a NAT (like TCP connection created during registration was lost, so there is no way to contact the device until it re-REGISTER). Also this can be used to detect when a NATed registered user lost his TCP connection, so that opensips can disable his registration as useless.
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>     tcp_no_new_conn_bflag = 6
+     ....
+     route{
+         ....
+         if( destination_behin_nat &amp;&amp; proto==TCP )
+            setbflag(6);
+         ....
+         t_relay("0x02"); # no auto error reply
+         $var(retcode) = $rc;
+         if ($var(retcode)==-6) {
+             #send error
+             xlog("unable to send request to destination");
+             send_reply("404","Not found");
+             exit;
+         } else if ($var(retcode)&lt;0) {
+             sl_reply_error();
+             exit;
+         }
+         ....
+     }
+</pre><div class='vspace'></div><h4>tcp_threshold</h4>
+<p>A number representing the maximum number of microseconds sending of a TCP request is expected to last. Anything above the set number will trigger a warning message to the logging facility.
+</p>
+<p class='vspace'>Default value is 0 ( logging disabled ).
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    tcp_threshold = 60000
+</pre><div class='vspace'></div><h4>tcp_keepalive</h4>
+<p>Enable / disable TCP keepalive
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    tcp_keepalive = 1
+</pre><div class='vspace'></div><h4>tcp_keepcount</h4>
+<p>Number of keepalives to send before closing the connection (Linux only)
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    tcp_keepcount = 5
+</pre><div class='vspace'></div><h4>tcp_keepidle</h4>
+<p>Amount of time before OpenSIPS will start to send keepalives if the connection is idle (Linux only)
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    tcp_keepidle = 30
+</pre><div class='vspace'></div><h4>tcp_keepinterval</h4>
+<p>Interval between keepalive probes, if the previous one failed (Linux only)
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    tcp_keepinterval = 10
+</pre><div class='vspace'></div><h4>tls_ca_list</h4>
+<div class='vspace'></div><h4>tls_certificate</h4>
+<div class='vspace'></div><h4>tls_ciphers_list</h4>
+<div class='vspace'></div><h4>tls_domain</h4>
+<div class='vspace'></div><h4>tls_handshake_timeout</h4>
+<div class='vspace'></div><h4>tls_log</h4>
+<div class='vspace'></div><h4>tls_method</h4>
+<div class='vspace'></div><h4>tls_port_no</h4>
+<div class='vspace'></div><h4>tls_private_key</h4>
+<div class='vspace'></div><h4>tls_require_certificate</h4>
+<div class='vspace'></div><h4>tls_send_timeout</h4>
+<div class='vspace'></div><h4>tls_verify</h4>
+<div class='vspace'></div><h4>tos</h4>
+<p>The TOS (Type Of Service) to be used for the sent IP packages (both TCP and UDP).
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+    tos=IPTOS_LOWDELAY
+    tos=0x10
+    tos=IPTOS_RELIABILITY
+</pre>
+<div class='vspace'></div><h4>user uid</h4>
+<p>The user id to run <strong>OpenSIPS</strong> (OpenSIPS will suid to it).
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre>    user="opensips"
+</pre><div class='vspace'></div><h4>user_agent_header</h4>
+<p>The body of User-Agent header field generated by <strong>OpenSIPS</strong> when it sends a request as UAC.  It defaults to "OpenSIPS (&lt;version&gt; (&lt;arch&gt;/&lt;os&gt;))". 
+</p>
+<p class='vspace'>Example of usage:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+user_agent_header="User-Agent: My Company SIP Proxy"
+</pre>
+<p class='vspace'>Please note that you have to include the header name "User-Agent:" as <strong>OpenSIPS</strong> does not add it and you will get an erroneous header like:
+</p><pre class='escaped'>
+My Company SIP Proxy
+</pre>
+<div class='vspace'></div><h4>wdir</h4>
+<p>The working directory used by <strong>OpenSIPS</strong> at runtime. You might find it usefull when come to generating core files :)
+</p>
+<p class='vspace'>Example of usage:
+</p><pre class='escaped'>
+     wdir="/usr/local/opensips"
+     or
+     wdir=/usr/opensips_wd
+</pre>
+<p class='vspace'>(:toc-back:)
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-CoreParameters-2-1-action=edit&restore=diff-1395339871-1395339871-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit&restore=diff:1395339871:1395339871:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Script-CoreParameters-2-1-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=edit">Edit</a> |
+      <a rel="nofollow" href="Script-CoreParameters-2-1-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=diff">History</a> |
+      <a rel="nofollow" href="Script-CoreParameters-2-1-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-2-1?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on April 21, 2015, at 02:10 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

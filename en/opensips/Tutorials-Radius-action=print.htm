@@ -1,0 +1,321 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+  <title>openSIPS | Documentation / Tutorials-Radius</title>
+  <link rel='stylesheet' href="print.css" tppabs="http://www.opensips.org/pub/skins/print/print.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+</head>
+<body>
+  <div id='printhead'>
+    <h3>From openSIPS</h3>
+    <h1 class='pagename'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation%27" tppabs="http://www.opensips.org/Documentation">Documentation: Tutorials-Radius</a></h1>
+  </div>
+<!--PageText-->
+<div id='wikitext'>
+<h5>Documentation -&gt; <a class='wikilink' href="Tutorials-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials?action=print">Tutorials</a> -&gt; Radius</h5>
+<hr />
+<p>This page has been visited 9872 times.
+</p><div class='tocfloat'><p><a name='toc' id='toc'></a><b>Table of Content</b> (<a id="tocidtog" href="javascript:toggle('tocid');">hide</a>)</p><ol class='toc' id='tocid'><li>1.&nbsp;<a href='#toc1'>Installing RADIUS Server</a></li><li>2.&nbsp;<a href='#toc2'>Installing RADIUS Client</a></li><li>3.&nbsp;<a href='#toc3'>Tips and tricks to configure RADIUS Client and Server for Authentication</a><ol class='toc'><li>3.1&nbsp;<a href='#toc4'>Make sure both client and server know and share the same SIP dictionary</a></li><li>3.2&nbsp;<a href='#toc5'>Configure RADIUS server and RADIUS client to share the same secret</a></li><li>3.3&nbsp;<a href='#toc6'>Set up FreeRADIUS to handle digest authentication requests</a></li><li>3.4&nbsp;<a href='#toc7'>Configure the /etc/freeradius/users file to match the user you want to authenticate and the attributes you want to be returned</a></li></ol></li><li>4.&nbsp;<a href='#toc8'>How to use RADIUS support from the OpenSIPS configuration script</a><ol class='toc'><li>4.1&nbsp;<a href='#toc9'>Accounting</a></li><li>4.2&nbsp;<a href='#toc10'>Authentication and authorization</a></li><li>4.3&nbsp;<a href='#toc11'>Custom accounting and authentication</a></li></ol></li><li>5.&nbsp;<a href='#toc12'>Useful links:</a></li></ol></div>
+<hr />
+<p>RADIUS is a client/server networking protocol that provides centralized Authentication, Authorization, and Accounting management for clients to connect and use a network service.
+</p>
+<p class='vspace'>After completing this tutorial, you will be able to:
+</p><ul><li>make a basic configuration for the RADIUS server
+</li><li>make a basic configuration for the RADIUS client
+</li><li>use accounting and authentication features provided by <strong>OpenSIPS</strong>
+</li><li>add and use custom attributes in RADIUS messages
+</li><li>send custom authentication requests and fetch data from responses
+</li><li>send custom accounting requests and inspect the server logs
+</li></ul><div class='vspace'></div><hr />
+<div class='vspace'></div><h3><a name='toc1' id='toc1'></a>1.&nbsp; Installing RADIUS Server</h3>
+<p>The first step is to install FreeRADIUS server. On a Debian based system this can be done using:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+ # apt-get install freeradius
+</pre>
+<p class='vspace'>or you can go to <a class='urllink' href="javascript:if(confirm(%27http://freeradius.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://freeradius.org/%27" tppabs="http://freeradius.org/" rel='nofollow'>FreeRADIUS homepage</a> , download the binaries and follow the instructions there.
+For more information, check out <a class='urllink' href="javascript:if(confirm(%27http://wiki.freeradius.org/Installation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://wiki.freeradius.org/Installation%27" tppabs="http://wiki.freeradius.org/Installation" rel='nofollow'>FreeRADIUS Installation</a> .
+</p>
+<div class='vspace'></div><hr />
+<div class='vspace'></div><h3><a name='toc2' id='toc2'></a>2.&nbsp; Installing RADIUS Client</h3>
+<p>On a Debian based system you can install RADIUS client using:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+ # apt-get install libradiusclient-ng2
+</pre>
+<p class='vspace'>or you can go to <a class='urllink' href="javascript:if(confirm(%27http://developer.berlios.de/projects/radiusclient-ng/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://developer.berlios.de/projects/radiusclient-ng/%27" tppabs="http://developer.berlios.de/projects/radiusclient-ng/" rel='nofollow'>radiusclient-ng homepage</a> , download the binaries and follow the instructions there.
+</p>
+<div class='vspace'></div><hr />
+<div class='vspace'></div><h3><a name='toc3' id='toc3'></a>3.&nbsp; Tips and tricks to configure RADIUS Client and Server for Authentication</h3>
+<p class='vspace'>There are a few things you have to make sure you do properly, so that you can use RADIUS authentication. The accounting features need no special configuration.
+For the server configuration, you may need to be a super user.
+</p>
+<div class='vspace'></div><h4><a name='toc4' id='toc4'></a>3.1&nbsp; Make sure both client and server know and share the same SIP dictionary</h4>
+<p class='vspace'>The master dictionary path is specified for the RADIUS client in the <em>/etc/radiusclient-ng/radiusclient.conf</em> file. The radiusclient comes with particular dictionaries located in the <em>/etc/radiusclient-ng/</em> folder, including the <strong>SIP</strong> specific dictionary called <em>dictionary.sip</em> , but by default they are not included. You can add it manually at the end of the master dictionary, or you can include it to the master dictionary file by inserting the following line:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+$INCLUDE &lt;desired_dictionary_path&gt;
+</pre>
+<p class='vspace'>where the &lt;desired_dictionary_path&gt; should be the path for the RADIUS dictionary, which is by default <em>/etc/radiusclient-ng/dictionary.sip</em> .
+</p>
+<p class='vspace'>The master dictionary file for the freeRADIUS server is <em>/etc/freeradius/dictionary</em> . It references the 
+pre-defined dictionary files included with the server that are located, by default,  in the <em>/usr/share/freeradius/</em> folder. Also, the master dictionary does not include the <strong>SIP</strong> specific dictionary entries. You must include the same <strong>SIP</strong> dictionary the client does with the same insert method used by the client ($INCLUDE).
+</p>
+<div class='vspace'></div><h4><a name='toc5' id='toc5'></a>3.2&nbsp; Configure RADIUS server and RADIUS client to share the same secret</h4>
+<p class='vspace'>For the radiusclient, you need to specify in the <em>radiusclient-ng.conf</em> file the path for the file containing the secrets. By default, this path is <em>/etc/radiusclient-ng/servers</em>.
+</p>
+<p class='vspace'>For the FreeRADIUS server, the file you need to configure is <em>/etc/freeradius/clients.conf</em> .
+</p>
+<div class='vspace'></div><h4><a name='toc6' id='toc6'></a>3.3&nbsp; Set up FreeRADIUS to handle digest authentication requests</h4>
+<p class='vspace'>In order to do that, you just need to uncomment the digest lines in both <strong>authenticate{}</strong> and <strong>authorize{}</strong> sections of the site in the <em>/etc/freeradius/sites-available/default</em> file.
+This is the default site, you may want to change that.
+</p>
+<div class='vspace'></div><h4><a name='toc7' id='toc7'></a>3.4&nbsp; Configure the /etc/freeradius/users file to match the user you want to authenticate and the attributes you want to be returned </h4>
+<p class='vspace'>For example:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+testdig Cleartext-Password:= opensips.cfg
+        Reply-Message = "OpenSIPS Rules!",
+        SIP-AVP = "sems:ann-account_locked",
+        Sip-Rpid = sip:+407433360111@opensips.org
+
+DEFAULT Auth-Type := Accept
+        Reply-Message = "OpenSIPS Rules!",
+        SIP-AVP = "sems:ann-account_locked",
+        Sip-Rpid = sip:+407433360111@opensips.org
+</pre>
+<p class='vspace'>This is an example of a freeRADIUS users configuration file that contains two rules: one for a user called <strong>testdig</strong> and one for a <strong>default</strong> user. When a RADIUS request is received, the users are tested sequentially until a match can be made. DEFAULT matches any user. 
+If a DEFAULT user is not specified and no match is made, the request is ignored.
+</p>
+<div class='vspace'></div><hr />
+<div class='vspace'></div><h3><a name='toc8' id='toc8'></a>4.&nbsp; How to use RADIUS support from the OpenSIPS configuration script</h3>
+<p class='vspace'>There are two types of RADIUS messages to send: accounting messages and authentication and authorization messages. <strong>OpenSIPS</strong> provides support for both types of RADIUS messages.
+</p>
+<div class='vspace'></div><h4><a name='toc9' id='toc9'></a>4.1&nbsp; Accounting</h4>
+<p class='vspace'>Accounting refers to the tracking of the calls made by users. This information may be used for management, billing, or other purposes. Therefore, when the server receives an accounting message, it doesn't send any AVPs in the Radius reply, and so no attribute can be fetched from a reply, since the message contains no AVPs.
+</p>
+<p class='vspace'>The accounting logs held by the server can be inspected here: <em>/var/log/freeradius/radacct/</em> . They are sorted by date and have suggestive names.
+</p>
+<div class='vspace'></div><h5>OpenSIPS accounting module overview</h5>
+<p class='vspace'>The <strong>OpenSIPS</strong> module that supports accounting is the ACC module. Its responsibility is to account transactions information to different back-ends, including a generic AAA back-end that has a RADIUS implementation.
+</p>
+<div class='vspace'></div><h5>OpenSIPS accounting module configuration</h5>
+<p class='vspace'>To enable the RADIUS accounting support, you have to set the script parameter called <strong>aaa_url</strong> for the ACC module like this:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+modparam("acc", "aaa_url", "radius:/etc/radiusclient-ng/radiusclient.conf")
+</pre>
+<p class='vspace'>The <strong>aaa_url</strong> contains the name of the AAA protocol used, in this case RADIUS and the location of the
+configuration file of this protocol, separated by “:”.
+</p>
+<p class='vspace'>There are other optional flags and parameters you may want to use, depending on your purpose. For example, you may want to do accounting for a specific <strong>SIP</strong> message, or for a whole transaction. 
+For more information about that and more, check <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/modules/devel/acc.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/modules/devel/acc.html#id271395%27" tppabs="http://www.opensips.org/html/docs/modules/devel/acc.html#id271395" rel='nofollow'>ACC AAA flags</a> .
+</p>
+<p class='vspace'>A special feature of the accounting module is the optional <strong>aaa_extra</strong> parameter. Its functionality is to account extra values via AAA (in our case, RADIUS). This functionality is a limited version of the custom RADIUS queries, which will be presented later on. You can set this parameter like this:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+modparam(“acc”, “aaa_extra”, “via=$hdr(Via[*]); email=$avp(s:email); Bcontact=$ct / reply”)
+</pre>
+<div class='vspace'></div><h5>OpenSIPS accounting module usage</h5>
+<p class='vspace'>This is an example of usage of the AAA function provided by the ACC module in which a comment is appended.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+...
+acc_aaa_request(“Some comment”);
+...
+</pre>
+<p class='vspace'>This function sends a predefined list of AVPs. To see what these AVPs are, after you configure the server, the client and the script properly, use this function and then inspect the server logs.
+</p>
+<div class='vspace'></div><h4><a name='toc10' id='toc10'></a>4.2&nbsp; Authentication and authorization</h4>
+<p class='vspace'>Authentication refers to verifying the client's identity. 
+To do that, the FreeRADIUS server checks the <em>/etc/freeradius/users</em> to see if the user is known. If so, the FreeRADIUS checks the credentials received and sends a reply containing the result of the authentication. When performing authentication, the AAA server may include in the response additional information, i.e. those attributes you have previously configured for that user. Only these attributes can be inspected from the reply message. If the use doesn't match any entry in the users file, the request is ignored.
+</p>
+<div class='vspace'></div><h5>OpenSIPS RADIUS authentication module overview</h5>
+<p class='vspace'>The <strong>OpenSIPS</strong> module that supports authentication and authorization is the AUTH_AAA module. Its responsibility is to authenticate users using a AAA back-end that has a RADIUS implementation.
+The proxy will simply pass along the credentials to the freeRADIUS server and expect the result of authentication.
+</p>
+<div class='vspace'></div><h5>OpenSIPS RADIUS authentication module configuration</h5>
+<p class='vspace'>Similar to the accounting module, to enable authentication, you have to set the <strong>aaa_url</strong> from the script.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+modparam("auth_aaa", "aaa_url", "radius:/etc/radiusclient-ng/radiusclient.conf")
+</pre>
+<p class='vspace'>There are other optional flags and parameters you may want to use, depending on your purpose. For more information about them, check <a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/modules/devel/auth_aaa.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/modules/devel/auth_aaa.html#id227283%27" tppabs="http://www.opensips.org/html/docs/modules/devel/auth_aaa.html#id227283" rel='nofollow'>AUTH_AAA flags</a>.
+</p>
+<div class='vspace'></div><h5>OpenSIPS authentication module usage</h5>
+<p class='vspace'>Here are some examples of usage for the functions exported by the AUTH_AAA module:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+...
+if (!aaa_www_authorize("opensips.org")) {
+        www_challenge("opensips.org", "1");
+};
+...
+...
+if (!aaa_proxy_authorize("")) {   # Realm and URI user will be auto-generated
+        proxy_challenge("", "1");
+};
+...
+if (!aaa_proxy_authorize("$pd", "$pU")) { # Realm and URI user are taken
+        proxy_challenge("$pd", "1");         # from P-Preferred-Identity
+};                                           # header field
+...
+</pre>
+<div class='vspace'></div><h4><a name='toc11' id='toc11'></a>4.3&nbsp; Custom accounting and authentication</h4>
+<p class='vspace'>OpenSIPS has introduced a new feature that allows any type of RADIUS queries to be yielded directly from the script, and also, to inspect RADIUS replies for certain attributes. The module that handles these operations is the AAA_RADIUS module.
+</p>
+<p class='vspace'>To enable this module, you simply have to set the <strong>radius_config</strong> parameter, containing the path for the radiusclient library configuration file.
+For example:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+modparam("aaa_radius", "radius_config", "/etc/radiusclient-ng/radiusclient.conf")
+</pre>
+<div class='vspace'></div><h5>Custom RADIUS AVPs</h5>
+<p class='vspace'>Since all other RADIUS operations use predefined attributes, the custom queries provided by the AAA_MODULE have the ability to use custom attributes also.
+</p>
+<p class='vspace'>In addition to the standard attributes, RADIUS supports also custom attributes, that can be vendor proprietary, or manually configured.
+According to RFC2865, the value of an attribute is represented on 1 octet. Hence, the maximum value for an attribute will be 255.
+Using the Vendor Specific Attribute encapsulation, the vendor proprietary attributes are allowed to have values greater than 255.
+</p>
+<p class='vspace'>For vendor specific attribute encapsulation, check out: <a class='urllink' href="javascript:if(confirm(%27http://linux.die.net/man/5/dictionary  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://linux.die.net/man/5/dictionary%27" tppabs="http://linux.die.net/man/5/dictionary" rel='nofollow'>RADIUS dictionary manual</a> .
+The following part of this tutorial will handle only non-vendor specific attributes.
+</p>
+<p class='vspace'>Due to the fact that for an attribute to be correctly interpreted by both server and client, for setting up a custom attribute, you have to edit the dictionary files for both of them.
+</p>
+<p class='vspace'>For the RADIUS server,  you have to add to one of the dictionaries included, preferably to the <strong>SIP</strong> specific dictionary a new entry with the desired attribute name, value and type. The value must be smaller than 256. 
+The same thing has to be done for the radius client dictionary file also. Make sure the entries are identical for the server and for the client.
+</p>
+<div class='vspace'></div><h5>How to specify a query</h5>
+<p class='vspace'>Both accounting and authenticating custom queries use a common way of specification, that is a <strong>set</strong>.
+They are used when building custom RADIUS requests (set of input RADIUS AVPs) or when fetching data from the RADIUS reply (set of output RADIUS AVPs). 
+</p>
+<p class='vspace'>The format for a set definition is the following: 
+</p><pre> set_name = ( attribute_name1 = var1 [, attribute_name2 = var2 ]* )  
+</pre><p class='vspace'>The left-hand side of the assignment must be an attribute name known by the RADIUS dictionary. 
+The right-hand side of the assignment must be a script pseudo variable or a script AVP. For more information about them see <a class='wikilink' href="Index-action=print.htm" tppabs="http://www.opensips.org/Documentation/Index?action=print">Documentation - Scripting Variables</a>.
+For example:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+modparam("aaa_radius","sets","set1 = (User-Name=$var(usr), Sip-Group = $var(grp), Service-Type = $var(type)) ")
+</pre>
+<p class='vspace'>When a query is made, the SIP AVPs will be expanded and the the pairs (attribute_name, var) will be added to the RADIUS message.
+</p>
+<div class='vspace'></div><h5>Custom accounting queries</h5>
+<p class='vspace'>To send an accounting custom query, the function to be used is <strong>radius_send_acct</strong> .
+The function takes only one parameter that represents the name of the set that contains the list of attributes and pvars that will form the accounting request.
+Only one set is needed as a parameter because no AVPs can be extracted from the accounting replies.
+The set must be defined using the "sets" exported parameter.
+For example:
+</p>
+<div class='vspace'></div><pre class='escaped'>...
+radius_send_acct(“set1”);
+...
+</pre>
+<div class='vspace'></div><h5>Custom authentication queries</h5>
+<p class='vspace'>To send an accounting custom query, the function to be used is <strong>radius_send_auth</strong> .
+The function takes two parameters: the name of the set that contains the list of attributes and pvars that will form the authentication request and the name of the set that contains the list of attributes and pvars that will be extracted form the authentication reply.
+The sets must be defined using the "sets" exported parameter.
+For example:
+</p>
+<div class='vspace'></div><pre class='escaped'>...
+radius_send_auth(“set1”,”set2”);
+...
+</pre>
+<div class='vspace'></div><hr />
+<div class='vspace'></div><h3><a name='toc12' id='toc12'></a>5.&nbsp; Useful links:</h3>
+<p class='vspace'><a class='urllink' href="javascript:if(confirm(%27http://wiki.freeradius.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://wiki.freeradius.org/%27" tppabs="http://wiki.freeradius.org/" rel='nofollow'>http://wiki.freeradius.org/</a>
+</p>
+<p class='vspace'><a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/modules/devel/aaa_radius.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/modules/devel/aaa_radius.html%27" tppabs="http://www.opensips.org/html/docs/modules/devel/aaa_radius.html" rel='nofollow'>http://www.opensips.org/html/docs/modules/devel/aaa_radius.html</a>
+</p>
+<p class='vspace'><a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/modules/devel/acc.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/modules/devel/acc.html%27" tppabs="http://www.opensips.org/html/docs/modules/devel/acc.html" rel='nofollow'>http://www.opensips.org/html/docs/modules/devel/acc.html</a>
+</p>
+<p class='vspace'><a class='urllink' href="javascript:if(confirm(%27http://www.opensips.org/html/docs/modules/devel/auth_aaa.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/html/docs/modules/devel/auth_aaa.html%27" tppabs="http://www.opensips.org/html/docs/modules/devel/auth_aaa.html" rel='nofollow'>http://www.opensips.org/html/docs/modules/devel/auth_aaa.html</a>
+</p>
+<p class='vspace'><a class='urllink' href="javascript:if(confirm(%27http://www.ietf.org/rfc/rfc2865.txt  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.ietf.org/rfc/rfc2865.txt%27" tppabs="http://www.ietf.org/rfc/rfc2865.txt" rel='nofollow'>http://www.ietf.org/rfc/rfc2865.txt</a>
+</p>
+<p class='vspace'><a class='urllink' href="javascript:if(confirm(%27http://www.ietf.org/rfc/rfc2866.txt  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.ietf.org/rfc/rfc2866.txt%27" tppabs="http://www.ietf.org/rfc/rfc2866.txt" rel='nofollow'>http://www.ietf.org/rfc/rfc2866.txt</a>
+</p>
+<p class='vspace'><a class='urllink' href="javascript:if(confirm(%27http://voiprookie.blogspot.com/2009/04/freeradius-and-mysql.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://voiprookie.blogspot.com/2009/04/freeradius-and-mysql.html%27" tppabs="http://voiprookie.blogspot.com/2009/04/freeradius-and-mysql.html" rel='nofollow'>http://voiprookie.blogspot.com/2009/04/freeradius-and-mysql.html</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='from'>Retrieved from http://www.opensips.org/Documentation/Tutorials-Radius</div>
+    <div class='lastmod'>Page last modified on May 16, 2013, at 06:10 PM</div></div>
+<!--HTMLFooter-->
+</body>
+</html>

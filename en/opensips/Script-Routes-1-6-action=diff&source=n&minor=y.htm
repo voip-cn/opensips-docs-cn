@@ -1,0 +1,532 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Types of routes - ver 1.6 | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Script-Routes-1-6' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Script-Routes-1-6 History</h2>
+  <p><a href="Script-Routes-1-6-action=diff&source=n&minor=n.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-6?action=diff&source=n&minor=n">Hide minor edits</a> - <a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Script-Routes-1-6?action=diff&source=y&minor=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Script-Routes-1-6?action=diff&source=y&minor=y%27" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-6?action=diff&source=y&minor=y">Show changes to markup</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>August 05, 2013, at 03:04 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 4 from:</div>
+        <div class='diffdel'><p><span style='font-size:83%'> Page for other versions: <a class='wikilink' title='Script-Routes' href="Script-Routes-2-2.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes">devel</a> <a class='wikilink' title='Types of routes - ver 1.9' href="Script-Routes-1-9.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-9">1.9</a> <a class='wikilink' title='Types of routes - ver 1.8' href="Script-Routes-1-8.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-8">1.8</a> old versions: <a class='wikilink' title='Types of routes - ver 1.7' href="Script-Routes-1-7.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-7">1.7</a> 1.6 <a class='wikilink' title='Types of routes - ver 1.5' href="Script-Routes-1-5.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-5">1.5</a> <a class='wikilink' title='Types of routes - ver 1.4' href="Script-Routes-1-4.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-4">1.4</a> </span>
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>(:allVersions Script-Routes 1.6:)
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Routes-1-6-action=edit&restore=diff-1375707888-1369766118-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-6?action=edit&restore=diff:1375707888:1369766118:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 28, 2013, at 08:35 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed lines 1-2 from:</div>
+        <div class='diffdel'><h2><a class='createlinktext' rel='nofollow' 
+    href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">Documentation</a><a rel='nofollow' 
+    class='createlink' href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">?</a> -&gt; Script -&gt; <a class='selflink' href="Script-Routes-1-6.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-6">Routing Blocks 1.6</a></h2>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h5>Documentation -&gt; <a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a> -&gt; <a class='wikilink' title='OpenSIPS Manual - 1.6 ver' href="Manual-1-6.htm" tppabs="http://www.opensips.org/Documentation/Manual-1-6">Manual 1.6</a> -&gt; Types of routes</h5>
+<p>(:title Types of routes - ver 1.6 :)
+</p>
+</div>
+        <div class='difftype'>Added lines 4-11:</div>
+        <div class='diffadd'><p><span style='font-size:83%'> Page for other versions: <a class='wikilink' title='Script-Routes' href="Script-Routes-2-2.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes">devel</a> <a class='wikilink' title='Types of routes - ver 1.9' href="Script-Routes-1-9.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-9">1.9</a> <a class='wikilink' title='Types of routes - ver 1.8' href="Script-Routes-1-8.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-8">1.8</a> old versions: <a class='wikilink' title='Types of routes - ver 1.7' href="Script-Routes-1-7.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-7">1.7</a> 1.6 <a class='wikilink' title='Types of routes - ver 1.5' href="Script-Routes-1-5.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-5">1.5</a> <a class='wikilink' title='Types of routes - ver 1.4' href="Script-Routes-1-4.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-4">1.4</a> </span>
+</p>
+<p class='vspace'><br />
+</p><table width='100%'><tr ><td  align='center'><span  style='color: #185662;'><span style='font-size:120%'><strong>Types of Routes v1.6</strong></span></span></td></tr>
+</table>
+<div class='vspace'></div><table width='100%'><tr ><td  align='left'><a class='wikilink' title='Core Parameters - ver 1.6' href="Script-CoreParameters-1-6.htm" tppabs="http://www.opensips.org/Documentation/Script-CoreParameters-1-6">Prev</a></td><td  align='right'><a class='wikilink' title='Script Operators - ver 1.6' href="Script-Operators-1-6.htm" tppabs="http://www.opensips.org/Documentation/Script-Operators-1-6">Next</a></td></tr>
+</table><hr />
+</div>
+        <div class='difftype'>Deleted line 13:</div>
+        <div class='diffdel'><p>This Documentation is for <strong>OpenSIPS 1.6.x</strong>
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Routes-1-6-action=edit&restore=diff-1369766118-1368358202-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-6?action=edit&restore=diff:1369766118:1368358202:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 12, 2013, at 01:30 PM 
+        by <span class='diffauthor' title='79.118.227.150'>79.118.227.150</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><h2><a class='createlinktext' rel='nofollow' 
+    href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">Documentation</a><a rel='nofollow' 
+    class='createlink' href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">?</a> -&gt; Script -&gt; <a class='wikilink' title='Types of routes - ver 1.5' href="Script-Routes-1-5.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-5">Routing Blocks 1.5</a></h2>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h2><a class='createlinktext' rel='nofollow' 
+    href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">Documentation</a><a rel='nofollow' 
+    class='createlink' href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">?</a> -&gt; Script -&gt; <a class='selflink' href="Script-Routes-1-6.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-6">Routing Blocks 1.6</a></h2>
+</div></div>
+      <div class='diffrestore'><a href="Script-Routes-1-6-action=edit&restore=diff-1368358202-1368358065-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-6?action=edit&restore=diff:1368358202:1368358065:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>May 12, 2013, at 01:27 PM 
+        by <span class='diffauthor' title='79.118.227.150'>79.118.227.150</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><h2>Resources -&gt; <a class='wikilink' title='Documentation' href="javascript:if(confirm(%27http://www.opensips.org/Resources/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/Documentation%27" tppabs="http://www.opensips.org/Resources/Documentation">Documentation</a> -&gt; <a class='wikilink' title='DocsCookbooks' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCookbooks  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCookbooks%27" tppabs="http://www.opensips.org/Resources/DocsCookbooks">CookBooks</a> -&gt; Routing Blocks</h2>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><h2><a class='createlinktext' rel='nofollow' 
+    href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">Documentation</a><a rel='nofollow' 
+    class='createlink' href="Documentation-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Documentation?action=edit">?</a> -&gt; Script -&gt; <a class='wikilink' title='Types of routes - ver 1.5' href="Script-Routes-1-5.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-5">Routing Blocks 1.5</a></h2>
+</div>
+        <div class='difftype'>Changed line 286 from:</div>
+        <div class='diffdel'><p>(:commentboxchrono:)
+</p>
+</div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><p>(:commentboxchrono:)
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Routes-1-6-action=edit&restore=diff-1368358065-1366831849-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-6?action=edit&restore=diff:1368358065:1366831849:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>April 24, 2013, at 09:30 PM 
+        by <span class='diffauthor' title='92.80.24.181'>92.80.24.181</span> - </div>
+        <div class='difftype'>Added lines 1-286:</div>
+        <div class='diffadd'><h2>Resources -&gt; <a class='wikilink' title='Documentation' href="javascript:if(confirm(%27http://www.opensips.org/Resources/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/Documentation%27" tppabs="http://www.opensips.org/Resources/Documentation">Documentation</a> -&gt; <a class='wikilink' title='DocsCookbooks' href="javascript:if(confirm(%27http://www.opensips.org/Resources/DocsCookbooks  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Resources/DocsCookbooks%27" tppabs="http://www.opensips.org/Resources/DocsCookbooks">CookBooks</a> -&gt; Routing Blocks</h2>
+<hr />
+<p>(:toc-float Table of Content:)
+</p>
+<p class='vspace'>This Documentation is for <strong>OpenSIPS 1.6.x</strong>
+</p>
+<p class='vspace'><strong>OpenSIPS</strong> routing logic uses several types of routes. Each type of route is triggered by a certain event and allows you to process a certain type of message (request or reply).
+</p>
+<div class='vspace'></div><hr />
+<h4>route</h4>
+<p>Request routing block. It contains a set of actions to be taken for SIP requests.
+</p>
+<p class='vspace'><strong>Triggered by</strong> : receiving an external request from the network.
+</p>
+<p class='vspace'><strong>Processing</strong> : the triggering SIP request.
+</p>
+<p class='vspace'><strong>Type</strong> : initially stateless, may be forced to stateful by using TM functions.
+</p>
+<p class='vspace'><strong>Default action</strong> : if the request is not either forwarded nor replied, the route will simply discard the request at the end.
+</p>
+<p class='vspace'>The main 'route' block identified by 'route{...}' or 'route[0]{...}' is executed for each SIP request.
+</p>
+<p class='vspace'>The implicit action after execution of the main route block is to drop the SIP request. To send a reply or forward the request, explicit actions must be called inside the route block.
+</p>
+<p class='vspace'>Example of usage:
+</p><pre class='escaped'>
+    route {
+         if(is_method("OPTIONS")) {
+            # send reply for each options request
+            sl_send_reply("200", "ok");
+            exit();
+         }
+         route(1);
+    }
+    route[1] {
+         # forward according to uri
+         forward();
+    }
+</pre>
+<p class='vspace'>Note that if a 'route(X)' is called from a 'branch_route[Y]' then in 'route[X]' is just processed each separate branch instead of all branches together as occurs in main route.
+</p>
+<div class='vspace'></div><hr />
+<h4>branch_route</h4>
+<p>Request's branch routing block. It contains a set of actions to be taken for each branch of a SIP request.
+</p>
+<p class='vspace'><strong>Triggered by</strong> : preparation a new branch (of a request); the branch is well formed, but not yet sent out.
+</p>
+<p class='vspace'><strong>Processing</strong> : the SIP request (with the branch particularities, like RURI, branch flags)
+</p>
+<p class='vspace'><strong>Type</strong> : stateful
+</p>
+<p class='vspace'><strong>Default action</strong> : if the branch is not dropped (via "drop" statement), the branch will be automatically sent out.
+</p>
+<p class='vspace'>It is executed only by TM module after it was armed via t_on_branch("branch_route_index").
+</p>
+<p class='vspace'>Example of usage:
+</p><pre class='escaped'>
+    route {
+        lookup("location");
+        t_on_branch("1");
+        if(!t_relay()) {
+            sl_send_reply("500", "relaying failed");
+        }
+    }
+    branch_route[1] {
+        if(uri=~"10\.10\.10].10") {
+            # discard branches that go to 10.10.10.10
+            drop();
+        }
+    }
+</pre>
+<div class='vspace'></div><hr />
+<h4>failure_route</h4>
+<p>Failed transaction routing block. It contains a set of actions to be taken each transaction that received only negative replies (&gt;=300) for all branches.
+</p>
+<p class='vspace'><strong>Triggered by</strong> : receiving or generation(internal) of a negative reply that completes the transaction (all branches are terminated with negative replies)
+</p>
+<p class='vspace'><strong>Processing</strong> : the original SIP request (that was sent out)
+</p>
+<p class='vspace'><strong>Type</strong> : stateful
+</p>
+<p class='vspace'><strong>Default action</strong> : if no new branch is generated or no reply is forced over, by default, the winning reply will be sent back to UAC.
+</p>
+<p class='vspace'>The 'failure_route' is executed only by TM module after it was armed via t_on_failure("failure_route_index").
+</p>
+<p class='vspace'>Note that in 'failure_route' is processed the request that initiated the transaction, not the reply .
+</p>
+<p class='vspace'>Example of usage:
+</p><pre class='escaped'>
+    route {
+        lookup("location");
+        t_on_failure("1");
+        if(!t_relay()) {
+            sl_send_reply("500", "relaying failed");
+        }
+    }
+    failure_route[1] {
+        if(is_method("INVITE")) {
+             # call failed - relay to voice mail
+             t_relay("udp:voicemail.server.com:5060");
+        }
+    }
+</pre>
+<div class='vspace'></div><hr />
+<h4>onreply_route</h4>
+<p class='vspace'>Reply routing block. It contains a set of actions to be taken for SIP replies.
+</p>
+<p class='vspace'><strong>Triggered by</strong> : receiving of a reply from the network
+</p>
+<p class='vspace'><strong>Processing</strong> : the received reply
+</p>
+<p class='vspace'><strong>Type</strong> : stateful (if bound to a transaction) or stateless (if global reply route).
+</p>
+<p class='vspace'><strong>Default action</strong> : if the reply is not dropped (only provisional replies can be), it will be injected and processed by the transaction engine.
+</p>
+<p class='vspace'>There are three types of onreply routes:
+</p>
+<div class='vspace'></div><ul><li><strong>global</strong> - it catches all replies received by OpenSIPS and does not need any special arming (simple definition is enough) - named 'onreply_route {...}' or 'onreply_route[0] {...}'.
+<div class='vspace'></div></li><li><strong>per request/transaction</strong> - it catches all received replies belonging to a certain transaction and need to be armed (via "t_on_reply()" ) at request time, in REQUEST ROUTE - named 'onreply_route[N] {...}'.
+<div class='vspace'></div></li><li><strong>per branch</strong> - it catches only the replies that belong to a certain branch from a transaction. It needs to be armed (also via "t_on_reply()" ) at request time, but in BRANCH ROUTE, when a certain outgoing branch is processed - named 'onreply_route[N] {...}'.
+</li></ul><p class='vspace'>Certain 'onreply_route' blocks can be executed by TM module for special replies. For this, the 'onreply_route' must be armed for the SIP requests whose replies should be processed within it, via t_on_reply("onreply_route_index").
+</p>
+<div class='vspace'></div><pre class='escaped'>
+route {
+        seturi("sip:bob@opensips.org");  # first branch
+        append_branch("sip:alice@opensips.org"); # second branch
+
+        t_on_reply("global"); # the "global" reply route
+                              # is set the whole transaction
+        t_on_branch("1");
+
+        t_relay();
+}
+
+branch_route[1] {
+        if ($rU=="alice")
+                t_on_reply("alice"); # the "alice" reply route
+                                      # is set only for second branch
+}
+
+onreply_route {
+        xlog("OpenSIPS received a reply from $si\n");
+}
+
+
+onreply_route[alice] {
+        xlog("received reply on the branch from alice\n");
+}
+
+onreply_route[global] {
+        if (t_check_status("1[0-9][0-9]")) {
+                setflag(1);
+                log("provisional reply received\n");
+                if (t_check_status("183"))
+                        drop;
+        }
+}
+
+</pre>
+<div class='vspace'></div><hr />
+<h4>error_route</h4>
+<p>The error route is executed automatically when a parsing error occurred during SIP request processing. This allow the administrator to decide what to do in case of error.
+</p>
+<p class='vspace'><strong>Triggered by</strong> : parsing error in "route"
+</p>
+<p class='vspace'><strong>Processing</strong> : failed request
+</p>
+<p class='vspace'><strong>Type</strong> : stateless (recommended)
+</p>
+<p class='vspace'><strong>Default action</strong> : discard request.
+</p>
+<p class='vspace'>In error_route, the following pseudo-variables are available to get access to error details:
+</p><ul><li>$(err.class) - the class of error (now is '1' for parsing errors)
+</li><li>$(err.level) - severity level for the error
+</li><li>$(err.info) - text describing the error
+</li><li>$(err.rcode) - recommended reply code
+</li><li>$(err.rreason) - recommended reply reason phrase
+</li></ul><div class='vspace'></div><pre class='escaped'>
+  error_route {
+     xlog("--- error route class=$(err.class) level=$(err.level)
+            info=$(err.info) rcode=$(err.rcode) rreason=$(err.rreason) ---\n");
+     xlog("--- error from [$si:$sp]\n+++++\n$mb\n++++\n");
+     sl_send_reply("$err.rcode", "$err.rreason");
+     exit;
+  }
+</pre>
+<div class='vspace'></div><hr />
+<h4>local_route</h4>
+<p>The local route is executed automatically when a new SIP request is generated by TM, internally (no UAC side). This is a route intended to be used for message inspection, accounting and for applying last changes on the message headers. Routing and signaling functions are not allowed. 
+</p>
+<p class='vspace'><strong>Triggered by</strong> : TM generating a brand new request
+</p>
+<p class='vspace'><strong>Processing</strong> : the new request
+</p>
+<p class='vspace'><strong>Type</strong> : stateful 
+</p>
+<p class='vspace'><strong>Default action</strong> : send the request out
+</p>
+<div class='vspace'></div><pre class='escaped'>
+  local_route {
+     if (is_method("INVITE") &amp;&amp; $ru=~"@foreign.com") {
+        append_hf("P-hint: foreign request\r\n");
+        exit;
+     }
+     if (is_method("BYE") ) {
+        acc_log_request("internally generated BYE");
+     }
+  }
+</pre>
+<div class='vspace'></div><hr />
+<h4>startup_route</h4>
+<p>The <strong>startup_route</strong> is executed only once when OpenSIPS is started and before the processing of SIP messages begins. This is useful if some initiation actions are needed, like loading some data in the cache, to ease up the future processing. Notice that this route, compared to the others is not triggered at the receipt of a message, so the functions that can be called here must not do processing on the message.
+</p>
+<p class='vspace'><strong>Triggered</strong> : At startup, before the listener processes are started.
+</p>
+<p class='vspace'><strong>Processing</strong> : Initializing functions.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+  startup_route {
+    avp_db_query("select gwlist where ruleid==1",$avp(i:100));
+    cache_store("local", "rule1", "$avp(i:100)");
+  }
+</pre>
+<div class='vspace'></div><hr />
+<h4>timer_route</h4>
+<p>The <strong>timer_route</strong> is as the name suggests, a route executed periodically at a configured interval of time specified next to the name(in seconds). The same as the startup_route, this route does not process a message. You can defined more timer routes.
+</p>
+<p class='vspace'><strong>Triggered by</strong> : The time keeper.
+</p>
+<p class='vspace'><strong>Processing</strong> : Functions that do refresh actions.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+  timer_route[gw_update, 300] {
+    avp_db_query("select gwlist where ruleid==1",$avp(i:100));
+    $shv(i:100) =$avp(i:100);
+  }
+</pre>
+<div class='vspace'></div><hr />
+<p class='vspace'><a name='comment1' id='comment1'></a>(:nl:)&gt;&gt;messagehead&lt;&lt;
+</p><h5><a class='createlinktext' rel='nofollow' 
+    href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Manas?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Manas?action=edit%27" tppabs="http://www.opensips.org/Profiles/Manas?action=edit">Manas</a><a rel='nofollow' 
+    class='createlink' href="javascript:if(confirm(%27http://www.opensips.org/Profiles/Manas?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Profiles/Manas?action=edit%27" tppabs="http://www.opensips.org/Profiles/Manas?action=edit">?</a>  &mdash;  <span style='font-size:83%'>12 January 2011, 18:02</span>  </h5>
+<div class='messageitem' > 
+<p>Seems like a lot of module functions cannot be used in startup_route. Are there plans to change that?
+</p>
+<p class='vspace'>For example - lets say I wanted to execute a shell cmd (via EXEC) or perl (via PERL module) - to load a file in cache. None of those functions work in the startup block.
+</p></div>
+<p class='vspace'>(:commentboxchrono:)
+</p>
+</div></div>
+      <div class='diffrestore'><a href="Script-Routes-1-6-action=edit&restore=diff-1366831849-1366831849-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-6?action=edit&restore=diff:1366831849:1366831849:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Script-Routes-1-6?action=edit  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Script-Routes-1-6?action=edit%27" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-6?action=edit">Edit</a> |
+      <a rel="nofollow" href="Script-Routes-1-6-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-6?action=diff">History</a> |
+      <a rel="nofollow" href="Script-Routes-1-6-action=print.htm" tppabs="http://www.opensips.org/Documentation/Script-Routes-1-6?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on August 05, 2013, at 03:04 PM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>

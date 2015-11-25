@@ -1,0 +1,174 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+  <title>openSIPS | Documentation / Tutorials-ConcurrentCallsLimitation</title>
+  <link rel='stylesheet' href="print.css" tppabs="http://www.opensips.org/pub/skins/print/print.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+</head>
+<body>
+  <div id='printhead'>
+    <h3>From openSIPS</h3>
+    <h1 class='pagename'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation%27" tppabs="http://www.opensips.org/Documentation">Documentation: Tutorials-ConcurrentCallsLimitation</a></h1>
+  </div>
+<!--PageText-->
+<div id='wikitext'>
+<h5>Documentation -&gt; <a class='wikilink' href="Tutorials-action=print.htm" tppabs="http://www.opensips.org/Documentation/Tutorials?action=print">Tutorials</a> -&gt; Concurrent calls limitation 1.8</h5>
+<hr />
+<p>This page has been visited 6538 times.
+</p>
+<p class='vspace'>This scripting is valid for OpenSIPS versions <strong>1.8 up to 2.1</strong> .
+</p>
+<p class='vspace'>OpenSIPS server can implement concurrent calls limitation by using the <em>call profiles</em> support provided by the <em>dialog</em> module.  The call profiles are a simple mechanism that allows to group certain calls and to count them. The grouping can be extended by using <em>labels</em> (values inside a group). This allows a better granularity when comes to counting calls. 
+</p>
+<p class='vspace'>Different keys can be used to group calls (like the incoming IP address, the caller user, the outbound GW, etc). Once we create a profile for such a group of call, when handling the call in the OpenSIPS script, we add the call to such a group, eventually with an extra label (where the label is the actual value of the incoming IP or of the caller or of the GW).
+</p>
+<p class='vspace'>In the below example we create a generic route to implement the limitation of concurrent calls from the same caller. The Route takes two parameters, the caller SIP username and the value of the limit. This Route is to be used when calls are created (when initial INVITEs are handled) after the dialog was created in script.  
+</p>
+<div class='vspace'></div><pre class='escaped'>
+....
+# define the profile
+modparam("dialog", "profiles_with_value", "caller")
+....
+
+########################################################################
+# This route is to be called for initial INVITEs, after 
+#   the dialog was created
+# Parameters:
+#    * the caller URI (string)
+#    * the limit (integer)
+########################################################################
+route[do_limit]
+{
+	# first add to the profile, just to avoid "test and set" false results
+	set_dlg_profile("caller","$param(1)");
+
+
+	# do the actual test - see how many calls the user has so far
+	get_profile_size("caller","$param(1)","$var(calls)");
+	xlog("User $param(1) has $var(calls) ongoing calls so far, limit is $param(2)\n");
+
+	# check within limit
+	if( $var(calls)&gt;$param(2) )
+	{	
+		xlog("do_limit: user $param(1) exceeded number of calls [$var(calls)/$param(2)]\n");
+		send_reply("487", "Request Terminated: Channel limit exceeded\n");
+		exit;
+		# terminating this call will automatically remove the call from the profile
+	}
+
+	# call was added to the profile without exceeding the limit, simply continue
+}
+....
+....
+route {
+	.....
+	# initial INVITES
+	route(do_limit,$fu, 10);
+	.....
+}
+</pre>
+<div class='vspace'></div><hr />
+<div class='vspace'></div>
+    <div id='message'><form name='cbox' class='inputform' action="http://www.opensips.org/Documentation/Tutorials-ConcurrentCallsLimitation" method='post' onsubmit='return checkform(this);'>
+    <input type='hidden' name='n' value='Documentation.Tutorials-ConcurrentCallsLimitation' />
+    <input type='hidden' name='action' value='comment' />
+    <input type='hidden' name='order' value='chrono' /><input type='hidden' name='accesscode' value='603' />
+    <input type='hidden' name='csum' value='Comment added' />
+    <table width='90%'><tr>
+    <th class='prompt' align='right' valign='top'>Add Comment&nbsp;</th>
+    <td><textarea class='inputtext commenttext' name='text' id='text' rows=6 cols=40></textarea>
+    </td></tr><tr><th class='prompt' align='right' valign='top'>Sign as Author&nbsp;</th>
+    <td><input class='inputbox commentauthorbox' type='text' name='author' value='' size='32' /></td></tr>
+    <tr><th class='prompt' align='right' valign='top'>Enter code <em class='access'>603</em></th>
+    <td><input type='text' size='4' maxlength='3' name='access' value='' class='inputbox' /> <input class='inputbutton commentbutton' type='submit' name='post' value=' Post ' />
+    <input class='inputbutton commentbutton' type='reset' value='Reset' /></td></tr></table><br /></form></div>
+ <script type='text/javascript' language='JavaScript1.2'>
+  function checkform ( form ) {
+   if (form.text && form.text.value == "") { window.alert( 'Please enter a comment to post' ); form.text.focus(); return false; }
+   if (form.author && form.author.value == "") { window.alert( 'Please enter your name as author' ); form.author.focus(); return false; }
+   if (form.access && form.access.value == "") { window.alert( 'Please enter the code number' ); form.access.focus(); return false; }return true ;
+  }
+  </script>
+   
+</div>
+
+  <div id='printfoot'>
+    <div class='from'>Retrieved from http://www.opensips.org/Documentation/Tutorials-ConcurrentCallsLimitation</div>
+    <div class='lastmod'>Page last modified on August 17, 2015, at 06:40 PM</div></div>
+<!--HTMLFooter-->
+</body>
+</html>
