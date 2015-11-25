@@ -1,0 +1,141 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+  <title>openSIPS | Documentation / Database Deployment - ver 1.11 </title>
+  <link rel='stylesheet' href="print.css" tppabs="http://www.opensips.org/pub/skins/print/print.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+ 
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+</head>
+<body>
+  <div id='printhead'>
+    <h3>From openSIPS</h3>
+    <h1 class='pagename'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation%27" tppabs="http://www.opensips.org/Documentation">Documentation: Database Deployment - ver 1.11 </a></h1>
+  </div>
+<!--PageText-->
+<div id='wikitext'>
+<h5>Documentation -&gt; <a class='wikilink' href="Manuals-action=print.htm" tppabs="http://www.opensips.org/Documentation/Manuals?action=print">Manuals</a> -&gt; <a class='wikilink' href="Manual-1-11-action=print.htm" tppabs="http://www.opensips.org/Documentation/Manual-1-11?action=print">Manual 1.11</a> -&gt; Database Deployment</h5>
+<hr />
+<p><span style='font-size:83%'> Pages for other versions: <a class='wikilink' href="Install-DBDeployment-2-2-action=print.htm" tppabs="http://www.opensips.org/Documentation/Install-DBDeployment-2-2?action=print">devel</a> <a class='wikilink' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Install-DBDeployment-2-1?action=print  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Install-DBDeployment-2-1?action=print%27" tppabs="http://www.opensips.org/Documentation/Install-DBDeployment-2-1?action=print">2.1</a> 1.11  Older versions: <a class='wikilink' href="Install-DBDeployment-1-10-action=print.htm" tppabs="http://www.opensips.org/Documentation/Install-DBDeployment-1-10?action=print">1.10</a> <a class='wikilink' href="Install-DBDeployment-1-9-action=print.htm" tppabs="http://www.opensips.org/Documentation/Install-DBDeployment-1-9?action=print">1.9</a> <a class='wikilink' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Install-DBDeployment-1-8?action=print  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Install-DBDeployment-1-8?action=print%27" tppabs="http://www.opensips.org/Documentation/Install-DBDeployment-1-8?action=print">1.8</a> <a class='wikilink' href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Install-DBDeployment-1-7?action=print  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Install-DBDeployment-1-7?action=print%27" tppabs="http://www.opensips.org/Documentation/Install-DBDeployment-1-7?action=print">1.7</a> <a class='wikilink' href="Install-DBDeployment-1-6-action=print.htm" tppabs="http://www.opensips.org/Documentation/Install-DBDeployment-1-6?action=print">1.6</a> <a class='wikilink' href="Install-DBDeployment-1-5-action=print.htm" tppabs="http://www.opensips.org/Documentation/Install-DBDeployment-1-5?action=print">1.5</a> <a class='wikilink' href="Install-DBDeployment-1-4-action=print.htm" tppabs="http://www.opensips.org/Documentation/Install-DBDeployment-1-4?action=print">1.4</a> </span>
+</p>
+<p class='vspace'><br />
+</p><table width='100%'><tr ><td  align='center'><span  style='color: #185662;'><span style='font-size:120%'><strong>Database Deployment v1.11</strong></span></span></td></tr>
+</table>
+<div class='vspace'></div><table width='100%'><tr ><td  align='left'><a class='wikilink' href="Install-CompileAndInstall-1-11-action=print.htm" tppabs="http://www.opensips.org/Documentation/Install-CompileAndInstall-1-11?action=print">Prev</a></td><td  align='right'><a class='wikilink' href="Install-DBSchema-1-11-action=print.htm" tppabs="http://www.opensips.org/Documentation/Install-DBSchema-1-11?action=print">Next</a></td></tr>
+</table><hr />
+<p class='vspace'>After installing your OpenSIPS, most likely you will need to also deploy a database that you could use for various reasons ( DB user authentication, persistent registrations, dialogs, etc ).
+</p>
+<div class='vspace'></div><hr />
+<div class='vspace'></div><div class='tocfloat'><p><a name='toc' id='toc'></a><b>Table of Content</b> (<a id="tocidtog" href="javascript:toggle('tocid');">hide</a>)</p><ol class='toc' id='tocid'><li>1.&nbsp;<a href='#toc1'>Configuring DB Credentials</a></li><li>2.&nbsp;<a href='#toc2'>Creating the Database</a></li></ol></div>
+<div class='vspace'></div><h3><a name='toc1' id='toc1'></a>1.&nbsp; Configuring DB Credentials</h3>
+<p>Go to the [Install_Path]/etc/opensips/ folder and open the opensipsctlrc file
+</p>
+<p class='vspace'>There take care of the following lines :
+</p>
+<div class='vspace'></div><ul><li>DBENGINE=
+<ul><li>the currently available options MYSQL, PGSQL, ORACLE, DB_BERKELEY, or DBTEXT
+</li></ul></li><li>DBHOST=
+<ul><li>enter the host for your DB engine
+</li></ul></li><li>DBNAME=
+<ul><li>the name of the database which will be created
+</li></ul></li><li>DBRWUSER=
+<ul><li>the username that will be created in the database for OpenSIPS read/write access
+</li></ul></li><li>DBRWPW=
+<ul><li>the password that will be set for the DBRWUSER username
+</li></ul></li><li>DBROOTUSER=
+<ul><li>the user that will be used for creating the database, tables and DBRWUSER
+</li></ul></li></ul><div class='vspace'></div><h3><a name='toc2' id='toc2'></a>2.&nbsp; Creating the Database</h3>
+<p>In order to create the DBNAME database that you have provisioned above, run
+</p><pre class='escaped'>
+[Install_Path]/sbin/opensipsdbctl create
+</pre>
+<p class='vspace'>When prompted by the opensipsdbctl tool, please enter your DBROOTUSER password.
+</p>
+<p class='vspace'>If you want to create a different database other than the default DBNAME, you can call
+</p><pre class='escaped'>
+[Install_Path]/sbin/opensipsdbctl create my_custom_db_name
+</pre>
+<p class='vspace'>The opensipsdbctl tool can also be used for things like taking backups, doing restores, and more. If you want to see the capabilities and help manual for the opensipsdbctl tool, you can run it with no parameters :
+</p><pre class='escaped'>
+[Install_Path]/sbin/opensipsdbctl
+</pre>
+</div>
+
+  <div id='printfoot'>
+    <div class='from'>Retrieved from http://www.opensips.org/Documentation/Install-DBDeployment-1-11</div>
+    <div class='lastmod'>Page last modified on March 20, 2014, at 07:05 PM</div></div>
+<!--HTMLFooter-->
+</body>
+</html>

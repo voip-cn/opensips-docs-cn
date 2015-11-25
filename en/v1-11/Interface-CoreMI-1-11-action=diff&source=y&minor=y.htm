@@ -1,0 +1,264 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>openSIPS | Documentation / Core MI Functions - 1.11 | History</title>
+  <meta http-equiv='Content-Style-Type' content='text/css' />
+  <link rel='stylesheet' href="opensips.css" tppabs="http://www.opensips.org/pub/skins/opensips/opensips.css" type='text/css' />
+  <!--HTMLHeader--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 4px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  .diffbox { width:570px; border-left:1px #999999 solid; margin-top:1.33em; }
+  .diffauthor { font-weight:bold; }
+  .diffchangesum { font-weight:bold; }
+  .difftime { font-family:verdana,sans-serif; font-size:66%; 
+    background-color:#dddddd; }
+  .difftype { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; font-weight:bold; }
+  .diffadd { border-left:5px #99ff99 solid; padding-left:5px; }
+  .diffdel { border-left:5px #ffff99 solid; padding-left:5px; }
+  .diffrestore { clear:both; font-family:verdana,sans-serif; 
+    font-size:66%; margin:1.5em 0px; }
+  .diffmarkup { font-family:monospace; }  
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script>
+  <link href="commentboxplus.css" tppabs="http://www.opensips.org/pub/commentboxplus/commentboxplus.css" rel='stylesheet' type='text/css' />
+  <link rel='stylesheet' href="wsplus.css" tppabs="http://www.opensips.org/pub/wsplus/wsplus.css" 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url("csshover.htc")/*tpa=http://www.opensips.org/pub/wsplus/csshover.htc*/; }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+  <meta name='robots' content='noindex,nofollow' />
+
+  <link rel="icon" type="image/png" href="http://opensips.org/favicon.png">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-47615177-1', 'http://www.opensips.org/Documentation/opensips.org');
+  ga('send', 'pageview');
+
+	function resizeIframe(obj) {
+	    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+		  }
+
+  </script>
+
+</head>
+<body>
+<div id="main">
+<!--PageHeaderFmt-->
+  <div id='wikilogo'>
+  <img class="motto" src="motto.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/motto.jpg" width="328" height="40" alt="The new breed of communication engine.">
+  <a href="javascript:if(confirm(%27http://www.opensips.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/%27" tppabs="http://www.opensips.org/"><img class="logo" src="logo2.jpg" tppabs="http://www.opensips.org/pub/skins/opensips/images/logo2.jpg"
+    alt='openSIPS' border='0' /></a>
+ </div>
+ <div id='wikihead'>
+ <table border=0>
+  <tr valign=top><td width=250>
+   
+  </td></tr>
+  <tr><td width=250>
+   <form action="http://www.opensips.org/">
+   
+    <input type='hidden' name='n' value='Documentation.Interface-CoreMI-1-11' />
+    <input type='hidden' name='action' value='search' />
+
+    <input type='text' name='q' id='formsubmit' value='' class='inputbox searchbox' />
+	<input type='submit' id='formbutton' class='inputbutton searchbutton' value=' ' /></form>
+  </td></tr>
+  </table>
+ </div>
+
+<!--/PageHeaderFmt-->
+<div id="osTopNav" >
+	<div id="osTopNavLeft">
+	</div>
+
+	<div id="osTopNavRight">
+	</div>
+
+	<ul id="osTopNavList">
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/About/About  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/About/About%27" tppabs="http://www.opensips.org/About/About" title="About">About</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Downloads/Downloads  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Downloads/Downloads%27" tppabs="http://www.opensips.org/Downloads/Downloads" title="Download">Downloads</a>
+		</li>
+		<li>
+			<a href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals" title="Documentation">Documentation</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Community/Foundation-Main  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Community/Foundation-Main%27" tppabs="http://www.opensips.org/Community/Foundation-Main" title="Community">Community</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Development/Development  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Development/Development%27" tppabs="http://www.opensips.org/Development/Development" title="Development">Development</a>
+		</li>
+		<li>
+			<a href="javascript:if(confirm(%27http://www.opensips.org/Support/Contact  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Support/Contact%27" tppabs="http://www.opensips.org/Support/Contact" title="Support">Support</a>
+		</li>
+	</ul>
+</div>
+<!--PageMenuFmt-->
+<!--/PageMenuFmt-->
+  <table width='100%' align="center" cellpadding='0' cellspacing='0' id='wikimid'>
+    <tr>
+<!--PageLeftFmt-->
+      <td valign='top' bgcolor="#E2F8DA" id='wikileft'>
+        <p class='sidehead'> <span  style='color: #185662;'> Documentation</span>
+</p><ul><li><a class='wikilink' title='Manuals' href="Manuals.htm" tppabs="http://www.opensips.org/Documentation/Manuals">Manuals</a>
+</li><li><a class='wikilink' title='Tutorials' href="Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Tutorials">Advanced Tutorials</a>
+</li><li><a class='wikilink' title='TipsFAQ' href="TipsFAQ.htm" tppabs="http://www.opensips.org/Documentation/TipsFAQ">Tips &amp; FAQ</a>
+</li><li><a class='wikilink' title='Migration' href="Migration.htm" tppabs="http://www.opensips.org/Documentation/Migration">Version Migration</a>
+</li><li><a class='wikilink' title='Webinars' href="Webinars.htm" tppabs="http://www.opensips.org/Documentation/Webinars">OpenSIPS Webinars</a>
+</li><li><a class='wikilink' title='Troubleshooting' href="Troubleshooting.htm" tppabs="http://www.opensips.org/Documentation/Troubleshooting">Troubleshooting</a>
+</li><li><a class='wikilink' title='Tools' href="Tools.htm" tppabs="http://www.opensips.org/Documentation/Tools">OpenSIPS Tools</a>
+</li><li><a class='wikilink' title='Development-Tutorials' href="Development-Tutorials.htm" tppabs="http://www.opensips.org/Documentation/Development-Tutorials">Devel Tutorial</a>
+</li></ul><div class='vspace'></div>
+</td>
+<!--/PageLeftFmt-->
+      <td id='wikibody' valign='top'>
+<!--PageTitleFmt-->
+        
+<!--PageText-->
+<div id='wikitext'>
+<h2 class='wikiaction'>Documentation.Interface-CoreMI-1-11 History</h2>
+  <p><a href="Interface-CoreMI-1-11-action=diff&source=y&minor=n.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreMI-1-11?action=diff&source=y&minor=n">Hide minor edits</a> - <a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Interface-CoreMI-1-11?action=diff&source=n&minor=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Interface-CoreMI-1-11?action=diff&source=n&minor=y%27" tppabs="http://www.opensips.org/Documentation/Interface-CoreMI-1-11?action=diff&source=n&minor=y">Show changes to output</a></p>
+  <div id='wikidiff'>
+      <div class='diffbox'><div class='difftime'>November 25, 2014, at 09:33 AM 
+        by <span class='diffauthor' title='59.36.5.207'>dashulin</span> - Comment added</div>
+        <div class='difftype'>Added lines 283-292:</div>
+        <div class='diffadd'><div class='diffmarkup'><br />[[#comment1]](:nl:)&gt;&gt;messagehead&lt;&lt;<br />!!!!![[~dashulin]]  &amp;mdash;  [-25 November 2014, 09:33-]  <br />&gt;&gt;messageitem&lt;&lt;<br />Hi, I am using openSIPs 1.11 on my centOS 6.6,and mi_xmlrpc_ng is installed on my centOS. i am facing one problem, I would like to implement the function of register new account on my android app through mi_xmlrpc_ng, anyone can tell me how to do it? <br />and how do i add my MI function?<br />Thanks in advance.<br /><br />dashulin<br />&gt;&gt;&lt;&lt;</div></div></div>
+      <div class='diffrestore'><a href="Interface-CoreMI-1-11-action=edit&restore=diff-1416904419-1395341776-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreMI-1-11?action=edit&restore=diff:1416904419:1395341776:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>March 20, 2014, at 07:56 PM 
+        by <span class='diffauthor' title='89.120.101.121'>razvancrainea</span> - </div>
+        <div class='difftype'>Changed lines 1-2 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>!!!!!Documentation -&gt; [[Documentation.Manuals|Manuals]] -&gt; [[Documentation.Manual-1-11|Manual devel]] -&gt; Core MI Functions<br />(:title Core MI Functions - devel :)</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>!!!!!Documentation -&gt; [[Documentation.Manuals|Manuals]] -&gt; [[Documentation.Manual-1-11|Manual 1.11]] -&gt; Core MI Functions<br />(:title Core MI Functions - 1.11 :)</div></div>
+        <div class='difftype'>Changed line 8 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>|| %color=#185662%[+'''Core MI Functions devel'''+]%% ||</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>|| %color=#185662%[+'''Core MI Functions v1.11'''+]%% ||</div></div></div>
+      <div class='diffrestore'><a href="Interface-CoreMI-1-11-action=edit&restore=diff-1395341776-1375708909-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreMI-1-11?action=edit&restore=diff:1395341776:1375708909:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>August 05, 2013, at 03:21 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Interface-CoreMI-1-11?action=edit&restore=diff:1375708909:1375708751:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Interface-CoreMI-1-11?action=edit&restore=diff:1375708909:1375708751:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Interface-CoreMI-1-11?action=edit&restore=diff:1375708909:1375708751:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>August 05, 2013, at 03:19 PM 
+        by <span class='diffauthor' title='109.99.235.212'>109.99.235.212</span> - </div>
+        <div class='difftype'>Changed line 1 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>!!!!!Documentation -&gt; [[Documentation.Manuals|Manuals]] -&gt; [[Documentation.Manual|Manual devel]] -&gt; Core MI Functions</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>!!!!!Documentation -&gt; [[Documentation.Manuals|Manuals]] -&gt; [[Documentation.Manual-1-11|Manual devel]] -&gt; Core MI Functions</div></div></div>
+      <div class='diffrestore'><a href="Interface-CoreMI-1-11-action=edit&restore=diff-1375708751-1375706326-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreMI-1-11?action=edit&restore=diff:1375708751:1375706326:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>August 05, 2013, at 02:38 PM 
+        by <span class='diffauthor' title='80.112.140.126'>razvancrainea</span> - </div>
+        <div class='difftype'>Changed lines 1-2 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>!!!!!Documentation -&gt; [[Documentation.Manuals|Manuals]] -&gt; [[Documentation.Manual|Manual 1.11]] -&gt; Core MI Functions<br />(:title Core MI Functions - ver 1.11 :)</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>!!!!!Documentation -&gt; [[Documentation.Manuals|Manuals]] -&gt; [[Documentation.Manual|Manual devel]] -&gt; Core MI Functions<br />(:title Core MI Functions - devel :)</div></div>
+        <div class='difftype'>Added line 5:</div>
+        <div class='diffadd'><div class='diffmarkup'></div></div>
+        <div class='difftype'>Changed line 8 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>|| %color=#185662%[+'''Core MI Functions v1.11'''+]%% ||</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>|| %color=#185662%[+'''Core MI Functions devel'''+]%% ||</div></div></div>
+      <div class='diffrestore'><a href="Interface-CoreMI-1-11-action=edit&restore=diff-1375706326-1375703973-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreMI-1-11?action=edit&restore=diff:1375706326:1375703973:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>August 05, 2013, at 01:59 PM 
+        by <span class='diffauthor' title='80.112.140.126'>razvancrainea</span> - </div>
+        <div class='difftype'>Changed line 2 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>(:title Core MI Functions - 1.11 :)</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>(:title Core MI Functions - ver 1.11 :)</div></div>
+        <div class='difftype'>Changed line 7 from:</div>
+        <div class='diffdel'><div class='diffmarkup'>|| %color=#185662%[+'''Core MI Functions 1.11'''+]%% ||</div></div>
+        <div class='difftype'>to:</div>
+        <div class='diffadd'><div class='diffmarkup'>|| %color=#185662%[+'''Core MI Functions v1.11'''+]%% ||</div></div></div>
+      <div class='diffrestore'><a href="Interface-CoreMI-1-11-action=edit&restore=diff-1375703973-1375703099-&preview=y.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreMI-1-11?action=edit&restore=diff:1375703973:1375703099:&preview=y">Restore</a></div>
+      <div class='diffbox'><div class='difftime'>August 05, 2013, at 01:44 PM 
+        by <span class='diffauthor' title='80.112.140.126'>razvancrainea</span> - </div>
+        <div class='difftype'>Added lines 1-283:</div>
+        <div class='diffadd'><div class='diffmarkup'>!!!!!Documentation -&gt; [[Documentation.Manuals|Manuals]] -&gt; [[Documentation.Manual|Manual 1.11]] -&gt; Core MI Functions<br />(:title Core MI Functions - 1.11 :)<br />----<br />(:allVersions Interface-CoreMI 1.11 :)<br />\\<br /><br />|| %color=#185662%[+'''Core MI Functions 1.11'''+]%% ||<br /><br />||[[Interface-MI-1-11|Prev]] || [[Interface-Events-1-11|Next]]||<br />----<br /><br />(:toc-float Table of Content:)<br /><br />MI (management interface) functions which are exported by '''OpenSIPS''' core.<br /><br />!!!!arg<br />Returns the full list of arguments used when '''OpenSIPS''' was started. As in UNIX, the first argument is the name of executable binary.\\<br />'''Arguments''': none\\<br />'''Output''': multiple MI nodes where each node contains an argument. The MI nodes have no name, but only value.<br /><br />Example of usage:<br />[@<br />    # opensipsctl fifo arg<br />    ./opensips<br />    -f<br />    /etc/openser/test.cfg<br /><br />@]<br /><br /><br />!!!!debug [level]<br />Gets or sets the value of the debug core variable. You may use it to dynamically (at runtime) change  or inspect the debug level of your '''OpenSIPS'''. If no argument is passed, the function will fetch the value of the debug level.\\<br />'''Arguments''': debug level (-3...4)\\<br />'''Output''': debug level (only when no argument is passed). The value will be returned as a single MI node with name &quot;DEBUG&quot;<br /><br /><br />Examples of usage:<br />[@<br />    # opensipsctl fifo debug<br />    DEBUG:: 4<br />    # opensipsctl fifo debug 1<br />@]<br /><br /><br />!!!!kill<br />The command will terminate '''OpenSIPS''' (and internal shutdown).\\<br />'''Arguments''': none\\<br />'''Output''': none<br /><br />Examples of usage:<br />[@<br />    # opensipsctl fifo kill<br />@]<br /><br />!!!!list_blacklists<br />The command lists all the defined (static or learned) blacklists from '''OpenSIPS'''.\\<br />'''Arguments''': none\\<br />'''Output''': an MI tree - first level (nodes named &quot;List&quot;) will describe the list (name, owner, flags); Second level (nodes named &quot;Rules) will describe the rules (blacklists) for each list (IP/mask, protocol, port, matching regexp, flags)<br /><br />Examples of usage:<br />[@<br />    # opensipsctl fifo list_blacklists<br />@]<br /><br />!!!!list_tcp_conns<br />The command lists all ongoing TCP/TLS connection from '''OpenSIPS'''.\\<br />'''Arguments''': none\\<br />'''Output''': an MI tree - one record per connection with the following attributes : ID, state, proto, source, destination, timeout, lifetime<br /><br />Examples of usage:<br />[@<br />    # opensipsctl fifo list_tcp_conns<br />@]<br /><br />!!!!ps<br />The command will list all all '''OpenSIPS''' processes, along with type and description.\\<br />'''Arguments''': none\\<br />'''Output''': multiple MI nodes (named &quot;Process&quot;) - each node contains process ID (internal), PID (OS), Type and description <br /><br />Examples of usage:<br />[@<br />    # opensipsctl fifo ps<br />    Process::  ID=0 PID=16224 Type=attendant<br />    Process::  ID=1 PID=16225 Type=SIP receiver udp:192.168.1.2:5060 <br />    Process::  ID=2 PID=16226 Type=timer<br />    Process::  ID=3 PID=16227 Type=MI FIFO<br />    Process::  ID=4 PID=16228 Type=TCP receiver<br />    Process::  ID=5 PID=16230 Type=TCP main<br />@]<br /><br />!!!!pwd<br />Prints the working directory of '''OpenSIPS''' instance.\\<br />'''Arguments''': none\\<br />'''Output''': a single MI node with name &quot;WD&quot; containing the working directory full path.<br /><br /><br />Examples of usage:<br />[@<br />    # opensipsctl fifo pwd<br />    WD:: /<br />@]<br /><br />!!!!uptime<br />Prints various time information about '''OpenSIPS''' - when it started to run, for how long it runs.\\<br />'''Arguments''': none\\<br />'''Output''': three MI nodes: &quot;Now&quot; - current time; &quot;Up since&quot; - start time ; &quot;Up time&quot; - number of seconds since started.<br /><br /><br />Examples of usage:<br />[@<br />    # opensipsctl fifo uptime<br />    Now:: Mon Jul 21 17:41:03 2008<br />    Up since:: Mon Jul 21 17:36:33 2008<br />    Up time:: 270 [sec]<br />@]<br /><br />!!!!version<br />Prints the version string of a running'''OpenSIPS'''.\\<br />'''Arguments''': none\\<br />'''Output''': one MI node (named &quot;Server&quot;) containing the version string.<br /><br />Examples of usage:<br />[@<br />    # opensipsctl fifo version<br />    Server:: OpenSIPS (1.4.0dev14-notls (i386/linux))<br />@]<br /><br /><br />!!!!which<br />Prints all available MI commands from the queried '''OpenSIPS'''instance.\\<br />'''Arguments''': none\\<br />'''Output''': multiple MI nodes (no name), each node containing (as value) the name of an available MI command. NOTE that the list of available MI commands may differ depending of what modules your '''OpenSIPS''' is using.<br /><br />Examples of usage:<br />[@<br />    # opensipsctl fifo which<br />    get_statistics<br />    reset_statistics<br />    uptime<br />    version<br />    pwd<br />    arg<br />    which<br />    ps<br />    kill<br />    debug<br />    list_blacklists<br />    ul_rm<br />    ul_rm_contact<br />    ul_dump<br />    ul_flush<br />    ul_add<br />    ul_show_contact<br />    nh_enable_ping<br />    nh_enable_rtpp<br />@]<br /><br />!!!!get_statistics<br />Prints the statistics (all, group or one) realtime values.\\<br />'''Arguments''': input may be &quot;all&quot; - print all available statistics; &quot;group:&quot; - print only statistics from a certain group; &quot;name&quot; - print only this statistic. The '''OpenSIPS''' core defines the following groups: ''core'', ''shmem''; Modules export groups typically named like the module itself.\\<br />'''Output''': list of MI nodes (no name) - each MI mode contains the name and value of a single statistic variable.<br /><br />Examples of usage:<br />[@<br />    # opensipsctl fifo get_statistics rcv_requests<br />    core:rcv_requests = 35243<br />    # opensipsctl fifo get_statistics shmem:      <br />    shmem:total_size = 33554432<br />    shmem:used_size = 1686952<br />    shmem:real_used_size = 1704592<br />    shmem:max_used_size = 1704592<br />    shmem:free_size = 31849840<br />    shmem:fragments = 1<br />    # opensipsctl fifo get_statistics all<br />    ....<br />@]<br /><br />!!!!reset_statistics<br />Reset (to zero) the value of a statistic variable. Note that not all variables allow reset (depending of the nature of the information they carry - example &quot;shmem:used_size&quot;).\\<br />'''Arguments''': name of the variable to be reset.\\<br />'''Output''': none.<br /><br />Examples of usage:<br />[@<br />    # opensipsctl fifo get_statistics received_replies<br />    core:received_replies = 14543<br />    # opensipsctl fifo reset_statistics received_replies<br />    # opensipsctl fifo get_statistics received_replies<br />    core:received_replies = 0<br />@]<br /><br /><br />!!!!cache_store<br />This command stores in a cache system a string value.\\<br />'''Arguments''': \\<br />   - cache system to use - for the cache system implemented by '''OpenSIPS''' module 'localcache' the value of this parameter should be 'local' \\<br />   - the label to be associated with this value \\<br />   - the string to be stored \\<br />'''Output''': none. \\<br /><br />Examples of usage:<br />[@<br />    # opensipsctl fifo cache_store local password_user1 password<br />@]<br /><br />!!!!cache_fetch<br />This command queries for a stored value.\\<br />'''Arguments''': \\<br />   - cache system to use - for the cache system implemented by '''OpenSIPS''' module 'localcache' the value of this parameter should be 'local' \\<br />   - the label associated with the value \\<br />'''Output''': MI tree containing the value if a record is found or 'Value not found' string otherwise.\\<br /><br />Examples of usage:<br />[@<br />    # opensipsctl fifo cache_fetch local password_user1<br />@]<br /><br />!!!!cache_remove<br />This command removes a record from the cache system.\\<br />'''Arguments''': \\<br />   - cache system to use\\<br />  - the label associated with the stored value \\<br />'''Output''': None.\\<br />Examples of usage:<br />[@<br />    # opensipsctl fifo cache_remove local password_user1<br />@]<br /><br />[[#event_subscribe]]<br />!!!!event_subscribe<br />Subscribes an external application to a certain event.\\<br />'''Arguments''': \\<br />   - event name\\<br />   - external application socket \\<br />   - expire time, in seconds - if absent, the subscription is valid only one hour (3600 s)\\<br />'''Output''': None.\\<br />Examples of usage:<br />[@<br />    # opensipsctl fifo event_subscribe E_PIKE_BLOCKED udp:127.0.0.1:8888 1200<br />@]<br /><br />!!!!events_list<br />Lists all the events published through the Event Interface.\\<br />'''Arguments''': None. \\<br />'''Output''': None.\\<br />Examples of usage:<br />[@<br />    # opensipsctl fifo events_list<br />    Event:: E_CORE_THRESHOLD id=0<br />    Event:: E_RTPPROXY_STATUS id=1<br />    Event:: E_PIKE_BLOCKED id=2<br /><br />@]<br /><br />!!!!subscribers_list<br />Lists information about the subscribers\\<br />'''Arguments''': \\<br />   - event name\\<br />   - external application socket \\<br />'''Output''': If no parameter is specified, then the command returns information about all events and their subscribers. If the event is specified, only the external applications subscribed for that event are returned. If the socket is also specified, only one subscriber information is returned.\\<br />Examples of usage:<br />[@<br />    # opensipsctl fifo subscribers_list<br />    Event:: E_CORE_THRESHOLD id=0<br />    Event:: E_RTPPROXY_STATUS id=1<br />	Subscriber::  socket=unix:/tmp/event.sock expire=never<br />	Subscriber::  socket=udp:127.0.0.1:8888 expire=1100<br />    Event:: E_PIKE_BLOCKED id=2<br />	Subscriber::  socket=rabbitmq:guest@127.0.0.1/hello expire=never<br /><br />    # opensipsctl fifo subscribers_list E_RTPPROXY_STATUS<br />    Event:: E_RTPPROXY_STATUS id=1<br />	Subscriber::  socket=unix:/tmp/event.sock expire=never<br />	Subscriber::  socket=udp:127.0.0.1:8888 expire=1100<br /><br />    # opensipsctl fifo subscribers_list E_RTPPROXY_STATUS unix:/tmp/event.sock<br />    Event:: E_RTPPROXY_STATUS id=1<br />	Subscriber::  socket=unix:/tmp/event.sock expire=never<br />@]<br /><br />----<br /><br />(:commentboxchrono:)</div></div></div>
+      <div class='diffrestore'><a href="javascript:if(confirm(%27http://www.opensips.org/Documentation/Interface-CoreMI-1-11?action=edit&restore=diff:1375703099:1375703099:&preview=y  \n\nThis file was not retrieved by Teleport Pro, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Documentation/Interface-CoreMI-1-11?action=edit&restore=diff:1375703099:1375703099:&preview=y%27" tppabs="http://www.opensips.org/Documentation/Interface-CoreMI-1-11?action=edit&restore=diff:1375703099:1375703099:&preview=y">Restore</a></div></div></div>
+  
+<!--PageRightFmt--><!--/PageRightFmt--></td>
+</tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+  <hr class="bottomline" /></td>
+    <div class='footnav'>
+	
+      <a rel="nofollow" href="Interface-CoreMI-1-11-action=edit.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreMI-1-11?action=edit">Edit</a> |
+      <a rel="nofollow" href="Interface-CoreMI-1-11-action=diff.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreMI-1-11?action=diff">History</a> |
+      <a rel="nofollow" href="Interface-CoreMI-1-11-action=print.htm" tppabs="http://www.opensips.org/Documentation/Interface-CoreMI-1-11?action=print" target='_blank'>Print</a> |
+      <a href="RecentChanges.htm" tppabs="http://www.opensips.org/Documentation/RecentChanges">Recent Changes</a> |
+      <a href="javascript:if(confirm(%27http://www.opensips.org/Site/Search  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.opensips.org/Site/Search%27" tppabs="http://www.opensips.org/Site/Search">Search</a></div>
+    <div class='lastmod'>Page last modified on November 25, 2014, at 09:33 AM</div></div>
+<!--HTMLFooter-->
+</div>
+</body>
+</html>
